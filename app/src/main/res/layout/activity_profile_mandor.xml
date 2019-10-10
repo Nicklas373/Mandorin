@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/app_name"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:text="@string/app_name"
+            android:textAlignment="center"
+            android:textColor="#ffffff" />
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/mandor_menu_1"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.161"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.176"
+        card_view:cardBackgroundColor="@android:color/transparent"
+        card_view:cardElevation="0dp"
+        card_view:cardUseCompatPadding="true">
+
+        <ImageView
+            android:layout_width="144dp"
+            android:layout_height="119dp"
+            android:contentDescription="@string/app_menu_1_mandor_1"
+            android:src="@drawable/profil_mandor" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="144dp"
+            android:layout_height="20dp"
+            android:background="@color/colorPrimary"
+            android:text="@string/app_menu_1_mandor_1"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:layout_marginTop="119dp"/>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/mandor_menu_2"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:layout_marginStart="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.856"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.176"
+        card_view:cardBackgroundColor="@android:color/transparent"
+        card_view:cardElevation="0dp"
+        card_view:cardUseCompatPadding="true">
+
+        <ImageView
+            android:layout_width="144dp"
+            android:layout_height="119dp"
+            android:contentDescription="@string/app_menu_1_mandor_2"
+            android:src="@drawable/dokumentasi_pekerjaan" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="144dp"
+            android:layout_height="20dp"
+            android:background="@color/colorPrimary"
+            android:text="@string/app_menu_1_mandor_2"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:layout_marginTop="119dp"/>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/mandor_menu_3"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:layout_marginTop="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.161"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.443"
+        card_view:cardBackgroundColor="@android:color/transparent"
+        card_view:cardElevation="0dp"
+        card_view:cardUseCompatPadding="true">
+
+        <ImageView
+            android:layout_width="144dp"
+            android:layout_height="119dp"
+            android:contentDescription="@string/app_menu_1_mandor_3"
+            android:src="@drawable/sewa_jasa" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="144dp"
+            android:layout_height="20dp"
+            android:background="@color/colorPrimary"
+            android:text="@string/app_menu_1_mandor_3"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:layout_marginTop="119dp"/>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/mandor_menu_4"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.856"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.443"
+        card_view:cardBackgroundColor="@android:color/transparent"
+        card_view:cardElevation="0dp"
+        card_view:cardUseCompatPadding="true">
+
+        <ImageView
+            android:layout_width="144dp"
+            android:layout_height="119dp"
+            android:contentDescription="@string/app_menu_1_mandor_4"
+            android:src="@drawable/tanggapan" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="144dp"
+            android:layout_height="20dp"
+            android:background="@color/colorPrimary"
+            android:text="@string/app_menu_1_mandor_4"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:layout_marginTop="119dp"/>
+
+    </android.support.v7.widget.CardView>
+
+    <!-- Dummy Debugging Begin-->
+    <android.support.v7.widget.CardView
+        android:layout_width="13dp"
+        android:layout_height="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.959"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.101">
+
+        <ImageView
+            android:id="@+id/foto"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:contentDescription="@string/app_menu_1_mandor_1"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/nama"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text=""
+            android:textColor="#fff" />
+
+        <TextView
+            android:id="@+id/umur"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text=""
+            android:textColor="#fff" />
+
+        <TextView
+            android:id="@+id/nik"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text=""
+            android:textColor="#fff" />
+
+        <TextView
+            android:id="@+id/alamat"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text=""
+            android:textColor="#fff" />
+    </android.support.v7.widget.CardView>
+    <!-- Dummy Debugging End-->
+
+
+</android.support.constraint.ConstraintLayout>

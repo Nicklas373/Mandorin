@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#bdbdbd"
+    xmlns:card_view="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/toolbar_text"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/app_mandor_1_profile_3"
+            android:textColor="#ffffff" />
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_head"
+        android:layout_width="match_parent"
+        android:layout_height="135dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        app:cardBackgroundColor="#ffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.093"
+        card_view:cardCornerRadius="6dp"
+        card_view:cardElevation="3dp"
+        card_view:cardUseCompatPadding="true"
+        card_view:layout_constraintVertical_bias="0.062">
+
+        <ImageView
+            android:id="@+id/img_head"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="1dp"
+            android:src="@mipmap/ic_launcher"
+            android:contentDescription="@string/app_mandor_1_profile_1"/>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv_title"
+            android:layout_width="105dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="120dp"
+            android:layout_toEndOf="@+id/img_head"
+            app:cardBackgroundColor="#0069c0"
+            card_view:cardElevation="3dp"
+            card_view:cardUseCompatPadding="true">
+
+            <TextView
+                android:id="@+id/TextViewTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:text="@string/app_mandor_1_profile_2"
+                android:textColor="#ffffff"
+                android:layout_marginTop="3dp"
+                android:textAlignment="center" />
+
+        </android.support.v7.widget.CardView>
+
+        <TextView
+            android:id="@+id/txt_name"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginStart="125dp"
+            android:layout_marginTop="40dp"
+            android:text="@string/empty"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txt_umur"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginStart="125dp"
+            android:layout_marginTop="80dp"
+            android:text="@string/empty"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_sub_title"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        app:cardBackgroundColor="#0069c0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.31"
+        card_view:cardElevation="3dp"
+        card_view:cardUseCompatPadding="true"
+        card_view:layout_constraintHorizontal_bias="0.057"
+        card_view:layout_constraintVertical_bias="0.314">
+
+        <TextView
+            android:id="@+id/txt_sub_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/app_mandor_1_profile_3"
+            android:textColor="#ffffff"
+            android:textAlignment="center"/>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_main"
+        android:layout_width="match_parent"
+        android:layout_height="470dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        app:cardBackgroundColor="#fff"
+        card_view:cardCornerRadius="6dp"
+        card_view:cardElevation="3dp"
+        card_view:cardUseCompatPadding="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.988">
+
+        <TextView
+            android:id="@+id/txt_nama_mandor"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/app_mandor_1_profile_3_data_1"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txt_nama_mandor_1"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginStart="170dp"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@id/txt_nama_mandor"
+            android:text="@string/empty"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txt_nik_mandor"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="50dp"
+            android:text="@string/app_mandor_1_profile_3_data_2"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txt_nik_mandor_1"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginStart="170dp"
+            android:layout_marginTop="50dp"
+            android:layout_toEndOf="@id/txt_nama_mandor"
+            android:text="@string/empty"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txt_umur_mandor"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="90dp"
+            android:text="@string/app_mandor_1_profile_3_data_3"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txt_umur_mandor_1"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginStart="170dp"
+            android:layout_marginTop="90dp"
+            android:layout_toEndOf="@id/txt_nama_mandor"
+            android:text="@string/empty"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txt_alamat_mandor"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="130dp"
+            android:text="@string/app_mandor_1_profile_3_data_4"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txt_alamat_mandor_1"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginStart="170dp"
+            android:layout_marginTop="130dp"
+            android:layout_toEndOf="@id/txt_nama_mandor"
+            android:text="@string/empty"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+    </android.support.v7.widget.CardView>
+
+</android.support.constraint.ConstraintLayout>
