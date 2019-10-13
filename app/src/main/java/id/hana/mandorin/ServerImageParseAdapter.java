@@ -32,7 +32,7 @@ public class ServerImageParseAdapter {
 
     private ServerImageParseAdapter(Context context) {
 
-        this.context1 = context;
+        context1 = context;
 
         this.requestQueue1 = RQ();
 
