@@ -18,21 +18,42 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
 
+        <android.support.v7.widget.CardView
+            android:id="@+id/back_activity_mandor"
+            android:layout_width="24dp"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardBackgroundColor="@color/colorPrimary">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/back"
+                android:gravity="start"
+                android:contentDescription="@string/back" />
+
+        </android.support.v7.widget.CardView>
+
         <TextView
             android:id="@+id/toolbar_text"
             style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@string/app_mandor_1_profile_3"
-            android:textColor="#ffffff" />
+            android:text="@string/app_mandor_1_profile_2"
+            android:textColor="#ffffff"
+            android:layout_marginEnd="35dp"
+            android:layout_marginStart="10dp" />
+
     </android.support.v7.widget.Toolbar>
 
     <android.support.v7.widget.CardView
         android:id="@+id/cv_head"
         android:layout_width="match_parent"
         android:layout_height="135dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:layout_marginStart="15dp"
         android:layout_marginEnd="15dp"
         app:cardBackgroundColor="#ffffff"
@@ -60,7 +81,7 @@
         <android.support.v7.widget.CardView
             android:id="@+id/cv_title"
             android:layout_width="105dp"
-            android:layout_height="40dp"
+            android:layout_height="30dp"
             android:layout_marginStart="120dp"
             android:layout_toEndOf="@+id/img_head"
             app:cardBackgroundColor="#0069c0"
@@ -74,7 +95,6 @@
                 android:layout_marginStart="3dp"
                 android:text="@string/app_mandor_1_profile_2"
                 android:textColor="#ffffff"
-                android:layout_marginTop="3dp"
                 android:textAlignment="center" />
 
         </android.support.v7.widget.CardView>
@@ -103,9 +123,9 @@
 
     <android.support.v7.widget.CardView
         android:id="@+id/cv_sub_title"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="30dp"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="70dp"
         app:cardBackgroundColor="#0069c0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -122,10 +142,10 @@
             android:id="@+id/txt_sub_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:text="@string/app_mandor_1_profile_3"
             android:textColor="#ffffff"
-            android:textAlignment="center"/>
+            android:textAlignment="center"
+            android:textSize="20sp"/>
 
     </android.support.v7.widget.CardView>
 
@@ -210,25 +230,109 @@
             android:textSize="20sp" />
 
         <TextView
+            android:id="@+id/txt_tempat_mandor"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="130dp"
+            android:layout_marginStart="5dp"
+            android:text="@string/app_mandor_1_profile_3_data_6"
+            android:textSize="20sp"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:id="@+id/txt_tempat_mandor_1"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="170dp"
+            android:layout_marginStart="170dp"
+            android:layout_toEndOf="@id/txt_nama_mandor"
+            android:text="@string/empty"
+            android:textSize="20sp"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:id="@+id/txt_tgl_mandor"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="170dp"
+            android:layout_marginStart="5dp"
+            android:text="@string/app_mandor_1_profile_3_data_7"
+            android:textSize="20sp"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:id="@+id/txt_tgl_mandor_1"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="130dp"
+            android:layout_marginStart="170dp"
+            android:layout_toEndOf="@id/txt_nama_mandor"
+            android:text="@string/empty"
+            android:textSize="20sp"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:id="@+id/txt_agama_mandor"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="210dp"
+            android:layout_marginStart="5dp"
+            android:text="@string/app_mandor_1_profile_3_data_8"
+            android:textSize="20sp"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:id="@+id/txt_agama_mandor_1"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="210dp"
+            android:layout_marginStart="170dp"
+            android:layout_toEndOf="@id/txt_nama_mandor"
+            android:text="@string/empty"
+            android:textSize="20sp"
+            android:textColor="#000000"/>
+
+        <TextView
             android:id="@+id/txt_alamat_mandor"
             android:layout_width="150dp"
             android:layout_height="30dp"
+            android:layout_marginTop="250dp"
             android:layout_marginStart="5dp"
-            android:layout_marginTop="130dp"
             android:text="@string/app_mandor_1_profile_3_data_4"
-            android:textColor="#000000"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:textColor="#000000"/>
 
         <TextView
             android:id="@+id/txt_alamat_mandor_1"
             android:layout_width="match_parent"
             android:layout_height="30dp"
+            android:layout_marginTop="250dp"
             android:layout_marginStart="170dp"
-            android:layout_marginTop="130dp"
             android:layout_toEndOf="@id/txt_nama_mandor"
             android:text="@string/empty"
-            android:textColor="#000000"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:id="@+id/txt_lama_kerja_mandor"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="290dp"
+            android:layout_marginStart="5dp"
+            android:text="@string/app_mandor_1_profile_3_data_5"
+            android:textSize="20sp"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:id="@+id/txt_lama_kerja_mandor_1"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="290dp"
+            android:layout_marginStart="170dp"
+            android:layout_toEndOf="@id/txt_nama_mandor"
+            android:text="@string/empty"
+            android:textSize="20sp"
+            android:textColor="#000000"/>
 
     </android.support.v7.widget.CardView>
 

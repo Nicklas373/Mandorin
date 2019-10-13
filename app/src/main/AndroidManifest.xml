@@ -4,12 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="id.hana.mandorin">
 
+    <!-- Permission for upload file -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <!-- Internet Permission -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
+    <!-- Support Instant App -->
     <dist:module dist:instant="true" />
 
+    <!-- Multi Screen Layout Support -->
     <supports-screens
         android:largeScreens="true"
         android:normalScreens="true"
@@ -36,6 +42,11 @@
         <activity android:name=".activity_mandor"/>
         <activity android:name=".activity_detail_mandor"/>
         <activity android:name=".activity_profile_mandor"/>
+        <activity android:name=".activity_sewa_jasa"/>
+        <activity android:name=".activity_bangun_dari_awal"/>
+        <activity android:name=".activity_bangun_dari_awal_2"/>
+        <activity android:name=".activity_renovasi"/>
+        <activity android:name=".activity_renovasi_2"/>
     </application>
 
 </manifest>

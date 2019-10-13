@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:background="#b0bec5">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/back_activity_renovasi"
+            android:layout_width="32dp"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardBackgroundColor="@color/colorPrimary">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/back"
+                android:gravity="start"
+                android:contentDescription="@string/back" />
+
+        </android.support.v7.widget.CardView>
+
+        <TextView
+            android:id="@+id/app_name"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:text="@string/app_mandor_renovasi_title"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:textSize="30sp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="55dp"/>
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_bangun_awal"
+        android:layout_width="700dp"
+        android:layout_height="950dp"
+        app:cardBackgroundColor="#fff"
+        app:cardCornerRadius="12dp"
+        app:cardMaxElevation="2dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.497">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv_title_bangun_awal"
+            android:layout_width="300dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center_horizontal"
+            app:cardBackgroundColor="@color/colorPrimary"
+            app:cardCornerRadius="8dp"
+            app:cardMaxElevation="2dp"
+            app:cardUseCompatPadding="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/app_mandor_bangun_awal_1"
+                android:textAlignment="center"
+                android:textSize="40sp"
+                android:textColor="#ffffff" />
+
+        </android.support.v7.widget.CardView>
+
+        <RadioGroup
+            android:id="@+id/rg_borongan"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="95dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/app_mandor_bangun_awal_radio_1"
+                android:textColor="#000"
+                android:textSize="35sp"/>
+
+            <RadioButton
+                android:id="@+id/rb_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="@string/app_mandor_bangun_awal_radio_2"
+                android:textColor="#000"
+                android:textSize="35sp"/>
+
+        </RadioGroup>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv_title_luas_tanah"
+            android:layout_width="310dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="210dp"
+            app:cardBackgroundColor="@color/colorPrimary"
+            app:cardCornerRadius="8dp"
+            app:cardMaxElevation="2dp"
+            app:cardUseCompatPadding="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/app_mandor_renovasi_1"
+                android:textAlignment="center"
+                android:textColor="#ffffff"
+                android:textSize="40sp"/>
+
+        </android.support.v7.widget.CardView>
+
+        <EditText
+            android:id="@+id/et_renovasi"
+            android:layout_width="420dp"
+            android:layout_height="400dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="300dp"
+            android:ems="10"
+            android:hint="@string/app_mandor_renovasi_2"
+            android:importantForAutofill="no"
+            android:inputType="textMultiLine"
+            android:maxLines="20"
+            android:scrollbars="vertical" />
+
+        <Button
+            android:id="@+id/button_selanjutnya"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="170dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="750dp"
+            android:background="@color/colorPrimary"
+            android:text="@string/app_mandor_bangun_awal_8"
+            android:textColor="#fff"
+            android:textAllCaps="false"
+            android:textSize="20sp"/>
+
+        <!-- Dummy Debugging Begin -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/dummy"
+            android:text=""
+            android:visibility="gone"
+            />
+
+        <!-- Dummy Debugging End -->
+
+    </android.support.v7.widget.CardView>
+
+</android.support.constraint.ConstraintLayout>

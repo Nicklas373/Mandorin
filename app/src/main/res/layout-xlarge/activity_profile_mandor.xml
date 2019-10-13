@@ -2,7 +2,8 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
@@ -16,22 +17,43 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
 
+        <android.support.v7.widget.CardView
+            android:id="@+id/back_activity_profile_mandor"
+            android:layout_width="24dp"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardBackgroundColor="@color/colorPrimary">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/back"
+                android:gravity="start"
+                android:contentDescription="@string/back" />
+
+        </android.support.v7.widget.CardView>
+
         <TextView
             android:id="@+id/app_name"
             style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="start"
-            android:text="@string/app_name"
+            android:text="@string/app_menu_1_mandor_1_title"
             android:textAlignment="center"
-            android:textColor="#ffffff" />
+            android:textColor="#ffffff"
+            android:layout_marginEnd="35dp"
+            android:layout_marginStart="10dp" />
     </android.support.v7.widget.Toolbar>
 
-    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    <android.support.v7.widget.CardView
         xmlns:card_view="http://schemas.android.com/apk/res-auto"
         android:id="@+id/mandor_menu_1"
         android:layout_width="300dp"
         android:layout_height="250dp"
+        android:layout_marginTop="40dp"
         android:clickable="true"
         android:focusable="true"
         android:foreground="?android:attr/selectableItemBackground"
@@ -62,7 +84,7 @@
             android:layout_marginTop="225dp"/>
     </android.support.v7.widget.CardView>
 
-    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    <android.support.v7.widget.CardView
         xmlns:card_view="http://schemas.android.com/apk/res-auto"
         android:id="@+id/mandor_menu_2"
         android:layout_width="300dp"
@@ -71,6 +93,7 @@
         android:focusable="true"
         android:foreground="?android:attr/selectableItemBackground"
         android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.856"
@@ -98,7 +121,7 @@
             android:layout_marginTop="225dp"/>
     </android.support.v7.widget.CardView>
 
-    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    <android.support.v7.widget.CardView
         xmlns:card_view="http://schemas.android.com/apk/res-auto"
         android:id="@+id/mandor_menu_3"
         android:layout_width="300dp"
@@ -106,7 +129,7 @@
         android:clickable="true"
         android:focusable="true"
         android:foreground="?android:attr/selectableItemBackground"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="160dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.161"
@@ -135,7 +158,7 @@
 
     </android.support.v7.widget.CardView>
 
-    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    <android.support.v7.widget.CardView
         xmlns:card_view="http://schemas.android.com/apk/res-auto"
         android:id="@+id/mandor_menu_4"
         android:layout_width="300dp"
@@ -143,7 +166,7 @@
         android:clickable="true"
         android:focusable="true"
         android:foreground="?android:attr/selectableItemBackground"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="160dp"
         android:layout_marginStart="80dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -153,7 +176,8 @@
         app:layout_constraintVertical_bias="0.443"
         card_view:cardBackgroundColor="@android:color/transparent"
         card_view:cardElevation="0dp"
-        card_view:cardUseCompatPadding="true">
+        card_view:cardUseCompatPadding="true"
+        android:visibility="gone">
 
         <ImageView
             android:layout_width="match_parent"
@@ -172,5 +196,79 @@
             android:layout_marginTop="225dp"/>
 
     </android.support.v7.widget.CardView>
+
+    <!-- Dummy Debugging Begin-->
+    <android.support.v7.widget.CardView
+        android:layout_width="13dp"
+        android:layout_height="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.959"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.101"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/foto"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:contentDescription="@string/app_menu_1_mandor_1"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/nama"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text=""
+            android:textColor="#fff" />
+
+        <TextView
+            android:id="@+id/umur"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text=""
+            android:textColor="#fff" />
+
+        <TextView
+            android:id="@+id/nik"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text=""
+            android:textColor="#fff" />
+
+        <TextView
+            android:id="@+id/alamat"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text=""
+            android:textColor="#fff" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_lama_kerja_profile_mandor"
+            android:visibility="gone"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_tempat_profile_mandor"
+            android:visibility="gone"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_tgl_lahir_profile_mandor"
+            android:visibility="gone"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_agama_profile_mandor"
+            android:visibility="gone"/>
+
+    </android.support.v7.widget.CardView>
+    <!-- Dummy Debugging End-->
 
 </android.support.constraint.ConstraintLayout>
