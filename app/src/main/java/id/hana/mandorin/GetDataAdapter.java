@@ -5,7 +5,39 @@ package id.hana.mandorin;
  */
 public class GetDataAdapter {
 
-    public String nik, nama_mandor, umur_mandor, alamat_mandor, foto_mandor;
+    public String nik, nama_mandor, umur_mandor, lama_kerja, tempat, tgl_lahir, agama, alamat_mandor, foto_mandor;
+
+    public String getLama_kerja() {
+        return lama_kerja;
+    }
+
+    public void setLama_kerja(String lama_kerja) {
+        this.lama_kerja= lama_kerja;
+    }
+
+    public String getTempat() {
+        return tempat;
+    }
+
+    public void setTempat(String tempat) {
+        this.tempat= tempat;
+    }
+
+    public String getTgl_lahir() {
+        return tgl_lahir;
+    }
+
+    public void setTgl_lahir(String tgl_lahir) {
+        this.tgl_lahir= tgl_lahir;
+    }
+
+    public String getAgama() {
+        return agama;
+    }
+
+    public void setAgama(String agama) {
+        this.agama= agama;
+    }
 
     public String getFoto_mandor() {
         return foto_mandor;

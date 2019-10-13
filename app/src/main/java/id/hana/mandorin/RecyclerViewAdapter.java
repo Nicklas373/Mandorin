@@ -70,6 +70,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         Viewholder.Nama.setText(getDataAdapter1.getNama_mandor());
         Viewholder.Umur.setText(getDataAdapter1.getUmur_mandor());
         Viewholder.Alamat.setText(getDataAdapter1.getAlamat_mandor());
+        Viewholder.Tempat.setText(getDataAdapter1.getTempat());
+        Viewholder.TGL_Lahir.setText(getDataAdapter1.getTgl_lahir());
+        Viewholder.Agama.setText(getDataAdapter1.getAgama());
+        Viewholder.Lama_Kerja.setText(getDataAdapter1.getLama_kerja());
     }
 
     @Override
@@ -80,7 +84,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        public TextView Nik, Nama, Umur, Alamat;
+        public TextView Nik, Nama, Umur, Alamat, Tempat, TGL_Lahir, Agama, Lama_Kerja;
         public NetworkImageView networkImageView ;
         public CardView cv_head;
 
@@ -90,12 +94,16 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 itemView.setClickable(true);
                 itemView.setOnClickListener(this);
 
-                cv_head= (CardView) itemView.findViewById(R.id.cv_head);
-                Nik = (TextView) itemView.findViewById(R.id.textViewNik1) ;
-                Nama = (TextView) itemView.findViewById(R.id.textViewNama1) ;
-                Umur = (TextView) itemView.findViewById(R.id.textViewUmur1) ;
-                Alamat = (TextView) itemView.findViewById(R.id.textViewAlamat1) ;
-                networkImageView = (NetworkImageView) itemView.findViewById(R.id.VollyNetworkImageView1) ;
+                cv_head = itemView.findViewById(R.id.cv_head);
+                Nik = itemView.findViewById(R.id.textViewNik1) ;
+                Nama = itemView.findViewById(R.id.textViewNama1) ;
+                Umur = itemView.findViewById(R.id.textViewUmur1) ;
+                Alamat = itemView.findViewById(R.id.textViewAlamat1) ;
+                Tempat = itemView.findViewById(R.id.text_tempat);
+                TGL_Lahir = itemView.findViewById(R.id.text_tgl_lahir);
+                Lama_Kerja = itemView.findViewById(R.id.text_lama_kerja);
+                Agama = itemView.findViewById(R.id.text_agama);
+                networkImageView = itemView.findViewById(R.id.VollyNetworkImageView1) ;
             }
 
 
@@ -111,6 +119,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 intent.putExtra("nama", getDataAdapter.get(getAdapterPosition()).getNama_mandor());
                 intent.putExtra("umur", getDataAdapter.get(getAdapterPosition()).getUmur_mandor());
                 intent.putExtra("alamat", getDataAdapter.get(getAdapterPosition()).getAlamat_mandor());
+                intent.putExtra("tempat", getDataAdapter.get(getAdapterPosition()).getTempat());
+                intent.putExtra("tgl_lahir", getDataAdapter.get(getAdapterPosition()).getTgl_lahir());
+                intent.putExtra("agama", getDataAdapter.get(getAdapterPosition()).getAgama());
+                intent.putExtra("lama_kerja", getDataAdapter.get(getAdapterPosition()).getLama_kerja());
                 intent.putExtra("foto", b);
                 context.startActivity(intent);
             }
