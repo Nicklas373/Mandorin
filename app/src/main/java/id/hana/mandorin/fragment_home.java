@@ -32,7 +32,7 @@ public class fragment_home extends Fragment {
         // Fragment locked in portrait screen orientation
         getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-        menu_1 = (CardView) view.findViewById(R.id.cv_menu_1);
+        menu_1 = view.findViewById(R.id.cv_menu_1);
 
         menu_1.setOnClickListener(new View.OnClickListener() {
             @Override
