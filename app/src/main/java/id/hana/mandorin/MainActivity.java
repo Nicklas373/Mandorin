@@ -1,16 +1,28 @@
 package id.hana.mandorin;
 
-import android.content.Context;
+import android.Manifest;
+import android.content.DialogInterface;
 import android.content.pm.ActivityInfo;
-import android.net.ConnectivityManager;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import com.kishan.askpermission.AskPermission;
+import com.kishan.askpermission.ErrorCallback;
+import com.kishan.askpermission.PermissionCallback;
+import com.kishan.askpermission.PermissionInterface;
+
+public class MainActivity extends AppCompatActivity implements PermissionCallback, ErrorCallback {
+
+    /*
+     * Static declaration for Request Permisions
+     */
+
+    private static final int REQUEST_PERMISSIONS = 20;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,23 +30,63 @@ public class MainActivity extends AppCompatActivity {
         setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_main);
 
+        /*
+         * Init Function
+         *
+         * This will ask for storage permission and init 2 fragment tab ui layout
+         * On startup.
+         */
+
+        reqPermission();
         initViews();
-        InternetCheck();
     }
 
-    private void InternetCheck() {
-        if(adaInternet()){
-            // tampilkan peta
-            Toast.makeText(MainActivity.this, "Anda Terhubung ke internet", Toast.LENGTH_LONG).show();
-        }else{
-            // tampilkan pesan
-            Toast.makeText(MainActivity.this, "Tidak ada koneksi internet", Toast.LENGTH_LONG).show();
-        }
+    private void reqPermission() {
+        new AskPermission.Builder(this).setPermissions(
+                Manifest.permission.READ_EXTERNAL_STORAGE,
+                Manifest.permission.ACCESS_NETWORK_STATE,
+                Manifest.permission.INTERNET)
+                .setCallback(this)
+                .setErrorCallback(this)
+                .request(REQUEST_PERMISSIONS);
     }
 
-    private boolean adaInternet(){
-        ConnectivityManager koneksi = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-        return koneksi.getActiveNetworkInfo() != null;
+    @Override
+    public void onShowSettings(final PermissionInterface permissionInterface, int requestCode) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Kami Memerlukan Perijinan untuk penyimpanan anda, buka pengaturan?");
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                permissionInterface.onSettingsShown();
+            }
+        });
+        builder.setNegativeButton("Batal", null);
+        builder.show();
+    }
+
+    @Override
+    public void onShowRationalDialog(final PermissionInterface permissionInterface, int requestCode) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Kami Memerlukan Perijinan untuk aplikasi ini.");
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                permissionInterface.onDialogShown();
+            }
+        });
+        builder.setNegativeButton("Batal", null);
+        builder.show();
+    }
+
+    @Override
+    public void onPermissionsGranted(int requestCode) {
+        //Toast.makeText(this, "Perijinan Diterima", Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onPermissionsDenied(int requestCode) {
+        //Toast.makeText(this, "Perijinan Ditolak", Toast.LENGTH_LONG).show();
     }
 
     private void initViews() {
