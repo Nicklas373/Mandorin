@@ -1,15 +1,19 @@
 package id.hana.mandorin;
 
+import android.Manifest;
+import android.app.Activity;
+import android.content.pm.PackageManager;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import java.io.DataOutputStream;
@@ -20,9 +24,6 @@ import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
 
 import android.content.pm.ActivityInfo;
 import android.widget.EditText;
@@ -34,15 +35,19 @@ public class activity_bangun_dari_awal extends AppCompatActivity {
     /*
      * Static File Request & Server URL Initializations
      */
-    private static final int PICK_FILE_REQUEST = 1;
+    private static final int STORAGE_PERMISSION_CODE = 123;
     private String selectedFilePath;
     private String SERVER_URL = "http://mandorin.site/mandorin/upload_file.php";
+    private static final int PICK_FILE_REQUEST = 1;
+
+    //Pdf request code
+    private int PICK_PDF_REQUEST = 1;
 
     /*
      * Layout Component Initializations
      * Textview, Imageview, CardView, RadioGroup & Button
      */
-    private TextView FileName, dummy, filename_details, tgl_daftar;
+    private TextView FileName, dummy, filename_details;
     private EditText luas_tanah;
     private RadioGroup rg;
     private RadioButton rb, rb_2, rb_debug;
@@ -73,14 +78,17 @@ public class activity_bangun_dari_awal extends AppCompatActivity {
         final String nik = getIntent().getExtras().getString("nik");
         final String nama = getIntent().getExtras().getString("nama");
 
+        //Requesting storage permission
+        requestStoragePermission();
+
+        tampil_file();
+
         upload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 showFileChooser();
             }
         });
-
-        tampil_file();
 
         selanjutnya.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,23 +98,16 @@ public class activity_bangun_dari_awal extends AppCompatActivity {
                 } else {
                     if (selectedFilePath != null) {
                         int id = rg.getCheckedRadioButtonId();
-                        switch (id)
-                        {
+                        switch (id) {
                             case R.id.rb_1:
-                                String new_dummy = ((RadioButton)findViewById(id)).getText().toString();
+                                String new_dummy = ((RadioButton) findViewById(id)).getText().toString();
                                 dummy.setText(new_dummy);
                                 break;
                             case R.id.rb_2:
-                                String new_dummy_2 = ((RadioButton)findViewById(id)).getText().toString();
+                                String new_dummy_2 = ((RadioButton) findViewById(id)).getText().toString();
                                 dummy.setText(new_dummy_2);
                                 break;
                         }
-                        String filecheck = selectedFilePath;
-                        String[] parts = filecheck.split("\\.");
-                        String ext = parts[parts.length - 1];
-                        if (ext.equals("pdf")) {
-                            dialog = ProgressDialog.show(activity_bangun_dari_awal.this, "", "Uploading File...", true);
-
                             new Thread(new Runnable() {
                                 @Override
                                 public void run() {
@@ -124,9 +125,6 @@ public class activity_bangun_dari_awal extends AppCompatActivity {
                             Intent intent = new Intent(activity_bangun_dari_awal.this, activity_bangun_dari_awal_2.class);
                             intent.putExtras(bundle);
                             startActivity(intent);
-                        } else{
-                            Toast.makeText(activity_bangun_dari_awal.this, "Harap Unggah Berkas Berupa PDF", Toast.LENGTH_LONG).show();
-                        }
                     } else {
                         Toast.makeText(activity_bangun_dari_awal.this, "Anda Belum Menggungah Berkas", Toast.LENGTH_LONG).show();
                     }
@@ -145,16 +143,6 @@ public class activity_bangun_dari_awal extends AppCompatActivity {
         });
     }
 
-    private void showFileChooser() {
-        Intent intent = new Intent();
-        //sets the select file to all types of files
-        intent.setType("*/*");
-        //allows to select data and return it
-        intent.setAction(Intent.ACTION_GET_CONTENT);
-        //starts new activity to select file and return data
-        startActivityForResult(Intent.createChooser(intent, "Silahkan Pilih Dokumen Yang Ingin Di Unggah.."), PICK_FILE_REQUEST);
-    }
-
     private void tampil_file(){
         if (selectedFilePath != null) {
             String filecheck = selectedFilePath;
@@ -162,29 +150,6 @@ public class activity_bangun_dari_awal extends AppCompatActivity {
             FileName.setText(document);
             filename_details.setVisibility(View.VISIBLE);
             FileName.setVisibility(View.VISIBLE);
-        }
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        final TextView FileName = findViewById(R.id.fileName);
-        super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == Activity.RESULT_OK) {
-            if (requestCode == PICK_FILE_REQUEST) {
-                if (data == null) {
-                    //no data present
-                    return;
-                }
-
-                Uri selectedFileUri = data.getData();
-                selectedFilePath = file_path.getPath(this, selectedFileUri);
-
-                if (selectedFilePath != null && !selectedFilePath.equals("")) {
-                    FileName.setText(selectedFilePath);
-                } else {
-                    Toast.makeText(this, "Tidak Dapat Mengunggah Ke Website Mandorin", Toast.LENGTH_SHORT).show();
-                }
-            }
         }
     }
 
@@ -301,6 +266,71 @@ public class activity_bangun_dari_awal extends AppCompatActivity {
             }
             dialog.dismiss();
             return serverResponseCode;
+        }
+    }
+
+
+    //method to show file chooser
+    private void showFileChooser() {
+        Intent intent = new Intent();
+        intent.setType("application/pdf");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(Intent.createChooser(intent, "Pilih PDF"), PICK_PDF_REQUEST);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        final TextView FileName = findViewById(R.id.fileName);
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == Activity.RESULT_OK) {
+            if (requestCode == PICK_FILE_REQUEST) {
+                if (data == null) {
+                    //no data present
+                    return;
+                }
+
+                Uri selectedFileUri = data.getData();
+                selectedFilePath = file_path.getPath(this, selectedFileUri);
+
+                if (selectedFilePath != null && !selectedFilePath.equals("")) {
+                    FileName.setText(selectedFilePath);
+                } else {
+                    Toast.makeText(this, "Tidak Dapat Mengunggah Ke Website Mandorin", Toast.LENGTH_SHORT).show();
+                }
+            }
+        }
+    }
+
+    //Requesting permission
+    private void requestStoragePermission() {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED)
+            return;
+
+        if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.READ_EXTERNAL_STORAGE)) {
+            //If the user has denied the permission previously your code will come to this block
+            //Here you can explain why you need this permission
+            //Explain here why you need this permission
+        }
+        //And finally ask for the permission
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, STORAGE_PERMISSION_CODE);
+    }
+
+
+    //This method will be called when the user will tap on allow or deny
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+
+        //Checking the request code of our request
+        if (requestCode == STORAGE_PERMISSION_CODE) {
+
+            //If permission is granted
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                //Displaying a toast
+                Toast.makeText(this, "Permission granted now you can read the storage", Toast.LENGTH_LONG).show();
+            } else {
+                //Displaying another toast if permission is not granted
+                Toast.makeText(this, "Oops you just denied the permission", Toast.LENGTH_LONG).show();
+            }
         }
     }
 }
