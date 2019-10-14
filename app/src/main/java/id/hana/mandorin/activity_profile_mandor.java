@@ -116,6 +116,16 @@ public class activity_profile_mandor extends AppCompatActivity {
             }
         });
 
+        tanggapan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(activity_profile_mandor.this, activity_tanggapan_mandor.class);
+                intent.putExtra("nama", Nama.getText().toString());
+                intent.putExtra("nik", Nik.getText().toString());
+                startActivity(intent);
+            }
+        });
+
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -49,17 +49,17 @@ public class activity_renovasi_2 extends AppCompatActivity {
         /*
          * Layout ID Initializations
          */
-        nama_bg_awal = findViewById(R.id.input_nama_bg_awal);
-        nik_bg_awal = findViewById(R.id.input_nik_bg_awal);
-        email_bg_awal = findViewById(R.id.input_email_bg_awal);
-        no_hp_bg_awal = findViewById(R.id.input_hp_bg_awal);
-        alamat_bg_awal = findViewById(R.id.input_alamat_bg_awal);
-        tgl_survey = findViewById(R.id.input_tgl_bg_awal);
+        nama_bg_awal = findViewById(R.id.input_nama_rn_awal);
+        nik_bg_awal = findViewById(R.id.input_nik_rn_awal);
+        email_bg_awal = findViewById(R.id.input_email_rn_awal);
+        no_hp_bg_awal = findViewById(R.id.input_hp_rn_awal);
+        alamat_bg_awal = findViewById(R.id.input_alamat_rn_awal);
+        tgl_survey = findViewById(R.id.input_tgl_rn_awal);
         rb_old = findViewById(R.id.rb_old);
-        data_renovasi = findViewById(R.id.luas_old);
+        data_renovasi = findViewById(R.id.ren_1_old);
         nama_prev = findViewById(R.id.nama_1_old);
         nik_prev = findViewById(R.id.nik_1_old);
-        kirim = findViewById(R.id.button_kirim_bg_awal);
+        kirim = findViewById(R.id.button_kirim_rn_awal);
         back = findViewById(R.id.back_activity_renovasi_2);
 
         /*
@@ -95,7 +95,16 @@ public class activity_renovasi_2 extends AppCompatActivity {
                 } else if (tgl_survey.getText().toString().length() == 0) {
                     tgl_survey.setError("Harap Masukkan Tanggal Survey");
                 } else {
-                    createdata();
+                    try
+                    {
+                        createdata();
+                        Intent intent = new Intent(activity_renovasi_2.this, activity_konfirmasi_bangun_renovasi.class);
+                        startActivity(intent);
+                    } catch (IllegalArgumentException e)
+                    {
+                        Toast.makeText(activity_renovasi_2.this, "Proses Gagal!", Toast.LENGTH_SHORT).show();
+                        e.printStackTrace();
+                    }
                 }
             }
         });
@@ -141,9 +150,9 @@ public class activity_renovasi_2 extends AppCompatActivity {
                 String tgl_daftar = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
                 String tgl_sur = tgl_survey.getText().toString().trim();
                 String jenis_borongan = rb_old.getText().toString().trim();
-                String data_renov = data_renovasi.getText().toString();
-                String nama_mandor = nama_prev.getText().toString();
-                String nik_mandor = nik_prev.getText().toString();
+                String data_renov = data_renovasi.getText().toString().trim();
+                String nik_mandor = nik_prev.getText().toString().trim();
+                String nama_mandor = nama_prev.getText().toString().trim();
 
                 // Creating Map String Params.
                 Map<String, String> params = new HashMap<String, String>();

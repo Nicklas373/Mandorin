@@ -3,7 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:card_view="http://schemas.android.com/tools"
     android:background="#b0bec5">
 
     <android.support.v7.widget.Toolbar
@@ -93,7 +92,7 @@
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="50dp"
             android:orientation="horizontal">
 
             <RadioButton
@@ -148,7 +147,8 @@
             android:ems="10"
             android:hint="@string/app_mandor_bangun_awal_4"
             android:importantForAutofill="no"
-            android:inputType="number" />
+            android:gravity="top|start"
+            android:inputType="numberDecimal" />
 
         <TextView
             android:id="@+id/textView7"
@@ -193,9 +193,9 @@
             android:layout_height="30dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="300dp"
-            android:background="@color/colorPrimary"
+            android:background="#bdbdbd"
             android:text="@string/app_mandor_bangun_awal_6"
-            android:textColor="#fff"
+            android:textColor="#000"
             android:textAllCaps="false"/>
 
         <Button
@@ -203,7 +203,8 @@
             style="@style/Widget.AppCompat.Button"
             android:layout_width="100dp"
             android:layout_height="30dp"
-            android:layout_gravity="center_horizontal"
+            android:layout_gravity="end"
+            android:layout_marginEnd="35dp"
             android:layout_marginTop="480dp"
             android:background="@color/colorPrimary"
             android:text="@string/app_mandor_bangun_awal_8"
@@ -215,7 +216,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="35dp"
-            android:layout_marginTop="350dp"
+            android:layout_marginTop="370dp"
             android:text="@string/app_mandor_bangun_awal_7"
             android:textColor="#000" />
 
@@ -224,7 +225,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="135dp"
-            android:layout_marginTop="350dp"
+            android:layout_marginTop="370dp"
             android:text=""
             android:textColor="#000" />
 

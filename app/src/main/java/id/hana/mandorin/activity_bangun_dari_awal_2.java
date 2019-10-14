@@ -99,7 +99,16 @@ public class activity_bangun_dari_awal_2 extends AppCompatActivity {
                 } else if (tgl_survey.getText().toString().length() == 0) {
                     tgl_survey.setError("Harap Masukkan Tanggal Survey");
                 } else {
-                    createdata();
+                    try
+                    {
+                        createdata();
+                        Intent intent = new Intent(activity_bangun_dari_awal_2.this, activity_konfirmasi_bangun_renovasi.class);
+                        startActivity(intent);
+                    } catch (IllegalArgumentException e)
+                    {
+                        Toast.makeText(activity_bangun_dari_awal_2.this, "Proses Gagal!", Toast.LENGTH_SHORT).show();
+                        e.printStackTrace();
+                    }
                 }
             }
         });
@@ -107,8 +116,14 @@ public class activity_bangun_dari_awal_2 extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Bundle bundle = new Bundle();
+                bundle.putString("nik", nik_prev.getText().toString());
+                bundle.putString("nama", nama_prev.getText().toString());
+                bundle.putString("luas_tanah", luas_old.getText().toString());
+                bundle.putString("jenis_borongan", rb_old.getText().toString());
+                bundle.putString("desain_rumah", desain_old.getText().toString());
                 Intent intent = new Intent(activity_bangun_dari_awal_2.this, activity_bangun_dari_awal.class);
-                startActivity(intent);
+                intent.putExtras(bundle);
             }
         });
     }

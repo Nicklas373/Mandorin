@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:card_view="http://schemas.android.com/tools"
     android:background="#b0bec5">
 
     <android.support.v7.widget.Toolbar
@@ -80,280 +79,322 @@
 
     </android.support.v7.widget.CardView>
 
-    <android.support.v7.widget.CardView
-        android:id="@+id/cv_bangun_awal_2"
-        android:layout_width="400dp"
-        android:layout_height="550dp"
-        app:cardBackgroundColor="#fff"
-        app:cardCornerRadius="12dp"
-        app:cardMaxElevation="2dp"
-        app:cardUseCompatPadding="true"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.697">
+        app:layout_constraintVertical_bias="0.0">
 
-        <android.support.v7.widget.CardView
-            android:id="@+id/cv_title_nama"
-            android:layout_width="115dp"
-            android:layout_height="35dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            app:cardBackgroundColor="@color/colorPrimary"
-            app:cardCornerRadius="8dp"
-            app:cardMaxElevation="2dp"
-            app:cardUseCompatPadding="true"
-            android:clickable="true"
-            android:focusable="true"
-            android:foreground="?android:attr/selectableItemBackground">
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/app_mandor_bangun_awal_next_2"
-                android:textAlignment="center"
-                android:textColor="#ffffff" />
-
-        </android.support.v7.widget.CardView>
-
-        <EditText
-            android:id="@+id/input_nama_bg_awal"
-            android:layout_width="180dp"
+        <RelativeLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="30dp"
-            android:layout_marginTop="2dp"
-            android:layout_gravity="end"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text=""
-            tools:ignore="Autofill,LabelFor" />
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="170dp">
 
-        <android.support.v7.widget.CardView
-            android:id="@+id/cv_title_nik"
-            android:layout_width="115dp"
-            android:layout_height="35dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="50dp"
-            app:cardBackgroundColor="@color/colorPrimary"
-            app:cardCornerRadius="8dp"
-            app:cardMaxElevation="2dp"
-            app:cardUseCompatPadding="true"
-            android:clickable="true"
-            android:focusable="true"
-            android:foreground="?android:attr/selectableItemBackground">
+            <android.support.v7.widget.CardView
+                android:id="@+id/cv_bangun_awal_2"
+                android:layout_width="400dp"
+                android:layout_height="550dp"
+                app:cardBackgroundColor="#fff"
+                app:cardCornerRadius="12dp"
+                app:cardMaxElevation="2dp"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.492"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.697">
 
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/app_mandor_bangun_awal_next_3"
-                android:textAlignment="center"
-                android:textColor="#ffffff" />
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cv_title_nama"
+                    android:layout_width="115dp"
+                    android:layout_height="35dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    app:cardBackgroundColor="@color/colorPrimary"
+                    app:cardCornerRadius="8dp"
+                    app:cardMaxElevation="2dp"
+                    app:cardUseCompatPadding="true"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground">
 
-        </android.support.v7.widget.CardView>
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/app_mandor_bangun_awal_next_2"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff" />
 
-        <EditText
-            android:id="@+id/input_nik_bg_awal"
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="30dp"
-            android:layout_marginTop="42dp"
-            android:layout_gravity="end"
-            android:ems="10"
-            android:inputType="number"
-            android:text=""
-            tools:ignore="Autofill,LabelFor" />
+                </android.support.v7.widget.CardView>
 
-        <android.support.v7.widget.CardView
-            android:id="@+id/cv_title_email"
-            android:layout_width="115dp"
-            android:layout_height="35dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="90dp"
-            app:cardBackgroundColor="@color/colorPrimary"
-            app:cardCornerRadius="8dp"
-            app:cardMaxElevation="2dp"
-            app:cardUseCompatPadding="true"
-            android:clickable="true"
-            android:focusable="true"
-            android:foreground="?android:attr/selectableItemBackground">
+                <EditText
+                    android:id="@+id/input_nama_rn_awal"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_gravity="end"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text=""
+                    tools:ignore="Autofill,LabelFor" />
 
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/app_mandor_bangun_awal_next_4"
-                android:textAlignment="center"
-                android:textColor="#ffffff" />
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cv_title_nik"
+                    android:layout_width="115dp"
+                    android:layout_height="35dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="50dp"
+                    app:cardBackgroundColor="@color/colorPrimary"
+                    app:cardCornerRadius="8dp"
+                    app:cardMaxElevation="2dp"
+                    app:cardUseCompatPadding="true"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground">
 
-        </android.support.v7.widget.CardView>
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/app_mandor_bangun_awal_next_3"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff" />
 
-        <EditText
-            android:id="@+id/input_email_bg_awal"
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="30dp"
-            android:layout_marginTop="82dp"
-            android:layout_gravity="end"
-            android:ems="10"
-            android:inputType="textEmailAddress"
-            android:text=""
-            tools:ignore="Autofill,LabelFor" />
+                </android.support.v7.widget.CardView>
 
-        <android.support.v7.widget.CardView
-            android:id="@+id/cv_title_hp"
-            android:layout_width="115dp"
-            android:layout_height="35dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="130dp"
-            app:cardBackgroundColor="@color/colorPrimary"
-            app:cardCornerRadius="8dp"
-            app:cardMaxElevation="2dp"
-            app:cardUseCompatPadding="true"
-            android:clickable="true"
-            android:focusable="true"
-            android:foreground="?android:attr/selectableItemBackground">
+                <EditText
+                    android:id="@+id/input_nik_rn_awal"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginTop="42dp"
+                    android:layout_gravity="end"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:text=""
+                    tools:ignore="Autofill,LabelFor" />
 
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/app_mandor_bangun_awal_next_5"
-                android:textAlignment="center"
-                android:textColor="#ffffff" />
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cv_title_email"
+                    android:layout_width="115dp"
+                    android:layout_height="35dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="90dp"
+                    app:cardBackgroundColor="@color/colorPrimary"
+                    app:cardCornerRadius="8dp"
+                    app:cardMaxElevation="2dp"
+                    app:cardUseCompatPadding="true"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground">
 
-        </android.support.v7.widget.CardView>
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/app_mandor_bangun_awal_next_4"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff" />
 
-        <EditText
-            android:id="@+id/input_hp_bg_awal"
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="30dp"
-            android:layout_marginTop="128dp"
-            android:layout_gravity="end"
-            android:ems="10"
-            android:inputType="phone"
-            android:text=""
-            tools:ignore="Autofill,LabelFor" />
+                </android.support.v7.widget.CardView>
 
-        <android.support.v7.widget.CardView
-            android:id="@+id/cv_title_alamat"
-            android:layout_width="115dp"
-            android:layout_height="35dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="235dp"
-            app:cardBackgroundColor="@color/colorPrimary"
-            app:cardCornerRadius="8dp"
-            app:cardMaxElevation="2dp"
-            app:cardUseCompatPadding="true"
-            android:clickable="true"
-            android:focusable="true"
-            android:foreground="?android:attr/selectableItemBackground">
+                <EditText
+                    android:id="@+id/input_email_rn_awal"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginTop="82dp"
+                    android:layout_gravity="end"
+                    android:ems="10"
+                    android:inputType="textEmailAddress"
+                    android:text=""
+                    tools:ignore="Autofill,LabelFor" />
 
-            <TextView
-                android:id="@+id/textView6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/app_mandor_bangun_awal_next_6"
-                android:textAlignment="center"
-                android:textColor="#ffffff" />
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cv_title_hp"
+                    android:layout_width="115dp"
+                    android:layout_height="35dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="130dp"
+                    app:cardBackgroundColor="@color/colorPrimary"
+                    app:cardCornerRadius="8dp"
+                    app:cardMaxElevation="2dp"
+                    app:cardUseCompatPadding="true"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground">
 
-        </android.support.v7.widget.CardView>
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/app_mandor_bangun_awal_next_5"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff" />
 
-        <EditText
-            android:id="@+id/input_alamat_bg_awal"
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:layout_marginTop="200dp"
-            android:layout_marginEnd="30dp"
-            android:ems="10"
-            android:inputType="textMultiLine"
-            android:maxLines="10"
-            android:minLines="2"
-            android:scrollbars="vertical"
-            android:text=""
-            tools:ignore="Autofill,LabelFor" />
+                </android.support.v7.widget.CardView>
 
-        <android.support.v7.widget.CardView
-            android:id="@+id/cv_title_tgl_survey"
-            android:layout_width="115dp"
-            android:layout_height="35dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="350dp"
-            app:cardBackgroundColor="@color/colorPrimary"
-            app:cardCornerRadius="8dp"
-            app:cardMaxElevation="2dp"
-            app:cardUseCompatPadding="true"
-            android:clickable="true"
-            android:focusable="true"
-            android:foreground="?android:attr/selectableItemBackground">
+                <EditText
+                    android:id="@+id/input_hp_rn_awal"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginTop="128dp"
+                    android:layout_gravity="end"
+                    android:ems="10"
+                    android:inputType="phone"
+                    android:text=""
+                    tools:ignore="Autofill,LabelFor" />
 
-            <TextView
-                android:id="@+id/textView7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/app_mandor_bangun_awal_next_7"
-                android:textAlignment="center"
-                android:textColor="#ffffff" />
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cv_title_tgl_survey"
+                    android:layout_width="115dp"
+                    android:layout_height="35dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="180dp"
+                    app:cardBackgroundColor="@color/colorPrimary"
+                    app:cardCornerRadius="8dp"
+                    app:cardMaxElevation="2dp"
+                    app:cardUseCompatPadding="true"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground">
 
-        </android.support.v7.widget.CardView>
+                    <TextView
+                        android:id="@+id/textView7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/app_mandor_bangun_awal_next_7"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff" />
 
-        <EditText
-            android:id="@+id/input_tgl_bg_awal"
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:layout_marginTop="340dp"
-            android:layout_marginEnd="30dp"
-            android:ems="10"
-            android:hint="@string/hint"
-            android:inputType="date"
-            android:text=""
-            tools:ignore="Autofill,LabelFor" />
+                </android.support.v7.widget.CardView>
 
-        <Button
-            android:id="@+id/button_kirim_bg_awal"
-            style="@style/Widget.AppCompat.Button"
-            android:layout_width="100dp"
-            android:layout_height="30dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="470dp"
-            android:background="@color/colorPrimary"
-            android:text="@string/app_mandor_bangun_awal_next_8"
-            android:textColor="#fff" />
+                <EditText
+                    android:id="@+id/input_tgl_rn_awal"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="168dp"
+                    android:layout_marginEnd="30dp"
+                    android:ems="10"
+                    android:hint="@string/hint"
+                    android:inputType="date"
+                    android:text=""
+                    tools:ignore="Autofill,LabelFor" />
 
-    </android.support.v7.widget.CardView>
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cv_title_alamat"
+                    android:layout_width="115dp"
+                    android:layout_height="35dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="240dp"
+                    app:cardBackgroundColor="@color/colorPrimary"
+                    app:cardCornerRadius="8dp"
+                    app:cardMaxElevation="2dp"
+                    app:cardUseCompatPadding="true"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground">
 
-    <!-- DUMMY -->
+                    <TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/app_mandor_bangun_awal_next_6"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff" />
 
-    <TextView
-        android:id="@+id/rb_old"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:text=""
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.013"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.065"
-        android:visibility="gone"/>
+                </android.support.v7.widget.CardView>
 
-    <TextView
-        android:id="@+id/luas_old"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:text=""
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.945"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.091"
-        android:visibility="gone"/>
+                <EditText
+                    android:id="@+id/input_alamat_rn_awal"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="230dp"
+                    android:layout_marginEnd="30dp"
+                    android:ems="10"
+                    android:inputType="textMultiLine"
+                    android:maxLines="6"
+                    android:gravity="top|start"
+                    android:scrollHorizontally="false"
+                    android:scrollbars="vertical"
+                    android:text=""
+                    tools:ignore="Autofill,LabelFor" />
+
+                <Button
+                    android:id="@+id/button_kirim_bg_awal"
+                    style="@style/Widget.AppCompat.Button"
+                    android:layout_width="100dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="450dp"
+                    android:background="@color/colorPrimary"
+                    android:text="@string/app_mandor_bangun_awal_next_8"
+                    android:textColor="#fff" />
+
+                <!-- DUMMY -->
+
+                <TextView
+                    android:id="@+id/rb_old"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:text=""
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.013"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.065"
+                    android:visibility="gone"/>
+
+                <TextView
+                    android:id="@+id/nama_1_old"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:text=""
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.013"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.065"
+                    android:visibility="gone"/>
+
+                <TextView
+                    android:id="@+id/nik_1_old"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:text=""
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.013"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.065"
+                    android:visibility="gone"/>
+
+                <TextView
+                    android:id="@+id/ren_1_old"
+                    android:layout_width="240dp"
+                    android:layout_height="240dp"
+                    android:text=""
+                    android:textColor="#fff"
+                    android:visibility="gone"/>
+
+                <!-- DUMMY END !-->
+
+            </android.support.v7.widget.CardView>
+        </RelativeLayout>
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>

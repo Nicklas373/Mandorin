@@ -93,6 +93,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="3dp"
+                android:layout_marginTop="3dp"
                 android:text="@string/app_mandor_1_profile_2"
                 android:textColor="#ffffff"
                 android:textAlignment="center" />
@@ -145,6 +146,8 @@
             android:text="@string/app_mandor_1_profile_3"
             android:textColor="#ffffff"
             android:textAlignment="center"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="5dp"
             android:textSize="20sp"/>
 
     </android.support.v7.widget.CardView>
@@ -152,7 +155,7 @@
     <android.support.v7.widget.CardView
         android:id="@+id/cv_main"
         android:layout_width="match_parent"
-        android:layout_height="470dp"
+        android:layout_height="450dp"
         android:layout_marginStart="15dp"
         android:layout_marginEnd="15dp"
         app:cardBackgroundColor="#fff"

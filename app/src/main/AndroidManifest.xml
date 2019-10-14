@@ -47,6 +47,8 @@
         <activity android:name=".activity_bangun_dari_awal_2"/>
         <activity android:name=".activity_renovasi"/>
         <activity android:name=".activity_renovasi_2"/>
+        <activity android:name=".activity_tanggapan_mandor"/>
+        <activity android:name=".activity_konfirmasi_bangun_renovasi"/>
     </application>
 
 </manifest>

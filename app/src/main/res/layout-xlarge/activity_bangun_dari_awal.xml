@@ -95,7 +95,7 @@
             android:layout_width="wrap_content"
             android:layout_height="70dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="95dp"
+            android:layout_marginTop="105dp"
             android:orientation="horizontal">
 
             <RadioButton
@@ -153,7 +153,8 @@
             android:ems="10"
             android:hint="@string/app_mandor_bangun_awal_4"
             android:importantForAutofill="no"
-            android:inputType="number"
+            android:inputType="numberDecimal"
+            android:gravity="top|start"
             android:textSize="40sp"/>
 
         <TextView
@@ -200,9 +201,9 @@
             android:layout_height="60dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="560dp"
-            android:background="@color/colorPrimary"
+            android:background="#bdbdbd"
             android:text="@string/app_mandor_bangun_awal_6"
-            android:textColor="#fff"
+            android:textColor="#000"
             android:textSize="40sp"
             android:textAllCaps="false"/>
 
@@ -211,7 +212,8 @@
             style="@style/Widget.AppCompat.Button"
             android:layout_width="250dp"
             android:layout_height="60dp"
-            android:layout_gravity="center_horizontal"
+            android:layout_gravity="end"
+            android:layout_marginEnd="60dp"
             android:layout_marginTop="840dp"
             android:background="@color/colorPrimary"
             android:text="@string/app_mandor_bangun_awal_8"
@@ -227,14 +229,13 @@
             android:layout_marginTop="680dp"
             android:text="@string/app_mandor_bangun_awal_7"
             android:textColor="#000"
-            android:textSize="25sp"
-            android:visibility="gone"/>
+            android:textSize="25sp" />
 
         <TextView
             android:id="@+id/fileName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="145dp"
+            android:layout_marginStart="210dp"
             android:layout_marginTop="680dp"
             android:text=""
             android:textColor="#000"

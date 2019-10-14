@@ -175,7 +175,7 @@
             android:layout_width="match_parent"
             android:layout_height="250dp"
             android:contentDescription="@string/app_fragment_home_menu_5"
-            android:src="@drawable/panduan" />
+            android:src="@drawable/bantuan" />
 
         <TextView
             android:id="@+id/textView5"

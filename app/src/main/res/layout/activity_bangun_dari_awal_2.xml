@@ -79,12 +79,18 @@
 
     </android.support.v7.widget.CardView>
 
-    <android.support.v4.widget.NestedScrollView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <RelativeLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="35dp"
             android:layout_marginTop="150dp">
@@ -252,7 +258,7 @@
                    tools:ignore="LabelFor" />
 
                 <android.support.v7.widget.CardView
-                    android:id="@+id/cv_title_alamat"
+                    android:id="@+id/cv_title_tgl_survey"
                     android:layout_width="115dp"
                     android:layout_height="35dp"
                     android:layout_marginStart="10dp"
@@ -265,34 +271,32 @@
                     app:cardMaxElevation="2dp"
                     app:cardUseCompatPadding="true">
 
-                <TextView
-                    android:id="@+id/textView6"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/app_mandor_bangun_awal_next_6"
-                    android:textAlignment="center"
-                    android:textColor="#ffffff" />
+                    <TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/app_mandor_bangun_awal_next_7"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff" />
 
                 </android.support.v7.widget.CardView>
 
                 <EditText
-                    android:id="@+id/input_alamat_bg_awal"
+                    android:id="@+id/input_tgl_bg_awal"
                     android:layout_width="160dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
                     android:layout_marginTop="240dp"
                     android:layout_marginEnd="20dp"
                     android:ems="10"
+                    android:hint="@string/hint"
                     android:importantForAutofill="no"
-                    android:inputType="textMultiLine"
-                    android:maxLines="10"
-                    android:scrollbars="vertical"
+                    android:inputType="date"
                     android:text=""
                     tools:ignore="LabelFor" />
 
-
                 <android.support.v7.widget.CardView
-                    android:id="@+id/cv_title_tgl_survey"
+                    android:id="@+id/cv_title_alamat"
                     android:layout_width="115dp"
                     android:layout_height="35dp"
                     android:layout_marginStart="10dp"
@@ -305,115 +309,95 @@
                     app:cardMaxElevation="2dp"
                     app:cardUseCompatPadding="true">
 
-   <TextView
-       android:id="@+id/textView7"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:text="@string/app_mandor_bangun_awal_next_7"
-       android:textAlignment="center"
-       android:textColor="#ffffff" />
+                    <TextView
+                        android:id="@+id/textView7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/app_mandor_bangun_awal_next_6"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff" />
 
-</android.support.v7.widget.CardView>
+                </android.support.v7.widget.CardView>
 
                 <EditText
-                    android:id="@+id/input_tgl_bg_awal"
+                    android:id="@+id/input_alamat_bg_awal"
                     android:layout_width="160dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
                     android:layout_marginTop="300dp"
                     android:layout_marginEnd="20dp"
                     android:ems="10"
-                    android:hint="@string/hint"
                     android:importantForAutofill="no"
-                    android:inputType="date"
+                    android:inputType="textMultiLine"
+                    android:maxLines="6"
+                    android:gravity="top|start"
+                    android:scrollbars="vertical"
+                    android:scrollHorizontally="false"
                     android:text=""
                     tools:ignore="LabelFor" />
 
-<Button
-   android:id="@+id/button_kirim_bg_awal"
-   style="@style/Widget.AppCompat.Button"
-   android:layout_width="100dp"
-   android:layout_height="30dp"
-   android:layout_gravity="center_horizontal"
-   android:layout_marginTop="420dp"
-   android:background="@color/colorPrimary"
-   android:text="@string/app_mandor_bangun_awal_next_8"
-   android:textColor="#fff" />
+                <Button
+                    android:id="@+id/button_kirim_bg_awal"
+                    style="@style/Widget.AppCompat.Button"
+                    android:layout_width="100dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="450dp"
+                    android:background="@color/colorPrimary"
+                    android:text="@string/app_mandor_bangun_awal_next_8"
+                    android:textColor="#fff" />
 
+                <!-- DUMMY -->
+
+                <TextView
+                    android:id="@+id/rb_old"
+                    android:layout_width="240dp"
+                    android:layout_height="240dp"
+                    android:text=""
+                    android:textColor="#000"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.013"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.465"
+                    android:visibility="gone"/>
+
+                <TextView
+                    android:id="@+id/luas_old"
+                    android:layout_width="240dp"
+                    android:layout_height="240dp"
+                    android:text=""
+                    android:textColor="#fff"
+                    android:visibility="gone"/>
+
+                <TextView
+                    android:id="@+id/desain_old"
+                    android:layout_width="240dp"
+                    android:layout_height="240dp"
+                    android:text=""
+                    android:textColor="#000"
+                    android:visibility="gone"/>
+
+                <TextView
+                    android:id="@+id/nama_old"
+                    android:layout_width="240dp"
+                    android:layout_height="240dp"
+                    android:text=""
+                    android:textColor="#fff"
+                    android:visibility="gone"/>
+
+                <TextView
+                    android:id="@+id/nik_old"
+                    android:layout_width="240dp"
+                    android:layout_height="240dp"
+                    android:text=""
+                    android:textColor="#fff"
+                    android:visibility="gone"/>
+
+                <!-- DUMMY END -->
             </android.support.v7.widget.CardView>
         </RelativeLayout>
-    </android.support.v4.widget.NestedScrollView>
-
-    <!-- DUMMY -->
-
-    <TextView
-        android:id="@+id/rb_old"
-        android:layout_width="240dp"
-        android:layout_height="240dp"
-        android:text=""
-        android:textColor="#000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.013"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.465"
-        android:visibility="gone"/>
-
-    <TextView
-        android:id="@+id/luas_old"
-        android:layout_width="240dp"
-        android:layout_height="240dp"
-        android:text=""
-        android:textColor="#fff"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.945"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.091"
-        android:visibility="gone"/>
-
-    <TextView
-        android:id="@+id/desain_old"
-        android:layout_width="240dp"
-        android:layout_height="240dp"
-        android:text=""
-        android:textColor="#000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.914"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        android:visibility="gone"/>
-
-    <TextView
-        android:id="@+id/nama_old"
-        android:layout_width="240dp"
-        android:layout_height="240dp"
-        android:text=""
-        android:textColor="#fff"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.013"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.065"
-        android:visibility="gone"/>
-
-    <TextView
-        android:id="@+id/nik_old"
-        android:layout_width="240dp"
-        android:layout_height="240dp"
-        android:text=""
-        android:textColor="#fff"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.013"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.265"
-        android:visibility="gone"/>
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>

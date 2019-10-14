@@ -63,5 +63,4 @@ public class activity_sewa_jasa extends AppCompatActivity {
             }
         });
     }
-
 }

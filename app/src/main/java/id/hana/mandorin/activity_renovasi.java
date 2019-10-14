@@ -81,8 +81,6 @@ public class activity_renovasi extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(activity_renovasi.this, activity_sewa_jasa.class);
-                intent.putExtra("nik", nik);
-                intent.putExtra("nama", nama);
                 startActivity(intent);
             }
         });
