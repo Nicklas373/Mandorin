@@ -28,7 +28,7 @@ import java.util.Map;
 
 public class activity_tanggapan_mandor extends AppCompatActivity {
 
-    private TextView dummy_old_tg, nama_prev , nik_prev;;
+    private TextView dummy_old_tg, nama_prev , nik_prev;
     private EditText nama_tg, lokasi_tg, tg;
     private RadioGroup radio_group;
     private Button kirim_tg;
