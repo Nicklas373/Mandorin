@@ -15,21 +15,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Locale;
-import java.util.Map;
 
 public class activity_login_2 extends AppCompatActivity {
 
@@ -39,8 +27,6 @@ public class activity_login_2 extends AppCompatActivity {
     private Button btnlogin_2;
     SharedPreferences pref;
     SharedPreferences.Editor editor;
-
-    String HttpUrl = "http://mandorin.site/mandorin/php/user/create_init_user.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -117,7 +103,6 @@ public class activity_login_2 extends AppCompatActivity {
                                             SharedPreferences.Editor editor = pref.edit();
                                             editor.putString("email", dummy_debug.getText().toString());
                                             editor.apply();
-                                            init_user_data();
                                             Intent intent = new Intent(activity_login_2.this, activity_akun.class);
                                             startActivity(intent);
                                             finish();
@@ -126,64 +111,6 @@ public class activity_login_2 extends AppCompatActivity {
                                 });
                     }
                 });
-    }
-
-    private void init_user_data() {
-
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, HttpUrl,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String ServerResponse) {
-
-                        // Showing response message coming from server.
-                        Toast.makeText(activity_login_2.this, ServerResponse, Toast.LENGTH_LONG).show();
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError volleyError) {
-
-                        // Showing error message if something goes wrong.
-                        Toast.makeText(activity_login_2.this, volleyError.toString(), Toast.LENGTH_LONG).show();
-                    }
-                })
-
-        {
-            @Override
-            protected Map<String, String> getParams() {
-
-                String fname = "";
-                String email = dummy_debug.getText().toString();
-                String umur = "";
-                String nik = "";
-                String telp = "";
-                String alamat = "";
-                String foto_user ="";
-                String last_modified = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
-
-                // Creating Map String Params.
-                Map<String, String> params = new HashMap<String, String>();
-
-                // Adding All values to Params.
-                params.put("nama_lengkap", fname);
-                params.put("email", email);
-                params.put("umur", umur);
-                params.put("nik", nik);
-                params.put("telp", telp);
-                params.put("alamat", alamat);
-                params.put("foto_user", foto_user);
-                params.put("last_modified", last_modified);
-
-                return params;
-            }
-
-        };
-
-        // Creating RequestQueue.
-        RequestQueue requestQueue = Volley.newRequestQueue(activity_login_2.this);
-
-        // Adding the StringRequest object into requestQueue.
-        requestQueue.add(stringRequest);
     }
 
     private boolean internet_available(){

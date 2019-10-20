@@ -47,10 +47,7 @@ import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.HashMap;
-import java.util.Locale;
 import java.util.Map;
 
 public class activity_edit_akun extends AppCompatActivity {
@@ -341,7 +338,6 @@ public class activity_edit_akun extends AppCompatActivity {
                 String telp_edit   = editphone.getText().toString();
                 String alamat_edit   = editaddress.getText().toString();
                 String foto_user_edit   = ("http://www.mandorin.site/mandorin/uploads/" + img);
-                String date_edit   = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
 
                 // Creating Map String Params.
                 Map<String, String> params = new HashMap<String, String>();
@@ -354,7 +350,6 @@ public class activity_edit_akun extends AppCompatActivity {
                 params.put("telp", telp_edit  );
                 params.put("alamat", alamat_edit  );
                 params.put("foto_user", foto_user_edit  );
-                params.put("last_modified", date_edit  );
 
                 return params;
             }

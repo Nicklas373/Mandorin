@@ -23,10 +23,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.HashMap;
-import java.util.Locale;
 import java.util.Map;
 
 public class activity_register_2 extends AppCompatActivity {
@@ -75,7 +72,7 @@ public class activity_register_2 extends AppCompatActivity {
                 }
 
                 if (password.length() < 6) {
-                    Toast.makeText(getApplicationContext(), "Password too short, enter minimum 6 characters!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Password terlalu pendek, minimal 6 karakter", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
@@ -85,10 +82,10 @@ public class activity_register_2 extends AppCompatActivity {
                             .addOnCompleteListener(activity_register_2.this, new OnCompleteListener() {
                                 @Override
                                 public void onComplete(@NonNull Task task) {
-                                    Toast.makeText(activity_register_2.this, "createUserWithEmail:onComplete:" + task.isSuccessful(), Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(activity_register_2.this, "Akun berhasil di buat" + task.isSuccessful(), Toast.LENGTH_SHORT).show();
 
                                     if (!task.isSuccessful()) {
-                                        Toast.makeText(activity_register_2.this, "Authentication failed." + task.getException(),
+                                        Toast.makeText(activity_register_2.this, "Akun gagal di buat" + task.getException(),
                                                 Toast.LENGTH_SHORT).show();
                                     } else {
                                         createdata();
@@ -158,7 +155,7 @@ public class activity_register_2 extends AppCompatActivity {
                 String telp = "";
                 String alamat = "";
                 String foto_user = "";
-                String date = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
+
 
                 // Creating Map String Params.
                 Map<String, String> params = new HashMap<String, String>();
@@ -171,7 +168,6 @@ public class activity_register_2 extends AppCompatActivity {
                 params.put("telp", telp);
                 params.put("alamat", alamat);
                 params.put("foto_user", foto_user);
-                params.put("last_modified", date);
 
                 return params;
             }

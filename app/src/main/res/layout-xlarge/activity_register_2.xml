@@ -81,8 +81,8 @@
 
         <!-- Dummy Debugging Begin !-->
         <TextView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_width="440dp"
+            android:layout_height="440dp"
             android:id="@+id/dummy_usermail_register" />
         <!-- Dummy Debugging End !-->
 
