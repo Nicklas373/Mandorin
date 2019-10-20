@@ -3,13 +3,12 @@ package id.hana.mandorin;
 import android.Manifest;
 import android.content.DialogInterface;
 import android.content.pm.ActivityInfo;
+import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.widget.Toast;
 
 import com.kishan.askpermission.AskPermission;
 import com.kishan.askpermission.ErrorCallback;
@@ -44,7 +43,6 @@ public class MainActivity extends AppCompatActivity implements PermissionCallbac
     private void reqPermission() {
         new AskPermission.Builder(this).setPermissions(
                 Manifest.permission.READ_EXTERNAL_STORAGE,
-                Manifest.permission.ACCESS_NETWORK_STATE,
                 Manifest.permission.INTERNET)
                 .setCallback(this)
                 .setErrorCallback(this)

@@ -58,11 +58,11 @@
         android:textColor="#000"/>
 
     <ImageView
-        android:layout_width="280dp"
-        android:layout_height="280dp"
+        android:layout_width="480dp"
+        android:layout_height="340dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="150dp"
-        android:src="@mipmap/ic_launcher"
+        android:src="@drawable/send"
         android:contentDescription="@string/app_name"/>
 
     <TextView
@@ -122,8 +122,9 @@
         style="@style/Widget.AppCompat.Button"
         android:layout_width="200dp"
         android:layout_height="80dp"
-        android:layout_marginStart="540dp"
-        android:layout_marginTop="1120dp"
+        android:layout_gravity="end"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="1100dp"
         android:background="@color/colorPrimary"
         android:text="@string/app_mandor_konfirmasi_8"
         android:textColor="#fff"
