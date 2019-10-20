@@ -25,6 +25,7 @@
 
     <application
         android:allowBackup="true"
+        android:usesCleartextTraffic="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -49,6 +50,14 @@
         <activity android:name=".activity_renovasi_2"/>
         <activity android:name=".activity_tanggapan_mandor"/>
         <activity android:name=".activity_konfirmasi_bangun_renovasi"/>
+        <activity android:name=".activity_login"/>
+        <activity android:name=".activity_login_2"/>
+        <activity android:name=".activity_register"/>
+        <activity android:name=".activity_register_2"/>
+        <activity android:name=".activity_reset_pass"/>
+        <activity android:name=".activity_akun"/>
+        <activity android:name=".activity_user_profile"/>
+        <activity android:name=".activity_edit_akun"/>
     </application>
 
 </manifest>

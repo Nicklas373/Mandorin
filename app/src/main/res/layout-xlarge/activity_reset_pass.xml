@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_konfirmasi_awal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardBackgroundColor="#fff"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_mandor_reset_title"
+            android:textSize="70sp"
+            android:textAllCaps="false"
+            android:textColor="#000"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="120dp"/>
+
+        <EditText
+            android:id="@+id/email_reset"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="360dp"
+            android:textSize="50sp"
+            android:inputType="textEmailAddress"
+            android:hint="@string/app_mandor_reset_1"
+            android:importantForAutofill="no" />
+
+        <TextView
+            android:id="@+id/btn_batal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="15sp"
+            android:layout_gravity="bottom"
+            android:textSize="50sp"
+            android:textColor="#000"
+            android:text="@string/app_mandor_register_5" />
+
+        <Button
+            android:id="@+id/reset_account"
+            android:layout_width="260dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="18sp"
+            android:textSize="48sp"
+            android:background="@color/colorPrimary"
+            android:textColor="#fff"
+            android:textAllCaps="false"
+            android:text="@string/app_mandor_register_4"
+            android:layout_gravity="bottom|end" />
+
+    </android.support.v7.widget.CardView>
+
+</android.support.constraint.ConstraintLayout>
