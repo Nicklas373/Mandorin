@@ -50,8 +50,8 @@ public class activity_user_profile extends AppCompatActivity {
         userfname = (TextView) findViewById(R.id.userFullName);
         usermail = (TextView) findViewById(R.id.userEmail);
         userid = (TextView) findViewById(R.id.user_id);
-        userage = (TextView) findViewById(R.id.user_telp);
-        userphone = (TextView) findViewById(R.id.user_age);
+        userage = (TextView) findViewById(R.id.user_age);
+        userphone = (TextView) findViewById(R.id.user_telp);
         useraddress = (TextView) findViewById(R.id.user_address);
         userpic_dummy = (TextView) findViewById(R.id.dummy_userpic);
         userpic = (ImageView) findViewById(R.id.img_head_1);
