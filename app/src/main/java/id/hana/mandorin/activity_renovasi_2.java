@@ -1,6 +1,7 @@
 package id.hana.mandorin;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -40,6 +41,13 @@ public class activity_renovasi_2 extends AppCompatActivity {
      */
     String HttpUrl = "http://mandorin.site/mandorin/php/user/create_renovasi.php";
 
+    /*
+     * SharedPreferences Usage
+     * I want to reduce passing usage, since it seems mess with app runtime sometimes
+     */
+    SharedPreferences pref;
+    SharedPreferences.Editor editor;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,21 +71,13 @@ public class activity_renovasi_2 extends AppCompatActivity {
         back = findViewById(R.id.back_activity_renovasi_2);
 
         /*
-         *
-         * Passing data from last activity
+         * SharedPreferences Declaration
          */
-        if(getIntent().getExtras()!=null){
-            Bundle bundle = getIntent().getExtras();
-            nama_prev.setText(bundle.getString("nama"));
-            nik_prev.setText(bundle.getString("nik"));
-            data_renovasi.setText(bundle.getString("data_renovasi"));
-            rb_old.setText(bundle.getString("jenis_borongan"));
-        } else {
-            nama_prev.setText(getIntent().getStringExtra("nama"));
-            nik_prev.setText(getIntent().getStringExtra("nik"));
-            data_renovasi.setText(getIntent().getStringExtra("data_renovasi"));
-            rb_old.setText(getIntent().getStringExtra("data1"));
-        }
+        pref = getApplicationContext().getSharedPreferences("data_bangun_dari_awal", 0);
+        nama_prev.setText(pref.getString("nama",null));
+        nik_prev.setText(pref.getString("nik",null));
+        data_renovasi.setText(pref.getString("data_renovasi", null));
+        rb_old.setText(pref.getString("jenis_borongan", null));
 
         kirim.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,6 +98,10 @@ public class activity_renovasi_2 extends AppCompatActivity {
                     try
                     {
                         createdata();
+                        SharedPreferences.Editor editor;
+                        editor=pref.edit();
+                        editor.clear();
+                        editor.apply();
                         Intent intent = new Intent(activity_renovasi_2.this, activity_konfirmasi_bangun_renovasi.class);
                         startActivity(intent);
                     } catch (IllegalArgumentException e)
@@ -112,6 +116,10 @@ public class activity_renovasi_2 extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                SharedPreferences.Editor editor;
+                editor=pref.edit();
+                editor.clear();
+                editor.apply();
                 Intent intent = new Intent(activity_renovasi_2.this, activity_renovasi.class);
                 startActivity(intent);
             }

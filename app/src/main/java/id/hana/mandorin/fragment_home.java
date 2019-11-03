@@ -17,11 +17,13 @@ public class fragment_home extends Fragment {
 
     public static final String TITLE = "Menu";
 
-    private CardView menu_1, menu_6;
+    private CardView menu_1, menu_2, menu_3, menu_6;
+
     private FirebaseAuth.AuthStateListener authListener;
     private FirebaseAuth auth;
 
     public static fragment_home newInstance() {
+
         return new fragment_home();
     }
 
@@ -36,21 +38,38 @@ public class fragment_home extends Fragment {
         // Fragment locked in portrait screen orientation
         getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-        auth = FirebaseAuth.getInstance();
-
         menu_1 = view.findViewById(R.id.cv_menu_1);
+        menu_2 = view.findViewById(R.id.cv_menu_2);
+        menu_3 = view.findViewById(R.id.cv_menu_3);
         menu_6 = view.findViewById(R.id.cv_menu_6);
 
         menu_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), activity_mandor.class);
+                getActivity().startActivity(intent);
+
+            }
+        });
+
+        menu_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), activity_kontrak.class);
+                getActivity().startActivity(intent);
+
+            }
+        });
+
+        menu_3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 if (auth.getCurrentUser() != null) {
-                    Intent intent = new Intent(getActivity(), activity_mandor.class);
+                    Intent intent = new Intent(getActivity(), activity_transaksi.class);
                     getActivity().startActivity(intent);
                 } else {
                     Toast.makeText(getActivity(),"Harap Login di Menu Akun untuk melanjutkan", Toast.LENGTH_SHORT).show();
                 }
-
             }
         });
 

@@ -1,6 +1,7 @@
 package id.hana.mandorin;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -23,6 +24,13 @@ public class activity_renovasi extends AppCompatActivity {
     private RadioGroup rg;
     private RadioButton rb_debug;
 
+    /*
+     * SharedPreferences Usage
+     * I want to reduce passing usage, since it seems mess with app runtime sometimes
+     */
+    SharedPreferences pref;
+    SharedPreferences.Editor editor;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,10 +46,11 @@ public class activity_renovasi extends AppCompatActivity {
         CardView back = findViewById(R.id.back_activity_renovasi);
 
         /*
-         * Passing data from last activity
+         * SharedPreferences Declaration
          */
-        final String nik = getIntent().getExtras().getString("nik");
-        final String nama = getIntent().getExtras().getString("nama");
+        pref = getApplicationContext().getSharedPreferences("data_mandor", 0);
+        final String nik = pref.getString("nik",null);
+        final String nama = pref.getString("nama",null);
 
         selanjutnya.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,13 +70,14 @@ public class activity_renovasi extends AppCompatActivity {
                                     dummy.setText(new_dummy_2);
                                 break;
                             }
-                            Bundle bundle = new Bundle();
-                            bundle.putString("nik", nik);
-                            bundle.putString("nama", nama);
-                            bundle.putString("data_renovasi", data_renovasi.getText().toString());
-                            bundle.putString("jenis_borongan", dummy.getText().toString());
+                            pref = getApplicationContext().getSharedPreferences("data_renovasi", 0);
+                            SharedPreferences.Editor editor = pref.edit();
+                            editor.putString("nik", nik);
+                            editor.putString("nama", nama);
+                            editor.putString("data_renovasi", data_renovasi.getText().toString());
+                            editor.putString("jenis_borongan", dummy.getText().toString());
+                            editor.apply();
                             Intent intent = new Intent(activity_renovasi.this, activity_renovasi_2.class);
-                            intent.putExtras(bundle);
                             startActivity(intent);
                 }
             }

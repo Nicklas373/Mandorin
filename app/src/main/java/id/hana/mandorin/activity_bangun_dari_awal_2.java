@@ -1,15 +1,15 @@
 package id.hana.mandorin;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.content.pm.ActivityInfo;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -42,6 +42,13 @@ public class activity_bangun_dari_awal_2 extends AppCompatActivity {
      */
     String HttpUrl = "http://mandorin.site/mandorin/php/user/create.php";
 
+    /*
+     * SharedPreferences Usage
+     * I want to reduce passing usage, since it seems mess with app runtime sometimes
+     */
+    SharedPreferences pref;
+    SharedPreferences.Editor editor;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,22 +73,14 @@ public class activity_bangun_dari_awal_2 extends AppCompatActivity {
         back = findViewById(R.id.back_activity_bangun_dari_awal_2);
 
         /*
-         * Passing data from last activity
+         * SharedPreferences Declaration
          */
-        if(getIntent().getExtras()!=null){
-            Bundle bundle = getIntent().getExtras();
-            nama_prev.setText(bundle.getString("nama"));
-            nik_prev.setText(bundle.getString("nik"));
-            luas_old.setText(bundle.getString("luas_tanah"));
-            rb_old.setText(bundle.getString("jenis_borongan"));
-            desain_old.setText(bundle.getString("desain_rumah"));
-        } else {
-            nama_prev.setText(getIntent().getStringExtra("nama"));
-            nik_prev.setText(getIntent().getStringExtra("nik"));
-            luas_old.setText(getIntent().getStringExtra("luas_tanah" + " m"));
-            rb_old.setText(getIntent().getStringExtra("data1"));
-            desain_old.setText(getIntent().getStringExtra("data2"));
-        }
+        pref = getApplicationContext().getSharedPreferences("data_bangun_dari_awal", 0);
+        nama_prev.setText(pref.getString("nama",null));
+        nik_prev.setText(pref.getString("nik",null));
+        luas_old.setText(pref.getString("luas_tanah", null));
+        rb_old.setText(pref.getString("jenis_borongan", null));
+        desain_old.setText(pref.getString("desain_rumah", null));
 
         kirim.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -102,6 +101,10 @@ public class activity_bangun_dari_awal_2 extends AppCompatActivity {
                     try
                     {
                         createdata();
+                        SharedPreferences.Editor editor;
+                        editor=pref.edit();
+                        editor.clear();
+                        editor.apply();
                         Intent intent = new Intent(activity_bangun_dari_awal_2.this, activity_konfirmasi_bangun_renovasi.class);
                         startActivity(intent);
                     } catch (IllegalArgumentException e)
@@ -116,14 +119,12 @@ public class activity_bangun_dari_awal_2 extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Bundle bundle = new Bundle();
-                bundle.putString("nik", nik_prev.getText().toString());
-                bundle.putString("nama", nama_prev.getText().toString());
-                bundle.putString("luas_tanah", luas_old.getText().toString());
-                bundle.putString("jenis_borongan", rb_old.getText().toString());
-                bundle.putString("desain_rumah", desain_old.getText().toString());
+                SharedPreferences.Editor editor;
+                editor=pref.edit();
+                editor.clear();
+                editor.apply();
                 Intent intent = new Intent(activity_bangun_dari_awal_2.this, activity_bangun_dari_awal.class);
-                intent.putExtras(bundle);
+                startActivity(intent);
             }
         });
     }

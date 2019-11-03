@@ -2,20 +2,26 @@ package id.hana.mandorin;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.ProgressDialog;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.app.ProgressDialog;
-import android.content.Intent;
-import android.net.Uri;
 import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -24,11 +30,6 @@ import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-
-import android.content.pm.ActivityInfo;
-import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 
 public class activity_bangun_dari_awal extends AppCompatActivity {
 
@@ -55,6 +56,13 @@ public class activity_bangun_dari_awal extends AppCompatActivity {
     private CardView back;
     ProgressDialog dialog;
 
+    /*
+     * SharedPreferences Usage
+     * I want to reduce passing usage, since it seems mess with app runtime sometimes
+     */
+    SharedPreferences pref;
+    SharedPreferences.Editor editor;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,10 +81,11 @@ public class activity_bangun_dari_awal extends AppCompatActivity {
         back = findViewById(R.id.back_activity_bangun_dari_awal);
 
         /*
-         * Passing data from last activity
+         * SharedPreferences Declaration
          */
-        final String nik = getIntent().getExtras().getString("nik");
-        final String nama = getIntent().getExtras().getString("nama");
+        pref = getApplicationContext().getSharedPreferences("data_mandor", 0);
+        final String nik = pref.getString("nik",null);
+        final String nama = pref.getString("nama",null);
 
         //Requesting storage permission
         requestStoragePermission();
@@ -118,14 +127,15 @@ public class activity_bangun_dari_awal extends AppCompatActivity {
                                 }
                             }).start();
 
-                            Bundle bundle = new Bundle();
-                            bundle.putString("nik", nik);
-                            bundle.putString("nama", nama);
-                            bundle.putString("luas_tanah", luas_tanah.getText().toString());
-                            bundle.putString("jenis_borongan", dummy.getText().toString());
-                            bundle.putString("desain_rumah", FileName.getText().toString());
+                            pref = getApplicationContext().getSharedPreferences("data_bangun_dari_awal", 0);
+                            SharedPreferences.Editor editor = pref.edit();
+                            editor.putString("nik", nik);
+                            editor.putString("nama", nama);
+                            editor.putString("luas_tanah", luas_tanah.getText().toString());
+                            editor.putString("jenis_borongan", dummy.getText().toString());
+                            editor.putString("desain_rumah", FileName.getText().toString());
+                            editor.apply();
                             Intent intent = new Intent(activity_bangun_dari_awal.this, activity_bangun_dari_awal_2.class);
-                            intent.putExtras(bundle);
                             startActivity(intent);
                     } else {
                         Toast.makeText(activity_bangun_dari_awal.this, "Anda Belum Menggungah Berkas", Toast.LENGTH_LONG).show();
@@ -138,8 +148,6 @@ public class activity_bangun_dari_awal extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(activity_bangun_dari_awal.this, activity_sewa_jasa.class);
-                intent.putExtra("nik", nik);
-                intent.putExtra("nama", nama);
                 startActivity(intent);
             }
         });

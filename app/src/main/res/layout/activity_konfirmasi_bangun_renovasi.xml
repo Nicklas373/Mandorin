@@ -75,41 +75,41 @@
         android:textStyle="bold"
         android:layout_gravity="center_horizontal"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="start"
-        android:layout_marginTop="360dp"
-        android:text="@string/app_mandor_konfirmasi_3"
-        android:textSize="20sp"
-        android:textColor="#000"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="360dp"
+            android:text="@string/app_mandor_konfirmasi_3"
+            android:textSize="20sp"
+            android:textColor="#000"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="390dp"
-        android:text="@string/app_mandor_konfirmasi_4"
-        android:textSize="20sp"
-        android:textColor="#000"
-        android:layout_gravity="start" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="390dp"
+            android:text="@string/app_mandor_konfirmasi_4"
+            android:textSize="20sp"
+            android:textColor="#000"
+            android:layout_gravity="center_horizontal" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="420dp"
-        android:text="@string/app_mandor_konfirmasi_5"
-        android:textSize="20sp"
-        android:textColor="#000"
-        android:layout_gravity="start" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="420dp"
+            android:text="@string/app_mandor_konfirmasi_5"
+            android:textSize="20sp"
+            android:textColor="#000"
+            android:layout_gravity="center_horizontal" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="450dp"
-        android:text="@string/app_mandor_konfirmasi_6"
-        android:textSize="20sp"
-        android:textColor="#000"
-        android:layout_gravity="start"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="450dp"
+            android:text="@string/app_mandor_konfirmasi_6"
+            android:textSize="20sp"
+            android:textColor="#000"
+            android:layout_gravity="center_horizontal"/>
 
     <TextView
         android:layout_width="wrap_content"

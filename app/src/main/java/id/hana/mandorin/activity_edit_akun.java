@@ -293,6 +293,7 @@ public class activity_edit_akun extends AppCompatActivity {
                 selectedFilePath = file_path.getPath(this, selectedFileUri);
 
                 if (selectedFilePath != null && !selectedFilePath.equals("")) {
+                    dummyimage.setText(selectedFilePath);
                     Glide.with(activity_edit_akun.this)
                             .load(selectedFilePath)
                             .into(picedit);
@@ -301,6 +302,7 @@ public class activity_edit_akun extends AppCompatActivity {
                     int imageResource = getResources().getIdentifier(uri, null, getPackageName());
                     Drawable res = getResources().getDrawable(imageResource);
                     picedit.setImageDrawable(res);
+                    dummyimage.setText("");
                 }
             }
         }
@@ -330,14 +332,14 @@ public class activity_edit_akun extends AppCompatActivity {
         {
             @Override
             protected Map<String, String> getParams() {
-                String img = selectedFilePath.substring(selectedFilePath.lastIndexOf("/")+1);
+                String dummy_image_edit= dummyimage.getText().toString();
                 String nama_edit = editname.getText().toString();
                 String usermail_edit = editmail.getText().toString();
                 String umur_edit  = editage.getText().toString();
                 String nik_edit   = editid.getText().toString();
                 String telp_edit   = editphone.getText().toString();
                 String alamat_edit   = editaddress.getText().toString();
-                String foto_user_edit   = ("http://www.mandorin.site/mandorin/uploads/" + img);
+                String foto_user_edit   = ("http://www.mandorin.site/mandorin/uploads/" + dummy_image_edit);
 
                 // Creating Map String Params.
                 Map<String, String> params = new HashMap<String, String>();

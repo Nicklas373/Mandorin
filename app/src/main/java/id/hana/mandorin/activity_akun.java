@@ -1,11 +1,13 @@
 package id.hana.mandorin;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.view.View;
@@ -100,19 +102,49 @@ public class activity_akun extends AppCompatActivity {
         log_out.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(internet_available()){
-                    auth.signOut();
-                    editor=pref.edit();
-                    editor.clear();
-                    editor.apply();
-                    Intent intent = new Intent(activity_akun.this, MainActivity.class);
-                    startActivity(intent);
-                    Toast.makeText(getApplicationContext(), "Anda sudah log out", Toast.LENGTH_SHORT).show();
-                }else{
-                    Toast.makeText(getApplicationContext(), "Harap Periksa Koneksi Internet Anda", Toast.LENGTH_SHORT).show();
-                }
+                log_out_dialog();
             }
         });
+    }
+
+    private void log_out_dialog(){
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                this);
+
+        // set title dialog
+        alertDialogBuilder.setTitle("Log Out");
+
+        // set pesan dari dialog
+        alertDialogBuilder
+                .setMessage("Apakah anda ingin log out?")
+                .setIcon(R.mipmap.ic_launcher)
+                .setCancelable(false)
+                .setPositiveButton("Log Out",new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog,int id) {
+                        if(internet_available()){
+                            auth.signOut();
+                            editor=pref.edit();
+                            editor.clear();
+                            editor.apply();
+                            Intent intent = new Intent(activity_akun.this, MainActivity.class);
+                            startActivity(intent);
+                            Toast.makeText(getApplicationContext(), "Anda sudah log out", Toast.LENGTH_SHORT).show();
+                        }else{
+                            Toast.makeText(getApplicationContext(), "Harap Periksa Koneksi Internet Anda", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                })
+                .setNegativeButton("Batal",new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+
+        // membuat alert dialog dari builder
+        AlertDialog alertDialog = alertDialogBuilder.create();
+
+        // menampilkan alert dialog
+        alertDialog.show();
     }
 
     private boolean internet_available(){

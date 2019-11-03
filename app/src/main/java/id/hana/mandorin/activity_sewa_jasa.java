@@ -1,6 +1,7 @@
 package id.hana.mandorin;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -14,6 +15,13 @@ public class activity_sewa_jasa extends AppCompatActivity {
      * Textview, Imageview, CardView & Button
      */
     private CardView bg_awal, renovasi, back;
+
+    /*
+     * SharedPreferences Usage
+     * I want to reduce passing usage, since it seems mess with app runtime sometimes
+     */
+    SharedPreferences pref;
+    SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,17 +38,16 @@ public class activity_sewa_jasa extends AppCompatActivity {
         renovasi = findViewById(R.id.sewa_jasa_menu_1);
 
         /*
-         * Passing data from last activity
+         * SharedPreferences Declaration
          */
-        final String nik = getIntent().getExtras().getString("nik");
-        final String nama = getIntent().getExtras().getString("nama");
+        pref = getApplicationContext().getSharedPreferences("data_mandor", 0);
+        final String nik = pref.getString("nik",null);
+        final String nama = pref.getString("nama",null);
 
         bg_awal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(activity_sewa_jasa.this, activity_bangun_dari_awal.class);
-                intent.putExtra("nik", nik);
-                intent.putExtra("nama", nama);
                 startActivity(intent);
             }
         });
@@ -57,8 +64,6 @@ public class activity_sewa_jasa extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(activity_sewa_jasa.this, activity_renovasi.class);
-                intent.putExtra("nik", nik);
-                intent.putExtra("nama", nama);
                 startActivity(intent);
             }
         });

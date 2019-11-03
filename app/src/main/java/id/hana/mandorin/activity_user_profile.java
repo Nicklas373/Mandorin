@@ -123,7 +123,7 @@ public class activity_user_profile extends AppCompatActivity {
             try {
                 userfname.setText(json.getString("nama_lengkap"));
                 usermail.setText(json.getString("email"));
-                userage.setText(json.getString("umur"));
+                userage.setText(json.getString("umur") + " Tahun");
                 userid.setText(json.getString("nik"));
                 userphone.setText(json.getString("telp"));
                 useraddress.setText(json.getString("alamat"));

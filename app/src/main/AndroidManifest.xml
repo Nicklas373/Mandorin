@@ -48,7 +48,6 @@
         <activity android:name=".activity_bangun_dari_awal_2"/>
         <activity android:name=".activity_renovasi"/>
         <activity android:name=".activity_renovasi_2"/>
-        <activity android:name=".activity_tanggapan_mandor"/>
         <activity android:name=".activity_konfirmasi_bangun_renovasi"/>
         <activity android:name=".activity_login"/>
         <activity android:name=".activity_login_2"/>
@@ -58,6 +57,10 @@
         <activity android:name=".activity_akun"/>
         <activity android:name=".activity_user_profile"/>
         <activity android:name=".activity_edit_akun"/>
+        <activity android:name=".activity_kontrak"/>
+        <activity android:name=".activity_kontrak_renovasi"/>
+        <activity android:name=".activity_kontrak_riwayat"/>
+        <activity android:name=".activity_transaksi"/>
     </application>
 
 </manifest>

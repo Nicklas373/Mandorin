@@ -1,6 +1,7 @@
 package id.hana.mandorin;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -10,9 +11,11 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.io.ByteArrayOutputStream;
 
@@ -23,7 +26,16 @@ public class activity_profile_mandor extends AppCompatActivity {
      * Textview, Imageview, CardView & Button
      */
     private TextView Nama, Umur, Alamat, Nik, Tempat, Tgl_lahir, Agama, Lama_Kerja;
-    private CardView profil_mandor, sewa_jasa, dokumentasi, tanggapan, back;
+    private CardView profil_mandor, sewa_jasa, dokumentasi, back;
+    private FirebaseAuth.AuthStateListener authListener;
+    private FirebaseAuth auth;
+
+    /*
+     * SharedPreferences Usage
+     * I want to reduce passing usage, since it seems mess with app runtime sometimes
+     */
+    SharedPreferences pref;
+    SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +50,6 @@ public class activity_profile_mandor extends AppCompatActivity {
         profil_mandor = findViewById(R.id.mandor_menu_1);
         dokumentasi = findViewById(R.id.mandor_menu_2);
         sewa_jasa = findViewById(R.id.mandor_menu_3);
-        tanggapan = findViewById(R.id.mandor_menu_4);
         Nama = findViewById(R.id.nama);
         Umur = findViewById(R.id.umur);
         Alamat = findViewById(R.id.alamat);
@@ -82,6 +93,26 @@ public class activity_profile_mandor extends AppCompatActivity {
         final ImageView image = findViewById(R.id.foto);
         image.setImageBitmap(bmp);
 
+        /*
+         * SharedPreferences Declaration
+         */
+        pref = getApplicationContext().getSharedPreferences("data_mandor", 0);
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putString("nik", nik);
+        editor.putString("nama", nama);
+        editor.putString("alamat", alamat);
+        editor.putString("umur", umur);
+        editor.putString("tempat", tempat);
+        editor.putString("tgl_lahir", tgl_lahir);
+        editor.putString("agama", agama);
+        editor.putString("lama_kerja", lama_kerja);
+        editor.apply();
+
+        /*
+         * Begin firebase authorization
+         */
+        auth = FirebaseAuth.getInstance();
+
         profil_mandor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -93,14 +124,6 @@ public class activity_profile_mandor extends AppCompatActivity {
                 byte[] b = baos.toByteArray();
 
                 Intent intent = new Intent(activity_profile_mandor.this, activity_detail_mandor.class);
-                intent.putExtra("nama", Nama.getText().toString());
-                intent.putExtra("umur", Umur.getText().toString());
-                intent.putExtra("alamat", Alamat.getText().toString());
-                intent.putExtra("nik", Nik.getText().toString());
-                intent.putExtra("tempat", Tempat.getText().toString());
-                intent.putExtra("tgl_lahir", Tgl_lahir.getText().toString());
-                intent.putExtra("agama", Agama.getText().toString());
-                intent.putExtra("lama_kerja", Lama_Kerja.getText().toString());
                 intent.putExtra("foto", b);
                 startActivity(intent);
             }
@@ -109,26 +132,23 @@ public class activity_profile_mandor extends AppCompatActivity {
         sewa_jasa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(activity_profile_mandor.this, activity_sewa_jasa.class);
-                intent.putExtra("nama", Nama.getText().toString());
-                intent.putExtra("nik", Nik.getText().toString());
-                startActivity(intent);
-            }
-        });
+                if (auth.getCurrentUser() != null) {
+                    Intent intent = new Intent(activity_profile_mandor.this, activity_sewa_jasa.class);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(activity_profile_mandor.this, "Harap Login di Menu Akun untuk Masuk ke Menu Layanan Jasa",Toast.LENGTH_LONG).show();
+                }
 
-        tanggapan.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(activity_profile_mandor.this, activity_tanggapan_mandor.class);
-                intent.putExtra("nama", Nama.getText().toString());
-                intent.putExtra("nik", Nik.getText().toString());
-                startActivity(intent);
             }
         });
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                SharedPreferences.Editor editor;
+                editor=pref.edit();
+                editor.clear();
+                editor.apply();
                 Intent intent = new Intent(activity_profile_mandor.this, activity_mandor.class);
                 startActivity(intent);
             }
