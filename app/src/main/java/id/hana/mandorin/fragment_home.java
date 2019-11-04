@@ -38,6 +38,11 @@ public class fragment_home extends Fragment {
         // Fragment locked in portrait screen orientation
         getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
+        /*
+         * Begin firebase authorization
+         */
+        auth = FirebaseAuth.getInstance();
+
         menu_1 = view.findViewById(R.id.cv_menu_1);
         menu_2 = view.findViewById(R.id.cv_menu_2);
         menu_3 = view.findViewById(R.id.cv_menu_3);
