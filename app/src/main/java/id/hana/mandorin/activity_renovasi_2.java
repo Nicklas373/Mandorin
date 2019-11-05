@@ -19,10 +19,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.HashMap;
-import java.util.Locale;
 import java.util.Map;
 
 public class activity_renovasi_2 extends AppCompatActivity {
@@ -73,7 +70,7 @@ public class activity_renovasi_2 extends AppCompatActivity {
         /*
          * SharedPreferences Declaration
          */
-        pref = getApplicationContext().getSharedPreferences("data_bangun_dari_awal", 0);
+        pref = getApplicationContext().getSharedPreferences("data_renovasi", 0);
         nama_prev.setText(pref.getString("nama",null));
         nik_prev.setText(pref.getString("nik",null));
         data_renovasi.setText(pref.getString("data_renovasi", null));
@@ -150,31 +147,33 @@ public class activity_renovasi_2 extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() {
 
+                String id = "";
                 String nik = nik_bg_awal.getText().toString().trim();
                 String nama = nama_bg_awal.getText().toString().trim();
                 String email = email_bg_awal.getText().toString().trim();
                 String alamat = alamat_bg_awal.getText().toString().trim();
                 String no_hp = no_hp_bg_awal.getText().toString().trim();
-                String tgl_daftar = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
                 String tgl_sur = tgl_survey.getText().toString().trim();
                 String jenis_borongan = rb_old.getText().toString().trim();
                 String data_renov = data_renovasi.getText().toString().trim();
                 String nik_mandor = nik_prev.getText().toString().trim();
                 String nama_mandor = nama_prev.getText().toString().trim();
+                String status= "pending";
 
                 // Creating Map String Params.
                 Map<String, String> params = new HashMap<String, String>();
 
                 // Adding All values to Params.
+                params.put("id", id);
                 params.put("nik", nik);
                 params.put("nama", nama);
                 params.put("email", email);
-                params.put("alamat", alamat);
                 params.put("no_hp", no_hp);
-                params.put("tgl_daftar", tgl_daftar);
+                params.put("alamat", alamat);
                 params.put("tgl_survey", tgl_sur);
                 params.put("jenis_borongan", jenis_borongan);
                 params.put("data_renovasi", data_renov);
+                params.put("status", status);
                 params.put("nik_mandor", nik_mandor);
                 params.put("nama_mandor", nama_mandor);
 
