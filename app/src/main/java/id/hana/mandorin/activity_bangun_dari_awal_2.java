@@ -153,6 +153,7 @@ public class activity_bangun_dari_awal_2 extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() {
 
+                String id = "";
                 String substring = desain_old.getText().toString();
                 String desain = substring.substring(substring.lastIndexOf("/")+1);
                 String DS = ("https://www.mandorin.site/mandorin/upload/" + desain);
@@ -167,21 +168,24 @@ public class activity_bangun_dari_awal_2 extends AppCompatActivity {
                 String luas = luas_old.getText().toString().trim();
                 String nama_mandor = nama_prev.getText().toString().trim();
                 String nik_mandor = nik_prev.getText().toString().trim();
+                String status= "pending";
 
                 // Creating Map String Params.
                 Map<String, String> params = new HashMap<String, String>();
 
                 // Adding All values to Params.
+                params.put("id", id);
                 params.put("nik", nik);
                 params.put("nama", nama);
                 params.put("email", email);
-                params.put("no_hp", no_hp);
                 params.put("alamat", alamat);
+                params.put("no_hp", no_hp);
                 params.put("tgl_daftar", date);
                 params.put("tgl_survey", tgl_sur);
                 params.put("jenis_borongan", jenis_borongan);
                 params.put("luas_tanah", luas);
                 params.put("desain_rumah", DS);
+                params.put("status", status);
                 params.put("nik_mandor", nik_mandor);
                 params.put("nama_mandor", nama_mandor);
 
