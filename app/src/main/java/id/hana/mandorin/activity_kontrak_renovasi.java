@@ -9,7 +9,7 @@ import android.view.View;
 
 public class activity_kontrak_renovasi extends AppCompatActivity {
 
-    private CardView back;
+    private CardView back, data_komplain, data_pemesan;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +22,8 @@ public class activity_kontrak_renovasi extends AppCompatActivity {
          * TextView, CardView & Button
          */
         back = findViewById(R.id.back_activity_kontrak_1);
+        data_komplain = findViewById(R.id.mandor_renovasi_3);
+        data_pemesan = findViewById(R.id.mandor_renovasi_4);
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,5 +33,12 @@ public class activity_kontrak_renovasi extends AppCompatActivity {
             }
         });
 
+        data_pemesan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(activity_kontrak_renovasi.this, activity_data_pemesan.class);
+                startActivity(intent);
+            }
+        });
     }
 }
