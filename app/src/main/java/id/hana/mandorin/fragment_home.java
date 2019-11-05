@@ -60,8 +60,12 @@ public class fragment_home extends Fragment {
         menu_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (auth.getCurrentUser() != null) {
                 Intent intent = new Intent(getActivity(), activity_kontrak.class);
                 getActivity().startActivity(intent);
+                } else {
+                    Toast.makeText(getActivity(),"Harap Login di Menu Akun untuk melanjutkan", Toast.LENGTH_SHORT).show();
+                }
 
             }
         });

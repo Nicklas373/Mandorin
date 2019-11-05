@@ -13,7 +13,7 @@ public class activity_kontrak  extends AppCompatActivity {
      * Layout Component Initializations
      * CardView
      */
-    private CardView back, status, riwayat, data_komplain;
+    private CardView back, status, riwayat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +28,6 @@ public class activity_kontrak  extends AppCompatActivity {
         back = findViewById(R.id.back_activity_kontrak);
         status = findViewById(R.id.mandor_kontrak_1);
         riwayat = findViewById(R.id.mandor_kontrak_2);
-        data_komplain = findViewById(R.id.mandor_renovasi_3);
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,5 +52,6 @@ public class activity_kontrak  extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
 }
