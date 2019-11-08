@@ -18,11 +18,10 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.HashMap;
-import java.util.Locale;
 import java.util.Map;
 
 
@@ -32,8 +31,8 @@ public class activity_bangun_dari_awal_2 extends AppCompatActivity {
      * Layout Component Initializations
      * EditText, Textview, Imageview, CardView & Button
      */
-    private EditText nama_bg_awal, nik_bg_awal, email_bg_awal, no_hp_bg_awal, alamat_bg_awal, tgl_survey;
-    private TextView rb_old, luas_old, desain_old, nama_prev , nik_prev;
+    private EditText nama_bg_awal, nik_bg_awal, no_hp_bg_awal, alamat_bg_awal, tgl_survey;
+    private TextView rb_old, luas_old, desain_old, nama_prev , nik_prev, ba_email_statis;
     private Button kirim;
     private CardView back;
 
@@ -49,6 +48,13 @@ public class activity_bangun_dari_awal_2 extends AppCompatActivity {
     SharedPreferences pref;
     SharedPreferences.Editor editor;
 
+    /*
+     * Firebase initializations
+     */
+    private FirebaseAuth.AuthStateListener authListener;
+    private FirebaseAuth auth;
+    FirebaseUser firebaseUser;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,11 +62,17 @@ public class activity_bangun_dari_awal_2 extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         /*
+         * Begin firebase authorization
+         */
+        auth = FirebaseAuth.getInstance();
+        firebaseUser = auth.getCurrentUser();
+
+        /*
          * Layout ID Initializations
          */
         nama_bg_awal = findViewById(R.id.input_nama_bg_awal);
         nik_bg_awal = findViewById(R.id.input_nik_bg_awal);
-        email_bg_awal = findViewById(R.id.input_email_bg_awal);
+        ba_email_statis = findViewById(R.id.ba_statis_email);
         no_hp_bg_awal = findViewById(R.id.input_hp_bg_awal);
         alamat_bg_awal = findViewById(R.id.input_alamat_bg_awal);
         tgl_survey = findViewById(R.id.input_tgl_bg_awal);
@@ -71,6 +83,11 @@ public class activity_bangun_dari_awal_2 extends AppCompatActivity {
         nik_prev = findViewById(R.id.nik_old);
         kirim = findViewById(R.id.button_kirim_bg_awal);
         back = findViewById(R.id.back_activity_bangun_dari_awal_2);
+
+        /*
+         * Binding firebase email first
+         */
+        ba_email_statis.setText(firebaseUser.getEmail());
 
         /*
          * SharedPreferences Declaration
@@ -89,8 +106,6 @@ public class activity_bangun_dari_awal_2 extends AppCompatActivity {
                     nama_bg_awal.setError("Harap Masukkan Nama");
                 } else if (nik_bg_awal.getText().toString().length() == 0) {
                     nik_bg_awal.setError("Harap Masukkan NIK");
-                } else if (email_bg_awal.getText().toString().length() == 0) {
-                    email_bg_awal.setError("Harap Masukkan Email");
                 } else if (no_hp_bg_awal.getText().toString().length() == 0) {
                     no_hp_bg_awal.setError("Harap Masukkan No HP");
                 } else if (alamat_bg_awal.getText().toString().length() == 0) {
@@ -156,13 +171,13 @@ public class activity_bangun_dari_awal_2 extends AppCompatActivity {
                 String id = "";
                 String substring = desain_old.getText().toString();
                 String desain = substring.substring(substring.lastIndexOf("/")+1);
-                String DS = ("https://www.mandorin.site/mandorin/upload/" + desain);
+                // regex filename, so it'll look same for filename and filepath that'll inserted to database
+                String regex = desain.replaceAll("\\s", "");
                 String nik = nik_bg_awal.getText().toString().trim();
                 String nama = nama_bg_awal.getText().toString().trim();
-                String email = email_bg_awal.getText().toString().trim();
+                String email = firebaseUser.getEmail();
                 String alamat = alamat_bg_awal.getText().toString().trim();
                 String no_hp = no_hp_bg_awal.getText().toString().trim();
-                String date = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
                 String tgl_sur = tgl_survey.getText().toString().trim();
                 String jenis_borongan = rb_old.getText().toString().trim();
                 String luas = luas_old.getText().toString().trim();
@@ -178,13 +193,12 @@ public class activity_bangun_dari_awal_2 extends AppCompatActivity {
                 params.put("nik", nik);
                 params.put("nama", nama);
                 params.put("email", email);
-                params.put("alamat", alamat);
                 params.put("no_hp", no_hp);
-                params.put("tgl_daftar", date);
+                params.put("alamat", alamat);
                 params.put("tgl_survey", tgl_sur);
                 params.put("jenis_borongan", jenis_borongan);
                 params.put("luas_tanah", luas);
-                params.put("desain_rumah", DS);
+                params.put("desain_rumah", regex);
                 params.put("status", status);
                 params.put("nik_mandor", nik_mandor);
                 params.put("nama_mandor", nama_mandor);
