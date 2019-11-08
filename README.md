@@ -15,6 +15,7 @@ Informasi Aplikasi:
 - Pembuatan kelima (20 Oktober 2019 | 18:06 GMT+7)
 - Pembuatan keenam (04 November 2019 | 09:27 GMT+7)
 - Pembuatan ketujuh (05 November 2019 | 13:21 GMT+7)
+- Pembuatan kedelapan (08 November 2019 | 14:29 GMT+7)
 
 Kunjungi website kami di http://www.mandorin.site
 
