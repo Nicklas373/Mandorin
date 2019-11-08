@@ -18,6 +18,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -28,8 +30,8 @@ public class activity_renovasi_2 extends AppCompatActivity {
      * Layout Component Initializations
      * EditText, Textview, Imageview, CardView & Button
      */
-    private EditText nama_bg_awal, nik_bg_awal, email_bg_awal, no_hp_bg_awal, alamat_bg_awal, tgl_survey;
-    private TextView rb_old, data_renovasi, nama_prev , nik_prev;
+    private EditText nama_bg_awal, nik_bg_awal, no_hp_bg_awal, alamat_bg_awal, tgl_survey;
+    private TextView rb_old, data_renovasi, nama_prev , nik_prev, email_statis;
     private Button kirim;
     private CardView back;
 
@@ -45,6 +47,13 @@ public class activity_renovasi_2 extends AppCompatActivity {
     SharedPreferences pref;
     SharedPreferences.Editor editor;
 
+    /*
+     * Firebase initializations
+     */
+    private FirebaseAuth.AuthStateListener authListener;
+    private FirebaseAuth auth;
+    FirebaseUser firebaseUser;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,11 +61,17 @@ public class activity_renovasi_2 extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         /*
+         * Begin firebase authorization
+         */
+        auth = FirebaseAuth.getInstance();
+        firebaseUser = auth.getCurrentUser();
+
+        /*
          * Layout ID Initializations
          */
         nama_bg_awal = findViewById(R.id.input_nama_rn_awal);
         nik_bg_awal = findViewById(R.id.input_nik_rn_awal);
-        email_bg_awal = findViewById(R.id.input_email_rn_awal);
+        email_statis = findViewById(R.id.text_statis_email);
         no_hp_bg_awal = findViewById(R.id.input_hp_rn_awal);
         alamat_bg_awal = findViewById(R.id.input_alamat_rn_awal);
         tgl_survey = findViewById(R.id.input_tgl_rn_awal);
@@ -66,6 +81,11 @@ public class activity_renovasi_2 extends AppCompatActivity {
         nik_prev = findViewById(R.id.nik_1_old);
         kirim = findViewById(R.id.button_kirim_rn_awal);
         back = findViewById(R.id.back_activity_renovasi_2);
+
+        /*
+         * Binding firebase email first
+         */
+        email_statis.setText(firebaseUser.getEmail());
 
         /*
          * SharedPreferences Declaration
@@ -83,8 +103,6 @@ public class activity_renovasi_2 extends AppCompatActivity {
                     nama_bg_awal.setError("Harap Masukkan Nama");
                 } else if (nik_bg_awal.getText().toString().length() == 0) {
                     nik_bg_awal.setError("Harap Masukkan NIK");
-                } else if (email_bg_awal.getText().toString().length() == 0) {
-                    email_bg_awal.setError("Harap Masukkan Email");
                 } else if (no_hp_bg_awal.getText().toString().length() == 0) {
                     no_hp_bg_awal.setError("Harap Masukkan No HP");
                 } else if (alamat_bg_awal.getText().toString().length() == 0) {
@@ -150,7 +168,7 @@ public class activity_renovasi_2 extends AppCompatActivity {
                 String id = "";
                 String nik = nik_bg_awal.getText().toString().trim();
                 String nama = nama_bg_awal.getText().toString().trim();
-                String email = email_bg_awal.getText().toString().trim();
+                String email = firebaseUser.getEmail();
                 String alamat = alamat_bg_awal.getText().toString().trim();
                 String no_hp = no_hp_bg_awal.getText().toString().trim();
                 String tgl_sur = tgl_survey.getText().toString().trim();
