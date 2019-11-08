@@ -206,19 +206,15 @@
 
                 </android.support.v7.widget.CardView>
 
-                <EditText
-                    android:id="@+id/input_email_bg_awal"
-                    android:layout_width="160dp"
+                <TextView
+                    android:layout_width="180dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
-                    android:layout_marginTop="120dp"
+                    android:layout_marginTop="130dp"
                     android:layout_marginEnd="20dp"
-                    android:ems="10"
-                    android:importantForAutofill="no"
-                    android:inputType="textEmailAddress"
-                    android:text=""
-                    tools:ignore="LabelFor" />
-
+                    android:textSize="15sp"
+                    android:textColor="#000"
+                    android:id="@+id/ba_statis_email"/>
 
                 <android.support.v7.widget.CardView
                     android:id="@+id/cv_title_hp"

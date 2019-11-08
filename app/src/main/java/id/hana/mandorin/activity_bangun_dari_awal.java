@@ -182,6 +182,15 @@ public class activity_bangun_dari_awal extends AppCompatActivity {
 
         String[] parts = selectedFilePath.split("/");
         final String fileName = parts[parts.length - 1];
+        /*
+         * I should regex filename string to make it don't have any whitespace
+         * before sending to server, to prevent any error that cause from whitespace
+         * if user download it.
+         *
+         * However, i need to make same regexed file name and filepath that'll push it to db
+         * filepath should get regex too when it want to push to db
+         */
+        String regex = fileName.replaceAll("\\s","");
 
         if (!selectedFile.isFile()) {
             dialog.dismiss();
@@ -205,7 +214,7 @@ public class activity_bangun_dari_awal extends AppCompatActivity {
                 connection.setRequestProperty("Connection", "Keep-Alive");
                 connection.setRequestProperty("ENCTYPE", "multipart/form-data");
                 connection.setRequestProperty("Content-Type", "multipart/form-data;boundary=" + boundary);
-                connection.setRequestProperty("uploaded_file", selectedFilePath);
+                connection.setRequestProperty("uploaded_file", regex);
 
                 //creating new dataoutputstream
                 dataOutputStream = new DataOutputStream(connection.getOutputStream());
@@ -213,7 +222,7 @@ public class activity_bangun_dari_awal extends AppCompatActivity {
                 //writing bytes to data outputstream
                 dataOutputStream.writeBytes(twoHyphens + boundary + lineEnd);
                 dataOutputStream.writeBytes("Content-Disposition: form-data; name=\"uploaded_file\";filename=\""
-                        + selectedFilePath + "\"" + lineEnd);
+                        + regex + "\"" + lineEnd);
 
                 dataOutputStream.writeBytes(lineEnd);
 

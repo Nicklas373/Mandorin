@@ -213,18 +213,15 @@
 
         </android.support.v7.widget.CardView>
 
-        <EditText
-            android:id="@+id/input_email_bg_awal"
-            android:layout_width="380dp"
+        <TextView
+            android:layout_width="420dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="30dp"
-            android:layout_marginTop="200dp"
             android:layout_gravity="end"
-            android:ems="10"
-            android:inputType="textEmailAddress"
-            android:text=""
-            android:textSize="30sp"
-            tools:ignore="Autofill,LabelFor" />
+            android:layout_marginTop="200dp"
+            android:layout_marginEnd="30dp"
+            android:textSize="40sp"
+            android:textColor="#000"
+            android:id="@+id/ba_statis_email"/>
 
         <android.support.v7.widget.CardView
             android:id="@+id/cv_title_hp"
