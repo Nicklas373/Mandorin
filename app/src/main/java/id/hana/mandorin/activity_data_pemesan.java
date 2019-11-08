@@ -45,14 +45,12 @@ public class activity_data_pemesan extends AppCompatActivity {
             }
         });
 
-        /*
         data_bangun_dari_awal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(activity_data_pemesan.this, activity_kontrak_renovasi.class);
+                Intent intent = new Intent(activity_data_pemesan.this, activity_pemesan_bangun_dari_awal.class);
                 startActivity(intent);
             }
         });
-        */
     }
 }
