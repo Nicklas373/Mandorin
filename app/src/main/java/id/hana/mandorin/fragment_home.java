@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class fragment_home extends Fragment {
 
@@ -21,6 +22,7 @@ public class fragment_home extends Fragment {
 
     private FirebaseAuth.AuthStateListener authListener;
     private FirebaseAuth auth;
+    FirebaseUser firebaseUser;
 
     public static fragment_home newInstance() {
 

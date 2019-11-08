@@ -19,6 +19,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -38,9 +40,16 @@ public class activity_pemesan_renovasi extends AppCompatActivity {
     RecyclerView.Adapter recyclerViewadapter2;
 
     /*
+     * Firebase initializations
+     */
+    private FirebaseAuth.AuthStateListener authListener;
+    private FirebaseAuth auth;
+    FirebaseUser firebaseUser;
+
+    /*
      * JSON Data Initialization
      */
-    String GET_JSON_DATA_HTTP_URL = "http://mandorin.site/mandorin/php/user/read_pemesan_renovasi.php";
+
     String JSON_ID_PEMESAN = "id";
     String JSON_NIK_PEMESAN = "nik";
     String JSON_NAMA_PEMESAN = "nama";
@@ -67,6 +76,12 @@ public class activity_pemesan_renovasi extends AppCompatActivity {
 
         setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_pemesan_renovasi);
+
+        /*
+         * Begin firebase authorization
+         */
+        auth = FirebaseAuth.getInstance();
+        firebaseUser = auth.getCurrentUser();
 
         /*
          * Recyclerview Layout Initialization
@@ -128,6 +143,11 @@ public class activity_pemesan_renovasi extends AppCompatActivity {
     }
 
     public void JSON_DATA_WEB_CALL(){
+        /*
+         * Let's separate this json for sorting
+         */
+        String email = firebaseUser.getEmail();
+        String GET_JSON_DATA_HTTP_URL = "http://mandorin.site/mandorin/php/user/read_pemesan_renovasi.php?email=" + email;
 
         jsonArrayRequest = new JsonArrayRequest(GET_JSON_DATA_HTTP_URL,
 

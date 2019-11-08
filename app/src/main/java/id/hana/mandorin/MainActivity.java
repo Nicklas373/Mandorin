@@ -107,4 +107,5 @@ public class MainActivity extends AppCompatActivity implements PermissionCallbac
         mainFragmentPagerAdapter.addFragment(new fragment_about(), getString(R.string.menu_title_2));
         viewPager.setAdapter(mainFragmentPagerAdapter);
     }
+
 }
