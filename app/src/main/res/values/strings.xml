@@ -153,4 +153,27 @@
     <string name="app_fragment_home_menu_4">Panduan</string>
     <string name="app_fragment_home_menu_5">Bantuan</string>
     <string name="app_fragment_home_menu_6">Akun</string>
+    <string name="app_mandor_recycler_status_renovasi_title">Status Renovasi</string>
+    <string name="app_mandor_recycler_status_renovasi_1">Nama Pemesan</string>
+    <string name="app_mandor_recycler_status_renovasi_2">Nomor Kontrak</string>
+    <string name="app_mandor_recycler_status_renovasi_3">Total Biaya</string>
+    <string name="app_mandor_recycler_status_renovasi_4">Presentasi Pekerjaan</string>
+    <string name="app_mandor_recycler_status_renovasi_5">Alamat</string>
+    <string name="app_mandor_recycler_status_renovasi_6">Data Pemesan</string>
+    <string name="app_mandor_recycler_status_bangun_dari_awal_title">Bangun Dari Awal</string>
+    <string name="app_mandor_recycler_status_bangun_dari_awal_1">Nama Pemesan</string>
+    <string name="app_mandor_recycler_status_bangun_dari_awal_2">Nomor Kontrak</string>
+    <string name="app_mandor_recycler_status_bangun_dari_awal_3">Total Biaya</string>
+    <string name="app_mandor_recycler_status_bangun_dari_awal_4">Presentasi Pekerjaan</string>
+    <string name="app_mandor_recycler_status_bangun_dari_awal_5">Alamat</string>
+    <string name="app_mandor_recycler_status_bangun_dari_awal_6">Data Pemesan</string>
+    <string name="app_mandor_status_pemesan_renovasi_1">Nama Pemesan</string>
+    <string name="app_mandor_status_pemesan_renovasi_2">Nomor Kontrak</string>
+    <string name="app_mandor_status_pemesan_renovasi_3">Total Biaya</string>
+    <string name="app_mandor_status_pemesan_renovasi_4">Alamat</string>
+    <string name="app_mandor_status_pemesan_renovasi_5">Presentasi</string>
+    <string name="app_mandor_status_pemesan_renovasi_6">Estimasi Pekerjaan</string>
+    <string name="app_mandor_status_pemesan_renovasi_7">Data Pemesan</string>
+    <string name="app_mandor_status_pemesan_renovasi_8">Surat Kontrak</string>
+    <string name="app_mandor_status_pemesan_renovasi_9">Rekap Data</string>
 </resources>

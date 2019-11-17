@@ -77,6 +77,10 @@
         <activity android:name=".activity_pemesan_renovasi"/>
         <activity android:name=".activity_pemesan_bangun_dari_awal"/>
         <activity android:name=".activity_data_pemesan_bangun_dari_awal"/>
+        <activity android:name=".activity_data_status_renovasi"/>
+        <activity android:name=".activity_data_status_bangun"/>
+        <activity android:name=".activity_status_renovasi"/>
+        <activity android:name=".activity_status_bangun"/>
     </application>
 
 </manifest>
