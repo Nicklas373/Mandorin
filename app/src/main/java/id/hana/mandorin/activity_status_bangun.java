@@ -145,6 +145,9 @@ public class activity_status_bangun extends AppCompatActivity {
                             String url = data_pemesan.getText().toString();
                             new DownloadFile().execute(url, data_pemesan_1);
                             Toast.makeText(activity_status_bangun.this, "Data pesanan anda berhasil di download", Toast.LENGTH_LONG).show();
+                            btn_data_pemesan.setText("Lihat Berkas");
+                            Toast.makeText(activity_status_bangun.this, "Berkas anda ada di download/" + file_data, Toast.LENGTH_LONG).show();
+                            openFolder();
                         }
                     } else {
                         Toast.makeText(activity_status_bangun.this, "Harap cek konektivitas anda", Toast.LENGTH_LONG).show();
@@ -170,6 +173,9 @@ public class activity_status_bangun extends AppCompatActivity {
                             String url = rekap_data.getText().toString();
                             new DownloadFile().execute(url, rekap_data_1);
                             Toast.makeText(activity_status_bangun.this, "Data rekap data anda berhasil di download", Toast.LENGTH_LONG).show();
+                            btn_rekap_data.setText("Lihat Berkas");
+                            Toast.makeText(activity_status_bangun.this, "Berkas anda ada di download/" + file_data, Toast.LENGTH_LONG).show();
+                            openFolder();
                         }
                     } else {
                         Toast.makeText(activity_status_bangun.this, "Harap cek konektivitas anda", Toast.LENGTH_LONG).show();
@@ -193,8 +199,11 @@ public class activity_status_bangun extends AppCompatActivity {
                             Toast.makeText(activity_status_bangun.this, "Anda belum menyetujui akses penyimpanan", Toast.LENGTH_LONG).show();
                         } else {
                             String url = surat_kontrak.getText().toString();
-                            new DownloadFile().execute(url, rekap_data_1);
+                            new DownloadFile().execute(url, surat_kontrak_1);
                             Toast.makeText(activity_status_bangun.this, "Data surat kontrak anda berhasil di download", Toast.LENGTH_LONG).show();
+                            btn_surat_kontrak.setText("Lihat Berkas");
+                            Toast.makeText(activity_status_bangun.this, "Berkas anda adalah" + file_data, Toast.LENGTH_LONG).show();
+                            openFolder();
                         }
                     } else {
                         Toast.makeText(activity_status_bangun.this, "Harap cek konektivitas anda", Toast.LENGTH_LONG).show();
@@ -213,7 +222,7 @@ public class activity_status_bangun extends AppCompatActivity {
     }
 
     private void cek_data_pemesan(){
-        String file_data = data_pemesan.getText().toString();
+        String file_data = meta_data_pemesan.getText().toString();
         File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), file_data);
         if (file.exists()) {
             btn_data_pemesan.setText("Lihat Berkas");
@@ -221,7 +230,7 @@ public class activity_status_bangun extends AppCompatActivity {
     }
 
     private void cek_surat_kontrak(){
-        String file_data = surat_kontrak.getText().toString();
+        String file_data = meta_surat_kontrak.getText().toString();
         File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), file_data);
         if (file.exists()) {
             btn_surat_kontrak.setText("Lihat Berkas");
@@ -229,7 +238,7 @@ public class activity_status_bangun extends AppCompatActivity {
     }
 
     private void cek_rekap_data(){
-        String file_data = rekap_data.getText().toString();
+        String file_data = meta_rekap_data.getText().toString();
         File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), file_data);
         if (file.exists()) {
             btn_rekap_data.setText("Lihat Berkas");
