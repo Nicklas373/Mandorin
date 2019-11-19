@@ -140,7 +140,7 @@ public class activity_data_pemesan_bangun_dari_awal extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(activity_data_pemesan_bangun_dari_awal.this, activity_pemesan_renovasi.class);
+                Intent intent = new Intent(activity_data_pemesan_bangun_dari_awal.this, activity_pemesan_bangun_dari_awal.class);
                 startActivity(intent);
             }
         });

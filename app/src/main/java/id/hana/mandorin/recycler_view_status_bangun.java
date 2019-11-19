@@ -60,7 +60,7 @@ public class recycler_view_status_bangun extends RecyclerView.Adapter<recycler_v
 
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        public TextView Id, nomor_kontrak, nama_pemesan, email, no_telp, alamat_pekerjaan, status_pekerjaan, total_biaya, presentase, estimasi_waktu, data_pemesan, rekap_data, surat_kontrak;
+        public TextView Id, nomor_kontrak, email, no_telp, alamat_pekerjaan, status_pekerjaan, total_biaya, presentase, estimasi_waktu, data_pemesan, desain_rumah, rekap_data, surat_kontrak;
         public CardView cv_head;
 
         public ViewHolder(View itemView) {
@@ -81,6 +81,7 @@ public class recycler_view_status_bangun extends RecyclerView.Adapter<recycler_v
             data_pemesan = itemView.findViewById(R.id.text_data_pemesan);
             surat_kontrak = itemView.findViewById(R.id.text_surat_kontrak_pemesan);
             rekap_data = itemView.findViewById(R.id.text_rekap_data_pemesan);
+            desain_rumah = itemView.findViewById(R.id.text_desain_rumah_pemesan);
         }
 
 
@@ -99,6 +100,7 @@ public class recycler_view_status_bangun extends RecyclerView.Adapter<recycler_v
             intent.putExtra("estimasi_waktu", getStatusBangunAdapter.get(getAdapterPosition()).getEstimasi_waktu());
             intent.putExtra("data_pesanan", getStatusBangunAdapter.get(getAdapterPosition()).getData_pemesan());
             intent.putExtra("rekap_data", getStatusBangunAdapter.get(getAdapterPosition()).getRekap_data());
+            intent.putExtra("desain_rumah", getStatusBangunAdapter.get(getAdapterPosition()).getDesain_rumah());
             intent.putExtra("surat_kontrak", getStatusBangunAdapter.get(getAdapterPosition()).getSurat_kontrak());
             context.startActivity(intent);
         }

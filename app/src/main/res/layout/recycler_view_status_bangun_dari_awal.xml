@@ -183,6 +183,12 @@
             android:id="@+id/text_surat_kontrak_pemesan"
             android:visibility="gone"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_desain_rumah_pemesan"
+            android:visibility="gone"/>
+
         <!-- Dummy Debugging End !-->
 
     </RelativeLayout>

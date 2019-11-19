@@ -59,10 +59,10 @@
         app:cardUseCompatPadding="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.440"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.797">
+        app:layout_constraintVertical_bias="1.060">
 
         <android.support.v7.widget.CardView
             android:id="@+id/cv_title_id"
@@ -96,14 +96,14 @@
             android:layout_gravity="end"
             android:layout_marginTop="15dp"
             android:layout_marginEnd="20dp"
-            android:textColor="#000"/>
+            android:textColor="#000" />
 
         <android.support.v7.widget.CardView
             android:id="@+id/cv_title_nomor_kontrak"
             android:layout_width="115dp"
             android:layout_height="35dp"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="60dp"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"
@@ -116,7 +116,7 @@
                 android:id="@+id/textView3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/app_mandor_recycler_status_bangun_dari_awal_2"
+                android:text="@string/app_mandor_status_pemesan_renovasi_2"
                 android:textAlignment="center"
                 android:textColor="#ffffff" />
 
@@ -127,16 +127,16 @@
             android:layout_width="180dp"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:layout_marginTop="75dp"
+            android:layout_marginTop="65dp"
             android:layout_marginEnd="20dp"
-            android:textColor="#000"/>
+            android:textColor="#000" />
 
         <android.support.v7.widget.CardView
             android:id="@+id/cv_title_total_biaya"
             android:layout_width="115dp"
             android:layout_height="35dp"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="130dp"
+            android:layout_marginTop="110dp"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"
@@ -160,16 +160,16 @@
             android:layout_width="180dp"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:layout_marginTop="135dp"
+            android:layout_marginTop="115dp"
             android:layout_marginEnd="20dp"
-            android:textColor="#000"/>
+            android:textColor="#000" />
 
         <android.support.v7.widget.CardView
             android:id="@+id/cv_title_alamat"
             android:layout_width="115dp"
             android:layout_height="35dp"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="190dp"
+            android:layout_marginTop="160dp"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"
@@ -193,16 +193,16 @@
             android:layout_width="180dp"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:layout_marginTop="195dp"
+            android:layout_marginTop="165dp"
             android:layout_marginEnd="20dp"
-            android:textColor="#000"/>
+            android:textColor="#000" />
 
         <android.support.v7.widget.CardView
             android:id="@+id/cv_title_presentasi"
             android:layout_width="115dp"
             android:layout_height="35dp"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="250dp"
+            android:layout_marginTop="210dp"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"
@@ -226,16 +226,16 @@
             android:layout_width="180dp"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:layout_marginTop="255dp"
+            android:layout_marginTop="215dp"
             android:layout_marginEnd="20dp"
-            android:textColor="#000"/>
+            android:textColor="#000" />
 
         <android.support.v7.widget.CardView
             android:id="@+id/cv_title_estimasi"
             android:layout_width="115dp"
             android:layout_height="50dp"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="310dp"
+            android:layout_marginTop="260dp"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"
@@ -259,16 +259,16 @@
             android:layout_width="180dp"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:layout_marginTop="323dp"
+            android:layout_marginTop="263dp"
             android:layout_marginEnd="20dp"
-            android:textColor="#000"/>
+            android:textColor="#000" />
 
         <android.support.v7.widget.CardView
             android:id="@+id/cv_title_data_pemesan"
             android:layout_width="115dp"
             android:layout_height="35dp"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="380dp"
+            android:layout_marginTop="320dp"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"
@@ -293,12 +293,49 @@
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_gravity="end"
+            android:layout_marginTop="320dp"
             android:layout_marginEnd="80dp"
-            android:layout_marginTop="370dp"
             android:background="#bdbdbd"
             android:text="@string/app_mandor_data_pemesan_bangun_dari_awal_3"
-            android:textColor="#000"
-            android:textAllCaps="false"/>
+            android:textAllCaps="false"
+            android:textColor="#000" />
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv_title_data_desain_rumah"
+            android:layout_width="115dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="380dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardBackgroundColor="@color/colorPrimary"
+            app:cardCornerRadius="8dp"
+            app:cardMaxElevation="2dp"
+            app:cardUseCompatPadding="true">
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/app_mandor_status_pemesan_renovasi_10"
+                android:textAlignment="center"
+                android:textColor="#ffffff" />
+
+        </android.support.v7.widget.CardView>
+
+        <Button
+            android:id="@+id/button_data_desain_rumah"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_gravity="end"
+            android:layout_marginTop="380dp"
+            android:layout_marginEnd="80dp"
+            android:background="#bdbdbd"
+            android:text="@string/app_mandor_data_pemesan_bangun_dari_awal_3"
+            android:textAllCaps="false"
+            android:textColor="#000" />
 
         <android.support.v7.widget.CardView
             android:id="@+id/cv_title_surat_kontrak"
@@ -330,12 +367,12 @@
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_gravity="end"
+            android:layout_marginTop="444dp"
             android:layout_marginEnd="80dp"
-            android:layout_marginTop="440dp"
             android:background="#bdbdbd"
             android:text="@string/app_mandor_data_pemesan_bangun_dari_awal_3"
-            android:textColor="#000"
-            android:textAllCaps="false"/>
+            android:textAllCaps="false"
+            android:textColor="#000" />
 
         <android.support.v7.widget.CardView
             android:id="@+id/cv_title_rekap_data"
@@ -367,13 +404,12 @@
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_gravity="end"
-            android:layout_marginEnd="80dp"
             android:layout_marginTop="500dp"
+            android:layout_marginEnd="80dp"
             android:background="#bdbdbd"
             android:text="@string/app_mandor_data_pemesan_bangun_dari_awal_3"
-            android:textColor="#000"
-            android:textAllCaps="false"/>
-
+            android:textAllCaps="false"
+            android:textColor="#000" />
 
         <Button
             android:id="@+id/button_komplain"
@@ -381,69 +417,88 @@
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_gravity="end"
-            android:layout_marginEnd="20dp"
             android:layout_marginTop="570dp"
+            android:layout_marginEnd="20dp"
             android:background="@color/colorPrimary"
             android:text="@string/komplain_text"
-            android:textColor="#fff"
-            android:textAllCaps="false"/>
+            android:textAllCaps="false"
+            android:textColor="#fff" />
 
         <!-- Dummy Debugging !-->
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/text_link_data_pemesan"
-            android:visibility="gone"/>
-
-        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <TextView
             android:id="@+id/text_link_rekap_data"
-            android:visibility="gone"/>
-
-        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/text_link_desain_rumah"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <TextView
             android:id="@+id/text_link_surat_kontrak"
-            android:visibility="gone"/>
-
-        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <TextView
             android:id="@+id/text_link_raw_data_pemesan"
-            android:visibility="gone"/>
-
-        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <TextView
             android:id="@+id/text_link_raw_rekap_data"
-            android:visibility="gone"/>
-
-        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/text_link_raw_desain_rumah"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <TextView
             android:id="@+id/text_link_raw_surat_kontrak"
-            android:visibility="gone"/>
-
-        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <TextView
             android:id="@+id/text_link_meta_data_pemesan"
-            android:visibility="gone"/>
-
-        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <TextView
             android:id="@+id/text_link_meta_rekap_data"
-            android:visibility="gone"/>
-
-        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/text_link_meta_desain_rumah"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <TextView
             android:id="@+id/text_link_meta_surat_kontrak"
-            android:visibility="gone"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
 
         <!-- Dummy Debugging End !-->
+
     </android.support.v7.widget.CardView>
 </android.support.constraint.ConstraintLayout>

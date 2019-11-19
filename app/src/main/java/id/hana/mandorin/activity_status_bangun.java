@@ -36,8 +36,8 @@ public class activity_status_bangun extends AppCompatActivity {
      * Layout Component Initializations
      * Textview, Imageview, CardView & Button
      */
-    private TextView Id, nomor_kontrak, alamat_pekerjaan, total_biaya, presentase, estimasi, data_pemesan, rekap_data, surat_kontrak, meta_data_pemesan, meta_rekap_data, meta_surat_kontrak;
-    private Button btn_data_pemesan , btn_rekap_data , btn_surat_kontrak, komplain;
+    private TextView Id, nomor_kontrak, alamat_pekerjaan, total_biaya, presentase, estimasi, data_pemesan, rekap_data, surat_kontrak, desain_rumah, meta_data_pemesan, meta_rekap_data, meta_surat_kontrak, meta_desain_rumah;
+    private Button btn_data_pemesan , btn_rekap_data , btn_surat_kontrak, btn_desain_rumah, komplain;
     private CardView back;
 
     private static final String TAG = "activity_status_bangun";
@@ -71,13 +71,16 @@ public class activity_status_bangun extends AppCompatActivity {
         data_pemesan = findViewById(R.id.text_link_data_pemesan);
         rekap_data = findViewById(R.id.text_link_rekap_data);
         surat_kontrak = findViewById(R.id.text_link_surat_kontrak);
+        desain_rumah = findViewById(R.id.text_link_desain_rumah);
         meta_data_pemesan = findViewById(R.id.text_link_meta_data_pemesan);
         meta_rekap_data = findViewById(R.id.text_link_meta_rekap_data);
         meta_surat_kontrak = findViewById(R.id.text_link_meta_surat_kontrak);
+        meta_desain_rumah= findViewById(R.id.text_link_meta_desain_rumah);
         back = findViewById(R.id.back_activity_status_pemesan_bangun_dari_awal);
         btn_data_pemesan = findViewById(R.id.button_data_pemesan);
         btn_rekap_data = findViewById(R.id.button_rekap_data);
         btn_surat_kontrak = findViewById(R.id.button_surat_kontrak);
+        btn_desain_rumah = findViewById(R.id.button_data_desain_rumah);
         komplain = findViewById(R.id.button_komplain);
 
         /*
@@ -94,11 +97,13 @@ public class activity_status_bangun extends AppCompatActivity {
         String presentase_1 = getIntent().getExtras().getString("presentase");
         String estimasi_waktu_1 = getIntent().getExtras().getString("estimasi_waktu");
         final String data_pemesan_1 = getIntent().getExtras().getString("data_pesanan");
-        final String link_data_pemesan_1 = ("https://www.mandorin.site/mandorin/data_pemesan/renovasi/" + data_pemesan_1);
+        final String link_data_pemesan_1 = ("https://www.mandorin.site/mandorin/data_pemesan/bangun_baru/" + data_pemesan_1);
         final String rekap_data_1 = getIntent().getExtras().getString("rekap_data");
-        final String link_rekap_data_1 = ("https://www.mandorin.site/mandorin/data_pemesan/renovasi/" + rekap_data_1);
+        final String link_rekap_data_1 = ("https://www.mandorin.site/mandorin/data_pemesan/bangun_baru/" + rekap_data_1);
+        final String desain_rumah_1 = getIntent().getExtras().getString("desain_rumah");
+        final String link_desain_rumah_1 = ("https://www.mandorin.site/mandorin/data_pemesan/bangun_baru/" + desain_rumah_1);
         final String surat_kontrak_1 = getIntent().getExtras().getString("surat_kontrak");
-        final String link_surat_kontrak_1 = ("https://www.mandorin.site/mandorin/data_pemesan/renovasi/" + surat_kontrak_1);
+        final String link_surat_kontrak_1 = ("https://www.mandorin.site/mandorin/data_pemesan/bangun_baru/" + surat_kontrak_1);
 
         /*
          * TextView Initializations
@@ -116,8 +121,10 @@ public class activity_status_bangun extends AppCompatActivity {
         data_pemesan.setText(link_data_pemesan_1);
         rekap_data.setText(link_rekap_data_1);
         surat_kontrak.setText(link_surat_kontrak_1);
+        desain_rumah.setText(link_desain_rumah_1);
         meta_data_pemesan.setText(data_pemesan_1);
         meta_rekap_data.setText(rekap_data_1);
+        meta_desain_rumah.setText(desain_rumah_1);
         meta_surat_kontrak.setText(surat_kontrak_1);
 
         /*
@@ -126,6 +133,7 @@ public class activity_status_bangun extends AppCompatActivity {
         cek_data_pemesan();
         cek_surat_kontrak();
         cek_rekap_data();
+        cek_desain_rumah();
 
         ActivityCompat.requestPermissions(activity_status_bangun.this, PERMISSIONS, 112);
 
@@ -192,7 +200,7 @@ public class activity_status_bangun extends AppCompatActivity {
                 File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), file_data);
                 if (file.exists()) {
                     btn_surat_kontrak.setText("Lihat Berkas");
-                    Toast.makeText(activity_status_bangun.this, "Berkas anda adalah" + file_data, Toast.LENGTH_LONG).show();
+                    Toast.makeText(activity_status_bangun.this, "Berkas anda ada di download/" + file_data, Toast.LENGTH_LONG).show();
                     openFolder();
                 } else {
                     if(internet_available()) {
@@ -203,7 +211,35 @@ public class activity_status_bangun extends AppCompatActivity {
                             new DownloadFile().execute(url, surat_kontrak_1);
                             Toast.makeText(activity_status_bangun.this, "Data surat kontrak anda berhasil di download", Toast.LENGTH_LONG).show();
                             btn_surat_kontrak.setText("Lihat Berkas");
-                            Toast.makeText(activity_status_bangun.this, "Berkas anda adalah" + file_data, Toast.LENGTH_LONG).show();
+                            Toast.makeText(activity_status_bangun.this, "Berkas anda ada di download/" + file_data, Toast.LENGTH_LONG).show();
+                            openFolder();
+                        }
+                    } else {
+                        Toast.makeText(activity_status_bangun.this, "Harap cek konektivitas anda", Toast.LENGTH_LONG).show();
+                    }
+                }
+            }
+        });
+
+        btn_desain_rumah.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String file_data = meta_desain_rumah.getText().toString();
+                File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), file_data);
+                if (file.exists()) {
+                    btn_desain_rumah.setText("Lihat Berkas");
+                    Toast.makeText(activity_status_bangun.this, "Berkas anda ada di download/" + file_data, Toast.LENGTH_LONG).show();
+                    openFolder();
+                } else {
+                    if(internet_available()) {
+                        if (!hasPermissions(activity_status_bangun.this, PERMISSIONS)) {
+                            Toast.makeText(activity_status_bangun.this, "Anda belum menyetujui akses penyimpanan", Toast.LENGTH_LONG).show();
+                        } else {
+                            String url = desain_rumah.getText().toString();
+                            new DownloadFile().execute(url, desain_rumah_1);
+                            Toast.makeText(activity_status_bangun.this, "Data surat kontrak anda berhasil di download", Toast.LENGTH_LONG).show();
+                            btn_desain_rumah.setText("Lihat Berkas");
+                            Toast.makeText(activity_status_bangun.this, "Berkas anda ada di download/" + file_data, Toast.LENGTH_LONG).show();
                             openFolder();
                         }
                     } else {
@@ -246,6 +282,14 @@ public class activity_status_bangun extends AppCompatActivity {
         File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), file_data);
         if (file.exists()) {
             btn_surat_kontrak.setText("Lihat Berkas");
+        }
+    }
+
+    private void cek_desain_rumah(){
+        String file_data = meta_desain_rumah.getText().toString();
+        File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), file_data);
+        if (file.exists()) {
+            btn_desain_rumah.setText("Lihat Berkas");
         }
     }
 

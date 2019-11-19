@@ -61,6 +61,7 @@ public class activity_data_status_bangun extends AppCompatActivity {
     String JSON_PRESENTASE = "presentase";
     String JSON_ESTIMASI_WAKTU = "estimasi_waktu";
     String JSON_DATA_PEMESAN = "data_pemesan";
+    String JSON_DESAIN_RUMAH = "desain_rumah";
     String JSON_REKAP_DATA = "rekap_data";
     String JSON_SURAT_KONTRAK = "surat_kontrak";
     JsonArrayRequest jsonArrayRequest ;
@@ -197,6 +198,7 @@ public class activity_data_status_bangun extends AppCompatActivity {
                 GetDataAdapter3.setPresentase(json.getString(JSON_PRESENTASE));
                 GetDataAdapter3.setEstimasi_waktu(json.getString(JSON_ESTIMASI_WAKTU));
                 GetDataAdapter3.setData_pemesan(json.getString(JSON_DATA_PEMESAN));
+                GetDataAdapter3.setDesain_rumah(json.getString(JSON_DESAIN_RUMAH));
                 GetDataAdapter3.setRekap_data(json.getString(JSON_REKAP_DATA));
                 GetDataAdapter3.setSurat_kontrak(json.getString(JSON_SURAT_KONTRAK));
 
