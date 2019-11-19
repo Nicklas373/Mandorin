@@ -74,7 +74,7 @@ public class activity_status_renovasi extends AppCompatActivity {
         meta_data_pemesan = findViewById(R.id.text_link_meta_data_pemesan);
         meta_rekap_data = findViewById(R.id.text_link_meta_rekap_data);
         meta_surat_kontrak = findViewById(R.id.text_link_meta_surat_kontrak);
-        back = findViewById(R.id.back_activity_status_pemesan_renovasi);
+        back = findViewById(R.id.back_activity_status_renovasi);
         btn_data_pemesan = findViewById(R.id.button_data_pemesan);
         btn_rekap_data = findViewById(R.id.button_rekap_data);
         btn_surat_kontrak = findViewById(R.id.button_surat_kontrak);
@@ -123,6 +123,7 @@ public class activity_status_renovasi extends AppCompatActivity {
         /*
          * Check if user downloaded document is exists or not from the beginning
          */
+
         cek_data_pemesan();
         cek_surat_kontrak();
         cek_rekap_data();

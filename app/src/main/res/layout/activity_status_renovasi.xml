@@ -19,7 +19,7 @@
         app:layout_constraintVertical_bias="0.0">
 
         <android.support.v7.widget.CardView
-            android:id="@+id/back_activity_status_pemesan_renovasi"
+            android:id="@+id/back_activity_status_renovasi"
             android:layout_width="30dp"
             android:layout_height="wrap_content"
             android:clickable="true"
@@ -445,5 +445,5 @@
 
         <!-- Dummy Debugging End !-->
     </android.support.v7.widget.CardView>
-</android.support.constraint.ConstraintLayout>
 
+</android.support.constraint.ConstraintLayout>

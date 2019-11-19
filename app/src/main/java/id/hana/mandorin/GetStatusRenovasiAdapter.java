@@ -38,9 +38,7 @@ public class GetStatusRenovasiAdapter {
 
     public String getAlamat_pekerjaan() { return alamat_pekerjaan; }
 
-    public void setAlamat_pekerjaan (String alamat_pekerjaan) {
-        this.alamat_pekerjaan= alamat_pekerjaan;
-    }
+    public void setAlamat_pekerjaan (String alamat_pekerjaan) { this.alamat_pekerjaan= alamat_pekerjaan; }
 
     public String getNo_telp() {
         return no_telp;
@@ -54,9 +52,7 @@ public class GetStatusRenovasiAdapter {
         return status_pekerjaan;
     }
 
-    public void setStatus_pekerjaan(String status_pekerjaan) {
-        this.status_pekerjaan= status_pekerjaan;
-    }
+    public void setStatus_pekerjaan(String status_pekerjaan) { this.status_pekerjaan= status_pekerjaan; }
 
     public String getTotal_biaya() {
         return total_biaya;
