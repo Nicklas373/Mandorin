@@ -252,7 +252,7 @@ public class activity_status_bangun extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(activity_status_bangun.this, activity_data_status_renovasi.class);
+                Intent intent = new Intent(activity_status_bangun.this, activity_data_status_bangun.class);
                 startActivity(intent);
             }
         });
