@@ -6,6 +6,7 @@
     <string name="refresh">Muat Ulang</string>
     <string name="connection">Connection</string>
     <string name="connection_text">Tidak ada koneksi internet</string>
+    <string name="komplain_text">Komplain</string>
     <string name="hint"></string>
     <!-- End of FIXME -->
     <string name="app_name">Mandorin</string>
@@ -69,7 +70,7 @@
     <string name="app_mandor_konfirmasi_5">Untuk pemberitahuan selanjutnya akan</string>
     <string name="app_mandor_konfirmasi_6">kami informasikan melalu Email atau HP.</string>
     <string name="app_mandor_konfirmasi_7">Pastikan Email dan HP anda aktif</string>
-    <string name="app_mandor_konfirmasi_8">Kembali</string>
+    <string name="app_mandor_konfirmasi_8">Selesai</string>
     <string name="app_mandor_login_title">Log in</string>
     <string name="app_mandor_login_1">Masukkan Email</string>
     <string name="app_mandor_login_2">Masukkan Password</string>
@@ -176,4 +177,29 @@
     <string name="app_mandor_status_pemesan_renovasi_7">Data Pemesan</string>
     <string name="app_mandor_status_pemesan_renovasi_8">Surat Kontrak</string>
     <string name="app_mandor_status_pemesan_renovasi_9">Rekap Data</string>
+    <string name="app_mandor_komplain_title">Menu Komplain</string>
+    <string name="app_mandor_komplain_1">Nomor Kontrak</string>
+    <string name="app_mandor_komplain_2">Alamat</string>
+    <string name="app_mandor_komplain_3">Komplain</string>
+    <string name="app_mandor_komplain_4">Kirim</string>
+    <string name="app_mandor_komplain_5">Data Komplain</string>
+    <string name="app_mandor_komplain_6">Masukkan Data Komplain</string>
+    <string name="app_mandor_konfirmasi_komplain">Konfirmasi</string>
+    <string name="app_mandor_konfirmasi_komplain_1">Terkirim !</string>
+    <string name="app_mandor_konfirmasi_komplain_2">Terima kasih telah menggunakan jasa kami</string>
+    <string name="app_mandor_konfirmasi_komplain_3">Kami akan memproses komplain anda</string>
+    <string name="app_mandor_konfirmasi_komplain_4">setelah data anda terkonfirmasi.</string>
+    <string name="app_mandor_konfirmasi_komplain_5">Untuk pemberitahuan selanjutnya akan</string>
+    <string name="app_mandor_konfirmasi_komplain_6">kami informasikan melalu Email atau HP.</string>
+    <string name="app_mandor_konfirmasi_komplain_7">Pastikan Email dan HP anda aktif</string>
+    <string name="app_mandor_konfirmasi_komplain_8">Selesai</string>
+    <string name="app_mandor_recycler_data_komplain_title">Data Komplain</string>
+    <string name="app_mandor_recycler_data_komplain_1">Nomor Kontrak</string>
+    <string name="app_mandor_recycler_data_komplain_2">Status</string>
+    <string name="app_mandor_data_komplain_title">Data Komplain</string>
+    <string name="app_mandor_data_komplain_1">Nomor Kontrak</string>
+    <string name="app_mandor_data_komplain_2">Alamat</string>
+    <string name="app_mandor_data_komplain_3">Komplain</string>
+    <string name="app_mandor_data_komplain_4">Kembali</string>
+    <string name="app_mandor_data_komplain_5">Data Komplain</string>
 </resources>

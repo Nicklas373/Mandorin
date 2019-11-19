@@ -1,0 +1,223 @@
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#b0bec5">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/back_activity_komplain_bangun"
+        android:layout_width="24dp"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardBackgroundColor="@color/colorPrimary">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/back"
+            android:gravity="start"
+            android:contentDescription="@string/back" />
+    </android.support.v7.widget.CardView>
+
+        <TextView
+            android:id="@+id/app_name"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:text="@string/app_mandor_komplain_title"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="55dp"/>
+
+    </android.support.v7.widget.Toolbar>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cv_komplain_bangun"
+                android:layout_width="380dp"
+                android:layout_height="600dp"
+                app:cardBackgroundColor="#fff"
+                app:cardCornerRadius="12dp"
+                app:cardMaxElevation="2dp"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.492"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.697">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cv_title_komplain_bangun"
+                    android:layout_width="144dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center_horizontal"
+                    app:cardBackgroundColor="@color/colorPrimary"
+                    app:cardCornerRadius="8dp"
+                    app:cardMaxElevation="2dp"
+                    app:cardUseCompatPadding="true"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground">
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@string/app_mandor_komplain_5"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff" />
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cv_title_nomor_kontrak"
+                    android:layout_width="115dp"
+                    android:layout_height="35dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="60dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardBackgroundColor="@color/colorPrimary"
+                    app:cardCornerRadius="8dp"
+                    app:cardMaxElevation="2dp"
+                    app:cardUseCompatPadding="true">
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/app_mandor_komplain_1"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff" />
+
+                </android.support.v7.widget.CardView>
+
+                <TextView
+                    android:id="@+id/user_input_nomor_kontrak"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="65dp"
+                    android:layout_marginEnd="20dp"
+                    android:textColor="#000"/>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cv_title_alamat_kontrak"
+                    android:layout_width="115dp"
+                    android:layout_height="35dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="120dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardBackgroundColor="@color/colorPrimary"
+                    app:cardCornerRadius="8dp"
+                    app:cardMaxElevation="2dp"
+                    app:cardUseCompatPadding="true">
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/app_mandor_komplain_2"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff" />
+
+                </android.support.v7.widget.CardView>
+
+                <TextView
+                    android:id="@+id/user_input_alamat_kontrak"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="125dp"
+                    android:layout_marginEnd="20dp"
+                    android:textColor="#000"/>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cv_title_komplain_bangun_title"
+                    android:layout_width="130dp"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="250dp"
+                    android:layout_marginStart="10dp"
+                    app:cardBackgroundColor="@color/colorPrimary"
+                    app:cardCornerRadius="8dp"
+                    app:cardMaxElevation="2dp"
+                    app:cardUseCompatPadding="true"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground">
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@string/app_mandor_komplain_3"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff" />
+
+                </android.support.v7.widget.CardView>
+
+                <EditText
+                    android:id="@+id/et_komplain"
+                    android:layout_width="320dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="300dp"
+                    android:ems="10"
+                    android:hint="@string/app_mandor_komplain_6"
+                    android:importantForAutofill="no"
+                    android:inputType="textMultiLine"
+                    android:maxLines="15"
+                    android:minLines="7"
+                    android:gravity="top|start"
+                    android:scrollHorizontally="false"
+                    android:scrollbars="vertical" />
+
+                <Button
+                    android:id="@+id/button_kirim_komplain"
+                    style="@style/Widget.AppCompat.Button"
+                    android:layout_width="100dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginTop="500dp"
+                    android:background="@color/colorPrimary"
+                    android:text="@string/app_mandor_komplain_4"
+                    android:textColor="#fff"
+                    android:textAllCaps="false"/>
+
+                <!-- Dummy Debugging Begin -->
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/status"
+                    android:text=""
+                    android:visibility="gone"
+                    />
+
+                <!-- Dummy Debugging End -->
+
+            </android.support.v7.widget.CardView>
+
+</android.support.constraint.ConstraintLayout>

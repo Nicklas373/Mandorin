@@ -81,6 +81,10 @@
         <activity android:name=".activity_data_status_bangun"/>
         <activity android:name=".activity_status_renovasi"/>
         <activity android:name=".activity_status_bangun"/>
+        <activity android:name=".activity_komplain_konfirmasi"/>
+        <activity android:name=".activity_data_komplain"/>
+        <activity android:name=".activity_data_komplain_user"/>
+        <activity android:name=".activity_komplain_bangun"/>
     </application>
 
 </manifest>

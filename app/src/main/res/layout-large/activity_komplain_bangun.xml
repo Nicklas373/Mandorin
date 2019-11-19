@@ -1,9 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:card_view="http://schemas.android.com/tools"
     android:background="#b0bec5">
 
     <android.support.v7.widget.Toolbar
@@ -19,8 +17,8 @@
         app:layout_constraintVertical_bias="0.0">
 
         <android.support.v7.widget.CardView
-            android:id="@+id/back_activity_renovasi"
-            android:layout_width="32dp"
+            android:id="@+id/back_activity_komplain_bangun"
+            android:layout_width="24dp"
             android:layout_height="wrap_content"
             android:clickable="true"
             android:focusable="true"
@@ -33,7 +31,6 @@
                 android:src="@drawable/back"
                 android:gravity="start"
                 android:contentDescription="@string/back" />
-
         </android.support.v7.widget.CardView>
 
         <TextView
@@ -42,34 +39,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="start"
-            android:text="@string/app_mandor_renovasi_title"
+            android:text="@string/app_mandor_komplain_title"
             android:textAlignment="center"
             android:textColor="#ffffff"
-            android:textSize="30sp"
             android:layout_marginStart="40dp"
             android:layout_marginEnd="55dp"/>
+
     </android.support.v7.widget.Toolbar>
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
-
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="180dp">
-
     <android.support.v7.widget.CardView
-        android:id="@+id/cv_bangun_awal"
-        android:layout_width="700dp"
-        android:layout_height="950dp"
+        android:id="@+id/cv_komplain_bangun"
+        android:layout_width="420dp"
+        android:layout_height="650dp"
         app:cardBackgroundColor="#fff"
         app:cardCornerRadius="12dp"
         app:cardMaxElevation="2dp"
@@ -79,12 +60,12 @@
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.497">
+        app:layout_constraintVertical_bias="0.697">
 
         <android.support.v7.widget.CardView
-            android:id="@+id/cv_title_bangun_awal"
-            android:layout_width="300dp"
-            android:layout_height="70dp"
+            android:id="@+id/cv_title_komplain_bangun"
+            android:layout_width="144dp"
+            android:layout_height="35dp"
             android:layout_gravity="center_horizontal"
             app:cardBackgroundColor="@color/colorPrimary"
             app:cardCornerRadius="8dp"
@@ -99,47 +80,84 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/app_mandor_bangun_awal_1"
+                android:text="@string/app_mandor_komplain_5"
                 android:textAlignment="center"
-                android:textSize="40sp"
                 android:textColor="#ffffff" />
 
         </android.support.v7.widget.CardView>
 
-        <RadioGroup
-            android:id="@+id/rg_borongan"
-            android:layout_width="wrap_content"
-            android:layout_height="70dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="110dp"
-            android:orientation="horizontal">
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv_title_nomor_kontrak"
+            android:layout_width="115dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="60dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardBackgroundColor="@color/colorPrimary"
+            app:cardCornerRadius="8dp"
+            app:cardMaxElevation="2dp"
+            app:cardUseCompatPadding="true">
 
-            <RadioButton
-                android:id="@+id/rb_1"
-                android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:checked="true"
-                android:text="@string/app_mandor_bangun_awal_radio_1"
-                android:textColor="#000"
-                android:textSize="35sp"/>
+                android:text="@string/app_mandor_komplain_1"
+                android:textAlignment="center"
+                android:textColor="#ffffff" />
 
-            <RadioButton
-                android:id="@+id/rb_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:text="@string/app_mandor_bangun_awal_radio_2"
-                android:textColor="#000"
-                android:textSize="35sp"/>
+        </android.support.v7.widget.CardView>
 
-        </RadioGroup>
+        <TextView
+            android:id="@+id/user_input_nomor_kontrak"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="65dp"
+            android:layout_marginEnd="20dp"
+            android:textColor="#000"/>
 
         <android.support.v7.widget.CardView
-            android:id="@+id/cv_title_luas_tanah"
-            android:layout_width="310dp"
-            android:layout_height="70dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="280dp"
+            android:id="@+id/cv_title_alamat_kontrak"
+            android:layout_width="115dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="120dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardBackgroundColor="@color/colorPrimary"
+            app:cardCornerRadius="8dp"
+            app:cardMaxElevation="2dp"
+            app:cardUseCompatPadding="true">
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/app_mandor_komplain_2"
+                android:textAlignment="center"
+                android:textColor="#ffffff" />
+
+        </android.support.v7.widget.CardView>
+
+        <TextView
+            android:id="@+id/user_input_alamat_kontrak"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="125dp"
+            android:layout_marginEnd="20dp"
+            android:textColor="#000"/>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv_title_komplain_bangun_title"
+            android:layout_width="130dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="250dp"
+            android:layout_marginStart="10dp"
             app:cardBackgroundColor="@color/colorPrimary"
             app:cardCornerRadius="8dp"
             app:cardMaxElevation="2dp"
@@ -153,42 +171,40 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/app_mandor_renovasi_1"
+                android:text="@string/app_mandor_komplain_3"
                 android:textAlignment="center"
-                android:textColor="#ffffff"
-                android:textSize="40sp"/>
+                android:textColor="#ffffff" />
 
         </android.support.v7.widget.CardView>
 
         <EditText
             android:id="@+id/et_renovasi"
-            android:layout_width="550dp"
+            android:layout_width="320dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="420dp"
+            android:layout_marginTop="300dp"
             android:ems="10"
-            android:hint="@string/app_mandor_renovasi_2"
+            android:hint="@string/app_mandor_komplain_6"
             android:importantForAutofill="no"
             android:inputType="textMultiLine"
             android:maxLines="15"
-            android:minLines="10"
+            android:minLines="7"
             android:gravity="top|start"
             android:scrollHorizontally="false"
             android:scrollbars="vertical" />
 
         <Button
-            android:id="@+id/button_selanjutnya"
+            android:id="@+id/button_kirim_komplain"
             style="@style/Widget.AppCompat.Button"
-            android:layout_width="170dp"
-            android:layout_height="60dp"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
             android:layout_gravity="end"
-            android:layout_marginTop="800dp"
-            android:layout_marginEnd="60dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="550dp"
             android:background="@color/colorPrimary"
-            android:text="@string/app_mandor_bangun_awal_8"
+            android:text="@string/app_mandor_komplain_4"
             android:textColor="#fff"
-            android:textAllCaps="false"
-            android:textSize="20sp"/>
+            android:textAllCaps="false"/>
 
         <!-- Dummy Debugging Begin -->
 
@@ -203,7 +219,5 @@
         <!-- Dummy Debugging End -->
 
     </android.support.v7.widget.CardView>
-    </RelativeLayout>
-    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>
