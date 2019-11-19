@@ -37,7 +37,7 @@ public class activity_status_renovasi extends AppCompatActivity {
      * Textview, Imageview, CardView & Button
      */
     private TextView Id, nomor_kontrak, alamat_pekerjaan, total_biaya, presentase, estimasi, data_pemesan, rekap_data, surat_kontrak, meta_data_pemesan, meta_rekap_data, meta_surat_kontrak;
-    private Button btn_data_pemesan , btn_rekap_data , btn_surat_kontrak;
+    private Button btn_data_pemesan , btn_rekap_data , btn_surat_kontrak, komplain;
     private CardView back;
 
     private static final String TAG = "activity_status_renovasi";
@@ -78,16 +78,17 @@ public class activity_status_renovasi extends AppCompatActivity {
         btn_data_pemesan = findViewById(R.id.button_data_pemesan);
         btn_rekap_data = findViewById(R.id.button_rekap_data);
         btn_surat_kontrak = findViewById(R.id.button_surat_kontrak);
+        komplain = findViewById(R.id.button_komplain);
 
         /*
          * Passing data from last activity
          */
         String id_1 = getIntent().getExtras().getString("id");
-        String nomor_kontrak_1 = getIntent().getExtras().getString("nomor_kontrak");
+        final String nomor_kontrak_1 = getIntent().getExtras().getString("nomor_kontrak");
         String nama_pemesan_1 = getIntent().getExtras().getString("nama_pemesan");
         String email_1 = getIntent().getExtras().getString("email");
         String no_telp_1 = getIntent().getExtras().getString("alamat");
-        String alamat_pekerjaan_1 = getIntent().getExtras().getString("alamat_pekerjaan");
+        final String alamat_pekerjaan_1 = getIntent().getExtras().getString("alamat_pekerjaan");
         String status_pekerjaan_1 = getIntent().getExtras().getString("status_pekerjaan");
         String total_biaya_1 = getIntent().getExtras().getString("total_biaya");
         String presentase_1 = getIntent().getExtras().getString("presentase");
@@ -216,6 +217,17 @@ public class activity_status_renovasi extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(activity_status_renovasi.this, activity_data_status_renovasi.class);
+                startActivity(intent);
+            }
+        });
+
+        komplain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(activity_status_renovasi.this, activity_komplain_bangun.class);
+                intent.putExtra("nomor_kontrak", nomor_kontrak_1);
+                intent.putExtra("alamat", alamat_pekerjaan_1);
+                intent.putExtra("status", "renovasi");
                 startActivity(intent);
             }
         });

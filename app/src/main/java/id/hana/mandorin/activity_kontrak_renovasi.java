@@ -58,5 +58,13 @@ public class activity_kontrak_renovasi extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        data_komplain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(activity_kontrak_renovasi.this, activity_data_komplain.class);
+                startActivity(intent);
+            }
+        });
     }
 }

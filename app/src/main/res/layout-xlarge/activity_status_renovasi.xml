@@ -390,6 +390,20 @@
             android:textSize="30sp"
             android:textAllCaps="false"/>
 
+        <Button
+            android:id="@+id/button_komplain"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="1000dp"
+            android:background="@color/colorPrimary"
+            android:text="@string/komplain_text"
+            android:textColor="#fff"
+            android:textSize="30sp"
+            android:textAllCaps="false"/>
+
         <!-- Dummy Debugging !-->
 
         <TextView

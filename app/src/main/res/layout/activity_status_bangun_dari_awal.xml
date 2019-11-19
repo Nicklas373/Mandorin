@@ -51,8 +51,8 @@
 
     <android.support.v7.widget.CardView
         android:id="@+id/cv_bangun_awal_2"
-        android:layout_width="380dp"
-        android:layout_height="600dp"
+        android:layout_width="390dp"
+        android:layout_height="640dp"
         app:cardBackgroundColor="#fff"
         app:cardCornerRadius="12dp"
         app:cardMaxElevation="2dp"
@@ -62,7 +62,7 @@
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.697">
+        app:layout_constraintVertical_bias="0.797">
 
         <android.support.v7.widget.CardView
             android:id="@+id/cv_title_id"
@@ -372,6 +372,20 @@
             android:background="#bdbdbd"
             android:text="@string/app_mandor_data_pemesan_bangun_dari_awal_3"
             android:textColor="#000"
+            android:textAllCaps="false"/>
+
+
+        <Button
+            android:id="@+id/button_komplain"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="570dp"
+            android:background="@color/colorPrimary"
+            android:text="@string/komplain_text"
+            android:textColor="#fff"
             android:textAllCaps="false"/>
 
         <!-- Dummy Debugging !-->
