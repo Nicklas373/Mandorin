@@ -95,7 +95,7 @@ public class activity_data_pemesan_bangun_dari_awal extends AppCompatActivity {
         Nik.setText(nik);
         Email.setText(email);
         Status.setText(status);
-        Luas_tanah.setText(luas_tanah);
+        Luas_tanah.setText(luas_tanah + " m²");
         Alamat.setText(alamat);
         Desain.setText(desain_rumah);
         Url.setText(link);

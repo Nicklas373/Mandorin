@@ -93,8 +93,7 @@
             android:layout_width="220dp"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:layout_marginTop="15dp"
-            android:textSize="20sp"
+            android:layout_marginTop="20dp"
             android:textColor="#000"/>
 
         <View
@@ -132,8 +131,7 @@
             android:layout_width="220dp"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:layout_marginTop="75dp"
-            android:textSize="20sp"
+            android:layout_marginTop="80dp"
             android:textColor="#000"/>
 
         <View
@@ -171,8 +169,7 @@
             android:layout_width="220dp"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:layout_marginTop="135dp"
-            android:textSize="20sp"
+            android:layout_marginTop="140dp"
             android:textColor="#000"/>
 
         <View
@@ -210,8 +207,7 @@
             android:layout_width="220dp"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:layout_marginTop="195dp"
-            android:textSize="20sp"
+            android:layout_marginTop="200dp"
             android:textColor="#000"/>
 
         <View
@@ -249,7 +245,7 @@
             android:layout_width="220dp"
             android:layout_height="100dp"
             android:layout_gravity="end"
-            android:layout_marginTop="255dp"
+            android:layout_marginTop="258dp"
             android:scrollbars = "vertical"
             android:textColor="#000"/>
 
@@ -280,7 +276,7 @@
             android:id="@+id/user_input_alamat"
             android:layout_width="220dp"
             android:layout_height="120dp"
-            android:layout_marginTop="420dp"
+            android:layout_marginTop="430dp"
             android:layout_gravity="end"
             android:scrollbars = "vertical"
             android:textColor="#000"/>
