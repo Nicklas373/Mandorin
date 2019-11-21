@@ -62,26 +62,15 @@
         app:layout_constraintTop_toTopOf="@id/toolbar"
         app:layout_constraintVertical_bias="0.0">
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/img_head_1"
             android:layout_width="155dp"
             android:layout_height="155dp"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="5dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
-            android:contentDescription="@string/app_mandor_1_profile_1" />
-
-        <TextView
-            android:id="@+id/TextViewTitle"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:text="@string/app_mandor_user_menu_5"
-            android:textColor="#000"
-            android:layout_gravity="end"
-            android:textAlignment="center"
-            android:background="#b0bec5"
-            android:textSize="20sp"/>
+            android:contentDescription="@string/app_mandor_1_profile_1"/>
 
         <TextView
             android:id="@+id/userFullName"
@@ -89,8 +78,15 @@
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_marginTop="45dp"
-            android:textSize="20sp"
-            android:textColor="#000"/>
+            android:textColor="#000"
+            android:textSize="20sp"/>
+
+        <View
+            android:layout_width="260dp"
+            android:layout_height="1dp"
+            android:background="#000"
+            android:layout_marginTop="85dp"
+            android:layout_gravity="end" />
 
         <TextView
             android:id="@+id/userEmail"
@@ -101,25 +97,47 @@
             android:textSize="20sp"
             android:textColor="#000"/>
 
+        <View
+            android:layout_width="260dp"
+            android:layout_height="1dp"
+            android:background="#000"
+            android:layout_marginTop="145dp"
+            android:layout_gravity="end" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="#b0bec5"
+            android:layout_marginTop="210dp"
+            android:layout_gravity="end" />
+
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="90dp"
             android:layout_height="wrap_content"
             android:text="@string/app_mandor_user_menu_1"
             android:layout_gravity="start"
             android:layout_marginTop="250dp"
             android:layout_marginStart="15dp"
             android:textSize="20sp"
-            android:textColor="#000"/>
+            android:textAlignment="center"
+            android:background="@color/colorPrimary"
+            android:textColor="#fff"/>
 
         <TextView
             android:id="@+id/user_age"
-            android:layout_width="240dp"
+            android:layout_width="260dp"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_marginTop="250dp"
-            android:layout_marginEnd="35dp"
             android:textSize="20sp"
             android:textColor="#000"/>
+
+        <View
+            android:layout_width="260dp"
+            android:layout_height="1dp"
+            android:background="#000"
+            android:layout_marginTop="290dp"
+            android:layout_gravity="end" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -133,23 +151,31 @@
 
         <TextView
             android:id="@+id/user_id"
-            android:layout_width="240dp"
+            android:layout_width="260dp"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_marginTop="300dp"
-            android:layout_marginEnd="35dp"
             android:textSize="20sp"
             android:textColor="#000"/>
 
+        <View
+            android:layout_width="260dp"
+            android:layout_height="1dp"
+            android:background="#000"
+            android:layout_marginTop="340dp"
+            android:layout_gravity="end" />
+
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="90dp"
             android:layout_height="wrap_content"
             android:text="@string/app_mandor_user_menu_2"
             android:layout_gravity="start"
             android:layout_marginTop="300dp"
             android:layout_marginStart="15dp"
             android:textSize="20sp"
-            android:textColor="#000"/>
+            android:textAlignment="center"
+            android:background="@color/colorPrimary"
+            android:textColor="#fff"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -161,15 +187,24 @@
             android:textSize="20sp"
             android:textColor="#000"/>
 
+        <View
+            android:layout_width="260dp"
+            android:layout_height="1dp"
+            android:background="#000"
+            android:layout_marginTop="390dp"
+            android:layout_gravity="end" />
+
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="90dp"
             android:layout_height="wrap_content"
             android:text="@string/app_mandor_user_menu_3"
             android:layout_gravity="start"
             android:layout_marginTop="350dp"
             android:layout_marginStart="15dp"
             android:textSize="20sp"
-            android:textColor="#000"/>
+            android:textAlignment="center"
+            android:background="@color/colorPrimary"
+            android:textColor="#fff"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -183,23 +218,24 @@
 
         <TextView
             android:id="@+id/user_telp"
-            android:layout_width="240dp"
+            android:layout_width="260dp"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_marginTop="350dp"
-            android:layout_marginEnd="35dp"
             android:textSize="20sp"
             android:textColor="#000"/>
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="90dp"
             android:layout_height="wrap_content"
             android:text="@string/app_mandor_user_menu_4"
             android:layout_gravity="start"
             android:layout_marginTop="400dp"
             android:layout_marginStart="15dp"
             android:textSize="20sp"
-            android:textColor="#000"/>
+            android:textAlignment="center"
+            android:background="@color/colorPrimary"
+            android:textColor="#fff"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -213,13 +249,27 @@
 
         <TextView
             android:id="@+id/user_address"
-            android:layout_width="240dp"
+            android:layout_width="260dp"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_marginTop="400dp"
-            android:layout_marginEnd="35dp"
             android:textSize="20sp"
-            android:textColor="#000"/>
+            android:textColor="#000"
+            android:scrollbars="vertical"/>
+
+        <View
+            android:layout_width="260dp"
+            android:layout_height="1dp"
+            android:background="#000"
+            android:layout_marginTop="440dp"
+            android:layout_gravity="end" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#b0bec5"
+            android:layout_marginTop="520dp"
+            android:layout_gravity="end" />
 
         <!-- Dummy Debugging Begin !-->
         <TextView

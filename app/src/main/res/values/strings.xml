@@ -185,6 +185,7 @@
     <string name="app_mandor_komplain_4">Kirim</string>
     <string name="app_mandor_komplain_5">Data Komplain</string>
     <string name="app_mandor_komplain_6">Masukkan Data Komplain</string>
+    <string name="app_mandor_komplain_7">Jenis Layanan</string>
     <string name="app_mandor_konfirmasi_komplain">Konfirmasi</string>
     <string name="app_mandor_konfirmasi_komplain_1">Terkirim !</string>
     <string name="app_mandor_konfirmasi_komplain_2">Terima kasih telah menggunakan jasa kami</string>

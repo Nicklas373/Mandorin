@@ -48,9 +48,38 @@
     </android.support.v7.widget.Toolbar>
 
     <android.support.v7.widget.CardView
+        android:id="@+id/cv_title_komplain_user"
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="170dp"
+        android:layout_gravity="center_horizontal"
+        app:cardBackgroundColor="@color/colorPrimary"
+        app:cardCornerRadius="12dp"
+        app:cardMaxElevation="2dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.127">
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/app_mandor_data_komplain_5"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textColor="#ffffff" />
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
         android:id="@+id/cv_komplain_bangun"
-        android:layout_width="420dp"
-        android:layout_height="650dp"
+        android:layout_width="430dp"
+        android:layout_height="600dp"
         app:cardBackgroundColor="#fff"
         app:cardCornerRadius="12dp"
         app:cardMaxElevation="2dp"
@@ -60,43 +89,17 @@
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.697">
-
-        <android.support.v7.widget.CardView
-            android:id="@+id/cv_title_komplain_bangun"
-            android:layout_width="144dp"
-            android:layout_height="35dp"
-            android:layout_gravity="center_horizontal"
-            app:cardBackgroundColor="@color/colorPrimary"
-            app:cardCornerRadius="8dp"
-            app:cardMaxElevation="2dp"
-            app:cardUseCompatPadding="true"
-            android:clickable="true"
-            android:focusable="true"
-            android:foreground="?android:attr/selectableItemBackground">
-
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="@string/app_mandor_komplain_5"
-                android:textAlignment="center"
-                android:textColor="#ffffff" />
-
-        </android.support.v7.widget.CardView>
+        app:layout_constraintVertical_bias="0.797">
 
         <android.support.v7.widget.CardView
             android:id="@+id/cv_title_nomor_kontrak"
-            android:layout_width="115dp"
-            android:layout_height="35dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="60dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"
             app:cardBackgroundColor="@color/colorPrimary"
-            app:cardCornerRadius="8dp"
             app:cardMaxElevation="2dp"
             app:cardUseCompatPadding="true">
 
@@ -106,30 +109,37 @@
                 android:layout_height="wrap_content"
                 android:text="@string/app_mandor_komplain_1"
                 android:textAlignment="center"
+                android:layout_gravity="center"
+                android:textSize="20sp"
                 android:textColor="#ffffff" />
 
         </android.support.v7.widget.CardView>
 
         <TextView
             android:id="@+id/user_input_nomor_kontrak"
-            android:layout_width="180dp"
+            android:layout_width="230dp"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:layout_marginTop="65dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginTop="25dp"
+            android:textSize="20sp"
             android:textColor="#000"/>
+
+        <View
+            android:layout_width="230dp"
+            android:layout_height="1dp"
+            android:background="#000"
+            android:layout_marginTop="60dp"
+            android:layout_gravity="end" />
 
         <android.support.v7.widget.CardView
             android:id="@+id/cv_title_alamat_kontrak"
-            android:layout_width="115dp"
-            android:layout_height="35dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="120dp"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="85dp"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"
             app:cardBackgroundColor="@color/colorPrimary"
-            app:cardCornerRadius="8dp"
             app:cardMaxElevation="2dp"
             app:cardUseCompatPadding="true">
 
@@ -139,27 +149,36 @@
                 android:layout_height="wrap_content"
                 android:text="@string/app_mandor_komplain_2"
                 android:textAlignment="center"
+                android:textSize="20sp"
+                android:layout_gravity="center"
                 android:textColor="#ffffff" />
 
         </android.support.v7.widget.CardView>
 
         <TextView
             android:id="@+id/user_input_alamat_kontrak"
-            android:layout_width="180dp"
+            android:layout_width="230dp"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:layout_marginTop="125dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginTop="90dp"
+            android:textSize="20sp"
             android:textColor="#000"/>
+
+        <View
+            android:layout_width="230dp"
+            android:layout_height="1dp"
+            android:background="#000"
+            android:layout_marginTop="125dp"
+            android:layout_gravity="end" />
 
         <android.support.v7.widget.CardView
             android:id="@+id/cv_title_komplain_bangun_title"
             android:layout_width="130dp"
             android:layout_height="35dp"
-            android:layout_marginTop="250dp"
+            android:layout_marginTop="180dp"
             android:layout_marginStart="10dp"
+            android:layout_gravity="center_horizontal"
             app:cardBackgroundColor="@color/colorPrimary"
-            app:cardCornerRadius="8dp"
             app:cardMaxElevation="2dp"
             app:cardUseCompatPadding="true"
             android:clickable="true"
@@ -170,19 +189,20 @@
                 android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
+                android:layout_gravity="center"
                 android:text="@string/app_mandor_komplain_3"
                 android:textAlignment="center"
+                android:textSize="20sp"
                 android:textColor="#ffffff" />
 
         </android.support.v7.widget.CardView>
 
         <EditText
-            android:id="@+id/et_renovasi"
-            android:layout_width="320dp"
+            android:id="@+id/et_komplain"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="300dp"
+            android:layout_marginTop="250dp"
             android:ems="10"
             android:hint="@string/app_mandor_komplain_6"
             android:importantForAutofill="no"
@@ -198,12 +218,12 @@
             style="@style/Widget.AppCompat.Button"
             android:layout_width="100dp"
             android:layout_height="30dp"
-            android:layout_gravity="end"
-            android:layout_marginEnd="30dp"
-            android:layout_marginTop="550dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="480dp"
             android:background="@color/colorPrimary"
             android:text="@string/app_mandor_komplain_4"
             android:textColor="#fff"
+            android:textSize="20sp"
             android:textAllCaps="false"/>
 
         <!-- Dummy Debugging Begin -->
@@ -211,7 +231,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/dummy"
+            android:id="@+id/status"
             android:text=""
             android:visibility="gone"
             />

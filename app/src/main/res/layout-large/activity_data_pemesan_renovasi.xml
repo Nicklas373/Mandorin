@@ -66,15 +66,13 @@
 
         <android.support.v7.widget.CardView
             android:id="@+id/cv_title_nama"
-            android:layout_width="115dp"
+            android:layout_width="125dp"
             android:layout_height="35dp"
-            android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"
             app:cardBackgroundColor="@color/colorPrimary"
-            app:cardCornerRadius="8dp"
             app:cardMaxElevation="2dp"
             app:cardUseCompatPadding="true">
 
@@ -84,6 +82,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/app_mandor_bangun_awal_next_2"
                 android:textAlignment="center"
+                android:layout_gravity="center"
                 android:textColor="#ffffff" />
 
         </android.support.v7.widget.CardView>
@@ -91,24 +90,29 @@
 
         <TextView
             android:id="@+id/user_input_nama"
-            android:layout_width="200dp"
+            android:layout_width="220dp"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_marginTop="15dp"
-            android:layout_marginEnd="20dp"
+            android:textSize="20sp"
             android:textColor="#000"/>
+
+        <View
+            android:layout_width="220dp"
+            android:layout_height="1dp"
+            android:background="#000"
+            android:layout_marginTop="50dp"
+            android:layout_gravity="end" />
 
         <android.support.v7.widget.CardView
             android:id="@+id/cv_title_nik"
-            android:layout_width="115dp"
+            android:layout_width="125dp"
             android:layout_height="35dp"
-            android:layout_marginStart="10dp"
             android:layout_marginTop="70dp"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"
             app:cardBackgroundColor="@color/colorPrimary"
-            app:cardCornerRadius="8dp"
             app:cardMaxElevation="2dp"
             app:cardUseCompatPadding="true">
 
@@ -118,30 +122,36 @@
                 android:layout_height="wrap_content"
                 android:text="@string/app_mandor_bangun_awal_next_3"
                 android:textAlignment="center"
+                android:layout_gravity="center"
                 android:textColor="#ffffff" />
 
         </android.support.v7.widget.CardView>
 
         <TextView
             android:id="@+id/user_input_nik"
-            android:layout_width="200dp"
+            android:layout_width="220dp"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_marginTop="75dp"
-            android:layout_marginEnd="20dp"
+            android:textSize="20sp"
             android:textColor="#000"/>
+
+        <View
+            android:layout_width="220dp"
+            android:layout_height="1dp"
+            android:background="#000"
+            android:layout_marginTop="110dp"
+            android:layout_gravity="end" />
 
         <android.support.v7.widget.CardView
             android:id="@+id/cv_title_email"
-            android:layout_width="115dp"
+            android:layout_width="125dp"
             android:layout_height="35dp"
-            android:layout_marginStart="10dp"
             android:layout_marginTop="130dp"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"
             app:cardBackgroundColor="@color/colorPrimary"
-            app:cardCornerRadius="8dp"
             app:cardMaxElevation="2dp"
             app:cardUseCompatPadding="true">
 
@@ -151,30 +161,36 @@
                 android:layout_height="wrap_content"
                 android:text="@string/app_mandor_bangun_awal_next_4"
                 android:textAlignment="center"
+                android:layout_gravity="center"
                 android:textColor="#ffffff" />
 
         </android.support.v7.widget.CardView>
 
         <TextView
             android:id="@+id/user_input_email"
-            android:layout_width="200dp"
+            android:layout_width="220dp"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_marginTop="135dp"
-            android:layout_marginEnd="20dp"
+            android:textSize="20sp"
             android:textColor="#000"/>
+
+        <View
+            android:layout_width="220dp"
+            android:layout_height="1dp"
+            android:background="#000"
+            android:layout_marginTop="170dp"
+            android:layout_gravity="end" />
 
         <android.support.v7.widget.CardView
             android:id="@+id/cv_title_status"
-            android:layout_width="115dp"
+            android:layout_width="125dp"
             android:layout_height="35dp"
-            android:layout_marginStart="10dp"
             android:layout_marginTop="190dp"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"
             app:cardBackgroundColor="@color/colorPrimary"
-            app:cardCornerRadius="8dp"
             app:cardMaxElevation="2dp"
             app:cardUseCompatPadding="true">
 
@@ -184,30 +200,36 @@
                 android:layout_height="wrap_content"
                 android:text="@string/app_mandor_recycler_pemesan_renovasi_4"
                 android:textAlignment="center"
+                android:layout_gravity="center"
                 android:textColor="#ffffff" />
 
         </android.support.v7.widget.CardView>
 
         <TextView
             android:id="@+id/user_input_status"
-            android:layout_width="200dp"
+            android:layout_width="220dp"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_marginTop="195dp"
-            android:layout_marginEnd="20dp"
+            android:textSize="20sp"
             android:textColor="#000"/>
+
+        <View
+            android:layout_width="220dp"
+            android:layout_height="1dp"
+            android:background="#000"
+            android:layout_marginTop="230dp"
+            android:layout_gravity="end" />
 
         <android.support.v7.widget.CardView
             android:id="@+id/cv_title_data_renovasi"
-            android:layout_width="115dp"
+            android:layout_width="125dp"
             android:layout_height="35dp"
-            android:layout_marginStart="10dp"
             android:layout_marginTop="250dp"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"
             app:cardBackgroundColor="@color/colorPrimary"
-            app:cardCornerRadius="8dp"
             app:cardMaxElevation="2dp"
             app:cardUseCompatPadding="true">
 
@@ -217,31 +239,29 @@
                 android:layout_height="wrap_content"
                 android:text="@string/app_mandor_recycler_pemesan_renovasi_title"
                 android:textAlignment="center"
+                android:layout_gravity="center"
                 android:textColor="#ffffff" />
 
         </android.support.v7.widget.CardView>
 
         <TextView
             android:id="@+id/user_input_data_renovasi"
-            android:layout_width="200dp"
+            android:layout_width="220dp"
             android:layout_height="100dp"
             android:layout_gravity="end"
             android:layout_marginTop="255dp"
-            android:layout_marginEnd="20dp"
             android:scrollbars = "vertical"
             android:textColor="#000"/>
 
         <android.support.v7.widget.CardView
             android:id="@+id/cv_title_alamat"
-            android:layout_width="115dp"
+            android:layout_width="125dp"
             android:layout_height="35dp"
-            android:layout_marginStart="10dp"
             android:layout_marginTop="420dp"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"
             app:cardBackgroundColor="@color/colorPrimary"
-            app:cardCornerRadius="8dp"
             app:cardMaxElevation="2dp"
             app:cardUseCompatPadding="true">
 
@@ -251,16 +271,16 @@
                 android:layout_height="wrap_content"
                 android:text="@string/app_mandor_bangun_awal_next_6"
                 android:textAlignment="center"
+                android:layout_gravity="center"
                 android:textColor="#ffffff" />
 
         </android.support.v7.widget.CardView>
 
         <TextView
             android:id="@+id/user_input_alamat"
-            android:layout_width="200dp"
+            android:layout_width="220dp"
             android:layout_height="120dp"
             android:layout_marginTop="420dp"
-            android:layout_marginEnd="20dp"
             android:layout_gravity="end"
             android:scrollbars = "vertical"
             android:textColor="#000"/>

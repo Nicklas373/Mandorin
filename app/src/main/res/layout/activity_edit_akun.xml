@@ -64,7 +64,7 @@
         app:layout_constraintTop_toTopOf="@id/toolbar"
         app:layout_constraintVertical_bias="0.0">
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/img_head_akun"
             android:layout_width="120dp"
             android:layout_height="120dp"
@@ -73,7 +73,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
             android:contentDescription="@string/app_mandor_menu_edit_akun_1"
-            android:src="@drawable/profil" />
+            android:src="@drawable/profil"/>
 
         <TextView
             android:id="@+id/TextViewTitle"
@@ -88,9 +88,8 @@
 
         <EditText
             android:id="@+id/userEditFullName"
-            android:layout_width="240dp"
+            android:layout_width="230dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
             android:layout_gravity="end"
             android:layout_marginTop="45dp"
             android:textSize="20sp"
@@ -101,24 +100,30 @@
 
         <TextView
             android:id="@+id/userEditEmail"
-            android:layout_width="240dp"
+            android:layout_width="230dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
             android:layout_gravity="end"
-            android:layout_marginTop="100dp"
-            android:textSize="20sp"
+            android:layout_marginTop="110dp"
             android:text="@string/empty"
             android:textColor="#000"/>
 
+        <View
+            android:layout_width="230dp"
+            android:layout_height="1dp"
+            android:background="#000"
+            android:layout_marginTop="140dp"
+            android:layout_gravity="end" />
+
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
             android:text="@string/app_mandor_user_menu_1"
             android:layout_gravity="start"
             android:layout_marginTop="190dp"
-            android:layout_marginStart="15dp"
             android:textSize="20sp"
-            android:textColor="#000"/>
+            android:textAlignment="center"
+            android:background="@color/colorPrimary"
+            android:textColor="#fff"/>
 
         <EditText
             android:id="@+id/userEditAge"
@@ -157,14 +162,15 @@
             android:inputType="number" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
             android:text="@string/app_mandor_user_menu_2"
             android:layout_gravity="start"
             android:layout_marginTop="240dp"
-            android:layout_marginStart="15dp"
             android:textSize="20sp"
-            android:textColor="#000"/>
+            android:textAlignment="center"
+            android:background="@color/colorPrimary"
+            android:textColor="#fff"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -177,14 +183,15 @@
             android:textColor="#000"/>
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
             android:text="@string/app_mandor_user_menu_3"
             android:layout_gravity="start"
             android:layout_marginTop="290dp"
-            android:layout_marginStart="15dp"
             android:textSize="20sp"
-            android:textColor="#000"/>
+            android:textAlignment="center"
+            android:background="@color/colorPrimary"
+            android:textColor="#fff"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -210,14 +217,15 @@
             android:inputType="phone" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
             android:text="@string/app_mandor_user_menu_4"
             android:layout_gravity="start"
             android:layout_marginTop="340dp"
-            android:layout_marginStart="15dp"
             android:textSize="20sp"
-            android:textColor="#000"/>
+            android:textAlignment="center"
+            android:background="@color/colorPrimary"
+            android:textColor="#fff"/>
 
         <TextView
             android:layout_width="wrap_content"

@@ -62,7 +62,7 @@
         app:layout_constraintHorizontal_bias="0.440"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.060">
+        app:layout_constraintVertical_bias="0.760">
 
         <android.support.v7.widget.CardView
             android:id="@+id/cv_title_id"
@@ -74,7 +74,7 @@
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"
             app:cardBackgroundColor="@color/colorPrimary"
-            app:cardCornerRadius="8dp"
+            app:cardCornerRadius="0dp"
             app:cardMaxElevation="2dp"
             app:cardUseCompatPadding="true">
 
@@ -83,20 +83,26 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/app_mandor_status_pemesan_renovasi_1"
+                android:layout_gravity="center"
                 android:textAlignment="center"
                 android:textColor="#ffffff" />
 
         </android.support.v7.widget.CardView>
 
-
         <TextView
             android:id="@+id/user_input_id"
-            android:layout_width="180dp"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_marginTop="15dp"
-            android:layout_marginEnd="20dp"
             android:textColor="#000" />
+
+        <View
+            android:layout_width="200dp"
+            android:layout_height="1dp"
+            android:background="#000"
+            android:layout_marginTop="50dp"
+            android:layout_gravity="end" />
 
         <android.support.v7.widget.CardView
             android:id="@+id/cv_title_nomor_kontrak"
@@ -108,7 +114,6 @@
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"
             app:cardBackgroundColor="@color/colorPrimary"
-            app:cardCornerRadius="8dp"
             app:cardMaxElevation="2dp"
             app:cardUseCompatPadding="true">
 
@@ -118,18 +123,25 @@
                 android:layout_height="wrap_content"
                 android:text="@string/app_mandor_status_pemesan_renovasi_2"
                 android:textAlignment="center"
+                android:layout_gravity="center"
                 android:textColor="#ffffff" />
 
         </android.support.v7.widget.CardView>
 
         <TextView
             android:id="@+id/user_input_nomor_kontrak"
-            android:layout_width="180dp"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_marginTop="65dp"
-            android:layout_marginEnd="20dp"
             android:textColor="#000" />
+
+        <View
+            android:layout_width="200dp"
+            android:layout_height="1dp"
+            android:background="#000"
+            android:layout_marginTop="95dp"
+            android:layout_gravity="end" />
 
         <android.support.v7.widget.CardView
             android:id="@+id/cv_title_total_biaya"
@@ -141,7 +153,6 @@
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"
             app:cardBackgroundColor="@color/colorPrimary"
-            app:cardCornerRadius="8dp"
             app:cardMaxElevation="2dp"
             app:cardUseCompatPadding="true">
 
@@ -151,18 +162,25 @@
                 android:layout_height="wrap_content"
                 android:text="@string/app_mandor_status_pemesan_renovasi_3"
                 android:textAlignment="center"
+                android:layout_gravity="center"
                 android:textColor="#ffffff" />
 
         </android.support.v7.widget.CardView>
 
         <TextView
             android:id="@+id/user_input_total_biaya"
-            android:layout_width="180dp"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_marginTop="115dp"
-            android:layout_marginEnd="20dp"
             android:textColor="#000" />
+
+        <View
+            android:layout_width="200dp"
+            android:layout_height="1dp"
+            android:background="#000"
+            android:layout_marginTop="145dp"
+            android:layout_gravity="end" />
 
         <android.support.v7.widget.CardView
             android:id="@+id/cv_title_alamat"
@@ -174,7 +192,6 @@
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"
             app:cardBackgroundColor="@color/colorPrimary"
-            app:cardCornerRadius="8dp"
             app:cardMaxElevation="2dp"
             app:cardUseCompatPadding="true">
 
@@ -184,18 +201,26 @@
                 android:layout_height="wrap_content"
                 android:text="@string/app_mandor_status_pemesan_renovasi_4"
                 android:textAlignment="center"
+                android:layout_gravity="center"
                 android:textColor="#ffffff" />
 
         </android.support.v7.widget.CardView>
 
         <TextView
             android:id="@+id/user_input_alamat"
-            android:layout_width="180dp"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
+            android:scrollbars = "vertical"
             android:layout_marginTop="165dp"
-            android:layout_marginEnd="20dp"
             android:textColor="#000" />
+
+        <View
+            android:layout_width="200dp"
+            android:layout_height="1dp"
+            android:background="#000"
+            android:layout_marginTop="195dp"
+            android:layout_gravity="end" />
 
         <android.support.v7.widget.CardView
             android:id="@+id/cv_title_presentasi"
@@ -207,7 +232,6 @@
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"
             app:cardBackgroundColor="@color/colorPrimary"
-            app:cardCornerRadius="8dp"
             app:cardMaxElevation="2dp"
             app:cardUseCompatPadding="true">
 
@@ -217,18 +241,25 @@
                 android:layout_height="wrap_content"
                 android:text="@string/app_mandor_status_pemesan_renovasi_5"
                 android:textAlignment="center"
+                android:layout_gravity="center"
                 android:textColor="#ffffff" />
 
         </android.support.v7.widget.CardView>
 
         <TextView
             android:id="@+id/user_input_presentasi"
-            android:layout_width="180dp"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_marginTop="215dp"
-            android:layout_marginEnd="20dp"
             android:textColor="#000" />
+
+        <View
+            android:layout_width="200dp"
+            android:layout_height="1dp"
+            android:background="#000"
+            android:layout_marginTop="245dp"
+            android:layout_gravity="end" />
 
         <android.support.v7.widget.CardView
             android:id="@+id/cv_title_estimasi"
@@ -240,7 +271,6 @@
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"
             app:cardBackgroundColor="@color/colorPrimary"
-            app:cardCornerRadius="8dp"
             app:cardMaxElevation="2dp"
             app:cardUseCompatPadding="true">
 
@@ -250,18 +280,25 @@
                 android:layout_height="wrap_content"
                 android:text="@string/app_mandor_status_pemesan_renovasi_6"
                 android:textAlignment="center"
+                android:layout_gravity="center"
                 android:textColor="#ffffff" />
 
         </android.support.v7.widget.CardView>
 
         <TextView
             android:id="@+id/user_input_estimasi"
-            android:layout_width="180dp"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_marginTop="263dp"
-            android:layout_marginEnd="20dp"
             android:textColor="#000" />
+
+        <View
+            android:layout_width="200dp"
+            android:layout_height="1dp"
+            android:background="#000"
+            android:layout_marginTop="295dp"
+            android:layout_gravity="end" />
 
         <android.support.v7.widget.CardView
             android:id="@+id/cv_title_data_pemesan"
@@ -273,7 +310,6 @@
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"
             app:cardBackgroundColor="@color/colorPrimary"
-            app:cardCornerRadius="8dp"
             app:cardMaxElevation="2dp"
             app:cardUseCompatPadding="true">
 
@@ -283,22 +319,23 @@
                 android:layout_height="wrap_content"
                 android:text="@string/app_mandor_status_pemesan_renovasi_7"
                 android:textAlignment="center"
+                android:layout_gravity="center"
                 android:textColor="#ffffff" />
 
         </android.support.v7.widget.CardView>
 
         <Button
             android:id="@+id/button_data_pemesan"
-            style="@style/Widget.AppCompat.Button"
+            style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_gravity="end"
             android:layout_marginTop="320dp"
             android:layout_marginEnd="80dp"
-            android:background="#bdbdbd"
             android:text="@string/app_mandor_data_pemesan_bangun_dari_awal_3"
+            android:background="#0071ac"
             android:textAllCaps="false"
-            android:textColor="#000" />
+            android:textColor="#fff" />
 
         <android.support.v7.widget.CardView
             android:id="@+id/cv_title_data_desain_rumah"
@@ -310,7 +347,6 @@
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"
             app:cardBackgroundColor="@color/colorPrimary"
-            app:cardCornerRadius="8dp"
             app:cardMaxElevation="2dp"
             app:cardUseCompatPadding="true">
 
@@ -320,22 +356,23 @@
                 android:layout_height="wrap_content"
                 android:text="@string/app_mandor_status_pemesan_renovasi_10"
                 android:textAlignment="center"
+                android:layout_gravity="center"
                 android:textColor="#ffffff" />
 
         </android.support.v7.widget.CardView>
 
         <Button
             android:id="@+id/button_data_desain_rumah"
-            style="@style/Widget.AppCompat.Button"
+            style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_gravity="end"
             android:layout_marginTop="380dp"
             android:layout_marginEnd="80dp"
-            android:background="#bdbdbd"
+            android:background="#0071ac"
             android:text="@string/app_mandor_data_pemesan_bangun_dari_awal_3"
             android:textAllCaps="false"
-            android:textColor="#000" />
+            android:textColor="#fff" />
 
         <android.support.v7.widget.CardView
             android:id="@+id/cv_title_surat_kontrak"
@@ -347,7 +384,6 @@
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"
             app:cardBackgroundColor="@color/colorPrimary"
-            app:cardCornerRadius="8dp"
             app:cardMaxElevation="2dp"
             app:cardUseCompatPadding="true">
 
@@ -357,22 +393,23 @@
                 android:layout_height="wrap_content"
                 android:text="@string/app_mandor_status_pemesan_renovasi_8"
                 android:textAlignment="center"
+                android:layout_gravity="center"
                 android:textColor="#ffffff" />
 
         </android.support.v7.widget.CardView>
 
         <Button
             android:id="@+id/button_surat_kontrak"
-            style="@style/Widget.AppCompat.Button"
+            style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_gravity="end"
             android:layout_marginTop="444dp"
             android:layout_marginEnd="80dp"
-            android:background="#bdbdbd"
+            android:background="#0071ac"
             android:text="@string/app_mandor_data_pemesan_bangun_dari_awal_3"
             android:textAllCaps="false"
-            android:textColor="#000" />
+            android:textColor="#fff" />
 
         <android.support.v7.widget.CardView
             android:id="@+id/cv_title_rekap_data"
@@ -384,7 +421,6 @@
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"
             app:cardBackgroundColor="@color/colorPrimary"
-            app:cardCornerRadius="8dp"
             app:cardMaxElevation="2dp"
             app:cardUseCompatPadding="true">
 
@@ -394,26 +430,27 @@
                 android:layout_height="wrap_content"
                 android:text="@string/app_mandor_status_pemesan_renovasi_9"
                 android:textAlignment="center"
+                android:layout_gravity="center"
                 android:textColor="#ffffff" />
 
         </android.support.v7.widget.CardView>
 
         <Button
             android:id="@+id/button_rekap_data"
-            style="@style/Widget.AppCompat.Button"
+            style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_gravity="end"
             android:layout_marginTop="500dp"
             android:layout_marginEnd="80dp"
-            android:background="#bdbdbd"
+            android:background="#0071ac"
             android:text="@string/app_mandor_data_pemesan_bangun_dari_awal_3"
             android:textAllCaps="false"
-            android:textColor="#000" />
+            android:textColor="#fff" />
 
         <Button
             android:id="@+id/button_komplain"
-            style="@style/Widget.AppCompat.Button"
+            style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_gravity="end"
