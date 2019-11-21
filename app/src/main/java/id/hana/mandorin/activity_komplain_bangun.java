@@ -1,8 +1,10 @@
 package id.hana.mandorin;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.view.View;
@@ -97,19 +99,49 @@ public class activity_komplain_bangun extends AppCompatActivity {
                 if (komplain_1.getText().toString().length() == 0) {
                     komplain_1.setError("Harap Masukkan Data Komplain Anda");
                 } else {
-                    try
-                    {
-                        createdata();
-                        Intent intent = new Intent(activity_komplain_bangun.this, activity_komplain_konfirmasi.class);
-                        startActivity(intent);
-                    } catch (IllegalArgumentException e)
-                    {
-                        Toast.makeText(activity_komplain_bangun.this, "Proses Gagal!", Toast.LENGTH_SHORT).show();
-                        e.printStackTrace();
-                    }
+                    komplain_dialog();
                 }
             }
         });
+    }
+
+    private void komplain_dialog(){
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                this);
+
+        // set title dialog
+        alertDialogBuilder.setTitle("Data Komplain");
+
+        // set pesan dari dialog
+        alertDialogBuilder
+                .setMessage("Apakah anda ingin mengirim data komplain?")
+                .setIcon(R.mipmap.ic_launcher)
+                .setCancelable(false)
+                .setPositiveButton("Kirim",new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog,int id) {
+                        try
+                        {
+                            createdata();
+                            Intent intent = new Intent(activity_komplain_bangun.this, activity_komplain_konfirmasi.class);
+                            startActivity(intent);
+                        } catch (IllegalArgumentException e)
+                        {
+                            Toast.makeText(activity_komplain_bangun.this, "Proses Gagal!", Toast.LENGTH_SHORT).show();
+                            e.printStackTrace();
+                        }
+                    }
+                })
+                .setNegativeButton("Batal",new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+
+        // membuat alert dialog dari builder
+        AlertDialog alertDialog = alertDialogBuilder.create();
+
+        // menampilkan alert dialog
+        alertDialog.show();
     }
 
     private void createdata() {

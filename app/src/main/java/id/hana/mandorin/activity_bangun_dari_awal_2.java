@@ -1,9 +1,11 @@
 package id.hana.mandorin;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.view.View;
@@ -113,20 +115,7 @@ public class activity_bangun_dari_awal_2 extends AppCompatActivity {
                 } else if (tgl_survey.getText().toString().length() == 0) {
                     tgl_survey.setError("Harap Masukkan Tanggal Survey");
                 } else {
-                    try
-                    {
-                        createdata();
-                        SharedPreferences.Editor editor;
-                        editor=pref.edit();
-                        editor.clear();
-                        editor.apply();
-                        Intent intent = new Intent(activity_bangun_dari_awal_2.this, activity_konfirmasi_bangun_renovasi.class);
-                        startActivity(intent);
-                    } catch (IllegalArgumentException e)
-                    {
-                        Toast.makeText(activity_bangun_dari_awal_2.this, "Proses Gagal!", Toast.LENGTH_SHORT).show();
-                        e.printStackTrace();
-                    }
+                    kirim_dialog();
                 }
             }
         });
@@ -142,6 +131,49 @@ public class activity_bangun_dari_awal_2 extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    private void kirim_dialog(){
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                this);
+
+        // set title dialog
+        alertDialogBuilder.setTitle("Kirim Data");
+
+        // set pesan dari dialog
+        alertDialogBuilder
+                .setMessage("Apakah anda ingin memproses layanan?")
+                .setIcon(R.mipmap.ic_launcher)
+                .setCancelable(false)
+                .setPositiveButton("Proses",new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog,int id) {
+                        try
+                        {
+                            createdata();
+                            SharedPreferences.Editor editor;
+                            editor=pref.edit();
+                            editor.clear();
+                            editor.apply();
+                            Intent intent = new Intent(activity_bangun_dari_awal_2.this, activity_konfirmasi_bangun_renovasi.class);
+                            startActivity(intent);
+                        } catch (IllegalArgumentException e)
+                        {
+                            Toast.makeText(activity_bangun_dari_awal_2.this, "Proses Gagal!", Toast.LENGTH_SHORT).show();
+                            e.printStackTrace();
+                        }
+                    }
+                })
+                .setNegativeButton("Batal",new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+
+        // membuat alert dialog dari builder
+        AlertDialog alertDialog = alertDialogBuilder.create();
+
+        // menampilkan alert dialog
+        alertDialog.show();
     }
 
     private void createdata() {

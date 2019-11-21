@@ -117,7 +117,7 @@ public class activity_bangun_dari_awal extends AppCompatActivity {
                                 dummy.setText(new_dummy_2);
                                 break;
                         }
-                        dialog = ProgressDialog.show(activity_bangun_dari_awal.this, "", "Uploading File...", true);
+                        dialog = ProgressDialog.show(activity_bangun_dari_awal.this, "", "Memproses...", true);
 
                             new Thread(new Runnable() {
                                 @Override

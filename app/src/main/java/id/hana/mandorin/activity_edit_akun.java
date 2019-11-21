@@ -3,6 +3,7 @@ package id.hana.mandorin;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
@@ -10,6 +11,7 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.text.TextUtils;
@@ -131,18 +133,7 @@ public class activity_edit_akun extends AppCompatActivity {
                 } else if (TextUtils.isEmpty(editaddress.getText().toString())) {
                     Toast.makeText(getApplicationContext(), "Harap Masukkan Alamat Anda", Toast.LENGTH_SHORT).show();
                     return;
-                }  dialog = ProgressDialog.show(activity_edit_akun.this, "", "Memperbaharui Data...", true);
-
-                    new Thread(new Runnable() {
-                        @Override
-                        public void run() {
-                            //creating new thread to handle Http Operations
-                            uploadFile(selectedFilePath);
-                        }
-                    }).start();
-                createdata_2();
-                Intent intent = new Intent(activity_edit_akun.this, activity_akun.class);
-                startActivity(intent);
+                }  update_dialog();
             }
         });
 
@@ -153,6 +144,47 @@ public class activity_edit_akun extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    private void update_dialog(){
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                this);
+
+        // set title dialog
+        alertDialogBuilder.setTitle("Data Diri");
+
+        // set pesan dari dialog
+        alertDialogBuilder
+                .setMessage("Apakah anda ingin memperbaharui data diri anda?")
+                .setIcon(R.mipmap.ic_launcher)
+                .setCancelable(false)
+                .setPositiveButton("Ya",new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog,int id) {
+                        dialog = ProgressDialog.show(activity_edit_akun.this, "", "Memperbaharui Data...", true);
+
+                        new Thread(new Runnable() {
+                            @Override
+                            public void run() {
+                                //creating new thread to handle Http Operations
+                                uploadFile(selectedFilePath);
+                            }
+                        }).start();
+                        createdata_2();
+                        Intent intent = new Intent(activity_edit_akun.this, activity_akun.class);
+                        startActivity(intent);
+                    }
+                })
+                .setNegativeButton("Tidak",new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+
+        // membuat alert dialog dari builder
+        AlertDialog alertDialog = alertDialogBuilder.create();
+
+        // menampilkan alert dialog
+        alertDialog.show();
     }
 
     //android upload file to server
