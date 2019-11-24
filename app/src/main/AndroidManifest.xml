@@ -85,6 +85,10 @@
         <activity android:name=".activity_data_komplain"/>
         <activity android:name=".activity_data_komplain_user"/>
         <activity android:name=".activity_komplain_bangun"/>
+        <activity android:name=".activity_status_pembayaran"/>
+        <activity android:name=".activity_data_pembayaran_renovasi"/>
+        <activity android:name=".activity_data_pembayaran_renovasi_2"/>
+        <activity android:name=".activity_pemesan_pembayaran_renovasi"/>
     </application>
 
 </manifest>
