@@ -54,8 +54,7 @@
         android:layout_marginBottom="170dp"
         android:layout_gravity="center_horizontal"
         app:cardBackgroundColor="@color/colorPrimary"
-        app:cardCornerRadius="12dp"
-        app:cardMaxElevation="2dp"
+        app:cardCornerRadius="4dp"
         app:cardUseCompatPadding="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -128,7 +127,7 @@
             android:layout_width="230dp"
             android:layout_height="1dp"
             android:background="#000"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="50dp"
             android:layout_gravity="end" />
 
         <android.support.v7.widget.CardView
@@ -168,7 +167,7 @@
             android:layout_width="230dp"
             android:layout_height="1dp"
             android:background="#000"
-            android:layout_marginTop="125dp"
+            android:layout_marginTop="115dp"
             android:layout_gravity="end" />
 
         <android.support.v7.widget.CardView

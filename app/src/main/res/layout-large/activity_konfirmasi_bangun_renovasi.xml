@@ -127,7 +127,7 @@
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:layout_marginTop="660dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginEnd="10dp"
             android:layout_gravity="end"
             android:background="@color/colorPrimary"
             android:text="@string/app_mandor_konfirmasi_8"

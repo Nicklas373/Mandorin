@@ -123,36 +123,9 @@
     </android.support.v7.widget.CardView>
 
     <android.support.v7.widget.CardView
-        android:id="@+id/cv_sub_title"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="260dp"
-        android:layout_marginStart="20dp"
-        app:cardBackgroundColor="#0069c0"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        card_view:cardElevation="3dp"
-        card_view:cardUseCompatPadding="true">
-
-        <TextView
-            android:id="@+id/txt_sub_title"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/app_mandor_1_profile_3"
-            android:gravity="center"
-            android:textSize="15sp"
-            android:textColor="#ffffff" />
-
-    </android.support.v7.widget.CardView>
-
-    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="320dp"
+        android:layout_marginTop="280dp"
         android:layout_marginStart="15dp"
         android:layout_marginEnd="15dp"
         card_view:cardCornerRadius="6dp"
@@ -163,11 +136,11 @@
 
         <TextView
             android:id="@+id/txt_nama_mandor"
-            android:layout_width="120dp"
+            android:layout_width="100dp"
             android:layout_height="25dp"
             android:layout_marginTop="15dp"
             android:text="@string/app_mandor_1_profile_3_data_1"
-            android:textSize="17sp"
+            android:textSize="15sp"
             android:textAlignment="center"
             android:background="@color/colorPrimary"
             android:textColor="#fff"/>
@@ -176,7 +149,7 @@
             android:id="@+id/txt_nama_mandor_1"
             android:layout_width="220dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="17dp"
             android:layout_gravity="end"
             android:layout_toEndOf="@id/txt_nama_mandor"
             android:text="@string/empty"
@@ -186,16 +159,16 @@
             android:layout_width="220dp"
             android:layout_height="1dp"
             android:background="#000"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="37dp"
             android:layout_gravity="end" />
 
         <TextView
             android:id="@+id/txt_nik_mandor"
-            android:layout_width="120dp"
+            android:layout_width="100dp"
             android:layout_height="25dp"
             android:layout_marginTop="60dp"
             android:text="@string/app_mandor_1_profile_3_data_2"
-            android:textSize="17sp"
+            android:textSize="15sp"
             android:textAlignment="center"
             android:background="@color/colorPrimary"
             android:textColor="#fff"/>
@@ -204,7 +177,7 @@
             android:id="@+id/txt_nik_mandor_1"
             android:layout_width="220dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="63dp"
             android:layout_gravity="end"
             android:layout_toEndOf="@id/txt_nama_mandor"
             android:text="@string/empty"
@@ -214,16 +187,16 @@
             android:layout_width="220dp"
             android:layout_height="1dp"
             android:background="#000"
-            android:layout_marginTop="90dp"
+            android:layout_marginTop="82dp"
             android:layout_gravity="end" />
 
         <TextView
             android:id="@+id/txt_umur_mandor"
-            android:layout_width="120dp"
+            android:layout_width="100dp"
             android:layout_height="25dp"
             android:layout_marginTop="105dp"
             android:text="@string/app_mandor_1_profile_3_data_3"
-            android:textSize="17sp"
+            android:textSize="15sp"
             android:textAlignment="center"
             android:background="@color/colorPrimary"
             android:textColor="#fff"/>
@@ -232,7 +205,7 @@
             android:id="@+id/txt_umur_mandor_1"
             android:layout_width="220dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="107dp"
+            android:layout_marginTop="108dp"
             android:layout_gravity="end"
             android:layout_toEndOf="@id/txt_nama_mandor"
             android:text="@string/empty"
@@ -242,17 +215,17 @@
             android:layout_width="220dp"
             android:layout_height="1dp"
             android:background="#000"
-            android:layout_marginTop="135dp"
+            android:layout_marginTop="128dp"
             android:layout_gravity="end" />
 
         <TextView
             android:id="@+id/txt_tempat_mandor"
-            android:layout_width="120dp"
+            android:layout_width="100dp"
             android:layout_height="25dp"
             android:layout_marginTop="150dp"
             android:text="@string/app_mandor_1_profile_3_data_6"
             android:textAlignment="center"
-            android:textSize="17sp"
+            android:textSize="15sp"
             android:background="@color/colorPrimary"
             android:textColor="#fff"/>
 
@@ -270,17 +243,17 @@
             android:layout_width="220dp"
             android:layout_height="1dp"
             android:background="#000"
-            android:layout_marginTop="180dp"
+            android:layout_marginTop="173dp"
             android:layout_gravity="end" />
 
         <TextView
             android:id="@+id/txt_tgl_mandor"
-            android:layout_width="120dp"
+            android:layout_width="100dp"
             android:layout_height="25dp"
             android:layout_marginTop="195dp"
             android:text="@string/app_mandor_1_profile_3_data_7"
             android:textAlignment="center"
-            android:textSize="17sp"
+            android:textSize="15sp"
             android:background="@color/colorPrimary"
             android:textColor="#fff"/>
 
@@ -288,7 +261,7 @@
             android:id="@+id/txt_tgl_mandor_1"
             android:layout_width="220dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="196dp"
+            android:layout_marginTop="197dp"
             android:layout_gravity="end"
             android:layout_toEndOf="@id/txt_nama_mandor"
             android:text="@string/empty"
@@ -298,17 +271,17 @@
             android:layout_width="220dp"
             android:layout_height="1dp"
             android:background="#000"
-            android:layout_marginTop="225dp"
+            android:layout_marginTop="217dp"
             android:layout_gravity="end" />
 
         <TextView
             android:id="@+id/txt_agama_mandor"
-            android:layout_width="120dp"
+            android:layout_width="100dp"
             android:layout_height="25dp"
             android:layout_marginTop="240dp"
             android:text="@string/app_mandor_1_profile_3_data_8"
             android:textAlignment="center"
-            android:textSize="17sp"
+            android:textSize="15sp"
             android:background="@color/colorPrimary"
             android:textColor="#fff"/>
 
@@ -316,7 +289,7 @@
             android:id="@+id/txt_agama_mandor_1"
             android:layout_width="220dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="242dp"
+            android:layout_marginTop="243dp"
             android:layout_gravity="end"
             android:layout_toEndOf="@id/txt_nama_mandor"
             android:text="@string/empty"
@@ -326,15 +299,15 @@
             android:layout_width="220dp"
             android:layout_height="1dp"
             android:background="#000"
-            android:layout_marginTop="270dp"
+            android:layout_marginTop="262dp"
             android:layout_gravity="end" />
 
         <TextView
             android:id="@+id/txt_alamat_mandor"
-            android:layout_width="120dp"
+            android:layout_width="100dp"
             android:layout_height="25dp"
             android:layout_marginTop="285dp"
-            android:textSize="17sp"
+            android:textSize="15sp"
             android:text="@string/app_mandor_1_profile_3_data_4"
             android:textAlignment="center"
             android:background="@color/colorPrimary"
@@ -344,7 +317,7 @@
             android:id="@+id/txt_alamat_mandor_1"
             android:layout_width="220dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="287dp"
+            android:layout_marginTop="288dp"
             android:layout_gravity="end"
             android:layout_toEndOf="@id/txt_nama_mandor"
             android:text="@string/empty"
@@ -354,15 +327,15 @@
             android:layout_width="220dp"
             android:layout_height="1dp"
             android:background="#000"
-            android:layout_marginTop="315dp"
+            android:layout_marginTop="308dp"
             android:layout_gravity="end" />
 
         <TextView
             android:id="@+id/txt_lama_kerja_mandor"
-            android:layout_width="120dp"
+            android:layout_width="100dp"
             android:layout_height="25dp"
             android:layout_marginTop="330dp"
-            android:textSize="17sp"
+            android:textSize="15sp"
             android:text="@string/app_mandor_1_profile_3_data_5"
             android:textAlignment="center"
             android:background="@color/colorPrimary"

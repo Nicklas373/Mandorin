@@ -94,14 +94,14 @@
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="20dp"
             android:textColor="#000" />
 
         <View
             android:layout_width="200dp"
             android:layout_height="1dp"
             android:background="#000"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="40dp"
             android:layout_gravity="end" />
 
         <android.support.v7.widget.CardView
@@ -133,14 +133,14 @@
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:layout_marginTop="65dp"
+            android:layout_marginTop="70dp"
             android:textColor="#000" />
 
         <View
             android:layout_width="200dp"
             android:layout_height="1dp"
             android:background="#000"
-            android:layout_marginTop="95dp"
+            android:layout_marginTop="90dp"
             android:layout_gravity="end" />
 
         <android.support.v7.widget.CardView
@@ -172,14 +172,14 @@
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:layout_marginTop="115dp"
+            android:layout_marginTop="120dp"
             android:textColor="#000" />
 
         <View
             android:layout_width="200dp"
             android:layout_height="1dp"
             android:background="#000"
-            android:layout_marginTop="145dp"
+            android:layout_marginTop="140dp"
             android:layout_gravity="end" />
 
         <android.support.v7.widget.CardView
@@ -212,14 +212,14 @@
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:scrollbars = "vertical"
-            android:layout_marginTop="165dp"
+            android:layout_marginTop="170dp"
             android:textColor="#000" />
 
         <View
             android:layout_width="200dp"
             android:layout_height="1dp"
             android:background="#000"
-            android:layout_marginTop="195dp"
+            android:layout_marginTop="190dp"
             android:layout_gravity="end" />
 
         <android.support.v7.widget.CardView
@@ -251,14 +251,14 @@
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:layout_marginTop="215dp"
+            android:layout_marginTop="220dp"
             android:textColor="#000" />
 
         <View
             android:layout_width="200dp"
             android:layout_height="1dp"
             android:background="#000"
-            android:layout_marginTop="245dp"
+            android:layout_marginTop="240dp"
             android:layout_gravity="end" />
 
         <android.support.v7.widget.CardView
@@ -290,7 +290,7 @@
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:layout_marginTop="263dp"
+            android:layout_marginTop="275dp"
             android:textColor="#000" />
 
         <View
@@ -455,7 +455,7 @@
             android:layout_height="40dp"
             android:layout_gravity="end"
             android:layout_marginTop="570dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginEnd="10dp"
             android:background="@color/colorPrimary"
             android:text="@string/komplain_text"
             android:textAllCaps="false"

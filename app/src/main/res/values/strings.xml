@@ -7,6 +7,7 @@
     <string name="connection">Connection</string>
     <string name="connection_text">Tidak ada koneksi internet</string>
     <string name="komplain_text">Komplain</string>
+    <string name="heck">:</string>
     <string name="hint"></string>
     <!-- End of FIXME -->
     <string name="app_name">Mandorin</string>
@@ -113,6 +114,8 @@
     <string name="app_mandor_user_menu_3">No. Telp</string>
     <string name="app_mandor_user_menu_4">Alamat</string>
     <string name="app_mandor_user_menu_5">Profil User</string>
+    <string name="app_mandor_user_menu_6">Nama</string>
+    <string name="app_mandor_user_menu_7">Email</string>
     <string name="app_menu_1_mandor_1_title">Menu Mandor</string>
     <string name="app_menu_1_mandor_1">Profil Mandor</string>
     <string name="app_menu_1_mandor_2">Dokumentasi Pekerjaan</string>
@@ -207,12 +210,12 @@
     <string name="app_mandor_status_pembayaran_title">Status Pembayaran</string>
     <string name="app_mandor_status_pembayaran_1">Renovasi</string>
     <string name="app_mandor_status_pembayaran_2">Bangun Dari Awal</string>
-    <string name="app_mandor_recycler_status_pembayaran_renovasi_title">Data Pembayaran Renovasi</string>
+    <string name="app_mandor_recycler_status_pembayaran_renovasi_title">Pembayaran Renovasi</string>
     <string name="app_mandor_recycler_status_pembayaran_renovasi_1">Nomor Kontrak</string>
     <string name="app_mandor_recycler_status_pembayaran_renovasi_2">Total Biaya</string>
     <string name="app_mandor_recycler_status_pembayaran_renovasi_3">Alamat</string>
     <string name="app_mandor_recycler_status_pembayaran_renovasi_4">Data Pemesan</string>
-    <string name="app_mandor_data_pembayaran_renovasi_title">Data Pembayaran Renovasi</string>
+    <string name="app_mandor_data_pembayaran_renovasi_title">Pembayaran Renovasi</string>
     <string name="app_mandor_data_pembayaran_renovasi_1">Nomor Kontrak</string>
     <string name="app_mandor_data_pembayaran_renovasi_2">Nama Pemesan</string>
     <string name="app_mandor_data_pembayaran_renovasi_3">No. Telp</string>
@@ -224,4 +227,15 @@
     <string name="app_mandor_data_pembayaran_renovasi_2_1">Nomor Rekening</string>
     <string name="app_mandor_data_pembayaran_renovasi_2_2">Masukkan Bukti Pembayaran</string>
     <string name="app_mandor_data_pembayaran_renovasi_2_3">Kirim</string>
+    <string name="app_mandor_konfirmasi_pembayaran">Konfirmasi</string>
+    <string name="app_mandor_konfirmasi_pembayaran_1">Terkirim !</string>
+    <string name="app_mandor_konfirmasi_pembayaran_2">Terima kasih telah menggunakan jasa kami</string>
+    <string name="app_mandor_konfirmasi_pembayaran_3">Pembayaran akan di proses</string>
+    <string name="app_mandor_konfirmasi_pembayaran_4">dalam waktu 1x24 Jam</string>
+    <string name="app_mandor_konfirmasi_pembayaran_5">Untuk pemberitahuan selanjutnya</string>
+    <string name="app_mandor_konfirmasi_pembayaran_6">kami informasikan melalu Email atau HP.</string>
+    <string name="app_mandor_konfirmasi_pembayaran_7">Pastikan Email dan HP anda aktif</string>
+    <string name="app_mandor_konfirmasi_pembayaran_8">Selesai</string>
+    <string name="app_mandor_data_pembayaran_bangun_dari_awal_title">Pembayaran Bangun Dari Awal</string>
+    <string name="app_mandor_recycler_status_pembayaran_bangun_dari_awal_title">Pembayaran Bangun Dari Awal</string>
 </resources>
