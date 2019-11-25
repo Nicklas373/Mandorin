@@ -345,10 +345,10 @@ public class activity_bangun_dari_awal extends AppCompatActivity {
             //If permission is granted
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 //Displaying a toast
-                Toast.makeText(this, "Permission granted now you can read the storage", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Perijinan aplikasi sudah berhasil, aplikasi dapat mengakses penyimpanan anda", Toast.LENGTH_LONG).show();
             } else {
                 //Displaying another toast if permission is not granted
-                Toast.makeText(this, "Oops you just denied the permission", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Anda menolak perijinan aplikasi", Toast.LENGTH_LONG).show();
             }
         }
     }

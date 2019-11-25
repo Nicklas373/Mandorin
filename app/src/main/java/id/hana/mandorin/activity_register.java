@@ -42,7 +42,7 @@ public class activity_register extends AppCompatActivity {
                 String email = inputEmail.getText().toString().trim();
 
                 if (TextUtils.isEmpty(email)) {
-                    Toast.makeText(getApplicationContext(), "Enter email address!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Harap Masukkan Email Anda", Toast.LENGTH_SHORT).show();
                 }
                 SharedPreferences.Editor editor = pref.edit();
                 editor.putString("email", inputEmail.getText().toString());

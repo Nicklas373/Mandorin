@@ -63,14 +63,14 @@ public class recycler_view_pemesan_bangun_dari_awal extends RecyclerView.Adapter
             itemView.setClickable(true);
             itemView.setOnClickListener(this);
 
-            Id = itemView.findViewById(R.id.text_id_bangun_awal_1);
-            Nik = itemView.findViewById(R.id.text_nik_bangun_awal_1);
-            Nama = itemView.findViewById(R.id.text_nama_bangun_awal_1);
+            Id = itemView.findViewById(R.id.text_id_pemesan_bangun_dari_awal_1);
+            Nik = itemView.findViewById(R.id.text_nik_pemesan_bangun_dari_awal_1);
+            Nama = itemView.findViewById(R.id.text_nama_pemesan_bangun_dari_awal_1);
             Email = itemView.findViewById(R.id.text_email_bangun_awal);
             Alamat = itemView.findViewById(R.id.text_alamat_bangun_awal);
-            Jenis_Borongan = itemView.findViewById(R.id.text_jenis_bangun_awal_1);
+            Jenis_Borongan = itemView.findViewById(R.id.text_jenis_borongan_bangun_awal);
             Luas_Tanah = itemView.findViewById(R.id.text_luas_bangun_awal);
-            Status = itemView.findViewById(R.id.text_status_bangun_awal_1);
+            Status = itemView.findViewById(R.id.text_status_pemesan_bangun_dari_awal_1);
         }
 
 

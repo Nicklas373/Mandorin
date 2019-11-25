@@ -74,7 +74,7 @@ public class recycler_view_status_bangun extends RecyclerView.Adapter<recycler_v
             email = itemView.findViewById(R.id.text_email_pemesan);
             no_telp = itemView.findViewById(R.id.text_no_hp_pemesan);
             alamat_pekerjaan = itemView.findViewById(R.id.alamat_status_bangun_dari_awal_1);
-            status_pekerjaan = itemView.findViewById(R.id.text_jenis_bangun_awal_1);
+            status_pekerjaan = itemView.findViewById(R.id.text_status_pekerjaan);
             total_biaya = itemView.findViewById(R.id.total_biaya_status_bangun_dari_awal_1);
             presentase = itemView.findViewById(R.id.presentasi_status_bangun_dari_awal_1);
             estimasi_waktu = itemView.findViewById(R.id.text_estimasi_pemesan);

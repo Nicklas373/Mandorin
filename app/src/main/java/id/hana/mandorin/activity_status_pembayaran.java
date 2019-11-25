@@ -44,5 +44,13 @@ public class activity_status_pembayaran extends AppCompatActivity {
             }
         });
 
+        bangun_dari_awal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(activity_status_pembayaran.this, activity_pemesan_pembayaran_bangun_dari_awal.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }

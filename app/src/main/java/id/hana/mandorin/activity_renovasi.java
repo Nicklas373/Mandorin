@@ -22,7 +22,9 @@ public class activity_renovasi extends AppCompatActivity {
     private TextView dummy;
     private EditText data_renovasi;
     private RadioGroup rg;
-    private RadioButton rb_debug;
+    private RadioButton rb, rb_2;
+    private Button selanjutnya;
+    private CardView back;
 
     /*
      * SharedPreferences Usage
@@ -39,11 +41,11 @@ public class activity_renovasi extends AppCompatActivity {
 
         data_renovasi = findViewById(R.id.et_renovasi);
         dummy = findViewById(R.id.dummy);
-        Button selanjutnya = findViewById(R.id.button_selanjutnya);
+        selanjutnya = findViewById(R.id.button_selanjutnya);
         rg = findViewById(R.id.rg_borongan);
-        RadioButton rb = findViewById(R.id.rb_1);
-        RadioButton rb_2 = findViewById(R.id.rb_2);
-        CardView back = findViewById(R.id.back_activity_renovasi);
+        rb = findViewById(R.id.rb_1);
+        rb_2 = findViewById(R.id.rb_2);
+        back = findViewById(R.id.back_activity_renovasi);
 
         /*
          * SharedPreferences Declaration
