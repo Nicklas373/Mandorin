@@ -39,7 +39,7 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
-public class activity_data_pembayaran_renovasi_2 extends AppCompatActivity {
+public class activity_data_pembayaran_bangun_dari_awal_2 extends AppCompatActivity {
 
     /*
      * Layout Component Initializations
@@ -56,7 +56,7 @@ public class activity_data_pembayaran_renovasi_2 extends AppCompatActivity {
      */
     private static final int STORAGE_PERMISSION_CODE = 123;
     private String selectedFilePath;
-    private String SERVER_URL = "http://mandorin.site/mandorin/upload_bukti_pembayaran_renovasi.php";
+    private String SERVER_URL = "http://mandorin.site/mandorin/upload_bukti_pembayaran_bangun_dari_awal.php";
     private static final int PICK_FILE_REQUEST = 1;
 
     //Image request code
@@ -90,8 +90,8 @@ public class activity_data_pembayaran_renovasi_2 extends AppCompatActivity {
         bukti_tiga_1 = findViewById(R.id.bukti_tiga_pemesan_pembayaran);
         FileName = findViewById(R.id.fileName);
         upload = findViewById(R.id.upload_pembayaran);
-        Kirim = findViewById(R.id.pembayaran_renovasi);
-        back = findViewById(R.id.back_activity_data_pembayaran_renovasi_2);
+        Kirim = findViewById(R.id.pembayaran_bangun_dari_awal);
+        back = findViewById(R.id.back_activity_data_pembayaran_bangun_dari_awal_2);
 
         /*
          * Passing data from last activity
@@ -150,7 +150,7 @@ public class activity_data_pembayaran_renovasi_2 extends AppCompatActivity {
             public void onClick(View view) {
                 if (selectedFilePath != null) {
                     kirim_dialog();
-                    dialog = ProgressDialog.show(activity_data_pembayaran_renovasi_2.this, "", "Memproses...", true);
+                    dialog = ProgressDialog.show(activity_data_pembayaran_bangun_dari_awal_2.this, "", "Memproses...", true);
 
                     new Thread(new Runnable() {
                         @Override
@@ -161,7 +161,7 @@ public class activity_data_pembayaran_renovasi_2 extends AppCompatActivity {
                     }).start();
 
                 } else {
-                    Toast.makeText(activity_data_pembayaran_renovasi_2.this, "Anda Belum Menggungah Berkas", Toast.LENGTH_LONG).show();
+                    Toast.makeText(activity_data_pembayaran_bangun_dari_awal_2.this, "Anda Belum Menggungah Berkas", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -169,7 +169,7 @@ public class activity_data_pembayaran_renovasi_2 extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(activity_data_pembayaran_renovasi_2.this, activity_data_pembayaran_renovasi.class);
+                Intent intent = new Intent(activity_data_pembayaran_bangun_dari_awal_2.this, activity_data_pembayaran_bangun_dari_awal.class);
                 startActivity(intent);
             }
         });
@@ -293,16 +293,16 @@ public class activity_data_pembayaran_renovasi_2 extends AppCompatActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        Toast.makeText(activity_data_pembayaran_renovasi_2.this, "Berkas Tidak Di Temukan", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(activity_data_pembayaran_bangun_dari_awal_2.this, "Berkas Tidak Di Temukan", Toast.LENGTH_SHORT).show();
                     }
                 });
             } catch (MalformedURLException e) {
                 e.printStackTrace();
-                Toast.makeText(activity_data_pembayaran_renovasi_2.this, "Kesalahan Alamat Website", Toast.LENGTH_SHORT).show();
+                Toast.makeText(activity_data_pembayaran_bangun_dari_awal_2.this, "Kesalahan Alamat Website", Toast.LENGTH_SHORT).show();
 
             } catch (IOException e) {
                 e.printStackTrace();
-                Toast.makeText(activity_data_pembayaran_renovasi_2.this, "Tidak Dapat Membaca File", Toast.LENGTH_SHORT).show();
+                Toast.makeText(activity_data_pembayaran_bangun_dari_awal_2.this, "Tidak Dapat Membaca File", Toast.LENGTH_SHORT).show();
             }
             dialog.dismiss();
             return serverResponseCode;
@@ -388,14 +388,14 @@ public class activity_data_pembayaran_renovasi_2 extends AppCompatActivity {
                 .setCancelable(false)
                 .setPositiveButton("Proses",new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog,int id) {
-                            try {
-                                createdata();
-                                Intent intent = new Intent(activity_data_pembayaran_renovasi_2.this, activity_konfirmasi_bangun_renovasi.class);
-                                startActivity(intent);
-                            } catch (IllegalArgumentException e) {
-                                Toast.makeText(activity_data_pembayaran_renovasi_2.this, "Proses Gagal!", Toast.LENGTH_SHORT).show();
-                                e.printStackTrace();
-                            }
+                        try {
+                            createdata();
+                            Intent intent = new Intent(activity_data_pembayaran_bangun_dari_awal_2.this, activity_konfirmasi_bangun_renovasi.class);
+                            startActivity(intent);
+                        } catch (IllegalArgumentException e) {
+                            Toast.makeText(activity_data_pembayaran_bangun_dari_awal_2.this, "Proses Gagal!", Toast.LENGTH_SHORT).show();
+                            e.printStackTrace();
+                        }
                     }
                 })
                 .setNegativeButton("Batal",new DialogInterface.OnClickListener() {
@@ -420,7 +420,7 @@ public class activity_data_pembayaran_renovasi_2 extends AppCompatActivity {
                     public void onResponse(String ServerResponse) {
 
                         // Showing response message coming from server.
-                        Toast.makeText(activity_data_pembayaran_renovasi_2.this, ServerResponse, Toast.LENGTH_LONG).show();
+                        Toast.makeText(activity_data_pembayaran_bangun_dari_awal_2.this, ServerResponse, Toast.LENGTH_LONG).show();
                     }
                 },
                 new Response.ErrorListener() {
@@ -428,7 +428,7 @@ public class activity_data_pembayaran_renovasi_2 extends AppCompatActivity {
                     public void onErrorResponse(VolleyError volleyError) {
 
                         // Showing error message if something goes wrong.
-                        Toast.makeText(activity_data_pembayaran_renovasi_2.this, volleyError.toString(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(activity_data_pembayaran_bangun_dari_awal_2.this, volleyError.toString(), Toast.LENGTH_LONG).show();
                     }
                 })
 
@@ -489,7 +489,7 @@ public class activity_data_pembayaran_renovasi_2 extends AppCompatActivity {
         };
 
         // Creating RequestQueue.
-        RequestQueue requestQueue = Volley.newRequestQueue(activity_data_pembayaran_renovasi_2.this);
+        RequestQueue requestQueue = Volley.newRequestQueue(activity_data_pembayaran_bangun_dari_awal_2.this);
 
         // Adding the StringRequest object into requestQueue.
         requestQueue.add(stringRequest);

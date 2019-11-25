@@ -70,7 +70,7 @@ public class recycler_view_status_pembayaran_renovasi extends RecyclerView.Adapt
 
             id = itemView.findViewById(R.id.text_id_pembayaran_renovasi);
             nomor_kontrak = itemView.findViewById(R.id.text_nomor_kontrak_status_pembayaran_renovasi_1);
-            nama_pemesan = itemView.findViewById(R.id.text_nama_pemesan__pembayaran_renovasi);
+            nama_pemesan = itemView.findViewById(R.id.text_nama_pemesan_pembayaran_renovasi);
             email = itemView.findViewById(R.id.text_email_pembayaran_renovasi);
             no_telp = itemView.findViewById(R.id.text_no_telp_pembayaran_renovasi);
             alamat = itemView.findViewById(R.id.text_alamat_status_pembayaran_renovasi_1);
