@@ -45,7 +45,7 @@ public class activity_renovasi extends AppCompatActivity {
         rg = findViewById(R.id.rg_borongan);
         rb = findViewById(R.id.rb_1);
         rb_2 = findViewById(R.id.rb_2);
-        back = findViewById(R.id.back_activity_renovasi);
+        back = findViewById(R.id.back_activity_renovasi_test);
 
         /*
          * SharedPreferences Declaration
