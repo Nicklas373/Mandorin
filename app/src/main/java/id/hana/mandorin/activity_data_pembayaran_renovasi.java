@@ -19,7 +19,7 @@ public class activity_data_pembayaran_renovasi extends AppCompatActivity {
      * Layout Component Initializations
      * Textview, Imageview, CardView & Button
      */
-    private TextView Nomor_Kontrak, Nama_Pemesan, No_Telp, Pembayaran_1, Pembayaran_2, Pembayaran_3, Status_1, Status_2, Status_3;
+    private TextView Nomor_Kontrak, Nama_Pemesan, No_Telp, Pembayaran_1, Pembayaran_2, Pembayaran_3, Status_1, Status_2, Status_3, tgl_1, tgl_2, tgl_3;
     private Button Pembayaran;
     private CardView back;
 
@@ -39,6 +39,9 @@ public class activity_data_pembayaran_renovasi extends AppCompatActivity {
         Pembayaran_1 = findViewById(R.id.user_input_pembayaran_1);
         Pembayaran_2 = findViewById(R.id.user_input_pembayaran_2);
         Pembayaran_3 = findViewById(R.id.user_input_pembayaran_3);
+        tgl_1 = findViewById(R.id.user_input_tgl_1);
+        tgl_2 = findViewById(R.id.user_input_tgl_2);
+        tgl_3 = findViewById(R.id.user_input_tgl_3);
         back = findViewById(R.id.back_activity_data_pembayaran_renovasi);
         Status_1 = findViewById(R.id.user_input_status_1);
         Status_2 = findViewById(R.id.user_input_status_2);
@@ -61,6 +64,9 @@ public class activity_data_pembayaran_renovasi extends AppCompatActivity {
         final String total_satu = getIntent().getExtras().getString("total_satu");
         final String total_dua = getIntent().getExtras().getString("total_dua");
         final String total_tiga = getIntent().getExtras().getString("total_tiga");
+        final String tgl_satu = getIntent().getExtras().getString("tgl_input_satu");
+        final String tgl_dua = getIntent().getExtras().getString("tgl_input_dua");
+        final String tgl_tiga = getIntent().getExtras().getString("tgl_input_tiga");
         final String bukti_satu = getIntent().getExtras().getString("bukti_satu");
         final String bukti_dua = getIntent().getExtras().getString("bukti_dua");
         final String bukti_tiga = getIntent().getExtras().getString("bukti_tiga");
@@ -119,6 +125,26 @@ public class activity_data_pembayaran_renovasi extends AppCompatActivity {
         Pembayaran_1.setText("Rp." + formattedNumber);
         Pembayaran_2.setText("Rp." + formattedNumber_2);
         Pembayaran_3.setText("Rp." + formattedNumber_3);
+        if (tgl_1.getText().toString().equalsIgnoreCase("Kosong")) {
+            tgl_1.setText("");
+        } else {
+            tgl_1.setBackgroundColor(Color.WHITE);
+            tgl_1.setTextColor(Color.BLACK);
+        }
+        tgl_2.setText(tgl_dua);
+        if (tgl_2.getText().toString().equalsIgnoreCase("Kosong")) {
+            tgl_2.setText("");
+        } else {
+            tgl_2.setBackgroundColor(Color.WHITE);
+            tgl_2.setTextColor(Color.BLACK);
+        }
+        tgl_3.setText(tgl_tiga);
+        if (tgl_3.getText().toString().equalsIgnoreCase("Kosong")) {
+            tgl_3.setText("");
+        } else {
+            tgl_3.setBackgroundColor(Color.WHITE);
+            tgl_3.setTextColor(Color.BLACK);
+        }
 
         Pembayaran.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -138,6 +164,9 @@ public class activity_data_pembayaran_renovasi extends AppCompatActivity {
                     intent.putExtra("total_satu", total_satu);
                     intent.putExtra("total_dua", total_dua);
                     intent.putExtra("total_tiga", total_tiga);
+                    intent.putExtra("tgl_input_satu", tgl_1.getText().toString());
+                    intent.putExtra("tgl_input_dua", tgl_2.getText().toString());
+                    intent.putExtra("tgl_input_tiga", tgl_3.getText().toString());
                     intent.putExtra("bukti_satu", bukti_satu);
                     intent.putExtra("bukti_dua", bukti_dua);
                     intent.putExtra("bukti_tiga", bukti_tiga);

@@ -63,6 +63,9 @@ public class activity_pemesan_pembayaran_renovasi extends AppCompatActivity {
     String JSON_TOTAL_SATU= "total_satu";
     String JSON_TOTAL_DUA= "total_dua";
     String JSON_TOTAL_TIGA= "total_tiga";
+    String JSON_INPUT_TGL_SATU= "input_tgl_satu";
+    String JSON_INPUT_TGL_DUA= "input_tgl_dua";
+    String JSON_INPUT_TGL_TIGA= "input_tgl_tiga";
     String JSON_BUKTI_SATU= "bukti_satu";
     String JSON_BUKTI_DUA= "bukti_dua";
     String JSON_BUKTI_TIGA= "bukti_tiga";
@@ -206,6 +209,9 @@ public class activity_pemesan_pembayaran_renovasi extends AppCompatActivity {
                 GetDataAdapter3.setTotal_satu(json.getString(JSON_TOTAL_SATU));
                 GetDataAdapter3.setTotal_dua(json.getString(JSON_TOTAL_DUA));
                 GetDataAdapter3.setTotal_tiga(json.getString(JSON_TOTAL_TIGA));
+                GetDataAdapter3.setInput_tgl_satu(json.getString(JSON_INPUT_TGL_SATU));
+                GetDataAdapter3.setInput_tgl_dua(json.getString(JSON_INPUT_TGL_DUA));
+                GetDataAdapter3.setInput_tgl_tiga(json.getString(JSON_INPUT_TGL_TIGA));
             } catch (JSONException e) {
 
                 e.printStackTrace();

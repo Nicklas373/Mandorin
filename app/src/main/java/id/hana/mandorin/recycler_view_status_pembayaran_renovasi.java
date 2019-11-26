@@ -59,7 +59,7 @@ public class recycler_view_status_pembayaran_renovasi extends RecyclerView.Adapt
 
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        public TextView id, nomor_kontrak, nama_pemesan, email, no_telp, alamat, total_pembayaran, no_rekening, status_satu, status_dua, status_tiga, total_satu, total_dua, total_tiga, bukti_satu, bukti_dua, bukti_tiga;
+        public TextView id, nomor_kontrak, nama_pemesan, email, no_telp, alamat, total_pembayaran, no_rekening, status_satu, status_dua, status_tiga, total_satu, total_dua, total_tiga, bukti_satu, bukti_dua, bukti_tiga, tgl_satu, tgl_dua, tgl_tiga;
         public CardView cv_head;
 
         public ViewHolder(View itemView) {
@@ -85,6 +85,9 @@ public class recycler_view_status_pembayaran_renovasi extends RecyclerView.Adapt
             bukti_satu = itemView.findViewById(R.id.text_bukti_satu_pembayaran_renovasi);
             bukti_dua = itemView.findViewById(R.id.text_bukti_dua_pembayaran_renovasi);
             bukti_tiga = itemView.findViewById(R.id.text_bukti_tiga_pembayaran_renovasi);
+            tgl_satu = itemView.findViewById(R.id.text_tgl_1_pembayaran_renovasi);
+            tgl_dua = itemView.findViewById(R.id.text_tgl_2_pembayaran_renovasi);
+            tgl_tiga = itemView.findViewById(R.id.text_tgl_3_pembayaran_renovasi);
         }
 
 
@@ -104,6 +107,9 @@ public class recycler_view_status_pembayaran_renovasi extends RecyclerView.Adapt
             intent.putExtra("total_satu", getDataPembayaranRenovasiAdapter.get(getAdapterPosition()).getTotal_satu());
             intent.putExtra("total_dua", getDataPembayaranRenovasiAdapter.get(getAdapterPosition()).getTotal_dua());
             intent.putExtra("total_tiga", getDataPembayaranRenovasiAdapter.get(getAdapterPosition()).getTotal_tiga());
+            intent.putExtra("input_tgl_satu", getDataPembayaranRenovasiAdapter.get(getAdapterPosition()).getInput_tgl_satu());
+            intent.putExtra("input_tgl_dua", getDataPembayaranRenovasiAdapter.get(getAdapterPosition()).getInput_tgl_dua());
+            intent.putExtra("input_tgl_tiga", getDataPembayaranRenovasiAdapter.get(getAdapterPosition()).getInput_tgl_tiga());
             intent.putExtra("bukti_satu", getDataPembayaranRenovasiAdapter.get(getAdapterPosition()).getBukti_satu());
             intent.putExtra("bukti_dua", getDataPembayaranRenovasiAdapter.get(getAdapterPosition()).getBukti_dua());
             intent.putExtra("bukti_tiga", getDataPembayaranRenovasiAdapter.get(getAdapterPosition()).getBukti_tiga());

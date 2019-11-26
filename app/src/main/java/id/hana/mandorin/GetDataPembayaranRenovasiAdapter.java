@@ -2,7 +2,7 @@ package id.hana.mandorin;
 
 public class GetDataPembayaranRenovasiAdapter {
 
-    public String id, nomor_kontrak, nama_pemesan, email, no_telp, alamat, no_rekening, total_pembayaran, status_satu, status_dua, status_tiga, total_satu, total_dua, total_tiga, bukti_satu, bukti_dua, bukti_tiga;
+    public String id, nomor_kontrak, nama_pemesan, email, no_telp, alamat, no_rekening, total_pembayaran, status_satu, status_dua, status_tiga, total_satu, total_dua, total_tiga, input_tgl_satu, input_tgl_dua, input_tgl_tiga, bukti_satu, bukti_dua, bukti_tiga;
 
     public String getId() {
         return id;
@@ -49,10 +49,7 @@ public class GetDataPembayaranRenovasiAdapter {
 
     public String getTotal_pembayaran() { return total_pembayaran; }
 
-    public void setTotal_pembayaran(String total_pembayaran)
-    {
-        this.total_pembayaran= total_pembayaran;
-    }
+    public void setTotal_pembayaran(String total_pembayaran) { this.total_pembayaran= total_pembayaran; }
 
     public String getNo_rekening() {
         return no_rekening;
@@ -105,6 +102,30 @@ public class GetDataPembayaranRenovasiAdapter {
     }
 
     public void setTotal_tiga(String total_tiga) {
+        this.total_tiga= total_tiga;
+    }
+
+    public String getInput_tgl_satu() {
+        return input_tgl_satu;
+    }
+
+    public void setInput_tgl_satu(String input_tgl_satu) {
+        this.input_tgl_satu= input_tgl_satu;
+    }
+
+    public String getInput_tgl_dua() {
+        return input_tgl_dua;
+    }
+
+    public void setInput_tgl_dua(String input_tgl_dua) {
+        this.input_tgl_dua= input_tgl_dua;
+    }
+
+    public String getInput_tgl_tiga() {
+        return input_tgl_tiga;
+    }
+
+    public void setInput_tgl_tiga(String total_tiga) {
         this.total_tiga= total_tiga;
     }
 
