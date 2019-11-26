@@ -20,7 +20,7 @@
 
         <android.support.v7.widget.CardView
             android:id="@+id/back_activity_data_pembayaran_bangun_dari_awal_2"
-            android:layout_width="30dp"
+            android:layout_width="24dp"
             android:layout_height="wrap_content"
             android:clickable="true"
             android:focusable="true"
