@@ -95,6 +95,9 @@ public class activity_data_pembayaran_bangun_dari_awal extends AppCompatActivity
         } else if (Status_2.getText().toString().equalsIgnoreCase("Lunas")) {
             Status_2.setBackgroundColor(Color.BLUE);
             Status_2.setTextColor(Color.WHITE);
+        } else if (Status_2.getText().toString().equalsIgnoreCase("Memproses")) {
+            Status_2.setBackgroundColor(Color.YELLOW);
+            Status_2.setTextColor(Color.BLACK);
         } else {
             Status_2.setBackgroundColor(Color.WHITE);
             Status_2.setTextColor(Color.BLACK);
@@ -165,17 +168,19 @@ public class activity_data_pembayaran_bangun_dari_awal extends AppCompatActivity
                     intent.putExtra("total_satu", total_satu);
                     intent.putExtra("total_dua", total_dua);
                     intent.putExtra("total_tiga", total_tiga);
-                    intent.putExtra("tgl_input_satu", tgl_1.getText().toString());
-                    intent.putExtra("tgl_input_dua", tgl_2.getText().toString());
-                    intent.putExtra("tgl_input_tiga", tgl_3.getText().toString());
+                    intent.putExtra("tgl_input_satu", tgl_satu);
+                    intent.putExtra("tgl_input_dua", tgl_dua);
+                    intent.putExtra("tgl_input_tiga", tgl_tiga);
                     intent.putExtra("bukti_satu", bukti_satu);
                     intent.putExtra("bukti_dua", bukti_dua);
                     intent.putExtra("bukti_tiga", bukti_tiga);
                     startActivity(intent);
                 } else if (Status_2.getText().toString().equalsIgnoreCase("Lunas")){
                     Toast.makeText(getApplicationContext(), "Pembayaran ke 2 anda sudah lunas", Toast.LENGTH_SHORT).show();
-                } else if (Status_2.getText().toString().equalsIgnoreCase("Proses")) {
+                } else if (Status_2.getText().toString().equalsIgnoreCase("Memproses")) {
                     Toast.makeText(getApplicationContext(), "Pembayaran ke 2 anda sedang dalam proses", Toast.LENGTH_SHORT).show();
+                } else if (Status_3.getText().toString().equalsIgnoreCase("Lunas")){
+                    Toast.makeText(getApplicationContext(), "Pembayaran anda sudah lunas", Toast.LENGTH_SHORT).show();
                 }
             }
         });

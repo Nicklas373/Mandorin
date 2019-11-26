@@ -182,6 +182,25 @@ public class activity_data_pembayaran_bangun_dari_awal_2 extends AppCompatActivi
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(activity_data_pembayaran_bangun_dari_awal_2.this, activity_data_pembayaran_bangun_dari_awal.class);
+                intent.putExtra("id", id);
+                intent.putExtra("nomor_kontrak", nomor_kontak);
+                intent.putExtra("nama_pemesan", nama_pemesan);
+                intent.putExtra("email", email);
+                intent.putExtra("no_telp", no_telp);
+                intent.putExtra("total_pembayaran", total_pembayaran);
+                intent.putExtra("no_rekening", no_rekening);
+                intent.putExtra("status_satu", status_satu);
+                intent.putExtra("status_dua", status_dua);
+                intent.putExtra("status_tiga", status_tiga);
+                intent.putExtra("total_satu", total_satu);
+                intent.putExtra("total_dua", total_dua);
+                intent.putExtra("total_tiga", total_tiga);
+                intent.putExtra("tgl_input_satu", tgl_1);
+                intent.putExtra("tgl_input_dua", tgl_2);
+                intent.putExtra("tgl_input_tiga", tgl_3);
+                intent.putExtra("bukti_satu", bukti_satu);
+                intent.putExtra("bukti_dua", bukti_dua);
+                intent.putExtra("bukti_tiga", bukti_tiga);
                 startActivity(intent);
             }
         });
@@ -462,7 +481,7 @@ public class activity_data_pembayaran_bangun_dari_awal_2 extends AppCompatActivi
                 String total_2 = total_dua_1.getText().toString();
                 String total_3 = total_tiga_1.getText().toString();
                 String tgl_1 = tgl_satu.getText().toString();
-                String tgl_2 = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
+                String tgl_2 = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
                 String tgl_3 = tgl_tiga.getText().toString();
 
                 String substring = bukti_satu_1.getText().toString();
