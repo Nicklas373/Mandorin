@@ -32,7 +32,7 @@ public class activity_status_pembayaran extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(activity_status_pembayaran.this, activity_renovasi.class);
+                Intent intent = new Intent(activity_status_pembayaran.this, activity_transaksi.class);
                 startActivity(intent);
             }
         });

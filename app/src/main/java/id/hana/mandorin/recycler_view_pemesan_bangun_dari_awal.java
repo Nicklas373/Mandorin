@@ -68,7 +68,7 @@ public class recycler_view_pemesan_bangun_dari_awal extends RecyclerView.Adapter
             Nama = itemView.findViewById(R.id.text_nama_pemesan_bangun_dari_awal_1);
             Email = itemView.findViewById(R.id.text_email_bangun_awal);
             Alamat = itemView.findViewById(R.id.text_alamat_bangun_awal);
-            Jenis_Borongan = itemView.findViewById(R.id.text_jenis_borongan_bangun_awal);
+            Jenis_Borongan = itemView.findViewById(R.id.text_jenis_pemesan_bangun_dari_awal_1);
             Luas_Tanah = itemView.findViewById(R.id.text_luas_bangun_awal);
             Status = itemView.findViewById(R.id.text_status_pemesan_bangun_dari_awal_1);
         }
