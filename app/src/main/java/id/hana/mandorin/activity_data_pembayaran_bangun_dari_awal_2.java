@@ -36,7 +36,10 @@ import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 public class activity_data_pembayaran_bangun_dari_awal_2 extends AppCompatActivity {
@@ -45,7 +48,7 @@ public class activity_data_pembayaran_bangun_dari_awal_2 extends AppCompatActivi
      * Layout Component Initializations
      * Textview, Imageview, CardView & Button
      */
-    private TextView Nomor_Rekening, FileName, id_1, nomor_kontrak_1, nama_pemesan_1, email_1, no_telp_1, total_pembayaran_1, status_satu_1, status_dua_1, status_tiga_1, total_satu_1, total_dua_1, total_tiga_1, bukti_satu_1, bukti_dua_1, bukti_tiga_1;
+    private TextView Nomor_Rekening, FileName, id_1, nomor_kontrak_1, nama_pemesan_1, email_1, no_telp_1, total_pembayaran_1, status_satu_1, status_dua_1, status_tiga_1, total_satu_1, total_dua_1, total_tiga_1, tgl_satu, tgl_dua, tgl_tiga, bukti_satu_1, bukti_dua_1, bukti_tiga_1;
     private Button Kirim;
     private CardView back;
     private ImageView upload;
@@ -65,32 +68,35 @@ public class activity_data_pembayaran_bangun_dari_awal_2 extends AppCompatActivi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_data_pembayaran_renovasi_2);
+        setContentView(R.layout.activity_data_pembayaran_bangun_dari_awal_2);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         /*
          * Layout ID Initializations
          * TextView, CardView & Button
          */
-        id_1 = findViewById(R.id.id_pemesan_pembayaran);
-        nomor_kontrak_1 = findViewById(R.id.nomor_kontrak_pembayaran);
-        nama_pemesan_1 = findViewById(R.id.nama_pemesan_pembayaran);
-        email_1 = findViewById(R.id.email_pemesan_pembayaran);
-        no_telp_1 = findViewById(R.id.no_telp_pemesan_pembayaran);
-        total_pembayaran_1 = findViewById(R.id.total_pembayaran_pemesan_pembayaran);
-        Nomor_Rekening = findViewById(R.id.user_input_nomor_rekening);
-        status_satu_1 = findViewById(R.id.status_satu_pemesan_pembayaran);
-        status_dua_1 = findViewById(R.id.status_dua_pemesan_pembayaran);
-        status_tiga_1 = findViewById(R.id.status_tiga_pemesan_pembayaran);
-        total_satu_1 = findViewById(R.id.total_satu_pemesan_pembayaran);
-        total_dua_1 = findViewById(R.id.total_dua_pemesan_pembayaran);
-        total_tiga_1 = findViewById(R.id.total_tiga_pemesan_pembayaran);
-        bukti_satu_1 = findViewById(R.id.bukti_satu_pemesan_pembayaran);
-        bukti_dua_1 = findViewById(R.id.bukti_dua_pemesan_pembayaran);
-        bukti_tiga_1 = findViewById(R.id.bukti_tiga_pemesan_pembayaran);
+        id_1 = findViewById(R.id.identitas_pemesan_pembayaran_bangun_dari_awal_2);
+        nomor_kontrak_1 = findViewById(R.id.nomor_kontrak_pembayaran_bangun_dari_awal_2);
+        nama_pemesan_1 = findViewById(R.id.nama_pemesan_pembayaran_bangun_dari_awal_2);
+        email_1 = findViewById(R.id.email_pemesan_pembayaran_bangun_dari_awal_2);
+        no_telp_1 = findViewById(R.id.no_telp_pemesan_pembayaran_bangun_dari_awal_2);
+        total_pembayaran_1 = findViewById(R.id.total_pembayaran_pemesan_pembayaran_bangun_dari_awal_2);
+        Nomor_Rekening = findViewById(R.id.user_input_nomor_rekening_bangun_dari_awal_2);
+        status_satu_1 = findViewById(R.id.status_satu_pemesan_pembayaran_bangun_dari_awal_2);
+        status_dua_1 = findViewById(R.id.status_dua_pemesan_pembayaran_bangun_dari_awal_2);
+        status_tiga_1 = findViewById(R.id.status_tiga_pemesan_pembayaran_bangun_dari_awal_2);
+        total_satu_1 = findViewById(R.id.total_satu_pemesan_pembayaran_bangun_dari_awal_2);
+        total_dua_1 = findViewById(R.id.total_dua_pemesan_pembayaran_bangun_dari_awal_2);
+        total_tiga_1 = findViewById(R.id.total_tiga_pemesan_pembayaran_bangun_dari_awal_2);
+        tgl_satu = findViewById(R.id.tgl_satu_pembayaran_bangun_dari_awal_2);
+        tgl_dua = findViewById(R.id.tgl_dua_pembayaran_bangun_dari_awal_2);
+        tgl_tiga = findViewById(R.id.tgl_tiga_pembayaran_bangun_dari_awal_2);
+        bukti_satu_1 = findViewById(R.id.bukti_satu_pemesan_pembayaran_bangun_dari_awal_2);
+        bukti_dua_1 = findViewById(R.id.bukti_dua_pemesan_pembayaran_bangun_dari_awal_2);
+        bukti_tiga_1 = findViewById(R.id.bukti_tiga_pemesan_pembayaran_bangun_dari_awal_2);
         FileName = findViewById(R.id.fileName);
-        upload = findViewById(R.id.upload_pembayaran);
-        Kirim = findViewById(R.id.pembayaran_bangun_dari_awal);
+        upload = findViewById(R.id.upload_pembayaran_bangun_dari_awal_2);
+        Kirim = findViewById(R.id.btn_pembayaran_bangun_dari_awal_2);
         back = findViewById(R.id.back_activity_data_pembayaran_bangun_dari_awal_2);
 
         /*
@@ -109,6 +115,9 @@ public class activity_data_pembayaran_bangun_dari_awal_2 extends AppCompatActivi
         final String total_satu = getIntent().getExtras().getString("total_satu");
         final String total_dua = getIntent().getExtras().getString("total_dua");
         final String total_tiga = getIntent().getExtras().getString("total_tiga");
+        final String tgl_1 = getIntent().getExtras().getString("tgl_input_satu");
+        final String tgl_2 = getIntent().getExtras().getString("tgl_input_dua");
+        final String tgl_3 = getIntent().getExtras().getString("tgl_input_tiga");
         final String bukti_satu = getIntent().getExtras().getString("bukti_satu");
         final String bukti_dua = getIntent().getExtras().getString("bukti_dua");
         final String bukti_tiga = getIntent().getExtras().getString("bukti_tiga");
@@ -129,6 +138,9 @@ public class activity_data_pembayaran_bangun_dari_awal_2 extends AppCompatActivi
         total_satu_1.setText(total_satu);
         total_dua_1.setText(total_dua);
         total_tiga_1.setText(total_tiga);
+        tgl_satu.setText(tgl_1);
+        tgl_dua.setText(tgl_2);
+        tgl_tiga.setText(tgl_3);
         bukti_satu_1.setText(bukti_satu);
         bukti_dua_1.setText(bukti_dua);
         bukti_tiga_1.setText(bukti_tiga);
@@ -449,6 +461,9 @@ public class activity_data_pembayaran_bangun_dari_awal_2 extends AppCompatActivi
                 String total = total_satu_1.getText().toString();
                 String total_2 = total_dua_1.getText().toString();
                 String total_3 = total_tiga_1.getText().toString();
+                String tgl_1 = tgl_satu.getText().toString();
+                String tgl_2 = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
+                String tgl_3 = tgl_tiga.getText().toString();
 
                 String substring = bukti_satu_1.getText().toString();
                 String desain = substring.substring(substring.lastIndexOf("/")+1);
@@ -479,6 +494,9 @@ public class activity_data_pembayaran_bangun_dari_awal_2 extends AppCompatActivi
                 params.put("total_satu", total);
                 params.put("total_dua", total_2);
                 params.put("total_tiga", total_3);
+                params.put("tgl_input_satu", tgl_1);
+                params.put("tgl_input_dua", tgl_2);
+                params.put("tgl_input_tiga", tgl_3);
                 params.put("bukti_satu", bukti_satu);
                 params.put("bukti_dua", bukti_dua);
                 params.put("bukti_tiga", bukti_tiga);

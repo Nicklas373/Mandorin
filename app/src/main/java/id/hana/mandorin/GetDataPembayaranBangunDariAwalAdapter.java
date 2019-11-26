@@ -2,7 +2,7 @@ package id.hana.mandorin;
 
 public class GetDataPembayaranBangunDariAwalAdapter {
 
-    public String id, nomor_kontrak, nama_pemesan, email, no_telp, alamat, no_rekening, total_pembayaran, status_satu, status_dua, status_tiga, total_satu, total_dua, total_tiga, bukti_satu, bukti_dua, bukti_tiga;
+    public String id, nomor_kontrak, nama_pemesan, email, no_telp, alamat, no_rekening, total_pembayaran, status_satu, status_dua, status_tiga, total_satu, total_dua, total_tiga, tgl_input_satu, tgl_input_dua, tgl_input_tiga, bukti_satu, bukti_dua, bukti_tiga;
 
     public String getId() {
         return id;
@@ -130,5 +130,29 @@ public class GetDataPembayaranBangunDariAwalAdapter {
 
     public void setBukti_tiga(String bukti_tiga) {
         this.bukti_tiga= bukti_tiga;
+    }
+
+    public String getTgl_input_satu() {
+        return tgl_input_satu;
+    }
+
+    public void setTgl_input_satu(String tgl_input_satu) {
+        this.tgl_input_satu= tgl_input_satu;
+    }
+
+    public String getTgl_input_dua() {
+        return tgl_input_dua;
+    }
+
+    public void setTgl_input_dua(String tgl_input_dua) {
+        this.tgl_input_dua= tgl_input_dua;
+    }
+
+    public String getTgl_input_tiga() {
+        return tgl_input_tiga;
+    }
+
+    public void setTgl_input_tiga(String tgl_input_tiga) {
+        this.tgl_input_tiga= tgl_input_tiga;
     }
 }

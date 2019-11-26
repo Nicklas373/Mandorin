@@ -27,6 +27,7 @@ public class activity_status_pembayaran extends AppCompatActivity {
          */
         back = findViewById(R.id.back_activity_status_pembayaran);
         renovasi = findViewById(R.id.mandor_transaksi_1);
+        bangun_dari_awal = findViewById(R.id.mandor_transaksi_2);
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override

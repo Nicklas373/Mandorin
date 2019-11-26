@@ -222,6 +222,24 @@
             android:layout_height="wrap_content"
             android:id="@+id/text_bukti_tiga_pembayaran_bangun_dari_awal"
             android:visibility="gone"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_tgl_1_pembayaran_bangun_dari_awal"
+            android:visibility="gone"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_tgl_2_pembayaran_bangun_dari_awal"
+            android:visibility="gone"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_tgl_3_pembayaran_bangun_dari_awal"
+            android:visibility="gone"/>
         <!-- Dummy Debugging End !-->
 
     </RelativeLayout>

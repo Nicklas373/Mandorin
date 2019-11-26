@@ -216,11 +216,18 @@
             android:layout_gravity="end"
             android:layout_marginTop="170dp" />
 
+        <TextView
+            android:id="@+id/user_input_tgl_1"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="200dp" />
+
         <android.support.v7.widget.CardView
             android:id="@+id/cv_title_pembayaran_2"
             android:layout_width="125dp"
             android:layout_height="35dp"
-            android:layout_marginTop="210dp"
+            android:layout_marginTop="234dp"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"
@@ -245,7 +252,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_marginEnd="80dp"
-            android:layout_marginTop="220dp"
+            android:layout_marginTop="243dp"
             android:textColor="#000"/>
 
         <TextView
@@ -253,13 +260,20 @@
             android:layout_width="75dp"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:layout_marginTop="220dp" />
+            android:layout_marginTop="243dp" />
+
+        <TextView
+            android:id="@+id/user_input_tgl_2"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="273dp" />
 
         <android.support.v7.widget.CardView
             android:id="@+id/cv_title_pembayaran_3"
             android:layout_width="125dp"
             android:layout_height="35dp"
-            android:layout_marginTop="260dp"
+            android:layout_marginTop="310dp"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"
@@ -284,7 +298,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_marginEnd="80dp"
-            android:layout_marginTop="270dp"
+            android:layout_marginTop="320dp"
             android:textColor="#000"/>
 
         <TextView
@@ -292,7 +306,14 @@
             android:layout_width="75dp"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:layout_marginTop="270dp" />
+            android:layout_marginTop="320dp" />
+
+        <TextView
+            android:id="@+id/user_input_tgl_3"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="350dp" />
 
         <Button
             android:id="@+id/pembayaran_bangun_dari_awal"

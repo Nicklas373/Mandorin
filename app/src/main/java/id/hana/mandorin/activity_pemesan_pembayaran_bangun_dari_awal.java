@@ -63,6 +63,9 @@ public class activity_pemesan_pembayaran_bangun_dari_awal extends AppCompatActiv
     String JSON_TOTAL_SATU= "total_satu";
     String JSON_TOTAL_DUA= "total_dua";
     String JSON_TOTAL_TIGA= "total_tiga";
+    String JSON_TGL_INPUT_SATU= "tgl_input_satu";
+    String JSON_TGL_INPUT_DUA= "tgl_input_dua";
+    String JSON_TGL_INPUT_TIGA= "tgl_input_tiga";
     String JSON_BUKTI_SATU= "bukti_satu";
     String JSON_BUKTI_DUA= "bukti_dua";
     String JSON_BUKTI_TIGA= "bukti_tiga";
@@ -206,6 +209,9 @@ public class activity_pemesan_pembayaran_bangun_dari_awal extends AppCompatActiv
                 GetDataAdapter3.setTotal_satu(json.getString(JSON_TOTAL_SATU));
                 GetDataAdapter3.setTotal_dua(json.getString(JSON_TOTAL_DUA));
                 GetDataAdapter3.setTotal_tiga(json.getString(JSON_TOTAL_TIGA));
+                GetDataAdapter3.setTgl_input_satu(json.getString(JSON_TGL_INPUT_SATU));
+                GetDataAdapter3.setTgl_input_dua(json.getString(JSON_TGL_INPUT_DUA));
+                GetDataAdapter3.setTgl_input_tiga(json.getString(JSON_TGL_INPUT_TIGA));
             } catch (JSONException e) {
 
                 e.printStackTrace();

@@ -59,7 +59,7 @@ public class recycler_view_status_pembayaran_bangun_dari_awal extends RecyclerVi
 
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        public TextView id, nomor_kontrak, nama_pemesan, email, no_telp, alamat, total_pembayaran, no_rekening, status_satu, status_dua, status_tiga, total_satu, total_dua, total_tiga, bukti_satu, bukti_dua, bukti_tiga;
+        public TextView id, nomor_kontrak, nama_pemesan, email, no_telp, alamat, total_pembayaran, no_rekening, status_satu, status_dua, status_tiga, total_satu, total_dua, total_tiga, tgl_1, tgl_2, tgl_3, bukti_satu, bukti_dua, bukti_tiga;
         public CardView cv_head;
 
         public ViewHolder(View itemView) {
@@ -82,6 +82,9 @@ public class recycler_view_status_pembayaran_bangun_dari_awal extends RecyclerVi
             total_satu = itemView.findViewById(R.id.text_total_satu_pembayaran_bangun_dari_awal);
             total_dua = itemView.findViewById(R.id.text_total_dua_pembayaran_bangun_dari_awal);
             total_tiga = itemView.findViewById(R.id.text_total_tiga_pembayaran_bangun_dari_awal);
+            tgl_1 = itemView.findViewById(R.id.text_tgl_1_pembayaran_bangun_dari_awal);
+            tgl_2 = itemView.findViewById(R.id.text_tgl_2_pembayaran_bangun_dari_awal);
+            tgl_3 = itemView.findViewById(R.id.text_tgl_3_pembayaran_bangun_dari_awal);
             bukti_satu = itemView.findViewById(R.id.text_bukti_satu_pembayaran_bangun_dari_awal);
             bukti_dua = itemView.findViewById(R.id.text_bukti_dua_pembayaran_bangun_dari_awal);
             bukti_tiga = itemView.findViewById(R.id.text_bukti_tiga_pembayaran_bangun_dari_awal);
@@ -104,6 +107,9 @@ public class recycler_view_status_pembayaran_bangun_dari_awal extends RecyclerVi
             intent.putExtra("total_satu", getDataPembayaranBangunDariAwalAdapter.get(getAdapterPosition()).getTotal_satu());
             intent.putExtra("total_dua", getDataPembayaranBangunDariAwalAdapter.get(getAdapterPosition()).getTotal_dua());
             intent.putExtra("total_tiga", getDataPembayaranBangunDariAwalAdapter.get(getAdapterPosition()).getTotal_tiga());
+            intent.putExtra("tgl_input_satu", getDataPembayaranBangunDariAwalAdapter.get(getAdapterPosition()).getTgl_input_satu());
+            intent.putExtra("tgl_input_dua", getDataPembayaranBangunDariAwalAdapter.get(getAdapterPosition()).getTgl_input_dua());
+            intent.putExtra("tgl_input_tiga", getDataPembayaranBangunDariAwalAdapter.get(getAdapterPosition()).getTgl_input_tiga());
             intent.putExtra("bukti_satu", getDataPembayaranBangunDariAwalAdapter.get(getAdapterPosition()).getBukti_satu());
             intent.putExtra("bukti_dua", getDataPembayaranBangunDariAwalAdapter.get(getAdapterPosition()).getBukti_dua());
             intent.putExtra("bukti_tiga", getDataPembayaranBangunDariAwalAdapter.get(getAdapterPosition()).getBukti_tiga());
