@@ -7,6 +7,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -28,7 +30,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.bumptech.glide.Glide;
 import com.squareup.picasso.Picasso;
 
 import org.apache.http.HttpResponse;
@@ -52,11 +53,13 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class activity_edit_akun extends AppCompatActivity {
 
-    private TextView editmail, cancel, dummyimage;
+    private TextView editmail, cancel, dummyimage, oldimage;
     private EditText editname, editid, editage, editphone, editaddress;
-    private ImageView picedit;
+    private CircleImageView picedit;
     private Button save;
     private CardView back;
     SharedPreferences pref;
@@ -83,11 +86,12 @@ public class activity_edit_akun extends AppCompatActivity {
 
         editname = (EditText) findViewById(R.id.userEditFullName);
         editmail = (TextView) findViewById(R.id.userEditEmail);
+        oldimage = (TextView) findViewById(R.id.dummy_old_pic);
         editage = (EditText) findViewById(R.id.userEditAge);
         editid = (EditText) findViewById(R.id.user_edit_id);
         editphone = (EditText) findViewById(R.id.user_edit_telp);
         editaddress = (EditText) findViewById(R.id.user_edit_address);
-        picedit = (ImageView) findViewById(R.id.img_head_akun);
+        picedit = (CircleImageView) findViewById(R.id.img_head_akun_test);
         dummyimage = (TextView) findViewById(R.id.dummy_userpic_edit);
         cancel = (TextView) findViewById(R.id.btn_cancel);
         back = (CardView) findViewById(R.id.back_activity_edit_akun);
@@ -133,7 +137,9 @@ public class activity_edit_akun extends AppCompatActivity {
                 } else if (TextUtils.isEmpty(editaddress.getText().toString())) {
                     Toast.makeText(getApplicationContext(), "Harap Masukkan Alamat Anda", Toast.LENGTH_SHORT).show();
                     return;
-                }  update_dialog();
+                } else {
+                    update_dialog();
+                }
             }
         });
 
@@ -160,16 +166,18 @@ public class activity_edit_akun extends AppCompatActivity {
                 .setCancelable(false)
                 .setPositiveButton("Ya",new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog,int id) {
-                        dialog = ProgressDialog.show(activity_edit_akun.this, "", "Memperbaharui Data...", true);
-
-                        new Thread(new Runnable() {
-                            @Override
-                            public void run() {
-                                //creating new thread to handle Http Operations
-                                uploadFile(selectedFilePath);
-                            }
-                        }).start();
+                        oldimage.setText(dummyimage.getText().toString());
                         createdata_2();
+                        if (TextUtils.isEmpty(oldimage.getText().toString())) {
+                            dialog = ProgressDialog.show(activity_edit_akun.this, "", "Memperbaharui Data...", true);
+                            new Thread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    //creating new thread to handle Http Operations
+                                    uploadFile(selectedFilePath);
+                                }
+                            }).start();
+                        }
                         Intent intent = new Intent(activity_edit_akun.this, activity_akun.class);
                         startActivity(intent);
                     }
@@ -189,6 +197,7 @@ public class activity_edit_akun extends AppCompatActivity {
 
     //android upload file to server
     public int uploadFile(final String selectedFilePath) {
+        final TextView FileName = findViewById(R.id.fileName);
         int serverResponseCode = 0;
 
         HttpURLConnection connection;
@@ -205,6 +214,15 @@ public class activity_edit_akun extends AppCompatActivity {
 
         String[] parts = selectedFilePath.split("/");
         final String fileName = parts[parts.length - 1];
+        /*
+         * I should regex filename string to make it don't have any whitespace
+         * before sending to server, to prevent any error that cause from whitespace
+         * if user download it.
+         *
+         * However, i need to make same regexed file name and filepath that'll push it to db
+         * filepath should get regex too when it want to push to db
+         */
+        String regex = fileName.replaceAll("\\s","");
 
         if (!selectedFile.isFile()) {
             dialog.dismiss();
@@ -212,7 +230,7 @@ public class activity_edit_akun extends AppCompatActivity {
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-
+                    FileName.setText("Berkas tidak tersedia: " + selectedFilePath);
                 }
             });
             return 0;
@@ -228,7 +246,7 @@ public class activity_edit_akun extends AppCompatActivity {
                 connection.setRequestProperty("Connection", "Keep-Alive");
                 connection.setRequestProperty("ENCTYPE", "multipart/form-data");
                 connection.setRequestProperty("Content-Type", "multipart/form-data;boundary=" + boundary);
-                connection.setRequestProperty("uploaded_file", selectedFilePath);
+                connection.setRequestProperty("uploaded_file", regex);
 
                 //creating new dataoutputstream
                 dataOutputStream = new DataOutputStream(connection.getOutputStream());
@@ -236,7 +254,7 @@ public class activity_edit_akun extends AppCompatActivity {
                 //writing bytes to data outputstream
                 dataOutputStream.writeBytes(twoHyphens + boundary + lineEnd);
                 dataOutputStream.writeBytes("Content-Disposition: form-data; name=\"uploaded_file\";filename=\""
-                        + selectedFilePath + "\"" + lineEnd);
+                        + regex + "\"" + lineEnd);
 
                 dataOutputStream.writeBytes(lineEnd);
 
@@ -312,7 +330,7 @@ public class activity_edit_akun extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        //final TextView FileName = findViewById(R.id.fileName);
+        final TextView FileName = findViewById(R.id.fileName);
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == Activity.RESULT_OK) {
             if (requestCode == PICK_FILE_REQUEST) {
@@ -326,15 +344,18 @@ public class activity_edit_akun extends AppCompatActivity {
 
                 if (selectedFilePath != null && !selectedFilePath.equals("")) {
                     dummyimage.setText(selectedFilePath);
-                    Glide.with(activity_edit_akun.this)
-                            .load(selectedFilePath)
-                            .into(picedit);
+                    File imgFile = new  File(dummyimage.getText().toString());
+
+                    if(imgFile.exists()) {
+
+                        Bitmap myBitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
+
+                        ImageView myImage = (ImageView) findViewById(R.id.img_head_akun_test);
+
+                        myImage.setImageBitmap(myBitmap);
+                    }
                 } else {
-                    String uri = "@drawable/profil";  // where myresource (without the extension) is the file
-                    int imageResource = getResources().getIdentifier(uri, null, getPackageName());
-                    Drawable res = getResources().getDrawable(imageResource);
-                    picedit.setImageDrawable(res);
-                    dummyimage.setText("");
+                    Toast.makeText(this, "Tidak Dapat Mengunggah Ke Website Mandorin", Toast.LENGTH_SHORT).show();
                 }
             }
         }
@@ -364,14 +385,16 @@ public class activity_edit_akun extends AppCompatActivity {
         {
             @Override
             protected Map<String, String> getParams() {
-                String dummy_image_edit= dummyimage.getText().toString();
                 String nama_edit = editname.getText().toString();
                 String usermail_edit = editmail.getText().toString();
                 String umur_edit  = editage.getText().toString();
                 String nik_edit   = editid.getText().toString();
                 String telp_edit   = editphone.getText().toString();
                 String alamat_edit   = editaddress.getText().toString();
-                String foto_user_edit   = ("http://www.mandorin.site/mandorin/uploads/" + dummy_image_edit);
+                String substring = dummyimage.getText().toString();
+                String desain = substring.substring(substring.lastIndexOf("/")+1);
+                // regex filename, so it'll look same for filename and filepath that'll inserted to database
+                String regex = desain.replaceAll("\\s", "");
 
                 // Creating Map String Params.
                 Map<String, String> params = new HashMap<String, String>();
@@ -383,7 +406,7 @@ public class activity_edit_akun extends AppCompatActivity {
                 params.put("nik", nik_edit  );
                 params.put("telp", telp_edit  );
                 params.put("alamat", alamat_edit  );
-                params.put("foto_user", foto_user_edit  );
+                params.put("foto_user", regex);
 
                 return params;
             }
@@ -455,7 +478,8 @@ public class activity_edit_akun extends AppCompatActivity {
                     Drawable res = getResources().getDrawable(imageResource);
                     picedit.setImageDrawable(res);
                 } else {
-                    Picasso.get().load(dummyimage.getText().toString()).fit().centerCrop() .into(picedit);
+                    String user_photo = "http://mandorin.site/mandorin/uploads/" + dummyimage.getText().toString();
+                    Picasso.get().load(user_photo).fit().centerCrop() .into(picedit);
                 }
             } catch (JSONException e) {
                 // TODO Auto-generated catch block
@@ -463,4 +487,5 @@ public class activity_edit_akun extends AppCompatActivity {
             }
         }
     }
+
 }

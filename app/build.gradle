@@ -4,7 +4,7 @@ android {
     compileSdkVersion 27
     defaultConfig {
         applicationId "id.hana.mandorin"
-        minSdkVersion 24
+        minSdkVersion 21
         targetSdkVersion 27
         versionCode 1
         versionName "1.0-20191126"
@@ -33,7 +33,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-core:16.0.1'
     implementation 'com.google.firebase:firebase-auth:16.0.1'
     implementation 'com.kishan.askpermission:askpermission:1.0.3'
-    implementation 'com.github.bumptech.glide:volley-integration:4.9.0'
+    implementation 'com.github.bumptech.glide:volley-integration:4.2.0'
     implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'net.gotev:uploadservice:2.1'
     testImplementation 'junit:junit:4.12'

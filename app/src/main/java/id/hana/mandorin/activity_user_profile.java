@@ -10,7 +10,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
@@ -27,11 +26,13 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class activity_user_profile extends AppCompatActivity {
 
     private CardView back_akun;
     private TextView userfname, usermail, userid, userage, userphone, useraddress, userpic_dummy;
-    private ImageView  userpic;
+    private CircleImageView userpic;
     SharedPreferences pref;
     SharedPreferences.Editor editor;
     JSONObject json = null;
@@ -54,7 +55,7 @@ public class activity_user_profile extends AppCompatActivity {
         userphone = (TextView) findViewById(R.id.user_telp);
         useraddress = (TextView) findViewById(R.id.user_address);
         userpic_dummy = (TextView) findViewById(R.id.dummy_userpic);
-        userpic = (ImageView) findViewById(R.id.img_head_1);
+        userpic = (CircleImageView) findViewById(R.id.img_head_1);
         back_akun = (CardView) findViewById(R.id.back_user_profile);
 
         usermail.setText(pref.getString ("email", null));
@@ -134,7 +135,8 @@ public class activity_user_profile extends AppCompatActivity {
                     Drawable res = getResources().getDrawable(imageResource);
                     userpic.setImageDrawable(res);
                 } else {
-                    Picasso.get().load(userpic_dummy.getText().toString()).fit().centerCrop() .into(userpic);
+                    String user_photo = "http://mandorin.site/mandorin/uploads/" + userpic_dummy.getText().toString();
+                    Picasso.get().load(user_photo).fit().centerCrop() .into(userpic);
                 }
             } catch (JSONException e) {
                 // TODO Auto-generated catch block
