@@ -93,6 +93,8 @@
         <activity android:name=".activity_data_pembayaran_bangun_dari_awal"/>
         <activity android:name=".activity_data_pembayaran_bangun_dari_awal_2"/>
         <activity android:name=".activity_pemesan_pembayaran_bangun_dari_awal"/>
+        <activity android:name=".activity_riwayat_pembayaran"/>
+        <activity android:name=".activity_data_riwayat_pembayaran"/>
     </application>
 
 </manifest>
