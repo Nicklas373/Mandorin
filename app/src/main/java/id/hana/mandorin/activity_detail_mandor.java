@@ -1,7 +1,6 @@
 package id.hana.mandorin;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -25,13 +24,6 @@ public class activity_detail_mandor extends AppCompatActivity {
     private CardView back;
     private TextView Nama, Umur, Nama_1, Umur_1, Alamat_1, Nik_1, Tempat_1, Tgl_Lahir_1, Agama_1, Lama_Kerja_1;
     private ImageView image;
-
-    /*
-     * SharedPreferences Usage
-     * I want to reduce passing usage, since it seems mess with app runtime sometimes
-     */
-    SharedPreferences pref;
-    SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,17 +49,16 @@ public class activity_detail_mandor extends AppCompatActivity {
         image = findViewById(R.id.img_head);
 
         /*
-         * SharedPreferences Data
+         * Passing data from last activity
          */
-        pref = getApplicationContext().getSharedPreferences("data_mandor", 0);
-        String nik = pref.getString("nik",null);
-        String nama = pref.getString("nama",null);
-        String alamat = pref.getString("alamat",null);
-        String umur = pref.getString("umur",null);
-        String tempat = pref.getString("tempat",null);
-        String tgl_lahir = pref.getString("tgl_lahir",null);
-        String agama = pref.getString("agama",null);
-        String lama_kerja = pref.getString("lama_kerja",null);
+        String nik = getIntent().getExtras().getString("nik");
+        String nama = getIntent().getExtras().getString("nama");
+        String alamat = getIntent().getExtras().getString("alamat");
+        String umur = getIntent().getExtras().getString("umur");
+        String tempat = getIntent().getExtras().getString("tempat");
+        String tgl_lahir = getIntent().getExtras().getString("tgl_lahir");
+        String agama = getIntent().getExtras().getString("agama");
+        String lama_kerja = getIntent().getExtras().getString("lama_kerja");
 
         /*
          * TextView Initializations
@@ -101,6 +92,14 @@ public class activity_detail_mandor extends AppCompatActivity {
                 byte[] b = baos.toByteArray();
 
                 Intent intent = new Intent(activity_detail_mandor.this, activity_profile_mandor.class);
+                intent.putExtra("nama", Nama.getText().toString());
+                intent.putExtra("umur", Umur.getText().toString());
+                intent.putExtra("alamat", Alamat_1.getText().toString());
+                intent.putExtra("nik", Nik_1.getText().toString());
+                intent.putExtra("tempat", Tempat_1.getText().toString());
+                intent.putExtra("tgl_lahir", Tgl_Lahir_1.getText().toString());
+                intent.putExtra("agama", Agama_1.getText().toString());
+                intent.putExtra("lama_kerja", Lama_Kerja_1.getText().toString());
                 intent.putExtra("foto", b);
 
                 startActivity(intent);

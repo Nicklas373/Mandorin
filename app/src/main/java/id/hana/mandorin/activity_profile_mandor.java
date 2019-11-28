@@ -73,6 +73,21 @@ public class activity_profile_mandor extends AppCompatActivity {
         String lama_kerja = getIntent().getExtras().getString("lama_kerja");
 
         /*
+         * SharedPreferences Declaration
+         */
+        pref = getApplicationContext().getSharedPreferences("data_mandor", 0);
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putString("nik", nik);
+        editor.putString("nama", nama);
+        editor.putString("alamat", alamat);
+        editor.putString("umur", umur);
+        editor.putString("tempat", tempat);
+        editor.putString("tgl_lahir", tgl_lahir);
+        editor.putString("agama", agama);
+        editor.putString("lama_kerja", lama_kerja);
+        editor.apply();
+
+        /*
          * TextView Initializations
          */
         Nama.setText(nama);
@@ -94,21 +109,6 @@ public class activity_profile_mandor extends AppCompatActivity {
         image.setImageBitmap(bmp);
 
         /*
-         * SharedPreferences Declaration
-         */
-        pref = getApplicationContext().getSharedPreferences("data_mandor", 0);
-        SharedPreferences.Editor editor = pref.edit();
-        editor.putString("nik", nik);
-        editor.putString("nama", nama);
-        editor.putString("alamat", alamat);
-        editor.putString("umur", umur);
-        editor.putString("tempat", tempat);
-        editor.putString("tgl_lahir", tgl_lahir);
-        editor.putString("agama", agama);
-        editor.putString("lama_kerja", lama_kerja);
-        editor.apply();
-
-        /*
          * Begin firebase authorization
          */
         auth = FirebaseAuth.getInstance();
@@ -124,6 +124,17 @@ public class activity_profile_mandor extends AppCompatActivity {
                 byte[] b = baos.toByteArray();
 
                 Intent intent = new Intent(activity_profile_mandor.this, activity_detail_mandor.class);
+                /*
+                 * Only use passed intent on specific layout
+                 */
+                intent.putExtra("nama", Nama.getText().toString());
+                intent.putExtra("umur", Umur.getText().toString());
+                intent.putExtra("alamat", Alamat.getText().toString());
+                intent.putExtra("nik", Nik.getText().toString());
+                intent.putExtra("tempat", Tempat.getText().toString());
+                intent.putExtra("tgl_lahir", Tgl_lahir.getText().toString());
+                intent.putExtra("agama", Agama.getText().toString());
+                intent.putExtra("lama_kerja", Lama_Kerja.getText().toString());
                 intent.putExtra("foto", b);
                 startActivity(intent);
             }
