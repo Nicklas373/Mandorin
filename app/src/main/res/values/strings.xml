@@ -201,12 +201,14 @@
     <string name="app_mandor_recycler_data_komplain_title">Data Komplain</string>
     <string name="app_mandor_recycler_data_komplain_1">Nomor Kontrak</string>
     <string name="app_mandor_recycler_data_komplain_2">Status</string>
+    <string name="app_mandor_recycler_data_komplain_3">Layanan Jasa</string>
     <string name="app_mandor_data_komplain_title">Data Komplain</string>
     <string name="app_mandor_data_komplain_1">Nomor Kontrak</string>
     <string name="app_mandor_data_komplain_2">Alamat</string>
     <string name="app_mandor_data_komplain_3">Komplain</string>
     <string name="app_mandor_data_komplain_4">Kembali</string>
     <string name="app_mandor_data_komplain_5">Data Komplain</string>
+    <string name="app_mandor_data_komplain_6">Status Layanan</string>
     <string name="app_mandor_status_pembayaran_title">Status Pembayaran</string>
     <string name="app_mandor_status_pembayaran_1">Renovasi</string>
     <string name="app_mandor_status_pembayaran_2">Bangunan Baru</string>

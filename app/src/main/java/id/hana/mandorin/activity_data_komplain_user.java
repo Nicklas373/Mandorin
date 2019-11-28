@@ -15,7 +15,7 @@ public class activity_data_komplain_user extends AppCompatActivity {
      * Layout Component Initializations
      * Textview, Imageview, CardView & Button
      */
-    private TextView nomor_kontrak, alamat_kontrak, data_komplain, status_kontrak;
+    private TextView nomor_kontrak, alamat_kontrak, data_komplain, status_kontrak, status_komplain;
     private CardView back;
 
     @Override
@@ -34,6 +34,7 @@ public class activity_data_komplain_user extends AppCompatActivity {
         status_kontrak = findViewById(R.id.user_input_status_kontrak);
         data_komplain = findViewById(R.id.user_input_komplain);
         back = findViewById(R.id.back_activity_komplain_user);
+        status_komplain = findViewById(R.id.user_input_status_komplain_kontrak);
 
         /*
          * Passing data from last activity
@@ -41,6 +42,7 @@ public class activity_data_komplain_user extends AppCompatActivity {
         String id = getIntent().getExtras().getString("id");
         String nomor_kontrak_1 = getIntent().getExtras().getString("nomor_kontrak");
         String status_kontrak_1 = getIntent().getExtras().getString("status");
+        String status_kontrak_komplain_1 = getIntent().getExtras().getString("status_komplain");
         String alamat_kontrak_1 = getIntent().getExtras().getString("alamat");
         String komplain_kontrak_1 = getIntent().getExtras().getString("komplain");
 
@@ -51,6 +53,7 @@ public class activity_data_komplain_user extends AppCompatActivity {
         alamat_kontrak.setText(alamat_kontrak_1);
         status_kontrak.setText(status_kontrak_1);
         data_komplain.setText(komplain_kontrak_1);
+        status_komplain.setText(status_kontrak_komplain_1);
 
         /*
          * Set Scrolling On TextView

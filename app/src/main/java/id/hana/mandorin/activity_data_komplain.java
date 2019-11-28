@@ -55,6 +55,7 @@ public class activity_data_komplain extends AppCompatActivity {
     String JSON_EMAIL_KONTRAK = "email";
     String JSON_ALAMAT_KONTRAK = "alamat";
     String JSON_STATUS_KONTRAK = "status";
+    String JSON_STATUS_KOMPLAIN_KONTRAK = "status_komplain";
     String JSON_KOMPLAIN_KONTRAK = "komplain";
     JsonArrayRequest jsonArrayRequest ;
     RequestQueue requestQueue ;
@@ -184,6 +185,7 @@ public class activity_data_komplain extends AppCompatActivity {
                 GetDataAdapter3.setEmail(json.getString(JSON_EMAIL_KONTRAK));
                 GetDataAdapter3.setAlamat(json.getString(JSON_ALAMAT_KONTRAK));
                 GetDataAdapter3.setStatus(json.getString(JSON_STATUS_KONTRAK));
+                GetDataAdapter3.setStatus_komplain(json.getString(JSON_STATUS_KOMPLAIN_KONTRAK));
                 GetDataAdapter3.setKomplain(json.getString(JSON_KOMPLAIN_KONTRAK));
 
             } catch (JSONException e) {

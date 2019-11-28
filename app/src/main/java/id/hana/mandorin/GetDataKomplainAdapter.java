@@ -2,7 +2,7 @@ package id.hana.mandorin;
 
 public class GetDataKomplainAdapter {
 
-    public String id, nomor_kontrak, status, alamat, komplain, email;
+    public String id, nomor_kontrak, status, status_komplain, alamat, komplain, email;
 
     public String getId() {
         return id;
@@ -30,6 +30,14 @@ public class GetDataKomplainAdapter {
 
     public String getStatus() {
         return status;
+    }
+
+    public void setStatus_komplain(String status_komplain) {
+        this.status_komplain= status_komplain;
+    }
+
+    public String getStatus_komplain() {
+        return status_komplain;
     }
 
     public void setStatus(String status) {

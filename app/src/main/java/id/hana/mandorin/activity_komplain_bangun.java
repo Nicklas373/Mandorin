@@ -173,6 +173,7 @@ public class activity_komplain_bangun extends AppCompatActivity {
                 String komplain_kontrak = komplain_1.getText().toString();
                 String status_kontrak = status_kontrak_1.getText().toString();
                 String email = firebaseUser.getEmail();
+                String status_komplain = "pending";
 
                 // Creating Map String Params.
                 Map<String, String> params = new HashMap<String, String>();
@@ -183,6 +184,7 @@ public class activity_komplain_bangun extends AppCompatActivity {
                 params.put("alamat", alamat_kontrak);
                 params.put("komplain", komplain_kontrak);
                 params.put("status", status_kontrak);
+                params.put("status_komplain", status_komplain);
 
                 return params;
             }
