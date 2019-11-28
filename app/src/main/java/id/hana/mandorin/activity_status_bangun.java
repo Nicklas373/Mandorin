@@ -12,6 +12,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.StrictMode;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
@@ -59,6 +60,9 @@ public class activity_status_bangun extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_status_bangun_dari_awal);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+        StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
+        StrictMode.setVmPolicy(builder.build());
 
         /*
          * Layout ID Initializations
@@ -230,7 +234,6 @@ public class activity_status_bangun extends AppCompatActivity {
                 File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), file_data);
                 if (file.exists()) {
                     btn_desain_rumah.setText("Lihat Berkas");
-                    Toast.makeText(activity_status_bangun.this, "Berkas anda ada di download/" + file_data, Toast.LENGTH_LONG).show();
                     openFolder_desain_rumah();
                 } else {
                     if(internet_available()) {
