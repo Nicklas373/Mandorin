@@ -1,5 +1,6 @@
 package id.hana.mandorin;
 
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -14,6 +15,7 @@ import android.os.Environment;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -145,7 +147,7 @@ public class activity_status_bangun extends AppCompatActivity {
                 if (file.exists()) {
                     btn_data_pemesan.setText("Lihat Berkas");
                     Toast.makeText(activity_status_bangun.this, "Berkas anda ada di download/" + file_data, Toast.LENGTH_LONG).show();
-                    openFolder();
+                    openFolder_data_pemesan();
                 } else {
                     if(internet_available()) {
                         if (!hasPermissions(activity_status_bangun.this, PERMISSIONS)) {
@@ -156,7 +158,7 @@ public class activity_status_bangun extends AppCompatActivity {
                             Toast.makeText(activity_status_bangun.this, "Data pesanan anda berhasil di download", Toast.LENGTH_LONG).show();
                             btn_data_pemesan.setText("Lihat Berkas");
                             Toast.makeText(activity_status_bangun.this, "Berkas anda ada di download/" + file_data, Toast.LENGTH_LONG).show();
-                            openFolder();
+                            openFolder_data_pemesan();
                         }
                     } else {
                         Toast.makeText(activity_status_bangun.this, "Harap cek konektivitas anda", Toast.LENGTH_LONG).show();
@@ -173,7 +175,7 @@ public class activity_status_bangun extends AppCompatActivity {
                 if (file.exists()) {
                     btn_rekap_data.setText("Lihat Berkas");
                     Toast.makeText(activity_status_bangun.this, "Berkas anda ada di download/" + file_data, Toast.LENGTH_LONG).show();
-                    openFolder();
+                    openFolder_rekap_data();
                 } else {
                     if(internet_available()) {
                         if (!hasPermissions(activity_status_bangun.this, PERMISSIONS)) {
@@ -184,7 +186,7 @@ public class activity_status_bangun extends AppCompatActivity {
                             Toast.makeText(activity_status_bangun.this, "Data rekap data anda berhasil di download", Toast.LENGTH_LONG).show();
                             btn_rekap_data.setText("Lihat Berkas");
                             Toast.makeText(activity_status_bangun.this, "Berkas anda ada di download/" + file_data, Toast.LENGTH_LONG).show();
-                            openFolder();
+                            openFolder_rekap_data();
                         }
                     } else {
                         Toast.makeText(activity_status_bangun.this, "Harap cek konektivitas anda", Toast.LENGTH_LONG).show();
@@ -201,7 +203,7 @@ public class activity_status_bangun extends AppCompatActivity {
                 if (file.exists()) {
                     btn_surat_kontrak.setText("Lihat Berkas");
                     Toast.makeText(activity_status_bangun.this, "Berkas anda ada di download/" + file_data, Toast.LENGTH_LONG).show();
-                    openFolder();
+                    openFolder_surat_kontrak();
                 } else {
                     if(internet_available()) {
                         if (!hasPermissions(activity_status_bangun.this, PERMISSIONS)) {
@@ -212,7 +214,7 @@ public class activity_status_bangun extends AppCompatActivity {
                             Toast.makeText(activity_status_bangun.this, "Data surat kontrak anda berhasil di download", Toast.LENGTH_LONG).show();
                             btn_surat_kontrak.setText("Lihat Berkas");
                             Toast.makeText(activity_status_bangun.this, "Berkas anda ada di download/" + file_data, Toast.LENGTH_LONG).show();
-                            openFolder();
+                            openFolder_surat_kontrak();
                         }
                     } else {
                         Toast.makeText(activity_status_bangun.this, "Harap cek konektivitas anda", Toast.LENGTH_LONG).show();
@@ -229,7 +231,7 @@ public class activity_status_bangun extends AppCompatActivity {
                 if (file.exists()) {
                     btn_desain_rumah.setText("Lihat Berkas");
                     Toast.makeText(activity_status_bangun.this, "Berkas anda ada di download/" + file_data, Toast.LENGTH_LONG).show();
-                    openFolder();
+                    openFolder_desain_rumah();
                 } else {
                     if(internet_available()) {
                         if (!hasPermissions(activity_status_bangun.this, PERMISSIONS)) {
@@ -240,7 +242,7 @@ public class activity_status_bangun extends AppCompatActivity {
                             Toast.makeText(activity_status_bangun.this, "Data surat kontrak anda berhasil di download", Toast.LENGTH_LONG).show();
                             btn_desain_rumah.setText("Lihat Berkas");
                             Toast.makeText(activity_status_bangun.this, "Berkas anda ada di download/" + file_data, Toast.LENGTH_LONG).show();
-                            openFolder();
+                            openFolder_desain_rumah();
                         }
                     } else {
                         Toast.makeText(activity_status_bangun.this, "Harap cek konektivitas anda", Toast.LENGTH_LONG).show();
@@ -345,12 +347,96 @@ public class activity_status_bangun extends AppCompatActivity {
         }
     }
 
-    public void openFolder(){
-        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-        Uri uri = Uri.parse(Environment.getExternalStorageDirectory().getPath()
-                + "/Download/");
-        intent.setDataAndType(uri, "application/pdf");
-        startActivity(Intent.createChooser(intent, "Open folder"));
+    public void openFolder_data_pemesan(){
+        try {
+            String file_data = meta_data_pemesan.getText().toString();
+            File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).toString() + "/" + file_data);
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setDataAndType(Uri.fromFile(file), "application/pdf");
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            startActivity(intent);
+        } catch (ActivityNotFoundException e) {
+            e.printStackTrace();
+            Log.d("Application not found", e.getMessage());
+            String file_data = meta_data_pemesan.getText().toString();
+            Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+            Uri uri = Uri.parse(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).toString() + "/" + file_data);
+            intent.setDataAndType(uri, "application/pdf");
+            startActivity(Intent.createChooser(intent, "Open folder"));
+        } catch (Exception e){
+            e.printStackTrace();
+            Log.d("Unknown error", e.getMessage());
+        }
+    }
+
+    public void openFolder_surat_kontrak(){
+        try {
+            String file_data = meta_surat_kontrak.getText().toString();
+            File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).toString() + "/" + file_data);
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setDataAndType(Uri.fromFile(file), "application/pdf");
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            startActivity(intent);
+        } catch (ActivityNotFoundException e) {
+            e.printStackTrace();
+            Log.d("Application not found", e.getMessage());
+            String file_data = meta_surat_kontrak.getText().toString();
+            Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+            Uri uri = Uri.parse(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).toString() + "/" + file_data);
+            intent.setDataAndType(uri, "application/pdf");
+            startActivity(Intent.createChooser(intent, "Open folder"));
+        } catch (Exception e){
+            e.printStackTrace();
+            Log.d("Unknown error", e.getMessage());
+        }
+    }
+
+    public void openFolder_desain_rumah(){
+        try {
+            String file_data = meta_desain_rumah.getText().toString();
+            File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).toString() + "/" + file_data);
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setDataAndType(Uri.fromFile(file), "application/pdf");
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            startActivity(intent);
+        } catch (ActivityNotFoundException e) {
+            e.printStackTrace();
+            Log.d("Application not found", e.getMessage());
+            String file_data = meta_desain_rumah.getText().toString();
+            Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+            Uri uri = Uri.parse(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).toString() + "/" + file_data);
+            intent.setDataAndType(uri, "application/pdf");
+            startActivity(Intent.createChooser(intent, "Open folder"));
+        } catch (Exception e){
+            e.printStackTrace();
+            Log.d("Unknown error", e.getMessage());
+        }
+    }
+
+    public void openFolder_rekap_data(){
+        try {
+            String file_data = meta_rekap_data.getText().toString();
+            File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).toString() + "/" + file_data);
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setDataAndType(Uri.fromFile(file), "application/pdf");
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            startActivity(intent);
+        } catch (ActivityNotFoundException e) {
+            e.printStackTrace();
+            Log.d("Application not found", e.getMessage());
+            String file_data = meta_rekap_data.getText().toString();
+            Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+            Uri uri = Uri.parse(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).toString() + "/" + file_data);
+            intent.setDataAndType(uri, "application/pdf");
+            startActivity(Intent.createChooser(intent, "Open folder"));
+        } catch (Exception e){
+            e.printStackTrace();
+            Log.d("Unknown error", e.getMessage());
+        }
     }
 
     private boolean internet_available(){

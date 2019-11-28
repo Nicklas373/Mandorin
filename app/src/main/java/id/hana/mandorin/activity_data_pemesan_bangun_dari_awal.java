@@ -1,5 +1,6 @@
 package id.hana.mandorin;
 
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -14,6 +15,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.text.method.ScrollingMovementMethod;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -199,11 +201,26 @@ public class activity_data_pemesan_bangun_dari_awal extends AppCompatActivity {
     }
 
     public void openFolder(){
-        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-        Uri uri = Uri.parse(Environment.getExternalStorageDirectory().getPath()
-                + "/Download/");
-        intent.setDataAndType(uri, "application/pdf");
-        startActivity(Intent.createChooser(intent, "Open folder"));
+        try {
+            String file_data = Desain.getText().toString();
+            File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).toString() + "/" + file_data);
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setDataAndType(Uri.fromFile(file), "application/pdf");
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            startActivity(intent);
+        } catch (ActivityNotFoundException e) {
+            e.printStackTrace();
+            Log.d("Application not found", e.getMessage());
+            String file_data = Desain.getText().toString();
+            Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+            Uri uri = Uri.parse(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).toString() + "/" + file_data);
+            intent.setDataAndType(uri, "application/pdf");
+            startActivity(Intent.createChooser(intent, "Open folder"));
+        } catch (Exception e){
+            e.printStackTrace();
+            Log.d("Unknown error", e.getMessage());
+        }
     }
 
     private boolean internet_available(){
