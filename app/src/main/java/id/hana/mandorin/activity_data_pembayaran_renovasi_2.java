@@ -181,7 +181,7 @@ public class activity_data_pembayaran_renovasi_2 extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(activity_data_pembayaran_renovasi_2.this, activity_data_pembayaran_bangun_dari_awal.class);
+                Intent intent = new Intent(activity_data_pembayaran_renovasi_2.this, activity_data_pembayaran_renovasi.class);
                 intent.putExtra("id", id);
                 intent.putExtra("nomor_kontrak", nomor_kontak);
                 intent.putExtra("nama_pemesan", nama_pemesan);
