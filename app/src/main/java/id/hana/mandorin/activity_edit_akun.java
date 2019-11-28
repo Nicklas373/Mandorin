@@ -120,22 +120,22 @@ public class activity_edit_akun extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (TextUtils.isEmpty(editname.getText().toString())) {
-                    Toast.makeText(getApplicationContext(), "Harap Masukkan Nama Anda", Toast.LENGTH_SHORT).show();
+                    editname.setError("Harap Masukkan Nama");
                     return;
                 } else if (TextUtils.isEmpty(editmail.getText().toString())) {
-                    Toast.makeText(getApplicationContext(), "Harap Masukkan Email Anda", Toast.LENGTH_SHORT).show();
+                    editmail.setError("Harap Masukkan Email");
                     return;
                 } else if (TextUtils.isEmpty(editage.getText().toString())) {
-                    Toast.makeText(getApplicationContext(), "Harap Masukkan Umur Anda", Toast.LENGTH_SHORT).show();
+                    editage.setError("Harap Masukkan Umur");
                     return;
                 } else if (TextUtils.isEmpty(editid.getText().toString())) {
-                    Toast.makeText(getApplicationContext(), "Harap Masukkan NIK Anda", Toast.LENGTH_SHORT).show();
+                    editid.setError("Harap Masukkan NIK");
                     return;
                 } else if (TextUtils.isEmpty(editphone.getText().toString())) {
-                    Toast.makeText(getApplicationContext(), "Harap Masukkan Nomor Telepon Anda", Toast.LENGTH_SHORT).show();
+                    editphone.setError("Harap Masukkan Nomor Telepon");
                     return;
                 } else if (TextUtils.isEmpty(editaddress.getText().toString())) {
-                    Toast.makeText(getApplicationContext(), "Harap Masukkan Alamat Anda", Toast.LENGTH_SHORT).show();
+                    editaddress.setError("Harap Masukkan Alamat");
                     return;
                 } else {
                     update_dialog();
