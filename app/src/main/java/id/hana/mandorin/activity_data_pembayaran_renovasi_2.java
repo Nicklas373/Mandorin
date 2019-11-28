@@ -115,9 +115,9 @@ public class activity_data_pembayaran_renovasi_2 extends AppCompatActivity {
         final String total_satu = getIntent().getExtras().getString("total_satu");
         final String total_dua = getIntent().getExtras().getString("total_dua");
         final String total_tiga = getIntent().getExtras().getString("total_tiga");
-        final String input_tgl_satu = getIntent().getExtras().getString("input_tgl_satu");
-        final String input_tgl_dua = getIntent().getExtras().getString("input_tgl_dua");
-        final String input_tgl_tiga = getIntent().getExtras().getString("input_tgl_tiga");
+        final String tgl_1 = getIntent().getExtras().getString("tgl_input_satu");
+        final String tgl_2 = getIntent().getExtras().getString("tgl_input_dua");
+        final String tgl_3 = getIntent().getExtras().getString("tgl_input_tiga");
         final String bukti_satu = getIntent().getExtras().getString("bukti_satu");
         final String bukti_dua = getIntent().getExtras().getString("bukti_dua");
         final String bukti_tiga = getIntent().getExtras().getString("bukti_tiga");
@@ -138,9 +138,9 @@ public class activity_data_pembayaran_renovasi_2 extends AppCompatActivity {
         total_satu_1.setText(total_satu);
         total_dua_1.setText(total_dua);
         total_tiga_1.setText(total_tiga);
-        tgl_satu.setText(input_tgl_satu);
-        tgl_dua.setText(input_tgl_dua);
-        tgl_tiga.setText(input_tgl_tiga);
+        tgl_satu.setText(tgl_1);
+        tgl_dua.setText(tgl_2);
+        tgl_tiga.setText(tgl_3);
         bukti_satu_1.setText(bukti_satu);
         bukti_dua_1.setText(bukti_dua);
         bukti_tiga_1.setText(bukti_tiga);
@@ -181,7 +181,7 @@ public class activity_data_pembayaran_renovasi_2 extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(activity_data_pembayaran_renovasi_2.this, activity_data_pembayaran_renovasi.class);
+                Intent intent = new Intent(activity_data_pembayaran_renovasi_2.this, activity_data_pembayaran_bangun_dari_awal.class);
                 intent.putExtra("id", id);
                 intent.putExtra("nomor_kontrak", nomor_kontak);
                 intent.putExtra("nama_pemesan", nama_pemesan);
@@ -195,9 +195,9 @@ public class activity_data_pembayaran_renovasi_2 extends AppCompatActivity {
                 intent.putExtra("total_satu", total_satu);
                 intent.putExtra("total_dua", total_dua);
                 intent.putExtra("total_tiga", total_tiga);
-                intent.putExtra("tgl_input_satu", input_tgl_satu);
-                intent.putExtra("tgl_input_dua", input_tgl_dua);
-                intent.putExtra("tgl_input_tiga", input_tgl_tiga);
+                intent.putExtra("tgl_input_satu", tgl_1);
+                intent.putExtra("tgl_input_dua", tgl_2);
+                intent.putExtra("tgl_input_tiga", tgl_3);
                 intent.putExtra("bukti_satu", bukti_satu);
                 intent.putExtra("bukti_dua", bukti_dua);
                 intent.putExtra("bukti_tiga", bukti_tiga);
@@ -419,14 +419,14 @@ public class activity_data_pembayaran_renovasi_2 extends AppCompatActivity {
                 .setCancelable(false)
                 .setPositiveButton("Proses",new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog,int id) {
-                            try {
-                                createdata();
-                                Intent intent = new Intent(activity_data_pembayaran_renovasi_2.this, activity_konfirmasi_bangun_renovasi.class);
-                                startActivity(intent);
-                            } catch (IllegalArgumentException e) {
-                                Toast.makeText(activity_data_pembayaran_renovasi_2.this, "Proses Gagal!", Toast.LENGTH_SHORT).show();
-                                e.printStackTrace();
-                            }
+                        try {
+                            createdata();
+                            Intent intent = new Intent(activity_data_pembayaran_renovasi_2.this, activity_konfirmasi_bangun_renovasi.class);
+                            startActivity(intent);
+                        } catch (IllegalArgumentException e) {
+                            Toast.makeText(activity_data_pembayaran_renovasi_2.this, "Proses Gagal!", Toast.LENGTH_SHORT).show();
+                            e.printStackTrace();
+                        }
                     }
                 })
                 .setNegativeButton("Batal",new DialogInterface.OnClickListener() {
@@ -444,7 +444,7 @@ public class activity_data_pembayaran_renovasi_2 extends AppCompatActivity {
 
     private void createdata() {
         String usermail_2 = email_1.getText().toString();
-        String adress = "http://mandorin.site/mandorin/php/user/update_pembayaran_bangun_dari_awal.php?email=" + usermail_2;
+        String adress = "http://mandorin.site/mandorin/php/user/update_pembayaran_renovasi.php?email=" + usermail_2;
         StringRequest stringRequest = new StringRequest(Request.Method.POST, adress,
                 new Response.Listener<String>() {
                     @Override

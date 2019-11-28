@@ -217,7 +217,7 @@
             android:layout_marginTop="170dp" />
 
         <TextView
-            android:id="@+id/user_input_tgl_1"
+            android:id="@+id/user_input_tgl_1_renovasi"
             android:layout_width="75dp"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
@@ -263,7 +263,7 @@
             android:layout_marginTop="243dp" />
 
         <TextView
-            android:id="@+id/user_input_tgl_2"
+            android:id="@+id/user_input_tgl_2_renovasi"
             android:layout_width="75dp"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
@@ -309,7 +309,7 @@
             android:layout_marginTop="320dp" />
 
         <TextView
-            android:id="@+id/user_input_tgl_3"
+            android:id="@+id/user_input_tgl_3_renovasi"
             android:layout_width="75dp"
             android:layout_height="wrap_content"
             android:layout_gravity="end"

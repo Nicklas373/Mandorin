@@ -39,9 +39,9 @@ public class activity_data_pembayaran_renovasi extends AppCompatActivity {
         Pembayaran_1 = findViewById(R.id.user_input_pembayaran_1);
         Pembayaran_2 = findViewById(R.id.user_input_pembayaran_2);
         Pembayaran_3 = findViewById(R.id.user_input_pembayaran_3);
-        tgl_1 = findViewById(R.id.user_input_tgl_1);
-        tgl_2 = findViewById(R.id.user_input_tgl_2);
-        tgl_3 = findViewById(R.id.user_input_tgl_3);
+        tgl_1 = findViewById(R.id.user_input_tgl_1_renovasi);
+        tgl_2 = findViewById(R.id.user_input_tgl_2_renovasi);
+        tgl_3 = findViewById(R.id.user_input_tgl_3_renovasi);
         back = findViewById(R.id.back_activity_data_pembayaran_renovasi);
         Status_1 = findViewById(R.id.user_input_status_1);
         Status_2 = findViewById(R.id.user_input_status_2);
@@ -128,6 +128,7 @@ public class activity_data_pembayaran_renovasi extends AppCompatActivity {
         Pembayaran_1.setText("Rp." + formattedNumber);
         Pembayaran_2.setText("Rp." + formattedNumber_2);
         Pembayaran_3.setText("Rp." + formattedNumber_3);
+        tgl_1.setText(tgl_satu);
         if (tgl_1.getText().toString().equalsIgnoreCase("Kosong")) {
             tgl_1.setText("");
         } else {

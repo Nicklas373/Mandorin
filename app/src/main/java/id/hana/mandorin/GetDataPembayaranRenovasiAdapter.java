@@ -1,8 +1,8 @@
 package id.hana.mandorin;
 
-public class GetDataPembayaranRenovasiAdapter {
+public class GetDataPembayaranRenovasiAdapter{
 
-    public String id, nomor_kontrak, nama_pemesan, email, no_telp, alamat, no_rekening, total_pembayaran, status_satu, status_dua, status_tiga, total_satu, total_dua, total_tiga, input_tgl_satu, input_tgl_dua, input_tgl_tiga, bukti_satu, bukti_dua, bukti_tiga;
+    public String id, nomor_kontrak, nama_pemesan, email, no_telp, alamat, no_rekening, total_pembayaran, status_satu, status_dua, status_tiga, total_satu, total_dua, total_tiga, tgl_input_satu, tgl_input_dua, tgl_input_tiga, bukti_satu, bukti_dua, bukti_tiga;
 
     public String getId() {
         return id;
@@ -49,7 +49,10 @@ public class GetDataPembayaranRenovasiAdapter {
 
     public String getTotal_pembayaran() { return total_pembayaran; }
 
-    public void setTotal_pembayaran(String total_pembayaran) { this.total_pembayaran= total_pembayaran; }
+    public void setTotal_pembayaran(String total_pembayaran)
+    {
+        this.total_pembayaran= total_pembayaran;
+    }
 
     public String getNo_rekening() {
         return no_rekening;
@@ -105,30 +108,6 @@ public class GetDataPembayaranRenovasiAdapter {
         this.total_tiga= total_tiga;
     }
 
-    public String getInput_tgl_satu() {
-        return input_tgl_satu;
-    }
-
-    public void setInput_tgl_satu(String input_tgl_satu) {
-        this.input_tgl_satu= input_tgl_satu;
-    }
-
-    public String getInput_tgl_dua() {
-        return input_tgl_dua;
-    }
-
-    public void setInput_tgl_dua(String input_tgl_dua) {
-        this.input_tgl_dua= input_tgl_dua;
-    }
-
-    public String getInput_tgl_tiga() {
-        return input_tgl_tiga;
-    }
-
-    public void setInput_tgl_tiga(String total_tiga) {
-        this.total_tiga= total_tiga;
-    }
-
     public String getBukti_satu() {
         return bukti_satu;
     }
@@ -151,5 +130,29 @@ public class GetDataPembayaranRenovasiAdapter {
 
     public void setBukti_tiga(String bukti_tiga) {
         this.bukti_tiga= bukti_tiga;
+    }
+
+    public String getTgl_input_satu() {
+        return tgl_input_satu;
+    }
+
+    public void setTgl_input_satu(String tgl_input_satu) {
+        this.tgl_input_satu= tgl_input_satu;
+    }
+
+    public String getTgl_input_dua() {
+        return tgl_input_dua;
+    }
+
+    public void setTgl_input_dua(String tgl_input_dua) {
+        this.tgl_input_dua= tgl_input_dua;
+    }
+
+    public String getTgl_input_tiga() {
+        return tgl_input_tiga;
+    }
+
+    public void setTgl_input_tiga(String tgl_input_tiga) {
+        this.tgl_input_tiga= tgl_input_tiga;
     }
 }
