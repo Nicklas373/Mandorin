@@ -48,7 +48,7 @@ public class activity_kontrak  extends AppCompatActivity {
         riwayat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(activity_kontrak.this, activity_kontrak_riwayat.class);
+                Intent intent = new Intent(activity_kontrak.this, activity_riwayat_kontrak.class);
                 startActivity(intent);
             }
         });

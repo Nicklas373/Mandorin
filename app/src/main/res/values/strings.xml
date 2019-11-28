@@ -247,4 +247,17 @@
     <string name="app_mandor_riwayat_pembayaran_3">Alamat Pekerjaan</string>
     <string name="app_mandor_riwayat_pembayaran_5">Status Pekerjaan</string>
     <string name="app_mandor_riwayat_pembayaran_4">Data Pembayaran</string>
+    <string name="app_mandor_riwayat_kontrak_title">Riwayat Kontrak</string>
+    <string name="app_mandor_recycler_riwayat_kontrak_1">Nomor Kontrak</string>
+    <string name="app_mandor_recycler_riwayat_kontrak_2">Nama Pemesan</string>
+    <string name="app_mandor_recycler_riwayat_kontrak_3">Alamat Pekerjaan</string>
+    <string name="app_mandor_recycler_riwayat_kontrak_4">Status Pekerjaan</string>
+    <string name="app_mandor_riwayat_kontrak_1">Nama Pemesan</string>
+    <string name="app_mandor_riwayat_kontrak_2">Nomor Kontrak</string>
+    <string name="app_mandor_riwayat_kontrak_3">Alamat</string>
+    <string name="app_mandor_riwayat_kontrak_4">Status Pekerjaan</string>
+    <string name="app_mandor_riwayat_kontrak_5">Data Pemesan</string>
+    <string name="app_mandor_riwayat_kontrak_6">Rekap Data</string>
+    <string name="app_mandor_riwayat_kontrak_7">Surat Kontrak</string>
+    <string name="app_mandor_riwayat_kontrak_8">Desain Rumah</string>
 </resources>
