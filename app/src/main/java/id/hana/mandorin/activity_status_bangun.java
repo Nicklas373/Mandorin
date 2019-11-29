@@ -101,7 +101,7 @@ public class activity_status_bangun extends AppCompatActivity {
         String status_pekerjaan_1 = getIntent().getExtras().getString("status_pekerjaan");
         String total_biaya_1 = getIntent().getExtras().getString("total_biaya");
         String presentase_1 = getIntent().getExtras().getString("presentase");
-        String waktu_awal_1 = getIntent().getExtras().getString("waktu_awal");
+        String waktu_awal_1 = getIntent().getExtras().getString("waktu_mulai");
         String waktu_akhir_1 = getIntent().getExtras().getString("waktu_akhir");
         final String data_pemesan_1 = getIntent().getExtras().getString("data_pesanan");
         final String link_data_pemesan_1 = ("https://www.mandorin.site/mandorin/data_pemesan/bangun_baru/" + data_pemesan_1);

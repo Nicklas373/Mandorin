@@ -97,7 +97,7 @@ public class recycler_view_status_bangun extends RecyclerView.Adapter<recycler_v
             intent.putExtra("status_pekerjaan", getStatusBangunAdapter.get(getAdapterPosition()).getStatus_pekerjaan());
             intent.putExtra("total_biaya", getStatusBangunAdapter.get(getAdapterPosition()).getTotal_biaya());
             intent.putExtra("presentase", getStatusBangunAdapter.get(getAdapterPosition()).getPresentase());
-            intent.putExtra("waktu_awal", getStatusBangunAdapter.get(getAdapterPosition()).getWaktu_awal());
+            intent.putExtra("waktu_mulai", getStatusBangunAdapter.get(getAdapterPosition()).getWaktu_mulai());
             intent.putExtra("waktu_akhir", getStatusBangunAdapter.get(getAdapterPosition()).getWaktu_akhir());
             intent.putExtra("data_pesanan", getStatusBangunAdapter.get(getAdapterPosition()).getData_pemesan());
             intent.putExtra("rekap_data", getStatusBangunAdapter.get(getAdapterPosition()).getRekap_data());
