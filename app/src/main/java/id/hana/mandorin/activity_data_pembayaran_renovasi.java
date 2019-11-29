@@ -2,7 +2,6 @@ package id.hana.mandorin;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.graphics.Color;
 import android.icu.text.DecimalFormat;
 import android.icu.text.NumberFormat;
 import android.os.Bundle;
@@ -10,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,9 +19,10 @@ public class activity_data_pembayaran_renovasi extends AppCompatActivity {
      * Layout Component Initializations
      * Textview, Imageview, CardView & Button
      */
-    private TextView Nomor_Kontrak, Nama_Pemesan, No_Telp, Pembayaran_1, Pembayaran_2, Pembayaran_3, Status_1, Status_2, Status_3, tgl_1, tgl_2, tgl_3;
+    private TextView Nomor_Kontrak, Nama_Pemesan, No_Telp, Pembayaran_1, Pembayaran_2, Pembayaran_3, Status_1, Status_2, Status_3, tgl_1, tgl_2, tgl_3, s_2, s_3;
     private Button Pembayaran;
-    private CardView back;
+    private ImageView p_bangun_baru;
+    private CardView back, p_2, p_3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +48,11 @@ public class activity_data_pembayaran_renovasi extends AppCompatActivity {
         Status_2 = findViewById(R.id.user_input_status_2);
         Status_3 = findViewById(R.id.user_input_status_3);
         Pembayaran = findViewById(R.id.pembayaran_renovasi);
+        p_bangun_baru = findViewById(R.id.image_pembayaran_bangun_baru);
+        p_2 = findViewById(R.id.cv_title_pembayaran_4);
+        p_3 = findViewById(R.id.cv_title_pembayaran_7);
+        s_2 = findViewById(R.id.textView9);
+        s_3 = findViewById(R.id.textView10);
 
         /*
          * Passing data from last activity
@@ -79,40 +85,33 @@ public class activity_data_pembayaran_renovasi extends AppCompatActivity {
         Nama_Pemesan.setText(nama_pemesan);
         No_Telp.setText(no_telp);
         Status_1.setText(status_satu);
-        if (Status_1.getText().toString().equalsIgnoreCase("Menunggu")) {
-            Status_1.setBackgroundColor(Color.LTGRAY);
-            Status_1.setTextColor(Color.BLACK);
-        } else if (Status_1.getText().toString().equalsIgnoreCase("Lunas")) {
-            Status_1.setBackgroundColor(Color.BLUE);
-            Status_1.setTextColor(Color.WHITE);
-        } else {
-            Status_1.setBackgroundColor(Color.WHITE);
-            Status_1.setTextColor(Color.BLACK);
-        }
         Status_2.setText(status_dua);
-        if (Status_2.getText().toString().equalsIgnoreCase("Menunggu")) {
-            Status_2.setBackgroundColor(Color.LTGRAY);
-            Status_2.setTextColor(Color.BLACK);
-        } else if (Status_2.getText().toString().equalsIgnoreCase("Lunas")) {
-            Status_2.setBackgroundColor(Color.BLUE);
-            Status_2.setTextColor(Color.WHITE);
-        } else if (Status_2.getText().toString().equalsIgnoreCase("Memproses")) {
-            Status_2.setBackgroundColor(Color.YELLOW);
-            Status_2.setTextColor(Color.BLACK);
-        } else {
-            Status_2.setBackgroundColor(Color.WHITE);
-            Status_2.setTextColor(Color.BLACK);
-        }
         Status_3.setText(status_tiga);
-        if (Status_3.getText().toString().equalsIgnoreCase("Menunggu")) {
-            Status_3.setBackgroundColor(Color.LTGRAY);
-            Status_3.setTextColor(Color.BLACK);
-        } else if (Status_3.getText().toString().equalsIgnoreCase("Lunas")) {
-            Status_3.setBackgroundColor(Color.BLUE);
-            Status_3.setTextColor(Color.WHITE);
-        } else {
-            Status_3.setBackgroundColor(Color.WHITE);
-            Status_3.setTextColor(Color.BLACK);
+        if (Status_2.getText().toString().equalsIgnoreCase("Menunggu")) {
+            p_bangun_baru.setImageDrawable(getResources().getDrawable(R.drawable.lunas_1, getApplicationContext().getTheme()));
+            p_2.setCardBackgroundColor(0xFF4b636e);
+            s_2.setTextColor(0xFFFFFFFF);
+            p_3.setCardBackgroundColor(0xFF4b636e);
+            s_3.setTextColor(0xFFFFFFFF);
+        } else if (Status_2.getText().toString().equalsIgnoreCase("Lunas")) {
+            p_bangun_baru.setImageDrawable(getResources().getDrawable(R.drawable.lunas_2, getApplicationContext().getTheme()));
+            p_2.setCardBackgroundColor(0xFF003077);
+            s_2.setTextColor(0xFFFFFFFF);
+            if (Status_3.getText().toString().equalsIgnoreCase("Lunas")) {
+                p_bangun_baru.setImageDrawable(getResources().getDrawable(R.drawable.lunas_3, getApplicationContext().getTheme()));
+                p_3.setCardBackgroundColor(0xFF003077);
+                s_3.setTextColor(0xFFFFFFFF);
+            } else if (Status_3.getText().toString().equalsIgnoreCase("Menunggu")) {
+                p_bangun_baru.setImageDrawable(getResources().getDrawable(R.drawable.lunas_3, getApplicationContext().getTheme()));
+                p_3.setCardBackgroundColor(0xFF4b636e);
+                s_3.setTextColor(0xFFFFFFFF);
+            }
+        } else if (Status_2.getText().toString().equalsIgnoreCase("Memproses")) {
+            p_bangun_baru.setImageDrawable(getResources().getDrawable(R.drawable.lunas_1, getApplicationContext().getTheme()));
+            p_2.setCardBackgroundColor(0xFF4b636e);
+            s_2.setTextColor(0xFFFFFFFF);
+            p_3.setCardBackgroundColor(0xFF4b636e);
+            s_3.setTextColor(0xFFFFFFFF);
         }
         int result = Integer.parseInt(total_satu);
         NumberFormat formatter = new DecimalFormat("#,###");
@@ -130,26 +129,8 @@ public class activity_data_pembayaran_renovasi extends AppCompatActivity {
         Pembayaran_2.setText("Rp." + formattedNumber_2);
         Pembayaran_3.setText("Rp." + formattedNumber_3);
         tgl_1.setText(tgl_satu);
-        if (tgl_1.getText().toString().equalsIgnoreCase("Kosong")) {
-            tgl_1.setText("");
-        } else {
-            tgl_1.setBackgroundColor(Color.WHITE);
-            tgl_1.setTextColor(Color.BLACK);
-        }
         tgl_2.setText(tgl_dua);
-        if (tgl_2.getText().toString().equalsIgnoreCase("Kosong")) {
-            tgl_2.setText("");
-        } else {
-            tgl_2.setBackgroundColor(Color.WHITE);
-            tgl_2.setTextColor(Color.BLACK);
-        }
         tgl_3.setText(tgl_tiga);
-        if (tgl_3.getText().toString().equalsIgnoreCase("Kosong")) {
-            tgl_3.setText("");
-        } else {
-            tgl_3.setBackgroundColor(Color.WHITE);
-            tgl_3.setTextColor(Color.BLACK);
-        }
 
         Pembayaran.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -70,7 +70,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="300dp"
             android:text="@string/app_mandor_konfirmasi_pembayaran_2"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textColor="#000"
             android:textStyle="bold"
             android:layout_gravity="center_horizontal"/>

@@ -17,6 +17,7 @@ import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -50,9 +51,10 @@ public class activity_bangun_dari_awal extends AppCompatActivity {
      */
     private TextView FileName, dummy, filename_details;
     private EditText luas_tanah;
+    private ImageView image_upload;
     private RadioGroup rg;
     private RadioButton rb, rb_2, rb_debug;
-    private Button upload, selanjutnya;
+    private Button selanjutnya;
     private CardView back;
     ProgressDialog dialog;
 
@@ -73,7 +75,7 @@ public class activity_bangun_dari_awal extends AppCompatActivity {
         filename_details = findViewById(R.id.fileName_title);
         luas_tanah = findViewById(R.id.et_luas_tanah);
         dummy = findViewById(R.id.dummy);
-        upload = findViewById(R.id.button_upload);
+        image_upload = findViewById(R.id.img_upload);
         selanjutnya = findViewById(R.id.button_selanjutnya);
         rg = findViewById(R.id.rg_borongan);
         rb = findViewById(R.id.rb_1);
@@ -92,7 +94,7 @@ public class activity_bangun_dari_awal extends AppCompatActivity {
 
         tampil_file();
 
-        upload.setOnClickListener(new View.OnClickListener() {
+        image_upload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 showFileChooser();

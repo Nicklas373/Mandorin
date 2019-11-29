@@ -49,27 +49,56 @@
             android:layout_marginEnd="55dp"/>
     </android.support.v7.widget.Toolbar>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="65dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
     <android.support.v7.widget.CardView
         android:id="@+id/cv_bangun_awal_2"
-        android:layout_width="390dp"
-        android:layout_height="640dp"
+        android:layout_width="370dp"
+        android:layout_height="350dp"
         app:cardBackgroundColor="#fff"
         app:cardCornerRadius="12dp"
         app:cardMaxElevation="2dp"
         app:cardUseCompatPadding="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.697">
+        android:layout_gravity="center_horizontal">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv_title_riwayat_kontrak"
+            android:layout_width="115dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_gravity="center_horizontal"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardBackgroundColor="@color/colorPrimary"
+            app:cardMaxElevation="2dp"
+            app:cardUseCompatPadding="true">
+
+            <TextView
+                android:id="@+id/textView52"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/app_mandor_riwayat_kontrak_5"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:textColor="#ffffff" />
+
+        </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
             android:id="@+id/cv_title_id"
             android:layout_width="115dp"
             android:layout_height="35dp"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="77dp"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"
@@ -88,20 +117,19 @@
 
         </android.support.v7.widget.CardView>
 
-
         <TextView
             android:id="@+id/user_input_id_riwayat_kontrak"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="87dp"
             android:textColor="#000"/>
 
         <View
             android:layout_width="200dp"
             android:layout_height="1dp"
             android:background="#000"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="106dp"
             android:layout_gravity="end" />
 
         <android.support.v7.widget.CardView
@@ -109,7 +137,7 @@
             android:layout_width="115dp"
             android:layout_height="35dp"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="130dp"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"
@@ -133,14 +161,14 @@
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="137dp"
             android:textColor="#000"/>
 
         <View
             android:layout_width="200dp"
             android:layout_height="1dp"
             android:background="#000"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="160dp"
             android:layout_gravity="end" />
 
         <android.support.v7.widget.CardView
@@ -148,7 +176,7 @@
             android:layout_width="115dp"
             android:layout_height="35dp"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="130dp"
+            android:layout_marginTop="195dp"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"
@@ -170,205 +198,11 @@
         <TextView
             android:id="@+id/user_input_alamat_riwayat_kontrak"
             android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:layout_marginTop="140dp"
-            android:textColor="#000"/>
-
-        <View
-            android:layout_width="200dp"
-            android:layout_height="1dp"
-            android:background="#000"
-            android:layout_marginTop="160dp"
-            android:layout_gravity="end" />
-
-        <android.support.v7.widget.CardView
-            android:id="@+id/cv_title_status_riwayat_kontrak"
-            android:layout_width="115dp"
-            android:layout_height="35dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="190dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:foreground="?android:attr/selectableItemBackground"
-            app:cardBackgroundColor="@color/colorPrimary"
-            app:cardMaxElevation="2dp"
-            app:cardUseCompatPadding="true">
-
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/app_mandor_riwayat_kontrak_4"
-                android:textAlignment="center"
-                android:layout_gravity="center"
-                android:textColor="#ffffff" />
-
-        </android.support.v7.widget.CardView>
-
-        <TextView
-            android:id="@+id/user_input_status_riwayat_kontrak"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
+            android:layout_height="100dp"
             android:layout_gravity="end"
             android:layout_marginTop="200dp"
+            android:scrollbars = "vertical"
             android:textColor="#000"/>
-
-        <View
-            android:layout_width="200dp"
-            android:layout_height="1dp"
-            android:background="#000"
-            android:layout_marginTop="220dp"
-            android:layout_gravity="end" />
-
-        <android.support.v7.widget.CardView
-            android:id="@+id/cv_title_data_pemesan_riwayat_kontrak"
-            android:layout_width="115dp"
-            android:layout_height="35dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="280dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:foreground="?android:attr/selectableItemBackground"
-            app:cardBackgroundColor="@color/colorPrimary"
-            app:cardMaxElevation="2dp"
-            app:cardUseCompatPadding="true">
-
-            <TextView
-                android:id="@+id/textView8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/app_mandor_riwayat_kontrak_5"
-                android:textAlignment="center"
-                android:layout_gravity="center"
-                android:textColor="#ffffff" />
-
-        </android.support.v7.widget.CardView>
-
-        <Button
-            android:id="@+id/button_data_pemesan_riwayat_kontrak"
-            style="@style/Widget.AppCompat.Button"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_gravity="end"
-            android:layout_marginEnd="80dp"
-            android:layout_marginTop="280dp"
-            android:background="#0071ac"
-            android:text="@string/app_mandor_data_pemesan_bangun_dari_awal_3"
-            android:textColor="#fff"
-            android:textAllCaps="false"/>
-
-        <android.support.v7.widget.CardView
-            android:id="@+id/cv_title_rekap_data_riwayat_kontrak"
-            android:layout_width="115dp"
-            android:layout_height="35dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="360dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:foreground="?android:attr/selectableItemBackground"
-            app:cardBackgroundColor="@color/colorPrimary"
-            app:cardMaxElevation="2dp"
-            app:cardUseCompatPadding="true">
-
-            <TextView
-                android:id="@+id/textView9"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/app_mandor_riwayat_kontrak_6"
-                android:textAlignment="center"
-                android:layout_gravity="center"
-                android:textColor="#ffffff" />
-
-        </android.support.v7.widget.CardView>
-
-        <Button
-            android:id="@+id/button_rekap_data_riwayat_kontrak"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_gravity="end"
-            android:layout_marginEnd="80dp"
-            android:layout_marginTop="360dp"
-            android:background="#0071ac"
-            android:text="@string/app_mandor_data_pemesan_bangun_dari_awal_3"
-            android:textColor="#fff"
-            android:textAllCaps="false"/>
-
-        <android.support.v7.widget.CardView
-            android:id="@+id/cv_title_surat_kontrak_riwayat_kontrak"
-            android:layout_width="115dp"
-            android:layout_height="35dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="440dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:foreground="?android:attr/selectableItemBackground"
-            app:cardBackgroundColor="@color/colorPrimary"
-            app:cardMaxElevation="2dp"
-            app:cardUseCompatPadding="true">
-
-            <TextView
-                android:id="@+id/textView10"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/app_mandor_riwayat_kontrak_7"
-                android:textAlignment="center"
-                android:layout_gravity="center"
-                android:textColor="#ffffff" />
-
-        </android.support.v7.widget.CardView>
-
-        <Button
-            android:id="@+id/button_surat_kontrak_riwayat_kontrak"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_gravity="end"
-            android:layout_marginEnd="80dp"
-            android:layout_marginTop="440dp"
-            android:background="#0071ac"
-            android:text="@string/app_mandor_data_pemesan_bangun_dari_awal_3"
-            android:textColor="#fff"
-            android:textAllCaps="false"/>
-
-        <android.support.v7.widget.CardView
-            android:id="@+id/cv_title_desain_rumah_riwayat_kontrak"
-            android:layout_width="115dp"
-            android:layout_height="35dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="520dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:foreground="?android:attr/selectableItemBackground"
-            app:cardBackgroundColor="@color/colorPrimary"
-            app:cardMaxElevation="2dp"
-            app:cardUseCompatPadding="true">
-
-            <TextView
-                android:id="@+id/textView11"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/app_mandor_riwayat_kontrak_8"
-                android:textAlignment="center"
-                android:layout_gravity="center"
-                android:textColor="#ffffff" />
-
-        </android.support.v7.widget.CardView>
-
-        <Button
-            android:id="@+id/button_desain_rumah_riwayat_kontrak"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_gravity="end"
-            android:layout_marginEnd="80dp"
-            android:layout_marginTop="520dp"
-            android:background="#0071ac"
-            android:text="@string/app_mandor_data_pemesan_bangun_dari_awal_3"
-            android:textColor="#fff"
-            android:textAllCaps="false"/>
-
 
         <!-- Dummy Debugging !-->
 
@@ -420,7 +254,254 @@
             android:id="@+id/text_link_raw_desain_rumah"
             android:visibility="gone"/>
 
+
         <!-- Dummy Debugging End !-->
     </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv_bangun_awal_3"
+            android:layout_width="370dp"
+            android:layout_height="160dp"
+            app:cardBackgroundColor="#fff"
+            app:cardCornerRadius="12dp"
+            app:cardMaxElevation="2dp"
+            app:cardUseCompatPadding="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cv_title_status_data_layanan"
+                android:layout_width="115dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardBackgroundColor="@color/colorPrimary"
+                app:cardMaxElevation="2dp"
+                app:cardUseCompatPadding="true">
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/app_mandor_riwayat_kontrak_9"
+                    android:textAlignment="center"
+                    android:layout_gravity="center"
+                    android:textColor="#ffffff" />
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cv_title_status_riwayat_kontrak"
+                android:layout_width="115dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="90dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardBackgroundColor="@color/colorPrimary"
+                app:cardMaxElevation="2dp"
+                app:cardUseCompatPadding="true">
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/app_mandor_riwayat_kontrak_4"
+                    android:textAlignment="center"
+                    android:layout_gravity="center"
+                    android:textColor="#ffffff" />
+
+            </android.support.v7.widget.CardView>
+
+            <TextView
+                android:id="@+id/user_input_status_riwayat_kontrak"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="100dp"
+                android:textColor="#000"/>
+
+            <View
+                android:layout_width="200dp"
+                android:layout_height="1dp"
+                android:background="#000"
+                android:layout_marginTop="120dp"
+                android:layout_gravity="end" />
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv_bangun_awal_4"
+            android:layout_width="370dp"
+            android:layout_height="500dp"
+            app:cardBackgroundColor="#fff"
+            app:cardCornerRadius="12dp"
+            app:cardMaxElevation="2dp"
+            app:cardUseCompatPadding="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cv_title_title_data_layanan"
+                android:layout_width="115dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardBackgroundColor="@color/colorPrimary"
+                app:cardMaxElevation="2dp"
+                app:cardUseCompatPadding="true">
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/app_mandor_riwayat_kontrak_10"
+                    android:textAlignment="center"
+                    android:layout_gravity="center"
+                    android:textColor="#ffffff" />
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cv_title_data_pemesan_riwayat_kontrak"
+                android:layout_width="115dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="100dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardBackgroundColor="@color/colorPrimary"
+                app:cardMaxElevation="2dp"
+                app:cardUseCompatPadding="true">
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/app_mandor_riwayat_kontrak_5"
+                    android:textAlignment="center"
+                    android:layout_gravity="center"
+                    android:textColor="#ffffff" />
+
+            </android.support.v7.widget.CardView>
+
+            <ImageView
+                android:id="@+id/image_data_pemesan_riwayat_kontrak"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="150dp"
+                android:layout_marginStart="40dp"
+                android:src="@drawable/download"
+                android:contentDescription="@string/heck" />
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cv_title_rekap_data_riwayat_kontrak"
+                android:layout_width="115dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="200dp"
+                android:layout_marginTop="100dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardBackgroundColor="@color/colorPrimary"
+                app:cardMaxElevation="2dp"
+                app:cardUseCompatPadding="true">
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/app_mandor_riwayat_kontrak_6"
+                    android:textAlignment="center"
+                    android:layout_gravity="center"
+                    android:textColor="#ffffff" />
+
+            </android.support.v7.widget.CardView>
+
+            <ImageView
+                android:id="@+id/image_rekap_data_riwayat_kontrak"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="150dp"
+                android:layout_marginStart="200dp"
+                android:src="@drawable/download"
+                android:contentDescription="@string/heck" />
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cv_title_surat_kontrak_riwayat_kontrak"
+                android:layout_width="115dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="300dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardBackgroundColor="@color/colorPrimary"
+                app:cardMaxElevation="2dp"
+                app:cardUseCompatPadding="true">
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/app_mandor_riwayat_kontrak_7"
+                    android:textAlignment="center"
+                    android:layout_gravity="center"
+                    android:textColor="#ffffff" />
+
+            </android.support.v7.widget.CardView>
+
+            <ImageView
+                android:id="@+id/image_surat_kontrak_riwayat_kontrak"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="350dp"
+                android:layout_marginStart="40dp"
+                android:src="@drawable/download"
+                android:contentDescription="@string/heck"/>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cv_title_desain_rumah_riwayat_kontrak"
+                android:layout_width="115dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="200dp"
+                android:layout_marginTop="300dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardBackgroundColor="@color/colorPrimary"
+                app:cardMaxElevation="2dp"
+                app:cardUseCompatPadding="true">
+
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/app_mandor_riwayat_kontrak_8"
+                    android:textAlignment="center"
+                    android:layout_gravity="center"
+                    android:textColor="#ffffff" />
+
+            </android.support.v7.widget.CardView>
+
+            <ImageView
+                android:id="@+id/image_desain_rumah_riwayat_kontrak"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="350dp"
+                android:layout_marginStart="200dp"
+                android:src="@drawable/download"
+                android:contentDescription="@string/heck" />
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>

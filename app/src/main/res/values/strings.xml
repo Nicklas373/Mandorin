@@ -184,11 +184,12 @@
     <string name="app_mandor_komplain_title">Menu Komplain</string>
     <string name="app_mandor_komplain_1">Nomor Kontrak</string>
     <string name="app_mandor_komplain_2">Alamat</string>
-    <string name="app_mandor_komplain_3">Komplain</string>
+    <string name="app_mandor_komplain_3">Data Komplain</string>
     <string name="app_mandor_komplain_4">Kirim</string>
     <string name="app_mandor_komplain_5">Data Komplain</string>
     <string name="app_mandor_komplain_6">Masukkan Data Komplain</string>
     <string name="app_mandor_komplain_7">Jenis Layanan</string>
+    <string name="app_mandor_komplain_8">Data Pemesan</string>
     <string name="app_mandor_konfirmasi_komplain">Konfirmasi</string>
     <string name="app_mandor_konfirmasi_komplain_1">Terkirim !</string>
     <string name="app_mandor_konfirmasi_komplain_2">Terima kasih telah menggunakan jasa kami</string>
@@ -221,14 +222,16 @@
     <string name="app_mandor_data_pembayaran_renovasi_1">Nomor Kontrak</string>
     <string name="app_mandor_data_pembayaran_renovasi_2">Nama Pemesan</string>
     <string name="app_mandor_data_pembayaran_renovasi_3">No. Telp</string>
-    <string name="app_mandor_data_pembayaran_renovasi_4">Pembayaran 1</string>
-    <string name="app_mandor_data_pembayaran_renovasi_5">Pembayaran 2</string>
-    <string name="app_mandor_data_pembayaran_renovasi_6">Pembayaran 3</string>
+    <string name="app_mandor_data_pembayaran_renovasi_4">1</string>
+    <string name="app_mandor_data_pembayaran_renovasi_5">2</string>
+    <string name="app_mandor_data_pembayaran_renovasi_6">3</string>
     <string name="app_mandor_data_pembayaran_renovasi_7">Pembayaran</string>
+    <string name="app_mandor_data_pembayaran_renovasi_8">Status Pembayaran</string>
     <string name="app_mandor_data_pembayaran_renovasi_title_2">Pembayaran Renovasi</string>
     <string name="app_mandor_data_pembayaran_renovasi_2_1">Nomor Rekening</string>
     <string name="app_mandor_data_pembayaran_renovasi_2_2">Masukkan Bukti Pembayaran</string>
     <string name="app_mandor_data_pembayaran_renovasi_2_3">Kirim</string>
+    <string name="app_mandor_data_pembayaran_renovasi_2_4">Data Pembayaran</string>
     <string name="app_mandor_konfirmasi_pembayaran">Konfirmasi</string>
     <string name="app_mandor_konfirmasi_pembayaran_1">Terkirim !</string>
     <string name="app_mandor_konfirmasi_pembayaran_2">Terima kasih telah menggunakan jasa kami</string>
@@ -262,4 +265,6 @@
     <string name="app_mandor_riwayat_kontrak_6">Rekap Data</string>
     <string name="app_mandor_riwayat_kontrak_7">Surat Kontrak</string>
     <string name="app_mandor_riwayat_kontrak_8">Desain Rumah</string>
+    <string name="app_mandor_riwayat_kontrak_9">Status Layanan</string>
+    <string name="app_mandor_riwayat_kontrak_10">Data Layanan</string>
 </resources>

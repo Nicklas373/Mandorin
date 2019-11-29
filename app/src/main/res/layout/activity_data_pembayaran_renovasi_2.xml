@@ -52,8 +52,9 @@
     <android.support.v7.widget.CardView
         android:id="@+id/cv_bangun_awal_2"
         android:layout_width="380dp"
-        android:layout_height="630dp"
+        android:layout_height="160dp"
         app:cardBackgroundColor="#fff"
+        app:cardCornerRadius="12dp"
         app:cardMaxElevation="2dp"
         app:cardUseCompatPadding="true"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -61,13 +62,37 @@
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.667">
+        app:layout_constraintVertical_bias="0.117">
 
         <android.support.v7.widget.CardView
-            android:id="@+id/cv_title_nomor_rekening"
+            android:id="@+id/cv_title_data_pembayaran"
             android:layout_width="125dp"
             android:layout_height="35dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="10dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_gravity="center_horizontal"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardBackgroundColor="@color/colorPrimary"
+            app:cardMaxElevation="2dp"
+            app:cardUseCompatPadding="true">
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/app_mandor_data_pembayaran_renovasi_2_4"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:textColor="#ffffff" />
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv_title_nomor_rekening_bangun_dari_awal_2"
+            android:layout_width="125dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="80dp"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"
@@ -91,21 +116,39 @@
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:layout_marginTop="57dp"
+            android:layout_marginTop="87dp"
             android:textColor="#000"/>
 
         <View
             android:layout_width="200dp"
             android:layout_height="1dp"
             android:background="#000"
-            android:layout_marginTop="78dp"
+            android:layout_marginTop="108dp"
             android:layout_gravity="end" />
 
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_bangun_awal_3"
+        android:layout_width="380dp"
+        android:layout_height="300dp"
+        app:cardBackgroundColor="#fff"
+        app:cardCornerRadius="12dp"
+        app:cardMaxElevation="2dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.557">
+
         <android.support.v7.widget.CardView
-            android:id="@+id/cv_title_bukti_pembayaran"
+            android:id="@+id/cv_title_bukti_pembayaran_bangun_dari_awal_2"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
-            android:layout_marginTop="150dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="70dp"
             android:layout_gravity="center_horizontal"
             android:clickable="true"
             android:focusable="true"
@@ -128,16 +171,16 @@
             android:id="@+id/upload_pembayaran"
             android:layout_width="160dp"
             android:layout_height="160dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="200dp"
+            android:layout_marginTop="10dp"
+            android:background="?attr/selectableItemBackground"
             android:contentDescription="@string/app_mandor_menu_edit_akun_1"
-            android:src="@drawable/status_transaksi"/>
+            android:src="@drawable/upload_bukti_pembayaran"/>
 
         <Button
-            android:id="@+id/pembayaran_renovasi"
+            android:id="@+id/btn_pembayaran_renovasi"
             android:layout_width="130dp"
             android:layout_height="35dp"
-            android:layout_marginTop="160sp"
+            android:layout_marginTop="100sp"
             android:textSize="18sp"
             android:background="@color/colorPrimary"
             android:textColor="#fff"
@@ -149,8 +192,8 @@
             android:id="@+id/fileName_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="35dp"
-            android:layout_marginTop="370dp"
+            android:layout_marginStart="160dp"
+            android:layout_marginTop="90dp"
             android:text="@string/app_mandor_bangun_awal_7"
             android:textColor="#000" />
 
@@ -158,8 +201,8 @@
             android:id="@+id/fileName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="135dp"
-            android:layout_marginTop="370dp"
+            android:layout_marginStart="160dp"
+            android:layout_marginTop="120dp"
             android:text=""
             android:textColor="#000" />
 
@@ -277,7 +320,5 @@
             android:layout_height="wrap_content"
             android:id="@+id/alamat_pemesan_pembayaran"
             android:visibility="gone"/>
-
-
     </android.support.v7.widget.CardView>
 </android.support.constraint.ConstraintLayout>

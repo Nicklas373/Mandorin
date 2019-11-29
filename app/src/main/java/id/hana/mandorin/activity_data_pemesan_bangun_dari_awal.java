@@ -18,7 +18,7 @@ import android.support.v7.widget.CardView;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,8 +40,8 @@ public class activity_data_pemesan_bangun_dari_awal extends AppCompatActivity {
      * Textview, Imageview, CardView & Button
      */
     private TextView Nama, Nik, Email, Status, Luas_tanah, Alamat, Url, Desain;
-    private Button Download;
     private CardView back;
+    private ImageView image_d;
 
     private static final String TAG = "activity_data_pemesan_bangun_dari_awal";
     private static final String[] PERMISSIONS = {android.Manifest.permission.READ_EXTERNAL_STORAGE, android.Manifest.permission.WRITE_EXTERNAL_STORAGE};
@@ -77,7 +77,7 @@ public class activity_data_pemesan_bangun_dari_awal extends AppCompatActivity {
         Luas_tanah = findViewById(R.id.user_input_luas_tanah);
         Alamat = findViewById(R.id.user_input_alamat);
         back = findViewById(R.id.back_activity_data_bangun_dari_awal);
-        Download = findViewById(R.id.button_download);
+        image_d = findViewById(R.id.download_p_bangun_awal);
         Desain = findViewById(R.id.desain);
         Url = findViewById(R.id.url);
 
@@ -118,14 +118,14 @@ public class activity_data_pemesan_bangun_dari_awal extends AppCompatActivity {
 
         ActivityCompat.requestPermissions(activity_data_pemesan_bangun_dari_awal.this, PERMISSIONS, 112);
 
-        Download.setOnClickListener(new View.OnClickListener() {
+        image_d.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String file_data = Desain.getText().toString();
                 File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), file_data);
                 if (file.exists()) {
-                    Download.setText("Lihat Berkas");
-                    Toast.makeText(activity_data_pemesan_bangun_dari_awal.this, "Berkas anda adalah" + file_data, Toast.LENGTH_LONG).show();
+                    image_d.setImageDrawable(getResources().getDrawable(R.drawable.download_c, getApplicationContext().getTheme()));
+                    Toast.makeText(activity_data_pemesan_bangun_dari_awal.this, "Berkas anda adalah " + file_data, Toast.LENGTH_LONG).show();
                     openFolder();
                 } else {
                     if(internet_available()) {
@@ -156,7 +156,7 @@ public class activity_data_pemesan_bangun_dari_awal extends AppCompatActivity {
         String file_data = Desain.getText().toString();
         File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), file_data);
         if (file.exists()) {
-            Download.setText("Lihat Berkas");
+            image_d.setImageDrawable(getResources().getDrawable(R.drawable.download_c, getApplicationContext().getTheme()));
         }
     }
 

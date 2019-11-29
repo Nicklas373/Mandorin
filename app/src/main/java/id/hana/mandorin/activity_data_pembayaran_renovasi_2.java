@@ -97,7 +97,7 @@ public class activity_data_pembayaran_renovasi_2 extends AppCompatActivity {
         bukti_tiga_1 = findViewById(R.id.bukti_tiga_pemesan_pembayaran);
         FileName = findViewById(R.id.fileName);
         upload = findViewById(R.id.upload_pembayaran);
-        Kirim = findViewById(R.id.pembayaran_renovasi);
+        Kirim = findViewById(R.id.btn_pembayaran_renovasi);
         back = findViewById(R.id.back_activity_data_pembayaran_renovasi_2);
 
         /*

@@ -49,55 +49,10 @@
             android:layout_marginEnd="55dp"/>
     </android.support.v7.widget.Toolbar>
 
-    <android.support.v7.widget.CardView
-        android:id="@+id/cv_bangun_awal_title_2"
-        android:layout_width="160dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="170dp"
-        android:layout_gravity="center_horizontal"
-        app:cardBackgroundColor="@color/colorPrimary"
-        app:cardCornerRadius="4dp"
-        app:cardUseCompatPadding="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.157">
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="5dp"
-            android:text="@string/app_mandor_bangun_awal_next_1"
-            android:textAlignment="center"
-            android:textSize="20sp"
-            android:textColor="#ffffff" />
-
-    </android.support.v7.widget.CardView>
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="150dp">
-
             <android.support.v7.widget.CardView
                 android:id="@+id/cv_bangun_awal_2"
-                android:layout_width="340dp"
-                android:layout_height="532dp"
+                android:layout_width="370dp"
+                android:layout_height="600dp"
                 app:cardBackgroundColor="#fff"
                 app:cardCornerRadius="12dp"
                 app:cardMaxElevation="2dp"
@@ -107,7 +62,7 @@
                 app:layout_constraintHorizontal_bias="0.492"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.697">
+                app:layout_constraintVertical_bias="0.597">
 
                 <android.support.v7.widget.CardView
                     android:id="@+id/cv_title_nama"
@@ -119,8 +74,7 @@
                     android:focusable="true"
                     android:foreground="?android:attr/selectableItemBackground"
                     app:cardBackgroundColor="@color/colorPrimary"
-                    app:cardCornerRadius="8dp"
-                    app:cardMaxElevation="2dp"
+                    app:cardCornerRadius="4dp"
                     app:cardUseCompatPadding="true">
 
                     <TextView
@@ -128,6 +82,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/app_mandor_bangun_awal_next_2"
+                        android:layout_gravity="center"
                         android:textAlignment="center"
                         android:textColor="#ffffff" />
 
@@ -135,11 +90,10 @@
 
                 <EditText
                     android:id="@+id/input_nama_bg_awal"
-                    android:layout_width="160dp"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
                     android:layout_marginTop="2dp"
-                    android:layout_marginEnd="20dp"
                     android:ems="10"
                     android:inputType="textPersonName"
                     android:text=""
@@ -155,8 +109,7 @@
                     android:focusable="true"
                     android:foreground="?android:attr/selectableItemBackground"
                     app:cardBackgroundColor="@color/colorPrimary"
-                    app:cardCornerRadius="8dp"
-                    app:cardMaxElevation="2dp"
+                    app:cardCornerRadius="4dp"
                     app:cardUseCompatPadding="true">
 
                     <TextView
@@ -164,6 +117,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/app_mandor_bangun_awal_next_3"
+                        android:layout_gravity="center"
                         android:textAlignment="center"
                         android:textColor="#ffffff" />
 
@@ -171,11 +125,10 @@
 
                 <EditText
                     android:id="@+id/input_nik_bg_awal"
-                    android:layout_width="160dp"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
                     android:layout_marginTop="60dp"
-                    android:layout_marginEnd="20dp"
                     android:ems="10"
                     android:inputType="number"
                     android:text=""
@@ -191,8 +144,7 @@
                     android:focusable="true"
                     android:foreground="?android:attr/selectableItemBackground"
                     app:cardBackgroundColor="@color/colorPrimary"
-                    app:cardCornerRadius="8dp"
-                    app:cardMaxElevation="2dp"
+                    app:cardCornerRadius="4dp"
                     app:cardUseCompatPadding="true">
 
                     <TextView
@@ -200,20 +152,27 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/app_mandor_bangun_awal_next_4"
+                        android:layout_gravity="center"
                         android:textAlignment="center"
                         android:textColor="#ffffff" />
 
                 </android.support.v7.widget.CardView>
 
                 <TextView
-                    android:layout_width="180dp"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
-                    android:layout_marginTop="130dp"
-                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="137dp"
                     android:textSize="15sp"
                     android:textColor="#000"
                     android:id="@+id/ba_statis_email"/>
+
+                <View
+                    android:layout_width="200dp"
+                    android:layout_height="1dp"
+                    android:background="#000"
+                    android:layout_marginTop="161dp"
+                    android:layout_gravity="end" />
 
                 <android.support.v7.widget.CardView
                     android:id="@+id/cv_title_hp"
@@ -225,8 +184,7 @@
                     android:focusable="true"
                     android:foreground="?android:attr/selectableItemBackground"
                     app:cardBackgroundColor="@color/colorPrimary"
-                    app:cardCornerRadius="8dp"
-                    app:cardMaxElevation="2dp"
+                    app:cardCornerRadius="4dp"
                     app:cardUseCompatPadding="true">
 
                     <TextView
@@ -234,6 +192,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/app_mandor_bangun_awal_next_5"
+                        android:layout_gravity="center"
                         android:textAlignment="center"
                         android:textColor="#ffffff" />
 
@@ -241,11 +200,10 @@
 
                 <EditText
                     android:id="@+id/input_hp_bg_awal"
-                    android:layout_width="160dp"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
                     android:layout_marginTop="180dp"
-                    android:layout_marginEnd="20dp"
                     android:ems="10"
                     android:importantForAutofill="no"
                     android:inputType="phone"
@@ -262,8 +220,7 @@
                     android:focusable="true"
                     android:foreground="?android:attr/selectableItemBackground"
                     app:cardBackgroundColor="@color/colorPrimary"
-                    app:cardCornerRadius="8dp"
-                    app:cardMaxElevation="2dp"
+                    app:cardCornerRadius="4dp"
                     app:cardUseCompatPadding="true">
 
                     <TextView
@@ -271,6 +228,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/app_mandor_bangun_awal_next_7"
+                        android:layout_gravity="center"
                         android:textAlignment="center"
                         android:textColor="#ffffff" />
 
@@ -278,11 +236,10 @@
 
                 <EditText
                     android:id="@+id/input_tgl_bg_awal"
-                    android:layout_width="160dp"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
                     android:layout_marginTop="240dp"
-                    android:layout_marginEnd="20dp"
                     android:ems="10"
                     android:hint="@string/hint"
                     android:importantForAutofill="no"
@@ -300,8 +257,7 @@
                     android:focusable="true"
                     android:foreground="?android:attr/selectableItemBackground"
                     app:cardBackgroundColor="@color/colorPrimary"
-                    app:cardCornerRadius="8dp"
-                    app:cardMaxElevation="2dp"
+                    app:cardCornerRadius="4dp"
                     app:cardUseCompatPadding="true">
 
                     <TextView
@@ -309,6 +265,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/app_mandor_bangun_awal_next_6"
+                        android:layout_gravity="center"
                         android:textAlignment="center"
                         android:textColor="#ffffff" />
 
@@ -316,11 +273,10 @@
 
                 <EditText
                     android:id="@+id/input_alamat_bg_awal"
-                    android:layout_width="160dp"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
                     android:layout_marginTop="300dp"
-                    android:layout_marginEnd="20dp"
                     android:ems="10"
                     android:importantForAutofill="no"
                     android:inputType="textMultiLine"
@@ -337,7 +293,7 @@
                     android:layout_width="100dp"
                     android:layout_height="30dp"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="450dp"
+                    android:layout_marginTop="460dp"
                     android:background="@color/colorPrimary"
                     android:text="@string/app_mandor_bangun_awal_next_8"
                     android:textColor="#fff" />
@@ -392,7 +348,5 @@
 
                 <!-- DUMMY END -->
             </android.support.v7.widget.CardView>
-        </RelativeLayout>
-    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>
