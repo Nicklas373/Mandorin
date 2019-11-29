@@ -101,7 +101,8 @@ public class activity_status_bangun extends AppCompatActivity {
         String status_pekerjaan_1 = getIntent().getExtras().getString("status_pekerjaan");
         String total_biaya_1 = getIntent().getExtras().getString("total_biaya");
         String presentase_1 = getIntent().getExtras().getString("presentase");
-        String estimasi_waktu_1 = getIntent().getExtras().getString("estimasi_waktu");
+        String waktu_awal_1 = getIntent().getExtras().getString("waktu_awal");
+        String waktu_akhir_1 = getIntent().getExtras().getString("waktu_akhir");
         final String data_pemesan_1 = getIntent().getExtras().getString("data_pesanan");
         final String link_data_pemesan_1 = ("https://www.mandorin.site/mandorin/data_pemesan/bangun_baru/" + data_pemesan_1);
         final String rekap_data_1 = getIntent().getExtras().getString("rekap_data");
@@ -123,7 +124,7 @@ public class activity_status_bangun extends AppCompatActivity {
         total_biaya.setText("Rp." + formattedNumber);
         alamat_pekerjaan.setText(alamat_pekerjaan_1);
         presentase.setText(presentase_1 + "%");
-        estimasi.setText(estimasi_waktu_1);
+        estimasi.setText(waktu_awal_1 + " sd " + waktu_akhir_1);
         data_pemesan.setText(link_data_pemesan_1);
         rekap_data.setText(link_rekap_data_1);
         surat_kontrak.setText(link_surat_kontrak_1);

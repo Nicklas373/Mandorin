@@ -2,7 +2,7 @@ package id.hana.mandorin;
 
 public class GetStatusBangunAdapter {
 
-    public String id, nomor_kontrak, nama_pemesan, email, no_telp, alamat_pekerjaan, status_pekerjaan, total_biaya, presentase, estimasi_waktu, data_pemesan, desain_rumah, rekap_data, surat_kontrak;
+    public String id, nomor_kontrak, nama_pemesan, email, no_telp, alamat_pekerjaan, status_pekerjaan, total_biaya, presentase, waktu_awal, waktu_akhir, data_pemesan, desain_rumah, rekap_data, surat_kontrak;
 
     public String getId() {
         return id;
@@ -74,12 +74,20 @@ public class GetStatusBangunAdapter {
         this.presentase= presentase;
     }
 
-    public String getEstimasi_waktu() {
-        return estimasi_waktu;
+    public String getWaktu_awal() {
+        return waktu_awal;
     }
 
-    public void setEstimasi_waktu(String estimasi_waktu) {
-        this.estimasi_waktu= estimasi_waktu;
+    public void setWaktu_awal(String waktu_awal) {
+        this.waktu_awal= waktu_awal;
+    }
+
+    public String getWaktu_akhir() {
+        return waktu_akhir;
+    }
+
+    public void setWaktu_akhir(String waktu_akhir) {
+        this.waktu_akhir= waktu_akhir;
     }
 
     public String getData_pemesan() {

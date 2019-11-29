@@ -59,7 +59,8 @@ public class activity_data_status_bangun extends AppCompatActivity {
     String JSON_STATUS_PEKERJAAN = "status_pekerjaan";
     String JSON_TOTAL_BIAYA = "total_biaya";
     String JSON_PRESENTASE = "presentase";
-    String JSON_ESTIMASI_WAKTU = "estimasi_waktu";
+    String JSON_WAKTU_AWAL = "waktu_awal";
+    String JSON_WAKTU_AKHIR = "waktu_akhir";
     String JSON_DATA_PEMESAN = "data_pemesan";
     String JSON_DESAIN_RUMAH = "desain_rumah";
     String JSON_REKAP_DATA = "rekap_data";
@@ -196,7 +197,8 @@ public class activity_data_status_bangun extends AppCompatActivity {
                 GetDataAdapter3.setStatus_pekerjaan(json.getString(JSON_STATUS_PEKERJAAN));
                 GetDataAdapter3.setTotal_biaya(json.getString(JSON_TOTAL_BIAYA));
                 GetDataAdapter3.setPresentase(json.getString(JSON_PRESENTASE));
-                GetDataAdapter3.setEstimasi_waktu(json.getString(JSON_ESTIMASI_WAKTU));
+                GetDataAdapter3.setWaktu_awal(json.getString(JSON_WAKTU_AWAL));
+                GetDataAdapter3.setWaktu_akhir(json.getString(JSON_WAKTU_AKHIR));
                 GetDataAdapter3.setData_pemesan(json.getString(JSON_DATA_PEMESAN));
                 GetDataAdapter3.setDesain_rumah(json.getString(JSON_DESAIN_RUMAH));
                 GetDataAdapter3.setRekap_data(json.getString(JSON_REKAP_DATA));

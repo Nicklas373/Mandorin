@@ -97,7 +97,8 @@ public class recycler_view_status_renovasi  extends RecyclerView.Adapter<recycle
             intent.putExtra("status_pekerjaan", getStatusRenovasiAdapter.get(getAdapterPosition()).getStatus_pekerjaan());
             intent.putExtra("total_biaya", getStatusRenovasiAdapter.get(getAdapterPosition()).getTotal_biaya());
             intent.putExtra("presentase", getStatusRenovasiAdapter.get(getAdapterPosition()).getPresentase());
-            intent.putExtra("estimasi_waktu", getStatusRenovasiAdapter.get(getAdapterPosition()).getEstimasi_waktu());
+            intent.putExtra("waktu_mulai", getStatusRenovasiAdapter.get(getAdapterPosition()).getWaktu_mulai());
+            intent.putExtra("waktu_akhir", getStatusRenovasiAdapter.get(getAdapterPosition()).getWaktu_akhir());
             intent.putExtra("data_pesanan", getStatusRenovasiAdapter.get(getAdapterPosition()).getData_pemesan());
             intent.putExtra("rekap_data", getStatusRenovasiAdapter.get(getAdapterPosition()).getRekap_data());
             intent.putExtra("surat_kontrak", getStatusRenovasiAdapter.get(getAdapterPosition()).getSurat_kontrak());
