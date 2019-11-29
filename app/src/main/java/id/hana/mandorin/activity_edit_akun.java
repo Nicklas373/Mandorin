@@ -57,7 +57,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class activity_edit_akun extends AppCompatActivity {
 
-    private TextView editmail, cancel, dummyimage, oldimage;
+    private TextView editmail, cancel, dummyimage;
     private EditText editname, editid, editage, editphone, editaddress;
     private CircleImageView picedit;
     private Button save;
@@ -86,7 +86,6 @@ public class activity_edit_akun extends AppCompatActivity {
 
         editname = (EditText) findViewById(R.id.userEditFullName);
         editmail = (TextView) findViewById(R.id.userEditEmail);
-        oldimage = (TextView) findViewById(R.id.dummy_old_pic);
         editage = (EditText) findViewById(R.id.userEditAge);
         editid = (EditText) findViewById(R.id.user_edit_id);
         editphone = (EditText) findViewById(R.id.user_edit_telp);
@@ -165,18 +164,25 @@ public class activity_edit_akun extends AppCompatActivity {
                 .setIcon(R.mipmap.ic_launcher)
                 .setCancelable(false)
                 .setPositiveButton("Ya",new DialogInterface.OnClickListener() {
+                    final TextView FileName = findViewById(R.id.dummy_old_pic);
+
                     public void onClick(DialogInterface dialog,int id) {
-                        oldimage.setText(dummyimage.getText().toString());
                         createdata_2();
-                        if (TextUtils.isEmpty(oldimage.getText().toString())) {
-                            dialog = ProgressDialog.show(activity_edit_akun.this, "", "Memperbaharui Data...", true);
-                            new Thread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    //creating new thread to handle Http Operations
-                                    uploadFile(selectedFilePath);
-                                }
-                            }).start();
+                        if (dummyimage.getText().toString().equalsIgnoreCase("")) {
+
+                        } else {
+                            if (FileName.getText().toString().isEmpty()){
+
+                            } else {
+                                dialog = ProgressDialog.show(activity_edit_akun.this, "", "Memperbaharui Data...", true);
+                                new Thread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        //creating new thread to handle Http Operations
+                                        uploadFile(selectedFilePath);
+                                    }
+                                }).start();
+                            }
                         }
                         Intent intent = new Intent(activity_edit_akun.this, activity_akun.class);
                         startActivity(intent);
@@ -197,7 +203,7 @@ public class activity_edit_akun extends AppCompatActivity {
 
     //android upload file to server
     public int uploadFile(final String selectedFilePath) {
-        final TextView FileName = findViewById(R.id.fileName);
+        final TextView FileName = findViewById(R.id.dummy_old_pic);
         int serverResponseCode = 0;
 
         HttpURLConnection connection;
@@ -330,7 +336,7 @@ public class activity_edit_akun extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        final TextView FileName = findViewById(R.id.fileName);
+        final TextView FileName = findViewById(R.id.dummy_old_pic);
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == Activity.RESULT_OK) {
             if (requestCode == PICK_FILE_REQUEST) {
@@ -353,9 +359,10 @@ public class activity_edit_akun extends AppCompatActivity {
                         ImageView myImage = (ImageView) findViewById(R.id.img_head_akun_test);
 
                         myImage.setImageBitmap(myBitmap);
+
                     }
                 } else {
-                    Toast.makeText(this, "Tidak Dapat Mengunggah Ke Website Mandorin", Toast.LENGTH_SHORT).show();
+                    dummyimage.setText(selectedFilePath);
                 }
             }
         }
@@ -477,6 +484,7 @@ public class activity_edit_akun extends AppCompatActivity {
                     int imageResource = getResources().getIdentifier(uri, null, getPackageName());
                     Drawable res = getResources().getDrawable(imageResource);
                     picedit.setImageDrawable(res);
+                    dummyimage.setText("");
                 } else {
                     String user_photo = "http://mandorin.site/mandorin/uploads/" + dummyimage.getText().toString();
                     Picasso.get().load(user_photo).fit().centerCrop() .into(picedit);
