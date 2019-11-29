@@ -48,7 +48,7 @@ public class activity_data_pembayaran_renovasi_2 extends AppCompatActivity {
      * Layout Component Initializations
      * Textview, Imageview, CardView & Button
      */
-    private TextView Nomor_Rekening, FileName, id_1, nomor_kontrak_1, nama_pemesan_1, email_1, no_telp_1, total_pembayaran_1, status_satu_1, status_dua_1, status_tiga_1, total_satu_1, total_dua_1, total_tiga_1, tgl_satu, tgl_dua, tgl_tiga, bukti_satu_1, bukti_dua_1, bukti_tiga_1;
+    private TextView Nomor_Rekening, FileName, id_1, nomor_kontrak_1, nama_pemesan_1, email_1, alamat_1, no_telp_1, total_pembayaran_1, status_satu_1, status_dua_1, status_tiga_1, total_satu_1, total_dua_1, total_tiga_1, tgl_satu, tgl_dua, tgl_tiga, bukti_satu_1, bukti_dua_1, bukti_tiga_1;
     private Button Kirim;
     private CardView back;
     private ImageView upload;
@@ -79,6 +79,7 @@ public class activity_data_pembayaran_renovasi_2 extends AppCompatActivity {
         nomor_kontrak_1 = findViewById(R.id.nomor_kontrak_pembayaran);
         nama_pemesan_1 = findViewById(R.id.nama_pemesan_pembayaran);
         email_1 = findViewById(R.id.email_pemesan_pembayaran);
+        alamat_1 = findViewById(R.id.alamat_pemesan_pembayaran);
         no_telp_1 = findViewById(R.id.no_telp_pemesan_pembayaran);
         total_pembayaran_1 = findViewById(R.id.total_pembayaran_pemesan_pembayaran);
         Nomor_Rekening = findViewById(R.id.user_input_nomor_rekening);
@@ -106,6 +107,7 @@ public class activity_data_pembayaran_renovasi_2 extends AppCompatActivity {
         final String nomor_kontak = getIntent().getExtras().getString("nomor_kontrak");
         final String nama_pemesan = getIntent().getExtras().getString("nama_pemesan");
         final String email = getIntent().getExtras().getString("email");
+        final String alamat = getIntent().getExtras().getString("alamat");
         final String no_telp = getIntent().getExtras().getString("no_telp");
         final String total_pembayaran = getIntent().getExtras().getString("total_pembayaran");
         final String no_rekening = getIntent().getExtras().getString("no_rekening");
@@ -129,6 +131,7 @@ public class activity_data_pembayaran_renovasi_2 extends AppCompatActivity {
         nomor_kontrak_1.setText(nomor_kontak);
         nama_pemesan_1.setText(nama_pemesan);
         email_1.setText(email);
+        alamat_1.setText(alamat);
         no_telp_1.setText(no_telp);
         total_pembayaran_1.setText(total_pembayaran);
         Nomor_Rekening.setText(no_rekening);
@@ -186,6 +189,7 @@ public class activity_data_pembayaran_renovasi_2 extends AppCompatActivity {
                 intent.putExtra("nomor_kontrak", nomor_kontak);
                 intent.putExtra("nama_pemesan", nama_pemesan);
                 intent.putExtra("email", email);
+                intent.putExtra("alamat", alamat);
                 intent.putExtra("no_telp", no_telp);
                 intent.putExtra("total_pembayaran", total_pembayaran);
                 intent.putExtra("no_rekening", no_rekening);
@@ -443,8 +447,8 @@ public class activity_data_pembayaran_renovasi_2 extends AppCompatActivity {
     }
 
     private void createdata() {
-        String usermail_2 = email_1.getText().toString();
-        String adress = "http://mandorin.site/mandorin/php/user/update_pembayaran_renovasi.php?email=" + usermail_2;
+        String id_2 = id_1.getText().toString();
+        String adress = "http://mandorin.site/mandorin/php/user/update_pembayaran_renovasi.php?id=" + id_2;
         StringRequest stringRequest = new StringRequest(Request.Method.POST, adress,
                 new Response.Listener<String>() {
                     @Override
@@ -471,6 +475,7 @@ public class activity_data_pembayaran_renovasi_2 extends AppCompatActivity {
                 String nomor_kontrak = nomor_kontrak_1.getText().toString();
                 String nama_pemesan = nama_pemesan_1.getText().toString();
                 String email = email_1.getText().toString();
+                String alamat = alamat_1.getText().toString();
                 String no_telp = no_telp_1.getText().toString();
                 String total_pembayaran = total_pembayaran_1.getText().toString();
                 String no_rekening = Nomor_Rekening.getText().toString();
@@ -504,6 +509,7 @@ public class activity_data_pembayaran_renovasi_2 extends AppCompatActivity {
                 params.put("nomor_kontrak", nomor_kontrak);
                 params.put("nama_pemesan", nama_pemesan);
                 params.put("email", email);
+                params.put("alamat", alamat);
                 params.put("no_telp", no_telp);
                 params.put("total_pembayaran", total_pembayaran);
                 params.put("no_rekening", no_rekening);

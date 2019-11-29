@@ -98,6 +98,7 @@ public class recycler_view_status_pembayaran_renovasi extends RecyclerView.Adapt
             intent.putExtra("nomor_kontrak", getDataPembayaranRenovasiAdapter.get(getAdapterPosition()).getNomor_kontrak());
             intent.putExtra("nama_pemesan", getDataPembayaranRenovasiAdapter.get(getAdapterPosition()).getNama_pemesan());
             intent.putExtra("email", getDataPembayaranRenovasiAdapter.get(getAdapterPosition()).getEmail());
+            intent.putExtra("alamat", getDataPembayaranRenovasiAdapter.get(getAdapterPosition()).getAlamat());
             intent.putExtra("no_telp", getDataPembayaranRenovasiAdapter.get(getAdapterPosition()).getNo_telp());
             intent.putExtra("total_pembayaran", getDataPembayaranRenovasiAdapter.get(getAdapterPosition()).getTotal_pembayaran());
             intent.putExtra("no_rekening", getDataPembayaranRenovasiAdapter.get(getAdapterPosition()).getNo_rekening());

@@ -98,6 +98,7 @@ public class recycler_view_status_pembayaran_bangun_dari_awal extends RecyclerVi
             intent.putExtra("nomor_kontrak", getDataPembayaranBangunDariAwalAdapter.get(getAdapterPosition()).getNomor_kontrak());
             intent.putExtra("nama_pemesan", getDataPembayaranBangunDariAwalAdapter.get(getAdapterPosition()).getNama_pemesan());
             intent.putExtra("email", getDataPembayaranBangunDariAwalAdapter.get(getAdapterPosition()).getEmail());
+            intent.putExtra("alamat", getDataPembayaranBangunDariAwalAdapter.get(getAdapterPosition()).getAlamat());
             intent.putExtra("no_telp", getDataPembayaranBangunDariAwalAdapter.get(getAdapterPosition()).getNo_telp());
             intent.putExtra("total_pembayaran", getDataPembayaranBangunDariAwalAdapter.get(getAdapterPosition()).getTotal_pembayaran());
             intent.putExtra("no_rekening", getDataPembayaranBangunDariAwalAdapter.get(getAdapterPosition()).getNo_rekening());

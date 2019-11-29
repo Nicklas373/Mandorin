@@ -55,6 +55,7 @@ public class activity_data_pembayaran_bangun_dari_awal extends AppCompatActivity
         final String nomor_kontrak = getIntent().getExtras().getString("nomor_kontrak");
         final String nama_pemesan = getIntent().getExtras().getString("nama_pemesan");
         final String email = getIntent().getExtras().getString("email");
+        final String alamat = getIntent().getExtras().getString("alamat");
         final String no_telp = getIntent().getExtras().getString("no_telp");
         final String total_pembayaran = getIntent().getExtras().getString("total_pembayaran");
         final String no_rekening = getIntent().getExtras().getString("no_rekening");
@@ -159,6 +160,7 @@ public class activity_data_pembayaran_bangun_dari_awal extends AppCompatActivity
                     intent.putExtra("nomor_kontrak", nomor_kontrak);
                     intent.putExtra("nama_pemesan", nama_pemesan);
                     intent.putExtra("email", email);
+                    intent.putExtra("alamat", alamat);
                     intent.putExtra("no_telp", no_telp);
                     intent.putExtra("total_pembayaran", total_pembayaran);
                     intent.putExtra("no_rekening", no_rekening);
