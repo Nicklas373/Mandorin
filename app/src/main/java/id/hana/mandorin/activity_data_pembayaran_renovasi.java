@@ -102,7 +102,7 @@ public class activity_data_pembayaran_renovasi extends AppCompatActivity {
                 p_3.setCardBackgroundColor(0xFF003077);
                 s_3.setTextColor(0xFFFFFFFF);
             } else if (Status_3.getText().toString().equalsIgnoreCase("Menunggu")) {
-                p_bangun_baru.setImageDrawable(getResources().getDrawable(R.drawable.lunas_3, getApplicationContext().getTheme()));
+                p_bangun_baru.setImageDrawable(getResources().getDrawable(R.drawable.lunas_2, getApplicationContext().getTheme()));
                 p_3.setCardBackgroundColor(0xFF4b636e);
                 s_3.setTextColor(0xFFFFFFFF);
             }
