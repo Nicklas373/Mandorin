@@ -38,7 +38,6 @@ public class activity_layanan_jasa extends AppCompatActivity {
     private EditText nama_lj, nik_lj, no_hp_lj, alamat_lj, tgl_survey, data_lj;
     private TextView dummy_1, dummy_2, nama_mandor , nik_mandor, ba_email_statis;
     private RadioGroup rg, rg_2;
-    private RadioButton rb, rb_2, rb_3, rb_4;
     private Button kirim;
     private CardView back;
     ProgressDialog dialog;
@@ -90,10 +89,6 @@ public class activity_layanan_jasa extends AppCompatActivity {
           nik_mandor = findViewById(R.id.nik_mandor);
           rg = findViewById(R.id.rg_borongan);
           rg_2 = findViewById(R.id.rg_desain);
-          rb = findViewById(R.id.rb_1);
-          rb_2 = findViewById(R.id.rb_2);
-          rb_3 = findViewById(R.id.ds_1);
-          rb_4 = findViewById(R.id.ds_2);
           kirim = findViewById(R.id.button_kirim_layanan_jasa);
           back = findViewById(R.id.back_activity_layanan_jasa);
 
@@ -150,26 +145,20 @@ public class activity_layanan_jasa extends AppCompatActivity {
                 data_lj.setError("Harap Masukkan Data Pekerjaan");
             } else {
                 int id = rg.getCheckedRadioButtonId();
-                switch (id) {
-                    case R.id.rb_1:
-                        String new_dummy = ((RadioButton) findViewById(id)).getText().toString();
-                        dummy_1.setText(new_dummy);
-                        break;
-                    case R.id.rb_2:
-                        String new_dummy_2 = ((RadioButton) findViewById(id)).getText().toString();
-                        dummy_1.setText(new_dummy_2);
-                        break;
-                }
                 int id_2 = rg_2.getCheckedRadioButtonId();
-                switch (id_2) {
-                    case R.id.ds_1:
-                        String new_dummy = ((RadioButton) findViewById(id)).getText().toString();
-                        dummy_2.setText(new_dummy);
-                        break;
-                    case R.id.ds_2:
-                        String new_dummy_2 = ((RadioButton) findViewById(id)).getText().toString();
-                        dummy_2.setText(new_dummy_2);
-                        break;
+                if(id == R.id.rb_1) {
+                    String new_dummy = ((RadioButton) findViewById(id)).getText().toString();
+                    dummy_1.setText(new_dummy);
+                }  else if (id == R.id.rb_2) {
+                    String new_dummy_2 = ((RadioButton) findViewById(id)).getText().toString();
+                    dummy_1.setText(new_dummy_2);
+                }
+                if(id_2 == R.id.rb_3) {
+                    String next_dummy = ((RadioButton) findViewById(id_2)).getText().toString();
+                    dummy_2.setText(next_dummy);
+                }  else if (id_2 == R.id.rb_4) {
+                    String next_dummy_2 = ((RadioButton) findViewById(id_2)).getText().toString();
+                    dummy_2.setText(next_dummy_2);
                 }
                 send_dialog();
             }

@@ -295,16 +295,14 @@
             android:layout_width="240dp"
             android:layout_height="240dp"
             android:text=""
-            android:textColor="#fff"
-            android:visibility="gone"/>
+            android:textColor="#fff"/>
 
         <TextView
             android:id="@+id/dummy_2"
             android:layout_width="240dp"
             android:layout_height="240dp"
             android:text=""
-            android:textColor="#fff"
-            android:visibility="gone"/>
+            android:textColor="#fff"/>
 
         <!-- DUMMY END -->
     </android.support.v7.widget.CardView>
@@ -429,7 +427,7 @@
                 android:orientation="horizontal">
 
                 <RadioButton
-                    android:id="@+id/ds_1"
+                    android:id="@+id/rb_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="true"
@@ -437,7 +435,7 @@
                     android:textColor="#000" />
 
                 <RadioButton
-                    android:id="@+id/ds_2"
+                    android:id="@+id/rb_4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
