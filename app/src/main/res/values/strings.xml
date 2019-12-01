@@ -7,6 +7,7 @@
     <string name="connection">Connection</string>
     <string name="connection_text">Tidak ada koneksi internet</string>
     <string name="komplain_text">Komplain</string>
+    <string name="komplain_text_2">Ajukan Komplain</string>
     <string name="heck">:</string>
     <string name="hint"></string>
     <!-- End of FIXME -->
@@ -30,7 +31,27 @@
     <string name="app_mandor_1_profile_3_data_7">Tanggal Lahir</string>
     <string name="app_mandor_1_profile_3_data_4">Alamat</string>
     <string name="app_mandor_1_profile_3_data_5">Lama Kerja</string>
+
     <string name="app_mandor_sewa_jasa_title">Menu Layanan Jasa</string>
+    <string name="app_mandor_layanan_jasa_title">Layanan Jasa</string>
+    <string name="app_mandor_layanan_jasa_1">Data Pemesan</string>
+    <string name="app_mandor_layanan_jasa_2">Nama</string>
+    <string name="app_mandor_layanan_jasa_3">NIK</string>
+    <string name="app_mandor_layanan_jasa_4">E - Mail</string>
+    <string name="app_mandor_layanan_jasa_5">No. HP</string>
+    <string name="app_mandor_layanan_jasa_6">Alamat</string>
+    <string name="app_mandor_layanan_jasa_7">Tanggal Survey</string>
+    <string name="app_mandor_layanan_jasa_8">Pilih Borongan</string>
+    <string name="app_mandor_layanan_jasa_9">Desain Rumah</string>
+    <string name="app_mandor_layanan_jasa_10">Kirim</string>
+    <string name="app_mandor_layanan_jasa_11">Data Pekerjaan</string>
+    <string name="app_mandor_layanan_jasa_12">Data Layanan</string>
+    <string name="app_mandor_layanan_jasa_radio_1">Tenaga</string>
+    <string name="app_mandor_layanan_jasa_radio_2">Bahan + Tenaga</string>
+    <string name="app_mandor_layanan_jasa_radio_3">Ada</string>
+    <string name="app_mandor_layanan_jasa_radio_4">Belum Ada</string>
+
+
     <string name="app_mandor_sewa_jasa_1">Renovasi</string>
     <string name="app_mandor_sewa_jasa_2">Bangunan Baru</string>
     <string name="app_mandor_bangun_awal_title">Bangunan Baru</string>
@@ -164,7 +185,7 @@
     <string name="app_mandor_recycler_status_renovasi_4">Presentasi Pekerjaan</string>
     <string name="app_mandor_recycler_status_renovasi_5">Alamat</string>
     <string name="app_mandor_recycler_status_renovasi_6">Data Pemesan</string>
-    <string name="app_mandor_recycler_status_bangun_dari_awal_title">Bangunan Baru</string>
+    <string name="app_mandor_recycler_status_bangun_dari_awal_title">Status Bangunan Baru</string>
     <string name="app_mandor_recycler_status_bangun_dari_awal_1">Nama Pemesan</string>
     <string name="app_mandor_recycler_status_bangun_dari_awal_2">Nomor Kontrak</string>
     <string name="app_mandor_recycler_status_bangun_dari_awal_3">Total Biaya</string>
@@ -181,6 +202,8 @@
     <string name="app_mandor_status_pemesan_renovasi_10">Desain Rumah</string>
     <string name="app_mandor_status_pemesan_renovasi_8">Surat Kontrak</string>
     <string name="app_mandor_status_pemesan_renovasi_9">Rekap Data</string>
+    <string name="app_mandor_status_pemesan_renovasi_11">Data Kontrak</string>
+    <string name="app_mandor_status_pemesan_renovasi_12">Data Layanan</string>
     <string name="app_mandor_komplain_title">Menu Komplain</string>
     <string name="app_mandor_komplain_1">Nomor Kontrak</string>
     <string name="app_mandor_komplain_2">Alamat</string>

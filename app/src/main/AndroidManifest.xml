@@ -54,11 +54,7 @@
         <activity android:name=".activity_mandor"/>
         <activity android:name=".activity_detail_mandor"/>
         <activity android:name=".activity_profile_mandor"/>
-        <activity android:name=".activity_sewa_jasa"/>
-        <activity android:name=".activity_bangun_dari_awal"/>
-        <activity android:name=".activity_bangun_dari_awal_2"/>
-        <activity android:name=".activity_renovasi"/>
-        <activity android:name=".activity_renovasi_2"/>
+        <activity android:name=".activity_layanan_jasa"/>
         <activity android:name=".activity_konfirmasi_bangun_renovasi"/>
         <activity android:name=".activity_login"/>
         <activity android:name=".activity_login_2"/>

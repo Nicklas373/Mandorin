@@ -144,7 +144,7 @@ public class activity_profile_mandor extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (auth.getCurrentUser() != null) {
-                    Intent intent = new Intent(activity_profile_mandor.this, activity_sewa_jasa.class);
+                    Intent intent = new Intent(activity_profile_mandor.this, activity_layanan_jasa.class);
                     startActivity(intent);
                 } else {
                     Toast.makeText(activity_profile_mandor.this, "Harap Login di Menu Akun untuk Masuk ke Menu Layanan Jasa",Toast.LENGTH_LONG).show();
