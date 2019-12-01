@@ -2,7 +2,7 @@
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto" xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="155dp"
+    android:layout_height="180dp"
     card_view:cardCornerRadius="6dp"
     card_view:cardElevation="3dp"
     android:id="@+id/cv_head"
@@ -16,31 +16,31 @@
         android:layout_height="match_parent">
 
         <android.support.v7.widget.CardView
-            android:layout_width="wrap_content"
             android:id="@+id/cv_title"
+            android:layout_width="wrap_content"
             android:layout_height="35dp"
+            app:cardBackgroundColor="#0069c0"
             card_view:cardElevation="3dp"
-            card_view:cardUseCompatPadding="true"
-            app:cardBackgroundColor="#0069c0">
+            card_view:cardUseCompatPadding="true">
 
             <TextView
                 android:id="@+id/TextViewTitle"
                 android:layout_width="106dp"
                 android:layout_height="wrap_content"
-                android:text="@string/app_mandor_recycler_data_komplain_title"
                 android:layout_marginStart="3dp"
+                android:text="@string/app_mandor_recycler_pemesan_renovasi_6"
                 android:textColor="#ffffff"
                 android:textSize="15sp" />
 
         </android.support.v7.widget.CardView>
 
         <TextView
-            android:id="@+id/text_id_kontrak_komplain"
+            android:id="@+id/text_id_status_kontrak"
             android:layout_width="114dp"
-            android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:text="@string/app_mandor_recycler_data_komplain_1"
+            android:layout_height="wrap_content"
             android:layout_below="@+id/cv_title"
+            android:text="@string/app_mandor_recycler_status_renovasi_1"
             android:textColor="#000000"
             android:textSize="15sp" />
 
@@ -48,32 +48,32 @@
             android:id="@+id/heck_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/text_id_kontrak_komplain"
-            android:layout_marginStart="5dp"
             android:layout_below="@+id/cv_title"
+            android:layout_marginStart="45dp"
+            android:layout_toEndOf="@+id/text_id_status_kontrak"
             android:text="@string/heck"
             android:textColor="#000000"
             android:textSize="15sp" />
 
         <TextView
-            android:id="@+id/text_id_kontrak_komplain_1"
+            android:id="@+id/text_id_status_kontrak_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/text_id_kontrak_komplain"
-            android:layout_marginStart="20dp"
             android:layout_below="@+id/cv_title"
+            android:layout_marginStart="60dp"
+            android:layout_toEndOf="@+id/text_id_status_kontrak"
             android:text=""
             android:textColor="#000000"
             android:textSize="15sp" />
 
         <TextView
-            android:id="@+id/text_status_komplain"
+            android:id="@+id/nomor_kontrak_status_kontrak"
+            android:layout_marginStart="10dp"
             android:layout_width="114dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:text="@string/app_mandor_recycler_data_komplain_2"
-            android:layout_below="@+id/text_id_kontrak_komplain"
+            android:layout_below="@+id/text_id_status_kontrak"
             android:layout_marginTop="10dp"
+            android:text="@string/app_mandor_recycler_status_renovasi_2"
             android:textColor="#000000"
             android:textSize="15sp" />
 
@@ -81,70 +81,96 @@
             android:id="@+id/heck_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/text_id_kontrak_komplain"
-            android:layout_marginStart="5dp"
+            android:layout_below="@+id/text_id_status_kontrak"
+            android:layout_marginStart="45dp"
             android:layout_marginTop="10dp"
-            android:layout_below="@+id/text_id_kontrak_komplain_1"
+            android:layout_toEndOf="@+id/nomor_kontrak_status_kontrak"
             android:text="@string/heck"
             android:textColor="#000000"
             android:textSize="15sp" />
 
         <TextView
-            android:id="@+id/text_status_komplain_1"
+            android:id="@+id/nomor_kontrak_status_kontrak_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/text_id_kontrak_komplain"
-            android:layout_marginStart="20dp"
+            android:layout_below="@+id/text_id_status_kontrak"
+            android:layout_marginStart="60dp"
             android:layout_marginTop="10dp"
-            android:layout_below="@+id/text_id_kontrak_komplain_1"
+            android:layout_toEndOf="@+id/nomor_kontrak_status_kontrak"
             android:text=""
             android:textColor="#000000"
             android:textSize="15sp" />
 
         <TextView
-            android:id="@+id/text_alamat_komplain"
-            android:layout_width="114dp"
-            android:layout_height="wrap_content"
+            android:id="@+id/presentasi_status_kontrak"
             android:layout_marginStart="10dp"
-            android:text="@string/app_mandor_recycler_status_renovasi_5"
-            android:layout_below="@+id/text_status_komplain"
+            android:layout_width="145dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nomor_kontrak_status_kontrak"
             android:layout_marginTop="10dp"
+            android:text="@string/app_mandor_recycler_status_renovasi_4"
             android:textColor="#000000"
             android:textSize="15sp" />
 
         <TextView
-            android:id="@+id/heck_3"
+            android:id="@+id/heck_4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/text_status_komplain"
-            android:layout_marginStart="5dp"
+            android:layout_below="@+id/nomor_kontrak_status_kontrak"
+            android:layout_marginStart="14dp"
             android:layout_marginTop="10dp"
-            android:layout_below="@+id/text_status_komplain_1"
+            android:layout_toEndOf="@+id/presentasi_status_kontrak"
             android:text="@string/heck"
             android:textColor="#000000"
             android:textSize="15sp" />
 
         <TextView
-            android:id="@+id/text_alamat_komplain_1"
+            android:id="@+id/presentasi_status_kontrak_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/text_status_komplain"
-            android:layout_marginStart="20dp"
+            android:layout_below="@+id/nomor_kontrak_status_kontrak"
+            android:layout_marginStart="30dp"
             android:layout_marginTop="10dp"
-            android:layout_below="@+id/text_status_komplain_1"
+            android:layout_toEndOf="@+id/presentasi_status_kontrak"
             android:text=""
             android:textColor="#000000"
             android:textSize="15sp" />
 
-        <!-- Dummy Debugging Begin !-->
+        <TextView
+            android:id="@+id/alamat_status_kontrak"
+            android:layout_marginStart="10dp"
+            android:layout_width="145dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/presentasi_status_kontrak"
+            android:layout_marginTop="10dp"
+            android:text="@string/app_mandor_recycler_status_renovasi_5"
+            android:textColor="#000000"
+            android:textSize="15sp" />
 
         <TextView
+            android:id="@+id/heck_5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/text_komplain"
-            android:visibility="gone"/>
+            android:layout_below="@+id/presentasi_status_kontrak"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/alamat_status_kontrak"
+            android:text="@string/heck"
+            android:textColor="#000000"
+            android:textSize="15sp" />
 
-        <!-- Dummy Debugging Begin !-->
+        <TextView
+            android:id="@+id/alamat_status_kontrak_1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/presentasi_status_kontrak"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/alamat_status_kontrak"
+            android:text=""
+            android:textColor="#000000"
+            android:textSize="15sp" />
+
     </RelativeLayout>
 
 </android.support.v7.widget.CardView>

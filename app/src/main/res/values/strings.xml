@@ -143,10 +143,7 @@
     <string name="app_menu_1_mandor_3">Layanan Jasa</string>
     <string name="app_menu_1_mandor_4">Tanggapan</string>
     <string name="app_mandor_menu_kontrak_title">Menu Kontrak</string>
-    <string name="app_mandor_menu_1">Status Kontrak</string>
-    <string name="app_mandor_menu_1_1">Status Renovasi</string>
-    <string name="app_mandor_menu_1_2">Status</string>
-    <string name="app_mandor_menu_1_2_1">Bangunan Baru</string>
+    <string name="app_mandor_menu_1">Data Kontrak</string>
     <string name="app_mandor_menu_1_3">Data Komplain</string>
     <string name="app_mandor_menu_1_4">Data Pemesan</string>
     <string name="app_mandor_menu_2">Riwayat Kontrak</string>
@@ -167,7 +164,7 @@
     <string name="app_mandor_recycler_pemesan_renovasi_4">Status</string>
     <string name="app_mandor_recycler_pemesan_renovasi_5">Layanan Jasa</string>
     <string name="app_mandor_recycler_pemesan_renovasi_6">Data Pemesan</string>
-    <string name="app_mandor_data_pemesan_renovasi_title">Data Renovasi</string>
+    <string name="app_mandor_data_pemesan_renovasi_title">Data Kontrak</string>
     <string name="app_mandor_data_pemesan_renovasi_1">Kembali</string>
     <string name="app_mandor_data_pemesan_bangun_dari_awal_title">Data Bangunan Baru</string>
     <string name="app_mandor_data_pemesan_bangun_dari_awal_1">Kembali</string>
@@ -196,9 +193,9 @@
     <string name="app_mandor_status_pemesan_renovasi_2">Nomor Kontrak</string>
     <string name="app_mandor_status_pemesan_renovasi_3">Total Biaya</string>
     <string name="app_mandor_status_pemesan_renovasi_4">Alamat</string>
-    <string name="app_mandor_status_pemesan_renovasi_5">Presentasi</string>
+    <string name="app_mandor_status_pemesan_renovasi_5">Presentase Pekerjaan</string>
     <string name="app_mandor_status_pemesan_renovasi_6">Estimasi Pekerjaan</string>
-    <string name="app_mandor_status_pemesan_renovasi_7">Data Pemesan</string>
+    <string name="app_mandor_status_pemesan_renovasi_7">Data Desain</string>
     <string name="app_mandor_status_pemesan_renovasi_10">Desain Rumah</string>
     <string name="app_mandor_status_pemesan_renovasi_8">Surat Kontrak</string>
     <string name="app_mandor_status_pemesan_renovasi_9">Rekap Data</string>
@@ -232,7 +229,7 @@
     <string name="app_mandor_data_komplain_3">Komplain</string>
     <string name="app_mandor_data_komplain_4">Kembali</string>
     <string name="app_mandor_data_komplain_5">Data Komplain</string>
-    <string name="app_mandor_data_komplain_6">Status Layanan</string>
+    <string name="app_mandor_data_komplain_6">Status Komplain</string>
     <string name="app_mandor_status_pembayaran_title">Status Pembayaran</string>
     <string name="app_mandor_status_pembayaran_1">Renovasi</string>
     <string name="app_mandor_status_pembayaran_2">Bangunan Baru</string>

@@ -41,7 +41,7 @@ public class recycler_view_data_komplain extends RecyclerView.Adapter<recycler_v
 
         Viewholder.nomor_kontrak.setText(getDataKomplainAdapter1.getNomor_kontrak());
         Viewholder.status_kontrak.setText(getDataKomplainAdapter1.getStatus_komplain());
-        Viewholder.layanan_komplain.setText(getDataKomplainAdapter1.getStatus());
+        Viewholder.alamat_komplain.setText(getDataKomplainAdapter1.getAlamat());
     }
 
     @Override
@@ -52,7 +52,7 @@ public class recycler_view_data_komplain extends RecyclerView.Adapter<recycler_v
 
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        public TextView nomor_kontrak, status_kontrak, layanan_komplain;
+        public TextView nomor_kontrak, status_kontrak, alamat_komplain;
         public CardView cv_head;
 
         public ViewHolder(View itemView) {
@@ -63,7 +63,7 @@ public class recycler_view_data_komplain extends RecyclerView.Adapter<recycler_v
 
             nomor_kontrak = itemView.findViewById(R.id.text_id_kontrak_komplain_1);
             status_kontrak = itemView.findViewById(R.id.text_status_komplain_1);
-            layanan_komplain = itemView.findViewById(R.id.text_layanan_komplain_1);
+            alamat_komplain = itemView.findViewById(R.id.text_alamat_komplain_1);
         }
 
 
@@ -73,9 +73,8 @@ public class recycler_view_data_komplain extends RecyclerView.Adapter<recycler_v
             intent.putExtra("id", getDataKomplainAdapter.get(getAdapterPosition()).getId());
             intent.putExtra("nomor_kontrak", getDataKomplainAdapter.get(getAdapterPosition()).getNomor_kontrak());
             intent.putExtra("alamat", getDataKomplainAdapter.get(getAdapterPosition()).getAlamat());
-            intent.putExtra("status", getDataKomplainAdapter.get(getAdapterPosition()).getStatus());
-            intent.putExtra("status_komplain", getDataKomplainAdapter.get(getAdapterPosition()).getStatus_komplain());
             intent.putExtra("komplain", getDataKomplainAdapter.get(getAdapterPosition()).getKomplain());
+            intent.putExtra("status_komplain", getDataKomplainAdapter.get(getAdapterPosition()).getStatus_komplain());
             context.startActivity(intent);
         }
     }

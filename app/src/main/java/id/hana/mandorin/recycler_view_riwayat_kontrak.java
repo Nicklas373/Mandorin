@@ -1,7 +1,6 @@
 package id.hana.mandorin;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -41,7 +40,7 @@ public class recycler_view_riwayat_kontrak extends RecyclerView.Adapter<recycler
 
         Viewholder.Nik.setText(getRenovasiDataAdapter1.getNomor_kontrak());
         Viewholder.Alamat.setText(getRenovasiDataAdapter1.getAlamat());
-        Viewholder.Status.setText(getRenovasiDataAdapter1.getStatus());
+        Viewholder.Nama.setText(getRenovasiDataAdapter1.getNama_pemesan());
     }
 
     @Override
@@ -51,7 +50,7 @@ public class recycler_view_riwayat_kontrak extends RecyclerView.Adapter<recycler
 
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        public TextView Nik, Alamat, Status;
+        public TextView Nik, Alamat, Nama;
         public CardView cv_head;
 
         public ViewHolder(View itemView) {
@@ -62,24 +61,13 @@ public class recycler_view_riwayat_kontrak extends RecyclerView.Adapter<recycler
 
             Nik = itemView.findViewById(R.id.text_id_riwayat_kontrak_1);
             Alamat = itemView.findViewById(R.id.alamat_riwayat_kontrak_1);
-            Status = itemView.findViewById(R.id.status_riwayat_kontrak_1);
+            Nama = itemView.findViewById(R.id.nama_riwayat_kontrak_1);
         }
 
 
         @Override
         public void onClick(View v) {
-            Intent intent = new Intent(context, activity_data_riwayat_kontrak.class);
-            intent.putExtra("id", getRiwayatKontrakAdapter.get(getAdapterPosition()).getId());
-            intent.putExtra("nomor_kontrak", getRiwayatKontrakAdapter.get(getAdapterPosition()).getNomor_kontrak());
-            intent.putExtra("nama_pemesan", getRiwayatKontrakAdapter.get(getAdapterPosition()).getNama_pemesan());
-            intent.putExtra("email", getRiwayatKontrakAdapter.get(getAdapterPosition()).getEmail());
-            intent.putExtra("alamat", getRiwayatKontrakAdapter.get(getAdapterPosition()).getAlamat());
-            intent.putExtra("status", getRiwayatKontrakAdapter.get(getAdapterPosition()).getStatus());
-            intent.putExtra("data_pemesan", getRiwayatKontrakAdapter.get(getAdapterPosition()).getData_pemesan());
-            intent.putExtra("rekap_data", getRiwayatKontrakAdapter.get(getAdapterPosition()).getRekap_data());
-            intent.putExtra("surat_kontrak", getRiwayatKontrakAdapter.get(getAdapterPosition()).getSurat_kontrak());
-            intent.putExtra("desain_rumah", getRiwayatKontrakAdapter.get(getAdapterPosition()).getDesain_rumah());
-            context.startActivity(intent);
+
         }
     }
 }

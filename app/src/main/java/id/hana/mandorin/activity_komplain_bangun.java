@@ -39,7 +39,7 @@ public class activity_komplain_bangun extends AppCompatActivity {
     /*
      * Create Web URL Init
      */
-    String HttpUrl = "http://mandorin.site/mandorin/php/user/create_komplain_b_awal.php";
+    String HttpUrl = "http://mandorin.site/mandorin/php/user/new/insert_data_komplain.php";
 
     /*
      * Firebase initializations
@@ -76,19 +76,19 @@ public class activity_komplain_bangun extends AppCompatActivity {
          */
         final String nomor_kontrak = getIntent().getExtras().getString("nomor_kontrak");
         final String alamat_kontrak = getIntent().getExtras().getString("alamat");
-        final String status_kontrak = getIntent().getExtras().getString("status");
 
         /*
          * TextView Initializations
          */
         nomor_kontrak_1.setText(nomor_kontrak);
         alamat_kontrak_1.setText(alamat_kontrak);
-        status_kontrak_1.setText(status_kontrak);
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(activity_komplain_bangun.this, activity_kontrak_renovasi.class);
+                Intent intent = new Intent(activity_komplain_bangun.this, activity_layanan_kontrak.class);
+                intent.putExtra("nomor_kontrak", nomor_kontrak);
+                intent.putExtra("alamat", alamat_kontrak);
                 startActivity(intent);
             }
         });
@@ -152,7 +152,7 @@ public class activity_komplain_bangun extends AppCompatActivity {
                     public void onResponse(String ServerResponse) {
 
                         // Showing response message coming from server.
-                        Toast.makeText(activity_komplain_bangun.this, ServerResponse, Toast.LENGTH_LONG).show();
+                        // Toast.makeText(activity_komplain_bangun.this, ServerResponse, Toast.LENGTH_LONG).show();
                     }
                 },
                 new Response.ErrorListener() {
@@ -171,7 +171,6 @@ public class activity_komplain_bangun extends AppCompatActivity {
                 String nomor_kontrak = nomor_kontrak_1.getText().toString();
                 String alamat_kontrak = alamat_kontrak_1.getText().toString();
                 String komplain_kontrak = komplain_1.getText().toString();
-                String status_kontrak = status_kontrak_1.getText().toString();
                 String email = firebaseUser.getEmail();
                 String status_komplain = "pending";
 
@@ -183,7 +182,6 @@ public class activity_komplain_bangun extends AppCompatActivity {
                 params.put("email", email);
                 params.put("alamat", alamat_kontrak);
                 params.put("komplain", komplain_kontrak);
-                params.put("status", status_kontrak);
                 params.put("status_komplain", status_komplain);
 
                 return params;

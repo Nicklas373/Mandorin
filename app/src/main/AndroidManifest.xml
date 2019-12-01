@@ -65,17 +65,9 @@
         <activity android:name=".activity_user_profile"/>
         <activity android:name=".activity_edit_akun"/>
         <activity android:name=".activity_kontrak"/>
-        <activity android:name=".activity_kontrak_renovasi"/>
+        <activity android:name=".activity_data_kontrak"/>
+        <activity android:name=".activity_layanan_kontrak"/>
         <activity android:name=".activity_transaksi"/>
-        <activity android:name=".activity_data_pemesan"/>
-        <activity android:name=".activity_data_pemesan_renovasi"/>
-        <activity android:name=".activity_pemesan_renovasi"/>
-        <activity android:name=".activity_pemesan_bangun_dari_awal"/>
-        <activity android:name=".activity_data_pemesan_bangun_dari_awal"/>
-        <activity android:name=".activity_data_status_renovasi"/>
-        <activity android:name=".activity_data_status_bangun"/>
-        <activity android:name=".activity_status_renovasi"/>
-        <activity android:name=".activity_status_bangun"/>
         <activity android:name=".activity_komplain_konfirmasi"/>
         <activity android:name=".activity_data_komplain"/>
         <activity android:name=".activity_data_komplain_user"/>
@@ -91,7 +83,6 @@
         <activity android:name=".activity_riwayat_pembayaran"/>
         <activity android:name=".activity_data_riwayat_pembayaran"/>
         <activity android:name=".activity_riwayat_kontrak"/>
-        <activity android:name=".activity_data_riwayat_kontrak"/>
     </application>
 
 </manifest>

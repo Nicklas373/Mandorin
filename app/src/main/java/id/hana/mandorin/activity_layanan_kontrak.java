@@ -5,8 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
-import android.icu.text.DecimalFormat;
-import android.icu.text.NumberFormat;
 import android.net.ConnectivityManager;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -18,7 +16,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,17 +31,17 @@ import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
 
-public class activity_status_bangun extends AppCompatActivity {
+public class activity_layanan_kontrak extends AppCompatActivity {
 
     /*
      * Layout Component Initializations
      * Textview, Imageview, CardView & Button
      */
-    private TextView Id, nomor_kontrak, alamat_pekerjaan, total_biaya, presentase, estimasi, data_pemesan, rekap_data, surat_kontrak, desain_rumah, meta_data_pemesan, meta_rekap_data, meta_surat_kontrak, meta_desain_rumah;
-    private Button btn_data_pemesan , btn_rekap_data , btn_surat_kontrak, btn_desain_rumah, komplain;
-    private CardView back;
+    private TextView Id, nomor_kontrak, alamat_pekerjaan, estimasi, presentase, data_desain, rekap_data, surat_kontrak, meta_data_desain, meta_rekap_data, meta_surat_kontrak;
+    private ImageView img_data_desain , img_rekap_data , img_surat_kontrak, img_presentase;
+    private CardView back, komplain;
 
-    private static final String TAG = "activity_status_bangun";
+    private static final String TAG = "activity_layanan_kontrak";
     private static final String[] PERMISSIONS = {android.Manifest.permission.READ_EXTERNAL_STORAGE, android.Manifest.permission.WRITE_EXTERNAL_STORAGE};
 
     private static boolean hasPermissions(Context context, String... permissions) {
@@ -58,7 +56,7 @@ public class activity_status_bangun extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_status_bangun_dari_awal);
+        setContentView(R.layout.activity_layanan_kontrak);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
@@ -68,26 +66,26 @@ public class activity_status_bangun extends AppCompatActivity {
          * Layout ID Initializations
          * TextView, CardView & Button
          */
-        Id = findViewById(R.id.user_input_id);
-        nomor_kontrak = findViewById(R.id.user_input_nomor_kontrak);
-        total_biaya = findViewById(R.id.user_input_total_biaya);
-        alamat_pekerjaan = findViewById(R.id.user_input_alamat);
-        presentase = findViewById(R.id.user_input_presentasi);
-        estimasi = findViewById(R.id.user_input_estimasi);
-        data_pemesan = findViewById(R.id.text_link_data_pemesan);
+        Id = findViewById(R.id.user_input_id_layanan_kontrak);
+        nomor_kontrak = findViewById(R.id.user_input_nomor_kontrak_layanan_kontrak);
+        alamat_pekerjaan = findViewById(R.id.user_input_alamat_layanan_kontrak);
+        img_presentase = findViewById(R.id.img_presentase);
+        presentase = findViewById(R.id.dummy_presentase);
+        estimasi = findViewById(R.id.user_input_estimasi_layanan_kontrak);
+        data_desain = findViewById(R.id.text_link_data_desain);
         rekap_data = findViewById(R.id.text_link_rekap_data);
         surat_kontrak = findViewById(R.id.text_link_surat_kontrak);
-        desain_rumah = findViewById(R.id.text_link_desain_rumah);
-        meta_data_pemesan = findViewById(R.id.text_link_meta_data_pemesan);
+        meta_data_desain = findViewById(R.id.text_link_meta_data_desain);
         meta_rekap_data = findViewById(R.id.text_link_meta_rekap_data);
         meta_surat_kontrak = findViewById(R.id.text_link_meta_surat_kontrak);
-        meta_desain_rumah= findViewById(R.id.text_link_meta_desain_rumah);
-        back = findViewById(R.id.back_activity_status_pemesan_bangun_dari_awal);
-        btn_data_pemesan = findViewById(R.id.button_data_pemesan);
-        btn_rekap_data = findViewById(R.id.button_rekap_data);
-        btn_surat_kontrak = findViewById(R.id.button_surat_kontrak);
-        btn_desain_rumah = findViewById(R.id.button_data_desain_rumah);
-        komplain = findViewById(R.id.button_komplain);
+        back = findViewById(R.id.back_activity_status_layanan_kontrak);
+        komplain = findViewById(R.id.cv_title_komplain);
+        img_data_desain = findViewById(R.id.image_data_desain_layanan_kontrak);
+        img_rekap_data = findViewById(R.id.image_rekap_data_layanan_kontrak);
+        img_surat_kontrak = findViewById(R.id.image_surat_kontrak_layanan_kontrak);
+        /*
+            komplain = findViewById(R.id.button_komplain);
+        */
 
         /*
          * Passing data from last activity
@@ -99,157 +97,128 @@ public class activity_status_bangun extends AppCompatActivity {
         String no_telp_1 = getIntent().getExtras().getString("alamat");
         final String alamat_pekerjaan_1 = getIntent().getExtras().getString("alamat_pekerjaan");
         String status_pekerjaan_1 = getIntent().getExtras().getString("status_pekerjaan");
-        String total_biaya_1 = getIntent().getExtras().getString("total_biaya");
         String presentase_1 = getIntent().getExtras().getString("presentase");
         String waktu_awal_1 = getIntent().getExtras().getString("waktu_mulai");
         String waktu_akhir_1 = getIntent().getExtras().getString("waktu_akhir");
-        final String data_pemesan_1 = getIntent().getExtras().getString("data_pesanan");
-        final String link_data_pemesan_1 = ("https://www.mandorin.site/mandorin/data_pemesan/bangun_baru/" + data_pemesan_1);
-        final String rekap_data_1 = getIntent().getExtras().getString("rekap_data");
-        final String link_rekap_data_1 = ("https://www.mandorin.site/mandorin/data_pemesan/bangun_baru/" + rekap_data_1);
-        final String desain_rumah_1 = getIntent().getExtras().getString("desain_rumah");
-        final String link_desain_rumah_1 = ("https://www.mandorin.site/mandorin/data_pemesan/bangun_baru/" + desain_rumah_1);
+        final String data_desain_1 = getIntent().getExtras().getString("data_desain");
+        final String link_data_desain_1 = ("http://www.mandorin.site/mandorin/data_kontrak/" + data_desain_1);
+        final String rekap_data_1 = getIntent().getExtras().getString("data_rekap");
+        final String link_rekap_data_1 = ("http://www.mandorin.site/mandorin/data_kontrak/" + rekap_data_1);
         final String surat_kontrak_1 = getIntent().getExtras().getString("surat_kontrak");
-        final String link_surat_kontrak_1 = ("https://www.mandorin.site/mandorin/data_pemesan/bangun_baru/" + surat_kontrak_1);
+        final String link_surat_kontrak_1 = ("http://www.mandorin.site/mandorin/data_kontrak/" + surat_kontrak_1);
 
         /*
          * TextView Initializations
          */
         Id.setText(nama_pemesan_1);
         nomor_kontrak.setText(nomor_kontrak_1);
-        int result = Integer.parseInt(total_biaya_1);
-        NumberFormat formatter = new DecimalFormat("#,###");
-        double myNumber = result;
-        String formattedNumber = formatter.format(myNumber);
-        total_biaya.setText("Rp." + formattedNumber);
         alamat_pekerjaan.setText(alamat_pekerjaan_1);
-        presentase.setText(presentase_1 + "%");
+        presentase.setText(presentase_1);
+        if (presentase.getText().toString().equalsIgnoreCase("50")){
+            img_presentase.setImageDrawable(getResources().getDrawable(R.drawable.status_layanan_1, getApplicationContext().getTheme()));
+        } else if (presentase.getText().toString().equalsIgnoreCase("80")) {
+            img_presentase.setImageDrawable(getResources().getDrawable(R.drawable.status_layanan_2, getApplicationContext().getTheme()));
+        } else if (presentase.getText().toString().equalsIgnoreCase("95")) {
+            img_presentase.setImageDrawable(getResources().getDrawable(R.drawable.status_layanan_3, getApplicationContext().getTheme()));
+        } else if (presentase.getText().toString().equalsIgnoreCase("100")) {
+            img_presentase.setImageDrawable(getResources().getDrawable(R.drawable.status_layanan_4, getApplicationContext().getTheme()));
+        }
         estimasi.setText(waktu_awal_1 + " sd " + waktu_akhir_1);
-        data_pemesan.setText(link_data_pemesan_1);
+        data_desain.setText(link_data_desain_1);
         rekap_data.setText(link_rekap_data_1);
         surat_kontrak.setText(link_surat_kontrak_1);
-        desain_rumah.setText(link_desain_rumah_1);
-        meta_data_pemesan.setText(data_pemesan_1);
+        meta_data_desain.setText(data_desain_1);
         meta_rekap_data.setText(rekap_data_1);
-        meta_desain_rumah.setText(desain_rumah_1);
         meta_surat_kontrak.setText(surat_kontrak_1);
 
         /*
          * Check if user downloaded document is exists or not from the beginning
          */
-        cek_data_pemesan();
+        cek_data_desain();
         cek_surat_kontrak();
         cek_rekap_data();
-        cek_desain_rumah();
 
-        ActivityCompat.requestPermissions(activity_status_bangun.this, PERMISSIONS, 112);
+        ActivityCompat.requestPermissions(activity_layanan_kontrak.this, PERMISSIONS, 112);
 
-        btn_data_pemesan.setOnClickListener(new View.OnClickListener() {
+        img_data_desain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String file_data = meta_data_pemesan.getText().toString();
+                String file_data = meta_data_desain.getText().toString();
                 File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), file_data);
                 if (file.exists()) {
-                    btn_data_pemesan.setText("Lihat Berkas");
-                    Toast.makeText(activity_status_bangun.this, "Berkas anda ada di download/" + file_data, Toast.LENGTH_LONG).show();
-                    openFolder_data_pemesan();
+                    img_data_desain.setImageDrawable(getResources().getDrawable(R.drawable.download_c, getApplicationContext().getTheme()));
+                    Toast.makeText(activity_layanan_kontrak.this, "Berkas anda " + file_data, Toast.LENGTH_LONG).show();
+                    openFolder_data_desain();
                 } else {
                     if(internet_available()) {
-                        if (!hasPermissions(activity_status_bangun.this, PERMISSIONS)) {
-                            Toast.makeText(activity_status_bangun.this, "Anda belum menyetujui akses penyimpanan", Toast.LENGTH_LONG).show();
+                        if (!hasPermissions(activity_layanan_kontrak.this, PERMISSIONS)) {
+                            Toast.makeText(activity_layanan_kontrak.this, "Anda belum menyetujui akses penyimpanan", Toast.LENGTH_LONG).show();
                         } else {
-                            String url = data_pemesan.getText().toString();
-                            new DownloadFile().execute(url, data_pemesan_1);
-                            Toast.makeText(activity_status_bangun.this, "Data pesanan anda berhasil di download", Toast.LENGTH_LONG).show();
-                            btn_data_pemesan.setText("Lihat Berkas");
-                            Toast.makeText(activity_status_bangun.this, "Berkas anda ada di download/" + file_data, Toast.LENGTH_LONG).show();
-                            openFolder_data_pemesan();
+                            String url = data_desain.getText().toString();
+                            new DownloadFile().execute(url, data_desain_1);
+                            Toast.makeText(activity_layanan_kontrak.this, "Data pesanan anda berhasil di download", Toast.LENGTH_LONG).show();
+                            img_data_desain.setImageDrawable(getResources().getDrawable(R.drawable.download_c, getApplicationContext().getTheme()));
+                            Toast.makeText(activity_layanan_kontrak.this, "Berkas anda " + file_data, Toast.LENGTH_LONG).show();
+                            openFolder_data_desain();
                         }
                     } else {
-                        Toast.makeText(activity_status_bangun.this, "Harap cek konektivitas anda", Toast.LENGTH_LONG).show();
+                        Toast.makeText(activity_layanan_kontrak.this, "Harap cek konektivitas anda", Toast.LENGTH_LONG).show();
                     }
                 }
             }
         });
 
-        btn_rekap_data.setOnClickListener(new View.OnClickListener() {
+        img_rekap_data.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String file_data = meta_rekap_data.getText().toString();
                 File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), file_data);
                 if (file.exists()) {
-                    btn_rekap_data.setText("Lihat Berkas");
-                    Toast.makeText(activity_status_bangun.this, "Berkas anda ada di download/" + file_data, Toast.LENGTH_LONG).show();
+                    img_rekap_data.setImageDrawable(getResources().getDrawable(R.drawable.download_c, getApplicationContext().getTheme()));
+                    Toast.makeText(activity_layanan_kontrak.this, "Berkas anda " + file_data, Toast.LENGTH_LONG).show();
                     openFolder_rekap_data();
                 } else {
                     if(internet_available()) {
-                        if (!hasPermissions(activity_status_bangun.this, PERMISSIONS)) {
-                            Toast.makeText(activity_status_bangun.this, "Anda belum menyetujui akses penyimpanan", Toast.LENGTH_LONG).show();
+                        if (!hasPermissions(activity_layanan_kontrak.this, PERMISSIONS)) {
+                            Toast.makeText(activity_layanan_kontrak.this, "Anda belum menyetujui akses penyimpanan", Toast.LENGTH_LONG).show();
                         } else {
                             String url = rekap_data.getText().toString();
                             new DownloadFile().execute(url, rekap_data_1);
-                            Toast.makeText(activity_status_bangun.this, "Data rekap data anda berhasil di download", Toast.LENGTH_LONG).show();
-                            btn_rekap_data.setText("Lihat Berkas");
-                            Toast.makeText(activity_status_bangun.this, "Berkas anda ada di download/" + file_data, Toast.LENGTH_LONG).show();
+                            Toast.makeText(activity_layanan_kontrak.this, "Data rekap data anda berhasil di download", Toast.LENGTH_LONG).show();
+                            img_rekap_data.setImageDrawable(getResources().getDrawable(R.drawable.download_c, getApplicationContext().getTheme()));
+                            Toast.makeText(activity_layanan_kontrak.this, "Berkas anda " + file_data, Toast.LENGTH_LONG).show();
                             openFolder_rekap_data();
                         }
                     } else {
-                        Toast.makeText(activity_status_bangun.this, "Harap cek konektivitas anda", Toast.LENGTH_LONG).show();
+                        Toast.makeText(activity_layanan_kontrak.this, "Harap cek konektivitas anda", Toast.LENGTH_LONG).show();
                     }
                 }
             }
         });
 
-        btn_surat_kontrak.setOnClickListener(new View.OnClickListener() {
+        img_surat_kontrak.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String file_data = meta_surat_kontrak.getText().toString();
                 File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), file_data);
                 if (file.exists()) {
-                    btn_surat_kontrak.setText("Lihat Berkas");
-                    Toast.makeText(activity_status_bangun.this, "Berkas anda ada di download/" + file_data, Toast.LENGTH_LONG).show();
+                    img_surat_kontrak.setImageDrawable(getResources().getDrawable(R.drawable.download_c, getApplicationContext().getTheme()));
+                    Toast.makeText(activity_layanan_kontrak.this, "Berkas anda " + file_data, Toast.LENGTH_LONG).show();
                     openFolder_surat_kontrak();
                 } else {
                     if(internet_available()) {
-                        if (!hasPermissions(activity_status_bangun.this, PERMISSIONS)) {
-                            Toast.makeText(activity_status_bangun.this, "Anda belum menyetujui akses penyimpanan", Toast.LENGTH_LONG).show();
+                        if (!hasPermissions(activity_layanan_kontrak.this, PERMISSIONS)) {
+                            Toast.makeText(activity_layanan_kontrak.this, "Anda belum menyetujui akses penyimpanan", Toast.LENGTH_LONG).show();
                         } else {
                             String url = surat_kontrak.getText().toString();
                             new DownloadFile().execute(url, surat_kontrak_1);
-                            Toast.makeText(activity_status_bangun.this, "Data surat kontrak anda berhasil di download", Toast.LENGTH_LONG).show();
-                            btn_surat_kontrak.setText("Lihat Berkas");
-                            Toast.makeText(activity_status_bangun.this, "Berkas anda ada di download/" + file_data, Toast.LENGTH_LONG).show();
+                            Toast.makeText(activity_layanan_kontrak.this, "Data surat kontrak anda berhasil di download", Toast.LENGTH_LONG).show();
+                            img_surat_kontrak.setImageDrawable(getResources().getDrawable(R.drawable.download_c, getApplicationContext().getTheme()));
+                            Toast.makeText(activity_layanan_kontrak.this, "Berkas anda " + file_data, Toast.LENGTH_LONG).show();
                             openFolder_surat_kontrak();
                         }
                     } else {
-                        Toast.makeText(activity_status_bangun.this, "Harap cek konektivitas anda", Toast.LENGTH_LONG).show();
-                    }
-                }
-            }
-        });
-
-        btn_desain_rumah.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String file_data = meta_desain_rumah.getText().toString();
-                File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), file_data);
-                if (file.exists()) {
-                    btn_desain_rumah.setText("Lihat Berkas");
-                    openFolder_desain_rumah();
-                } else {
-                    if(internet_available()) {
-                        if (!hasPermissions(activity_status_bangun.this, PERMISSIONS)) {
-                            Toast.makeText(activity_status_bangun.this, "Anda belum menyetujui akses penyimpanan", Toast.LENGTH_LONG).show();
-                        } else {
-                            String url = desain_rumah.getText().toString();
-                            new DownloadFile().execute(url, desain_rumah_1);
-                            Toast.makeText(activity_status_bangun.this, "Data surat kontrak anda berhasil di download", Toast.LENGTH_LONG).show();
-                            btn_desain_rumah.setText("Lihat Berkas");
-                            Toast.makeText(activity_status_bangun.this, "Berkas anda ada di download/" + file_data, Toast.LENGTH_LONG).show();
-                            openFolder_desain_rumah();
-                        }
-                    } else {
-                        Toast.makeText(activity_status_bangun.this, "Harap cek konektivitas anda", Toast.LENGTH_LONG).show();
+                        Toast.makeText(activity_layanan_kontrak.this, "Harap cek konektivitas anda", Toast.LENGTH_LONG).show();
                     }
                 }
             }
@@ -258,7 +227,7 @@ public class activity_status_bangun extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(activity_status_bangun.this, activity_data_status_bangun.class);
+                Intent intent = new Intent(activity_layanan_kontrak.this, activity_data_kontrak.class);
                 startActivity(intent);
             }
         });
@@ -266,20 +235,19 @@ public class activity_status_bangun extends AppCompatActivity {
         komplain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(activity_status_bangun.this, activity_komplain_bangun.class);
+                Intent intent = new Intent(activity_layanan_kontrak.this, activity_komplain_bangun.class);
                 intent.putExtra("nomor_kontrak", nomor_kontrak_1);
                 intent.putExtra("alamat", alamat_pekerjaan_1);
-                intent.putExtra("status", "bangun dari awal");
                 startActivity(intent);
             }
         });
     }
 
-    private void cek_data_pemesan(){
-        String file_data = meta_data_pemesan.getText().toString();
+    private void cek_data_desain(){
+        String file_data = meta_data_desain.getText().toString();
         File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), file_data);
         if (file.exists()) {
-            btn_data_pemesan.setText("Lihat Berkas");
+            img_data_desain.setImageDrawable(getResources().getDrawable(R.drawable.download_c, getApplicationContext().getTheme()));
         }
     }
 
@@ -287,15 +255,7 @@ public class activity_status_bangun extends AppCompatActivity {
         String file_data = meta_surat_kontrak.getText().toString();
         File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), file_data);
         if (file.exists()) {
-            btn_surat_kontrak.setText("Lihat Berkas");
-        }
-    }
-
-    private void cek_desain_rumah(){
-        String file_data = meta_desain_rumah.getText().toString();
-        File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), file_data);
-        if (file.exists()) {
-            btn_desain_rumah.setText("Lihat Berkas");
+            img_surat_kontrak.setImageDrawable(getResources().getDrawable(R.drawable.download_c, getApplicationContext().getTheme()));
         }
     }
 
@@ -303,7 +263,7 @@ public class activity_status_bangun extends AppCompatActivity {
         String file_data = meta_rekap_data.getText().toString();
         File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), file_data);
         if (file.exists()) {
-            btn_rekap_data.setText("Lihat Berkas");
+            img_rekap_data.setImageDrawable(getResources().getDrawable(R.drawable.download_c, getApplicationContext().getTheme()));
         }
     }
 
@@ -351,9 +311,9 @@ public class activity_status_bangun extends AppCompatActivity {
         }
     }
 
-    public void openFolder_data_pemesan(){
+    public void openFolder_data_desain(){
         try {
-            String file_data = meta_data_pemesan.getText().toString();
+            String file_data = meta_data_desain.getText().toString();
             File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).toString() + "/" + file_data);
             Intent intent = new Intent(Intent.ACTION_VIEW);
             intent.setDataAndType(Uri.fromFile(file), "application/pdf");
@@ -363,7 +323,7 @@ public class activity_status_bangun extends AppCompatActivity {
         } catch (ActivityNotFoundException e) {
             e.printStackTrace();
             Log.d("Application not found", e.getMessage());
-            String file_data = meta_data_pemesan.getText().toString();
+            String file_data = meta_data_desain.getText().toString();
             Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
             Uri uri = Uri.parse(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).toString() + "/" + file_data);
             intent.setDataAndType(uri, "application/pdf");
@@ -387,29 +347,6 @@ public class activity_status_bangun extends AppCompatActivity {
             e.printStackTrace();
             Log.d("Application not found", e.getMessage());
             String file_data = meta_surat_kontrak.getText().toString();
-            Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-            Uri uri = Uri.parse(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).toString() + "/" + file_data);
-            intent.setDataAndType(uri, "application/pdf");
-            startActivity(Intent.createChooser(intent, "Open folder"));
-        } catch (Exception e){
-            e.printStackTrace();
-            Log.d("Unknown error", e.getMessage());
-        }
-    }
-
-    public void openFolder_desain_rumah(){
-        try {
-            String file_data = meta_desain_rumah.getText().toString();
-            File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).toString() + "/" + file_data);
-            Intent intent = new Intent(Intent.ACTION_VIEW);
-            intent.setDataAndType(Uri.fromFile(file), "application/pdf");
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-            startActivity(intent);
-        } catch (ActivityNotFoundException e) {
-            e.printStackTrace();
-            Log.d("Application not found", e.getMessage());
-            String file_data = meta_desain_rumah.getText().toString();
             Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
             Uri uri = Uri.parse(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).toString() + "/" + file_data);
             intent.setDataAndType(uri, "application/pdf");

@@ -29,12 +29,12 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class activity_data_status_renovasi extends AppCompatActivity {
+public class activity_data_kontrak extends AppCompatActivity {
 
     /*
      * Recyclerview & Data Adapter Initialization
      */
-    List<GetStatusRenovasiAdapter> GetDataAdapter4;
+    List<GetDataKontrakAdapter> GetDataAdapter4;
     RecyclerView recyclerView2;
     RecyclerView.LayoutManager recyclerViewlayoutManager2;
     RecyclerView.Adapter recyclerViewadapter2;
@@ -50,19 +50,18 @@ public class activity_data_status_renovasi extends AppCompatActivity {
      * JSON Data Initialization
      */
 
-    String JSON_ID_PEMESAN = "id";
-    String JSON_NOMOR_KONTRAK_PEMESAN = "nomor_kontrak";
-    String JSON_NAMA_PEMESAN = "nama_pemesan";
-    String JSON_EMAIL_PEMESAN = "email";
-    String JSON_NO_TELP_PEMESAN = "no_telp";
-    String JSON_ALAMAT_PEKERJAAN = "alamat_pekerjaan";
-    String JSON_STATUS_PEKERJAAN = "status_pekerjaan";
-    String JSON_TOTAL_BIAYA = "total_biaya";
-    String JSON_PRESENTASE = "presentase";
-    String JSON_WAKTU_MULAI = "waktu_mulai";
-    String JSON_WAKTU_AKHIR = "waktu_akhir";
-    String JSON_DATA_PEMESAN = "data_pemesan";
-    String JSON_REKAP_DATA = "rekap_data";
+    String JSON_ID_KONTRAK = "id";
+    String JSON_NOMOR_KONTRAK = "nomor_kontrak";
+    String JSON_NAMA_KONTRAK = "nama_pemesan";
+    String JSON_EMAIL_KONTRAK = "email";
+    String JSON_NO_TELP_KONTRAK = "no_telp";
+    String JSON_ALAMAT_KONTRAK = "alamat_pekerjaan";
+    String JSON_STATUS_KONTRAK = "status_pekerjaan";
+    String JSON_PRESENTASE_KONTRAK  = "presentase";
+    String JSON_WAKTU_MULAI_KONTRAK  = "waktu_mulai";
+    String JSON_WAKTU_AKHIR_KONTRAK  = "waktu_akhir";
+    String JSON_DATA_DESAIN_KONTRAK = "data_desain";
+    String JSON_DATA_REKAP_KONTRAK= "data_rekap";
     String JSON_SURAT_KONTRAK = "surat_kontrak";
     JsonArrayRequest jsonArrayRequest ;
     RequestQueue requestQueue ;
@@ -81,7 +80,7 @@ public class activity_data_status_renovasi extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        setContentView(R.layout.activity_data_status_renovasi);
+        setContentView(R.layout.activity_data_kontrak);
 
         /*
          * Begin firebase authorization
@@ -93,7 +92,7 @@ public class activity_data_status_renovasi extends AppCompatActivity {
          * Recyclerview Layout Initialization
          */
         GetDataAdapter4 = new ArrayList<>();
-        recyclerView2 = findViewById(R.id.recyclerview_status_renovasi);
+        recyclerView2 = findViewById(R.id.recyclerview_data_kontrak);
         recyclerView2.setHasFixedSize(true);
         recyclerViewlayoutManager2 = new LinearLayoutManager(this);
         recyclerView2.setLayoutManager(recyclerViewlayoutManager2);
@@ -102,10 +101,10 @@ public class activity_data_status_renovasi extends AppCompatActivity {
          * Layout ID Initializations
          * Textview, Imageview & Button
          */
-        con_text_pemesan_renovasi = findViewById(R.id.con_text_status_pemesan_renovasi);
-        connection_pemesan_renovasi = findViewById(R.id.con_image_status_pemesan_renovasi);
-        refresh_pemesan_renovasi = findViewById(R.id.refresh_pemesan_renovasi);
-        back_pemesan_renovasi = findViewById(R.id.back_activity_data_status_renovasi);
+        con_text_pemesan_renovasi = findViewById(R.id.con_text_data_kontrak);
+        connection_pemesan_renovasi = findViewById(R.id.con_image_data_kontrak);
+        refresh_pemesan_renovasi = findViewById(R.id.refresh_data_kontrak);
+        back_pemesan_renovasi = findViewById(R.id.back_activity_data_kontrak);
 
         /*
          * Internet Connection Module
@@ -124,7 +123,7 @@ public class activity_data_status_renovasi extends AppCompatActivity {
         back_pemesan_renovasi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(activity_data_status_renovasi.this, activity_kontrak_renovasi.class);
+                Intent intent = new Intent(activity_data_kontrak.this, activity_kontrak.class);
                 startActivity(intent);
             }
         });
@@ -153,7 +152,7 @@ public class activity_data_status_renovasi extends AppCompatActivity {
          * Let's separate this json for sorting
          */
         String email = firebaseUser.getEmail();
-        String GET_JSON_DATA_HTTP_URL = "http://mandorin.site/mandorin/php/user/read_status_renovasi.php?email=" + email;
+        String GET_JSON_DATA_HTTP_URL = "http://mandorin.site/mandorin/php/user/new/read_data_kontrak.php?email=" + email;
 
         jsonArrayRequest = new JsonArrayRequest(GET_JSON_DATA_HTTP_URL,
 
@@ -180,26 +179,25 @@ public class activity_data_status_renovasi extends AppCompatActivity {
 
         for(int i = 0; i<array.length(); i++) {
 
-            GetStatusRenovasiAdapter GetDataAdapter3 = new GetStatusRenovasiAdapter();
+            GetDataKontrakAdapter GetDataAdapter3 = new GetDataKontrakAdapter();
 
             JSONObject json = null;
             try {
 
                 json = array.getJSONObject(i);
 
-                GetDataAdapter3.setId(json.getString(JSON_ID_PEMESAN));
-                GetDataAdapter3.setNomor_kontrak(json.getString(JSON_NOMOR_KONTRAK_PEMESAN));
-                GetDataAdapter3.setNama_pemesan(json.getString(JSON_NAMA_PEMESAN));
-                GetDataAdapter3.setEmail(json.getString(JSON_EMAIL_PEMESAN));
-                GetDataAdapter3.setNo_telp(json.getString(JSON_NO_TELP_PEMESAN));
-                GetDataAdapter3.setAlamat_pekerjaan(json.getString(JSON_ALAMAT_PEKERJAAN));
-                GetDataAdapter3.setStatus_pekerjaan(json.getString(JSON_STATUS_PEKERJAAN));
-                GetDataAdapter3.setTotal_biaya(json.getString(JSON_TOTAL_BIAYA));
-                GetDataAdapter3.setPresentase(json.getString(JSON_PRESENTASE));
-                GetDataAdapter3.setWaktu_mulai(json.getString(JSON_WAKTU_MULAI));
-                GetDataAdapter3.setWaktu_akhir(json.getString(JSON_WAKTU_AKHIR));
-                GetDataAdapter3.setData_pemesan(json.getString(JSON_DATA_PEMESAN));
-                GetDataAdapter3.setRekap_data(json.getString(JSON_REKAP_DATA));
+                GetDataAdapter3.setId(json.getString(JSON_ID_KONTRAK));
+                GetDataAdapter3.setNomor_kontrak(json.getString(JSON_NOMOR_KONTRAK));
+                GetDataAdapter3.setNama_pemesan(json.getString(JSON_NAMA_KONTRAK));
+                GetDataAdapter3.setEmail(json.getString(JSON_EMAIL_KONTRAK));
+                GetDataAdapter3.setNo_telp(json.getString(JSON_NO_TELP_KONTRAK));
+                GetDataAdapter3.setAlamat_pekerjaan(json.getString(JSON_ALAMAT_KONTRAK));
+                GetDataAdapter3.setStatus_pekerjaan(json.getString(JSON_STATUS_KONTRAK));
+                GetDataAdapter3.setPresentase(json.getString(JSON_PRESENTASE_KONTRAK));
+                GetDataAdapter3.setWaktu_mulai(json.getString(JSON_WAKTU_MULAI_KONTRAK));
+                GetDataAdapter3.setWaktu_akhir(json.getString(JSON_WAKTU_AKHIR_KONTRAK));
+                GetDataAdapter3.setData_desain(json.getString(JSON_DATA_DESAIN_KONTRAK));
+                GetDataAdapter3.setData_rekap(json.getString(JSON_DATA_REKAP_KONTRAK));
                 GetDataAdapter3.setSurat_kontrak(json.getString(JSON_SURAT_KONTRAK));
 
             } catch (JSONException e) {
@@ -209,7 +207,7 @@ public class activity_data_status_renovasi extends AppCompatActivity {
             GetDataAdapter4.add(GetDataAdapter3);
         }
 
-        recyclerViewadapter2 = new recycler_view_status_renovasi(GetDataAdapter4, this);
+        recyclerViewadapter2 = new recycler_view_data_kontrak(GetDataAdapter4, this);
 
         recyclerView2.setAdapter(recyclerViewadapter2);
     }

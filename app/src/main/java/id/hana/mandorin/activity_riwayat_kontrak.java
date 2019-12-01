@@ -54,11 +54,6 @@ public class activity_riwayat_kontrak extends AppCompatActivity {
     String JSON_NAMA_PEMESAN = "nama_pemesan";
     String JSON_EMAIL_PEMESAN = "email";
     String JSON_ALAMAT_PEMESAN = "alamat";
-    String JSON_STATUS_PEMESAN = "status";
-    String JSON_DATA_PEMESAN = "data_pemesan";
-    String JSON_REKAP_DATA_PEMESAN = "rekap_data";
-    String JSON_SURAT_KONTRAK_PEMESAN = "surat_kontrak";
-    String JSON_DESAIN_RUMAH_PEMESAN = "desain_rumah";
     JsonArrayRequest jsonArrayRequest ;
     RequestQueue requestQueue ;
 
@@ -148,7 +143,7 @@ public class activity_riwayat_kontrak extends AppCompatActivity {
          * Let's separate this json for sorting
          */
         String email = firebaseUser.getEmail();
-        String GET_JSON_DATA_HTTP_URL = "http://mandorin.site/mandorin/php/user/read_riwayat_kontrak.php?email=" + email;
+        String GET_JSON_DATA_HTTP_URL = "http://mandorin.site/mandorin/php/user/new/read_riwayat_kontrak.php?email=" + email;
 
         jsonArrayRequest = new JsonArrayRequest(GET_JSON_DATA_HTTP_URL,
 
@@ -187,11 +182,6 @@ public class activity_riwayat_kontrak extends AppCompatActivity {
                 GetDataAdapter3.setNama_pemesan(json.getString(JSON_NAMA_PEMESAN));
                 GetDataAdapter3.setEmail(json.getString(JSON_EMAIL_PEMESAN));
                 GetDataAdapter3.setAlamat(json.getString(JSON_ALAMAT_PEMESAN));
-                GetDataAdapter3.setStatus(json.getString(JSON_STATUS_PEMESAN));
-                GetDataAdapter3.setData_pemesan(json.getString(JSON_DATA_PEMESAN));
-                GetDataAdapter3.setRekap_data(json.getString(JSON_REKAP_DATA_PEMESAN));
-                GetDataAdapter3.setSurat_kontrak(json.getString(JSON_SURAT_KONTRAK_PEMESAN));
-                GetDataAdapter3.setDesain_rumah(json.getString(JSON_DESAIN_RUMAH_PEMESAN));
             } catch (JSONException e) {
 
                 e.printStackTrace();

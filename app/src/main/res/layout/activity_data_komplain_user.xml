@@ -129,48 +129,10 @@
             android:layout_gravity="end" />
 
         <android.support.v7.widget.CardView
-            android:id="@+id/cv_title_alamat_kontrak"
-            android:layout_width="125dp"
-            android:layout_height="35dp"
-            android:layout_marginTop="130dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:foreground="?android:attr/selectableItemBackground"
-            app:cardBackgroundColor="@color/colorPrimary"
-            app:cardCornerRadius="4dp"
-            app:cardUseCompatPadding="true">
-
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/app_mandor_komplain_2"
-                android:textAlignment="center"
-                android:layout_gravity="center"
-                android:textColor="#ffffff" />
-
-        </android.support.v7.widget.CardView>
-
-        <TextView
-            android:id="@+id/user_input_alamat_kontrak"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:layout_marginTop="137dp"
-            android:textColor="#000"/>
-
-        <View
-            android:layout_width="200dp"
-            android:layout_height="1dp"
-            android:background="#000"
-            android:layout_marginTop="157dp"
-            android:layout_gravity="end" />
-
-        <android.support.v7.widget.CardView
             android:id="@+id/cv_title_status_komplain_kontrak"
             android:layout_width="125dp"
             android:layout_height="35dp"
-            android:layout_marginTop="180dp"
+            android:layout_marginTop="130dp"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"
@@ -194,21 +156,21 @@
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:layout_marginTop="187dp"
+            android:layout_marginTop="137dp"
             android:textColor="#000"/>
 
         <View
             android:layout_width="200dp"
             android:layout_height="1dp"
             android:background="#000"
-            android:layout_marginTop="205dp"
+            android:layout_marginTop="157dp"
             android:layout_gravity="end" />
 
         <android.support.v7.widget.CardView
-            android:id="@+id/cv_title_status_kontrak"
+            android:id="@+id/cv_title_alamat_kontrak"
             android:layout_width="125dp"
             android:layout_height="35dp"
-            android:layout_marginTop="240dp"
+            android:layout_marginTop="180dp"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"
@@ -217,10 +179,10 @@
             app:cardUseCompatPadding="true">
 
             <TextView
-                android:id="@+id/textView7"
+                android:id="@+id/textView5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/app_mandor_komplain_7"
+                android:text="@string/app_mandor_komplain_2"
                 android:textAlignment="center"
                 android:layout_gravity="center"
                 android:textColor="#ffffff" />
@@ -228,19 +190,13 @@
         </android.support.v7.widget.CardView>
 
         <TextView
-            android:id="@+id/user_input_status_kontrak"
+            android:id="@+id/user_input_alamat_kontrak"
             android:layout_width="200dp"
-            android:layout_height="wrap_content"
+            android:layout_height="100dp"
             android:layout_gravity="end"
-            android:layout_marginTop="247dp"
+            android:layout_marginTop="187dp"
+            android:scrollbars = "vertical"
             android:textColor="#000"/>
-
-        <View
-            android:layout_width="200dp"
-            android:layout_height="1dp"
-            android:background="#000"
-            android:layout_marginTop="265dp"
-            android:layout_gravity="end" />
 
     </android.support.v7.widget.CardView>
 

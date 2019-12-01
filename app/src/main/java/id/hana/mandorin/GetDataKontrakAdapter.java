@@ -1,8 +1,8 @@
 package id.hana.mandorin;
 
-public class GetStatusRenovasiAdapter {
+public class GetDataKontrakAdapter {
 
-    public String id, nomor_kontrak, nama_pemesan, email, no_telp, alamat_pekerjaan, status_pekerjaan, total_biaya, presentase, waktu_mulai, waktu_akhir, data_pemesan, rekap_data, surat_kontrak;
+    public String id, nomor_kontrak, nama_pemesan, email, no_telp, alamat_pekerjaan, status_pekerjaan, presentase, waktu_mulai, waktu_akhir, data_desain, data_rekap, surat_kontrak;
 
     public String getId() {
         return id;
@@ -54,14 +54,6 @@ public class GetStatusRenovasiAdapter {
 
     public void setStatus_pekerjaan(String status_pekerjaan) { this.status_pekerjaan= status_pekerjaan; }
 
-    public String getTotal_biaya() {
-        return total_biaya;
-    }
-
-    public void setTotal_biaya(String total_biaya) {
-        this.total_biaya= total_biaya;
-    }
-
     public String getPresentase() {
         return presentase;
     }
@@ -86,20 +78,20 @@ public class GetStatusRenovasiAdapter {
         this.waktu_akhir= waktu_akhir;
     }
 
-    public String getData_pemesan() {
-        return data_pemesan;
+    public String getData_desain() {
+        return data_desain;
     }
 
-    public void setData_pemesan(String data_pemesan) {
-        this.data_pemesan= data_pemesan;
+    public void setData_desain(String data_desain) {
+        this.data_desain= data_desain;
     }
 
-    public String getRekap_data() {
-        return rekap_data;
+    public String getData_rekap() {
+        return data_rekap;
     }
 
-    public void setRekap_data(String rekap_data) {
-        this.rekap_data= rekap_data;
+    public void setData_rekap(String data_rekap) {
+        this.data_rekap= data_rekap;
     }
 
     public String getSurat_kontrak() {
