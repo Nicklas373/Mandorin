@@ -1,7 +1,8 @@
 package id.hana.mandorin;
 
 import android.content.Context;
-import android.content.Intent;
+import android.icu.text.DecimalFormat;
+import android.icu.text.NumberFormat;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -41,7 +42,17 @@ public class recycler_view_riwayat_pembayaran extends RecyclerView.Adapter<recyc
 
         Viewholder.Nik.setText(getRenovasiDataAdapter1.getNomor_kontrak());
         Viewholder.Alamat.setText(getRenovasiDataAdapter1.getAlamat());
-        Viewholder.Status.setText(getRenovasiDataAdapter1.getStatus());
+        Viewholder.Nama.setText(getRenovasiDataAdapter1.getNama_pemesan());
+        int result = Integer.parseInt(getRenovasiDataAdapter1.getBiaya_desain());
+        NumberFormat formatter = new DecimalFormat("#,###");
+        double myNumber = result;
+        String formattedNumber = formatter.format(myNumber);
+        Viewholder.Biaya_Desain.setText(formattedNumber);
+        int result_2 = Integer.parseInt(getRenovasiDataAdapter1.getBiaya_desain());
+        NumberFormat formatter2 = new DecimalFormat("#,###");
+        double myNumber2 = result_2;
+        String formattedNumber2 = formatter2.format(myNumber2);
+        Viewholder.Biaya_Konstruksi.setText(formattedNumber2);
     }
 
     @Override
@@ -51,7 +62,7 @@ public class recycler_view_riwayat_pembayaran extends RecyclerView.Adapter<recyc
 
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        public TextView Nik, Alamat, Status;
+        public TextView Nik, Alamat, Nama, Biaya_Desain, Biaya_Konstruksi;
         public CardView cv_head;
 
         public ViewHolder(View itemView) {
@@ -62,21 +73,14 @@ public class recycler_view_riwayat_pembayaran extends RecyclerView.Adapter<recyc
 
             Nik = itemView.findViewById(R.id.text_nomor_kontrak_riwayat_pembayaran_1);
             Alamat = itemView.findViewById(R.id.text_alamat_riwayat_pembayaran_1);
-            Status = itemView.findViewById(R.id.text_status_riwayat_pembayaran_1);
+            Nama = itemView.findViewById(R.id.text_nama_riwayat_pembayaran_1);
+            Biaya_Desain = itemView.findViewById(R.id.text_biaya_desain_pembayaran_1);
+            Biaya_Konstruksi = itemView.findViewById(R.id.text_biaya_konstruksi_1);
         }
 
 
         @Override
         public void onClick(View v) {
-            Intent intent = new Intent(context, activity_data_riwayat_pembayaran.class);
-            intent.putExtra("id", getRiwayatPembayaranAdapter.get(getAdapterPosition()).getId());
-            intent.putExtra("nomor_kontrak", getRiwayatPembayaranAdapter.get(getAdapterPosition()).getNomor_kontrak());
-            intent.putExtra("nama_pemesan", getRiwayatPembayaranAdapter.get(getAdapterPosition()).getNama_pemesan());
-            intent.putExtra("email", getRiwayatPembayaranAdapter.get(getAdapterPosition()).getEmail());
-            intent.putExtra("alamat", getRiwayatPembayaranAdapter.get(getAdapterPosition()).getAlamat());
-            intent.putExtra("status", getRiwayatPembayaranAdapter.get(getAdapterPosition()).getStatus());
-            intent.putExtra("data", getRiwayatPembayaranAdapter.get(getAdapterPosition()).getData());
-            context.startActivity(intent);
         }
     }
 }

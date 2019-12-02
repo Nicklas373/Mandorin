@@ -2,7 +2,7 @@ package id.hana.mandorin;
 
 public class GetRiwayatPembayaranAdapter{
 
-    public String id, nomor_kontrak, nama_pemesan, email, alamat, status, data;
+    public String id, nomor_kontrak, nama_pemesan, email, alamat, biaya_desain, biaya_konstruksi;
 
     public String getId() {
         return id;
@@ -42,19 +42,17 @@ public class GetRiwayatPembayaranAdapter{
         this.alamat= alamat;
     }
 
-    public String getStatus() {
-        return status;
+    public String getBiaya_desain() {
+        return biaya_desain;
     }
 
-    public void setStatus(String status) {
-        this.status= status;
+    public void setBiaya_desain(String biaya_desain) {
+        this.biaya_desain= biaya_desain;
     }
 
-    public String getData() {
-        return data;
+    public String getBiaya_konstruksi() {
+        return biaya_konstruksi;
     }
 
-    public void setData(String data) {
-        this.data= data;
-    }
+    public void setBiaya_konstruksi(String biaya_konstruksi) { this.biaya_konstruksi= biaya_konstruksi; }
 }

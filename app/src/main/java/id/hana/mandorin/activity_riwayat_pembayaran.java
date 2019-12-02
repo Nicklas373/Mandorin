@@ -54,8 +54,8 @@ public class activity_riwayat_pembayaran extends AppCompatActivity {
     String JSON_NAMA_PEMESAN = "nama_pemesan";
     String JSON_EMAIL_PEMESAN = "email";
     String JSON_ALAMAT_PEMESAN = "alamat";
-    String JSON_STATUS_PEMESAN = "status";
-    String JSON_DATA_PEMESAN = "data";
+    String JSON_BIAYA_DESAIN = "biaya_desain";
+    String JSON_BIAYA_KONSTRUKSI = "biaya_konstruksi";
     JsonArrayRequest jsonArrayRequest ;
     RequestQueue requestQueue ;
 
@@ -145,7 +145,7 @@ public class activity_riwayat_pembayaran extends AppCompatActivity {
          * Let's separate this json for sorting
          */
         String email = firebaseUser.getEmail();
-        String GET_JSON_DATA_HTTP_URL = "http://mandorin.site/mandorin/php/user/read_riwayat_pembayaran.php?email=" + email;
+        String GET_JSON_DATA_HTTP_URL = "http://mandorin.site/mandorin/php/user/new/read_riwayat_pembayaran.php?email=" + email;
 
         jsonArrayRequest = new JsonArrayRequest(GET_JSON_DATA_HTTP_URL,
 
@@ -184,8 +184,8 @@ public class activity_riwayat_pembayaran extends AppCompatActivity {
                 GetDataAdapter3.setNama(json.getString(JSON_NAMA_PEMESAN));
                 GetDataAdapter3.setEmail(json.getString(JSON_EMAIL_PEMESAN));
                 GetDataAdapter3.setAlamat(json.getString(JSON_ALAMAT_PEMESAN));
-                GetDataAdapter3.setStatus(json.getString(JSON_STATUS_PEMESAN));
-                GetDataAdapter3.setData(json.getString(JSON_DATA_PEMESAN));
+                GetDataAdapter3.setBiaya_desain(json.getString(JSON_BIAYA_DESAIN));
+                GetDataAdapter3.setBiaya_konstruksi(json.getString(JSON_BIAYA_KONSTRUKSI));
             } catch (JSONException e) {
 
                 e.printStackTrace();
