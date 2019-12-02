@@ -51,6 +51,12 @@
     <string name="app_mandor_layanan_jasa_radio_3">Ada</string>
     <string name="app_mandor_layanan_jasa_radio_4">Belum Ada</string>
 
+    <string name="app_mandor_recycler_data_pemesan_title">Data Pemesan</string>
+    <string name="app_mandor_recycler_data_pemesan_1">NIK Pemesan</string>
+    <string name="app_mandor_recycler_data_pemesan_2">Nama Pemesan</string>
+    <string name="app_mandor_recycler_data_pemesan_3">Tanggal Survey</string>
+    <string name="app_mandor_recycler_data_pemesan_4">Status Layanan</string>
+    <string name="app_mandor_recycler_data_pemesan_5">Alamat</string>
 
     <string name="app_mandor_sewa_jasa_1">Renovasi</string>
     <string name="app_mandor_sewa_jasa_2">Bangunan Baru</string>

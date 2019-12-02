@@ -78,6 +78,7 @@
         <activity android:name=".activity_data_pembayaran_konfirmasi"/>
         <activity android:name=".activity_riwayat_pembayaran"/>
         <activity android:name=".activity_riwayat_kontrak"/>
+        <activity android:name=".activity_data_pemesan"/>
     </application>
 
 </manifest>
