@@ -1,5 +1,6 @@
 package id.hana.mandorin;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -25,6 +26,7 @@ public class activity_login_2 extends AppCompatActivity {
     private EditText inputPassword;
     private FirebaseAuth auth;
     private Button btnlogin_2;
+    ProgressDialog dialog;
     SharedPreferences pref;
     SharedPreferences.Editor editor;
 
@@ -100,6 +102,7 @@ public class activity_login_2 extends AppCompatActivity {
                                             }
                                         }
                                         else {
+                                            dialog = ProgressDialog.show(activity_login_2.this, "Login Akun", "Memproses...", true);
                                             SharedPreferences.Editor editor = pref.edit();
                                             editor.putString("email", dummy_debug.getText().toString());
                                             editor.apply();

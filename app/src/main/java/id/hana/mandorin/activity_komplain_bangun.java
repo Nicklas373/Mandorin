@@ -31,7 +31,7 @@ public class activity_komplain_bangun extends AppCompatActivity {
      * Layout Component Initializations
      * Textview, Imageview, CardView & Button
      */
-    private TextView nomor_kontrak_1, alamat_kontrak_1, status_kontrak_1;
+    private TextView nomor_kontrak_1_1, alamat_kontrak_1, status_kontrak_1;
     private EditText komplain_1;
     private Button btn_kirim;
     private CardView back;
@@ -58,7 +58,7 @@ public class activity_komplain_bangun extends AppCompatActivity {
          * Layout ID Initializations
          * TextView, CardView & Button
          */
-        nomor_kontrak_1 = findViewById(R.id.user_input_nomor_kontrak);
+        nomor_kontrak_1_1 = findViewById(R.id.user_input_nomor_kontrak);
         alamat_kontrak_1 = findViewById(R.id.user_input_alamat_kontrak);
         status_kontrak_1 = findViewById(R.id.status);
         komplain_1 = findViewById(R.id.et_komplain);
@@ -74,21 +74,44 @@ public class activity_komplain_bangun extends AppCompatActivity {
         /*
          * Passing data from last activity
          */
-        final String nomor_kontrak = getIntent().getExtras().getString("nomor_kontrak");
-        final String alamat_kontrak = getIntent().getExtras().getString("alamat");
+        final String id_1 = getIntent().getExtras().getString("id");
+        final String nomor_kontrak_1 = getIntent().getExtras().getString("nomor_kontrak");
+        final String nama_pemesan_1 = getIntent().getExtras().getString("nama_pemesan");
+        final String email_1 = getIntent().getExtras().getString("email");
+        final String no_telp_1 = getIntent().getExtras().getString("alamat");
+        final String alamat_pekerjaan_1 = getIntent().getExtras().getString("alamat_pekerjaan");
+        final String status_pekerjaan_1 = getIntent().getExtras().getString("status_pekerjaan");
+        final String presentase_1 = getIntent().getExtras().getString("presentase");
+        final String waktu_awal_1 = getIntent().getExtras().getString("waktu_mulai");
+        final String waktu_akhir_1 = getIntent().getExtras().getString("waktu_akhir");
+        final String data_desain_1 = getIntent().getExtras().getString("data_desain");
+        final String rekap_data_1 = getIntent().getExtras().getString("data_rekap");
+        final String surat_kontrak_1 = getIntent().getExtras().getString("surat_kontrak");
 
         /*
          * TextView Initializations
          */
-        nomor_kontrak_1.setText(nomor_kontrak);
-        alamat_kontrak_1.setText(alamat_kontrak);
+        nomor_kontrak_1_1.setText(nomor_kontrak_1);
+        alamat_kontrak_1.setText(alamat_pekerjaan_1);
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(activity_komplain_bangun.this, activity_layanan_kontrak.class);
-                intent.putExtra("nomor_kontrak", nomor_kontrak);
-                intent.putExtra("alamat", alamat_kontrak);
+                intent.putExtra("id", id_1);
+                intent.putExtra("nomor_kontrak", nomor_kontrak_1);
+                intent.putExtra("alamat", alamat_pekerjaan_1);
+                intent.putExtra("nama_pemesan", nama_pemesan_1);
+                intent.putExtra("email", email_1);
+                intent.putExtra("no_telp",no_telp_1);
+                intent.putExtra("alamat_pekerjaan", alamat_pekerjaan_1);
+                intent.putExtra("status_pekerjaan", status_pekerjaan_1);
+                intent.putExtra("presentase", presentase_1);
+                intent.putExtra("waktu_mulai", waktu_awal_1);
+                intent.putExtra("waktu_akhir", waktu_akhir_1);
+                intent.putExtra("data_desain", data_desain_1);
+                intent.putExtra("data_rekap", rekap_data_1);
+                intent.putExtra("surat_kontrak", surat_kontrak_1);
                 startActivity(intent);
             }
         });
@@ -168,7 +191,7 @@ public class activity_komplain_bangun extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() {
 
-                String nomor_kontrak = nomor_kontrak_1.getText().toString();
+                String nomor_kontrak = nomor_kontrak_1_1.getText().toString();
                 String alamat_kontrak = alamat_kontrak_1.getText().toString();
                 String komplain_kontrak = komplain_1.getText().toString();
                 String email = firebaseUser.getEmail();

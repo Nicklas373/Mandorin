@@ -90,16 +90,16 @@ public class activity_layanan_kontrak extends AppCompatActivity {
         /*
          * Passing data from last activity
          */
-        String id_1 = getIntent().getExtras().getString("id");
+        final String id_1 = getIntent().getExtras().getString("id");
         final String nomor_kontrak_1 = getIntent().getExtras().getString("nomor_kontrak");
-        String nama_pemesan_1 = getIntent().getExtras().getString("nama_pemesan");
-        String email_1 = getIntent().getExtras().getString("email");
-        String no_telp_1 = getIntent().getExtras().getString("alamat");
+        final String nama_pemesan_1 = getIntent().getExtras().getString("nama_pemesan");
+        final String email_1 = getIntent().getExtras().getString("email");
+        final String no_telp_1 = getIntent().getExtras().getString("alamat");
         final String alamat_pekerjaan_1 = getIntent().getExtras().getString("alamat_pekerjaan");
-        String status_pekerjaan_1 = getIntent().getExtras().getString("status_pekerjaan");
-        String presentase_1 = getIntent().getExtras().getString("presentase");
-        String waktu_awal_1 = getIntent().getExtras().getString("waktu_mulai");
-        String waktu_akhir_1 = getIntent().getExtras().getString("waktu_akhir");
+        final String status_pekerjaan_1 = getIntent().getExtras().getString("status_pekerjaan");
+        final String presentase_1 = getIntent().getExtras().getString("presentase");
+        final String waktu_awal_1 = getIntent().getExtras().getString("waktu_mulai");
+        final String waktu_akhir_1 = getIntent().getExtras().getString("waktu_akhir");
         final String data_desain_1 = getIntent().getExtras().getString("data_desain");
         final String link_data_desain_1 = ("http://www.mandorin.site/mandorin/data_kontrak/" + data_desain_1);
         final String rekap_data_1 = getIntent().getExtras().getString("data_rekap");
@@ -236,8 +236,20 @@ public class activity_layanan_kontrak extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(activity_layanan_kontrak.this, activity_komplain_bangun.class);
+                intent.putExtra("id", id_1);
                 intent.putExtra("nomor_kontrak", nomor_kontrak_1);
                 intent.putExtra("alamat", alamat_pekerjaan_1);
+                intent.putExtra("nama_pemesan", nama_pemesan_1);
+                intent.putExtra("email", email_1);
+                intent.putExtra("alamat_pekerjaan", alamat_pekerjaan_1);
+                intent.putExtra("no_telp",no_telp_1);
+                intent.putExtra("status_pekerjaan", status_pekerjaan_1);
+                intent.putExtra("presentase", presentase_1);
+                intent.putExtra("waktu_mulai", waktu_awal_1);
+                intent.putExtra("waktu_akhir", waktu_akhir_1);
+                intent.putExtra("data_desain", data_desain_1);
+                intent.putExtra("data_rekap", rekap_data_1);
+                intent.putExtra("surat_kontrak", surat_kontrak_1);
                 startActivity(intent);
             }
         });

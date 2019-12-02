@@ -110,7 +110,7 @@ public class activity_data_transaksi extends AppCompatActivity {
         Pembayaran.setVisibility(View.GONE);
         Pembayaran_2.setVisibility(View.GONE);
         if (Tgl_input_satu.getText().toString().equalsIgnoreCase("")) {
-            Tgl_input_satu.setText("Belum di input");
+            Tgl_input_satu.setText("-");
         } else {
             int result = Integer.parseInt(total_satu);
             NumberFormat formatter = new DecimalFormat("#,###");
@@ -119,7 +119,7 @@ public class activity_data_transaksi extends AppCompatActivity {
             Tgl_input_satu.setText(tgl_satu + " / " + "Rp." + formattedNumber);
         }
         if (Tgl_input_dua.getText().toString().equalsIgnoreCase("")) {
-            Tgl_input_dua.setText("Belum di input");
+            Tgl_input_dua.setText("-");
         } else {
             int result = Integer.parseInt(total_dua);
             NumberFormat formatter = new DecimalFormat("#,###");
@@ -128,7 +128,7 @@ public class activity_data_transaksi extends AppCompatActivity {
             Tgl_input_dua.setText(tgl_dua + " / " + "Rp." + formattedNumber);
         }
         if (Tgl_input_tiga.getText().toString().equalsIgnoreCase("")) {
-            Tgl_input_tiga.setText("Belum di input");
+            Tgl_input_tiga.setText("-");
         } else {
             int result = Integer.parseInt(total_tiga);
             NumberFormat formatter = new DecimalFormat("#,###");
@@ -137,7 +137,7 @@ public class activity_data_transaksi extends AppCompatActivity {
             Tgl_input_tiga.setText(tgl_tiga + " / " + "Rp." + formattedNumber);
         }
         if (Tgl_input_empat.getText().toString().equalsIgnoreCase("")) {
-            Tgl_input_empat.setText("Belum di input");
+            Tgl_input_empat.setText("-");
         } else {
             int result = Integer.parseInt(total_empat);
             NumberFormat formatter = new DecimalFormat("#,###");
@@ -217,7 +217,7 @@ public class activity_data_transaksi extends AppCompatActivity {
             if (Presentase.getText().toString().equalsIgnoreCase("80")) {
                 Pembayaran.setVisibility(View.VISIBLE);
                 img_status_pembayaran.setImageDrawable(getResources().getDrawable(R.drawable.lunas_3, getApplicationContext().getTheme()));
-                Total_biaya.setText("Kosong");
+                Total_biaya.setText("-");
                 Pembayaran.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -293,7 +293,7 @@ public class activity_data_transaksi extends AppCompatActivity {
             if (Presentase.getText().toString().equalsIgnoreCase("95")) {
                 Pembayaran_2.setVisibility(View.VISIBLE);
                 img_status_pembayaran.setImageDrawable(getResources().getDrawable(R.drawable.lunas_6, getApplicationContext().getTheme()));
-                Total_biaya.setText("Kosong");
+                Total_biaya.setText("-");
                 Pembayaran_2.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -305,7 +305,7 @@ public class activity_data_transaksi extends AppCompatActivity {
         if (Status_empat.getText().toString().equalsIgnoreCase("Lunas")) {
             if (Presentase.getText().toString().equalsIgnoreCase("100")) {
                 img_status_pembayaran.setImageDrawable(getResources().getDrawable(R.drawable.lunas_7, getApplicationContext().getTheme()));
-                Total_biaya.setText("Kosong");
+                Total_biaya.setText("-");
             }
         }
 

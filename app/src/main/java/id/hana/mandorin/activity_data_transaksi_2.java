@@ -507,7 +507,7 @@ public class activity_data_transaksi_2 extends AppCompatActivity {
                     public void onResponse(String ServerResponse) {
 
                         // Showing response message coming from server.
-                        Toast.makeText(activity_data_transaksi_2.this, ServerResponse, Toast.LENGTH_LONG).show();
+                        //Toast.makeText(activity_data_transaksi_2.this, ServerResponse, Toast.LENGTH_LONG).show();
                     }
                 },
                 new Response.ErrorListener() {
@@ -621,7 +621,7 @@ public class activity_data_transaksi_2 extends AppCompatActivity {
                     public void onResponse(String ServerResponse) {
 
                         // Showing response message coming from server.
-                        Toast.makeText(activity_data_transaksi_2.this, ServerResponse, Toast.LENGTH_LONG).show();
+                        //Toast.makeText(activity_data_transaksi_2.this, ServerResponse, Toast.LENGTH_LONG).show();
                     }
                 },
                 new Response.ErrorListener() {

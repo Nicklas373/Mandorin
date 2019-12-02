@@ -377,7 +377,7 @@ public class activity_edit_akun extends AppCompatActivity {
                     public void onResponse(String ServerResponse) {
 
                         // Showing response message coming from server.
-                        Toast.makeText(activity_edit_akun.this, ServerResponse, Toast.LENGTH_LONG).show();
+                        //Toast.makeText(activity_edit_akun.this, ServerResponse, Toast.LENGTH_LONG).show();
                     }
                 },
                 new Response.ErrorListener() {

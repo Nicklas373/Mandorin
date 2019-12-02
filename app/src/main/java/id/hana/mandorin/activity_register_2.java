@@ -1,5 +1,6 @@
 package id.hana.mandorin;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
@@ -32,6 +33,7 @@ public class activity_register_2 extends AppCompatActivity {
     private EditText inputPassword, inputPasswordver;
     private Button btnSignUp;
     private FirebaseAuth auth;
+    ProgressDialog dialog;
     SharedPreferences pref;
     SharedPreferences.Editor editor;
 
@@ -82,15 +84,15 @@ public class activity_register_2 extends AppCompatActivity {
                             .addOnCompleteListener(activity_register_2.this, new OnCompleteListener() {
                                 @Override
                                 public void onComplete(@NonNull Task task) {
-                                    Toast.makeText(activity_register_2.this, "Akun berhasil di buat" + task.isSuccessful(), Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(activity_register_2.this, "Akun berhasil di buat", Toast.LENGTH_SHORT).show();
 
                                     if (!task.isSuccessful()) {
-                                        Toast.makeText(activity_register_2.this, "Akun gagal di buat" + task.getException(),
-                                                Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(activity_register_2.this, "Akun gagal di buat", Toast.LENGTH_LONG).show();
                                     } else {
                                         createdata();
                                         try
                                         {
+                                            dialog = ProgressDialog.show(activity_register_2.this, "Daftar Akun", "Memproses...", true);
                                             SharedPreferences.Editor editor = pref.edit ();
                                             editor.putString("email",dbg.getText().toString());
                                             editor.apply();
@@ -126,14 +128,14 @@ public class activity_register_2 extends AppCompatActivity {
     }
 
     private void createdata() {
-        String HttpUrl = "http://mandorin.site/mandorin/php/user/create_init_user.php";
+        String HttpUrl = "http://mandorin.site/mandorin/php/user/new/insert_data_user.php";
         StringRequest stringRequest = new StringRequest(Request.Method.POST, HttpUrl,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String ServerResponse) {
 
                         // Showing response message coming from server.
-                        Toast.makeText(activity_register_2.this, ServerResponse, Toast.LENGTH_LONG).show();
+                        //Toast.makeText(activity_register_2.this, ServerResponse, Toast.LENGTH_LONG).show();
                     }
                 },
                 new Response.ErrorListener() {

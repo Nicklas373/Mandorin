@@ -90,7 +90,7 @@ public class activity_user_profile extends AppCompatActivity {
         @Override
         protected Void doInBackground(Void... arg0)
         {
-            String adress = "http://mandorin.site/mandorin/php/user/test_read.php?email=" + usermail_2;
+            String adress = "http://mandorin.site/mandorin/php/user/new/read_data_user.php?email=" + usermail_2;
             HttpClient myClient = new DefaultHttpClient();
             HttpPost myConnection = new HttpPost(adress);
 
@@ -122,12 +122,42 @@ public class activity_user_profile extends AppCompatActivity {
         protected void onPostExecute(Void result)
         {
             try {
-                userfname.setText(json.getString("nama_lengkap"));
-                usermail.setText(json.getString("email"));
-                userage.setText(json.getString("umur") + " Tahun");
-                userid.setText(json.getString("nik"));
-                userphone.setText(json.getString("telp"));
-                useraddress.setText(json.getString("alamat"));
+                String username = json.getString("nama_lengkap");
+                if (username.equalsIgnoreCase("")) {
+                    userfname.setText("-");
+                } else {
+                    userfname.setText(json.getString("nama_lengkap"));
+                }
+                String usermail_2 = json.getString("email");
+                if (usermail_2.equalsIgnoreCase("")) {
+                    usermail.setText("-");
+                } else {
+                    usermail.setText(usermail_2);
+                }
+                String userage_2 = json.getString("umur");
+                if (userage_2.equalsIgnoreCase("")) {
+                    userage.setText("-");
+                } else {
+                    userage.setText(userage_2 + " Tahun");
+                }
+                String userid_2 = json.getString("nik");
+                if (userid_2.equalsIgnoreCase("")) {
+                    userid.setText("-");
+                } else {
+                    userid.setText(userid_2);
+                }
+                String userphone_2 = json.getString("telp");
+                if (userphone_2.equalsIgnoreCase("")) {
+                    userphone.setText("-");
+                } else {
+                    userphone.setText(userphone_2);
+                }
+                String useraddress_2 = json.getString("alamat");
+                if (useraddress_2.equalsIgnoreCase("")) {
+                    useraddress.setText("-");
+                } else {
+                    useraddress.setText(useraddress_2);
+                }
                 userpic_dummy.setText(json.getString("foto_user"));
                 String uri = "@drawable/profil";  // where myresource (without the extension) is the file
                 if (userpic_dummy.getText().toString().equalsIgnoreCase("")) {
