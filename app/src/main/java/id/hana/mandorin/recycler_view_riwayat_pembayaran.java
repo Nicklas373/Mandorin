@@ -48,7 +48,7 @@ public class recycler_view_riwayat_pembayaran extends RecyclerView.Adapter<recyc
         double myNumber = result;
         String formattedNumber = formatter.format(myNumber);
         Viewholder.Biaya_Desain.setText(formattedNumber);
-        int result_2 = Integer.parseInt(getRenovasiDataAdapter1.getBiaya_desain());
+        int result_2 = Integer.parseInt(getRenovasiDataAdapter1.getBiaya_konstruksi());
         NumberFormat formatter2 = new DecimalFormat("#,###");
         double myNumber2 = result_2;
         String formattedNumber2 = formatter2.format(myNumber2);
