@@ -1,8 +1,8 @@
 package id.hana.mandorin;
 
-public class GetDataPembayaranRenovasiAdapter{
+public class GetDataTransaksiAdapter {
 
-    public String id, nomor_kontrak, nama_pemesan, email, no_telp, alamat, no_rekening, total_pembayaran, status_satu, status_dua, status_tiga, total_satu, total_dua, total_tiga, tgl_input_satu, tgl_input_dua, tgl_input_tiga, bukti_satu, bukti_dua, bukti_tiga;
+    public String id, nomor_kontrak, nama_pemesan, email, alamat, no_telp, biaya_desain, biaya_konstruksi, no_rekening, status_desain, status_satu, status_dua, status_tiga, status_empat, total_satu, total_dua, total_tiga, total_empat, tgl_input_satu, tgl_input_dua, tgl_input_tiga, tgl_input_empat, tgl_input_desain, bukti_satu, bukti_dua, bukti_tiga, bukti_empat, bukti_desain, presentase;
 
     public String getId() {
         return id;
@@ -36,29 +36,48 @@ public class GetDataPembayaranRenovasiAdapter{
         this.email= email;
     }
 
-    public String getAlamat() { return alamat; }
+    public String getAlamat() {
+        return alamat;
+    }
 
     public void setAlamat(String alamat)
     {
         this.alamat= alamat;
     }
 
-    public String getNo_telp() { return no_telp; }
+    public String getNo_telp() {
+        return no_telp;
+    }
 
-    public void setNo_telp (String no_telp) { this.no_telp= no_telp; }
+    public void setNo_telp (String no_telp) {
+        this.no_telp= no_telp;
+    }
 
-    public String getTotal_pembayaran() { return total_pembayaran; }
+    public String getBiaya_konstruksi() {
+        return biaya_konstruksi;
+    }
 
-    public void setTotal_pembayaran(String total_pembayaran)
+    public void setBiaya_konstruksi(String biaya_konstruksi)
     {
-        this.total_pembayaran= total_pembayaran;
+        this.biaya_konstruksi= biaya_konstruksi;
+    }
+
+    public String getBiaya_desain() {
+        return biaya_desain;
+    }
+
+    public void setBiaya_desain(String biaya_desain)
+    {
+        this.biaya_desain= biaya_desain;
     }
 
     public String getNo_rekening() {
         return no_rekening;
     }
 
-    public void setNo_rekening(String no_rekening) { this.no_rekening= no_rekening; }
+    public void setNo_rekening(String no_rekening) {
+        this.no_rekening= no_rekening;
+    }
 
     public String getStatus_satu() {
         return status_satu;
@@ -82,6 +101,22 @@ public class GetDataPembayaranRenovasiAdapter{
 
     public void setStatus_tiga(String status_tiga) {
         this.status_tiga= status_tiga;
+    }
+
+    public String getStatus_empat() {
+        return status_empat;
+    }
+
+    public void setStatus_empat(String status_empat) {
+        this.status_empat= status_empat;
+    }
+
+    public String getStatus_desain() {
+        return status_desain;
+    }
+
+    public void setStatus_desain(String status_desain) {
+        this.status_desain= status_desain;
     }
 
     public String getTotal_satu() {
@@ -108,6 +143,22 @@ public class GetDataPembayaranRenovasiAdapter{
         this.total_tiga= total_tiga;
     }
 
+    public String getTotal_empat() {
+        return total_empat;
+    }
+
+    public void setTotal_empat(String total_empat) {
+        this.total_empat = total_empat;
+    }
+
+    public String getBukti_desain() {
+        return bukti_desain;
+    }
+
+    public void setBukti_desain(String bukti_desain) {
+        this.bukti_desain= bukti_desain;
+    }
+
     public String getBukti_satu() {
         return bukti_satu;
     }
@@ -117,7 +168,7 @@ public class GetDataPembayaranRenovasiAdapter{
     }
 
     public String getBukti_dua() {
-        return total_dua;
+        return bukti_dua;
     }
 
     public void setBukti_dua(String bukti_dua) {
@@ -130,6 +181,14 @@ public class GetDataPembayaranRenovasiAdapter{
 
     public void setBukti_tiga(String bukti_tiga) {
         this.bukti_tiga= bukti_tiga;
+    }
+
+    public String getBukti_empat() {
+        return bukti_empat;
+    }
+
+    public void setBukti_empat(String bukti_empat) {
+        this.bukti_empat= bukti_empat;
     }
 
     public String getTgl_input_satu() {
@@ -154,5 +213,29 @@ public class GetDataPembayaranRenovasiAdapter{
 
     public void setTgl_input_tiga(String tgl_input_tiga) {
         this.tgl_input_tiga= tgl_input_tiga;
+    }
+
+    public String getTgl_input_empat() {
+        return tgl_input_empat;
+    }
+
+    public void setTgl_input_empat(String tgl_input_empat) {
+        this.tgl_input_empat= tgl_input_empat;
+    }
+
+    public String getTgl_input_desain() {
+        return tgl_input_desain;
+    }
+
+    public void setTgl_input_desain(String tgl_input_desain) {
+        this.tgl_input_desain= tgl_input_desain;
+    }
+
+    public String getPresentase() {
+        return presentase;
+    }
+
+    public void setPresentase(String presentase) {
+        this.presentase= presentase;
     }
 }

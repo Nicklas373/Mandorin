@@ -19,7 +19,7 @@
         app:layout_constraintVertical_bias="0.0">
 
         <android.support.v7.widget.CardView
-            android:id="@+id/back_activity_data_pembayaran_renovasi"
+            android:id="@+id/back_activity_data_transaksi"
             android:layout_width="24dp"
             android:layout_height="wrap_content"
             android:clickable="true"
@@ -70,7 +70,7 @@
                 app:cardUseCompatPadding="true">
 
                 <android.support.v7.widget.CardView
-                    android:id="@+id/cv_title_data_pemesan"
+                    android:id="@+id/cv_title_data_transaksi"
                     android:layout_width="125dp"
                     android:layout_height="35dp"
                     android:layout_marginTop="8dp"
@@ -94,10 +94,11 @@
                 </android.support.v7.widget.CardView>
 
                 <android.support.v7.widget.CardView
-                    android:id="@+id/cv_title_nomor_kontrak"
+                    android:id="@+id/cv_title_nomor_kontrak_transaksi"
                     android:layout_width="125dp"
                     android:layout_height="35dp"
                     android:layout_marginTop="56dp"
+                    android:layout_marginStart="10dp"
                     android:clickable="true"
                     android:focusable="true"
                     android:foreground="?android:attr/selectableItemBackground"
@@ -117,7 +118,7 @@
                 </android.support.v7.widget.CardView>
 
                 <TextView
-                    android:id="@+id/user_input_nomor_kontrak"
+                    android:id="@+id/user_input_nomor_kontrak_transaksi"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
@@ -136,6 +137,7 @@
                     android:layout_width="125dp"
                     android:layout_height="35dp"
                     android:layout_marginTop="106dp"
+                    android:layout_marginStart="10dp"
                     android:clickable="true"
                     android:focusable="true"
                     android:foreground="?android:attr/selectableItemBackground"
@@ -155,7 +157,7 @@
                 </android.support.v7.widget.CardView>
 
                 <TextView
-                    android:id="@+id/user_input_nama_pemesan"
+                    android:id="@+id/user_input_nama_pemesan_transaksi"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
@@ -174,6 +176,7 @@
                     android:layout_width="125dp"
                     android:layout_height="35dp"
                     android:layout_marginTop="156dp"
+                    android:layout_marginStart="10dp"
                     android:clickable="true"
                     android:focusable="true"
                     android:foreground="?android:attr/selectableItemBackground"
@@ -193,7 +196,7 @@
                 </android.support.v7.widget.CardView>
 
                 <TextView
-                    android:id="@+id/user_input_no_telp"
+                    android:id="@+id/user_input_no_telp_transaksi"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
@@ -212,7 +215,7 @@
             <android.support.v7.widget.CardView
                 android:id="@+id/cv_pembayaran_2"
                 android:layout_width="380dp"
-                android:layout_height="430dp"
+                android:layout_height="650dp"
                 app:cardBackgroundColor="#fff"
                 app:cardCornerRadius="12dp"
                 app:cardMaxElevation="2dp"
@@ -245,12 +248,12 @@
                 </android.support.v7.widget.CardView>
 
                 <ImageView
-                    android:id="@+id/image_pembayaran_bangun_baru"
+                    android:id="@+id/image_pembayaran_transaksi"
                     android:layout_width="match_parent"
                     android:layout_height="160dp"
-                    android:src="@drawable/lunas_1"
+                    android:layout_marginTop="90dp"
                     android:contentDescription="@string/heck"
-                    android:layout_marginTop="90dp"/>
+                    android:src="@drawable/lunas_1" />
 
                 <android.support.v7.widget.CardView
                     android:id="@+id/cv_title_pembayaran_1"
@@ -278,59 +281,13 @@
                 </android.support.v7.widget.CardView>
 
                 <android.support.v7.widget.CardView
-                    android:id="@+id/cv_title_pembayaran_2"
-                    android:layout_width="100dp"
-                    android:layout_height="30dp"
-                    android:layout_marginTop="255dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:layout_marginStart="10dp"
-                    android:foreground="?android:attr/selectableItemBackground"
-                    app:cardBackgroundColor="@color/colorPrimary"
-                    app:cardMaxElevation="2dp"
-                    app:cardUseCompatPadding="true">
-
-                    <TextView
-                        android:id="@+id/user_input_pembayaran_1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="start"
-                        android:background="@color/colorPrimary"
-                        android:textColor="#fff" />
-
-                </android.support.v7.widget.CardView>
-
-                <android.support.v7.widget.CardView
-                    android:id="@+id/cv_title_pembayaran_3"
-                    android:layout_width="100dp"
-                    android:layout_height="30dp"
-                    android:layout_marginTop="215dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:layout_marginStart="10dp"
-                    android:foreground="?android:attr/selectableItemBackground"
-                    app:cardBackgroundColor="@color/colorPrimary"
-                    app:cardMaxElevation="2dp"
-                    app:cardUseCompatPadding="true">
-
-                    <TextView
-                        android:id="@+id/user_input_tgl_1_renovasi"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:textColor="#fff"/>
-
-                </android.support.v7.widget.CardView>
-
-
-                <android.support.v7.widget.CardView
                     android:id="@+id/cv_title_pembayaran_4"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_marginTop="90dp"
                     android:clickable="true"
                     android:focusable="true"
-                    android:layout_marginStart="165dp"
+                    android:layout_marginStart="120dp"
                     android:foreground="?android:attr/selectableItemBackground"
                     app:cardBackgroundColor="@color/colorPrimary"
                     app:cardMaxElevation="2dp"
@@ -349,58 +306,13 @@
                 </android.support.v7.widget.CardView>
 
                 <android.support.v7.widget.CardView
-                    android:id="@+id/cv_title_pembayaran_5"
-                    android:layout_width="100dp"
-                    android:layout_height="30dp"
-                    android:layout_marginTop="255dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:layout_marginStart="135dp"
-                    android:foreground="?android:attr/selectableItemBackground"
-                    app:cardBackgroundColor="@color/colorPrimary"
-                    app:cardMaxElevation="2dp"
-                    app:cardUseCompatPadding="true">
-
-                    <TextView
-                        android:id="@+id/user_input_pembayaran_2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="start"
-                        android:background="@color/colorPrimary"
-                        android:textColor="#fff" />
-
-                </android.support.v7.widget.CardView>
-
-                <android.support.v7.widget.CardView
-                    android:id="@+id/cv_title_pembayaran_6"
-                    android:layout_width="100dp"
-                    android:layout_height="30dp"
-                    android:layout_marginTop="215dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:layout_marginStart="135dp"
-                    android:foreground="?android:attr/selectableItemBackground"
-                    app:cardBackgroundColor="@color/colorPrimary"
-                    app:cardMaxElevation="2dp"
-                    app:cardUseCompatPadding="true">
-
-                    <TextView
-                        android:id="@+id/user_input_tgl_2_renovasi"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:textColor="#fff"/>
-
-                </android.support.v7.widget.CardView>
-
-                <android.support.v7.widget.CardView
                     android:id="@+id/cv_title_pembayaran_7"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_marginTop="90dp"
                     android:clickable="true"
                     android:focusable="true"
-                    android:layout_marginStart="290dp"
+                    android:layout_marginStart="207dp"
                     android:foreground="?android:attr/selectableItemBackground"
                     app:cardBackgroundColor="@color/colorPrimary"
                     app:cardMaxElevation="2dp"
@@ -420,55 +332,407 @@
 
                 <android.support.v7.widget.CardView
                     android:id="@+id/cv_title_pembayaran_8"
-                    android:layout_width="100dp"
-                    android:layout_height="30dp"
-                    android:layout_marginTop="255dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="90dp"
                     android:clickable="true"
                     android:focusable="true"
-                    android:layout_marginStart="260dp"
+                    android:layout_marginStart="291dp"
                     android:foreground="?android:attr/selectableItemBackground"
                     app:cardBackgroundColor="@color/colorPrimary"
                     app:cardMaxElevation="2dp"
                     app:cardUseCompatPadding="true">
 
                     <TextView
-                        android:id="@+id/user_input_pembayaran_3"
-                        android:layout_width="wrap_content"
+                        android:id="@+id/textView14"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="start"
-                        android:background="@color/colorPrimary"
-                        android:textColor="#fff" />
+                        android:layout_gravity="center"
+                        android:textSize="20sp"
+                        android:text="@string/app_mandor_data_pembayaran_renovasi_9"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff" />
 
                 </android.support.v7.widget.CardView>
 
                 <android.support.v7.widget.CardView
-                    android:id="@+id/cv_title_pembayaran_9"
-                    android:layout_width="100dp"
-                    android:layout_height="30dp"
-                    android:layout_marginTop="215dp"
+                    android:id="@+id/cv_title_detail_transaksi"
+                    android:layout_width="135dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="250dp"
                     android:clickable="true"
                     android:focusable="true"
-                    android:layout_marginStart="260dp"
                     android:foreground="?android:attr/selectableItemBackground"
                     app:cardBackgroundColor="@color/colorPrimary"
                     app:cardMaxElevation="2dp"
                     app:cardUseCompatPadding="true">
 
                     <TextView
-                        android:id="@+id/user_input_tgl_3_renovasi"
-                        android:layout_width="wrap_content"
+                        android:id="@+id/textView99"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:textColor="#fff"/>
+                        android:layout_gravity="center"
+                        android:text="@string/app_mandor_data_pembayaran_renovasi_8"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff" />
 
                 </android.support.v7.widget.CardView>
 
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cv_title_transaksi_1"
+                    android:layout_width="135dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="320dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardBackgroundColor="@color/colorPrimary"
+                    app:cardMaxElevation="2dp"
+                    app:cardUseCompatPadding="true">
+
+                    <TextView
+                        android:id="@+id/textView98"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/app_mandor_data_pembayaran_renovasi_10"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff" />
+
+                </android.support.v7.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/user_input_tgl_1_transaksi"
+                        android:layout_marginTop="335dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:textColor="#000"/>
+
+                <View
+                    android:layout_width="180dp"
+                    android:layout_height="1dp"
+                    android:background="#000"
+                    android:layout_marginTop="360dp"
+                    android:layout_gravity="end" />
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cv_title_transaksi_2"
+                    android:layout_width="135dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="400dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardBackgroundColor="@color/colorPrimary"
+                    app:cardMaxElevation="2dp"
+                    app:cardUseCompatPadding="true">
+
+                    <TextView
+                        android:id="@+id/textView97"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/app_mandor_data_pembayaran_renovasi_11"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff" />
+
+                </android.support.v7.widget.CardView>
+
+                <TextView
+                    android:id="@+id/user_input_tgl_2_transaksi"
+                    android:layout_marginTop="415dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:textColor="#000"/>
+
+                <View
+                    android:layout_width="180dp"
+                    android:layout_height="1dp"
+                    android:background="#000"
+                    android:layout_marginTop="440dp"
+                    android:layout_gravity="end" />
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cv_title_transaksi_3"
+                    android:layout_width="135dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="480dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardBackgroundColor="@color/colorPrimary"
+                    app:cardMaxElevation="2dp"
+                    app:cardUseCompatPadding="true">
+
+                    <TextView
+                        android:id="@+id/textView96"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/app_mandor_data_pembayaran_renovasi_12"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff" />
+
+                </android.support.v7.widget.CardView>
+
+                <TextView
+                    android:id="@+id/user_input_tgl_3_transaksi"
+                    android:layout_marginTop="495dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:textColor="#000"/>
+
+                <View
+                    android:layout_width="180dp"
+                    android:layout_height="1dp"
+                    android:background="#000"
+                    android:layout_marginTop="520dp"
+                    android:layout_gravity="end" />
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cv_title_transaksi_4"
+                    android:layout_width="135dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="560dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardBackgroundColor="@color/colorPrimary"
+                    app:cardMaxElevation="2dp"
+                    app:cardUseCompatPadding="true">
+
+                    <TextView
+                        android:id="@+id/textView95"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/app_mandor_data_pembayaran_renovasi_13"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff" />
+
+                </android.support.v7.widget.CardView>
+
+                <TextView
+                    android:id="@+id/user_input_tgl_4_transaksi"
+                    android:layout_marginTop="575dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:textColor="#000"/>
+
+                <View
+                    android:layout_width="180dp"
+                    android:layout_height="1dp"
+                    android:background="#000"
+                    android:layout_marginTop="600dp"
+                    android:layout_gravity="end" />
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cv_pembayaran_3"
+                android:layout_width="380dp"
+                android:layout_height="400dp"
+                app:cardBackgroundColor="#fff"
+                app:cardCornerRadius="12dp"
+                app:cardMaxElevation="2dp"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center_horizontal"
+                app:cardUseCompatPadding="true">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cv_title_rincian_pembayaran"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardBackgroundColor="@color/colorPrimary"
+                    app:cardMaxElevation="2dp"
+                    app:cardUseCompatPadding="true">
+
+                    <TextView
+                        android:id="@+id/textView17"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/app_mandor_data_pembayaran_renovasi_14"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff" />
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                android:id="@+id/cv_title_rincian_pembayaran_1"
+                android:layout_width="140dp"
+                android:layout_height="40dp"
+                android:layout_gravity="start"
+                android:layout_marginTop="100dp"
+                    android:layout_marginStart="10dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardBackgroundColor="@color/colorPrimary"
+                app:cardMaxElevation="2dp"
+                app:cardUseCompatPadding="true">
+
+                <TextView
+                    android:id="@+id/textView18"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/app_mandor_data_pembayaran_renovasi_15"
+                    android:textAlignment="center"
+                    android:textColor="#ffffff" />
+
+            </android.support.v7.widget.CardView>
+
+                <TextView
+                    android:id="@+id/user_input_biaya_desain"
+                    android:layout_marginTop="110dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:textColor="#000"/>
+
+                <View
+                    android:layout_width="180dp"
+                    android:layout_height="1dp"
+                    android:background="#000"
+                    android:layout_marginTop="130dp"
+                    android:layout_gravity="end" />
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cv_title_rincian_pembayaran_2"
+                    android:layout_width="140dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="start"
+                    android:layout_marginTop="160dp"
+                    android:layout_marginStart="10dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardBackgroundColor="@color/colorPrimary"
+                    app:cardMaxElevation="2dp"
+                    app:cardUseCompatPadding="true">
+
+                    <TextView
+                        android:id="@+id/textView19"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/app_mandor_data_pembayaran_renovasi_16"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff" />
+
+                </android.support.v7.widget.CardView>
+
+                <TextView
+                    android:id="@+id/user_input_biaya_konstruksi"
+                    android:layout_marginTop="170dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:textColor="#000"/>
+
+                <View
+                    android:layout_width="180dp"
+                    android:layout_height="1dp"
+                    android:background="#000"
+                    android:layout_marginTop="190dp"
+                    android:layout_gravity="end" />
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cv_title_rincian_pembayaran_3"
+                    android:layout_width="140dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="start"
+                    android:layout_marginTop="220dp"
+                    android:layout_marginStart="10dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardBackgroundColor="@color/colorPrimary"
+                    app:cardMaxElevation="2dp"
+                    app:cardUseCompatPadding="true">
+
+                    <TextView
+                        android:id="@+id/textView20"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/app_mandor_data_pembayaran_renovasi_17"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff" />
+
+                </android.support.v7.widget.CardView>
+
+                <TextView
+                    android:id="@+id/user_input_biaya_sekarang"
+                    android:layout_marginTop="235dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:textColor="#000"/>
+
+                <View
+                    android:layout_width="180dp"
+                    android:layout_height="1dp"
+                    android:background="#000"
+                    android:layout_marginTop="257dp"
+                    android:layout_gravity="end" />
+
                 <Button
-                    android:id="@+id/pembayaran_renovasi"
-                    android:layout_width="130dp"
+                    android:id="@+id/proses_transaksi"
+                    android:layout_width="150dp"
                     android:layout_height="35dp"
-                    android:layout_marginTop="170sp"
-                    android:textSize="18sp"
+                    android:layout_marginTop="150sp"
+                    android:background="@color/colorPrimary"
+                    android:textColor="#fff"
+                    android:textAllCaps="false"
+                    android:text="@string/app_mandor_data_pembayaran_renovasi_7"
+                    android:layout_gravity="center" />
+
+                <Button
+                    android:id="@+id/proses_transaksi_2"
+                    android:layout_width="150dp"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="150sp"
                     android:background="@color/colorPrimary"
                     android:textColor="#fff"
                     android:textAllCaps="false"
@@ -491,6 +755,20 @@
 
                 <TextView
                     android:id="@+id/user_input_status_3"
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/user_input_status_4"
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/user_input_presentase"
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"

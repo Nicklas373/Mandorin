@@ -7,6 +7,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -42,13 +44,13 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
-public class activity_data_pembayaran_bangun_dari_awal_2 extends AppCompatActivity {
+public class activity_data_transaksi_2 extends AppCompatActivity {
 
     /*
      * Layout Component Initializations
      * Textview, Imageview, CardView & Button
      */
-    private TextView Nomor_Rekening, FileName, id_1, nomor_kontrak_1, nama_pemesan_1, email_1, alamat_1, no_telp_1, total_pembayaran_1, status_satu_1, status_dua_1, status_tiga_1, total_satu_1, total_dua_1, total_tiga_1, tgl_satu, tgl_dua, tgl_tiga, bukti_satu_1, bukti_dua_1, bukti_tiga_1;
+    private TextView Nomor_Rekening, FileName, id_1, nomor_kontrak_1, nama_pemesan_1, email_1, alamat_1, no_telp_1, biaya_desain_1, biaya_konstruksi_1, status_satu_1, status_dua_1, status_tiga_1, status_empat_1, status_desain_1, total_satu_1, total_dua_1, total_tiga_1, total_empat_1, tgl_satu, tgl_dua, tgl_tiga, tgl_empat, tgl_desain_1, bukti_satu_1, bukti_dua_1,  bukti_tiga_1, bukti_empat_1, bukti_desain_1, presentase_1;
     private Button Kirim;
     private CardView back;
     private ImageView upload;
@@ -59,7 +61,7 @@ public class activity_data_pembayaran_bangun_dari_awal_2 extends AppCompatActivi
      */
     private static final int STORAGE_PERMISSION_CODE = 123;
     private String selectedFilePath;
-    private String SERVER_URL = "http://mandorin.site/mandorin/upload_bukti_pembayaran_bangun_dari_awal.php";
+    private String SERVER_URL = "http://mandorin.site/mandorin/upload_bukti_pembayaran.php";
     private static final int PICK_FILE_REQUEST = 1;
 
     //Image request code
@@ -68,85 +70,112 @@ public class activity_data_pembayaran_bangun_dari_awal_2 extends AppCompatActivi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_data_pembayaran_bangun_dari_awal_2);
+        setContentView(R.layout.activity_data_transaksi_2);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         /*
          * Layout ID Initializations
          * TextView, CardView & Button
          */
-        id_1 = findViewById(R.id.identitas_pemesan_pembayaran_bangun_dari_awal_2);
-        nomor_kontrak_1 = findViewById(R.id.nomor_kontrak_pembayaran_bangun_dari_awal_2);
-        nama_pemesan_1 = findViewById(R.id.nama_pemesan_pembayaran_bangun_dari_awal_2);
-        email_1 = findViewById(R.id.email_pemesan_pembayaran_bangun_dari_awal_2);
-        alamat_1 = findViewById(R.id.alamat_pemesan_pembayaran_bangun_dari_awal_2);
-        no_telp_1 = findViewById(R.id.no_telp_pemesan_pembayaran_bangun_dari_awal_2);
-        total_pembayaran_1 = findViewById(R.id.total_pembayaran_pemesan_pembayaran_bangun_dari_awal_2);
-        Nomor_Rekening = findViewById(R.id.user_input_nomor_rekening_bangun_dari_awal_2);
-        status_satu_1 = findViewById(R.id.status_satu_pemesan_pembayaran_bangun_dari_awal_2);
-        status_dua_1 = findViewById(R.id.status_dua_pemesan_pembayaran_bangun_dari_awal_2);
-        status_tiga_1 = findViewById(R.id.status_tiga_pemesan_pembayaran_bangun_dari_awal_2);
-        total_satu_1 = findViewById(R.id.total_satu_pemesan_pembayaran_bangun_dari_awal_2);
-        total_dua_1 = findViewById(R.id.total_dua_pemesan_pembayaran_bangun_dari_awal_2);
-        total_tiga_1 = findViewById(R.id.total_tiga_pemesan_pembayaran_bangun_dari_awal_2);
-        tgl_satu = findViewById(R.id.tgl_satu_pembayaran_bangun_dari_awal_2);
-        tgl_dua = findViewById(R.id.tgl_dua_pembayaran_bangun_dari_awal_2);
-        tgl_tiga = findViewById(R.id.tgl_tiga_pembayaran_bangun_dari_awal_2);
-        bukti_satu_1 = findViewById(R.id.bukti_satu_pemesan_pembayaran_bangun_dari_awal_2);
-        bukti_dua_1 = findViewById(R.id.bukti_dua_pemesan_pembayaran_bangun_dari_awal_2);
-        bukti_tiga_1 = findViewById(R.id.bukti_tiga_pemesan_pembayaran_bangun_dari_awal_2);
+        id_1 = findViewById(R.id.identitas_pemesan_pembayaran_transaksi_2);
+        nomor_kontrak_1 = findViewById(R.id.nomor_kontrak_pembayaran_transaksi_2);
+        nama_pemesan_1 = findViewById(R.id.nama_pemesan_pembayaran_transaksi_2);
+        email_1 = findViewById(R.id.email_pemesan_pembayaran_transaksi_2);
+        alamat_1 = findViewById(R.id.alamat_pemesan_pembayaran_transaksi_2);
+        no_telp_1 = findViewById(R.id.no_telp_pemesan_pembayaran_transaksi_2);
+        biaya_desain_1 = findViewById(R.id.biaya_desain_pembayaran_transaksi_2);
+        biaya_konstruksi_1 = findViewById(R.id.biaya_konstruksi_pembayaran_transaksi_2);
+        Nomor_Rekening = findViewById(R.id.user_input_nomor_rekening_transaksi_2);
+        status_desain_1 = findViewById(R.id.status_desain_pemesan_pembayaran_transaksi_2);
+        status_satu_1 = findViewById(R.id.status_satu_pemesan_pembayaran_transaksi_2);
+        status_dua_1 = findViewById(R.id.status_dua_pemesan_pembayaran_transaksi_2);
+        status_tiga_1 = findViewById(R.id.status_tiga_pemesan_pembayaran_transaksi_2);
+        status_empat_1 = findViewById(R.id.status_empat_pemesan_pembayaran_transaksi_2);
+        total_satu_1 = findViewById(R.id.total_satu_pemesan_pembayaran_transaksi_2);
+        total_dua_1 = findViewById(R.id.total_dua_pemesan_pembayaran_transaksi_2);
+        total_tiga_1 = findViewById(R.id.total_tiga_pemesan_pembayaran_transaksi_2);
+        total_empat_1 = findViewById(R.id.total_empat_pemesan_pembayaran_transaksi_2);
+        tgl_satu = findViewById(R.id.tgl_satu_pembayaran_transaksi_2);
+        tgl_dua = findViewById(R.id.tgl_dua_pembayaran_transaksi_2);
+        tgl_tiga = findViewById(R.id.tgl_tiga_pembayaran_transaksi_2);
+        tgl_empat = findViewById(R.id.tgl_empat_pembayaran_transaksi_2);
+        tgl_desain_1 = findViewById(R.id.tgl_desain_pembayaran_transaksi_2);
+        bukti_satu_1 = findViewById(R.id.bukti_satu_pemesan_pembayaran_transaksi_2);
+        bukti_dua_1 = findViewById(R.id.bukti_dua_pemesan_pembayaran_transaksi_2);
+        bukti_tiga_1 = findViewById(R.id.bukti_tiga_pemesan_pembayaran_transaksi_2);
+        bukti_empat_1 = findViewById(R.id.bukti_empat_pemesan_pembayaran_transaksi_2);
+        bukti_desain_1 = findViewById(R.id.bukti_desain_pemesan_pembayaran_transaksi_2);
+        presentase_1 = findViewById(R.id.presentase_pemesan_pembayaran_transaksi_2);
         FileName = findViewById(R.id.fileName);
-        upload = findViewById(R.id.upload_pembayaran_bangun_dari_awal_2);
-        Kirim = findViewById(R.id.btn_pembayaran_bangun_dari_awal_2);
-        back = findViewById(R.id.back_activity_data_pembayaran_bangun_dari_awal_2);
+        upload = findViewById(R.id.upload_pembayaran_transaksi_2);
+        Kirim = findViewById(R.id.btn_pembayaran_transaksi_2);
+        back = findViewById(R.id.back_activity_data_transaksi_2);
 
         /*
          * Passing data from last activity
          */
         final String id = getIntent().getExtras().getString("id");
-        final String nomor_kontak = getIntent().getExtras().getString("nomor_kontrak");
+        final String nomor_kontrak = getIntent().getExtras().getString("nomor_kontrak");
         final String nama_pemesan = getIntent().getExtras().getString("nama_pemesan");
         final String email = getIntent().getExtras().getString("email");
         final String alamat = getIntent().getExtras().getString("alamat");
         final String no_telp = getIntent().getExtras().getString("no_telp");
-        final String total_pembayaran = getIntent().getExtras().getString("total_pembayaran");
+        final String biaya_desain = getIntent().getExtras().getString("biaya_desain");
+        final String biaya_konstruksi = getIntent().getExtras().getString("biaya_konstruksi");
         final String no_rekening = getIntent().getExtras().getString("no_rekening");
+        final String status_desain = getIntent().getExtras().getString("status_desain");
         final String status_satu = getIntent().getExtras().getString("status_satu");
         final String status_dua = getIntent().getExtras().getString("status_dua");
         final String status_tiga = getIntent().getExtras().getString("status_tiga");
+        final String status_empat = getIntent().getExtras().getString("status_empat");
         final String total_satu = getIntent().getExtras().getString("total_satu");
         final String total_dua = getIntent().getExtras().getString("total_dua");
         final String total_tiga = getIntent().getExtras().getString("total_tiga");
+        final String total_empat = getIntent().getExtras().getString("total_empat");
         final String tgl_1 = getIntent().getExtras().getString("tgl_input_satu");
         final String tgl_2 = getIntent().getExtras().getString("tgl_input_dua");
         final String tgl_3 = getIntent().getExtras().getString("tgl_input_tiga");
+        final String tgl_4 = getIntent().getExtras().getString("tgl_input_empat");
+        final String tgl_desain = getIntent().getExtras().getString("tgl_input_desain");
         final String bukti_satu = getIntent().getExtras().getString("bukti_satu");
         final String bukti_dua = getIntent().getExtras().getString("bukti_dua");
         final String bukti_tiga = getIntent().getExtras().getString("bukti_tiga");
+        final String bukti_empat = getIntent().getExtras().getString("bukti_empat");
+        final String bukti_desain = getIntent().getExtras().getString("bukti_desain");
+        final String presentase = getIntent().getExtras().getString("presentase");
 
         /*
          * TextView Initializations
          */
         id_1.setText(id);
-        nomor_kontrak_1.setText(nomor_kontak);
+        nomor_kontrak_1.setText(nomor_kontrak);
         nama_pemesan_1.setText(nama_pemesan);
         email_1.setText(email);
         alamat_1.setText(alamat);
         no_telp_1.setText(no_telp);
-        total_pembayaran_1.setText(total_pembayaran);
+        biaya_konstruksi_1.setText(biaya_konstruksi);
+        biaya_desain_1.setText(biaya_desain);
         Nomor_Rekening.setText(no_rekening);
+        status_desain_1.setText(status_desain);
         status_satu_1.setText(status_satu);
         status_dua_1.setText(status_dua);
         status_tiga_1.setText(status_tiga);
+        status_empat_1.setText(status_empat);
         total_satu_1.setText(total_satu);
         total_dua_1.setText(total_dua);
         total_tiga_1.setText(total_tiga);
+        total_empat_1.setText(total_empat);
         tgl_satu.setText(tgl_1);
         tgl_dua.setText(tgl_2);
         tgl_tiga.setText(tgl_3);
+        tgl_empat.setText(tgl_4);
+        tgl_desain_1.setText(tgl_desain);
         bukti_satu_1.setText(bukti_satu);
         bukti_dua_1.setText(bukti_dua);
         bukti_tiga_1.setText(bukti_tiga);
+        bukti_empat_1.setText(bukti_empat);
+        bukti_desain_1.setText(bukti_desain);
+        presentase_1.setText(presentase);
 
         //Requesting storage permission
         requestStoragePermission();
@@ -165,7 +194,7 @@ public class activity_data_pembayaran_bangun_dari_awal_2 extends AppCompatActivi
             public void onClick(View view) {
                 if (selectedFilePath != null) {
                     kirim_dialog();
-                    dialog = ProgressDialog.show(activity_data_pembayaran_bangun_dari_awal_2.this, "", "Memproses...", true);
+                    dialog = ProgressDialog.show(activity_data_transaksi_2.this, "Pembayaran Renovasi", "Memproses...", true);
 
                     new Thread(new Runnable() {
                         @Override
@@ -176,7 +205,7 @@ public class activity_data_pembayaran_bangun_dari_awal_2 extends AppCompatActivi
                     }).start();
 
                 } else {
-                    Toast.makeText(activity_data_pembayaran_bangun_dari_awal_2.this, "Anda Belum Menggungah Berkas", Toast.LENGTH_LONG).show();
+                    Toast.makeText(activity_data_transaksi_2.this, "Anda Belum Menggungah Berkas", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -184,27 +213,36 @@ public class activity_data_pembayaran_bangun_dari_awal_2 extends AppCompatActivi
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(activity_data_pembayaran_bangun_dari_awal_2.this, activity_data_pembayaran_bangun_dari_awal.class);
+                Intent intent = new Intent(activity_data_transaksi_2.this, activity_data_transaksi.class);
                 intent.putExtra("id", id);
-                intent.putExtra("nomor_kontrak", nomor_kontak);
+                intent.putExtra("nomor_kontrak", nomor_kontrak);
                 intent.putExtra("nama_pemesan", nama_pemesan);
                 intent.putExtra("email", email);
                 intent.putExtra("alamat", alamat);
                 intent.putExtra("no_telp", no_telp);
-                intent.putExtra("total_pembayaran", total_pembayaran);
+                intent.putExtra("biaya_desain", biaya_desain);
+                intent.putExtra("biaya_konstruksi", biaya_konstruksi);
                 intent.putExtra("no_rekening", no_rekening);
+                intent.putExtra("status_desain", status_desain);
                 intent.putExtra("status_satu", status_satu);
                 intent.putExtra("status_dua", status_dua);
                 intent.putExtra("status_tiga", status_tiga);
+                intent.putExtra("status_empat", status_empat);
                 intent.putExtra("total_satu", total_satu);
                 intent.putExtra("total_dua", total_dua);
                 intent.putExtra("total_tiga", total_tiga);
+                intent.putExtra("total_empat", total_empat);
                 intent.putExtra("tgl_input_satu", tgl_1);
                 intent.putExtra("tgl_input_dua", tgl_2);
                 intent.putExtra("tgl_input_tiga", tgl_3);
+                intent.putExtra("tgl_input_empat", tgl_4);
+                intent.putExtra("tgl_input_desain", tgl_desain);
                 intent.putExtra("bukti_satu", bukti_satu);
                 intent.putExtra("bukti_dua", bukti_dua);
                 intent.putExtra("bukti_tiga", bukti_tiga);
+                intent.putExtra("bukti_empat", bukti_empat);
+                intent.putExtra("bukti_desain", bukti_desain);
+                intent.putExtra("presentase", presentase);
                 startActivity(intent);
             }
         });
@@ -328,16 +366,16 @@ public class activity_data_pembayaran_bangun_dari_awal_2 extends AppCompatActivi
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        Toast.makeText(activity_data_pembayaran_bangun_dari_awal_2.this, "Berkas Tidak Di Temukan", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(activity_data_transaksi_2.this, "Berkas Tidak Di Temukan", Toast.LENGTH_SHORT).show();
                     }
                 });
             } catch (MalformedURLException e) {
                 e.printStackTrace();
-                Toast.makeText(activity_data_pembayaran_bangun_dari_awal_2.this, "Kesalahan Alamat Website", Toast.LENGTH_SHORT).show();
+                Toast.makeText(activity_data_transaksi_2.this, "Kesalahan Alamat Website", Toast.LENGTH_SHORT).show();
 
             } catch (IOException e) {
                 e.printStackTrace();
-                Toast.makeText(activity_data_pembayaran_bangun_dari_awal_2.this, "Tidak Dapat Membaca File", Toast.LENGTH_SHORT).show();
+                Toast.makeText(activity_data_transaksi_2.this, "Tidak Dapat Membaca File", Toast.LENGTH_SHORT).show();
             }
             dialog.dismiss();
             return serverResponseCode;
@@ -369,6 +407,12 @@ public class activity_data_pembayaran_bangun_dari_awal_2 extends AppCompatActivi
 
                 if (selectedFilePath != null && !selectedFilePath.equals("")) {
                     FileName.setText(selectedFilePath);
+                    File imgFile = new  File(selectedFilePath);
+                    if(imgFile.exists()){
+                        Bitmap myBitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
+                        ImageView myImage = (ImageView) findViewById(R.id.upload_pembayaran_transaksi_2);
+                        myImage.setImageBitmap(myBitmap);
+                    }
                 } else {
                     Toast.makeText(this, "Tidak Dapat Mengunggah Ke Website Mandorin", Toast.LENGTH_SHORT).show();
                 }
@@ -424,11 +468,19 @@ public class activity_data_pembayaran_bangun_dari_awal_2 extends AppCompatActivi
                 .setPositiveButton("Proses",new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog,int id) {
                         try {
-                            createdata();
-                            Intent intent = new Intent(activity_data_pembayaran_bangun_dari_awal_2.this, activity_konfirmasi_bangun_renovasi.class);
+                            if (status_dua_1.getText().toString().equalsIgnoreCase("Menunggu")) {
+                                if (presentase_1.getText().toString().equalsIgnoreCase("80")) {
+                                    createdata();
+                                }
+                            } else  if (status_tiga_1.getText().toString().equalsIgnoreCase("Menunggu")) {
+                                if (presentase_1.getText().toString().equalsIgnoreCase("95")) {
+                                    createdata_2();
+                                }
+                            }
+                            Intent intent = new Intent(activity_data_transaksi_2.this, activity_konfirmasi_bangun_renovasi.class);
                             startActivity(intent);
                         } catch (IllegalArgumentException e) {
-                            Toast.makeText(activity_data_pembayaran_bangun_dari_awal_2.this, "Proses Gagal!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(activity_data_transaksi_2.this, "Proses Gagal!", Toast.LENGTH_SHORT).show();
                             e.printStackTrace();
                         }
                     }
@@ -448,14 +500,14 @@ public class activity_data_pembayaran_bangun_dari_awal_2 extends AppCompatActivi
 
     private void createdata() {
         String id_2 = id_1.getText().toString();
-        String adress = "http://mandorin.site/mandorin/php/user/update_pembayaran_bangun_dari_awal.php?id=" + id_2;
+        String adress = "http://mandorin.site/mandorin/php/user/new/update_data_pembayaran.php?id=" + id_2;
         StringRequest stringRequest = new StringRequest(Request.Method.POST, adress,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String ServerResponse) {
 
                         // Showing response message coming from server.
-                        Toast.makeText(activity_data_pembayaran_bangun_dari_awal_2.this, ServerResponse, Toast.LENGTH_LONG).show();
+                        Toast.makeText(activity_data_transaksi_2.this, ServerResponse, Toast.LENGTH_LONG).show();
                     }
                 },
                 new Response.ErrorListener() {
@@ -463,7 +515,7 @@ public class activity_data_pembayaran_bangun_dari_awal_2 extends AppCompatActivi
                     public void onErrorResponse(VolleyError volleyError) {
 
                         // Showing error message if something goes wrong.
-                        Toast.makeText(activity_data_pembayaran_bangun_dari_awal_2.this, volleyError.toString(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(activity_data_transaksi_2.this, volleyError.toString(), Toast.LENGTH_LONG).show();
                     }
                 })
 
@@ -477,17 +529,23 @@ public class activity_data_pembayaran_bangun_dari_awal_2 extends AppCompatActivi
                 String email = email_1.getText().toString();
                 String alamat = alamat_1.getText().toString();
                 String no_telp = no_telp_1.getText().toString();
-                String total_pembayaran = total_pembayaran_1.getText().toString();
+                String biaya_desain = biaya_desain_1.getText().toString();
+                String biaya_konstruksi = biaya_konstruksi_1.getText().toString();
                 String no_rekening = Nomor_Rekening.getText().toString();
+                String status_desain = status_desain_1.getText().toString();
                 String status = status_satu_1.getText().toString();
                 String status_2 = "Memproses";
                 String status_3 = status_tiga_1.getText().toString();
+                String status_4 = status_empat_1.getText().toString();
                 String total = total_satu_1.getText().toString();
                 String total_2 = total_dua_1.getText().toString();
                 String total_3 = total_tiga_1.getText().toString();
+                String total_4 = total_empat_1.getText().toString();
                 String tgl_1 = tgl_satu.getText().toString();
                 String tgl_2 = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
                 String tgl_3 = tgl_tiga.getText().toString();
+                String tgl_4 = tgl_empat.getText().toString();
+                String tgl_desain = tgl_desain_1.getText().toString();
 
                 String substring = bukti_satu_1.getText().toString();
                 String desain = substring.substring(substring.lastIndexOf("/")+1);
@@ -501,6 +559,13 @@ public class activity_data_pembayaran_bangun_dari_awal_2 extends AppCompatActivi
                 String desain_3 = substring_3.substring(substring.lastIndexOf("/")+1);
                 String bukti_tiga = desain_3.replaceAll("\\s", "");
 
+                String substring_4 = bukti_empat_1.getText().toString();
+                String desain_4 = substring_4.substring(substring.lastIndexOf("/")+1);
+                String bukti_empat = desain_4.replaceAll("\\s", "");
+
+                String bukti_desain = bukti_desain_1.getText().toString();
+                String presentase = presentase_1.getText().toString();
+
                 // Creating Map String Params.
                 Map<String, String> params = new HashMap<String, String>();
 
@@ -511,20 +576,29 @@ public class activity_data_pembayaran_bangun_dari_awal_2 extends AppCompatActivi
                 params.put("email", email);
                 params.put("alamat", alamat);
                 params.put("no_telp", no_telp);
-                params.put("total_pembayaran", total_pembayaran);
+                params.put("biaya_desain", biaya_desain);
+                params.put("biaya_konstruksi", biaya_konstruksi);
                 params.put("no_rekening", no_rekening);
+                params.put("status_desain", status_desain);
                 params.put("status_satu", status);
                 params.put("status_dua", status_2);
                 params.put("status_tiga", status_3);
+                params.put("status_empat", status_4);
                 params.put("total_satu", total);
                 params.put("total_dua", total_2);
                 params.put("total_tiga", total_3);
+                params.put("total_empat", total_4);
                 params.put("tgl_input_satu", tgl_1);
                 params.put("tgl_input_dua", tgl_2);
                 params.put("tgl_input_tiga", tgl_3);
+                params.put("tgl_input_empat", tgl_4);
+                params.put("tgl_input_desain", tgl_desain);
                 params.put("bukti_satu", bukti_satu);
                 params.put("bukti_dua", bukti_dua);
                 params.put("bukti_tiga", bukti_tiga);
+                params.put("bukti_empat", bukti_empat);
+                params.put("bukti_desain", bukti_desain);
+                params.put("presentase", presentase);
 
                 return params;
             }
@@ -532,7 +606,121 @@ public class activity_data_pembayaran_bangun_dari_awal_2 extends AppCompatActivi
         };
 
         // Creating RequestQueue.
-        RequestQueue requestQueue = Volley.newRequestQueue(activity_data_pembayaran_bangun_dari_awal_2.this);
+        RequestQueue requestQueue = Volley.newRequestQueue(activity_data_transaksi_2.this);
+
+        // Adding the StringRequest object into requestQueue.
+        requestQueue.add(stringRequest);
+    }
+
+    private void createdata_2() {
+        String id_2 = id_1.getText().toString();
+        String adress = "http://mandorin.site/mandorin/php/user/new/update_data_pembayaran.php?id=" + id_2;
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, adress,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String ServerResponse) {
+
+                        // Showing response message coming from server.
+                        Toast.makeText(activity_data_transaksi_2.this, ServerResponse, Toast.LENGTH_LONG).show();
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError volleyError) {
+
+                        // Showing error message if something goes wrong.
+                        Toast.makeText(activity_data_transaksi_2.this, volleyError.toString(), Toast.LENGTH_LONG).show();
+                    }
+                })
+
+        {
+            @Override
+            protected Map<String, String> getParams() {
+
+                String id = id_1.getText().toString() ;
+                String nomor_kontrak = nomor_kontrak_1.getText().toString();
+                String nama_pemesan = nama_pemesan_1.getText().toString();
+                String email = email_1.getText().toString();
+                String alamat = alamat_1.getText().toString();
+                String no_telp = no_telp_1.getText().toString();
+                String biaya_desain = biaya_desain_1.getText().toString();
+                String biaya_konstruksi = biaya_konstruksi_1.getText().toString();
+                String no_rekening = Nomor_Rekening.getText().toString();
+                String status_desain = status_desain_1.getText().toString();
+                String status = status_satu_1.getText().toString();
+                String status_2 = status_dua_1.getText().toString();
+                String status_3 = "Memproses";
+                String status_4 = status_empat_1.getText().toString();
+                String total = total_satu_1.getText().toString();
+                String total_2 = total_dua_1.getText().toString();
+                String total_3 = total_tiga_1.getText().toString();
+                String total_4 = total_empat_1.getText().toString();
+                String tgl_1 = tgl_satu.getText().toString();
+                String tgl_2 = tgl_dua.getText().toString();
+                String tgl_3 = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
+                String tgl_4 = tgl_empat.getText().toString();
+                String tgl_desain = tgl_desain_1.getText().toString();
+
+                String substring = bukti_satu_1.getText().toString();
+                String desain = substring.substring(substring.lastIndexOf("/")+1);
+                String bukti_satu = desain.replaceAll("\\s", "");
+
+                String substring_2 = bukti_dua_1.getText().toString();
+                String desain_2 = substring_2.substring(substring.lastIndexOf("/")+1);
+                String bukti_dua = desain_2.replaceAll("\\s", "");
+
+                String substring_3 = FileName.getText().toString();
+                String desain_3 = substring_3.substring(substring.lastIndexOf("/")+1);
+                String bukti_tiga = desain_3.replaceAll("\\s", "");
+
+                String substring_4 = bukti_empat_1.getText().toString();
+                String desain_4 = substring_4.substring(substring.lastIndexOf("/")+1);
+                String bukti_empat = desain_4.replaceAll("\\s", "");
+
+                String bukti_desain = bukti_desain_1.getText().toString();
+                String presentase = presentase_1.getText().toString();
+
+                // Creating Map String Params.
+                Map<String, String> params = new HashMap<String, String>();
+
+                // Adding All values to Params.
+                params.put("id", id);
+                params.put("nomor_kontrak", nomor_kontrak);
+                params.put("nama_pemesan", nama_pemesan);
+                params.put("email", email);
+                params.put("alamat", alamat);
+                params.put("no_telp", no_telp);
+                params.put("biaya_desain", biaya_desain);
+                params.put("biaya_konstruksi", biaya_konstruksi);
+                params.put("no_rekening", no_rekening);
+                params.put("status_desain", status_desain);
+                params.put("status_satu", status);
+                params.put("status_dua", status_2);
+                params.put("status_tiga", status_3);
+                params.put("status_empat", status_4);
+                params.put("total_satu", total);
+                params.put("total_dua", total_2);
+                params.put("total_tiga", total_3);
+                params.put("total_empat", total_4);
+                params.put("tgl_input_satu", tgl_1);
+                params.put("tgl_input_dua", tgl_2);
+                params.put("tgl_input_tiga", tgl_3);
+                params.put("tgl_input_empat", tgl_4);
+                params.put("tgl_input_desain", tgl_desain);
+                params.put("bukti_satu", bukti_satu);
+                params.put("bukti_dua", bukti_dua);
+                params.put("bukti_tiga", bukti_tiga);
+                params.put("bukti_empat", bukti_empat);
+                params.put("bukti_desain", bukti_desain);
+                params.put("presentase", presentase);
+
+                return params;
+            }
+
+        };
+
+        // Creating RequestQueue.
+        RequestQueue requestQueue = Volley.newRequestQueue(activity_data_transaksi_2.this);
 
         // Adding the StringRequest object into requestQueue.
         requestQueue.add(stringRequest);

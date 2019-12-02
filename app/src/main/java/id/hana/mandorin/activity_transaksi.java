@@ -40,7 +40,7 @@ public class activity_transaksi  extends AppCompatActivity {
         s_pembayaran.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(activity_transaksi.this, activity_status_pembayaran.class);
+                Intent intent = new Intent(activity_transaksi.this, activity_status_transaksi.class);
                 startActivity(intent);
             }
         });

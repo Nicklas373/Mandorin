@@ -29,12 +29,12 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class activity_pemesan_pembayaran_bangun_dari_awal extends AppCompatActivity {
+public class activity_status_transaksi extends AppCompatActivity {
 
     /*
      * Recyclerview & Data Adapter Initialization
      */
-    List<GetDataPembayaranBangunDariAwalAdapter> GetDataAdapter4;
+    List<GetDataTransaksiAdapter> GetDataAdapter4;
     RecyclerView recyclerView2;
     RecyclerView.LayoutManager recyclerViewlayoutManager2;
     RecyclerView.Adapter recyclerViewadapter2;
@@ -55,20 +55,29 @@ public class activity_pemesan_pembayaran_bangun_dari_awal extends AppCompatActiv
     String JSON_EMAIL_PEMESAN = "email";
     String JSON_ALAMAT_PEMESAN = "alamat";
     String JSON_NO_TELP_PEMESAN = "no_telp";
-    String JSON_TOTAL_PEMBAYARAN= "total_pembayaran";
+    String JSON_BIAYA_DESAIN = "biaya_desain";
+    String JSON_BIAYA_KONSTRUKSI = "biaya_konstruksi";
     String JSON_NO_REKENING= "no_rekening";
-    String JSON_STATUS_SATU= "status_satu";
-    String JSON_STATUS_DUA= "status_dua";
-    String JSON_STATUS_TIGA= "status_tiga";
-    String JSON_TOTAL_SATU= "total_satu";
-    String JSON_TOTAL_DUA= "total_dua";
-    String JSON_TOTAL_TIGA= "total_tiga";
-    String JSON_TGL_INPUT_SATU= "tgl_input_satu";
-    String JSON_TGL_INPUT_DUA= "tgl_input_dua";
-    String JSON_TGL_INPUT_TIGA= "tgl_input_tiga";
-    String JSON_BUKTI_SATU= "bukti_satu";
-    String JSON_BUKTI_DUA= "bukti_dua";
-    String JSON_BUKTI_TIGA= "bukti_tiga";
+    String JSON_STATUS_DESAIN = "status_desain";
+    String JSON_STATUS_SATU = "status_satu";
+    String JSON_STATUS_DUA = "status_dua";
+    String JSON_STATUS_TIGA = "status_tiga";
+    String JSON_STATUS_EMPAT = "status_empat";
+    String JSON_TOTAL_SATU = "total_satu";
+    String JSON_TOTAL_DUA = "total_dua";
+    String JSON_TOTAL_TIGA = "total_tiga";
+    String JSON_TOTAL_EMPAT = "total_empat";
+    String JSON_TGL_INPUT_SATU = "tgl_input_satu";
+    String JSON_TGL_INPUT_DUA = "tgl_input_dua";
+    String JSON_TGL_INPUT_TIGA = "tgl_input_tiga";
+    String JSON_TGL_INPUT_EMPAT = "tgl_input_empat";
+    String JSON_TGL_INPUT_DESAIN = "tgl_input_desain";
+    String JSON_BUKTI_SATU = "bukti_satu";
+    String JSON_BUKTI_DUA = "bukti_dua";
+    String JSON_BUKTI_TIGA = "bukti_tiga";
+    String JSON_BUKTI_EMPAT = "bukti_empat";
+    String JSON_BUKTI_DESAIN = "bukti_desain";
+    String JSON_PRESENTASE = "presentase";
     JsonArrayRequest jsonArrayRequest ;
     RequestQueue requestQueue ;
 
@@ -76,17 +85,17 @@ public class activity_pemesan_pembayaran_bangun_dari_awal extends AppCompatActiv
      * Layout Component Initializations
      * Textview, Imageview, CardView & Button
      */
-    private TextView con_text_pemesan_pembayaran_renovasi;
-    private ImageView connection_pemesan_pembayaran_renovasi;
-    private Button refresh_pemesan_pembayaran_renovasi;
-    private CardView back_pemesan_pembayaran_renovasi;
+    private TextView con_text_transaksi;
+    private ImageView connection_transaksi;
+    private Button refresh_transaksi;
+    private CardView back_transaksi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        setContentView(R.layout.activity_pemesan_pembayaran_bangun_dari_awal);
+        setContentView(R.layout.activity_status_transaksi);
 
         /*
          * Begin firebase authorization
@@ -98,7 +107,7 @@ public class activity_pemesan_pembayaran_bangun_dari_awal extends AppCompatActiv
          * Recyclerview Layout Initialization
          */
         GetDataAdapter4 = new ArrayList<>();
-        recyclerView2 = findViewById(R.id.recyclerview_pemesan_pembayaran_bangun_dari_awal);
+        recyclerView2 = findViewById(R.id.recyclerview_status_transaksi);
         recyclerView2.setHasFixedSize(true);
         recyclerViewlayoutManager2 = new LinearLayoutManager(this);
         recyclerView2.setLayoutManager(recyclerViewlayoutManager2);
@@ -107,10 +116,10 @@ public class activity_pemesan_pembayaran_bangun_dari_awal extends AppCompatActiv
          * Layout ID Initializations
          * Textview, Imageview & Button
          */
-        con_text_pemesan_pembayaran_renovasi = findViewById(R.id.con_text_pemesan_pembayaran_bangun_dari_awal);
-        connection_pemesan_pembayaran_renovasi = findViewById(R.id.con_image_pemesan_pembayaran_bangun_dari_awal);
-        refresh_pemesan_pembayaran_renovasi = findViewById(R.id.refresh_pemesan_pembayaran_bangun_dari_awal);
-        back_pemesan_pembayaran_renovasi = findViewById(R.id.back_activity_pemesan_pembayaran_bangun_dari_awal);
+        con_text_transaksi = findViewById(R.id.con_text_status_transaksi);
+        connection_transaksi = findViewById(R.id.con_image_status_transaksi);
+        refresh_transaksi = findViewById(R.id.refresh_pembayaran);
+        back_transaksi = findViewById(R.id.back_activity_status_transaksi);
 
         /*
          * Internet Connection Module
@@ -119,17 +128,17 @@ public class activity_pemesan_pembayaran_bangun_dari_awal extends AppCompatActiv
          */
         cek_internet();
 
-        refresh_pemesan_pembayaran_renovasi.setOnClickListener(new View.OnClickListener() {
+        refresh_transaksi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 cek_internet();
             }
         });
 
-        back_pemesan_pembayaran_renovasi.setOnClickListener(new View.OnClickListener() {
+        back_transaksi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(activity_pemesan_pembayaran_bangun_dari_awal.this, activity_status_pembayaran.class);
+                Intent intent = new Intent(activity_status_transaksi.this, activity_transaksi.class);
                 startActivity(intent);
             }
         });
@@ -137,14 +146,14 @@ public class activity_pemesan_pembayaran_bangun_dari_awal extends AppCompatActiv
 
     private void cek_internet() {
         if(internet_available()){
-            connection_pemesan_pembayaran_renovasi.setVisibility(View.GONE);
-            con_text_pemesan_pembayaran_renovasi.setVisibility(View.GONE);
-            refresh_pemesan_pembayaran_renovasi.setVisibility(View.GONE);
+            connection_transaksi.setVisibility(View.GONE);
+            con_text_transaksi.setVisibility(View.GONE);
+            refresh_transaksi.setVisibility(View.GONE);
             JSON_DATA_WEB_CALL();
         }else{
-            connection_pemesan_pembayaran_renovasi.setVisibility(View.VISIBLE);
-            con_text_pemesan_pembayaran_renovasi.setVisibility(View.VISIBLE);
-            refresh_pemesan_pembayaran_renovasi.setVisibility(View.VISIBLE);
+            connection_transaksi.setVisibility(View.VISIBLE);
+            con_text_transaksi.setVisibility(View.VISIBLE);
+            refresh_transaksi.setVisibility(View.VISIBLE);
         }
     }
 
@@ -158,7 +167,7 @@ public class activity_pemesan_pembayaran_bangun_dari_awal extends AppCompatActiv
          * Let's separate this json for sorting
          */
         String email = firebaseUser.getEmail();
-        String GET_JSON_DATA_HTTP_URL = "http://mandorin.site/mandorin/php/user/read_pembayaran_bangun_dari_awal.php?email=" + email;
+        String GET_JSON_DATA_HTTP_URL = "http://mandorin.site/mandorin/php/user/new/read_data_transaksi.php?email=" + email;
 
         jsonArrayRequest = new JsonArrayRequest(GET_JSON_DATA_HTTP_URL,
 
@@ -185,7 +194,7 @@ public class activity_pemesan_pembayaran_bangun_dari_awal extends AppCompatActiv
 
         for(int i = 0; i<array.length(); i++) {
 
-            GetDataPembayaranBangunDariAwalAdapter GetDataAdapter3 = new GetDataPembayaranBangunDariAwalAdapter();
+            GetDataTransaksiAdapter GetDataAdapter3 = new GetDataTransaksiAdapter();
 
             JSONObject json = null;
             try {
@@ -198,20 +207,29 @@ public class activity_pemesan_pembayaran_bangun_dari_awal extends AppCompatActiv
                 GetDataAdapter3.setEmail(json.getString(JSON_EMAIL_PEMESAN));
                 GetDataAdapter3.setNo_telp(json.getString(JSON_NO_TELP_PEMESAN));
                 GetDataAdapter3.setAlamat(json.getString(JSON_ALAMAT_PEMESAN));
-                GetDataAdapter3.setTotal_pembayaran(json.getString(JSON_TOTAL_PEMBAYARAN));
+                GetDataAdapter3.setBiaya_desain(json.getString(JSON_BIAYA_DESAIN));
+                GetDataAdapter3.setBiaya_konstruksi(json.getString(JSON_BIAYA_KONSTRUKSI));
                 GetDataAdapter3.setNo_rekening(json.getString(JSON_NO_REKENING));
+                GetDataAdapter3.setStatus_desain(json.getString(JSON_STATUS_DESAIN));
                 GetDataAdapter3.setStatus_satu(json.getString(JSON_STATUS_SATU));
                 GetDataAdapter3.setStatus_dua(json.getString(JSON_STATUS_DUA));
                 GetDataAdapter3.setStatus_tiga(json.getString(JSON_STATUS_TIGA));
+                GetDataAdapter3.setStatus_empat(json.getString(JSON_STATUS_EMPAT));
+                GetDataAdapter3.setBukti_desain(json.getString(JSON_BUKTI_DESAIN));
                 GetDataAdapter3.setBukti_satu(json.getString(JSON_BUKTI_SATU));
                 GetDataAdapter3.setBukti_dua(json.getString(JSON_BUKTI_DUA));
                 GetDataAdapter3.setBukti_tiga(json.getString(JSON_BUKTI_TIGA));
+                GetDataAdapter3.setBukti_empat(json.getString(JSON_BUKTI_EMPAT));
                 GetDataAdapter3.setTotal_satu(json.getString(JSON_TOTAL_SATU));
                 GetDataAdapter3.setTotal_dua(json.getString(JSON_TOTAL_DUA));
                 GetDataAdapter3.setTotal_tiga(json.getString(JSON_TOTAL_TIGA));
+                GetDataAdapter3.setTotal_empat(json.getString(JSON_TOTAL_EMPAT));
+                GetDataAdapter3.setTgl_input_desain(json.getString(JSON_TGL_INPUT_DESAIN));
                 GetDataAdapter3.setTgl_input_satu(json.getString(JSON_TGL_INPUT_SATU));
                 GetDataAdapter3.setTgl_input_dua(json.getString(JSON_TGL_INPUT_DUA));
                 GetDataAdapter3.setTgl_input_tiga(json.getString(JSON_TGL_INPUT_TIGA));
+                GetDataAdapter3.setTgl_input_empat(json.getString(JSON_TGL_INPUT_EMPAT));
+                GetDataAdapter3.setPresentase(json.getString(JSON_PRESENTASE));
             } catch (JSONException e) {
 
                 e.printStackTrace();
@@ -219,7 +237,7 @@ public class activity_pemesan_pembayaran_bangun_dari_awal extends AppCompatActiv
             GetDataAdapter4.add(GetDataAdapter3);
         }
 
-        recyclerViewadapter2 = new recycler_view_status_pembayaran_bangun_dari_awal(GetDataAdapter4, this);
+        recyclerViewadapter2 = new recycler_view_status_transaksi(GetDataAdapter4, this);
 
         recyclerView2.setAdapter(recyclerViewadapter2);
     }
