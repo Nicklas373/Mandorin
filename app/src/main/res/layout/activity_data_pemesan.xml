@@ -31,16 +31,32 @@
         </android.support.v7.widget.CardView>
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="314dp"
             android:layout_height="wrap_content"
-            android:gravity="start"
+            android:gravity="center_horizontal"
             android:text="@string/app_mandor_recycler_data_pemesan_title"
             android:textAlignment="center"
             android:textColor="#ffffff"
-            android:layout_marginEnd="35dp"
-            android:layout_marginStart="10dp"
             android:id="@+id/toolbar_text"
             style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"/>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/refresh_activity_data_pemesan"
+            android:layout_width="24dp"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            card_view:cardBackgroundColor="@color/colorPrimary">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/refresh"
+                android:gravity="start"
+                android:contentDescription="@string/refresh" />
+
+        </android.support.v7.widget.CardView>
 
     </android.support.v7.widget.Toolbar>
 

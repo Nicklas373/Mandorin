@@ -66,7 +66,7 @@ public class activity_riwayat_pembayaran extends AppCompatActivity {
     private TextView con_text_pemesan_pembayaran_renovasi;
     private ImageView connection_pemesan_pembayaran_renovasi;
     private Button refresh_pemesan_pembayaran_renovasi;
-    private CardView back_pemesan_pembayaran_renovasi;
+    private CardView back_pemesan_pembayaran_renovasi, refresh_cv_pemesan_pembayaran_renovasi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,6 +98,7 @@ public class activity_riwayat_pembayaran extends AppCompatActivity {
         connection_pemesan_pembayaran_renovasi = findViewById(R.id.con_image_riwayat_pembayaran);
         refresh_pemesan_pembayaran_renovasi = findViewById(R.id.refresh_riwayat_pembayaran);
         back_pemesan_pembayaran_renovasi = findViewById(R.id.back_activity_riwayat_pembayaran);
+        refresh_cv_pemesan_pembayaran_renovasi = findViewById(R.id.refresh_activity_data_pembayaran);
 
         /*
          * Internet Connection Module

@@ -60,7 +60,7 @@ public class activity_mandor extends AppCompatActivity {
      private TextView con_text;
      private ImageView connection;
      private Button refresh;
-     private CardView back;
+     private CardView back, refresh_cv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,6 +86,7 @@ public class activity_mandor extends AppCompatActivity {
         connection = findViewById(R.id.con_image);
         refresh = findViewById(R.id.refresh);
         back = findViewById(R.id.back_activity_mandor);
+        refresh_cv = findViewById(R.id.refresh_activity_mandor);
 
         /*
          * Internet Connection Module
@@ -95,6 +96,13 @@ public class activity_mandor extends AppCompatActivity {
         cek_internet();
 
         refresh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cek_internet();
+            }
+        });
+
+        refresh_cv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 cek_internet();
