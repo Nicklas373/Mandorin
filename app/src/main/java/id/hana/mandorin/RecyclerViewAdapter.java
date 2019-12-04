@@ -67,7 +67,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         Viewholder.Nik.setText(getDataAdapter1.getNik_mandor());
         Viewholder.Nama.setText(getDataAdapter1.getNama_mandor());
-        Viewholder.Umur.setText(getDataAdapter1.getUmur_mandor());
+        Viewholder.Umur.setText(getDataAdapter1.getUmur_mandor() + " Tahun");
         Viewholder.Alamat.setText(getDataAdapter1.getAlamat_mandor());
         Viewholder.Tempat.setText(getDataAdapter1.getTempat());
         Viewholder.TGL_Lahir.setText(getDataAdapter1.getTgl_lahir());

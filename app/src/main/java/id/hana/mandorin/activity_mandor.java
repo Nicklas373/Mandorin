@@ -4,14 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.net.ConnectivityManager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-import java.util.ArrayList;
-import java.util.List;
-
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -26,6 +20,13 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class activity_mandor extends AppCompatActivity {
 
     /*
@@ -39,7 +40,7 @@ public class activity_mandor extends AppCompatActivity {
     /*
      * JSON Data Initialization
      */
-    String GET_JSON_DATA_HTTP_URL = "http://mandorin.site/mandorin/php/user/image.php";
+    String GET_JSON_DATA_HTTP_URL = "http://mandorin.site/mandorin/php/user/new/read_data_mandor.php";
     String JSON_NAMA_MANDOR = "nama_mandor";
     String JSON_NIK_MANDOR = "nik";
     String JSON_UMUR_MANDOR = "umur_mandor";
@@ -169,7 +170,7 @@ public class activity_mandor extends AppCompatActivity {
                 GetDataAdapter2.setTgl_lahir(json.getString(JSON_TGL_LAHIR));
                 GetDataAdapter2.setAgama(json.getString(JSON_AGAMA));
                 GetDataAdapter2.setLama_kerja(json.getString(JSON_LAMA_KERJA));
-                GetDataAdapter2.setFoto_mandor(json.getString(JSON_FOTO_MANDOR));
+                GetDataAdapter2.setFoto_mandor("http://www.mandorin.site/mandorin/image/mandor/" + json.getString(JSON_FOTO_MANDOR));
 
             } catch (JSONException e) {
 

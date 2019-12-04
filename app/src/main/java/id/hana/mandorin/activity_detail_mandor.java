@@ -66,13 +66,13 @@ public class activity_detail_mandor extends AppCompatActivity {
         Nama.setText(nama);
         Nama_1.setText(nama);
         Nik_1.setText(nik);
-        Umur.setText(umur);
-        Umur_1.setText(umur);
+        Umur.setText(umur + " Tahun");
+        Umur_1.setText(umur + " Tahun");
         Alamat_1.setText(alamat);
         Tempat_1.setText(tempat);
         Tgl_Lahir_1.setText(tgl_lahir);
         Agama_1.setText(agama);
-        Lama_Kerja_1.setText(lama_kerja);
+        Lama_Kerja_1.setText(lama_kerja + " Tahun");
 
         /*
          * Image passing from last activity
