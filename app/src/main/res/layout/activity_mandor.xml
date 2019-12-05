@@ -31,7 +31,7 @@
         </android.support.v7.widget.CardView>
 
         <TextView
-            android:layout_width="314dp"
+            android:layout_width="330dp"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:text="@string/app_menu_1_data_mandor"

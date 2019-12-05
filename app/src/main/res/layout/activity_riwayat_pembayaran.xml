@@ -31,7 +31,7 @@
         </android.support.v7.widget.CardView>
 
         <TextView
-            android:layout_width="314dp"
+            android:layout_width="330dp"
             android:layout_height="wrap_content"
             android:gravity="start"
             android:text="@string/app_mandor_riwayat_pembayaran_title"
