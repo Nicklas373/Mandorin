@@ -98,7 +98,7 @@ public class activity_riwayat_pembayaran extends AppCompatActivity {
         connection_pemesan_pembayaran_renovasi = findViewById(R.id.con_image_riwayat_pembayaran);
         refresh_pemesan_pembayaran_renovasi = findViewById(R.id.refresh_riwayat_pembayaran);
         back_pemesan_pembayaran_renovasi = findViewById(R.id.back_activity_riwayat_pembayaran);
-        refresh_cv_pemesan_pembayaran_renovasi = findViewById(R.id.refresh_activity_data_pembayaran);
+        //refresh_cv_pemesan_pembayaran_renovasi = findViewById(R.id.refresh_activity_data_pembayaran);
 
         /*
          * Internet Connection Module
@@ -107,12 +107,14 @@ public class activity_riwayat_pembayaran extends AppCompatActivity {
          */
         cek_internet();
 
+        /*
         refresh_pemesan_pembayaran_renovasi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 cek_internet();
             }
         });
+         */
 
         back_pemesan_pembayaran_renovasi.setOnClickListener(new View.OnClickListener() {
             @Override

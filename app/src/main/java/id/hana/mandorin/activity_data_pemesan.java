@@ -105,7 +105,7 @@ public class activity_data_pemesan extends AppCompatActivity {
         connection_pemesan_renovasi = findViewById(R.id.con_image_data_pemesan);
         refresh_pemesan_renovasi = findViewById(R.id.refresh_data_pemesan);
         back_pemesan_renovasi = findViewById(R.id.back_activity_data_pemesan);
-        refresh_cv_pemesan_renovasi = findViewById(R.id.refresh_activity_data_pemesan);
+        //refresh_cv_pemesan_renovasi = findViewById(R.id.refresh_activity_data_pemesan);
 
         /*
          * Internet Connection Module
@@ -121,12 +121,14 @@ public class activity_data_pemesan extends AppCompatActivity {
             }
         });
 
+        /*
         refresh_cv_pemesan_renovasi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                cek_internet();
+                JSON_DATA_WEB_CALL();
             }
         });
+         */
 
         back_pemesan_renovasi.setOnClickListener(new View.OnClickListener() {
             @Override

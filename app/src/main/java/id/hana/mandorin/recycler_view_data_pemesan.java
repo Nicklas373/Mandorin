@@ -43,6 +43,7 @@ public class recycler_view_data_pemesan extends RecyclerView.Adapter<recycler_vi
         Viewholder.Nama.setText(getRenovasiDataAdapter1.getNama());
         Viewholder.Alamat.setText(getRenovasiDataAdapter1.getAlamat());
         Viewholder.Status.setText(getRenovasiDataAdapter1.getStatus());
+        Viewholder.Tgl_survey.setText(getRenovasiDataAdapter1.getTgl_survey());
     }
 
     @Override

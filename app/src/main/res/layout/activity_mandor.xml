@@ -41,6 +41,7 @@
             android:id="@+id/toolbar_text"
             style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"/>
 
+        <!--
         <android.support.v7.widget.CardView
             android:id="@+id/refresh_activity_mandor"
             android:layout_width="24dp"
@@ -58,6 +59,7 @@
                 android:contentDescription="@string/refresh" />
 
         </android.support.v7.widget.CardView>
+        -->
 
     </android.support.v7.widget.Toolbar>
 
