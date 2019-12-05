@@ -1,5 +1,7 @@
 package id.hana.mandorin;
 
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
@@ -8,6 +10,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.view.View;
@@ -26,7 +29,7 @@ public class activity_profile_mandor extends AppCompatActivity {
      * Textview, Imageview, CardView & Button
      */
     private TextView Nama, Umur, Alamat, Nik, Tempat, Tgl_lahir, Agama, Lama_Kerja;
-    private CardView profil_mandor, sewa_jasa, dokumentasi, back;
+    private CardView profil_mandor, sewa_jasa, back;
     private FirebaseAuth.AuthStateListener authListener;
     private FirebaseAuth auth;
 
@@ -48,7 +51,6 @@ public class activity_profile_mandor extends AppCompatActivity {
          * TextView, CardView & Button
          */
         profil_mandor = findViewById(R.id.mandor_menu_1);
-        dokumentasi = findViewById(R.id.mandor_menu_2);
         sewa_jasa = findViewById(R.id.mandor_menu_3);
         Nama = findViewById(R.id.nama);
         Umur = findViewById(R.id.umur);
@@ -144,10 +146,37 @@ public class activity_profile_mandor extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (auth.getCurrentUser() != null) {
-                    Intent intent = new Intent(activity_profile_mandor.this, activity_layanan_jasa.class);
+                    Intent intent = new Intent(activity_profile_mandor.this,  activity_layanan_jasa.class);
                     startActivity(intent);
                 } else {
-                    Toast.makeText(activity_profile_mandor.this, "Harap Login di Menu Akun untuk Masuk ke Menu Layanan Jasa",Toast.LENGTH_LONG).show();
+                    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(activity_profile_mandor.this);
+
+                    // set title dialog
+                    alertDialogBuilder.setTitle("Menu Layanan Jasa");
+
+                    // set pesan dari dialog
+                    alertDialogBuilder
+                            .setMessage("Harap Login Untuk Melanjutkan")
+                            .setIcon(R.mipmap.ic_launcher)
+                            .setCancelable(false)
+                            .setPositiveButton("Login",new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog,int id) {
+                                    dialog = ProgressDialog.show(activity_profile_mandor.this, "Menu Login", "Memproses...", true);
+                                    Intent intent = new Intent(activity_profile_mandor.this, activity_login.class);
+                                    startActivity(intent);
+                                }
+                            })
+                            .setNegativeButton("Batal",new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    dialog.cancel();
+                                }
+                            });
+
+                    // membuat alert dialog dari builder
+                    AlertDialog alertDialog = alertDialogBuilder.create();
+
+                    // menampilkan alert dialog
+                    alertDialog.show();
                 }
 
             }

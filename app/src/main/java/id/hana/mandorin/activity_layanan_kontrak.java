@@ -83,9 +83,6 @@ public class activity_layanan_kontrak extends AppCompatActivity {
         img_data_desain = findViewById(R.id.image_data_desain_layanan_kontrak);
         img_rekap_data = findViewById(R.id.image_rekap_data_layanan_kontrak);
         img_surat_kontrak = findViewById(R.id.image_surat_kontrak_layanan_kontrak);
-        /*
-            komplain = findViewById(R.id.button_komplain);
-        */
 
         /*
          * Passing data from last activity

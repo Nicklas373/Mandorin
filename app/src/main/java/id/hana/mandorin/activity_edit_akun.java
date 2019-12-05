@@ -174,7 +174,7 @@ public class activity_edit_akun extends AppCompatActivity {
                             if (FileName.getText().toString().isEmpty()){
 
                             } else {
-                                dialog = ProgressDialog.show(activity_edit_akun.this, "", "Memperbaharui Data...", true);
+                                dialog = ProgressDialog.show(activity_edit_akun.this, "Edit Akun", "Memperbaharui Data...", true);
                                 new Thread(new Runnable() {
                                     @Override
                                     public void run() {
@@ -184,7 +184,7 @@ public class activity_edit_akun extends AppCompatActivity {
                                 }).start();
                             }
                         }
-                        Intent intent = new Intent(activity_edit_akun.this, activity_akun.class);
+                        Intent intent = new Intent(activity_edit_akun.this, activity_user_profile.class);
                         startActivity(intent);
                     }
                 })

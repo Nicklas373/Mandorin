@@ -194,7 +194,7 @@ public class activity_data_transaksi_2 extends AppCompatActivity {
             public void onClick(View view) {
                 if (selectedFilePath != null) {
                     kirim_dialog();
-                    dialog = ProgressDialog.show(activity_data_transaksi_2.this, "Pembayaran Renovasi", "Memproses...", true);
+                    dialog = ProgressDialog.show(activity_data_transaksi_2.this, "Menu Pembayaran", "Memproses...", true);
 
                     new Thread(new Runnable() {
                         @Override

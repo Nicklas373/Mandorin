@@ -15,6 +15,8 @@ import android.widget.TextView;
 
 import java.io.ByteArrayOutputStream;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class activity_detail_mandor extends AppCompatActivity {
 
     /*
@@ -23,7 +25,7 @@ public class activity_detail_mandor extends AppCompatActivity {
      */
     private CardView back;
     private TextView Nama, Umur, Nama_1, Umur_1, Alamat_1, Nik_1, Tempat_1, Tgl_Lahir_1, Agama_1, Lama_Kerja_1;
-    private ImageView image;
+    private CircleImageView image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

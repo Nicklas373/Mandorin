@@ -119,7 +119,7 @@ public class activity_data_transaksi extends AppCompatActivity {
             Tgl_input_satu.setText(tgl_satu + " / " + "Rp." + formattedNumber);
         }
         if (Tgl_input_dua.getText().toString().equalsIgnoreCase("")) {
-            Tgl_input_dua.setText("-");
+            Tgl_input_dua.setText("Belum Ada Pembayaran");
         } else {
             int result = Integer.parseInt(total_dua);
             NumberFormat formatter = new DecimalFormat("#,###");
@@ -128,7 +128,7 @@ public class activity_data_transaksi extends AppCompatActivity {
             Tgl_input_dua.setText(tgl_dua + " / " + "Rp." + formattedNumber);
         }
         if (Tgl_input_tiga.getText().toString().equalsIgnoreCase("")) {
-            Tgl_input_tiga.setText("-");
+            Tgl_input_tiga.setText("Belum Ada Pembayaran");
         } else {
             int result = Integer.parseInt(total_tiga);
             NumberFormat formatter = new DecimalFormat("#,###");
@@ -137,7 +137,7 @@ public class activity_data_transaksi extends AppCompatActivity {
             Tgl_input_tiga.setText(tgl_tiga + " / " + "Rp." + formattedNumber);
         }
         if (Tgl_input_empat.getText().toString().equalsIgnoreCase("")) {
-            Tgl_input_empat.setText("-");
+            Tgl_input_empat.setText("Belum Ada Pembayaran");
         } else {
             int result = Integer.parseInt(total_empat);
             NumberFormat formatter = new DecimalFormat("#,###");

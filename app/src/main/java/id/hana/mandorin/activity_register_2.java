@@ -92,7 +92,7 @@ public class activity_register_2 extends AppCompatActivity {
                                         createdata();
                                         try
                                         {
-                                            dialog = ProgressDialog.show(activity_register_2.this, "Daftar Akun", "Memproses...", true);
+                                            dialog = ProgressDialog.show(activity_register_2.this, "Register Akun", "Memproses...", true);
                                             SharedPreferences.Editor editor = pref.edit ();
                                             editor.putString("email",dbg.getText().toString());
                                             editor.apply();
@@ -150,13 +150,13 @@ public class activity_register_2 extends AppCompatActivity {
         {
             @Override
             protected Map<String, String> getParams() {
-                String nama = "";
+                String nama = "Data Kosong";
                 String email = dbg.getText().toString();
-                String umur = "";
-                String nik = "";
-                String telp = "";
-                String alamat = "";
-                String foto_user = "";
+                String umur = "Data Kosong";
+                String nik = "Data Kosong";
+                String telp = "Data Kosong";
+                String alamat = "Data Kosong";
+                String foto_user = "Data Kosong";
 
 
                 // Creating Map String Params.

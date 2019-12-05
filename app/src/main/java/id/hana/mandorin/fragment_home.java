@@ -1,10 +1,14 @@
 package id.hana.mandorin;
 
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -66,7 +70,34 @@ public class fragment_home extends Fragment {
                 Intent intent = new Intent(getActivity(), activity_kontrak.class);
                 getActivity().startActivity(intent);
                 } else {
-                    Toast.makeText(getActivity(),"Harap Login di Menu Akun untuk melanjutkan", Toast.LENGTH_SHORT).show();
+                    AlertDialog.Builder alertDialogBuilder= new AlertDialog.Builder(getActivity());
+
+                    // set title dialog
+                    alertDialogBuilder.setTitle("Menu Kontrak");
+
+                    // set pesan dari dialog
+                    alertDialogBuilder
+                            .setMessage("Harap Login Untuk Melanjutkan")
+                            .setIcon(R.mipmap.ic_launcher)
+                            .setCancelable(false)
+                            .setPositiveButton("Login",new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog,int id) {
+                                    dialog = ProgressDialog.show(getActivity(), "Menu Login", "Memproses...", true);
+                                    Intent intent = new Intent(getActivity(), activity_login.class);
+                                    getActivity().startActivity(intent);
+                                }
+                            })
+                            .setNegativeButton("Batal",new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    dialog.cancel();
+                                }
+                            });
+
+                    // membuat alert dialog dari builder
+                    AlertDialog alertDialog = alertDialogBuilder.create();
+
+                    // menampilkan alert dialog
+                    alertDialog.show();
                 }
 
             }
@@ -79,7 +110,34 @@ public class fragment_home extends Fragment {
                     Intent intent = new Intent(getActivity(), activity_transaksi.class);
                     getActivity().startActivity(intent);
                 } else {
-                    Toast.makeText(getActivity(),"Harap Login di Menu Akun untuk melanjutkan", Toast.LENGTH_SHORT).show();
+                    AlertDialog.Builder alertDialogBuilder= new AlertDialog.Builder(getActivity());
+
+                    // set title dialog
+                    alertDialogBuilder.setTitle("Menu Pembayaran");
+
+                    // set pesan dari dialog
+                    alertDialogBuilder
+                            .setMessage("Harap Login Untuk Melanjutkan")
+                            .setIcon(R.mipmap.ic_launcher)
+                            .setCancelable(false)
+                            .setPositiveButton("Login",new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog,int id) {
+                                    dialog = ProgressDialog.show(getActivity(), "Menu Login", "Memproses...", true);
+                                    Intent intent = new Intent(getActivity(), activity_login.class);
+                                    getActivity().startActivity(intent);
+                                }
+                            })
+                            .setNegativeButton("Batal",new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    dialog.cancel();
+                                }
+                            });
+
+                    // membuat alert dialog dari builder
+                    AlertDialog alertDialog = alertDialogBuilder.create();
+
+                    // menampilkan alert dialog
+                    alertDialog.show();
                 }
             }
         });

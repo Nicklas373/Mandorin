@@ -1,5 +1,6 @@
 package id.hana.mandorin;
 
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -145,6 +146,7 @@ public class activity_komplain_bangun extends AppCompatActivity {
                         try
                         {
                             createdata();
+                            dialog = ProgressDialog.show(activity_komplain_bangun.this, "Menu Komplain", "Mengirim Data Komplain...", true);
                             Intent intent = new Intent(activity_komplain_bangun.this, activity_komplain_konfirmasi.class);
                             startActivity(intent);
                         } catch (IllegalArgumentException e)
