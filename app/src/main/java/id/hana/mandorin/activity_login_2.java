@@ -81,6 +81,7 @@ public class activity_login_2 extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        dialog = ProgressDialog.show(activity_login_2.this, "Login Akun", "Memproses...", true);
                         final String email_2 = dummy_debug.getText().toString();
                         final String password = inputPassword.getText().toString();
 
@@ -100,15 +101,16 @@ public class activity_login_2 extends AppCompatActivity {
                                             } else {
                                                 Toast.makeText(activity_login_2.this, "Login Gagal / Password Salah", Toast.LENGTH_LONG).show();
                                             }
+                                            finish();
                                         }
                                         else {
-                                            dialog = ProgressDialog.show(activity_login_2.this, "Login Akun", "Memproses...", true);
                                             SharedPreferences.Editor editor = pref.edit();
                                             editor.putString("email", dummy_debug.getText().toString());
                                             editor.apply();
                                             Intent intent = new Intent(activity_login_2.this, activity_akun.class);
                                             startActivity(intent);
                                             finish();
+                                            Toast.makeText(activity_login_2.this, "Login Berhasil, Selamat Datang! " + email_2, Toast.LENGTH_LONG).show();
                                         }
                                     }
                                 });

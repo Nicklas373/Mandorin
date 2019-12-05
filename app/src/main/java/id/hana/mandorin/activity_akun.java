@@ -1,5 +1,6 @@
 package id.hana.mandorin;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -121,6 +122,7 @@ public class activity_akun extends AppCompatActivity {
                 .setCancelable(false)
                 .setPositiveButton("Log Out",new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog,int id) {
+                        dialog = ProgressDialog.show(activity_akun.this, "Log Out", "Memproses...", true);
                         if(internet_available()){
                             auth.signOut();
                             editor=pref.edit();
@@ -129,8 +131,10 @@ public class activity_akun extends AppCompatActivity {
                             Intent intent = new Intent(activity_akun.this, MainActivity.class);
                             startActivity(intent);
                             Toast.makeText(getApplicationContext(), "Anda sudah log out", Toast.LENGTH_SHORT).show();
+                            finish();
                         }else{
                             Toast.makeText(getApplicationContext(), "Harap Periksa Koneksi Internet Anda", Toast.LENGTH_SHORT).show();
+                            finish();
                         }
                     }
                 })

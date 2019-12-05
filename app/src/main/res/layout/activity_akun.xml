@@ -42,6 +42,7 @@
             android:layout_height="wrap_content"
             android:gravity="start"
             android:text="@string/app_mandor_menu_akun_title"
+            android:fontFamily="@font/test"
             android:textAlignment="center"
             android:textColor="#ffffff"
             android:layout_marginEnd="35dp"
@@ -53,14 +54,14 @@
         android:id="@+id/user_dump"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:fontFamily="@font/test"
+        android:gravity="center_horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        android:fontFamily="@font/test"
-        android:gravity="center_horizontal"/>
+        app:layout_constraintVertical_bias="0.0" />
 
     <android.support.v7.widget.CardView
         xmlns:card_view="http://schemas.android.com/apk/res-auto"
@@ -81,7 +82,7 @@
         card_view:cardElevation="0dp"
         card_view:cardUseCompatPadding="true">
 
-        <de.hdodenhof.circleimageview.CircleImageView
+        <ImageView
             android:layout_width="144dp"
             android:layout_height="119dp"
             android:contentDescription="@string/app_mandor_menu_akun_1"
@@ -119,7 +120,7 @@
         card_view:cardElevation="0dp"
         card_view:cardUseCompatPadding="true">
 
-        <de.hdodenhof.circleimageview.CircleImageView
+        <ImageView
             android:layout_width="144dp"
             android:layout_height="119dp"
             android:contentDescription="@string/app_mandor_menu_akun_2"
@@ -156,7 +157,7 @@
         card_view:cardElevation="0dp"
         card_view:cardUseCompatPadding="true">
 
-        <de.hdodenhof.circleimageview.CircleImageView
+        <ImageView
             android:layout_width="144dp"
             android:layout_height="119dp"
             android:contentDescription="@string/app_mandor_menu_akun_3"
@@ -195,7 +196,7 @@
         card_view:cardElevation="0dp"
         card_view:cardUseCompatPadding="true">
 
-        <de.hdodenhof.circleimageview.CircleImageView
+        <ImageView
             android:layout_width="144dp"
             android:layout_height="119dp"
             android:contentDescription="@string/app_mandor_menu_akun_4"

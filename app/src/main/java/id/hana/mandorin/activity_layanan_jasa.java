@@ -133,16 +133,22 @@ public class activity_layanan_jasa extends AppCompatActivity {
     private void send_data(){
             if (nama_lj.getText().toString().length() == 0) {
                 nama_lj.setError("Harap Masukkan Nama");
+                Toast.makeText(getApplicationContext(), "Harap tidak ada data yang kosong", Toast.LENGTH_SHORT).show();
             } else if (nik_lj.getText().toString().length() == 0) {
                 nik_lj.setError("Harap Masukkan NIK");
+                Toast.makeText(getApplicationContext(), "Harap tidak ada data yang kosong", Toast.LENGTH_SHORT).show();
             } else if (no_hp_lj.getText().toString().length() == 0) {
                 no_hp_lj.setError("Harap Masukkan No HP");
+                Toast.makeText(getApplicationContext(), "Harap tidak ada data yang kosong", Toast.LENGTH_SHORT).show();
             } else if (alamat_lj.getText().toString().length() == 0) {
                 alamat_lj.setError("Harap Masukkan Alamat");
+                Toast.makeText(getApplicationContext(), "Harap tidak ada data yang kosong", Toast.LENGTH_SHORT).show();
             } else if (tgl_survey.getText().toString().length() == 0) {
                 tgl_survey.setError("Harap Masukkan Tanggal Survey");
+                Toast.makeText(getApplicationContext(), "Harap tidak ada data yang kosong", Toast.LENGTH_SHORT).show();
             } else if (data_lj.getText().toString().length() == 0){
                 data_lj.setError("Harap Masukkan Data Pekerjaan");
+                Toast.makeText(getApplicationContext(), "Harap tidak ada data yang kosong", Toast.LENGTH_SHORT).show();
             } else {
                 int id = rg.getCheckedRadioButtonId();
                 int id_2 = rg_2.getCheckedRadioButtonId();

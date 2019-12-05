@@ -167,14 +167,14 @@ public class activity_edit_akun extends AppCompatActivity {
                     final TextView FileName = findViewById(R.id.dummy_old_pic);
 
                     public void onClick(DialogInterface dialog,int id) {
+                        dialog = ProgressDialog.show(activity_edit_akun.this, "Edit Akun", "Memperbaharui Data...", true);
                         createdata_2();
                         if (dummyimage.getText().toString().equalsIgnoreCase("")) {
-
+                            finish();
                         } else {
                             if (FileName.getText().toString().isEmpty()){
-
+                                finish();
                             } else {
-                                dialog = ProgressDialog.show(activity_edit_akun.this, "Edit Akun", "Memperbaharui Data...", true);
                                 new Thread(new Runnable() {
                                     @Override
                                     public void run() {
@@ -186,6 +186,8 @@ public class activity_edit_akun extends AppCompatActivity {
                         }
                         Intent intent = new Intent(activity_edit_akun.this, activity_user_profile.class);
                         startActivity(intent);
+                        finish();
+                        Toast.makeText(getApplicationContext(), "Data berhasil di perbaharui", Toast.LENGTH_SHORT).show();
                     }
                 })
                 .setNegativeButton("Tidak",new DialogInterface.OnClickListener() {

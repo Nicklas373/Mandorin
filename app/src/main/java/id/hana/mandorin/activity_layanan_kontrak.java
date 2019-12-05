@@ -1,8 +1,11 @@
 package id.hana.mandorin;
 
+import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
@@ -12,6 +15,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.StrictMode;
 import android.support.v4.app.ActivityCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.util.Log;
@@ -151,12 +155,7 @@ public class activity_layanan_kontrak extends AppCompatActivity {
                         if (!hasPermissions(activity_layanan_kontrak.this, PERMISSIONS)) {
                             Toast.makeText(activity_layanan_kontrak.this, "Anda belum menyetujui akses penyimpanan", Toast.LENGTH_LONG).show();
                         } else {
-                            String url = data_desain.getText().toString();
-                            new DownloadFile().execute(url, data_desain_1);
-                            Toast.makeText(activity_layanan_kontrak.this, "Data pesanan anda berhasil di download", Toast.LENGTH_LONG).show();
-                            img_data_desain.setImageDrawable(getResources().getDrawable(R.drawable.download_c, getApplicationContext().getTheme()));
-                            Toast.makeText(activity_layanan_kontrak.this, "Berkas anda " + file_data, Toast.LENGTH_LONG).show();
-                            openFolder_data_desain();
+                           send_dialog_data_desain();
                         }
                     } else {
                         Toast.makeText(activity_layanan_kontrak.this, "Harap cek konektivitas anda", Toast.LENGTH_LONG).show();
@@ -179,12 +178,7 @@ public class activity_layanan_kontrak extends AppCompatActivity {
                         if (!hasPermissions(activity_layanan_kontrak.this, PERMISSIONS)) {
                             Toast.makeText(activity_layanan_kontrak.this, "Anda belum menyetujui akses penyimpanan", Toast.LENGTH_LONG).show();
                         } else {
-                            String url = rekap_data.getText().toString();
-                            new DownloadFile().execute(url, rekap_data_1);
-                            Toast.makeText(activity_layanan_kontrak.this, "Data rekap data anda berhasil di download", Toast.LENGTH_LONG).show();
-                            img_rekap_data.setImageDrawable(getResources().getDrawable(R.drawable.download_c, getApplicationContext().getTheme()));
-                            Toast.makeText(activity_layanan_kontrak.this, "Berkas anda " + file_data, Toast.LENGTH_LONG).show();
-                            openFolder_rekap_data();
+                           send_dialog_rekap_data();
                         }
                     } else {
                         Toast.makeText(activity_layanan_kontrak.this, "Harap cek konektivitas anda", Toast.LENGTH_LONG).show();
@@ -207,12 +201,7 @@ public class activity_layanan_kontrak extends AppCompatActivity {
                         if (!hasPermissions(activity_layanan_kontrak.this, PERMISSIONS)) {
                             Toast.makeText(activity_layanan_kontrak.this, "Anda belum menyetujui akses penyimpanan", Toast.LENGTH_LONG).show();
                         } else {
-                            String url = surat_kontrak.getText().toString();
-                            new DownloadFile().execute(url, surat_kontrak_1);
-                            Toast.makeText(activity_layanan_kontrak.this, "Data surat kontrak anda berhasil di download", Toast.LENGTH_LONG).show();
-                            img_surat_kontrak.setImageDrawable(getResources().getDrawable(R.drawable.download_c, getApplicationContext().getTheme()));
-                            Toast.makeText(activity_layanan_kontrak.this, "Berkas anda " + file_data, Toast.LENGTH_LONG).show();
-                            openFolder_surat_kontrak();
+                           send_dialog_surat_kontrak();
                         }
                     } else {
                         Toast.makeText(activity_layanan_kontrak.this, "Harap cek konektivitas anda", Toast.LENGTH_LONG).show();
@@ -387,6 +376,117 @@ public class activity_layanan_kontrak extends AppCompatActivity {
             e.printStackTrace();
             Log.d("Unknown error", e.getMessage());
         }
+    }
+
+    private void send_dialog_data_desain() {
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                this);
+
+        // set title dialog
+        alertDialogBuilder.setTitle("Data Desain Rumah");
+
+        // set pesan dari dialog
+        alertDialogBuilder
+                .setMessage("Apakah anda ingin mendownload data desain rumah ?")
+                .setIcon(R.mipmap.ic_launcher)
+                .setCancelable(false)
+                .setPositiveButton("Proses",new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog,int id) {
+                        final String data_desain_1 = getIntent().getExtras().getString("data_desain");
+                        String url = data_desain.getText().toString();
+                        String file_data = meta_data_desain.getText().toString();
+                        new DownloadFile().execute(url, data_desain_1);
+                        Toast.makeText(activity_layanan_kontrak.this, "Data pesanan anda berhasil di download", Toast.LENGTH_LONG).show();
+                        img_data_desain.setImageDrawable(getResources().getDrawable(R.drawable.download_c, getApplicationContext().getTheme()));
+                        Toast.makeText(activity_layanan_kontrak.this, "Berkas anda " + file_data, Toast.LENGTH_LONG).show();
+                        openFolder_data_desain();
+                    }
+                })
+                .setNegativeButton("Batal",new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+
+        // membuat alert dialog dari builder
+        AlertDialog alertDialog = alertDialogBuilder.create();
+
+        // menampilkan alert dialog
+        alertDialog.show();
+    }
+
+    private void send_dialog_rekap_data() {
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                this);
+
+        // set title dialog
+        alertDialogBuilder.setTitle("Data Rekap");
+
+        // set pesan dari dialog
+        alertDialogBuilder
+                .setMessage("Apakah anda ingin mendownload data rekap ?")
+                .setIcon(R.mipmap.ic_launcher)
+                .setCancelable(false)
+                .setPositiveButton("Proses",new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog,int id) {
+                        String url = rekap_data.getText().toString();
+                        String file_data = meta_rekap_data.getText().toString();
+                        final String rekap_data_1 = getIntent().getExtras().getString("data_rekap");
+                        new DownloadFile().execute(url, rekap_data_1);
+                        Toast.makeText(activity_layanan_kontrak.this, "Data rekap data anda berhasil di download", Toast.LENGTH_LONG).show();
+                        img_rekap_data.setImageDrawable(getResources().getDrawable(R.drawable.download_c, getApplicationContext().getTheme()));
+                        Toast.makeText(activity_layanan_kontrak.this, "Berkas anda " + file_data, Toast.LENGTH_LONG).show();
+                        openFolder_rekap_data();
+                    }
+                })
+                .setNegativeButton("Batal",new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+
+        // membuat alert dialog dari builder
+        AlertDialog alertDialog = alertDialogBuilder.create();
+
+        // menampilkan alert dialog
+        alertDialog.show();
+    }
+
+    private void send_dialog_surat_kontrak() {
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                this);
+
+        // set title dialog
+        alertDialogBuilder.setTitle("Data Surat Kontrak");
+
+        // set pesan dari dialog
+        alertDialogBuilder
+                .setMessage("Apakah anda ingin mendownload data surat kontrak ?")
+                .setIcon(R.mipmap.ic_launcher)
+                .setCancelable(false)
+                .setPositiveButton("Proses",new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog,int id) {
+                        final String surat_kontrak_1 = getIntent().getExtras().getString("surat_kontrak");
+                        String file_data = meta_surat_kontrak.getText().toString();
+                        String url = surat_kontrak.getText().toString();
+                        new DownloadFile().execute(url, surat_kontrak_1);
+                        Toast.makeText(activity_layanan_kontrak.this, "Data surat kontrak anda berhasil di download", Toast.LENGTH_LONG).show();
+                        img_surat_kontrak.setImageDrawable(getResources().getDrawable(R.drawable.download_c, getApplicationContext().getTheme()));
+                        Toast.makeText(activity_layanan_kontrak.this, "Berkas anda " + file_data, Toast.LENGTH_LONG).show();
+                        openFolder_surat_kontrak();
+                    }
+                })
+                .setNegativeButton("Batal",new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+
+        // membuat alert dialog dari builder
+        AlertDialog alertDialog = alertDialogBuilder.create();
+
+        // menampilkan alert dialog
+        alertDialog.show();
     }
 
     private boolean internet_available(){

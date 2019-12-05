@@ -43,7 +43,12 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/external_files"/>
         </provider>
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".activity_splash_screen"
+            android:label="@string/app_name"
+            android:noHistory="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -51,6 +56,7 @@
             </intent-filter>
         </activity>
         <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+        <activity android:name=".MainActivity"/>
         <activity android:name=".activity_mandor"/>
         <activity android:name=".activity_detail_mandor"/>
         <activity android:name=".activity_profile_mandor"/>

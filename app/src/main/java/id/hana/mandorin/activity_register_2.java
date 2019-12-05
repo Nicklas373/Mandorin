@@ -65,7 +65,7 @@ public class activity_register_2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String email = dbg.getText().toString().trim();
+                final String email = dbg.getText().toString().trim();
                 String password = inputPassword.getText().toString().trim();
 
                 if (TextUtils.isEmpty(password)) {
@@ -80,28 +80,31 @@ public class activity_register_2 extends AppCompatActivity {
 
                 if (inputPassword.getText().toString().equals(inputPasswordver.getText().toString())){
                     //create user
+                    dialog = ProgressDialog.show(activity_register_2.this, "Register Akun", "Memproses...", true);
                     auth.createUserWithEmailAndPassword(email, password)
                             .addOnCompleteListener(activity_register_2.this, new OnCompleteListener() {
                                 @Override
                                 public void onComplete(@NonNull Task task) {
-                                    Toast.makeText(activity_register_2.this, "Akun berhasil di buat", Toast.LENGTH_SHORT).show();
 
                                     if (!task.isSuccessful()) {
                                         Toast.makeText(activity_register_2.this, "Akun gagal di buat", Toast.LENGTH_LONG).show();
+                                        finish();
                                     } else {
                                         createdata();
                                         try
                                         {
-                                            dialog = ProgressDialog.show(activity_register_2.this, "Register Akun", "Memproses...", true);
                                             SharedPreferences.Editor editor = pref.edit ();
                                             editor.putString("email",dbg.getText().toString());
                                             editor.apply();
                                             startActivity(new Intent(activity_register_2.this, activity_akun.class));
                                             finish();
+                                            Toast.makeText(getApplicationContext(), "Akun berhasil di buat", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(getApplicationContext(), "Selamat Datang! " + email, Toast.LENGTH_LONG).show();
                                         } catch (IllegalArgumentException e)
                                         {
-                                            Toast.makeText(activity_register_2.this, "Proses Gagal!", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(activity_register_2.this, "Akun gagal di buat", Toast.LENGTH_SHORT).show();
                                             e.printStackTrace();
+                                            finish();
                                         }
                                     }
                                 }
@@ -150,13 +153,13 @@ public class activity_register_2 extends AppCompatActivity {
         {
             @Override
             protected Map<String, String> getParams() {
-                String nama = "Data Kosong";
+                String nama = "-";
                 String email = dbg.getText().toString();
-                String umur = "Data Kosong";
-                String nik = "Data Kosong";
-                String telp = "Data Kosong";
-                String alamat = "Data Kosong";
-                String foto_user = "Data Kosong";
+                String umur = "-";
+                String nik = "-";
+                String telp = "-";
+                String alamat = "-";
+                String foto_user = "-";
 
 
                 // Creating Map String Params.

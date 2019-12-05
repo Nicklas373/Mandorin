@@ -192,9 +192,9 @@ public class activity_data_transaksi_2 extends AppCompatActivity {
         Kirim.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                dialog = ProgressDialog.show(activity_data_transaksi_2.this, "Menu Pembayaran", "Memproses...", true);
                 if (selectedFilePath != null) {
                     kirim_dialog();
-                    dialog = ProgressDialog.show(activity_data_transaksi_2.this, "Menu Pembayaran", "Memproses...", true);
 
                     new Thread(new Runnable() {
                         @Override
@@ -203,7 +203,6 @@ public class activity_data_transaksi_2 extends AppCompatActivity {
                             uploadFile(selectedFilePath);
                         }
                     }).start();
-
                 } else {
                     Toast.makeText(activity_data_transaksi_2.this, "Anda Belum Menggungah Berkas", Toast.LENGTH_LONG).show();
                 }

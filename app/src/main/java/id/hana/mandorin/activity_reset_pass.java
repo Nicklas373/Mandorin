@@ -1,4 +1,6 @@
 package id.hana.mandorin;
+import android.app.ProgressDialog;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -24,6 +26,7 @@ public class activity_reset_pass extends AppCompatActivity {
     private Button selanjutnya;
     private TextView kembali;
     private FirebaseAuth auth;
+    ProgressDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,10 +62,18 @@ public class activity_reset_pass extends AppCompatActivity {
                         .addOnCompleteListener(new OnCompleteListener() {
                             @Override
                             public void onComplete(@NonNull Task task) {
+                                dialog = ProgressDialog.show(activity_reset_pass.this, "Reset Password", "Memproses...", true);
+
                                 if (task.isSuccessful()) {
-                                    Toast.makeText(activity_reset_pass.this, "Kami Telah Mengirimkan Instruksi Untuk Reset Password di Email Anda", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(activity_reset_pass.this, "Kami Telah Mengirimkan Instruksi Untuk Reset Password di Email Anda", Toast.LENGTH_LONG).show();
+                                    Intent intent = new Intent(activity_reset_pass.this, activity_login.class);
+                                    startActivity(intent);
+                                    finish();
                                 } else {
-                                    Toast.makeText(activity_reset_pass.this, "Gagal Mengirimkan Instruksi ke Email Anda", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(activity_reset_pass.this, "Gagal Mengirimkan Instruksi ke Email Anda", Toast.LENGTH_LONG).show();
+                                    Intent intent = new Intent(activity_reset_pass.this, MainActivity.class);
+                                    startActivity(intent);
+                                    finish();
                                 }
                             }
                         });
