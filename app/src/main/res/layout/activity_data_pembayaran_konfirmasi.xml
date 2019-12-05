@@ -24,6 +24,7 @@
             android:layout_height="wrap_content"
             android:gravity="start"
             android:text="@string/app_mandor_konfirmasi_title"
+            android:fontFamily="@font/test"
             android:textAlignment="center"
             android:textColor="#ffffff"
             android:layout_marginStart="40dp"
@@ -55,6 +56,7 @@
             android:layout_marginTop="20dp"
             android:text="@string/app_mandor_konfirmasi_pembayaran_1"
             android:textColor="#000"
+            android:fontFamily="@font/test"
             android:textSize="30sp" />
 
         <ImageView
@@ -71,6 +73,7 @@
             android:layout_marginTop="300dp"
             android:text="@string/app_mandor_konfirmasi_pembayaran_2"
             android:textSize="18sp"
+            android:fontFamily="@font/test"
             android:textColor="#000"
             android:textStyle="bold"
             android:layout_gravity="center_horizontal"/>
@@ -80,6 +83,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="360dp"
+            android:fontFamily="@font/test"
             android:text="@string/app_mandor_konfirmasi_pembayaran_3"
             android:textSize="20sp"
             android:textColor="#000"/>
@@ -88,6 +92,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="390dp"
+            android:fontFamily="@font/test"
             android:text="@string/app_mandor_konfirmasi_pembayaran_4"
             android:textSize="20sp"
             android:textColor="#000"
@@ -99,6 +104,7 @@
             android:layout_marginTop="420dp"
             android:text="@string/app_mandor_konfirmasi_pembayaran_5"
             android:textSize="20sp"
+            android:fontFamily="@font/test"
             android:textColor="#000"
             android:layout_gravity="center_horizontal" />
 
@@ -108,6 +114,7 @@
             android:layout_marginTop="450dp"
             android:text="@string/app_mandor_konfirmasi_pembayaran_6"
             android:textSize="20sp"
+            android:fontFamily="@font/test"
             android:textColor="#000"
             android:layout_gravity="center_horizontal"/>
 
@@ -117,6 +124,7 @@
             android:layout_marginTop="520dp"
             android:text="@string/app_mandor_konfirmasi_pembayaran_7"
             android:textSize="20sp"
+            android:fontFamily="@font/test"
             android:textColor="#000"
             android:layout_gravity="center_horizontal"/>
 
@@ -130,6 +138,7 @@
             android:layout_gravity="end"
             android:background="@color/colorPrimary"
             android:text="@string/app_mandor_konfirmasi_pembayaran_8"
+            android:fontFamily="@font/test"
             android:textColor="#fff"
             android:textSize="20sp"
             android:textAllCaps="false" />

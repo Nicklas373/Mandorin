@@ -36,6 +36,7 @@
             android:gravity="center_horizontal"
             android:text="@string/app_menu_1_data_mandor"
             android:textAlignment="center"
+            android:fontFamily="@font/test"
             android:textColor="#ffffff"
             android:id="@+id/toolbar_text"
             style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"/>
@@ -84,6 +85,7 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/con_image"
         android:id="@+id/con_text"
+        android:fontFamily="@font/test"
         android:text="@string/connection_text"
         android:textColor="#000"
         android:textSize="20sp"
@@ -103,6 +105,7 @@
         android:text="@string/refresh"
         android:textSize="20sp"
         android:textAllCaps="false"
+        android:fontFamily="@font/test"
         android:textAlignment="center"
         android:textColor="#fff"
         style="@style/Widget.AppCompat.Button"

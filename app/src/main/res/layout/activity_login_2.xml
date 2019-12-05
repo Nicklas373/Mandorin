@@ -22,6 +22,7 @@
             android:layout_height="wrap_content"
             android:text="@string/app_mandor_login_title"
             android:textSize="35sp"
+            android:fontFamily="@font/test"
             android:textAllCaps="false"
             android:textColor="#000"
             android:layout_gravity="center_horizontal"
@@ -35,6 +36,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginTop="210dp"
+            android:fontFamily="@font/test"
             android:textSize="23sp"
             android:inputType="textPassword"
             android:hint="@string/app_mandor_login_2"
@@ -48,6 +50,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="270dp"
             android:text="@string/app_mandor_login_5"
+            android:fontFamily="@font/test"
             android:textColor="@color/colorPrimary"
             android:textSize="15sp"/>
 
@@ -61,6 +64,7 @@
             android:layout_gravity="bottom"
             android:textSize="20sp"
             android:textColor="#000"
+            android:fontFamily="@font/test"
             android:text="@string/app_mandor_login_3" />
 
         <Button
@@ -75,6 +79,7 @@
             android:background="@color/colorPrimary"
             android:textColor="#fff"
             android:textAllCaps="false"
+            android:fontFamily="@font/test"
             android:text="@string/app_mandor_login_4"
             android:layout_gravity="bottom|end" />
 

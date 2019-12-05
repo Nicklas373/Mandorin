@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -43,6 +42,7 @@
             android:layout_height="wrap_content"
             android:gravity="start"
             android:text="@string/app_mandor_data_pemesan_renovasi_title"
+            android:fontFamily="@font/test"
             android:textAlignment="center"
             android:textColor="#ffffff"
             android:layout_marginStart="40dp"
@@ -91,6 +91,7 @@
                         android:text="@string/app_mandor_status_pemesan_renovasi_1"
                         android:layout_gravity="center"
                         android:textAlignment="center"
+                        android:fontFamily="@font/test"
                         android:textColor="#ffffff" />
 
                 </android.support.v7.widget.CardView>
@@ -115,6 +116,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/app_mandor_status_pemesan_renovasi_1"
                         android:layout_gravity="center"
+                        android:fontFamily="@font/test"
                         android:textAlignment="center"
                         android:textColor="#ffffff" />
 
@@ -125,6 +127,7 @@
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
+                    android:fontFamily="@font/test"
                     android:layout_marginTop="100dp"
                     android:textColor="#000" />
 
@@ -153,6 +156,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/app_mandor_status_pemesan_renovasi_2"
+                        android:fontFamily="@font/test"
                         android:textAlignment="center"
                         android:layout_gravity="center"
                         android:textColor="#ffffff" />
@@ -164,6 +168,7 @@
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
+                    android:fontFamily="@font/test"
                     android:layout_marginTop="151dp"
                     android:textColor="#000" />
 
@@ -192,6 +197,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/app_mandor_status_pemesan_renovasi_4"
+                        android:fontFamily="@font/test"
                         android:textAlignment="center"
                         android:layout_gravity="center"
                         android:textColor="#ffffff" />
@@ -204,6 +210,7 @@
                     android:layout_height="90dp"
                     android:layout_marginTop="200dp"
                     android:layout_gravity="end"
+                    android:fontFamily="@font/test"
                     android:scrollbars = "vertical"
                     android:textColor="#000" />
 
@@ -239,6 +246,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/app_mandor_status_pemesan_renovasi_5"
                         android:textAlignment="center"
+                        android:fontFamily="@font/test"
                         android:layout_gravity="center"
                         android:textColor="#ffffff" />
 
@@ -271,6 +279,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/app_mandor_status_pemesan_renovasi_6"
+                        android:fontFamily="@font/test"
                         android:textAlignment="center"
                         android:layout_gravity="center"
                         android:textColor="#ffffff" />
@@ -281,6 +290,7 @@
                     android:id="@+id/user_input_estimasi_layanan_kontrak"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/test"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginStart="20sp"
                     android:layout_marginTop="350dp"
@@ -324,6 +334,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/app_mandor_status_pemesan_renovasi_11"
+                        android:fontFamily="@font/test"
                         android:textAlignment="center"
                         android:layout_gravity="center"
                         android:textColor="#ffffff" />
@@ -348,6 +359,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/app_mandor_status_pemesan_renovasi_7"
+                        android:fontFamily="@font/test"
                         android:textAlignment="center"
                         android:layout_gravity="center"
                         android:textColor="#ffffff" />
@@ -383,6 +395,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/app_mandor_status_pemesan_renovasi_8"
                         android:textAlignment="center"
+                        android:fontFamily="@font/test"
                         android:layout_gravity="center"
                         android:textColor="#ffffff" />
 
@@ -416,6 +429,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/app_mandor_status_pemesan_renovasi_9"
+                        android:fontFamily="@font/test"
                         android:textAlignment="center"
                         android:layout_gravity="center"
                         android:textColor="#ffffff" />
@@ -461,6 +475,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/komplain_text_2"
+                        android:fontFamily="@font/test"
                         android:textAlignment="center"
                         android:layout_gravity="center"
                         android:textColor="#ffffff" />

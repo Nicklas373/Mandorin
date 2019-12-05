@@ -37,6 +37,7 @@
             android:text="@string/app_mandor_riwayat_pembayaran_title"
             android:textAlignment="center"
             android:textColor="#ffffff"
+            android:fontFamily="@font/test"
             android:id="@+id/toolbar_text"
             style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"/>
 
@@ -84,6 +85,7 @@
         android:layout_below="@+id/con_image_riwayat_pembayaran"
         android:id="@+id/con_text_riwayat_pembayaran"
         android:text="@string/connection_text"
+        android:fontFamily="@font/test"
         android:textColor="#000"
         android:textSize="20sp"
         android:textAllCaps="false"
@@ -103,6 +105,7 @@
         android:textSize="20sp"
         android:textAllCaps="false"
         android:textAlignment="center"
+        android:fontFamily="@font/test"
         android:textColor="#fff"
         style="@style/Widget.AppCompat.Button"
         android:visibility="gone"/>

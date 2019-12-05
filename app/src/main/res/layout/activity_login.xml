@@ -24,6 +24,7 @@
             android:textSize="35sp"
             android:textAllCaps="false"
             android:textColor="#000"
+            android:fontFamily="@font/test"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="40dp"/>
 
@@ -36,6 +37,7 @@
             android:layout_marginEnd="10dp"
             android:layout_marginTop="220dp"
             android:textSize="23sp"
+            android:fontFamily="@font/test"
             android:inputType="textEmailAddress"
             android:hint="@string/app_mandor_login_1"
             android:importantForAutofill="no" />
@@ -49,6 +51,7 @@
             android:layout_marginBottom="15sp"
             android:layout_gravity="bottom"
             android:textSize="20sp"
+            android:fontFamily="@font/test"
             android:textColor="#000"
             android:text="@string/app_mandor_login_3" />
 
@@ -61,6 +64,7 @@
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="10sp"
             android:textSize="18sp"
+            android:fontFamily="@font/test"
             android:background="@color/colorPrimary"
             android:textColor="#fff"
             android:textAllCaps="false"

@@ -43,6 +43,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="@string/app_mandor_1_profile_2"
+            android:fontFamily="@font/test"
             android:textColor="#ffffff"
             android:layout_marginEnd="35dp"
             android:layout_marginStart="10dp"/>
@@ -93,6 +94,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/app_mandor_1_profile_2"
+                android:fontFamily="@font/test"
                 android:textColor="#ffffff"
                 android:gravity="center_horizontal"
                 android:textAlignment="center"
@@ -107,6 +109,7 @@
             android:layout_marginStart="135dp"
             android:layout_marginTop="40dp"
             android:text="@string/empty"
+            android:fontFamily="@font/test"
             android:textColor="#000000"
             android:textSize="20sp" />
 
@@ -117,6 +120,7 @@
             android:layout_marginStart="135dp"
             android:layout_marginTop="80dp"
             android:text="@string/empty"
+            android:fontFamily="@font/test"
             android:textColor="#000000"
             android:textSize="20sp" />
 
@@ -140,6 +144,7 @@
             android:layout_height="25dp"
             android:layout_marginTop="15dp"
             android:text="@string/app_mandor_1_profile_3_data_1"
+            android:fontFamily="@font/test"
             android:textSize="15sp"
             android:textAlignment="center"
             android:background="@color/colorPrimary"
@@ -151,6 +156,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="17dp"
             android:layout_gravity="end"
+            android:fontFamily="@font/test"
             android:layout_toEndOf="@id/txt_nama_mandor"
             android:text="@string/empty"
             android:textColor="#000000"/>
@@ -166,6 +172,7 @@
             android:id="@+id/txt_nik_mandor"
             android:layout_width="100dp"
             android:layout_height="25dp"
+            android:fontFamily="@font/test"
             android:layout_marginTop="60dp"
             android:text="@string/app_mandor_1_profile_3_data_2"
             android:textSize="15sp"
@@ -176,6 +183,7 @@
         <TextView
             android:id="@+id/txt_nik_mandor_1"
             android:layout_width="220dp"
+            android:fontFamily="@font/test"
             android:layout_height="wrap_content"
             android:layout_marginTop="63dp"
             android:layout_gravity="end"
@@ -193,6 +201,7 @@
         <TextView
             android:id="@+id/txt_umur_mandor"
             android:layout_width="100dp"
+            android:fontFamily="@font/test"
             android:layout_height="25dp"
             android:layout_marginTop="105dp"
             android:text="@string/app_mandor_1_profile_3_data_3"
@@ -204,6 +213,7 @@
         <TextView
             android:id="@+id/txt_umur_mandor_1"
             android:layout_width="220dp"
+            android:fontFamily="@font/test"
             android:layout_height="wrap_content"
             android:layout_marginTop="108dp"
             android:layout_gravity="end"
@@ -222,6 +232,7 @@
             android:id="@+id/txt_tempat_mandor"
             android:layout_width="100dp"
             android:layout_height="25dp"
+            android:fontFamily="@font/test"
             android:layout_marginTop="150dp"
             android:text="@string/app_mandor_1_profile_3_data_6"
             android:textAlignment="center"
@@ -232,6 +243,7 @@
         <TextView
             android:id="@+id/txt_tempat_mandor_1"
             android:layout_width="220dp"
+            android:fontFamily="@font/test"
             android:layout_height="wrap_content"
             android:layout_marginTop="153dp"
             android:layout_gravity="end"
@@ -250,6 +262,7 @@
             android:id="@+id/txt_tgl_mandor"
             android:layout_width="100dp"
             android:layout_height="25dp"
+            android:fontFamily="@font/test"
             android:layout_marginTop="195dp"
             android:text="@string/app_mandor_1_profile_3_data_7"
             android:textAlignment="center"
@@ -260,6 +273,7 @@
         <TextView
             android:id="@+id/txt_tgl_mandor_1"
             android:layout_width="220dp"
+            android:fontFamily="@font/test"
             android:layout_height="wrap_content"
             android:layout_marginTop="197dp"
             android:layout_gravity="end"
@@ -278,6 +292,7 @@
             android:id="@+id/txt_agama_mandor"
             android:layout_width="100dp"
             android:layout_height="25dp"
+            android:fontFamily="@font/test"
             android:layout_marginTop="240dp"
             android:text="@string/app_mandor_1_profile_3_data_8"
             android:textAlignment="center"
@@ -288,6 +303,7 @@
         <TextView
             android:id="@+id/txt_agama_mandor_1"
             android:layout_width="220dp"
+            android:fontFamily="@font/test"
             android:layout_height="wrap_content"
             android:layout_marginTop="243dp"
             android:layout_gravity="end"
@@ -299,6 +315,7 @@
             android:layout_width="220dp"
             android:layout_height="1dp"
             android:background="#000"
+            android:fontFamily="@font/test"
             android:layout_marginTop="262dp"
             android:layout_gravity="end" />
 
@@ -308,6 +325,7 @@
             android:layout_height="25dp"
             android:layout_marginTop="285dp"
             android:textSize="15sp"
+            android:fontFamily="@font/test"
             android:text="@string/app_mandor_1_profile_3_data_4"
             android:textAlignment="center"
             android:background="@color/colorPrimary"
@@ -316,6 +334,7 @@
         <TextView
             android:id="@+id/txt_alamat_mandor_1"
             android:layout_width="220dp"
+            android:fontFamily="@font/test"
             android:layout_height="wrap_content"
             android:layout_marginTop="288dp"
             android:layout_gravity="end"
@@ -334,6 +353,7 @@
             android:id="@+id/txt_lama_kerja_mandor"
             android:layout_width="100dp"
             android:layout_height="25dp"
+            android:fontFamily="@font/test"
             android:layout_marginTop="330dp"
             android:textSize="15sp"
             android:text="@string/app_mandor_1_profile_3_data_5"
@@ -344,6 +364,7 @@
         <TextView
             android:id="@+id/txt_lama_kerja_mandor_1"
             android:layout_width="220dp"
+            android:fontFamily="@font/test"
             android:layout_height="wrap_content"
             android:layout_marginTop="333dp"
             android:layout_gravity="end"

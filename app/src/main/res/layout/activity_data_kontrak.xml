@@ -35,6 +35,7 @@
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:text="@string/app_mandor_data_pemesan_renovasi_title"
+            android:fontFamily="@font/test"
             android:textAlignment="center"
             android:textColor="#ffffff"
             android:id="@+id/toolbar_text"

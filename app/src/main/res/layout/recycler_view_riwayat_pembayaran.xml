@@ -27,6 +27,7 @@
                 android:layout_width="106dp"
                 android:layout_height="wrap_content"
                 android:text="@string/app_mandor_recycler_status_pembayaran_renovasi_4"
+                android:fontFamily="@font/test"
                 android:textColor="#ffffff"
                 android:textSize="15sp" />
 
@@ -40,6 +41,7 @@
             android:text="@string/app_mandor_recycler_riwayat_pembayaran_1"
             android:layout_below="@+id/cv_title"
             android:textColor="#000"
+            android:fontFamily="@font/test"
             android:textSize="15sp" />
 
         <TextView
@@ -50,6 +52,7 @@
             android:layout_marginStart="15dp"
             android:layout_below="@+id/cv_title"
             android:text="@string/heck"
+            android:fontFamily="@font/test"
             android:textColor="#000000"
             android:textSize="15sp" />
 
@@ -61,6 +64,7 @@
             android:layout_marginStart="30dp"
             android:layout_below="@+id/cv_title"
             android:text=""
+            android:fontFamily="@font/test"
             android:textColor="#000000"
             android:textSize="15sp" />
 
@@ -70,6 +74,7 @@
             android:layout_marginStart="10dp"
             android:layout_height="wrap_content"
             android:text="@string/app_mandor_recycler_riwayat_pembayaran_3"
+            android:fontFamily="@font/test"
             android:layout_below="@+id/text_nomor_kontrak_riwayat_pembayaran"
             android:layout_marginTop="10dp"
             android:textColor="#000"
@@ -82,6 +87,7 @@
             android:layout_toEndOf="@+id/text_alamat_riwayat_pembayaran"
             android:layout_marginStart="30dp"
             android:layout_marginTop="17dp"
+            android:fontFamily="@font/test"
             android:layout_below="@+id/text_nomor_kontrak_riwayat_pembayaran"
             android:text=""
             android:textColor="#000000"
@@ -93,6 +99,7 @@
             android:layout_height="wrap_content"
             android:layout_toEndOf="@+id/text_alamat_riwayat_pembayaran"
             android:layout_marginStart="15dp"
+            android:fontFamily="@font/test"
             android:layout_marginTop="17dp"
             android:layout_below="@+id/text_nomor_kontrak_riwayat_pembayaran"
             android:text="@string/heck"
@@ -103,6 +110,7 @@
             android:id="@+id/text_biaya_desain_pembayaran"
             android:layout_width="110dp"
             android:layout_marginStart="10dp"
+            android:fontFamily="@font/test"
             android:layout_height="wrap_content"
             android:text="@string/app_mandor_recycler_riwayat_pembayaran_4"
             android:layout_below="@+id/text_nama_riwayat_pembayaran"
@@ -114,6 +122,7 @@
             android:id="@+id/text_biaya_desain_pembayaran_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/test"
             android:layout_toEndOf="@+id/text_alamat_riwayat_pembayaran"
             android:layout_marginStart="30dp"
             android:layout_marginTop="17dp"
@@ -126,6 +135,7 @@
             android:id="@+id/heck_4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/test"
             android:layout_toEndOf="@+id/text_alamat_riwayat_pembayaran"
             android:layout_marginStart="15dp"
             android:layout_marginTop="17dp"
@@ -142,6 +152,7 @@
             android:text="@string/app_mandor_recycler_riwayat_pembayaran_5"
             android:layout_below="@+id/text_biaya_desain_pembayaran"
             android:layout_marginTop="10dp"
+            android:fontFamily="@font/test"
             android:textColor="#000"
             android:textSize="15sp" />
 
@@ -152,6 +163,7 @@
             android:layout_toEndOf="@+id/text_alamat_riwayat_pembayaran"
             android:layout_marginStart="30dp"
             android:layout_marginTop="17dp"
+            android:fontFamily="@font/test"
             android:layout_below="@+id/text_biaya_desain_pembayaran"
             android:text=""
             android:textColor="#000000"
@@ -164,6 +176,7 @@
             android:layout_toEndOf="@+id/text_alamat_riwayat_pembayaran"
             android:layout_marginStart="15dp"
             android:layout_marginTop="17dp"
+            android:fontFamily="@font/test"
             android:layout_below="@+id/text_biaya_desain_pembayaran"
             android:text="@string/heck"
             android:textColor="#000000"
@@ -175,6 +188,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:text="@string/app_mandor_recycler_riwayat_pembayaran_2"
+            android:fontFamily="@font/test"
             android:layout_below="@+id/text_biaya_konstruksi"
             android:layout_marginTop="10dp"
             android:textColor="#000"
@@ -186,6 +200,7 @@
             android:layout_height="wrap_content"
             android:layout_toEndOf="@+id/text_alamat_riwayat_pembayaran"
             android:layout_marginStart="30dp"
+            android:fontFamily="@font/test"
             android:layout_marginTop="17dp"
             android:layout_below="@+id/text_biaya_konstruksi"
             android:text=""
@@ -195,6 +210,7 @@
         <TextView
             android:id="@+id/heck_2"
             android:layout_width="wrap_content"
+            android:fontFamily="@font/test"
             android:layout_height="wrap_content"
             android:layout_toEndOf="@+id/text_alamat_riwayat_pembayaran"
             android:layout_marginStart="15dp"

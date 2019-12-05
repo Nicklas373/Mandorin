@@ -44,6 +44,7 @@
             android:gravity="start"
             android:text="@string/app_mandor_data_pembayaran_renovasi_title"
             android:textAlignment="center"
+            android:fontFamily="@font/test"
             android:textColor="#ffffff"
             android:layout_marginStart="40dp"
             android:layout_marginEnd="55dp"/>
@@ -87,6 +88,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/app_mandor_komplain_8"
+                        android:fontFamily="@font/test"
                         android:textAlignment="center"
                         android:layout_gravity="center"
                         android:textColor="#ffffff" />
@@ -111,6 +113,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/app_mandor_data_pembayaran_renovasi_1"
+                        android:fontFamily="@font/test"
                         android:textAlignment="center"
                         android:layout_gravity="center"
                         android:textColor="#ffffff" />
@@ -122,6 +125,7 @@
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
+                    android:fontFamily="@font/test"
                     android:layout_marginTop="63dp"
                     android:textColor="#000"/>
 
@@ -150,6 +154,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/app_mandor_data_pembayaran_renovasi_2"
+                        android:fontFamily="@font/test"
                         android:textAlignment="center"
                         android:layout_gravity="center"
                         android:textColor="#ffffff" />
@@ -161,6 +166,7 @@
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
+                    android:fontFamily="@font/test"
                     android:layout_marginTop="113dp"
                     android:textColor="#000"/>
 
@@ -189,6 +195,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/app_mandor_data_pembayaran_renovasi_3"
+                        android:fontFamily="@font/test"
                         android:textAlignment="center"
                         android:layout_gravity="center"
                         android:textColor="#ffffff" />
@@ -200,6 +207,7 @@
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
+                    android:fontFamily="@font/test"
                     android:layout_marginTop="163dp"
                     android:textColor="#000"/>
 
@@ -242,6 +250,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:text="@string/app_mandor_data_pembayaran_renovasi_8"
+                        android:fontFamily="@font/test"
                         android:textAlignment="center"
                         android:textColor="#ffffff" />
 
@@ -275,6 +284,7 @@
                         android:layout_gravity="center"
                         android:textSize="20sp"
                         android:text="@string/app_mandor_data_pembayaran_renovasi_4"
+                        android:fontFamily="@font/test"
                         android:textAlignment="center"
                         android:textColor="#ffffff" />
 
@@ -300,6 +310,7 @@
                         android:layout_gravity="center"
                         android:textSize="20sp"
                         android:text="@string/app_mandor_data_pembayaran_renovasi_5"
+                        android:fontFamily="@font/test"
                         android:textAlignment="center"
                         android:textColor="#ffffff" />
 
@@ -325,6 +336,7 @@
                         android:layout_gravity="center"
                         android:textSize="20sp"
                         android:text="@string/app_mandor_data_pembayaran_renovasi_6"
+                        android:fontFamily="@font/test"
                         android:textAlignment="center"
                         android:textColor="#ffffff" />
 
@@ -350,6 +362,7 @@
                         android:layout_gravity="center"
                         android:textSize="20sp"
                         android:text="@string/app_mandor_data_pembayaran_renovasi_9"
+                        android:fontFamily="@font/test"
                         android:textAlignment="center"
                         android:textColor="#ffffff" />
 
@@ -374,6 +387,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:text="@string/app_mandor_data_pembayaran_renovasi_8"
+                        android:fontFamily="@font/test"
                         android:textAlignment="center"
                         android:textColor="#ffffff" />
 
@@ -399,6 +413,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:text="@string/app_mandor_data_pembayaran_renovasi_10"
+                        android:fontFamily="@font/test"
                         android:textAlignment="center"
                         android:textColor="#ffffff" />
 
@@ -409,6 +424,7 @@
                         android:layout_marginTop="335dp"
                         android:clickable="true"
                         android:focusable="true"
+                        android:fontFamily="@font/test"
                         android:layout_marginStart="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -442,6 +458,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:text="@string/app_mandor_data_pembayaran_renovasi_11"
+                        android:fontFamily="@font/test"
                         android:textAlignment="center"
                         android:textColor="#ffffff" />
 
@@ -452,6 +469,7 @@
                     android:layout_marginTop="415dp"
                     android:clickable="true"
                     android:focusable="true"
+                    android:fontFamily="@font/test"
                     android:layout_marginStart="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -485,6 +503,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:text="@string/app_mandor_data_pembayaran_renovasi_12"
+                        android:fontFamily="@font/test"
                         android:textAlignment="center"
                         android:textColor="#ffffff" />
 
@@ -495,6 +514,7 @@
                     android:layout_marginTop="495dp"
                     android:clickable="true"
                     android:focusable="true"
+                    android:fontFamily="@font/test"
                     android:layout_marginStart="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -528,6 +548,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:text="@string/app_mandor_data_pembayaran_renovasi_13"
+                        android:fontFamily="@font/test"
                         android:textAlignment="center"
                         android:textColor="#ffffff" />
 
@@ -538,6 +559,7 @@
                     android:layout_marginTop="575dp"
                     android:clickable="true"
                     android:focusable="true"
+                    android:fontFamily="@font/test"
                     android:layout_marginStart="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -579,6 +601,7 @@
 
                     <TextView
                         android:id="@+id/textView17"
+                        android:fontFamily="@font/test"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -608,6 +631,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="@string/app_mandor_data_pembayaran_renovasi_15"
+                    android:fontFamily="@font/test"
                     android:textAlignment="center"
                     android:textColor="#ffffff" />
 
@@ -618,6 +642,7 @@
                     android:layout_marginTop="110dp"
                     android:clickable="true"
                     android:focusable="true"
+                    android:fontFamily="@font/test"
                     android:layout_marginStart="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -650,6 +675,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
+                        android:fontFamily="@font/test"
                         android:text="@string/app_mandor_data_pembayaran_renovasi_16"
                         android:textAlignment="center"
                         android:textColor="#ffffff" />
@@ -661,6 +687,7 @@
                     android:layout_marginTop="170dp"
                     android:clickable="true"
                     android:focusable="true"
+                    android:fontFamily="@font/test"
                     android:layout_marginStart="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -692,6 +719,7 @@
                         android:id="@+id/textView20"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/test"
                         android:layout_gravity="center"
                         android:text="@string/app_mandor_data_pembayaran_renovasi_17"
                         android:textAlignment="center"
@@ -704,6 +732,7 @@
                     android:layout_marginTop="235dp"
                     android:clickable="true"
                     android:focusable="true"
+                    android:fontFamily="@font/test"
                     android:layout_marginStart="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -725,6 +754,7 @@
                     android:background="@color/colorPrimary"
                     android:textColor="#fff"
                     android:textAllCaps="false"
+                    android:fontFamily="@font/test"
                     android:text="@string/app_mandor_data_pembayaran_renovasi_7"
                     android:layout_gravity="center" />
 
@@ -736,6 +766,7 @@
                     android:background="@color/colorPrimary"
                     android:textColor="#fff"
                     android:textAllCaps="false"
+                    android:fontFamily="@font/test"
                     android:text="@string/app_mandor_data_pembayaran_renovasi_7"
                     android:layout_gravity="center" />
 

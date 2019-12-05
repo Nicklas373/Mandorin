@@ -43,6 +43,7 @@
             android:gravity="center"
             android:text="@string/app_mandor_user_profile_title"
             android:textColor="#ffffff"
+            android:fontFamily="@font/test"
             android:layout_marginEnd="35dp"
             android:layout_marginStart="10dp"/>
 
@@ -82,6 +83,7 @@
             android:text="@string/app_mandor_user_menu_5"
             android:textColor="#fff"
             android:layout_gravity="end"
+            android:fontFamily="@font/test"
             android:textAlignment="center"
             android:background="@color/colorPrimary"
             android:textSize="20sp"/>
@@ -95,12 +97,14 @@
             android:textSize="20sp"
             android:hint="@string/app_mandor_menu_edit_akun_6"
             android:textColor="#000"
+            android:fontFamily="@font/test"
             android:importantForAutofill="no"
             android:inputType="textPersonName" />
 
         <TextView
             android:id="@+id/userEditEmail"
             android:layout_width="230dp"
+            android:fontFamily="@font/test"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_marginTop="110dp"
@@ -118,6 +122,7 @@
             android:layout_width="100dp"
             android:layout_height="30dp"
             android:text="@string/app_mandor_user_menu_1"
+            android:fontFamily="@font/test"
             android:layout_gravity="start"
             android:layout_marginTop="190dp"
             android:textSize="20sp"
@@ -128,6 +133,7 @@
         <EditText
             android:id="@+id/userEditAge"
             android:layout_width="240dp"
+            android:fontFamily="@font/test"
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
             android:layout_gravity="end"
@@ -142,6 +148,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/app_mandor_user_misc"
+            android:fontFamily="@font/test"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="190dp"
             android:layout_marginEnd="70dp"
@@ -153,6 +160,7 @@
             android:layout_width="240dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
+            android:fontFamily="@font/test"
             android:layout_gravity="end"
             android:layout_marginTop="229dp"
             android:textSize="20sp"
@@ -165,6 +173,7 @@
             android:layout_width="100dp"
             android:layout_height="30dp"
             android:text="@string/app_mandor_user_menu_2"
+            android:fontFamily="@font/test"
             android:layout_gravity="start"
             android:layout_marginTop="240dp"
             android:textSize="20sp"
@@ -176,6 +185,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/app_mandor_user_misc"
+            android:fontFamily="@font/test"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="240dp"
             android:layout_marginEnd="70dp"
@@ -186,6 +196,7 @@
             android:layout_width="100dp"
             android:layout_height="30dp"
             android:text="@string/app_mandor_user_menu_3"
+            android:fontFamily="@font/test"
             android:layout_gravity="start"
             android:layout_marginTop="290dp"
             android:textSize="20sp"
@@ -197,6 +208,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/app_mandor_user_misc"
+            android:fontFamily="@font/test"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="290dp"
             android:layout_marginEnd="70dp"
@@ -206,6 +218,7 @@
         <EditText
             android:id="@+id/user_edit_telp"
             android:layout_width="240dp"
+            android:fontFamily="@font/test"
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
             android:layout_gravity="end"
@@ -220,6 +233,7 @@
             android:layout_width="100dp"
             android:layout_height="30dp"
             android:text="@string/app_mandor_user_menu_4"
+            android:fontFamily="@font/test"
             android:layout_gravity="start"
             android:layout_marginTop="340dp"
             android:textSize="20sp"
@@ -231,6 +245,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/app_mandor_user_misc"
+            android:fontFamily="@font/test"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="340dp"
             android:layout_marginEnd="70dp"
@@ -242,6 +257,7 @@
             android:layout_width="240dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
+            android:fontFamily="@font/test"
             android:layout_gravity="end"
             android:layout_marginTop="329dp"
             android:textSize="20sp"
@@ -257,6 +273,7 @@
 
         <TextView
             android:id="@+id/btn_cancel"
+            android:fontFamily="@font/test"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -270,6 +287,7 @@
         <Button
             android:id="@+id/save_account"
             android:layout_width="130dp"
+            android:fontFamily="@font/test"
             android:layout_height="40dp"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"

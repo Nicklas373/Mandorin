@@ -41,6 +41,7 @@
             android:gravity="start"
             android:text="@string/app_mandor_komplain_title"
             android:textAlignment="center"
+            android:fontFamily="@font/test"
             android:textColor="#ffffff"
             android:layout_marginStart="40dp"
             android:layout_marginEnd="55dp"/>
@@ -79,6 +80,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/app_mandor_komplain_1"
+                        android:fontFamily="@font/test"
                         android:textAlignment="center"
                         android:layout_gravity="center"
                         android:textColor="#ffffff" />
@@ -88,6 +90,7 @@
                 <TextView
                     android:id="@+id/user_input_nomor_kontrak"
                     android:layout_width="220dp"
+                    android:fontFamily="@font/test"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
                     android:layout_marginTop="27dp"
@@ -117,6 +120,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/app_mandor_komplain_2"
+                        android:fontFamily="@font/test"
                         android:textAlignment="center"
                         android:layout_gravity="center"
                         android:textColor="#ffffff" />
@@ -127,6 +131,7 @@
                     android:id="@+id/user_input_alamat_kontrak"
                     android:layout_width="220dp"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/test"
                     android:layout_gravity="end"
                     android:layout_marginTop="94dp"
                     android:textColor="#000"/>
@@ -158,6 +163,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:text="@string/app_mandor_komplain_3"
+                        android:fontFamily="@font/test"
                         android:textAlignment="center"
                         android:textColor="#ffffff" />
 
@@ -170,6 +176,7 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="250dp"
                     android:ems="10"
+                    android:fontFamily="@font/test"
                     android:hint="@string/app_mandor_komplain_6"
                     android:importantForAutofill="no"
                     android:inputType="textMultiLine"
@@ -184,6 +191,7 @@
                     style="@style/Widget.AppCompat.Button"
                     android:layout_width="100dp"
                     android:layout_height="30dp"
+                    android:fontFamily="@font/test"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="480dp"
                     android:background="@color/colorPrimary"

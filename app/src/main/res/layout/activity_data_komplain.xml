@@ -36,6 +36,7 @@
             android:gravity="start"
             android:text="@string/app_mandor_recycler_data_komplain_title"
             android:textAlignment="center"
+            android:fontFamily="@font/test"
             android:textColor="#ffffff"
             android:layout_marginEnd="35dp"
             android:layout_marginStart="10dp"

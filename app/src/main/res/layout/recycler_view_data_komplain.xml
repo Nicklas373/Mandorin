@@ -28,6 +28,7 @@
                 android:layout_width="106dp"
                 android:layout_height="wrap_content"
                 android:text="@string/app_mandor_recycler_data_komplain_title"
+                android:fontFamily="@font/test"
                 android:layout_marginStart="3dp"
                 android:textColor="#ffffff"
                 android:textSize="15sp" />
@@ -40,6 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:text="@string/app_mandor_recycler_data_komplain_1"
+            android:fontFamily="@font/test"
             android:layout_below="@+id/cv_title"
             android:textColor="#000000"
             android:textSize="15sp" />
@@ -52,6 +54,7 @@
             android:layout_marginStart="5dp"
             android:layout_below="@+id/cv_title"
             android:text="@string/heck"
+            android:fontFamily="@font/test"
             android:textColor="#000000"
             android:textSize="15sp" />
 
@@ -63,6 +66,7 @@
             android:layout_marginStart="20dp"
             android:layout_below="@+id/cv_title"
             android:text=""
+            android:fontFamily="@font/test"
             android:textColor="#000000"
             android:textSize="15sp" />
 
@@ -72,6 +76,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:text="@string/app_mandor_recycler_data_komplain_2"
+            android:fontFamily="@font/test"
             android:layout_below="@+id/text_id_kontrak_komplain"
             android:layout_marginTop="10dp"
             android:textColor="#000000"
@@ -84,6 +89,7 @@
             android:layout_toEndOf="@+id/text_id_kontrak_komplain"
             android:layout_marginStart="5dp"
             android:layout_marginTop="10dp"
+            android:fontFamily="@font/test"
             android:layout_below="@+id/text_id_kontrak_komplain_1"
             android:text="@string/heck"
             android:textColor="#000000"
@@ -95,6 +101,7 @@
             android:layout_height="wrap_content"
             android:layout_toEndOf="@+id/text_id_kontrak_komplain"
             android:layout_marginStart="20dp"
+            android:fontFamily="@font/test"
             android:layout_marginTop="10dp"
             android:layout_below="@+id/text_id_kontrak_komplain_1"
             android:text=""
@@ -106,6 +113,7 @@
             android:layout_width="114dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
+            android:fontFamily="@font/test"
             android:text="@string/app_mandor_recycler_status_renovasi_5"
             android:layout_below="@+id/text_status_komplain"
             android:layout_marginTop="10dp"
@@ -119,6 +127,7 @@
             android:layout_toEndOf="@+id/text_status_komplain"
             android:layout_marginStart="5dp"
             android:layout_marginTop="10dp"
+            android:fontFamily="@font/test"
             android:layout_below="@+id/text_status_komplain_1"
             android:text="@string/heck"
             android:textColor="#000000"
@@ -130,6 +139,7 @@
             android:layout_height="wrap_content"
             android:layout_toEndOf="@+id/text_status_komplain"
             android:layout_marginStart="20dp"
+            android:fontFamily="@font/test"
             android:layout_marginTop="10dp"
             android:layout_below="@+id/text_status_komplain_1"
             android:text=""

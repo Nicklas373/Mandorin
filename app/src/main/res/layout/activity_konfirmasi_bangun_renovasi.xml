@@ -24,6 +24,7 @@
             android:layout_height="wrap_content"
             android:gravity="start"
             android:text="@string/app_mandor_konfirmasi_title"
+            android:fontFamily="@font/test"
             android:textAlignment="center"
             android:textColor="#ffffff"
             android:layout_marginStart="40dp"
@@ -53,11 +54,12 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"
+        android:fontFamily="@font/test"
         android:text="@string/app_mandor_konfirmasi_1"
         android:textColor="#000"
         android:textSize="30sp" />
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:layout_width="240dp"
             android:layout_height="180dp"
             android:layout_gravity="center_horizontal"
@@ -69,6 +71,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="300dp"
+            android:fontFamily="@font/test"
         android:text="@string/app_mandor_konfirmasi_2"
         android:textSize="19sp"
         android:textColor="#000"
@@ -80,6 +83,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="360dp"
+            android:fontFamily="@font/test"
             android:text="@string/app_mandor_konfirmasi_3"
             android:textSize="20sp"
             android:textColor="#000"/>
@@ -88,6 +92,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="390dp"
+            android:fontFamily="@font/test"
             android:text="@string/app_mandor_konfirmasi_4"
             android:textSize="20sp"
             android:textColor="#000"
@@ -96,6 +101,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/test"
             android:layout_marginTop="420dp"
             android:text="@string/app_mandor_konfirmasi_5"
             android:textSize="20sp"
@@ -105,6 +111,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/test"
             android:layout_marginTop="450dp"
             android:text="@string/app_mandor_konfirmasi_6"
             android:textSize="20sp"
@@ -115,6 +122,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="520dp"
+        android:fontFamily="@font/test"
         android:text="@string/app_mandor_konfirmasi_7"
         android:textSize="20sp"
         android:textColor="#000"
@@ -124,6 +132,7 @@
         android:id="@+id/button_selesai"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="100dp"
+        android:fontFamily="@font/test"
         android:layout_height="50dp"
         android:layout_marginTop="590dp"
         android:layout_marginEnd="10dp"

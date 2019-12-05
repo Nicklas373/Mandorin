@@ -25,6 +25,7 @@
             android:gravity="start"
             android:text="@string/app_mandor_konfirmasi_title"
             android:textAlignment="center"
+            android:fontFamily="@font/test"
             android:textColor="#ffffff"
             android:layout_marginStart="40dp"
             android:layout_marginEnd="55dp"/>
@@ -55,9 +56,10 @@
             android:layout_marginTop="20dp"
             android:text="@string/app_mandor_konfirmasi_komplain_1"
             android:textColor="#000"
+            android:fontFamily="@font/test"
             android:textSize="30sp" />
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:layout_width="240dp"
             android:layout_height="180dp"
             android:layout_gravity="center_horizontal"
@@ -69,6 +71,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="300dp"
+            android:fontFamily="@font/test"
             android:text="@string/app_mandor_konfirmasi_komplain_2"
             android:textSize="19sp"
             android:textColor="#000"
@@ -80,6 +83,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="360dp"
+            android:fontFamily="@font/test"
             android:text="@string/app_mandor_konfirmasi_komplain_3"
             android:textSize="20sp"
             android:textColor="#000"/>
@@ -88,6 +92,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="390dp"
+            android:fontFamily="@font/test"
             android:text="@string/app_mandor_konfirmasi_komplain_4"
             android:textSize="20sp"
             android:textColor="#000"
@@ -97,6 +102,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="420dp"
+            android:fontFamily="@font/test"
             android:text="@string/app_mandor_konfirmasi_komplain_5"
             android:textSize="20sp"
             android:textColor="#000"
@@ -106,6 +112,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="450dp"
+            android:fontFamily="@font/test"
             android:text="@string/app_mandor_konfirmasi_komplain_6"
             android:textSize="20sp"
             android:textColor="#000"
@@ -115,6 +122,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="520dp"
+            android:fontFamily="@font/test"
             android:text="@string/app_mandor_konfirmasi_komplain_7"
             android:textSize="20sp"
             android:textColor="#000"
@@ -126,6 +134,7 @@
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:layout_marginTop="580dp"
+            android:fontFamily="@font/test"
             android:layout_marginEnd="10dp"
             android:layout_gravity="end"
             android:background="@color/colorPrimary"
