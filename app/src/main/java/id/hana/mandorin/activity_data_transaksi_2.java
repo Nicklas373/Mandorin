@@ -405,7 +405,12 @@ public class activity_data_transaksi_2 extends AppCompatActivity {
                 selectedFilePath = file_path.getPath(this, selectedFileUri);
 
                 if (selectedFilePath != null && !selectedFilePath.equals("")) {
-                    FileName.setText(selectedFilePath);
+
+                    String[] parts = selectedFilePath.split("/");
+                    final String fileName = parts[parts.length - 1];
+                    String regex = fileName.replaceAll("\\s","");
+                    FileName.setText(regex);
+
                     File imgFile = new  File(selectedFilePath);
                     if(imgFile.exists()){
                         Bitmap myBitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
@@ -476,7 +481,7 @@ public class activity_data_transaksi_2 extends AppCompatActivity {
                                     createdata_2();
                                 }
                             }
-                            Intent intent = new Intent(activity_data_transaksi_2.this, activity_konfirmasi_bangun_renovasi.class);
+                            Intent intent = new Intent(activity_data_transaksi_2.this, activity_data_pembayaran_konfirmasi.class);
                             startActivity(intent);
                         } catch (IllegalArgumentException e) {
                             Toast.makeText(activity_data_transaksi_2.this, "Proses Gagal!", Toast.LENGTH_SHORT).show();
@@ -550,9 +555,9 @@ public class activity_data_transaksi_2 extends AppCompatActivity {
                 String desain = substring.substring(substring.lastIndexOf("/")+1);
                 String bukti_satu = desain.replaceAll("\\s", "");
 
-                String substring_2 = FileName.getText().toString();
-                String desain_2 = substring_2.substring(substring.lastIndexOf("/")+1);
-                String bukti_dua = desain_2.replaceAll("\\s", "");
+                String[] parts = selectedFilePath.split("/");
+                final String fileName = parts[parts.length - 1];
+                String regex = fileName.replaceAll("\\s","");
 
                 String substring_3 = bukti_tiga_1.getText().toString();
                 String desain_3 = substring_3.substring(substring.lastIndexOf("/")+1);
@@ -593,7 +598,7 @@ public class activity_data_transaksi_2 extends AppCompatActivity {
                 params.put("tgl_input_empat", tgl_4);
                 params.put("tgl_input_desain", tgl_desain);
                 params.put("bukti_satu", bukti_satu);
-                params.put("bukti_dua", bukti_dua);
+                params.put("bukti_dua", regex);
                 params.put("bukti_tiga", bukti_tiga);
                 params.put("bukti_empat", bukti_empat);
                 params.put("bukti_desain", bukti_desain);
@@ -668,9 +673,9 @@ public class activity_data_transaksi_2 extends AppCompatActivity {
                 String desain_2 = substring_2.substring(substring.lastIndexOf("/")+1);
                 String bukti_dua = desain_2.replaceAll("\\s", "");
 
-                String substring_3 = FileName.getText().toString();
-                String desain_3 = substring_3.substring(substring.lastIndexOf("/")+1);
-                String bukti_tiga = desain_3.replaceAll("\\s", "");
+                String[] parts = selectedFilePath.split("/");
+                final String fileName = parts[parts.length - 1];
+                String regex = fileName.replaceAll("\\s","");
 
                 String substring_4 = bukti_empat_1.getText().toString();
                 String desain_4 = substring_4.substring(substring.lastIndexOf("/")+1);
@@ -708,7 +713,7 @@ public class activity_data_transaksi_2 extends AppCompatActivity {
                 params.put("tgl_input_desain", tgl_desain);
                 params.put("bukti_satu", bukti_satu);
                 params.put("bukti_dua", bukti_dua);
-                params.put("bukti_tiga", bukti_tiga);
+                params.put("bukti_tiga", regex);
                 params.put("bukti_empat", bukti_empat);
                 params.put("bukti_desain", bukti_desain);
                 params.put("presentase", presentase);
