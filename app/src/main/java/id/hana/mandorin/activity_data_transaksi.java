@@ -296,7 +296,11 @@ public class activity_data_transaksi extends AppCompatActivity {
             if (Presentase.getText().toString().equalsIgnoreCase("95")) {
                 Pembayaran_2.setVisibility(View.GONE);
                 img_status_pembayaran.setImageDrawable(getResources().getDrawable(R.drawable.lunas_6, getApplicationContext().getTheme()));
-                Total_biaya.setText("-");
+                int result = Integer.parseInt(total_empat);
+                NumberFormat formatter = new DecimalFormat("#,###");
+                double myNumber = result;
+                String formattedNumber = formatter.format(myNumber);
+                Total_biaya.setText("Rp." + formattedNumber);
                 Toast.makeText(getApplicationContext(), "Pembayaran ke 3 anda sudah lunas", Toast.LENGTH_SHORT).show();
             }
         }
