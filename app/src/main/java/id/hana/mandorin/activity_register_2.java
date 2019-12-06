@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,6 +24,7 @@ import com.android.volley.toolbox.Volley;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -91,15 +93,16 @@ public class activity_register_2 extends AppCompatActivity {
                                         finish();
                                     } else {
                                         createdata();
+                                        auth.getCurrentUser().sendEmailVerification();
                                         try
                                         {
                                             SharedPreferences.Editor editor = pref.edit ();
                                             editor.putString("email",dbg.getText().toString());
                                             editor.apply();
-                                            startActivity(new Intent(activity_register_2.this, activity_akun.class));
+                                            startActivity(new Intent(activity_register_2.this, activity_login.class));
                                             finish();
                                             Toast.makeText(getApplicationContext(), "Akun berhasil di buat", Toast.LENGTH_SHORT).show();
-                                            Toast.makeText(getApplicationContext(), "Selamat Datang! " + email, Toast.LENGTH_LONG).show();
+                                            Toast.makeText(getApplicationContext(), "Silahkan Login dengan email anda", Toast.LENGTH_LONG).show();
                                         } catch (IllegalArgumentException e)
                                         {
                                             Toast.makeText(activity_register_2.this, "Akun gagal di buat", Toast.LENGTH_SHORT).show();
@@ -109,6 +112,7 @@ public class activity_register_2 extends AppCompatActivity {
                                     }
                                 }
                             });
+
 
                 } else {
                     inputPasswordver.setError("Cek password anda kembali");

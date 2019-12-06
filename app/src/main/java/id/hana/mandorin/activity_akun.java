@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class activity_akun extends AppCompatActivity {
 
@@ -34,7 +35,12 @@ public class activity_akun extends AppCompatActivity {
 
         if (auth.getCurrentUser() == null) {
             startActivity(new Intent(activity_akun.this, activity_login.class));
-            finish();
+
+        } else if (auth.getCurrentUser().isEmailVerified()) {
+
+        } else {
+            auth.getCurrentUser().sendEmailVerification();
+            Toast.makeText(getApplicationContext(), "Harap verifikasi e-mail anda", Toast.LENGTH_SHORT).show();
         }
 
         setContentView(R.layout.activity_akun);
@@ -60,8 +66,8 @@ public class activity_akun extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(internet_available()){
-                    Intent intent = new Intent(activity_akun.this, activity_user_profile.class);
-                    startActivity(intent);
+                        Intent intent = new Intent(activity_akun.this, activity_user_profile.class);
+                        startActivity(intent);
                 }else{
                     Toast.makeText(getApplicationContext(), "Harap Periksa Koneksi Internet Anda", Toast.LENGTH_SHORT).show();
                 }
@@ -72,8 +78,13 @@ public class activity_akun extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(internet_available()){
-                    Intent intent = new Intent(activity_akun.this, activity_edit_akun.class);
-                    startActivity(intent);
+                    auth.getCurrentUser().reload();
+                    if (auth.getCurrentUser().isEmailVerified()) {
+                        Intent intent = new Intent(activity_akun.this, activity_edit_akun.class);
+                        startActivity(intent);
+                    } else {
+                        ver_acc_dialog();
+                    }
                 }else{
                     Toast.makeText(getApplicationContext(), "Harap Periksa Koneksi Internet Anda", Toast.LENGTH_SHORT).show();
                 }
@@ -84,8 +95,8 @@ public class activity_akun extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(internet_available()){
-                    Intent intent = new Intent(activity_akun.this, activity_reset_pass.class);
-                    startActivity(intent);
+                        Intent intent = new Intent(activity_akun.this, activity_reset_pass.class);
+                        startActivity(intent);
                 }else{
                     Toast.makeText(getApplicationContext(), "Harap Periksa Koneksi Internet Anda", Toast.LENGTH_SHORT).show();
                 }
@@ -139,6 +150,42 @@ public class activity_akun extends AppCompatActivity {
                     }
                 })
                 .setNegativeButton("Batal",new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+
+        // membuat alert dialog dari builder
+        AlertDialog alertDialog = alertDialogBuilder.create();
+
+        // menampilkan alert dialog
+        alertDialog.show();
+    }
+
+    private void ver_acc_dialog(){
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                this);
+
+        // set title dialog
+        alertDialogBuilder.setTitle("Verifikasi E-Mail");
+
+        // set pesan dari dialog
+        alertDialogBuilder
+                .setMessage("Verifikasi e-mail di perlukan untuk mengakses menu ini, verifikasi ?")
+                .setIcon(R.mipmap.ic_launcher)
+                .setCancelable(false)
+                .setPositiveButton("Ya",new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog,int id) {
+                        if(internet_available()){
+                            auth.getCurrentUser().sendEmailVerification();
+                            Toast.makeText(getApplicationContext(), "E-mail verifikasi telah dikirim ke  " + auth.getCurrentUser().getEmail(), Toast.LENGTH_LONG).show();
+                        }else{
+                            Toast.makeText(getApplicationContext(), "Harap Periksa Koneksi Internet Anda", Toast.LENGTH_SHORT).show();
+                            finish();
+                        }
+                    }
+                })
+                .setNegativeButton("Tidak",new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         dialog.cancel();
                     }

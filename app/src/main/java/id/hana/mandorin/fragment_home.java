@@ -67,8 +67,13 @@ public class fragment_home extends Fragment {
             @Override
             public void onClick(View v) {
                 if (auth.getCurrentUser() != null) {
-                Intent intent = new Intent(getActivity(), activity_kontrak.class);
-                getActivity().startActivity(intent);
+                    auth.getCurrentUser().reload();
+                    if (auth.getCurrentUser().isEmailVerified()) {
+                        Intent intent = new Intent(getActivity(), activity_kontrak.class);
+                        getActivity().startActivity(intent);
+                    } else {
+                        ver_acc_dialog();
+                    }
                 } else {
                     AlertDialog.Builder alertDialogBuilder= new AlertDialog.Builder(getActivity());
 
@@ -107,8 +112,13 @@ public class fragment_home extends Fragment {
             @Override
             public void onClick(View v) {
                 if (auth.getCurrentUser() != null) {
-                    Intent intent = new Intent(getActivity(), activity_transaksi.class);
-                    getActivity().startActivity(intent);
+                    auth.getCurrentUser().reload();
+                    if (auth.getCurrentUser().isEmailVerified()) {
+                        Intent intent = new Intent(getActivity(), activity_transaksi.class);
+                        getActivity().startActivity(intent);
+                    } else {
+                        ver_acc_dialog();
+                    }
                 } else {
                     AlertDialog.Builder alertDialogBuilder= new AlertDialog.Builder(getActivity());
 
@@ -149,5 +159,36 @@ public class fragment_home extends Fragment {
                     getActivity().startActivity(intent);
             }
         });
+    }
+
+    private void ver_acc_dialog(){
+        AlertDialog.Builder alertDialogBuilder= new AlertDialog.Builder(getActivity());
+
+        // set title dialog
+        alertDialogBuilder.setTitle("Verifikasi E-Mail");
+
+        // set pesan dari dialog
+        alertDialogBuilder
+                .setMessage("Verifikasi e-mail di perlukan untuk mengakses menu ini, verifikasi ?")
+                .setIcon(R.mipmap.ic_launcher)
+                .setCancelable(false)
+                .setPositiveButton("Ya",new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog,int id) {
+                        auth.getCurrentUser().sendEmailVerification();
+                        Toast.makeText(getActivity(), "E-mail verifikasi telah dikirim ke " + auth.getCurrentUser().getEmail(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), "Harap verifikasi e-mail anda", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .setNegativeButton("Tidak",new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+
+        // membuat alert dialog dari builder
+        AlertDialog alertDialog = alertDialogBuilder.create();
+
+        // menampilkan alert dialog
+        alertDialog.show();
     }
 }

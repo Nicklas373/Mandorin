@@ -1,6 +1,7 @@
 package id.hana.mandorin;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -9,6 +10,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -146,8 +148,13 @@ public class activity_profile_mandor extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (auth.getCurrentUser() != null) {
-                    Intent intent = new Intent(activity_profile_mandor.this,  activity_layanan_jasa.class);
-                    startActivity(intent);
+                    auth.getCurrentUser().reload();
+                    if (auth.getCurrentUser().isEmailVerified()) {
+                        Intent intent = new Intent(activity_profile_mandor.this,  activity_layanan_jasa.class);
+                        startActivity(intent);
+                    } else {
+                        ver_acc_dialog();
+                    }
                 } else {
                     AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(activity_profile_mandor.this);
 
@@ -193,5 +200,46 @@ public class activity_profile_mandor extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    private void ver_acc_dialog(){
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                this);
+
+        // set title dialog
+        alertDialogBuilder.setTitle("Verifikasi E-Mail");
+
+        // set pesan dari dialog
+        alertDialogBuilder
+                .setMessage("Verifikasi e-mail di perlukan untuk mengakses menu ini, verifikasi ?")
+                .setIcon(R.mipmap.ic_launcher)
+                .setCancelable(false)
+                .setPositiveButton("Ya",new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog,int id) {
+                        if(internet_available()){
+                            auth.getCurrentUser().sendEmailVerification();
+                            Toast.makeText(getApplicationContext(), "E-mail verifikasi telah dikirim ke  " + auth.getCurrentUser().getEmail(), Toast.LENGTH_LONG).show();
+                        }else{
+                            Toast.makeText(getApplicationContext(), "Harap Periksa Koneksi Internet Anda", Toast.LENGTH_SHORT).show();
+                            finish();
+                        }
+                    }
+                })
+                .setNegativeButton("Tidak",new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+
+        // membuat alert dialog dari builder
+        AlertDialog alertDialog = alertDialogBuilder.create();
+
+        // menampilkan alert dialog
+        alertDialog.show();
+    }
+
+    private boolean internet_available(){
+        ConnectivityManager koneksi = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        return koneksi.getActiveNetworkInfo() != null;
     }
 }

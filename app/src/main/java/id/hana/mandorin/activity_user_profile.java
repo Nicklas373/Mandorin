@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -12,6 +13,7 @@ import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.squareup.picasso.Picasso;
 
 import org.apache.http.HttpResponse;
@@ -31,7 +33,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class activity_user_profile extends AppCompatActivity {
 
     private CardView back_akun;
-    private TextView userfname, usermail, userid, userage, userphone, useraddress, userpic_dummy;
+    private TextView userfname, usermail, userid, userage, userphone, useraddress, userpic_dummy, ver_acc;
     private CircleImageView userpic;
     SharedPreferences pref;
     SharedPreferences.Editor editor;
@@ -39,12 +41,18 @@ public class activity_user_profile extends AppCompatActivity {
     String str = "";
     HttpResponse response;
     Context context;
+    private FirebaseAuth.AuthStateListener authListener;
+    private FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+        auth = FirebaseAuth.getInstance();
+
+        auth.getCurrentUser().reload();
 
         pref = getSharedPreferences("data_akun", Context.MODE_PRIVATE);
 
@@ -55,6 +63,7 @@ public class activity_user_profile extends AppCompatActivity {
         userphone = (TextView) findViewById(R.id.user_telp);
         useraddress = (TextView) findViewById(R.id.user_address);
         userpic_dummy = (TextView) findViewById(R.id.dummy_userpic);
+        ver_acc = (TextView) findViewById(R.id.user_ver_acc);
         userpic = (CircleImageView) findViewById(R.id.img_head_1);
         back_akun = (CardView) findViewById(R.id.back_user_profile);
 
@@ -62,6 +71,12 @@ public class activity_user_profile extends AppCompatActivity {
 
         new GetTextViewData(context).execute();
 
+        if (auth.getCurrentUser().isEmailVerified()) {
+            ver_acc.setText("Akun telah di verifikasi");
+        } else {
+            ver_acc.setText("Akun belum di verifikasi");
+            ver_acc.setTypeface(ver_acc.getTypeface(), Typeface.BOLD);
+        }
         back_akun.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
