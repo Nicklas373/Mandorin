@@ -390,7 +390,7 @@ public class activity_layanan_kontrak extends AppCompatActivity {
                 .setMessage("Apakah anda ingin mendownload data desain rumah ?")
                 .setIcon(R.mipmap.ic_launcher)
                 .setCancelable(false)
-                .setPositiveButton("Proses",new DialogInterface.OnClickListener() {
+                .setPositiveButton("Download",new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog,int id) {
                         final String data_desain_1 = getIntent().getExtras().getString("data_desain");
                         String url = data_desain.getText().toString();
@@ -427,7 +427,7 @@ public class activity_layanan_kontrak extends AppCompatActivity {
                 .setMessage("Apakah anda ingin mendownload data rekap ?")
                 .setIcon(R.mipmap.ic_launcher)
                 .setCancelable(false)
-                .setPositiveButton("Proses",new DialogInterface.OnClickListener() {
+                .setPositiveButton("Download",new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog,int id) {
                         String url = rekap_data.getText().toString();
                         String file_data = meta_rekap_data.getText().toString();
@@ -464,7 +464,7 @@ public class activity_layanan_kontrak extends AppCompatActivity {
                 .setMessage("Apakah anda ingin mendownload data surat kontrak ?")
                 .setIcon(R.mipmap.ic_launcher)
                 .setCancelable(false)
-                .setPositiveButton("Proses",new DialogInterface.OnClickListener() {
+                .setPositiveButton("Download",new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog,int id) {
                         final String surat_kontrak_1 = getIntent().getExtras().getString("surat_kontrak");
                         String file_data = meta_surat_kontrak.getText().toString();
