@@ -15,6 +15,7 @@
             android:layout_height="wrap_content"
             android:text="@string/welcome_title_4"
             android:textColor="#fff"
+            android:textStyle="bold"
             android:textSize="30sp"
             android:textAlignment="center"
             android:fontFamily="@font/test"
