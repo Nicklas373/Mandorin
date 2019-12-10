@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements PermissionCallbac
     private void reqPermission() {
         new AskPermission.Builder(this).setPermissions(
                 Manifest.permission.READ_EXTERNAL_STORAGE,
+                Manifest.permission.CALL_PHONE,
                 Manifest.permission.INTERNET)
                 .setCallback(this)
                 .setErrorCallback(this)
