@@ -22,7 +22,7 @@ public class fragment_home extends Fragment {
 
     public static final String TITLE = "Menu";
 
-    private CardView menu_1, menu_2, menu_3, menu_6;
+    private CardView menu_1, menu_2, menu_3, menu_5, menu_6;
 
     private FirebaseAuth.AuthStateListener authListener;
     private FirebaseAuth auth;
@@ -52,6 +52,7 @@ public class fragment_home extends Fragment {
         menu_1 = view.findViewById(R.id.cv_menu_1);
         menu_2 = view.findViewById(R.id.cv_menu_2);
         menu_3 = view.findViewById(R.id.cv_menu_3);
+        menu_5 = view.findViewById(R.id.cv_menu_5);
         menu_6 = view.findViewById(R.id.cv_menu_6);
 
         menu_1.setOnClickListener(new View.OnClickListener() {
@@ -149,6 +150,14 @@ public class fragment_home extends Fragment {
                     // menampilkan alert dialog
                     alertDialog.show();
                 }
+            }
+        });
+
+        menu_5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), activity_bantuan.class);
+                getActivity().startActivity(intent);
             }
         });
 

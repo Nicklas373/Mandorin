@@ -318,4 +318,10 @@
     <string name="app_mandor_riwayat_kontrak_8">Desain Rumah</string>
     <string name="app_mandor_riwayat_kontrak_9">Status Layanan</string>
     <string name="app_mandor_riwayat_kontrak_10">Data Layanan</string>
+    <string name="app_mandor_bantuan_title">Menu Bantuan</string>
+    <string name="app_mandor_bantuan_1">Kontak Kami</string>
+    <string name="app_mandor_bantuan_1_1">Email</string>
+    <string name="app_mandor_bantuan_1_2">Nomor Telepon</string>
+    <string name="app_mandor_bantuan_1_3">Website</string>
+    <string name="app_mandor_bantuan_1_4">Anda dapat menghubungi kami di</string>
 </resources>
