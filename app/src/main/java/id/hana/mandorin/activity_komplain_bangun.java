@@ -23,7 +23,10 @@ import com.android.volley.toolbox.Volley;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 public class activity_komplain_bangun extends AppCompatActivity {
@@ -88,6 +91,8 @@ public class activity_komplain_bangun extends AppCompatActivity {
         final String data_desain_1 = getIntent().getExtras().getString("data_desain");
         final String rekap_data_1 = getIntent().getExtras().getString("data_rekap");
         final String surat_kontrak_1 = getIntent().getExtras().getString("surat_kontrak");
+        final String role_kontrak_1 = getIntent().getExtras().getString("role_kontrak");
+        final String role_komplain_1 = getIntent().getExtras().getString("role_komplain");
 
         /*
          * TextView Initializations
@@ -146,6 +151,7 @@ public class activity_komplain_bangun extends AppCompatActivity {
                         try
                         {
                             createdata();
+                            update_data();
                             dialog = ProgressDialog.show(activity_komplain_bangun.this, "Menu Komplain", "Mengirim Data Komplain...", true);
                             Intent intent = new Intent(activity_komplain_bangun.this, activity_komplain_konfirmasi.class);
                             startActivity(intent);
@@ -208,6 +214,82 @@ public class activity_komplain_bangun extends AppCompatActivity {
                 params.put("alamat", alamat_kontrak);
                 params.put("komplain", komplain_kontrak);
                 params.put("status_komplain", status_komplain);
+
+                return params;
+            }
+
+        };
+
+        // Creating RequestQueue.
+        RequestQueue requestQueue = Volley.newRequestQueue(activity_komplain_bangun.this);
+
+        // Adding the StringRequest object into requestQueue.
+        requestQueue.add(stringRequest);
+    }
+
+    private void update_data() {
+        final String id_1 = getIntent().getExtras().getString("id");
+        String adress = "http://mandorin.site/mandorin/php/user/new/update_data_kontrak.php?id=" + id_1;
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, adress,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String ServerResponse) {
+
+                        // Showing response message coming from server.
+                        //Toast.makeText(activity_data_transaksi_2.this, ServerResponse, Toast.LENGTH_LONG).show();
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError volleyError) {
+
+                        // Showing error message if something goes wrong.
+                        Toast.makeText(activity_komplain_bangun.this, volleyError.toString(), Toast.LENGTH_LONG).show();
+                    }
+                })
+
+        {
+            @Override
+            protected Map<String, String> getParams() {
+                String id_1 = getIntent().getExtras().getString("id");
+                String nomor_kontrak_1 = getIntent().getExtras().getString("nomor_kontrak");
+                String nama_pemesan_1 = getIntent().getExtras().getString("nama_pemesan");
+                String email_1 = getIntent().getExtras().getString("email");
+                String no_telp_1 = getIntent().getExtras().getString("alamat");
+                String alamat_pekerjaan_1 = getIntent().getExtras().getString("alamat_pekerjaan");
+                String status_pekerjaan_1 = getIntent().getExtras().getString("status_pekerjaan");
+                String presentase_1 = getIntent().getExtras().getString("presentase");
+                String waktu_awal_1 = getIntent().getExtras().getString("waktu_mulai");
+                String waktu_akhir_1 = getIntent().getExtras().getString("waktu_akhir");
+                String data_desain_1 = getIntent().getExtras().getString("data_desain");
+                String rekap_data_1 = getIntent().getExtras().getString("data_rekap");
+                String surat_kontrak_1 = getIntent().getExtras().getString("surat_kontrak");
+                String role_kontrak_1 = getIntent().getExtras().getString("role_kontrak");
+                String role_komplain_1 = getIntent().getExtras().getString("role_komplain");
+                int komplain_1 = Integer.parseInt(role_komplain_1);
+                int komplain = komplain_1 + 1;
+                String total_komplain = Integer.toString(komplain);
+
+
+                // Creating Map String Params.
+                Map<String, String> params = new HashMap<String, String>();
+
+                // Adding All values to Params.
+                params.put("id", id_1);
+                params.put("nomor_kontrak", nomor_kontrak_1);
+                params.put("nama_pemesan", nama_pemesan_1);
+                params.put("email", email_1);
+                params.put("no_telp", no_telp_1);
+                params.put("alamat_pekerjaan", alamat_pekerjaan_1);
+                params.put("status_pekerjaan", status_pekerjaan_1);
+                params.put("presentase", presentase_1);
+                params.put("waktu_mulai", waktu_awal_1);
+                params.put("waktu_akhir", waktu_akhir_1);
+                params.put("data_desain", data_desain_1);
+                params.put("data_rekap", rekap_data_1);
+                params.put("surat_kontrak", surat_kontrak_1);
+                params.put("role_kontrak", role_kontrak_1);
+                params.put("role_komplain", total_komplain);
 
                 return params;
             }

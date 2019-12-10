@@ -63,6 +63,8 @@ public class activity_data_kontrak extends AppCompatActivity {
     String JSON_DATA_DESAIN_KONTRAK = "data_desain";
     String JSON_DATA_REKAP_KONTRAK= "data_rekap";
     String JSON_SURAT_KONTRAK = "surat_kontrak";
+    String JSON_ROLE_KONTRAK = "role_kontrak";
+    String JSON_ROLE_KOMPLAIN = "role_komplain";
     JsonArrayRequest jsonArrayRequest ;
     RequestQueue requestQueue ;
 
@@ -207,6 +209,8 @@ public class activity_data_kontrak extends AppCompatActivity {
                 GetDataAdapter3.setData_desain(json.getString(JSON_DATA_DESAIN_KONTRAK));
                 GetDataAdapter3.setData_rekap(json.getString(JSON_DATA_REKAP_KONTRAK));
                 GetDataAdapter3.setSurat_kontrak(json.getString(JSON_SURAT_KONTRAK));
+                GetDataAdapter3.setRole_kontrak(json.getString(JSON_ROLE_KONTRAK));
+                GetDataAdapter3.setRole_komplain(json.getString(JSON_ROLE_KOMPLAIN));
 
             } catch (JSONException e) {
 

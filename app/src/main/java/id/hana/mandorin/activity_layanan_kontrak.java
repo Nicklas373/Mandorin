@@ -102,6 +102,8 @@ public class activity_layanan_kontrak extends AppCompatActivity {
         final String waktu_awal_1 = getIntent().getExtras().getString("waktu_mulai");
         final String waktu_akhir_1 = getIntent().getExtras().getString("waktu_akhir");
         final String data_desain_1 = getIntent().getExtras().getString("data_desain");
+        final String role_kontrak_1 = getIntent().getExtras().getString("role_kontrak");
+        final String role_komplain_1 = getIntent().getExtras().getString("role_komplain");
         final String link_data_desain_1 = ("http://www.mandorin.site/mandorin/data_kontrak/" + data_desain_1);
         final String rekap_data_1 = getIntent().getExtras().getString("data_rekap");
         final String link_rekap_data_1 = ("http://www.mandorin.site/mandorin/data_kontrak/" + rekap_data_1);
@@ -236,6 +238,8 @@ public class activity_layanan_kontrak extends AppCompatActivity {
                 intent.putExtra("data_desain", data_desain_1);
                 intent.putExtra("data_rekap", rekap_data_1);
                 intent.putExtra("surat_kontrak", surat_kontrak_1);
+                intent.putExtra("role_kontrak", role_kontrak_1);
+                intent.putExtra("role_komplain", role_komplain_1);
                 startActivity(intent);
             }
         });

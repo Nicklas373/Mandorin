@@ -2,7 +2,7 @@ package id.hana.mandorin;
 
 public class GetDataKontrakAdapter {
 
-    public String id, nomor_kontrak, nama_pemesan, email, no_telp, alamat_pekerjaan, status_pekerjaan, presentase, waktu_mulai, waktu_akhir, data_desain, data_rekap, surat_kontrak;
+    public String id, nomor_kontrak, nama_pemesan, email, no_telp, alamat_pekerjaan, status_pekerjaan, presentase, waktu_mulai, waktu_akhir, data_desain, data_rekap, surat_kontrak, role_kontrak, role_komplain;
 
     public String getId() {
         return id;
@@ -94,11 +94,15 @@ public class GetDataKontrakAdapter {
         this.data_rekap= data_rekap;
     }
 
-    public String getSurat_kontrak() {
-        return surat_kontrak;
-    }
+    public String getSurat_kontrak() { return surat_kontrak; }
 
-    public void setSurat_kontrak(String surat_kontrak) {
-        this.surat_kontrak= surat_kontrak;
-    }
+    public void setSurat_kontrak(String surat_kontrak) { this.surat_kontrak= surat_kontrak; }
+
+    public String getRole_kontrak() { return role_kontrak; }
+
+    public void setRole_kontrak(String role_kontrak) { this.role_kontrak= role_kontrak; }
+
+    public String getRole_komplain() { return role_komplain; }
+
+    public void setRole_komplain(String role_komplain) { this.role_komplain= role_komplain; }
 }
