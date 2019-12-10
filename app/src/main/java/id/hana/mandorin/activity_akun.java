@@ -26,6 +26,7 @@ public class activity_akun extends AppCompatActivity {
     SharedPreferences.Editor editor;
     private FirebaseAuth.AuthStateListener authListener;
     private FirebaseAuth auth;
+    FirebaseUser firebaseUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,8 +67,12 @@ public class activity_akun extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(internet_available()){
+                    if (auth.getCurrentUser() != null) {
                         Intent intent = new Intent(activity_akun.this, activity_user_profile.class);
                         startActivity(intent);
+                    } else {
+                        check_account_dialog();
+                    }
                 }else{
                     Toast.makeText(getApplicationContext(), "Harap Periksa Koneksi Internet Anda", Toast.LENGTH_SHORT).show();
                 }
@@ -78,12 +83,16 @@ public class activity_akun extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(internet_available()){
-                    auth.getCurrentUser().reload();
-                    if (auth.getCurrentUser().isEmailVerified()) {
-                        Intent intent = new Intent(activity_akun.this, activity_edit_akun.class);
-                        startActivity(intent);
+                    if (auth.getCurrentUser() != null) {
+                        auth.getCurrentUser().reload();
+                        if (auth.getCurrentUser().isEmailVerified()) {
+                            Intent intent = new Intent(activity_akun.this, activity_edit_akun.class);
+                            startActivity(intent);
+                        } else {
+                            ver_acc_dialog();
+                        }
                     } else {
-                        ver_acc_dialog();
+                        check_account_dialog();
                     }
                 }else{
                     Toast.makeText(getApplicationContext(), "Harap Periksa Koneksi Internet Anda", Toast.LENGTH_SHORT).show();
@@ -95,8 +104,12 @@ public class activity_akun extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(internet_available()){
+                    if (auth.getCurrentUser() != null) {
                         Intent intent = new Intent(activity_akun.this, activity_reset_pass.class);
                         startActivity(intent);
+                    } else {
+                        check_account_dialog();
+                    }
                 }else{
                     Toast.makeText(getApplicationContext(), "Harap Periksa Koneksi Internet Anda", Toast.LENGTH_SHORT).show();
                 }
@@ -114,7 +127,11 @@ public class activity_akun extends AppCompatActivity {
         log_out.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                log_out_dialog();
+                if (auth.getCurrentUser() != null) {
+                    log_out_dialog();
+                } else {
+                    check_account_dialog();
+                }
             }
         });
     }
@@ -179,6 +196,42 @@ public class activity_akun extends AppCompatActivity {
                         if(internet_available()){
                             auth.getCurrentUser().sendEmailVerification();
                             Toast.makeText(getApplicationContext(), "E-mail verifikasi telah dikirim ke  " + auth.getCurrentUser().getEmail(), Toast.LENGTH_LONG).show();
+                        }else{
+                            Toast.makeText(getApplicationContext(), "Harap Periksa Koneksi Internet Anda", Toast.LENGTH_SHORT).show();
+                            finish();
+                        }
+                    }
+                })
+                .setNegativeButton("Tidak",new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+
+        // membuat alert dialog dari builder
+        AlertDialog alertDialog = alertDialogBuilder.create();
+
+        // menampilkan alert dialog
+        alertDialog.show();
+    }
+
+    private void check_account_dialog(){
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                this);
+
+        // set title dialog
+        alertDialogBuilder.setTitle("Menu Akun");
+
+        // set pesan dari dialog
+        alertDialogBuilder
+                .setMessage("Harap Login Untuk Melanjutkan")
+                .setIcon(R.mipmap.ic_launcher)
+                .setCancelable(false)
+                .setPositiveButton("Login",new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog,int id) {
+                        if(internet_available()){
+                            Intent intent = new Intent(activity_akun.this, activity_login.class);
+                            startActivity(intent);
                         }else{
                             Toast.makeText(getApplicationContext(), "Harap Periksa Koneksi Internet Anda", Toast.LENGTH_SHORT).show();
                             finish();
