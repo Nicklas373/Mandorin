@@ -11,6 +11,19 @@
     <string name="heck">:</string>
     <string name="hint"></string>
     <string name="akun">Status Akun</string>
+    <string name="tentang_app">Tentang Aplikasi</string>
+    <string name="tim_app">Tim Aplikasi</string>
+    <string name="nama_tim">Nama</string>
+    <string name="nama_tim_1">Deni Tri Muslimin</string>
+    <string name="title_tim_1">Project Manager</string>
+    <string name="title_tim_1_1">Backend Programmer</string>
+    <string name="nama_tim_2">Dicky Herlambang</string>
+    <string name="title_tim_2">System Analyst</string>
+    <string name="title_tim_2_1">Frontend Programmer</string>
+    <string name="nama_tim_3">Adam Nursyahbani</string>
+    <string name="title_tim_3">Designer</string>
+    <string name="title_tim">Jabatan</string>
+    <string name="desc">Mandorin merupakan sebuah aplikasi berbasis mobile dan website yang diharapkan dapat membantu masyarakat dalam memenuhi kebutuhan pelayanan jasa konstruksi.</string>
     <!-- End of FIXME -->
     <string name="app_name">Mandorin</string>
     <string name="menu_title_1">Menu</string>
