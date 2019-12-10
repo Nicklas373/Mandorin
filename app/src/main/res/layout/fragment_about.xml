@@ -52,8 +52,8 @@
                 android:textColor="#000"
                 android:fontFamily="@font/test"
                 android:layout_marginStart="150dp"
-                android:layout_marginTop="40dp"
-                android:textSize="18sp"/>
+                android:layout_marginTop="50dp"
+                android:textSize="15sp"/>
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
@@ -94,7 +94,7 @@
             android:fontFamily="@font/test"
             android:layout_marginStart="150dp"
             android:layout_marginTop="60dp"
-            android:textSize="18sp"/>
+            android:textSize="15sp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -104,7 +104,7 @@
                 android:fontFamily="@font/test"
                 android:layout_marginStart="220dp"
                 android:layout_marginTop="60dp"
-                android:textSize="18sp"/>
+                android:textSize="15sp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -114,17 +114,17 @@
                 android:fontFamily="@font/test"
                 android:layout_marginStart="230dp"
                 android:layout_marginTop="60dp"
-                android:textSize="18sp"/>
+                android:textSize="15sp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/title_tim"
+                android:text="@string/nim_title"
                 android:textColor="#000"
                 android:fontFamily="@font/test"
                 android:layout_marginStart="150dp"
-                android:layout_marginTop="100dp"
-                android:textSize="18sp"/>
+                android:layout_marginTop="95dp"
+                android:textSize="15sp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -133,8 +133,38 @@
                 android:textColor="#000"
                 android:fontFamily="@font/test"
                 android:layout_marginStart="220dp"
-                android:layout_marginTop="100dp"
-                android:textSize="18sp"/>
+                android:layout_marginTop="95dp"
+                android:textSize="15sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nim_1"
+                android:textColor="#000"
+                android:fontFamily="@font/test"
+                android:layout_marginStart="230dp"
+                android:layout_marginTop="95dp"
+                android:textSize="15sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/title_tim"
+                android:textColor="#000"
+                android:fontFamily="@font/test"
+                android:layout_marginStart="150dp"
+                android:layout_marginTop="130dp"
+                android:textSize="15sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/heck"
+                android:textColor="#000"
+                android:fontFamily="@font/test"
+                android:layout_marginStart="220dp"
+                android:layout_marginTop="130dp"
+                android:textSize="15sp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -143,8 +173,8 @@
                 android:textColor="#000"
                 android:fontFamily="@font/test"
                 android:layout_marginStart="230dp"
-                android:layout_marginTop="100dp"
-                android:textSize="18sp"/>
+                android:layout_marginTop="130dp"
+                android:textSize="15sp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -153,8 +183,8 @@
                 android:textColor="#000"
                 android:fontFamily="@font/test"
                 android:layout_marginStart="230dp"
-                android:layout_marginTop="130dp"
-                android:textSize="18sp"/>
+                android:layout_marginTop="160dp"
+                android:textSize="15sp"/>
 
         </android.support.v7.widget.CardView>
 
@@ -171,7 +201,7 @@
             app:cardUseCompatPadding="true">
 
             <TextView
-                android:id="@+id/nama_tim_1"
+                android:id="@+id/nama_tim_2"
                 android:layout_width="160dp"
                 android:layout_height="wrap_content"
                 android:text="@string/tim_app"
@@ -181,6 +211,7 @@
                 android:textAlignment="center"
                 android:background="@color/colorPrimary"
                 android:textSize="20sp"/>
+
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:layout_width="140dp"
@@ -196,7 +227,7 @@
                 android:fontFamily="@font/test"
                 android:layout_marginStart="150dp"
                 android:layout_marginTop="60dp"
-                android:textSize="18sp"/>
+                android:textSize="15sp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -206,7 +237,7 @@
                 android:fontFamily="@font/test"
                 android:layout_marginStart="220dp"
                 android:layout_marginTop="60dp"
-                android:textSize="18sp"/>
+                android:textSize="15sp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -216,17 +247,17 @@
                 android:fontFamily="@font/test"
                 android:layout_marginStart="230dp"
                 android:layout_marginTop="60dp"
-                android:textSize="18sp"/>
+                android:textSize="15sp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/title_tim"
+                android:text="@string/nim_title"
                 android:textColor="#000"
                 android:fontFamily="@font/test"
                 android:layout_marginStart="150dp"
-                android:layout_marginTop="100dp"
-                android:textSize="18sp"/>
+                android:layout_marginTop="95dp"
+                android:textSize="15sp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -235,8 +266,38 @@
                 android:textColor="#000"
                 android:fontFamily="@font/test"
                 android:layout_marginStart="220dp"
-                android:layout_marginTop="100dp"
-                android:textSize="18sp"/>
+                android:layout_marginTop="95dp"
+                android:textSize="15sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nim_2"
+                android:textColor="#000"
+                android:fontFamily="@font/test"
+                android:layout_marginStart="230dp"
+                android:layout_marginTop="95dp"
+                android:textSize="15sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/title_tim"
+                android:textColor="#000"
+                android:fontFamily="@font/test"
+                android:layout_marginStart="150dp"
+                android:layout_marginTop="130dp"
+                android:textSize="15sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/heck"
+                android:textColor="#000"
+                android:fontFamily="@font/test"
+                android:layout_marginStart="220dp"
+                android:layout_marginTop="130dp"
+                android:textSize="15sp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -245,8 +306,8 @@
                 android:textColor="#000"
                 android:fontFamily="@font/test"
                 android:layout_marginStart="230dp"
-                android:layout_marginTop="100dp"
-                android:textSize="18sp"/>
+                android:layout_marginTop="130dp"
+                android:textSize="15sp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -255,8 +316,8 @@
                 android:textColor="#000"
                 android:fontFamily="@font/test"
                 android:layout_marginStart="230dp"
-                android:layout_marginTop="130dp"
-                android:textSize="18sp"/>
+                android:layout_marginTop="160dp"
+                android:textSize="15sp"/>
 
         </android.support.v7.widget.CardView>
 
@@ -298,7 +359,7 @@
                 android:fontFamily="@font/test"
                 android:layout_marginStart="150dp"
                 android:layout_marginTop="60dp"
-                android:textSize="18sp"/>
+                android:textSize="15sp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -308,7 +369,7 @@
                 android:fontFamily="@font/test"
                 android:layout_marginStart="220dp"
                 android:layout_marginTop="60dp"
-                android:textSize="18sp"/>
+                android:textSize="15sp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -318,17 +379,17 @@
                 android:fontFamily="@font/test"
                 android:layout_marginStart="230dp"
                 android:layout_marginTop="60dp"
-                android:textSize="18sp"/>
+                android:textSize="15sp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/title_tim"
+                android:text="@string/nim_title"
                 android:textColor="#000"
                 android:fontFamily="@font/test"
                 android:layout_marginStart="150dp"
-                android:layout_marginTop="100dp"
-                android:textSize="18sp"/>
+                android:layout_marginTop="95dp"
+                android:textSize="15sp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -337,8 +398,38 @@
                 android:textColor="#000"
                 android:fontFamily="@font/test"
                 android:layout_marginStart="220dp"
-                android:layout_marginTop="100dp"
-                android:textSize="18sp"/>
+                android:layout_marginTop="95dp"
+                android:textSize="15sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nim_3"
+                android:textColor="#000"
+                android:fontFamily="@font/test"
+                android:layout_marginStart="230dp"
+                android:layout_marginTop="95dp"
+                android:textSize="15sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/title_tim"
+                android:textColor="#000"
+                android:fontFamily="@font/test"
+                android:layout_marginStart="150dp"
+                android:layout_marginTop="130dp"
+                android:textSize="15sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/heck"
+                android:textColor="#000"
+                android:fontFamily="@font/test"
+                android:layout_marginStart="220dp"
+                android:layout_marginTop="130dp"
+                android:textSize="15sp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -347,8 +438,8 @@
                 android:textColor="#000"
                 android:fontFamily="@font/test"
                 android:layout_marginStart="230dp"
-                android:layout_marginTop="100dp"
-                android:textSize="18sp"/>
+                android:layout_marginTop="130dp"
+                android:textSize="15sp"/>
 
         </android.support.v7.widget.CardView>
     </LinearLayout>
