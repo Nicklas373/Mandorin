@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_konfirmasi_awal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardBackgroundColor="@color/colorPrimary" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/welcome_title_2"
+            android:textColor="#fff"
+            android:textSize="30sp"
+            android:fontFamily="@font/test"
+            android:textAlignment="center"
+            android:layout_marginTop="150dp" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:src="@mipmap/ic_launcher"
+            android:layout_marginBottom="35dp"
+            android:layout_gravity="center"
+            app:civ_border_width="4dp"
+            app:civ_border_color="#FFFFFFFF"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="160dp"
+            android:layout_gravity="center"
+            android:text="@string/desc"
+            android:fontFamily="@font/test"
+            android:textSize="17sp"
+            android:textAlignment="center"
+            android:textColor="#fff"/>
+
+    </android.support.v7.widget.CardView>
+</android.support.constraint.ConstraintLayout>

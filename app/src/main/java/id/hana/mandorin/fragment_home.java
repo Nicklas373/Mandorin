@@ -1,6 +1,7 @@
 package id.hana.mandorin;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -22,11 +23,13 @@ public class fragment_home extends Fragment {
 
     public static final String TITLE = "Menu";
 
-    private CardView menu_1, menu_2, menu_3, menu_5, menu_6;
+    private CardView menu_1, menu_2, menu_3, menu_4, menu_5, menu_6;
 
     private FirebaseAuth.AuthStateListener authListener;
     private FirebaseAuth auth;
     FirebaseUser firebaseUser;
+    SharedPreferences pref;
+    SharedPreferences.Editor editor;
 
     public static fragment_home newInstance() {
 
@@ -49,9 +52,12 @@ public class fragment_home extends Fragment {
          */
         auth = FirebaseAuth.getInstance();
 
+        pref = this.getActivity().getSharedPreferences("main_welcome", Context.MODE_PRIVATE);
+
         menu_1 = view.findViewById(R.id.cv_menu_1);
         menu_2 = view.findViewById(R.id.cv_menu_2);
         menu_3 = view.findViewById(R.id.cv_menu_3);
+        menu_4 = view.findViewById(R.id.cv_menu_4);
         menu_5 = view.findViewById(R.id.cv_menu_5);
         menu_6 = view.findViewById(R.id.cv_menu_6);
 
@@ -150,6 +156,17 @@ public class fragment_home extends Fragment {
                     // menampilkan alert dialog
                     alertDialog.show();
                 }
+            }
+        });
+
+        menu_4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferences.Editor editor = pref.edit();
+                editor.putString("access_from_main", "access_from_main");
+                editor.apply();
+                Intent intent = new Intent(getActivity(), activity_welcome.class);
+                getActivity().startActivity(intent);
             }
         });
 

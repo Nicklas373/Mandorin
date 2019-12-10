@@ -59,6 +59,7 @@
             </intent-filter>
         </activity>
         <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+        <activity android:name=".activity_welcome"/>
         <activity android:name=".MainActivity"/>
         <activity android:name=".activity_mandor"/>
         <activity android:name=".activity_detail_mandor"/>
@@ -96,8 +97,11 @@
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
-                <data android:scheme="http" android:host="www.mandorin.site" />
+                <!-- Include the host attribute if you want your app to respond
+                     only to URLs with your app's domain. -->
+                <data android:scheme="http" android:host="http://www.mandorin.site" />
                 <category android:name="android.intent.category.DEFAULT" />
+                <!-- The BROWSABLE category is required to get links from web pages. -->
                 <category android:name="android.intent.category.BROWSABLE" />
             </intent-filter>
         </activity>

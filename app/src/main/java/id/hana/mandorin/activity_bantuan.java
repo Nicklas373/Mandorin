@@ -52,7 +52,8 @@ public class activity_bantuan extends AppCompatActivity {
         cv_telp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                dialPhoneNumber("081398890051");
+                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", telp_user.getText().toString(), null));
+                startActivity(intent);
             }
         });
 
@@ -66,7 +67,7 @@ public class activity_bantuan extends AppCompatActivity {
         cv_web.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openWebPage("www.mandorin.site");
+                openWebPage("http://www.mandorin.site");
             }
         });
     }
@@ -84,14 +85,6 @@ public class activity_bantuan extends AppCompatActivity {
     public void openWebPage(String url) {
         Uri webpage = Uri.parse(url);
         Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
-        if (intent.resolveActivity(getPackageManager()) != null) {
-            startActivity(intent);
-        }
-    }
-
-    public void dialPhoneNumber(String phoneNumber) {
-        Intent intent = new Intent(Intent.ACTION_DIAL);
-        intent.setData(Uri.parse("tel:" + phoneNumber));
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
         }
