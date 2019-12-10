@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_konfirmasi_awal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardBackgroundColor="@color/colorPrimary" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/welcome_title_6"
+            android:textColor="#fff"
+            android:textSize="35sp"
+            android:fontFamily="@font/test"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:layout_marginTop="175dp" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:src="@drawable/ceklist"
+            android:layout_marginBottom="15dp"
+            android:layout_gravity="center"
+/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/welcome_title_7"
+            android:textColor="#fff"
+            android:textSize="25sp"
+            android:textAlignment="center"
+            android:layout_marginTop="490dp" />
+
+    </android.support.v7.widget.CardView>
+
+</android.support.constraint.ConstraintLayout>

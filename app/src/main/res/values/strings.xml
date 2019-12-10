@@ -44,6 +44,8 @@
     <string name="welcome_title_4_4">Anda dapat melihat informasi, status dan melakukan pembayaran kontrak</string>
     <string name="welcome_title_4_5">Anda dapat mengajukan dan melihat komplain yang di ajukan pada kontrak tertentu</string>
     <string name="welcome_title_4_6">Anda dapat melihat riwayat berupa kontrak, pembayaran dan komplain yang telah selesai</string>
+    <string name="welcome_title_6">Panduan Selesai</string>
+    <string name="welcome_title_7">Anda telah siap menggunakan aplikasi kami</string>
     <!-- End of FIXME -->
     <string name="app_name">Mandorin</string>
     <string name="menu_title_1">Menu</string>
