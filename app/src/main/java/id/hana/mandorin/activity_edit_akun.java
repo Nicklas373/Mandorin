@@ -57,7 +57,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class activity_edit_akun extends AppCompatActivity {
 
-    private TextView editmail, cancel, dummyimage;
+    private TextView editmail, cancel, dummyimage, dummynewimage;
     private EditText editname, editid, editage, editphone, editaddress;
     private CircleImageView picedit;
     private Button save;
@@ -92,6 +92,7 @@ public class activity_edit_akun extends AppCompatActivity {
         editaddress = (EditText) findViewById(R.id.user_edit_address);
         picedit = (CircleImageView) findViewById(R.id.img_head_akun_test);
         dummyimage = (TextView) findViewById(R.id.dummy_userpic_edit);
+        dummynewimage = (TextView) findViewById(R.id.dummy_new_pic);
         cancel = (TextView) findViewById(R.id.btn_cancel);
         back = (CardView) findViewById(R.id.back_activity_edit_akun);
         save = (Button) findViewById(R.id.save_account);
@@ -164,29 +165,28 @@ public class activity_edit_akun extends AppCompatActivity {
                 .setIcon(R.mipmap.ic_launcher)
                 .setCancelable(false)
                 .setPositiveButton("Ya",new DialogInterface.OnClickListener() {
-                    final TextView FileName = findViewById(R.id.dummy_old_pic);
-
                     public void onClick(DialogInterface dialog,int id) {
                         dialog = ProgressDialog.show(activity_edit_akun.this, "Edit Akun", "Memperbaharui Data...", true);
-                        createdata_2();
-                        if (dummyimage.getText().toString().equalsIgnoreCase("")) {
-                            finish();
-                        } else {
-                            if (FileName.getText().toString().isEmpty()){
+                        if (dummynewimage.getText().toString().equalsIgnoreCase("")) {
+                            if (dummyimage.getText().toString().equalsIgnoreCase("")) {
                                 finish();
                             } else {
-                                new Thread(new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        //creating new thread to handle Http Operations
-                                        uploadFile(selectedFilePath);
-                                    }
-                                }).start();
+                                String oldimage = dummyimage.getText().toString();
+                                dummynewimage.setText(oldimage);
                             }
+                        } else {
+                            new Thread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    //creating new thread to handle Http Operations
+                                    uploadFile(selectedFilePath);
+                                }
+                            }).start();
                         }
+                        dialog.dismiss();
+                        createdata_2();
                         Intent intent = new Intent(activity_edit_akun.this, activity_user_profile.class);
                         startActivity(intent);
-                        finish();
                         Toast.makeText(getApplicationContext(), "Data berhasil di perbaharui", Toast.LENGTH_SHORT).show();
                     }
                 })
@@ -205,7 +205,7 @@ public class activity_edit_akun extends AppCompatActivity {
 
     //android upload file to server
     public int uploadFile(final String selectedFilePath) {
-        final TextView FileName = findViewById(R.id.dummy_old_pic);
+        final TextView FileName = findViewById(R.id.fileName);
         int serverResponseCode = 0;
 
         HttpURLConnection connection;
@@ -233,7 +233,6 @@ public class activity_edit_akun extends AppCompatActivity {
         String regex = fileName.replaceAll("\\s","");
 
         if (!selectedFile.isFile()) {
-            dialog.dismiss();
 
             runOnUiThread(new Runnable() {
                 @Override
@@ -296,7 +295,7 @@ public class activity_edit_akun extends AppCompatActivity {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-
+                            dummynewimage.setText(selectedFilePath);
                         }
                     });
                 }
@@ -305,7 +304,6 @@ public class activity_edit_akun extends AppCompatActivity {
                 fileInputStream.close();
                 dataOutputStream.flush();
                 dataOutputStream.close();
-
 
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
@@ -323,7 +321,6 @@ public class activity_edit_akun extends AppCompatActivity {
                 e.printStackTrace();
                 Toast.makeText(activity_edit_akun.this, "Tidak Dapat Membaca File", Toast.LENGTH_SHORT).show();
             }
-            dialog.dismiss();
             return serverResponseCode;
         }
     }
@@ -338,7 +335,6 @@ public class activity_edit_akun extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        final TextView FileName = findViewById(R.id.dummy_old_pic);
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == Activity.RESULT_OK) {
             if (requestCode == PICK_FILE_REQUEST) {
@@ -351,8 +347,8 @@ public class activity_edit_akun extends AppCompatActivity {
                 selectedFilePath = file_path.getPath(this, selectedFileUri);
 
                 if (selectedFilePath != null && !selectedFilePath.equals("")) {
-                    dummyimage.setText(selectedFilePath);
-                    File imgFile = new  File(dummyimage.getText().toString());
+                    dummynewimage.setText(selectedFilePath);
+                    File imgFile = new  File(dummynewimage.getText().toString());
 
                     if(imgFile.exists()) {
 
@@ -364,7 +360,7 @@ public class activity_edit_akun extends AppCompatActivity {
 
                     }
                 } else {
-                    dummyimage.setText(selectedFilePath);
+                    dummynewimage.setText("");
                 }
             }
         }
@@ -400,7 +396,7 @@ public class activity_edit_akun extends AppCompatActivity {
                 String nik_edit   = editid.getText().toString();
                 String telp_edit   = editphone.getText().toString();
                 String alamat_edit   = editaddress.getText().toString();
-                String substring = dummyimage.getText().toString();
+                String substring = dummynewimage.getText().toString();
                 String desain = substring.substring(substring.lastIndexOf("/")+1);
                 // regex filename, so it'll look same for filename and filepath that'll inserted to database
                 String regex = desain.replaceAll("\\s", "");
@@ -483,9 +479,9 @@ public class activity_edit_akun extends AppCompatActivity {
                 dummyimage.setText(json.getString("foto_user"));
                 String uri = "@drawable/profil";  // where myresource (without the extension) is the file
                 if (dummyimage.getText().toString().equalsIgnoreCase("")) {
-                    int imageResource = getResources().getIdentifier(uri, null, getPackageName());
-                    Drawable res = getResources().getDrawable(imageResource);
-                    picedit.setImageDrawable(res);
+                    //int imageResource = getResources().getIdentifier(uri, null, getPackageName());
+                    ///Drawable res = getResources().getDrawable(imageResource);
+                    //picedit.setImageDrawable(res);
                     dummyimage.setText("");
                 } else {
                     String user_photo = "http://mandorin.site/mandorin/uploads/" + dummyimage.getText().toString();
