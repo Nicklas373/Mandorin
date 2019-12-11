@@ -18,7 +18,6 @@ Mandorin merupakan sebuah aplikasi berbasis mobile  &amp; website yang diharapka
 
 # Kunjungi dan Download Aplikasi Kami
 - [Website](http://www.mandorin.site)
-- [Email](mailto:admin@mandorin.site)
 - [Download - Server Mandorin](http://mandorin.site/mandorin/app/mandorin.apk)
 - [Download - Rilis GitHub](https://github.com/Nicklas373/Mandorin/releases/tag/v1.0-20191211)
 
