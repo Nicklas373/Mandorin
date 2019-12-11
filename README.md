@@ -1,24 +1,24 @@
 <p align="center">
-  <img width="200" height="200" src="https://raw.githubusercontent.com/Nicklas373/Mandorin/master/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png"><br>
+  <img width="300" height="300" src="https://raw.githubusercontent.com/Nicklas373/Mandorin/master/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png"><br>
 </p>
 
 # Mandorin
 Mandorin merupakan sebuah aplikasi berbasis mobile  &amp; website yang diharapkan dapat membantu masyarakat dalam memenuhi kebutuhan pelayanan jasa konstruksi.
 
 # Status Aplikasi
-- [![Build Status](https://travis-ci.org/Nicklas373/Mandorin.svg?branch=master)](https://travis-ci.org/Nicklas373/Mandorin) ![Tahap](https://img.shields.io/badge/Tahap%20Pengembangan-Pra--Stabil-yellow) ![Version](https://img.shields.io/badge/Versi-v1.0--20191211-blue) ![Package](https://img.shields.io/badge/Package-- Android%20App-blue.svg)
+[![Build Status](https://travis-ci.org/Nicklas373/Mandorin.svg?branch=master)](https://travis-ci.org/Nicklas373/Mandorin) ![Tahap](https://img.shields.io/badge/Tahap%20Pengembangan-Pra--Stabil-yellow) ![Version](https://img.shields.io/badge/Versi-v1.0--20191211-blue) ![Package](https://img.shields.io/badge/Package-Android%20App-blue.svg)
 
 # Fitur Aplikasi
-- Profil Mandor (Pengguna dapat melihat informasi mengenai mandor yang anda pilih)
-- Layanan Jasa  (Pengguna dapat melakukan pemesanan layanan jasa konstruksi sesuai keperluan)
-- Kontrak       (Pengguna dapat melihat informasi dan status kontrak berjalan)
-- Pembayaran    (Pengguna dapat melihat informasi, status dan melakukan pembayaran kontrak)
-- Komplain      (Pengguna dapat mengajukan dan melihat komplain yang di ajukan pada kontrak tertentu)
-- Riwayat       (Pengguna dapat melihat riwayat berupa kontrak, pembayaran dan komplain yang telah selesai)
+- Profil Mandor <br> (Pengguna dapat melihat informasi mengenai mandor yang anda pilih) <br>
+- Layanan Jasa  <br> (Pengguna dapat melakukan pemesanan layanan jasa konstruksi sesuai keperluan) <br>
+- Kontrak       <br> (Pengguna dapat melihat informasi dan status kontrak berjalan) <br>
+- Pembayaran    <br> (Pengguna dapat melihat informasi, status dan melakukan pembayaran kontrak) <br>
+- Komplain      <br> (Pengguna dapat mengajukan dan melihat komplain yang di ajukan pada kontrak tertentu) <br>
+- Riwayat       <br> (Pengguna dapat melihat riwayat berupa kontrak, pembayaran dan komplain yang telah selesai) <br>
 
 # Kunjungi dan Download Aplikasi Kami
 - [Website](http://www.mandorin.site)
-- [Email](admin@mandorin.site)
+- [Email](mailto:admin@mandorin.site)
 - [Download - Server Mandorin](http://mandorin.site/mandorin/app/mandorin.apk)
 - [Download - Rilis GitHub](https://github.com/Nicklas373/Mandorin/releases/tag/v1.0-20191211)
 
