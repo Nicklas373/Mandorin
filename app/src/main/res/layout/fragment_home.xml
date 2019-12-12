@@ -103,7 +103,7 @@
             android:layout_width="144dp"
             android:layout_height="119dp"
             android:contentDescription="@string/app_fragment_home_menu_3"
-            android:src="@drawable/transaksi" />
+            android:src="@drawable/transaksi_2" />
 
         <TextView
             android:id="@+id/textView3"

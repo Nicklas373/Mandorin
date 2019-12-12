@@ -19,15 +19,15 @@
             android:fontFamily="@font/test"
             android:textStyle="bold"
             android:textAlignment="center"
-            android:layout_marginTop="175dp" />
+            android:layout_gravity="center"
+            android:layout_marginBottom="180dp" />
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:layout_width="180dp"
             android:layout_height="180dp"
             android:src="@drawable/ceklist"
             android:layout_marginBottom="15dp"
-            android:layout_gravity="center"
-/>
+            android:layout_gravity="center" />
 
         <TextView
             android:layout_width="match_parent"
@@ -35,8 +35,9 @@
             android:text="@string/welcome_title_7"
             android:textColor="#fff"
             android:textSize="25sp"
+            android:layout_gravity="center"
             android:textAlignment="center"
-            android:layout_marginTop="490dp" />
+            android:layout_marginTop="170dp" />
 
     </android.support.v7.widget.CardView>
 
