@@ -9,14 +9,16 @@ import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.TextView;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class activity_bantuan extends AppCompatActivity {
 
     /*
      * Layout Component Initializations
      * Textview, Imageview, CardView & Button
      */
-    private TextView telp_user, email_user, web_user;
-    private CardView cv_telp, cv_email, cv_web, back;
+    private CircleImageView website, telepon, email;
+    private CardView back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,17 +31,11 @@ public class activity_bantuan extends AppCompatActivity {
          * Layout ID Initializations
          * TextView, CardView & Button
          */
-        telp_user = findViewById(R.id.user_text);
-        email_user = findViewById(R.id.user_email);
-        web_user = findViewById(R.id.user_website);
-        back = findViewById(R.id.back_activity_bantuan);
-        cv_telp = findViewById(R.id.cv_title_telp);
-        cv_email = findViewById(R.id.cv_title_email);
-        cv_web = findViewById(R.id.cv_title_website);
+        website = findViewById(R.id.website);
+        telepon = findViewById(R.id.telepon);
+        email = findViewById(R.id.email);
+        back = findViewById(R.id.back_activity_bantuan);;
 
-        telp_user.setText("+6281398890051");
-        email_user.setText("admin@mandorin.site");
-        web_user.setText("www.mandorin.site");
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,22 +45,22 @@ public class activity_bantuan extends AppCompatActivity {
             }
         });
 
-        cv_telp.setOnClickListener(new View.OnClickListener() {
+        telepon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", telp_user.getText().toString(), null));
+                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", "+6285714743881", null));
                 startActivity(intent);
             }
         });
 
-        cv_email.setOnClickListener(new View.OnClickListener() {
+        email.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 composeEmail( "admin@mandorin.site", "Dukungan Mandorin");
             }
         });
 
-        cv_web.setOnClickListener(new View.OnClickListener() {
+        website.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 openWebPage("http://www.mandorin.site");
