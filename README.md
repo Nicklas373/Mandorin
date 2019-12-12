@@ -19,7 +19,7 @@ Mandorin merupakan sebuah aplikasi berbasis mobile  &amp; website yang diharapka
 # Kunjungi dan Download Aplikasi Kami
 - [Website](http://www.mandorin.site)
 - [Download - Server Mandorin](http://mandorin.site/mandorin/app/mandorin.apk)
-- [Download - Rilis GitHub](https://github.com/Nicklas373/Mandorin/releases/tag/v1.0-20191211)
+- [Download - Rilis GitHub](https://github.com/Nicklas373/Mandorin/releases/tag/v1.0-20191212)
 
 # Informasi Pengembangan Aplikasi:
 - Pembuatan pertama (10 Oktober 2019 | 23:20 GMT+7)
@@ -36,5 +36,6 @@ Mandorin merupakan sebuah aplikasi berbasis mobile  &amp; website yang diharapka
 - Pembuatan kedua belas (28 November 2019 | 15:14 GMT+7)
 - Pembuatan ketiga belas (02 Desember 2019 | 18:03 GMT+7)
 - Pembuatan keempat belas (11 Desember 2019 | 06:51 GMT+7)
+- Pembuatan kelima belas (12 Desember 2019 | 20:49 GMT+7)
 
 # HANA-CI Build Project || 2016-2019
