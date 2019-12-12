@@ -13,6 +13,7 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
@@ -185,8 +186,15 @@ public class activity_edit_akun extends AppCompatActivity {
                         }
                         dialog.dismiss();
                         createdata_2();
-                        Intent intent = new Intent(activity_edit_akun.this, activity_user_profile.class);
-                        startActivity(intent);
+
+                        final Handler handler = new Handler();
+                        handler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                Intent intent = new Intent(activity_edit_akun.this, activity_user_profile.class);
+                                startActivity(intent);
+                            }
+                        }, 3000L); //3000 L = 3 detik
                         Toast.makeText(getApplicationContext(), "Data berhasil di perbaharui", Toast.LENGTH_SHORT).show();
                     }
                 })

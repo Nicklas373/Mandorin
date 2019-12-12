@@ -176,9 +176,9 @@ public class activity_user_profile extends AppCompatActivity {
                 userpic_dummy.setText(json.getString("foto_user"));
                 String uri = "@drawable/profil";  // where myresource (without the extension) is the file
                 if (userpic_dummy.getText().toString().equalsIgnoreCase("")) {
-                    int imageResource = getResources().getIdentifier(uri, null, getPackageName());
-                    Drawable res = getResources().getDrawable(imageResource);
-                    userpic.setImageDrawable(res);
+                    //int imageResource = getResources().getIdentifier(uri, null, getPackageName());
+                    //Drawable res = getResources().getDrawable(imageResource);
+                    //userpic.setImageDrawable(res);
                 } else {
                     String user_photo = "http://mandorin.site/mandorin/uploads/" + userpic_dummy.getText().toString();
                     Picasso.get().load(user_photo).fit().centerCrop() .into(userpic);
