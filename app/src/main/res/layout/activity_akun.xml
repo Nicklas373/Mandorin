@@ -40,6 +40,7 @@
             style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:text="@string/app_mandor_menu_akun_title"
             android:fontFamily="@font/test"
             android:textAlignment="center"

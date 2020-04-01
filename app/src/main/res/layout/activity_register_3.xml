@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_isi_data"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardBackgroundColor="#fff"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_mandor_register_6"
+            android:textSize="35sp"
+            android:textAllCaps="false"
+            android:textColor="#000"
+            android:fontFamily="@font/test"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="40dp"/>
+
+        <TextView
+            android:id="@+id/nama_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="13dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="200dp"
+            android:fontFamily="@font/test"
+            android:textColor="#000"
+            android:text="@string/app_mandor_register_7"
+            android:textSize="23sp" />
+
+        <EditText
+            android:id="@+id/isi_nama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="240dp"
+            android:fontFamily="@font/test"
+            android:textSize="23sp"
+            android:inputType="textPersonName"
+            android:hint="@string/app_mandor_register_11"
+            android:importantForAutofill="no" />
+
+        <TextView
+            android:id="@+id/umur_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="13dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="320dp"
+            android:fontFamily="@font/test"
+            android:textColor="#000"
+            android:text="@string/app_mandor_register_8"
+            android:textSize="23sp" />
+
+        <EditText
+            android:id="@+id/isi_umur"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="360dp"
+            android:fontFamily="@font/test"
+            android:textSize="23sp"
+            android:inputType="number"
+            android:hint="@string/app_mandor_register_12"
+            android:importantForAutofill="no" />
+
+        <TextView
+            android:id="@+id/nik_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="13dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="440dp"
+            android:fontFamily="@font/test"
+            android:textColor="#000"
+            android:text="@string/app_mandor_register_9"
+            android:textSize="23sp" />
+
+        <EditText
+            android:id="@+id/isi_nik"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="480dp"
+            android:fontFamily="@font/test"
+            android:textSize="23sp"
+            android:inputType="number"
+            android:hint="@string/app_mandor_register_13"
+            android:importantForAutofill="no" />
+
+        <TextView
+            android:id="@+id/btn_batal_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="15sp"
+            android:layout_gravity="bottom"
+            android:textSize="22sp"
+            android:fontFamily="@font/test"
+            android:textColor="#000"
+            android:text="@string/app_mandor_register_5" />
+
+        <Button
+            android:id="@+id/next_data"
+            android:layout_width="130dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10sp"
+            android:textSize="18sp"
+            android:background="@color/colorPrimary"
+            android:textColor="#fff"
+            android:fontFamily="@font/test"
+            android:textAllCaps="false"
+            android:text="@string/app_mandor_register_4"
+            android:layout_gravity="bottom|end" />
+
+    </android.support.v7.widget.CardView>
+
+</android.support.constraint.ConstraintLayout>

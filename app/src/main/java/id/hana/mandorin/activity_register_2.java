@@ -99,10 +99,10 @@ public class activity_register_2 extends AppCompatActivity {
                                             SharedPreferences.Editor editor = pref.edit ();
                                             editor.putString("email",dbg.getText().toString());
                                             editor.apply();
-                                            startActivity(new Intent(activity_register_2.this, activity_login.class));
+                                            startActivity(new Intent(activity_register_2.this, activity_register_3.class));
                                             finish();
-                                            Toast.makeText(getApplicationContext(), "Akun berhasil di buat", Toast.LENGTH_SHORT).show();
-                                            Toast.makeText(getApplicationContext(), "Silahkan Login dengan email anda", Toast.LENGTH_LONG).show();
+                                            //Toast.makeText(getApplicationContext(), "Akun berhasil di buat", Toast.LENGTH_SHORT).show();
+                                            //Toast.makeText(getApplicationContext(), "Silahkan Login dengan email anda", Toast.LENGTH_LONG).show();
                                         } catch (IllegalArgumentException e)
                                         {
                                             Toast.makeText(activity_register_2.this, "Akun gagal di buat", Toast.LENGTH_SHORT).show();

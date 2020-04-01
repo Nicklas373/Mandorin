@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_isi_data_2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardBackgroundColor="#fff"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_mandor_register_6"
+            android:textSize="35sp"
+            android:textAllCaps="false"
+            android:textColor="#000"
+            android:fontFamily="@font/test"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="40dp"/>
+
+        <TextView
+            android:id="@+id/telp_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="13dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="200dp"
+            android:fontFamily="@font/test"
+            android:textColor="#000"
+            android:text="@string/app_mandor_register_10"
+            android:textSize="23sp" />
+
+        <EditText
+            android:id="@+id/isi_telp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="240dp"
+            android:fontFamily="@font/test"
+            android:textSize="23sp"
+            android:inputType="number"
+            android:hint="@string/app_mandor_register_14"
+            android:importantForAutofill="no" />
+
+        <TextView
+            android:id="@+id/alamat_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="13dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="320dp"
+            android:fontFamily="@font/test"
+            android:textColor="#000"
+            android:text="@string/app_mandor_register_15"
+            android:textSize="23sp" />
+
+        <EditText
+            android:id="@+id/isi_alamat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="360dp"
+            android:fontFamily="@font/test"
+            android:textSize="23sp"
+            android:inputType="textMultiLine"
+            android:maxLines="12"
+            android:gravity="top|start"
+            android:hint="@string/app_mandor_register_16"
+            android:importantForAutofill="no" />
+
+        <TextView
+            android:id="@+id/btn_kembali_reg_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="15sp"
+            android:layout_gravity="bottom"
+            android:textSize="22sp"
+            android:fontFamily="@font/test"
+            android:textColor="#000"
+            android:text="@string/app_mandor_register_17" />
+
+        <Button
+            android:id="@+id/btn_prs"
+            android:layout_width="130dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10sp"
+            android:textSize="18sp"
+            android:background="@color/colorPrimary"
+            android:textColor="#fff"
+            android:fontFamily="@font/test"
+            android:textAllCaps="false"
+            android:text="@string/app_mandor_register_18"
+            android:layout_gravity="bottom|end" />
+
+        <!-- Dummy Text -->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:id="@+id/dummy_nama_reg_4"
+            android:visibility="gone"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:id="@+id/dummy_nik_reg_4"
+            android:visibility="gone"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:id="@+id/dummy_umur_reg_4"
+            android:visibility="gone"
+            />
+    </android.support.v7.widget.CardView>
+
+</android.support.constraint.ConstraintLayout>

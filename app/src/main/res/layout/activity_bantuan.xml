@@ -42,6 +42,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/app_mandor_bantuan_title"
+            android:gravity="center"
             android:textAlignment="center"
             android:fontFamily="@font/test"
             android:textColor="#ffffff"
