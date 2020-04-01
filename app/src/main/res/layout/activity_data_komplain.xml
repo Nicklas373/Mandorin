@@ -33,7 +33,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="start"
+            android:gravity="center"
             android:text="@string/app_mandor_recycler_data_komplain_title"
             android:textAlignment="center"
             android:fontFamily="@font/test"
