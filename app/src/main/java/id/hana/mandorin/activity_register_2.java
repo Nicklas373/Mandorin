@@ -105,6 +105,7 @@ public class activity_register_2 extends AppCompatActivity {
                                             editor.apply();
                                             startActivity(new Intent(activity_register_2.this, activity_register_3.class));
                                             finish();
+                                            Toast.makeText(getApplicationContext(), "Akun berhasil di buat", Toast.LENGTH_SHORT).show();
                                         } catch (IllegalArgumentException e)
                                         {
                                             Toast.makeText(activity_register_2.this, "Akun gagal di buat", Toast.LENGTH_SHORT).show();

@@ -158,11 +158,11 @@ public class activity_edit_akun extends AppCompatActivity {
                 this);
 
         // set title dialog
-        alertDialogBuilder.setTitle("Data Diri");
+        alertDialogBuilder.setTitle("Data akun");
 
         // set pesan dari dialog
         alertDialogBuilder
-                .setMessage("Apakah anda ingin memperbaharui data diri anda?")
+                .setMessage("Apakah anda ingin memperbaharui data akun anda?")
                 .setIcon(R.mipmap.ic_launcher)
                 .setCancelable(false)
                 .setPositiveButton("Ya",new DialogInterface.OnClickListener() {

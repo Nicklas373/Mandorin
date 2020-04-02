@@ -1,14 +1,19 @@
 package id.hana.mandorin;
 
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.os.Handler;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class activity_register_3 extends AppCompatActivity {
 
@@ -60,9 +65,49 @@ public class activity_register_3 extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(activity_register_3.this, MainActivity.class);
-                startActivity(intent);
+                back_dialog();
             }
         });
+    }
+
+    private void back_dialog(){
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                this);
+
+        // set title dialog
+        alertDialogBuilder.setTitle("Buat Akun");
+
+        // set pesan dari dialog
+        alertDialogBuilder
+                .setMessage("Apakah anda ingin membatalkan pengisian data akun ?")
+                .setMessage("Jika anda membatalkan pengisian data akun, anda di haruskan untuk mengisi data anda melalui menu edit akun untuk proses pelayanan jasa")
+                .setIcon(R.mipmap.ic_launcher)
+                .setCancelable(false)
+                .setPositiveButton("Ya",new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog,int id) {
+                        dialog = ProgressDialog.show(activity_register_3.this, "Buat Akun", "Kembali ke beranda...", true);
+                        dialog.dismiss();
+
+                        final Handler handler = new Handler();
+                        handler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                Intent intent = new Intent(activity_register_3.this, MainActivity.class);
+                                startActivity(intent);
+                            }
+                        }, 3000L); //3000 L = 3 detik
+                    }
+                })
+                .setNegativeButton("Tidak",new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+
+        // membuat alert dialog dari builder
+        AlertDialog alertDialog = alertDialogBuilder.create();
+
+        // menampilkan alert dialog
+        alertDialog.show();
     }
 }
