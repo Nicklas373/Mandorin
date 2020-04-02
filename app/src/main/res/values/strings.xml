@@ -97,6 +97,7 @@
 
     <string name="app_mandor_sewa_jasa_1">Renovasi</string>
     <string name="app_mandor_sewa_jasa_2">Bangunan Baru</string>
+
     <string name="app_mandor_bangun_awal_title">Bangunan Baru</string>
     <string name="app_mandor_bangun_awal_radio_1">Tenaga</string>
     <string name="app_mandor_bangun_awal_radio_2">Bahan + Tenaga</string>
@@ -116,9 +117,11 @@
     <string name="app_mandor_bangun_awal_next_6">Alamat</string>
     <string name="app_mandor_bangun_awal_next_7">Tanggal Survey</string>
     <string name="app_mandor_bangun_awal_next_8">Kirim</string>
+
     <string name="app_mandor_renovasi_title">Renovasi</string>
     <string name="app_mandor_renovasi_1">Data Renovasi</string>
     <string name="app_mandor_renovasi_2">Masukkan Data Yang Ingin Di Renovasi</string>
+
     <string name="app_mandor_tanggapan">Tanggapan</string>
     <string name="app_mandor_tanggapan_1">Nama Lengkap</string>
     <string name="app_mandor_tanggapan_2">Lokasi Pekerjaan</string>
@@ -127,6 +130,7 @@
     <string name="app_mandor_tanggapan_5">Renovasi</string>
     <string name="app_mandor_tanggapan_6">Bangunan Baru</string>
     <string name="app_mandor_tanggapan_7">Masukkan Tanggapan Anda Mengenai Kinerja Mandor Kami</string>
+
     <string name="app_mandor_konfirmasi_title">Konfirmasi</string>
     <string name="app_mandor_konfirmasi_1">Terkirim !</string>
     <string name="app_mandor_konfirmasi_2">Terima kasih telah menggunakan jasa kami</string>
@@ -136,6 +140,7 @@
     <string name="app_mandor_konfirmasi_6">kami informasikan melalu Email atau HP.</string>
     <string name="app_mandor_konfirmasi_7">Pastikan Email dan HP anda aktif</string>
     <string name="app_mandor_konfirmasi_8">Selesai</string>
+
     <string name="app_mandor_login_title">Log in</string>
     <string name="app_mandor_login_1">Masukkan Email</string>
     <string name="app_mandor_login_2">Masukkan Password</string>
@@ -143,6 +148,7 @@
     <string name="app_mandor_login_4">Selanjutnya</string>
     <string name="app_mandor_login_5">Lupa Password?</string>
     <string name="app_mandor_login_6">Tampilkan Password</string>
+
     <string name="app_mandor_register_title">Buat Akun</string>
     <string name="app_mandor_register_1">Masukkan Email</string>
     <string name="app_mandor_register_2">Masukkan Password</string>
@@ -162,6 +168,11 @@
     <string name="app_mandor_register_16">Masukkan Alamat</string>
     <string name="app_mandor_register_17">Kembali</string>
     <string name="app_mandor_register_18">Proses</string>
+    <string name="app_mandor_register_19">Registrasi telah berhasil</string>
+    <string name="app_mandor_register_20">Selamat menggunakan aplikasi kami !</string>
+    <string name="app_mandor_register_21">Beranda</string>
+    <string name="app_mandor_register_22">Lihat Akun</string>
+
     <string name="app_mandor_reset_title">Ganti Password</string>
     <string name="app_mandor_reset_1">Masukkan Email</string>
     <string name="app_mandor_menu_akun_title">Menu Akun</string>
@@ -171,6 +182,7 @@
     <string name="app_mandor_menu_akun_4">Log Out</string>
     <string name="app_mandor_user_profile_title">Data Akun</string>
     <string name="app_mandor_user_misc">:</string>
+
     <string name="app_mandor_menu_edit_akun_title">Edit Akun</string>
     <string name="app_mandor_menu_edit_akun_1">Umur</string>
     <string name="app_mandor_menu_edit_akun_2">NIK</string>

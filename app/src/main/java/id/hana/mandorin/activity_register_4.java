@@ -121,7 +121,7 @@ public class activity_register_4 extends AppCompatActivity {
                         {
                             update_reg();
                             dialog = ProgressDialog.show(activity_register_4.this, "Menu Daftar Akun", "Memproses Data Akun...", true);
-                            Intent intent = new Intent(activity_register_4.this, MainActivity.class);
+                            Intent intent = new Intent(activity_register_4.this, activity_register_5.class);
                             startActivity(intent);
                         } catch (IllegalArgumentException e)
                         {

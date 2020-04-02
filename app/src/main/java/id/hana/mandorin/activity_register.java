@@ -29,10 +29,17 @@ public class activity_register extends AppCompatActivity {
         setContentView(R.layout.activity_register);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
+        /*
+         * Layout ID Initializations
+         * TextView, CardView & Button
+         */
         btnSignUp = (Button) findViewById(R.id.reg_account);
         inputEmail = (EditText) findViewById(R.id.email_register);
         batal = (TextView) findViewById(R.id.btn_batal) ;
 
+        /*
+         * SharedPreferences Declaration
+         */
         pref = getSharedPreferences("data_akun", Context.MODE_PRIVATE);
 
         btnSignUp.setOnClickListener(new View.OnClickListener() {

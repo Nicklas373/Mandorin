@@ -47,6 +47,10 @@ public class activity_register_2 extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
 
+        /*
+         * Layout ID Initializations
+         * TextView, CardView & Button
+         */
         btnSignUp = (Button) findViewById(R.id.reg_account);
         inputPassword = (EditText) findViewById(R.id.password_register);
         inputPasswordver = (EditText) findViewById(R.id.password_register_ver);
@@ -101,8 +105,6 @@ public class activity_register_2 extends AppCompatActivity {
                                             editor.apply();
                                             startActivity(new Intent(activity_register_2.this, activity_register_3.class));
                                             finish();
-                                            //Toast.makeText(getApplicationContext(), "Akun berhasil di buat", Toast.LENGTH_SHORT).show();
-                                            //Toast.makeText(getApplicationContext(), "Silahkan Login dengan email anda", Toast.LENGTH_LONG).show();
                                         } catch (IllegalArgumentException e)
                                         {
                                             Toast.makeText(activity_register_2.this, "Akun gagal di buat", Toast.LENGTH_SHORT).show();
