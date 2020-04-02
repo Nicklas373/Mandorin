@@ -75,13 +75,14 @@
     <string name="app_mandor_layanan_jasa_3">NIK</string>
     <string name="app_mandor_layanan_jasa_4">E - Mail</string>
     <string name="app_mandor_layanan_jasa_5">No. HP</string>
-    <string name="app_mandor_layanan_jasa_6">Alamat</string>
+    <string name="app_mandor_layanan_jasa_6">Alamat Survey</string>
     <string name="app_mandor_layanan_jasa_7">Tanggal Survey</string>
     <string name="app_mandor_layanan_jasa_8">Pilih Borongan</string>
     <string name="app_mandor_layanan_jasa_9">Desain Rumah</string>
     <string name="app_mandor_layanan_jasa_10">Kirim</string>
     <string name="app_mandor_layanan_jasa_11">Data Pekerjaan</string>
     <string name="app_mandor_layanan_jasa_12">Data Layanan</string>
+    <string name="app_mandor_layanan_jasa_13">Pilih Tanggal</string>
     <string name="app_mandor_layanan_jasa_radio_1">Tenaga</string>
     <string name="app_mandor_layanan_jasa_radio_2">Bahan + Tenaga</string>
     <string name="app_mandor_layanan_jasa_radio_3">Ada</string>

@@ -1,16 +1,20 @@
 package id.hana.mandorin;
 
+import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -25,8 +29,23 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.squareup.picasso.Picasso;
 
+import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.util.EntityUtils;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 public class activity_layanan_jasa extends AppCompatActivity {
@@ -35,11 +54,12 @@ public class activity_layanan_jasa extends AppCompatActivity {
      * Layout Component Initializations
      * EditText, Textview, Imageview, CardView & Button
      */
-    private EditText nama_lj, nik_lj, no_hp_lj, alamat_lj, tgl_survey, data_lj;
-    private TextView dummy_1, dummy_2, nama_mandor , nik_mandor, ba_email_statis;
+    private EditText alamat_lj, tgl_survey, data_lj;
+    private TextView nama_lj, nik_lj, no_hp_lj, dummy_1, dummy_2, nama_mandor , nik_mandor, ba_email_statis;
     private RadioGroup rg, rg_2;
-    private Button kirim;
+    private Button kirim, datepicker;
     private CardView back;
+    private int mYear, mMonth, mDay;
     ProgressDialog dialog;
 
     /*
@@ -55,6 +75,12 @@ public class activity_layanan_jasa extends AppCompatActivity {
     private FirebaseAuth.AuthStateListener authListener;
     private FirebaseAuth auth;
     FirebaseUser firebaseUser;
+
+    // Json parser Initializations
+    JSONObject json = null;
+    String str = "";
+    HttpResponse response;
+    Context context;
 
     /*
      * Create Web URL Init
@@ -76,9 +102,9 @@ public class activity_layanan_jasa extends AppCompatActivity {
         /*
          * Layout ID Initializations
          */
-          nama_lj = findViewById(R.id.input_nama_layanan_jasa);
-          nik_lj = findViewById(R.id.input_nik_layanan_jasa);
-          no_hp_lj = findViewById(R.id.input_hp_layanan_jasa);
+          nama_lj = findViewById(R.id.nama_pemesan_layanan_jasa);
+          nik_lj = findViewById(R.id.nik_pemesan_layanan_jasa);
+          no_hp_lj = findViewById(R.id.hp_pemesan_layanan_jasa);
           ba_email_statis = findViewById(R.id.layanan_statis_email);
           alamat_lj = findViewById(R.id.input_alamat_layanan_jasa);
           tgl_survey = findViewById(R.id.input_tgl_layanan_jasa);
@@ -91,6 +117,7 @@ public class activity_layanan_jasa extends AppCompatActivity {
           rg_2 = findViewById(R.id.rg_desain);
           kirim = findViewById(R.id.button_kirim_layanan_jasa);
           back = findViewById(R.id.back_activity_layanan_jasa);
+          datepicker = findViewById(R.id.button_pilih_tanggal);
 
         /*
          * Binding firebase email first
@@ -110,10 +137,38 @@ public class activity_layanan_jasa extends AppCompatActivity {
         nama_mandor.setText(nama);
         nik_mandor.setText(nik);
 
+        /* Grab current user data for name, nik & call number directly from
+         * Current table in database
+         */
+        new activity_layanan_jasa.GetUserAccountData(context).execute();
+
+        /*
+         * Set automated current date for survey date on this input
+         * User should now can input that date by datepicker not
+         * Manually written on EditText
+         */
+        SimpleDateFormat CurDate = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+        String date = CurDate.format(Calendar.getInstance().getTime());
+        tgl_survey.setText(date);
+
         kirim.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 send_data();
+            }
+        });
+
+        tgl_survey.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                datepicker();
+            }
+        });
+
+        datepicker.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                datepicker();
             }
         });
 
@@ -128,6 +183,24 @@ public class activity_layanan_jasa extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    private void datepicker() {
+        // Get Current Date
+        final Calendar c = Calendar.getInstance();
+        mYear = c.get(Calendar.YEAR);
+        mMonth = c.get(Calendar.MONTH);
+        mDay = c.get(Calendar.DAY_OF_MONTH);
+
+        DatePickerDialog datePickerDialog = new DatePickerDialog(this,
+                new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year,
+                                          int monthOfYear, int dayOfMonth) {
+                        tgl_survey.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
+                    }
+                }, mYear, mMonth, mDay);
+        datePickerDialog.show();
     }
 
     private void send_data(){
@@ -273,5 +346,81 @@ public class activity_layanan_jasa extends AppCompatActivity {
 
         // Adding the StringRequest object into requestQueue.
         requestQueue.add(stringRequest);
+    }
+
+    private class GetUserAccountData extends AsyncTask<Void, Void, Void>
+    {
+        public Context context;
+        String usermail_2 = ba_email_statis.getText().toString();
+
+        public GetUserAccountData(Context context)
+        {
+            this.context = context;
+        }
+
+        @Override
+        protected void onPreExecute()
+        {
+            super.onPreExecute();
+        }
+
+        @Override
+        protected Void doInBackground(Void... arg0)
+        {
+            String adress = "http://mandorin.site/mandorin/php/user/new/read_data_user.php?email=" + usermail_2;
+            HttpClient myClient = new DefaultHttpClient();
+            HttpPost myConnection = new HttpPost(adress);
+
+            try {
+                response = myClient.execute(myConnection);
+                str = EntityUtils.toString(response.getEntity(), "UTF-8");
+
+            } catch (ClientProtocolException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            try{
+                JSONArray jArray = new JSONArray(str);
+                json = jArray.getJSONObject(0);
+
+            } catch ( JSONException e) {
+                e.printStackTrace();
+            }
+
+            catch (Exception e)
+            {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            return null;
+        }
+        protected void onPostExecute(Void result)
+        {
+            try {
+                String username = json.getString("nama_lengkap");
+                if (username.equalsIgnoreCase("")) {
+                    nama_lj.setText("-");
+                } else {
+                    nama_lj.setText(json.getString("nama_lengkap"));
+                }
+                String userid_2 = json.getString("nik");
+                if (userid_2.equalsIgnoreCase("")) {
+                    nik_lj.setText("-");
+                } else {
+                    nik_lj.setText(userid_2);
+                }
+                String userphone_2 = json.getString("telp");
+                if (userphone_2.equalsIgnoreCase("")) {
+                    no_hp_lj.setText("-");
+                } else {
+                    no_hp_lj.setText(userphone_2);
+                }
+            } catch (JSONException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
     }
 }
