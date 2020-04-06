@@ -21,7 +21,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class activity_akun extends AppCompatActivity {
 
     private TextView userdump;
-    private CardView lihat_akun, edit_akun, ganti_pass, log_out, back_akun;
+    private CardView lihat_akun, ganti_pass, log_out, back_akun;
     SharedPreferences pref;
     SharedPreferences.Editor editor;
     private FirebaseAuth.AuthStateListener authListener;
@@ -48,7 +48,6 @@ public class activity_akun extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         lihat_akun = (CardView) findViewById(R.id.mandor_akun_1);
-        edit_akun = (CardView) findViewById(R.id.mandor_akun_2);
         ganti_pass = (CardView) findViewById(R.id.mandor_akun_3);
         log_out = (CardView) findViewById(R.id.mandor_akun_4);
         back_akun = (CardView) findViewById(R.id.back_activity_akun);
@@ -68,29 +67,8 @@ public class activity_akun extends AppCompatActivity {
             public void onClick(View v) {
                 if(internet_available()){
                     if (auth.getCurrentUser() != null) {
-                        Intent intent = new Intent(activity_akun.this, activity_user_profile.class);
+                        Intent intent = new Intent(activity_akun.this, activity_akun_baru.class);
                         startActivity(intent);
-                    } else {
-                        check_account_dialog();
-                    }
-                }else{
-                    Toast.makeText(getApplicationContext(), "Harap Periksa Koneksi Internet Anda", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-
-        edit_akun.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(internet_available()){
-                    if (auth.getCurrentUser() != null) {
-                        auth.getCurrentUser().reload();
-                        if (auth.getCurrentUser().isEmailVerified()) {
-                            Intent intent = new Intent(activity_akun.this, activity_edit_akun.class);
-                            startActivity(intent);
-                        } else {
-                            ver_acc_dialog();
-                        }
                     } else {
                         check_account_dialog();
                     }

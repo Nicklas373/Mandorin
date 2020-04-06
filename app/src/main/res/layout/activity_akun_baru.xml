@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="#fff"
+    android:theme="@style/AppTheme.NoActionBar">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_title"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        app:cardBackgroundColor="@color/colorPrimary">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_head_akun_test"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            app:civ_border_width="4dp"
+            app:civ_border_color="#FFFFFFFF"
+            android:contentDescription="@string/app_mandor_menu_edit_akun_1"
+            android:src="@drawable/profil"/>
+
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:fontFamily="@font/test"
+            android:layout_marginTop="165dp"
+            android:textSize="18sp"
+            android:textColor="#fff" />
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/back"
+                android:id="@+id/back_activity_akun_baru"
+                android:gravity="start"
+                android:contentDescription="@string/back" />
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/refresh"
+            android:id="@+id/edit_activity_akun_baru"
+            android:layout_gravity="end"
+            android:contentDescription="@string/back" />
+
+    </android.support.v7.widget.CardView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/title_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:fontFamily="@font/test"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:text="@string/app_mandor_user_menu_7"
+                android:textSize="14sp"
+                android:textColor="#000" />
+
+            <EditText
+                android:id="@+id/user_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:fontFamily="@font/test"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:textSize="16sp"
+                android:inputType="textEmailAddress"
+                android:hint="@string/empty"
+                android:focusable="false"
+                android:textColor="#000"
+                android:importantForAutofill="no" />
+
+            <TextView
+                android:id="@+id/title_umur"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:fontFamily="@font/test"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:text="@string/app_mandor_user_menu_1"
+                android:textSize="14sp"
+                android:layout_marginTop="15dp"
+                android:textColor="#000" />
+
+            <EditText
+                android:id="@+id/user_umur"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:fontFamily="@font/test"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:textSize="16sp"
+                android:inputType="number"
+                android:hint="@string/empty"
+                android:focusable="false"
+                android:textColor="#000"
+                android:importantForAutofill="no" />
+
+            <TextView
+                android:id="@+id/title_nik"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:fontFamily="@font/test"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/app_mandor_user_menu_2"
+                android:textSize="14sp"
+                android:textColor="#000" />
+
+            <EditText
+                android:id="@+id/user_nik"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:fontFamily="@font/test"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:textSize="16sp"
+                android:inputType="number"
+                android:hint="@string/empty"
+                android:focusable="false"
+                android:textColor="#000"
+                android:importantForAutofill="no" />
+
+            <TextView
+                android:id="@+id/title_telp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:fontFamily="@font/test"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/app_mandor_user_menu_3"
+                android:textSize="14sp"
+                android:textColor="#000" />
+
+            <EditText
+                android:id="@+id/user_telp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:fontFamily="@font/test"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:textSize="16sp"
+                android:inputType="number"
+                android:hint="@string/empty"
+                android:focusable="false"
+                android:textColor="#000"
+                android:importantForAutofill="no" />
+
+            <TextView
+                android:id="@+id/title_alamat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:fontFamily="@font/test"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/app_mandor_user_menu_4"
+                android:textSize="14sp"
+                android:textColor="#000" />
+
+            <EditText
+                android:id="@+id/user_alamat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:fontFamily="@font/test"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:textSize="16sp"
+                android:inputType="textMultiLine"
+                android:hint="@string/empty"
+                android:focusable="false"
+                android:textColor="#000"
+                android:importantForAutofill="no"
+                android:scrollbars="vertical"
+                android:scrollHorizontally="false"
+                android:maxLines="5"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/button_batal_akun_baru"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:fontFamily="@font/test"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="75dp"
+            android:background="@color/colorPrimary"
+            android:text="@string/app_mandor_user_menu_9"
+            android:textColor="#fff"
+            android:textAllCaps="false"
+            android:visibility="gone"/>
+
+        <Button
+            android:id="@+id/button_simpan_akun_baru"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:fontFamily="@font/test"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="60dp"
+            android:background="@color/colorPrimary"
+            android:text="@string/app_mandor_user_menu_8"
+            android:textColor="#fff"
+            android:textAllCaps="false"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+    <!-- Dummy Debugging Begin !-->
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/dummy_userpic_akun_baru" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/dummy_new_userpic_akun_baru" />
+    <!-- Dummy Debugging End !-->
+</LinearLayout>

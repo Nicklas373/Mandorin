@@ -9,14 +9,13 @@ import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.drawable.Drawable;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.CardView;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -31,6 +30,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.firebase.auth.FirebaseAuth;
 import com.squareup.picasso.Picasso;
 
 import org.apache.http.HttpResponse;
@@ -56,13 +56,13 @@ import java.util.Map;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class activity_edit_akun extends AppCompatActivity {
+public class activity_akun_baru extends AppCompatActivity {
 
-    private TextView editmail, cancel, dummyimage, dummynewimage;
-    private EditText editname, editid, editage, editphone, editaddress;
-    private CircleImageView picedit;
-    private Button save;
-    private CardView back;
+    private CircleImageView user_pic;
+    private TextView user_name, user_mail, user_dummy, user_new_dummy;
+    private EditText user_nik, user_umur, user_phone, user_address;
+    private ImageView back, edit_akun;
+    private Button simpan, batal;
     SharedPreferences pref;
     SharedPreferences.Editor editor;
     JSONObject json = null;
@@ -73,6 +73,8 @@ public class activity_edit_akun extends AppCompatActivity {
     private static final int PICK_FILE_REQUEST = 1;
     private String SERVER_URL = "http://mandorin.site/mandorin/upload_file.php";
     ProgressDialog dialog;
+    private FirebaseAuth.AuthStateListener authListener;
+    private FirebaseAuth auth;
 
     //Pdf request code
     private int PICK_PDF_REQUEST = 1;
@@ -80,77 +82,219 @@ public class activity_edit_akun extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_akun);
+        setContentView(R.layout.activity_akun_baru);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+        auth = FirebaseAuth.getInstance();
+
+        auth.getCurrentUser().reload();
 
         pref = getSharedPreferences("data_akun", Context.MODE_PRIVATE);
 
-        editname = (EditText) findViewById(R.id.userEditFullName);
-        editmail = (TextView) findViewById(R.id.userEditEmail);
-        editage = (EditText) findViewById(R.id.userEditAge);
-        editid = (EditText) findViewById(R.id.user_edit_id);
-        editphone = (EditText) findViewById(R.id.user_edit_telp);
-        editaddress = (EditText) findViewById(R.id.user_edit_address);
-        picedit = (CircleImageView) findViewById(R.id.img_head_akun_test);
-        dummyimage = (TextView) findViewById(R.id.dummy_userpic_edit);
-        dummynewimage = (TextView) findViewById(R.id.dummy_new_pic);
-        cancel = (TextView) findViewById(R.id.btn_cancel);
-        back = (CardView) findViewById(R.id.back_activity_edit_akun);
-        save = (Button) findViewById(R.id.save_account);
+        user_pic = (CircleImageView) findViewById(R.id.img_head_akun_test);
+        user_dummy = (TextView) findViewById(R.id.dummy_userpic_akun_baru);
+        user_new_dummy = (TextView) findViewById(R.id.dummy_new_userpic_akun_baru);
+        user_name = (TextView) findViewById(R.id.user_name);
+        user_mail = (TextView) findViewById(R.id.user_email);
+        user_nik = (EditText) findViewById(R.id.user_nik);
+        user_umur = (EditText) findViewById(R.id.user_umur);
+        user_phone = (EditText) findViewById(R.id.user_telp);
+        user_address = (EditText) findViewById(R.id.user_alamat);
+        back = (ImageView) findViewById(R.id.back_activity_akun_baru);
+        edit_akun = (ImageView) findViewById(R.id.edit_activity_akun_baru);
+        simpan = (Button) findViewById(R.id.button_simpan_akun_baru);
+        batal = (Button) findViewById(R.id.button_batal_akun_baru);
 
-        editmail.setText(pref.getString ("email", null));
+        user_mail.setText(pref.getString("email", null));
 
-        new GetImageData(context).execute();
+        new activity_akun_baru.GetTextViewData(context).execute();
 
-        picedit.setOnClickListener(new View.OnClickListener() {
+        user_pic.setEnabled(false);
+
+        if (auth.getCurrentUser().isEmailVerified()) {
+            Toast.makeText(getApplicationContext(), "Email telah di verifikasi", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(getApplicationContext(), "Email belum di verifikasi", Toast.LENGTH_SHORT).show();
+        }
+
+        user_pic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 showFileChooser();
             }
         });
 
-        cancel.setOnClickListener(new View.OnClickListener() {
+        batal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(activity_edit_akun.this, activity_akun.class);
-                startActivity(intent);
+                batal.setVisibility(View.GONE);
+                simpan.setVisibility(View.GONE);
+
+                user_umur.setFocusableInTouchMode(false);
+                user_nik.setFocusableInTouchMode(false);
+                user_phone.setFocusableInTouchMode(false);
+                user_address.setFocusableInTouchMode(false);
+                user_pic.setEnabled(false);
+
+                new activity_akun_baru.GetTextViewData(context).execute();
             }
         });
 
-        save.setOnClickListener(new View.OnClickListener() {
+        simpan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (TextUtils.isEmpty(editname.getText().toString())) {
-                    editname.setError("Harap Masukkan Nama");
+                if (TextUtils.isEmpty(user_umur.getText().toString())) {
+                    user_umur.setError("Harap Masukkan Umur");
                     return;
-                } else if (TextUtils.isEmpty(editmail.getText().toString())) {
-                    editmail.setError("Harap Masukkan Email");
+                } else if (TextUtils.isEmpty(user_nik.getText().toString())) {
+                    user_nik.setError("Harap Masukkan NIK");
                     return;
-                } else if (TextUtils.isEmpty(editage.getText().toString())) {
-                    editage.setError("Harap Masukkan Umur");
+                } else if (TextUtils.isEmpty(user_phone.getText().toString())) {
+                    user_phone.setError("Harap Masukkan Nomor Telepon");
                     return;
-                } else if (TextUtils.isEmpty(editid.getText().toString())) {
-                    editid.setError("Harap Masukkan NIK");
-                    return;
-                } else if (TextUtils.isEmpty(editphone.getText().toString())) {
-                    editphone.setError("Harap Masukkan Nomor Telepon");
-                    return;
-                } else if (TextUtils.isEmpty(editaddress.getText().toString())) {
-                    editaddress.setError("Harap Masukkan Alamat");
+                } else if (TextUtils.isEmpty(user_address.getText().toString())) {
+                    user_address.setError("Harap Masukkan Alamat");
                     return;
                 } else {
+                    user_pic.setFocusableInTouchMode(false);
+                    user_umur.setFocusableInTouchMode(false);
+                    user_nik.setFocusableInTouchMode(false);
+                    user_phone.setFocusableInTouchMode(false);
+                    user_address.setFocusableInTouchMode(false);
+                    user_pic.setEnabled(false);
                     update_dialog();
                 }
+            }
+        });
+
+        edit_akun.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                batal.setVisibility(View.VISIBLE);
+                simpan.setVisibility(View.VISIBLE);
+
+                user_pic.setFocusableInTouchMode(true);
+                user_umur.setFocusableInTouchMode(true);
+                user_nik.setFocusableInTouchMode(true);
+                user_phone.setFocusableInTouchMode(true);
+                user_address.setFocusableInTouchMode(true);
+                user_pic.setEnabled(true);
             }
         });
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(activity_edit_akun.this, activity_akun.class);
+                batal.setVisibility(View.GONE);
+                simpan.setVisibility(View.GONE);
+
+                user_pic.setFocusableInTouchMode(false);
+                user_umur.setFocusableInTouchMode(false);
+                user_nik.setFocusableInTouchMode(false);
+                user_phone.setFocusableInTouchMode(false);
+                user_address.setFocusableInTouchMode(false);
+
+                Intent intent = new Intent(activity_akun_baru.this, activity_akun.class);
                 startActivity(intent);
             }
         });
+    }
+
+    private class GetTextViewData extends AsyncTask<Void, Void, Void> {
+        public Context context;
+        String usermail_2 = user_mail.getText().toString();
+
+        public GetTextViewData(Context context) {
+            this.context = context;
+        }
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+        }
+
+        @Override
+        protected Void doInBackground(Void... arg0) {
+            String adress = "http://mandorin.site/mandorin/php/user/new/read_data_user.php?email=" + usermail_2;
+            HttpClient myClient = new DefaultHttpClient();
+            HttpPost myConnection = new HttpPost(adress);
+
+            try {
+                response = myClient.execute(myConnection);
+                str = EntityUtils.toString(response.getEntity(), "UTF-8");
+
+            } catch (ClientProtocolException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            try {
+                JSONArray jArray = new JSONArray(str);
+                json = jArray.getJSONObject(0);
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            } catch (Exception e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        protected void onPostExecute(Void result) {
+            try {
+                String username = json.getString("nama_lengkap");
+                if (username.equalsIgnoreCase("")) {
+                    user_name.setText("-");
+                } else {
+                    user_name.setText(json.getString("nama_lengkap"));
+                }
+                String usermail_2 = json.getString("email");
+                if (usermail_2.equalsIgnoreCase("")) {
+                    user_mail.setText("-");
+                } else {
+                    user_mail.setText(usermail_2);
+                }
+                String userage_2 = json.getString("umur");
+                if (userage_2.equalsIgnoreCase("")) {
+                    user_umur.setText("-");
+                } else {
+                    user_umur.setText(userage_2);
+                }
+                String userid_2 = json.getString("nik");
+                if (userid_2.equalsIgnoreCase("")) {
+                    user_nik.setText("-");
+                } else {
+                    user_nik.setText(userid_2);
+                }
+                String userphone_2 = json.getString("telp");
+                if (userphone_2.equalsIgnoreCase("")) {
+                    user_phone.setText("-");
+                } else {
+                    user_phone.setText(userphone_2);
+                }
+                String useraddress_2 = json.getString("alamat");
+                if (useraddress_2.equalsIgnoreCase("")) {
+                    user_address.setText("-");
+                } else {
+                    user_address.setText(useraddress_2);
+                }
+                user_dummy.setText(json.getString("foto_user"));
+                String uri = "@drawable/profil";  // where myresource (without the extension) is the file
+                if (user_dummy.getText().toString().equalsIgnoreCase("")) {
+                    //int imageResource = getResources().getIdentifier(uri, null, getPackageName());
+                    //Drawable res = getResources().getDrawable(imageResource);
+                    //userpic.setImageDrawable(res);
+                } else {
+                    String user_photo = "http://mandorin.site/mandorin/uploads/" + user_dummy.getText().toString();
+                    Picasso.get().load(user_photo).fit().centerCrop().into(user_pic);
+                }
+            } catch (JSONException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
     }
 
     private void update_dialog(){
@@ -167,13 +311,13 @@ public class activity_edit_akun extends AppCompatActivity {
                 .setCancelable(false)
                 .setPositiveButton("Ya",new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog,int id) {
-                        dialog = ProgressDialog.show(activity_edit_akun.this, "Edit Akun", "Memperbaharui Data...", true);
-                        if (dummynewimage.getText().toString().equalsIgnoreCase("")) {
-                            if (dummyimage.getText().toString().equalsIgnoreCase("")) {
+                        dialog = ProgressDialog.show(activity_akun_baru.this, "Edit Akun", "Memperbaharui Data...", true);
+                        if (user_new_dummy.getText().toString().equalsIgnoreCase("")) {
+                            if (user_dummy.getText().toString().equalsIgnoreCase("")) {
                                 finish();
                             } else {
-                                String oldimage = dummyimage.getText().toString();
-                                dummynewimage.setText(oldimage);
+                                String oldimage = user_dummy.getText().toString();
+                                user_new_dummy.setText(oldimage);
                             }
                         } else {
                             new Thread(new Runnable() {
@@ -191,7 +335,7 @@ public class activity_edit_akun extends AppCompatActivity {
                         handler.postDelayed(new Runnable() {
                             @Override
                             public void run() {
-                                Intent intent = new Intent(activity_edit_akun.this, activity_user_profile.class);
+                                Intent intent = new Intent(activity_akun_baru.this, activity_akun.class);
                                 startActivity(intent);
                             }
                         }, 3000L); //3000 L = 3 detik
@@ -303,7 +447,7 @@ public class activity_edit_akun extends AppCompatActivity {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            dummynewimage.setText(selectedFilePath);
+                            user_new_dummy.setText(selectedFilePath);
                         }
                     });
                 }
@@ -318,16 +462,16 @@ public class activity_edit_akun extends AppCompatActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        Toast.makeText(activity_edit_akun.this, "Berkas Tidak Di Temukan", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(activity_akun_baru.this, "Berkas Tidak Di Temukan", Toast.LENGTH_SHORT).show();
                     }
                 });
             } catch (MalformedURLException e) {
                 e.printStackTrace();
-                Toast.makeText(activity_edit_akun.this, "Kesalahan Alamat Website", Toast.LENGTH_SHORT).show();
+                Toast.makeText(activity_akun_baru.this, "Kesalahan Alamat Website", Toast.LENGTH_SHORT).show();
 
             } catch (IOException e) {
                 e.printStackTrace();
-                Toast.makeText(activity_edit_akun.this, "Tidak Dapat Membaca File", Toast.LENGTH_SHORT).show();
+                Toast.makeText(activity_akun_baru.this, "Tidak Dapat Membaca File", Toast.LENGTH_SHORT).show();
             }
             return serverResponseCode;
         }
@@ -355,8 +499,8 @@ public class activity_edit_akun extends AppCompatActivity {
                 selectedFilePath = file_path.getPath(this, selectedFileUri);
 
                 if (selectedFilePath != null && !selectedFilePath.equals("")) {
-                    dummynewimage.setText(selectedFilePath);
-                    File imgFile = new  File(dummynewimage.getText().toString());
+                    user_new_dummy.setText(selectedFilePath);
+                    File imgFile = new  File(user_new_dummy.getText().toString());
 
                     if(imgFile.exists()) {
 
@@ -368,14 +512,14 @@ public class activity_edit_akun extends AppCompatActivity {
 
                     }
                 } else {
-                    dummynewimage.setText("");
+                    user_new_dummy.setText("");
                 }
             }
         }
     }
 
     private void createdata_2() {
-        String usermail_2 = editmail.getText().toString();
+        String usermail_2 = user_mail.getText().toString();
         String adress = "http://mandorin.site/mandorin/php/user/test_update.php?email=" + usermail_2;
         StringRequest stringRequest = new StringRequest(Request.Method.POST, adress,
                 new Response.Listener<String>() {
@@ -391,20 +535,20 @@ public class activity_edit_akun extends AppCompatActivity {
                     public void onErrorResponse(VolleyError volleyError) {
 
                         // Showing error message if something goes wrong.
-                        Toast.makeText(activity_edit_akun.this, volleyError.toString(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(activity_akun_baru.this, volleyError.toString(), Toast.LENGTH_LONG).show();
                     }
                 })
 
         {
             @Override
             protected Map<String, String> getParams() {
-                String nama_edit = editname.getText().toString();
-                String usermail_edit = editmail.getText().toString();
-                String umur_edit  = editage.getText().toString();
-                String nik_edit   = editid.getText().toString();
-                String telp_edit   = editphone.getText().toString();
-                String alamat_edit   = editaddress.getText().toString();
-                String substring = dummynewimage.getText().toString();
+                String nama_edit = user_name.getText().toString();
+                String usermail_edit = user_mail.getText().toString();
+                String umur_edit  = user_umur.getText().toString();
+                String nik_edit   = user_nik.getText().toString();
+                String telp_edit   = user_phone.getText().toString();
+                String alamat_edit   = user_address.getText().toString();
+                String substring = user_new_dummy.getText().toString();
                 String desain = substring.substring(substring.lastIndexOf("/")+1);
                 // regex filename, so it'll look same for filename and filepath that'll inserted to database
                 String regex = desain.replaceAll("\\s", "");
@@ -415,7 +559,7 @@ public class activity_edit_akun extends AppCompatActivity {
                 // Adding All values to Params.
                 params.put("nama_lengkap", nama_edit  );
                 params.put("email", usermail_edit );
-                params.put("umur", umur_edit  );
+                params.put("umur", umur_edit );
                 params.put("nik", nik_edit  );
                 params.put("telp", telp_edit  );
                 params.put("alamat", alamat_edit  );
@@ -427,79 +571,9 @@ public class activity_edit_akun extends AppCompatActivity {
         };
 
         // Creating RequestQueue.
-        RequestQueue requestQueue = Volley.newRequestQueue(activity_edit_akun.this);
+        RequestQueue requestQueue = Volley.newRequestQueue(activity_akun_baru.this);
 
         // Adding the StringRequest object into requestQueue.
         requestQueue.add(stringRequest);
     }
-
-    private class GetImageData extends AsyncTask<Void, Void, Void>
-    {
-        public Context context;
-        String usermail_2 = editmail.getText().toString();
-
-        public GetImageData(Context context)
-        {
-            this.context = context;
-        }
-
-        @Override
-        protected void onPreExecute()
-        {
-            super.onPreExecute();
-        }
-
-        @Override
-        protected Void doInBackground(Void... arg0)
-        {
-            String adress = "http://mandorin.site/mandorin/php/user/test_read.php?email=" + usermail_2;
-            HttpClient myClient = new DefaultHttpClient();
-            HttpPost myConnection = new HttpPost(adress);
-
-            try {
-                response = myClient.execute(myConnection);
-                str = EntityUtils.toString(response.getEntity(), "UTF-8");
-
-            } catch (ClientProtocolException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-            try{
-                JSONArray jArray = new JSONArray(str);
-                json = jArray.getJSONObject(0);
-
-            } catch ( JSONException e) {
-                e.printStackTrace();
-            }
-
-            catch (Exception e)
-            {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-            return null;
-        }
-        protected void onPostExecute(Void result)
-        {
-            try {
-                dummyimage.setText(json.getString("foto_user"));
-                String uri = "@drawable/profil";  // where myresource (without the extension) is the file
-                if (dummyimage.getText().toString().equalsIgnoreCase("")) {
-                    //int imageResource = getResources().getIdentifier(uri, null, getPackageName());
-                    ///Drawable res = getResources().getDrawable(imageResource);
-                    //picedit.setImageDrawable(res);
-                    dummyimage.setText("");
-                } else {
-                    String user_photo = "http://mandorin.site/mandorin/uploads/" + dummyimage.getText().toString();
-                    Picasso.get().load(user_photo).fit().centerCrop() .into(picedit);
-                }
-            } catch (JSONException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-        }
-    }
-
 }
