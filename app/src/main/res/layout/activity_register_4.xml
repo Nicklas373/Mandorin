@@ -39,7 +39,7 @@
             android:fontFamily="@font/test"
             android:textColor="#000"
             android:text="@string/app_mandor_register_10"
-            android:textSize="23sp" />
+            android:textSize="18sp" />
 
         <EditText
             android:id="@+id/isi_telp"
@@ -48,9 +48,9 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
-            android:layout_marginTop="240dp"
+            android:layout_marginTop="230dp"
             android:fontFamily="@font/test"
-            android:textSize="23sp"
+            android:textSize="20sp"
             android:inputType="number"
             android:hint="@string/app_mandor_register_14"
             android:importantForAutofill="no" />
@@ -66,7 +66,7 @@
             android:fontFamily="@font/test"
             android:textColor="#000"
             android:text="@string/app_mandor_register_15"
-            android:textSize="23sp" />
+            android:textSize="18sp" />
 
         <EditText
             android:id="@+id/isi_alamat"
@@ -75,9 +75,9 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
-            android:layout_marginTop="360dp"
+            android:layout_marginTop="350dp"
             android:fontFamily="@font/test"
-            android:textSize="23sp"
+            android:textSize="20sp"
             android:inputType="textMultiLine"
             android:maxLines="12"
             android:gravity="top|start"
