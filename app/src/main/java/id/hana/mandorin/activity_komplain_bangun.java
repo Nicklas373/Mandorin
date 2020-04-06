@@ -35,7 +35,7 @@ public class activity_komplain_bangun extends AppCompatActivity {
      * Layout Component Initializations
      * Textview, Imageview, CardView & Button
      */
-    private TextView nomor_kontrak_1_1, alamat_kontrak_1, status_kontrak_1;
+    private TextView nomor_kontrak_1_1, alamat_kontrak_1, nama_pemesan_1_1;
     private EditText komplain_1;
     private Button btn_kirim;
     private CardView back;
@@ -64,7 +64,7 @@ public class activity_komplain_bangun extends AppCompatActivity {
          */
         nomor_kontrak_1_1 = findViewById(R.id.user_input_nomor_kontrak);
         alamat_kontrak_1 = findViewById(R.id.user_input_alamat_kontrak);
-        status_kontrak_1 = findViewById(R.id.status);
+        nama_pemesan_1_1 = findViewById(R.id.nama_pemesan_komplain_1);
         komplain_1 = findViewById(R.id.et_komplain);
         back = findViewById(R.id.back_activity_komplain_bangun);
         btn_kirim = findViewById(R.id.button_kirim_komplain);
@@ -99,6 +99,7 @@ public class activity_komplain_bangun extends AppCompatActivity {
          */
         nomor_kontrak_1_1.setText(nomor_kontrak_1);
         alamat_kontrak_1.setText(alamat_pekerjaan_1);
+        nama_pemesan_1_1.setText(nama_pemesan_1);
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -199,6 +200,7 @@ public class activity_komplain_bangun extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() {
 
+                String nama_pemesan = nama_pemesan_1_1.getText().toString();
                 String nomor_kontrak = nomor_kontrak_1_1.getText().toString();
                 String alamat_kontrak = alamat_kontrak_1.getText().toString();
                 String komplain_kontrak = komplain_1.getText().toString();
@@ -209,6 +211,7 @@ public class activity_komplain_bangun extends AppCompatActivity {
                 Map<String, String> params = new HashMap<String, String>();
 
                 // Adding All values to Params.
+                params.put("nama_pemesan", nama_pemesan);
                 params.put("nomor_kontrak", nomor_kontrak);
                 params.put("email", email);
                 params.put("alamat", alamat_kontrak);

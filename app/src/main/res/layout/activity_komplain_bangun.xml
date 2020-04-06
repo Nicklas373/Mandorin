@@ -209,6 +209,14 @@
                     android:visibility="gone"
                     />
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/nama_pemesan_komplain_1"
+                    android:text=""
+                    android:visibility="gone"
+                    />
+
                 <!-- Dummy Debugging End -->
 
             </android.support.v7.widget.CardView>
