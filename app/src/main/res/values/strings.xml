@@ -65,6 +65,7 @@
     <string name="app_mandor_1_profile_3_data_8">Agama</string>
     <string name="app_mandor_1_profile_3_data_6">Tempat</string>
     <string name="app_mandor_1_profile_3_data_7">Tanggal Lahir</string>
+    <string name="app_mandor_1_profile_3_data_9">Tempat / Tanggal Lahir</string>
     <string name="app_mandor_1_profile_3_data_4">Alamat</string>
     <string name="app_mandor_1_profile_3_data_5">Lama Kerja</string>
 
@@ -176,8 +177,7 @@
     <string name="app_mandor_reset_title">Ganti Password</string>
     <string name="app_mandor_reset_1">Masukkan Email</string>
     <string name="app_mandor_menu_akun_title">Menu Akun</string>
-    <string name="app_mandor_menu_akun_1">Lihat Akun</string>
-    <string name="app_mandor_menu_akun_2">Edit Akun</string>
+    <string name="app_mandor_menu_akun_1">Akun</string>
     <string name="app_mandor_menu_akun_3">Ganti Password</string>
     <string name="app_mandor_menu_akun_4">Log Out</string>
     <string name="app_mandor_user_profile_title">Data Akun</string>
@@ -196,6 +196,7 @@
     <string name="app_mandor_menu_edit_akun_10">Masukkan Alamat</string>
     <string name="app_mandor_menu_edit_akun_11">Batalkan</string>
     <string name="app_mandor_menu_edit_akun_12">Simpan</string>
+
     <string name="app_mandor_menu_edit_profile_title">Menu Profile</string>
     <string name="app_mandor_menu_edit_misc">:</string>
     <string name="app_mandor_user_menu_1">Umur</string>
@@ -205,6 +206,11 @@
     <string name="app_mandor_user_menu_5">Profil User</string>
     <string name="app_mandor_user_menu_6">Nama</string>
     <string name="app_mandor_user_menu_7">Email</string>
+    <string name="app_mandor_user_menu_8">Simpan</string>
+    <string name="app_mandor_user_menu_9">Batal</string>
+    <string name="app_mandor_user_menu_10">Password</string>
+    <string name="app_mandor_user_menu_11">Verifikasi Password</string>
+
     <string name="app_menu_1_mandor_1_title">Menu Mandor</string>
     <string name="app_menu_1_mandor_1">Profil Mandor</string>
     <string name="app_menu_1_mandor_2">Dokumentasi Pekerjaan</string>

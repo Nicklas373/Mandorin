@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="#fff"
+    android:theme="@style/AppTheme.NoActionBar">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_title"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        app:cardBackgroundColor="@color/colorPrimary">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_head"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            app:civ_border_width="4dp"
+            app:civ_border_color="#FFFFFFFF"
+            android:contentDescription="@string/app_mandor_menu_edit_akun_1"
+            android:src="@drawable/profil"/>
+
+        <TextView
+            android:id="@+id/txt_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:fontFamily="@font/test"
+            android:layout_marginTop="165dp"
+            android:textSize="18sp"
+            android:textColor="#fff" />
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/back"
+            android:id="@+id/back_activity_mandor_baru"
+            android:gravity="start"
+            android:contentDescription="@string/back" />
+
+    </android.support.v7.widget.CardView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/title_umur"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:fontFamily="@font/test"
+                android:layout_marginTop="30dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:text="@string/app_mandor_user_menu_1"
+                android:textSize="14sp"
+                android:textColor="#000" />
+
+            <EditText
+                android:id="@+id/txt_umur_mandor_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:fontFamily="@font/test"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:textSize="16sp"
+                android:inputType="number"
+                android:hint="@string/empty"
+                android:focusable="false"
+                android:textColor="#000"
+                android:importantForAutofill="no" />
+
+            <TextView
+                android:id="@+id/title_nik"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:fontFamily="@font/test"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/app_mandor_user_menu_2"
+                android:textSize="14sp"
+                android:textColor="#000" />
+
+            <EditText
+                android:id="@+id/txt_nik_mandor_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:fontFamily="@font/test"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:textSize="16sp"
+                android:inputType="number"
+                android:hint="@string/empty"
+                android:focusable="false"
+                android:textColor="#000"
+                android:importantForAutofill="no" />
+
+            <TextView
+                android:id="@+id/title_tmp_tgl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:fontFamily="@font/test"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/app_mandor_1_profile_3_data_9"
+                android:textSize="14sp"
+                android:textColor="#000" />
+
+            <EditText
+                android:id="@+id/txt_tempat_mandor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:fontFamily="@font/test"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:textSize="16sp"
+                android:inputType="text"
+                android:hint="@string/empty"
+                android:focusable="false"
+                android:textColor="#000"
+                android:importantForAutofill="no" />
+
+            <TextView
+                android:id="@+id/title_agama"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:fontFamily="@font/test"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/app_mandor_1_profile_3_data_8"
+                android:textSize="14sp"
+                android:textColor="#000" />
+
+            <EditText
+                android:id="@+id/txt_agama_mandor_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:fontFamily="@font/test"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:textSize="16sp"
+                android:inputType="text"
+                android:hint="@string/empty"
+                android:focusable="false"
+                android:textColor="#000"
+                android:importantForAutofill="no" />
+
+            <TextView
+                android:id="@+id/title_alamat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:fontFamily="@font/test"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/app_mandor_user_menu_4"
+                android:textSize="14sp"
+                android:textColor="#000" />
+
+            <EditText
+                android:id="@+id/txt_alamat_mandor_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:fontFamily="@font/test"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:textSize="16sp"
+                android:inputType="textMultiLine"
+                android:hint="@string/empty"
+                android:focusable="false"
+                android:textColor="#000"
+                android:importantForAutofill="no"
+                android:scrollbars="vertical"
+                android:scrollHorizontally="false"
+                android:maxLines="5"/>
+
+            <TextView
+                android:id="@+id/title_lama_kerja"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:fontFamily="@font/test"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/app_mandor_1_profile_3_data_5"
+                android:textSize="14sp"
+                android:textColor="#000" />
+
+            <EditText
+                android:id="@+id/txt_lama_kerja_mandor_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:fontFamily="@font/test"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:textSize="16sp"
+                android:inputType="text"
+                android:hint="@string/empty"
+                android:focusable="false"
+                android:textColor="#000"
+                android:importantForAutofill="no" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Dummy Debugging Begin !-->
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/dummy_user_tgl" />
+    <!-- Dummy Debugging End !-->
+</LinearLayout>

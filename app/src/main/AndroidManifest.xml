@@ -62,7 +62,7 @@
         <activity android:name=".activity_welcome"/>
         <activity android:name=".MainActivity"/>
         <activity android:name=".activity_mandor"/>
-        <activity android:name=".activity_detail_mandor"/>
+        <activity android:name=".activity_detail_mandor_baru"/>
         <activity android:name=".activity_profile_mandor"/>
         <activity android:name=".activity_layanan_jasa"/>
         <activity android:name=".activity_konfirmasi_bangun_renovasi"/>
@@ -75,8 +75,7 @@
         <activity android:name=".activity_register_5"/>
         <activity android:name=".activity_reset_pass"/>
         <activity android:name=".activity_akun"/>
-        <activity android:name=".activity_user_profile"/>
-        <activity android:name=".activity_edit_akun"/>
+        <activity android:name=".activity_akun_baru"/>
         <activity android:name=".activity_kontrak"/>
         <activity android:name=".activity_data_kontrak"/>
         <activity android:name=".activity_layanan_kontrak"/>
