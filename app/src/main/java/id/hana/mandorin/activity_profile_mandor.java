@@ -127,7 +127,7 @@ public class activity_profile_mandor extends AppCompatActivity {
                 bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
                 byte[] b = baos.toByteArray();
 
-                Intent intent = new Intent(activity_profile_mandor.this, activity_detail_mandor.class);
+                Intent intent = new Intent(activity_profile_mandor.this, activity_detail_mandor_baru.class);
                 /*
                  * Only use passed intent on specific layout
                  */
