@@ -72,7 +72,6 @@
         <activity android:name=".activity_register_2"/>
         <activity android:name=".activity_register_3"/>
         <activity android:name=".activity_register_4"/>
-        <activity android:name=".activity_register_5"/>
         <activity android:name=".activity_reset_pass"/>
         <activity android:name=".activity_akun"/>
         <activity android:name=".activity_akun_baru"/>

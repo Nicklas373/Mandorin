@@ -55,33 +55,31 @@
             android:hint="@string/app_mandor_reset_1"
             android:importantForAutofill="no" />
 
-        <TextView
-            android:id="@+id/btn_batal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <ImageView
+            android:layout_width="42dp"
+            android:layout_height="42dp"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="15sp"
             android:layout_gravity="bottom"
-            android:textSize="22sp"
-            android:fontFamily="@font/test"
-            android:textColor="#000"
-            android:text="@string/app_mandor_register_5" />
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/back_v2"
+            android:id="@+id/back_activity_reset_pass"
+            android:contentDescription="@string/empty" />
 
-        <Button
-            android:id="@+id/reset_account"
-            android:layout_width="130dp"
-            android:layout_height="40dp"
+        <ImageView
+            android:layout_width="42dp"
+            android:layout_height="42dp"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10sp"
-            android:textSize="18sp"
-            android:background="@color/colorPrimary"
-            android:textColor="#fff"
-            android:fontFamily="@font/test"
-            android:textAllCaps="false"
-            android:text="@string/app_mandor_register_4"
-            android:layout_gravity="bottom|end" />
+            android:layout_marginBottom="15sp"
+            android:layout_gravity="end|bottom"
+            android:src="@drawable/next"
+            android:id="@+id/next_activity_reset_pass"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/empty" />
 
     </android.support.v7.widget.CardView>
 

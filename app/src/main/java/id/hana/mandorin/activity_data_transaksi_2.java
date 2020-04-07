@@ -51,7 +51,7 @@ public class activity_data_transaksi_2 extends AppCompatActivity {
      * Textview, Imageview, CardView & Button
      */
     private TextView Nomor_Rekening, FileName, id_1, nomor_kontrak_1, nama_pemesan_1, email_1, alamat_1, no_telp_1, biaya_desain_1, biaya_konstruksi_1, status_satu_1, status_dua_1, status_tiga_1, status_empat_1, status_desain_1, total_satu_1, total_dua_1, total_tiga_1, total_empat_1, tgl_satu, tgl_dua, tgl_tiga, tgl_empat, tgl_desain_1, bukti_satu_1, bukti_dua_1,  bukti_tiga_1, bukti_empat_1, bukti_desain_1, presentase_1;
-    private Button Kirim;
+    private ImageView kirim;
     private CardView back;
     private ImageView upload;
     ProgressDialog dialog;
@@ -108,7 +108,7 @@ public class activity_data_transaksi_2 extends AppCompatActivity {
         presentase_1 = findViewById(R.id.presentase_pemesan_pembayaran_transaksi_2);
         FileName = findViewById(R.id.fileName);
         upload = findViewById(R.id.upload_pembayaran_transaksi_2);
-        Kirim = findViewById(R.id.btn_pembayaran_transaksi_2);
+        kirim = findViewById(R.id.kirim_activity_transaksi_2);
         back = findViewById(R.id.back_activity_data_transaksi_2);
 
         /*
@@ -189,7 +189,7 @@ public class activity_data_transaksi_2 extends AppCompatActivity {
             }
         });
 
-        Kirim.setOnClickListener(new View.OnClickListener() {
+        kirim.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 dialog = ProgressDialog.show(activity_data_transaksi_2.this, "Menu Pembayaran", "Memproses...", true);

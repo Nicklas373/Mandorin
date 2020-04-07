@@ -9,6 +9,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,8 +24,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class activity_reset_pass extends AppCompatActivity {
 
     private EditText inputEmail;
-    private Button selanjutnya;
-    private TextView kembali;
+    private ImageView back, next;
     private FirebaseAuth auth;
     ProgressDialog dialog;
 
@@ -35,19 +35,19 @@ public class activity_reset_pass extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         inputEmail = (EditText) findViewById(R.id.email_reset);
-        selanjutnya = (Button) findViewById(R.id.reset_account);
-        kembali = (TextView) findViewById(R.id.btn_batal);
+        next = (ImageView) findViewById(R.id.next_activity_reset_pass);
+        back = (ImageView) findViewById(R.id.back_activity_reset_pass);
 
         auth = FirebaseAuth.getInstance();
 
-        kembali.setOnClickListener(new View.OnClickListener() {
+        back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
             }
         });
 
-        selanjutnya.setOnClickListener(new View.OnClickListener() {
+        next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 

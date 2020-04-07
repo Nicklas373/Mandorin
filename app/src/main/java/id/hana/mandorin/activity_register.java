@@ -10,15 +10,15 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 
 public class activity_register extends AppCompatActivity {
-    private TextView batal;
     private EditText inputEmail;
-    private Button btnSignUp;
+    private ImageView Next, Back;
     private FirebaseAuth auth;
     SharedPreferences pref;
     SharedPreferences.Editor editor;
@@ -33,16 +33,16 @@ public class activity_register extends AppCompatActivity {
          * Layout ID Initializations
          * TextView, CardView & Button
          */
-        btnSignUp = (Button) findViewById(R.id.reg_account);
+        Next = (ImageView) findViewById(R.id.next_activity_register);
         inputEmail = (EditText) findViewById(R.id.email_register);
-        batal = (TextView) findViewById(R.id.btn_batal) ;
+        Back = (ImageView) findViewById(R.id.back_activity_register) ;
 
         /*
          * SharedPreferences Declaration
          */
         pref = getSharedPreferences("data_akun", Context.MODE_PRIVATE);
 
-        btnSignUp.setOnClickListener(new View.OnClickListener() {
+        Next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -59,7 +59,7 @@ public class activity_register extends AppCompatActivity {
             }
         });
 
-        batal.setOnClickListener(new View.OnClickListener() {
+        Back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(activity_register.this, MainActivity.class);

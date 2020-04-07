@@ -181,18 +181,17 @@
             android:contentDescription="@string/app_mandor_menu_edit_akun_1"
             android:src="@drawable/upload_bukti_pembayaran"/>
 
-        <Button
-            android:id="@+id/btn_pembayaran_transaksi_2"
-            android:layout_width="130dp"
-            android:layout_height="35dp"
-            android:layout_marginTop="100sp"
-            android:textSize="18sp"
-            android:fontFamily="@font/test"
-            android:background="@color/colorPrimary"
-            android:textColor="#fff"
-            android:textAllCaps="false"
-            android:text="@string/app_mandor_data_pembayaran_renovasi_2_3"
-            android:layout_gravity="center" />
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="20sp"
+            android:layout_gravity="center|bottom"
+            android:src="@drawable/kirim"
+            android:id="@+id/kirim_activity_transaksi_2"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/empty" />
 
         <TextView
             android:id="@+id/fileName_title"

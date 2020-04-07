@@ -425,10 +425,10 @@
                         android:clickable="true"
                         android:focusable="true"
                         android:fontFamily="@font/test"
-                        android:layout_marginStart="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="end"
+                        android:layout_marginEnd="15dp"
                         android:textColor="#000"/>
 
                 <View
@@ -474,6 +474,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
+                    android:layout_marginEnd="15dp"
                     android:textColor="#000"/>
 
                 <View
@@ -519,6 +520,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
+                    android:layout_marginEnd="15dp"
                     android:textColor="#000"/>
 
                 <View
@@ -564,6 +566,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
+                    android:layout_marginEnd="15dp"
                     android:textColor="#000"/>
 
                 <View
@@ -647,6 +650,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
+                    android:layout_marginEnd="15dp"
                     android:textColor="#000"/>
 
                 <View
@@ -692,6 +696,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
+                    android:layout_marginEnd="15dp"
                     android:textColor="#000"/>
 
                 <View
@@ -737,6 +742,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
+                    android:layout_marginEnd="15dp"
                     android:textColor="#000"/>
 
                 <View
@@ -748,6 +754,7 @@
 
                 <Button
                     android:id="@+id/proses_transaksi"
+                    style="@style/Widget.AppCompat.Button.Colored"
                     android:layout_width="150dp"
                     android:layout_height="35dp"
                     android:layout_marginTop="150sp"
@@ -760,6 +767,7 @@
 
                 <Button
                     android:id="@+id/proses_transaksi_2"
+                    style="@style/Widget.AppCompat.Button.Colored"
                     android:layout_width="150dp"
                     android:layout_height="35dp"
                     android:layout_marginTop="150sp"

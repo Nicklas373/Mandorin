@@ -26,6 +26,17 @@
             android:contentDescription="@string/app_mandor_menu_edit_akun_1"
             android:src="@drawable/profil"/>
 
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/user_pic_edit"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="110dp"
+            android:layout_marginStart="60dp"
+            android:visibility="gone"
+            android:contentDescription="@string/app_mandor_menu_edit_akun_1"
+            android:src="@drawable/camera"/>
+
         <TextView
             android:id="@+id/user_name"
             android:layout_width="match_parent"
@@ -49,13 +60,13 @@
                 android:contentDescription="@string/back" />
 
         <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
             android:clickable="true"
             android:focusable="true"
             android:layout_marginEnd="10dp"
             android:layout_marginTop="30dp"
-            android:src="@drawable/refresh"
+            android:src="@drawable/edit"
             android:id="@+id/edit_activity_akun_baru"
             android:layout_gravity="end"
             android:contentDescription="@string/back" />
@@ -219,36 +230,36 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:orientation="horizontal" >
 
-        <Button
-            android:id="@+id/button_batal_akun_baru"
-            style="@style/Widget.AppCompat.Button"
-            android:layout_width="100dp"
-            android:layout_height="30dp"
-            android:fontFamily="@font/test"
+        <ImageView
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="125dp"
+            android:layout_marginBottom="15sp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginStart="75dp"
-            android:background="@color/colorPrimary"
-            android:text="@string/app_mandor_user_menu_9"
-            android:textColor="#fff"
-            android:textAllCaps="false"
-            android:visibility="gone"/>
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/batal"
+            android:id="@+id/batal_edit_akun"
+            android:visibility="gone"
+            android:contentDescription="@string/empty" />
 
-        <Button
-            android:id="@+id/button_simpan_akun_baru"
-            style="@style/Widget.AppCompat.Button"
-            android:layout_width="100dp"
-            android:layout_height="30dp"
-            android:fontFamily="@font/test"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginStart="60dp"
-            android:background="@color/colorPrimary"
-            android:text="@string/app_mandor_user_menu_8"
-            android:textColor="#fff"
-            android:textAllCaps="false"
-            android:visibility="gone"/>
+        <ImageView
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginBottom="15sp"
+            android:layout_gravity="center|bottom"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/simpan"
+            android:id="@+id/simpan_edit_akun"
+            android:visibility="gone"
+            android:contentDescription="@string/empty" />
 
     </LinearLayout>
 

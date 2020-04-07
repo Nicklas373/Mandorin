@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -57,7 +58,7 @@ public class activity_layanan_jasa extends AppCompatActivity {
     private EditText alamat_lj, tgl_survey, data_lj;
     private TextView nama_lj, nik_lj, no_hp_lj, dummy_1, dummy_2, nama_mandor , nik_mandor, ba_email_statis;
     private RadioGroup rg, rg_2;
-    private Button kirim, datepicker;
+    private ImageView kirim, datepicker;
     private CardView back;
     private int mYear, mMonth, mDay;
     ProgressDialog dialog;
@@ -115,9 +116,9 @@ public class activity_layanan_jasa extends AppCompatActivity {
           nik_mandor = findViewById(R.id.nik_mandor);
           rg = findViewById(R.id.rg_borongan);
           rg_2 = findViewById(R.id.rg_desain);
-          kirim = findViewById(R.id.button_kirim_layanan_jasa);
+          kirim = findViewById(R.id.kirim_activity_layanan_jasa);
           back = findViewById(R.id.back_activity_layanan_jasa);
-          datepicker = findViewById(R.id.button_pilih_tanggal);
+          datepicker = findViewById(R.id.kalender);
 
         /*
          * Binding firebase email first

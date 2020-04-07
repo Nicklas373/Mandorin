@@ -58,11 +58,10 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class activity_akun_baru extends AppCompatActivity {
 
-    private CircleImageView user_pic;
+    private CircleImageView user_pic, user_pic_edit;
     private TextView user_name, user_mail, user_dummy, user_new_dummy;
     private EditText user_nik, user_umur, user_phone, user_address;
-    private ImageView back, edit_akun;
-    private Button simpan, batal;
+    private ImageView back, edit_akun, simpan, batal;
     SharedPreferences pref;
     SharedPreferences.Editor editor;
     JSONObject json = null;
@@ -92,6 +91,7 @@ public class activity_akun_baru extends AppCompatActivity {
         pref = getSharedPreferences("data_akun", Context.MODE_PRIVATE);
 
         user_pic = (CircleImageView) findViewById(R.id.img_head_akun_test);
+        user_pic_edit = (CircleImageView) findViewById(R.id.user_pic_edit);
         user_dummy = (TextView) findViewById(R.id.dummy_userpic_akun_baru);
         user_new_dummy = (TextView) findViewById(R.id.dummy_new_userpic_akun_baru);
         user_name = (TextView) findViewById(R.id.user_name);
@@ -102,14 +102,12 @@ public class activity_akun_baru extends AppCompatActivity {
         user_address = (EditText) findViewById(R.id.user_alamat);
         back = (ImageView) findViewById(R.id.back_activity_akun_baru);
         edit_akun = (ImageView) findViewById(R.id.edit_activity_akun_baru);
-        simpan = (Button) findViewById(R.id.button_simpan_akun_baru);
-        batal = (Button) findViewById(R.id.button_batal_akun_baru);
+        simpan = (ImageView) findViewById(R.id.simpan_edit_akun);
+        batal = (ImageView) findViewById(R.id.batal_edit_akun);
 
         user_mail.setText(pref.getString("email", null));
 
         new activity_akun_baru.GetTextViewData(context).execute();
-
-        user_pic.setEnabled(false);
 
         if (auth.getCurrentUser().isEmailVerified()) {
             Toast.makeText(getApplicationContext(), "Email telah di verifikasi", Toast.LENGTH_SHORT).show();
@@ -117,7 +115,7 @@ public class activity_akun_baru extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Email belum di verifikasi", Toast.LENGTH_SHORT).show();
         }
 
-        user_pic.setOnClickListener(new View.OnClickListener() {
+        user_pic_edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 showFileChooser();
@@ -134,7 +132,8 @@ public class activity_akun_baru extends AppCompatActivity {
                 user_nik.setFocusableInTouchMode(false);
                 user_phone.setFocusableInTouchMode(false);
                 user_address.setFocusableInTouchMode(false);
-                user_pic.setEnabled(false);
+                user_pic_edit.setFocusableInTouchMode(false);
+                user_pic_edit.setVisibility(View.GONE);
 
                 new activity_akun_baru.GetTextViewData(context).execute();
             }
@@ -161,7 +160,8 @@ public class activity_akun_baru extends AppCompatActivity {
                     user_nik.setFocusableInTouchMode(false);
                     user_phone.setFocusableInTouchMode(false);
                     user_address.setFocusableInTouchMode(false);
-                    user_pic.setEnabled(false);
+                    user_pic_edit.setFocusableInTouchMode(false);
+                    user_pic_edit.setVisibility(View.GONE);
                     update_dialog();
                 }
             }
@@ -178,7 +178,8 @@ public class activity_akun_baru extends AppCompatActivity {
                 user_nik.setFocusableInTouchMode(true);
                 user_phone.setFocusableInTouchMode(true);
                 user_address.setFocusableInTouchMode(true);
-                user_pic.setEnabled(true);
+                user_pic_edit.setFocusableInTouchMode(true);
+                user_pic_edit.setVisibility(View.VISIBLE);
             }
         });
 
@@ -187,8 +188,9 @@ public class activity_akun_baru extends AppCompatActivity {
             public void onClick(View view) {
                 batal.setVisibility(View.GONE);
                 simpan.setVisibility(View.GONE);
+                user_pic_edit.setVisibility(View.GONE);
 
-                user_pic.setFocusableInTouchMode(false);
+                user_pic_edit.setFocusableInTouchMode(false);
                 user_umur.setFocusableInTouchMode(false);
                 user_nik.setFocusableInTouchMode(false);
                 user_phone.setFocusableInTouchMode(false);

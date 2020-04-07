@@ -11,6 +11,7 @@ import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,6 +30,8 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class activity_komplain_bangun extends AppCompatActivity {
 
     /*
@@ -37,7 +40,7 @@ public class activity_komplain_bangun extends AppCompatActivity {
      */
     private TextView nomor_kontrak_1_1, alamat_kontrak_1, nama_pemesan_1_1;
     private EditText komplain_1;
-    private Button btn_kirim;
+    private ImageView kirim;
     private CardView back;
 
     /*
@@ -67,7 +70,7 @@ public class activity_komplain_bangun extends AppCompatActivity {
         nama_pemesan_1_1 = findViewById(R.id.nama_pemesan_komplain_1);
         komplain_1 = findViewById(R.id.et_komplain);
         back = findViewById(R.id.back_activity_komplain_bangun);
-        btn_kirim = findViewById(R.id.button_kirim_komplain);
+        kirim = findViewById(R.id.kirim_activity_komplain_bangun);
 
         /*
          * Begin firebase authorization
@@ -123,7 +126,7 @@ public class activity_komplain_bangun extends AppCompatActivity {
             }
         });
 
-        btn_kirim.setOnClickListener(new View.OnClickListener() {
+        kirim.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (komplain_1.getText().toString().length() == 0) {

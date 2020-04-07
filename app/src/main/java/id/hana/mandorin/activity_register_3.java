@@ -12,6 +12,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,9 +22,8 @@ public class activity_register_3 extends AppCompatActivity {
      * Layout Component Initializations
      * Textview, Imageview, CardView & Button
      */
-    private TextView back;
+    private ImageView back, next;
     private EditText ed_nama, ed_nik, ed_umur;
-    private Button btn_next;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,13 +31,13 @@ public class activity_register_3 extends AppCompatActivity {
         setContentView(R.layout.activity_register_3);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-        btn_next = (Button) findViewById(R.id.next_data);
-        back = (TextView) findViewById(R.id.btn_batal_data);
+        next = (ImageView) findViewById(R.id.next_activity_register_3);
+        back = (ImageView) findViewById(R.id.back_activity_register_3);
         ed_nama = (EditText) findViewById(R.id.isi_nama);
         ed_nik = (EditText) findViewById(R.id.isi_nik);
         ed_umur = (EditText) findViewById(R.id.isi_umur);
 
-        btn_next.setOnClickListener(new View.OnClickListener() {
+        next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (TextUtils.isEmpty(ed_nama.getText().toString())) {

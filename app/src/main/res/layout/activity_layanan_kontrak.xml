@@ -459,19 +459,20 @@
                 android:layout_marginTop="30dp">
 
                 <android.support.v7.widget.CardView
-                    android:id="@+id/cv_title_komplain"
-                    android:layout_width="130dp"
-                    android:layout_height="80dp"
-                    android:layout_gravity="center"
+                    android:id="@+id/cv_title_ajukan_kontrak_layanan_kontrak"
+                    android:layout_width="115dp"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="10dp"
                     android:clickable="true"
                     android:focusable="true"
+                    android:layout_gravity="center|top"
                     android:foreground="?android:attr/selectableItemBackground"
                     app:cardBackgroundColor="@color/colorPrimary"
                     app:cardMaxElevation="2dp"
                     app:cardUseCompatPadding="true">
 
                     <TextView
-                        android:id="@+id/textView16"
+                        android:id="@+id/textView10"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/komplain_text_2"
@@ -482,6 +483,17 @@
 
                 </android.support.v7.widget.CardView>
 
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="50sp"
+                    android:layout_gravity="center|top"
+                    android:src="@drawable/ajukan_komplain"
+                    android:id="@+id/ajukan_komplain"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/empty" />
 
             </android.support.v7.widget.CardView>
 

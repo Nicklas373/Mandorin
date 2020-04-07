@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,9 +32,9 @@ import java.util.Map;
 
 public class activity_register_2 extends AppCompatActivity {
 
-    private TextView batal, dbg;
+    private TextView dbg;
     private EditText inputPassword, inputPasswordver;
-    private Button btnSignUp;
+    private ImageView back, next;
     private FirebaseAuth auth;
     ProgressDialog dialog;
     SharedPreferences pref;
@@ -51,11 +52,11 @@ public class activity_register_2 extends AppCompatActivity {
          * Layout ID Initializations
          * TextView, CardView & Button
          */
-        btnSignUp = (Button) findViewById(R.id.reg_account);
+        next = (ImageView) findViewById(R.id.next_activity_register_2);
         inputPassword = (EditText) findViewById(R.id.password_register);
         inputPasswordver = (EditText) findViewById(R.id.password_register_ver);
         dbg = (TextView) findViewById(R.id.dummy_usermail_register);
-        batal = (TextView) findViewById(R.id.btn_batal) ;
+        back = (ImageView) findViewById(R.id.back_activity_register_2) ;
 
         pref = getApplicationContext().getSharedPreferences("data_akun", 0);
 
@@ -67,7 +68,7 @@ public class activity_register_2 extends AppCompatActivity {
             editor.apply();
         }
 
-        btnSignUp.setOnClickListener(new View.OnClickListener() {
+        next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -123,7 +124,7 @@ public class activity_register_2 extends AppCompatActivity {
             }
         });
 
-        batal.setOnClickListener(new View.OnClickListener() {
+        back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(activity_register_2.this, activity_register.class);

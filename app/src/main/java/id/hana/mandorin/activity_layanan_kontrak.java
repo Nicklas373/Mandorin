@@ -42,8 +42,8 @@ public class activity_layanan_kontrak extends AppCompatActivity {
      * Textview, Imageview, CardView & Button
      */
     private TextView Id, nomor_kontrak, alamat_pekerjaan, estimasi, presentase, data_desain, rekap_data, surat_kontrak, meta_data_desain, meta_rekap_data, meta_surat_kontrak;
-    private ImageView img_data_desain , img_rekap_data , img_surat_kontrak, img_presentase;
-    private CardView back, komplain;
+    private ImageView img_data_desain , img_rekap_data , img_surat_kontrak, img_presentase, komplain;
+    private CardView back;
 
     private static final String TAG = "activity_layanan_kontrak";
     private static final String[] PERMISSIONS = {android.Manifest.permission.READ_EXTERNAL_STORAGE, android.Manifest.permission.WRITE_EXTERNAL_STORAGE};
@@ -83,7 +83,7 @@ public class activity_layanan_kontrak extends AppCompatActivity {
         meta_rekap_data = findViewById(R.id.text_link_meta_rekap_data);
         meta_surat_kontrak = findViewById(R.id.text_link_meta_surat_kontrak);
         back = findViewById(R.id.back_activity_status_layanan_kontrak);
-        komplain = findViewById(R.id.cv_title_komplain);
+        komplain = findViewById(R.id.ajukan_komplain);
         img_data_desain = findViewById(R.id.image_data_desain_layanan_kontrak);
         img_rekap_data = findViewById(R.id.image_rekap_data_layanan_kontrak);
         img_surat_kontrak = findViewById(R.id.image_surat_kontrak_layanan_kontrak);
@@ -117,14 +117,16 @@ public class activity_layanan_kontrak extends AppCompatActivity {
         nomor_kontrak.setText(nomor_kontrak_1);
         alamat_pekerjaan.setText(alamat_pekerjaan_1);
         presentase.setText(presentase_1);
-        if (presentase.getText().toString().equalsIgnoreCase("50")){
+        if (presentase.getText().toString().equalsIgnoreCase("0")){
             img_presentase.setImageDrawable(getResources().getDrawable(R.drawable.status_layanan_1, getApplicationContext().getTheme()));
-        } else if (presentase.getText().toString().equalsIgnoreCase("80")) {
+        } else if (presentase.getText().toString().equalsIgnoreCase("50")) {
             img_presentase.setImageDrawable(getResources().getDrawable(R.drawable.status_layanan_2, getApplicationContext().getTheme()));
-        } else if (presentase.getText().toString().equalsIgnoreCase("95")) {
+        } else if (presentase.getText().toString().equalsIgnoreCase("80")) {
             img_presentase.setImageDrawable(getResources().getDrawable(R.drawable.status_layanan_3, getApplicationContext().getTheme()));
-        } else if (presentase.getText().toString().equalsIgnoreCase("100")) {
+        } else if (presentase.getText().toString().equalsIgnoreCase("95")) {
             img_presentase.setImageDrawable(getResources().getDrawable(R.drawable.status_layanan_4, getApplicationContext().getTheme()));
+        }else if (presentase.getText().toString().equalsIgnoreCase("100")) {
+            img_presentase.setImageDrawable(getResources().getDrawable(R.drawable.status_layanan_5, getApplicationContext().getTheme()));
         }
         estimasi.setText(waktu_awal_1 + " sd " + waktu_akhir_1);
         data_desain.setText(link_data_desain_1);

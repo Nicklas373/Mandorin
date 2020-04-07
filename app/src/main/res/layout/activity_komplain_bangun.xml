@@ -186,18 +186,17 @@
                     android:scrollHorizontally="false"
                     android:scrollbars="vertical" />
 
-                <Button
-                    android:id="@+id/button_kirim_komplain"
-                    style="@style/Widget.AppCompat.Button"
-                    android:layout_width="100dp"
-                    android:layout_height="30dp"
-                    android:fontFamily="@font/test"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="480dp"
-                    android:background="@color/colorPrimary"
-                    android:text="@string/app_mandor_komplain_4"
-                    android:textColor="#fff"
-                    android:textAllCaps="false"/>
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="50sp"
+                    android:layout_gravity="center|bottom"
+                    android:src="@drawable/kirim"
+                    android:id="@+id/kirim_activity_komplain_bangun"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/empty" />
 
                 <!-- Dummy Debugging Begin -->
 

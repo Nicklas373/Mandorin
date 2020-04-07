@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,9 +32,9 @@ public class activity_register_4 extends AppCompatActivity {
      * Layout Component Initializations
      * Textview, Imageview, CardView & Button
      */
-    private TextView back, old_nama, old_nik, old_umur;
+    private ImageView back, next;
+    private TextView old_nama, old_nik, old_umur;
     private EditText ed_alamat, ed_telp;
-    private Button btn_prs;
 
     /*
      * Declare other think
@@ -53,8 +54,8 @@ public class activity_register_4 extends AppCompatActivity {
         setContentView(R.layout.activity_register_4);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-        btn_prs = (Button) findViewById(R.id.btn_prs);
-        back = (TextView) findViewById(R.id.btn_kembali_reg_4);
+        next = (ImageView) findViewById(R.id.next_activity_register_4);
+        back = (ImageView) findViewById(R.id.back_activity_register_4);
         ed_alamat = (EditText) findViewById(R.id.isi_alamat);
         ed_telp = (EditText) findViewById(R.id.isi_telp);
         old_nama = (TextView) findViewById(R.id.dummy_nama_reg_4);
@@ -89,7 +90,7 @@ public class activity_register_4 extends AppCompatActivity {
             }
         });
 
-        btn_prs.setOnClickListener(new View.OnClickListener() {
+        next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (ed_alamat.getText().toString().length() == 0) {
@@ -121,7 +122,8 @@ public class activity_register_4 extends AppCompatActivity {
                         {
                             update_reg();
                             dialog = ProgressDialog.show(activity_register_4.this, "Menu Daftar Akun", "Memproses Data Akun...", true);
-                            Intent intent = new Intent(activity_register_4.this, activity_register_5.class);
+                            Toast.makeText(activity_register_4.this, "Akun Berhasil di proses !", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(activity_register_4.this, MainActivity.class);
                             startActivity(intent);
                         } catch (IllegalArgumentException e)
                         {

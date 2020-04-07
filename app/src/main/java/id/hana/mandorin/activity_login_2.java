@@ -13,6 +13,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,10 +23,10 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class activity_login_2 extends AppCompatActivity {
 
-    private TextView buat_akun, reset_akun, dummy_debug;
+    private TextView reset_akun, dummy_debug;
     private EditText inputPassword;
+    private ImageView next, back;
     private FirebaseAuth auth;
-    private Button btnlogin_2;
     ProgressDialog dialog;
     SharedPreferences pref;
     SharedPreferences.Editor editor;
@@ -37,8 +38,8 @@ public class activity_login_2 extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         inputPassword = (EditText) findViewById(R.id.password_login);
-        btnlogin_2 = (Button) findViewById(R.id.next_account_2);
-        buat_akun = (TextView) findViewById(R.id.buat_akun);
+        next = (ImageView) findViewById(R.id.next_activity_login_2);
+        back = (ImageView) findViewById(R.id.back_activity_login_2);
         reset_akun = (TextView) findViewById(R.id.reset_acc);
         dummy_debug = (TextView) findViewById(R.id.dummy_usermail);
 
@@ -54,7 +55,7 @@ public class activity_login_2 extends AppCompatActivity {
             editor.apply();
         }
 
-        buat_akun.setOnClickListener(new View.OnClickListener() {
+        back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(internet_available()){
@@ -77,7 +78,7 @@ public class activity_login_2 extends AppCompatActivity {
                     }
                 });
 
-        btnlogin_2.setOnClickListener(
+        next.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
