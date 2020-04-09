@@ -95,7 +95,7 @@ public class activity_layanan_kontrak extends AppCompatActivity {
         final String nomor_kontrak_1 = getIntent().getExtras().getString("nomor_kontrak");
         final String nama_pemesan_1 = getIntent().getExtras().getString("nama_pemesan");
         final String email_1 = getIntent().getExtras().getString("email");
-        final String no_telp_1 = getIntent().getExtras().getString("alamat");
+        final String no_telp_1 = getIntent().getExtras().getString("no_telp");
         final String alamat_pekerjaan_1 = getIntent().getExtras().getString("alamat_pekerjaan");
         final String status_pekerjaan_1 = getIntent().getExtras().getString("status_pekerjaan");
         final String presentase_1 = getIntent().getExtras().getString("presentase");
