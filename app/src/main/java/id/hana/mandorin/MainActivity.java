@@ -4,11 +4,13 @@ import android.Manifest;
 import android.content.DialogInterface;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.widget.Toast;
 
 import com.kishan.askpermission.AskPermission;
 import com.kishan.askpermission.ErrorCallback;
@@ -22,6 +24,8 @@ public class MainActivity extends AppCompatActivity implements PermissionCallbac
      */
 
     private static final int REQUEST_PERMISSIONS = 20;
+
+    boolean doubleBackToExitPressedOnce = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +42,28 @@ public class MainActivity extends AppCompatActivity implements PermissionCallbac
 
         reqPermission();
         initViews();
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            super.onBackPressed();
+            finishAffinity();
+            moveTaskToBack(true);
+            android.os.Process.killProcess(android.os.Process.myPid());
+            System.exit(0);
+        }
+
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Harap tekan tombol kembali lagi untuk keluar", Toast.LENGTH_SHORT).show();
+
+        new Handler().postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce=false;
+            }
+        }, 2000);
     }
 
     private void reqPermission() {
