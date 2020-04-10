@@ -331,7 +331,7 @@
     <string name="app_mandor_data_pembayaran_renovasi_15">Biaya Desain</string>
     <string name="app_mandor_data_pembayaran_renovasi_16">Biaya Konstruksi</string>
     <string name="app_mandor_data_pembayaran_renovasi_17">Pembayaran Sekarang</string>
-    <string name="app_mandor_data_pembayaran_renovasi_title_2">Pembayaran Renovasi</string>
+    <string name="app_mandor_data_pembayaran_renovasi_title_2">Status Pembayaran</string>
     <string name="app_mandor_data_pembayaran_renovasi_2_1">Nomor Rekening</string>
     <string name="app_mandor_data_pembayaran_renovasi_2_2">Masukkan Bukti Pembayaran</string>
     <string name="app_mandor_data_pembayaran_renovasi_2_3">Kirim</string>
