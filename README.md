@@ -39,5 +39,6 @@ Mandorin merupakan sebuah aplikasi berbasis mobile  &amp; website yang diharapka
 - Pembuatan kelima belas (12 Desember 2019 | 20:49 GMT+7)
 - Pembuatan keenam belas (07 April 2020 | 20:45 GMT+7)
 - Pembuatan ketujuh belas (09 April 2020 | 09:16 GMT+7)
+- Pembuatan kedelapan belas (10 April 2020 | 11:46 GMT+7)
 
 # HANA-CI Build Project || 2016-2020
