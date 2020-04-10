@@ -35,6 +35,16 @@
             android:textSize="35sp"
             android:layout_marginTop="80dp" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="#fff"
+            android:id="@+id/app_ver"
+            android:fontFamily="@font/test"
+            android:textSize="18sp"
+            android:layout_marginTop="130dp" />
+
     </android.support.v7.widget.CardView>
 
 </android.support.constraint.ConstraintLayout>
