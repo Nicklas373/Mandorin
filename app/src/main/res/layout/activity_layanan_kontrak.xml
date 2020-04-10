@@ -64,7 +64,7 @@
                 android:layout_width="380dp"
                 android:layout_height="330dp"
                 app:cardBackgroundColor="#fff"
-                app:cardCornerRadius="12dp"
+                app:cardCornerRadius="8dp"
                 app:cardMaxElevation="2dp"
                 app:cardUseCompatPadding="true"
                 android:layout_gravity="center_horizontal"
@@ -122,21 +122,17 @@
 
                 </android.support.v7.widget.CardView>
 
-                <TextView
+                <EditText
                     android:id="@+id/user_input_id_layanan_kontrak"
-                    android:layout_width="200dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
+                    android:layout_marginStart="170dp"
+                    android:layout_marginTop="83dp"
                     android:fontFamily="@font/test"
-                    android:layout_marginTop="100dp"
-                    android:textColor="#000" />
-
-                <View
-                    android:layout_width="200dp"
-                    android:layout_height="1dp"
-                    android:background="#000"
-                    android:layout_marginTop="120dp"
-                    android:layout_gravity="end" />
+                    android:textColor="#000"
+                    android:focusable="false"
+                    android:clickable="false"/>
 
                 <android.support.v7.widget.CardView
                     android:id="@+id/cv_title_nomor_kontrak"
@@ -163,21 +159,17 @@
 
                 </android.support.v7.widget.CardView>
 
-                <TextView
+                <EditText
                     android:id="@+id/user_input_nomor_kontrak_layanan_kontrak"
-                    android:layout_width="200dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
+                    android:layout_marginStart="170dp"
+                    android:layout_marginTop="131dp"
                     android:fontFamily="@font/test"
-                    android:layout_marginTop="151dp"
-                    android:textColor="#000" />
-
-                <View
-                    android:layout_width="200dp"
-                    android:layout_height="1dp"
-                    android:background="#000"
-                    android:layout_marginTop="170dp"
-                    android:layout_gravity="end" />
+                    android:textColor="#000"
+                    android:focusable="false"
+                    android:clickable="false"/>
 
                 <android.support.v7.widget.CardView
                     android:id="@+id/cv_title_alamat"
@@ -204,15 +196,23 @@
 
                 </android.support.v7.widget.CardView>
 
-                <TextView
+                <EditText
                     android:id="@+id/user_input_alamat_layanan_kontrak"
-                    android:layout_width="200dp"
-                    android:layout_height="90dp"
-                    android:layout_marginTop="200dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="end"
+                    android:layout_marginStart="170dp"
+                    android:layout_marginTop="190dp"
                     android:fontFamily="@font/test"
-                    android:scrollbars = "vertical"
-                    android:textColor="#000" />
+                    android:textColor="#000"
+                    android:focusable="false"
+                    android:clickable="false"
+                    android:importantForAutofill="no"
+                    android:inputType="textMultiLine"
+                    android:maxLines="5"
+                    android:gravity="top|start"
+                    android:scrollbars="vertical"
+                    android:scrollHorizontally="false"/>
 
             </android.support.v7.widget.CardView>
 
@@ -221,7 +221,7 @@
                 android:layout_width="380dp"
                 android:layout_height="450dp"
                 app:cardBackgroundColor="#fff"
-                app:cardCornerRadius="12dp"
+                app:cardCornerRadius="8dp"
                 app:cardMaxElevation="2dp"
                 app:cardUseCompatPadding="true"
                 android:layout_gravity="center_horizontal"
@@ -310,7 +310,7 @@
                 android:layout_width="380dp"
                 android:layout_height="530dp"
                 app:cardBackgroundColor="#fff"
-                app:cardCornerRadius="12dp"
+                app:cardCornerRadius="8dp"
                 app:cardMaxElevation="2dp"
                 app:cardUseCompatPadding="true"
                 android:layout_gravity="center_horizontal"
@@ -452,7 +452,7 @@
                 android:layout_width="380dp"
                 android:layout_height="200dp"
                 app:cardBackgroundColor="#fff"
-                app:cardCornerRadius="12dp"
+                app:cardCornerRadius="8dp"
                 app:cardMaxElevation="2dp"
                 app:cardUseCompatPadding="true"
                 android:layout_gravity="center_horizontal"

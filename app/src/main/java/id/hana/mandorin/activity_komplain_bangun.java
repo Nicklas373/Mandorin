@@ -38,8 +38,8 @@ public class activity_komplain_bangun extends AppCompatActivity {
      * Layout Component Initializations
      * Textview, Imageview, CardView & Button
      */
-    private TextView nomor_kontrak_1_1, alamat_kontrak_1, nama_pemesan_1_1;
-    private EditText komplain_1;
+    private TextView nama_pemesan_1_1;
+    private EditText komplain_1, nomor_kontrak_1_1, alamat_kontrak_1;
     private ImageView kirim;
     private CardView back;
 

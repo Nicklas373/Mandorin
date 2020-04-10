@@ -19,6 +19,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -50,7 +51,8 @@ public class activity_data_transaksi_2 extends AppCompatActivity {
      * Layout Component Initializations
      * Textview, Imageview, CardView & Button
      */
-    private TextView Nomor_Rekening, FileName, id_1, nomor_kontrak_1, nama_pemesan_1, email_1, alamat_1, no_telp_1, biaya_desain_1, biaya_konstruksi_1, status_satu_1, status_dua_1, status_tiga_1, status_empat_1, status_desain_1, total_satu_1, total_dua_1, total_tiga_1, total_empat_1, tgl_satu, tgl_dua, tgl_tiga, tgl_empat, tgl_desain_1, bukti_satu_1, bukti_dua_1,  bukti_tiga_1, bukti_empat_1, bukti_desain_1, presentase_1;
+    private EditText Nomor_Rekening;
+    private TextView FileName, id_1, nomor_kontrak_1, nama_pemesan_1, email_1, alamat_1, no_telp_1, biaya_desain_1, biaya_konstruksi_1, status_satu_1, status_dua_1, status_tiga_1, status_empat_1, status_desain_1, total_satu_1, total_dua_1, total_tiga_1, total_empat_1, tgl_satu, tgl_dua, tgl_tiga, tgl_empat, tgl_desain_1, bukti_satu_1, bukti_dua_1,  bukti_tiga_1, bukti_empat_1, bukti_desain_1, presentase_1;
     private ImageView kirim;
     private CardView back;
     private ImageView upload;

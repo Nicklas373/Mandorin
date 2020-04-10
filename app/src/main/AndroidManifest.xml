@@ -21,11 +21,12 @@
 
     <!-- Multi Screen Layout Support -->
     <supports-screens
-        android:largeScreens="true"
-        android:normalScreens="true"
+        android:resizeable="true"
         android:smallScreens="true"
+        android:largeScreens="true"
         android:xlargeScreens="true"
-        android:resizeable="true" />
+        android:normalScreens="true"
+        android:anyDensity="true"/>
 
     <application
         android:allowBackup="true"

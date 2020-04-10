@@ -20,6 +20,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -41,7 +42,8 @@ public class activity_layanan_kontrak extends AppCompatActivity {
      * Layout Component Initializations
      * Textview, Imageview, CardView & Button
      */
-    private TextView Id, nomor_kontrak, alamat_pekerjaan, estimasi, presentase, data_desain, rekap_data, surat_kontrak, meta_data_desain, meta_rekap_data, meta_surat_kontrak;
+    private EditText Id, nomor_kontrak, alamat_pekerjaan;
+    private TextView estimasi, presentase, data_desain, rekap_data, surat_kontrak, meta_data_desain, meta_rekap_data, meta_surat_kontrak;
     private ImageView img_data_desain , img_rekap_data , img_surat_kontrak, img_presentase, komplain;
     private CardView back;
 

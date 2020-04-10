@@ -65,7 +65,7 @@
                 android:layout_width="380dp"
                 android:layout_height="230dp"
                 app:cardBackgroundColor="#fff"
-                app:cardCornerRadius="12dp"
+                app:cardCornerRadius="8dp"
                 app:cardMaxElevation="2dp"
                 android:layout_gravity="center_horizontal"
                 app:cardUseCompatPadding="true">
@@ -120,21 +120,18 @@
 
                 </android.support.v7.widget.CardView>
 
-                <TextView
+                <EditText
                     android:id="@+id/user_input_nomor_kontrak_transaksi"
-                    android:layout_width="200dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
+                    android:layout_marginStart="170dp"
+                    android:layout_marginTop="50dp"
+                    android:textSize="15sp"
                     android:fontFamily="@font/test"
-                    android:layout_marginTop="63dp"
-                    android:textColor="#000"/>
-
-                <View
-                    android:layout_width="200dp"
-                    android:layout_height="1dp"
-                    android:background="#000"
-                    android:layout_marginTop="82dp"
-                    android:layout_gravity="end" />
+                    android:textColor="#000"
+                    android:focusable="false"
+                    android:clickable="false"/>
 
                 <android.support.v7.widget.CardView
                     android:id="@+id/cv_title_nama_pemesan"
@@ -161,21 +158,18 @@
 
                 </android.support.v7.widget.CardView>
 
-                <TextView
+                <EditText
                     android:id="@+id/user_input_nama_pemesan_transaksi"
-                    android:layout_width="200dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
+                    android:layout_marginStart="170dp"
+                    android:layout_marginTop="100dp"
+                    android:textSize="15sp"
                     android:fontFamily="@font/test"
-                    android:layout_marginTop="113dp"
-                    android:textColor="#000"/>
-
-                <View
-                    android:layout_width="200dp"
-                    android:layout_height="1dp"
-                    android:background="#000"
-                    android:layout_marginTop="132dp"
-                    android:layout_gravity="end" />
+                    android:textColor="#000"
+                    android:focusable="false"
+                    android:clickable="false"/>
 
                 <android.support.v7.widget.CardView
                     android:id="@+id/cv_title_no_telp"
@@ -202,21 +196,18 @@
 
                 </android.support.v7.widget.CardView>
 
-                <TextView
+                <EditText
                     android:id="@+id/user_input_no_telp_transaksi"
-                    android:layout_width="200dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
+                    android:layout_marginStart="170dp"
+                    android:layout_marginTop="150dp"
+                    android:textSize="15sp"
                     android:fontFamily="@font/test"
-                    android:layout_marginTop="163dp"
-                    android:textColor="#000"/>
-
-                <View
-                    android:layout_width="200dp"
-                    android:layout_height="1dp"
-                    android:background="#000"
-                    android:layout_marginTop="182dp"
-                    android:layout_gravity="end" />
+                    android:textColor="#000"
+                    android:focusable="false"
+                    android:clickable="false"/>
 
             </android.support.v7.widget.CardView>
 
@@ -225,7 +216,7 @@
                 android:layout_width="380dp"
                 android:layout_height="650dp"
                 app:cardBackgroundColor="#fff"
-                app:cardCornerRadius="12dp"
+                app:cardCornerRadius="8dp"
                 app:cardMaxElevation="2dp"
                 android:layout_marginTop="20dp"
                 android:layout_gravity="center_horizontal"
@@ -419,24 +410,18 @@
 
                 </android.support.v7.widget.CardView>
 
-                    <TextView
-                        android:id="@+id/user_input_tgl_1_transaksi"
-                        android:layout_marginTop="335dp"
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:fontFamily="@font/test"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="end"
-                        android:layout_marginEnd="15dp"
-                        android:textColor="#000"/>
-
-                <View
-                    android:layout_width="180dp"
-                    android:layout_height="1dp"
-                    android:background="#000"
-                    android:layout_marginTop="360dp"
-                    android:layout_gravity="end" />
+                <EditText
+                    android:id="@+id/user_input_tgl_1_transaksi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginStart="180dp"
+                    android:layout_marginTop="325dp"
+                    android:fontFamily="@font/test"
+                    android:textColor="#000"
+                    android:textSize="15sp"
+                    android:focusable="false"
+                    android:clickable="false"/>
 
                 <android.support.v7.widget.CardView
                     android:id="@+id/cv_title_transaksi_2"
@@ -464,25 +449,18 @@
 
                 </android.support.v7.widget.CardView>
 
-                <TextView
+                <EditText
                     android:id="@+id/user_input_tgl_2_transaksi"
-                    android:layout_marginTop="415dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:fontFamily="@font/test"
-                    android:layout_marginStart="10dp"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
-                    android:layout_marginEnd="15dp"
-                    android:textColor="#000"/>
-
-                <View
-                    android:layout_width="180dp"
-                    android:layout_height="1dp"
-                    android:background="#000"
-                    android:layout_marginTop="440dp"
-                    android:layout_gravity="end" />
+                    android:layout_marginStart="180dp"
+                    android:layout_marginTop="405dp"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/test"
+                    android:textColor="#000"
+                    android:focusable="false"
+                    android:clickable="false"/>
 
                 <android.support.v7.widget.CardView
                     android:id="@+id/cv_title_transaksi_3"
@@ -510,25 +488,18 @@
 
                 </android.support.v7.widget.CardView>
 
-                <TextView
+                <EditText
                     android:id="@+id/user_input_tgl_3_transaksi"
-                    android:layout_marginTop="495dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:fontFamily="@font/test"
-                    android:layout_marginStart="10dp"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
-                    android:layout_marginEnd="15dp"
-                    android:textColor="#000"/>
-
-                <View
-                    android:layout_width="180dp"
-                    android:layout_height="1dp"
-                    android:background="#000"
-                    android:layout_marginTop="520dp"
-                    android:layout_gravity="end" />
+                    android:layout_marginStart="180dp"
+                    android:layout_marginTop="485dp"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/test"
+                    android:textColor="#000"
+                    android:focusable="false"
+                    android:clickable="false"/>
 
                 <android.support.v7.widget.CardView
                     android:id="@+id/cv_title_transaksi_4"
@@ -556,25 +527,18 @@
 
                 </android.support.v7.widget.CardView>
 
-                <TextView
+                <EditText
                     android:id="@+id/user_input_tgl_4_transaksi"
-                    android:layout_marginTop="575dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:fontFamily="@font/test"
-                    android:layout_marginStart="10dp"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
-                    android:layout_marginEnd="15dp"
-                    android:textColor="#000"/>
-
-                <View
-                    android:layout_width="180dp"
-                    android:layout_height="1dp"
-                    android:background="#000"
-                    android:layout_marginTop="600dp"
-                    android:layout_gravity="end" />
+                    android:layout_marginStart="180dp"
+                    android:layout_marginTop="565dp"
+                    android:fontFamily="@font/test"
+                    android:textSize="15sp"
+                    android:textColor="#000"
+                    android:focusable="false"
+                    android:clickable="false"/>
             </android.support.v7.widget.CardView>
 
 
@@ -583,7 +547,7 @@
                 android:layout_width="380dp"
                 android:layout_height="400dp"
                 app:cardBackgroundColor="#fff"
-                app:cardCornerRadius="12dp"
+                app:cardCornerRadius="8dp"
                 app:cardMaxElevation="2dp"
                 android:layout_marginTop="20dp"
                 android:layout_gravity="center_horizontal"
@@ -640,25 +604,18 @@
 
             </android.support.v7.widget.CardView>
 
-                <TextView
+                <EditText
                     android:id="@+id/user_input_biaya_desain"
-                    android:layout_marginTop="110dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:fontFamily="@font/test"
-                    android:layout_marginStart="10dp"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
-                    android:layout_marginEnd="15dp"
-                    android:textColor="#000"/>
-
-                <View
-                    android:layout_width="180dp"
-                    android:layout_height="1dp"
-                    android:background="#000"
-                    android:layout_marginTop="130dp"
-                    android:layout_gravity="end" />
+                    android:layout_marginStart="180dp"
+                    android:layout_marginTop="100dp"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/test"
+                    android:textColor="#000"
+                    android:focusable="false"
+                    android:clickable="false"/>
 
                 <android.support.v7.widget.CardView
                     android:id="@+id/cv_title_rincian_pembayaran_2"
@@ -686,25 +643,18 @@
 
                 </android.support.v7.widget.CardView>
 
-                <TextView
+                <EditText
                     android:id="@+id/user_input_biaya_konstruksi"
-                    android:layout_marginTop="170dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:fontFamily="@font/test"
-                    android:layout_marginStart="10dp"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
-                    android:layout_marginEnd="15dp"
-                    android:textColor="#000"/>
-
-                <View
-                    android:layout_width="180dp"
-                    android:layout_height="1dp"
-                    android:background="#000"
-                    android:layout_marginTop="190dp"
-                    android:layout_gravity="end" />
+                    android:layout_marginStart="180dp"
+                    android:layout_marginTop="157dp"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/test"
+                    android:textColor="#000"
+                    android:focusable="false"
+                    android:clickable="false"/>
 
                 <android.support.v7.widget.CardView
                     android:id="@+id/cv_title_rincian_pembayaran_3"
@@ -732,25 +682,18 @@
 
                 </android.support.v7.widget.CardView>
 
-                <TextView
+                <EditText
                     android:id="@+id/user_input_biaya_sekarang"
-                    android:layout_marginTop="235dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:fontFamily="@font/test"
-                    android:layout_marginStart="10dp"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
-                    android:layout_marginEnd="15dp"
-                    android:textColor="#000"/>
-
-                <View
-                    android:layout_width="180dp"
-                    android:layout_height="1dp"
-                    android:background="#000"
-                    android:layout_marginTop="257dp"
-                    android:layout_gravity="end" />
+                    android:layout_marginStart="180dp"
+                    android:layout_marginTop="225dp"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/test"
+                    android:textColor="#000"
+                    android:focusable="false"
+                    android:clickable="false"/>
 
                 <Button
                     android:id="@+id/proses_transaksi"

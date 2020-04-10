@@ -28,7 +28,7 @@
                 android:layout_toEndOf="@+id/VollyNetworkImageView1"
                 card_view:cardElevation="3dp"
                 card_view:cardUseCompatPadding="true"
-                app:cardBackgroundColor="#0069c0">
+                app:cardBackgroundColor="@color/colorPrimary">
 
                 <TextView
                     android:id="@+id/TextViewTitle"

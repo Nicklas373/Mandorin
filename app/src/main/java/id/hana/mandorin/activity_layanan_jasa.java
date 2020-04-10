@@ -55,8 +55,8 @@ public class activity_layanan_jasa extends AppCompatActivity {
      * Layout Component Initializations
      * EditText, Textview, Imageview, CardView & Button
      */
-    private EditText alamat_lj, tgl_survey, data_lj;
-    private TextView nama_lj, nik_lj, no_hp_lj, dummy_1, dummy_2, nama_mandor , nik_mandor, ba_email_statis;
+    private EditText alamat_lj, tgl_survey, data_lj, nama_lj, nik_lj, no_hp_lj, ba_email_statis;
+    private TextView dummy_1, dummy_2, nama_mandor , nik_mandor;
     private RadioGroup rg, rg_2;
     private ImageView kirim, datepicker;
     private CardView back;

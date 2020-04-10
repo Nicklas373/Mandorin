@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.text.method.ScrollingMovementMethod;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class activity_data_komplain_user extends AppCompatActivity {
@@ -15,7 +16,7 @@ public class activity_data_komplain_user extends AppCompatActivity {
      * Layout Component Initializations
      * Textview, Imageview, CardView & Button
      */
-    private TextView nomor_kontrak, alamat_kontrak, data_komplain, status_komplain;
+    private EditText nomor_kontrak, alamat_kontrak, data_komplain, status_komplain;
     private CardView back;
 
     @Override

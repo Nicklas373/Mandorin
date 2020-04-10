@@ -19,8 +19,9 @@
             android:layout_width="wrap_content"
             android:id="@+id/cv_title"
             android:layout_height="35dp"
+            android:layout_marginStart="8dp"
             card_view:cardUseCompatPadding="true"
-            app:cardBackgroundColor="#0069c0">
+            app:cardBackgroundColor="@color/colorPrimary">
 
             <TextView
                 android:id="@+id/TextViewTitle"
@@ -86,7 +87,7 @@
             android:layout_height="wrap_content"
             android:layout_toEndOf="@+id/text_biaya_status_transaksi"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="11dp"
             android:fontFamily="@font/test"
             android:layout_below="@+id/text_nomor_kontrak_status_transaksi"
             android:text="@string/heck"
@@ -100,7 +101,7 @@
             android:layout_toEndOf="@+id/text_biaya_status_transaksi"
             android:layout_marginStart="30dp"
             android:fontFamily="@font/test"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="11dp"
             android:layout_below="@+id/text_nomor_kontrak_status_transaksi"
             android:text=""
             android:textColor="#000000"
@@ -124,7 +125,7 @@
             android:layout_height="wrap_content"
             android:layout_toEndOf="@+id/text_alamat_status_transaksi"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="11dp"
             android:fontFamily="@font/test"
             android:layout_below="@+id/text_biaya_status_transaksi"
             android:text="@string/heck"
@@ -138,7 +139,7 @@
             android:layout_toEndOf="@+id/text_alamat_status_transaksi"
             android:layout_marginStart="30dp"
             android:fontFamily="@font/test"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="11dp"
             android:layout_below="@+id/text_biaya_status_transaksi"
             android:text=""
             android:textColor="#000000"
