@@ -194,10 +194,10 @@ public class activity_data_transaksi_2 extends AppCompatActivity {
         kirim.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                dialog = ProgressDialog.show(activity_data_transaksi_2.this, "Menu Pembayaran", "Memproses...", true);
                 if (selectedFilePath != null) {
                     kirim_dialog();
 
+                    dialog = ProgressDialog.show(activity_data_transaksi_2.this, "Menu Pembayaran", "Memproses...", true);
                     new Thread(new Runnable() {
                         @Override
                         public void run() {
@@ -548,7 +548,7 @@ public class activity_data_transaksi_2 extends AppCompatActivity {
                 String total_3 = total_tiga_1.getText().toString();
                 String total_4 = total_empat_1.getText().toString();
                 String tgl_1 = tgl_satu.getText().toString();
-                String tgl_2 = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
+                String tgl_2 = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
                 String tgl_3 = tgl_tiga.getText().toString();
                 String tgl_4 = tgl_empat.getText().toString();
                 String tgl_desain = tgl_desain_1.getText().toString();
@@ -663,7 +663,7 @@ public class activity_data_transaksi_2 extends AppCompatActivity {
                 String total_4 = total_empat_1.getText().toString();
                 String tgl_1 = tgl_satu.getText().toString();
                 String tgl_2 = tgl_dua.getText().toString();
-                String tgl_3 = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
+                String tgl_3 = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
                 String tgl_4 = tgl_empat.getText().toString();
                 String tgl_desain = tgl_desain_1.getText().toString();
 
