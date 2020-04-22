@@ -42,7 +42,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="start"
-            android:text="@string/app_mandor_data_pembayaran_renovasi_title_2"
+            android:text="@string/app_mandor_transaksi_3"
             android:textAlignment="center"
             android:textColor="#ffffff"
             android:fontFamily="@font/test"
