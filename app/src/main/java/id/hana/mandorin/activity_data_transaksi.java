@@ -157,7 +157,7 @@ public class activity_data_transaksi extends AppCompatActivity {
             if (Presentase.getText().toString().equalsIgnoreCase("50")) {
                 img_status_pembayaran.setImageDrawable(getResources().getDrawable(R.drawable.lunas_0, getApplicationContext().getTheme()));
                 Total_biaya.setText("-");
-                Toast.makeText(getApplicationContext(), "Pembayaran ke 1 anda sudah lunas", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Pembayaran ke 1 anda sudah lunas", Toast.LENGTH_LONG).show();
             }
         }
         if (Status_dua.getText().toString().equalsIgnoreCase("Menunggu")) {
@@ -209,26 +209,17 @@ public class activity_data_transaksi extends AppCompatActivity {
             }
         } else if (Status_dua.getText().toString().equalsIgnoreCase("Memproses")) {
             if (Presentase.getText().toString().equalsIgnoreCase("80")) {
-                Pembayaran.setVisibility(View.VISIBLE);
+                Pembayaran.setVisibility(View.GONE);
                 img_status_pembayaran.setImageDrawable(getResources().getDrawable(R.drawable.lunas_2, getApplicationContext().getTheme()));
-                int result = Integer.parseInt(total_dua);
-                NumberFormat formatter = new DecimalFormat("#,###");
-                double myNumber = result;
-                String formattedNumber = formatter.format(myNumber);
-                Total_biaya.setText("Rp." + formattedNumber);
-                Pembayaran.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Toast.makeText(getApplicationContext(), "Pembayaran ke 2 anda sedang di proses", Toast.LENGTH_SHORT).show();
-                    }
-                });
+                Total_biaya.setText("Rp. -");
+                Toast.makeText(getApplicationContext(), "Pembayaran ke 2 anda sedang di proses", Toast.LENGTH_LONG).show();
             }
         } else if (Status_dua.getText().toString().equalsIgnoreCase("Lunas")) {
             if (Presentase.getText().toString().equalsIgnoreCase("80")) {
                 Pembayaran.setVisibility(View.GONE);
                 img_status_pembayaran.setImageDrawable(getResources().getDrawable(R.drawable.lunas_3, getApplicationContext().getTheme()));
                 Total_biaya.setText("-");
-                Toast.makeText(getApplicationContext(), "Pembayaran ke 2 anda sudah lunas", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Pembayaran ke 2 anda sudah lunas", Toast.LENGTH_LONG).show();
             }
         }
         if (Status_tiga.getText().toString().equalsIgnoreCase("Menunggu")) {
@@ -280,25 +271,16 @@ public class activity_data_transaksi extends AppCompatActivity {
             }
         } else if (Status_tiga.getText().toString().equalsIgnoreCase("Memproses")) {
             if (Presentase.getText().toString().equalsIgnoreCase("95")) {
-                Pembayaran_2.setVisibility(View.VISIBLE);
+                Pembayaran_2.setVisibility(View.GONE);
                 img_status_pembayaran.setImageDrawable(getResources().getDrawable(R.drawable.lunas_5, getApplicationContext().getTheme()));
-                int result = Integer.parseInt(total_tiga);
-                NumberFormat formatter = new DecimalFormat("#,###");
-                double myNumber = result;
-                String formattedNumber = formatter.format(myNumber);
-                Total_biaya.setText("Rp." + formattedNumber);
-                Pembayaran_2.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Toast.makeText(getApplicationContext(), "Pembayaran ke 3 anda sedang diproses", Toast.LENGTH_SHORT).show();
-                    }
-                });
+                Total_biaya.setText("Rp. -");
+                Toast.makeText(getApplicationContext(), "Pembayaran ke 3 anda sedang diproses", Toast.LENGTH_SHORT).show();
             }
         } else if (Status_tiga.getText().toString().equalsIgnoreCase("Lunas")) {
             if (Presentase.getText().toString().equalsIgnoreCase("95")) {
                 Pembayaran_2.setVisibility(View.GONE);
                 img_status_pembayaran.setImageDrawable(getResources().getDrawable(R.drawable.lunas_6, getApplicationContext().getTheme()));
-                Total_biaya.setText("-");
+                Total_biaya.setText("Rp. -");
                 Toast.makeText(getApplicationContext(), "Pembayaran ke 3 anda sudah lunas", Toast.LENGTH_SHORT).show();
             }
         }
