@@ -181,8 +181,13 @@ public class fragment_home extends Fragment {
         menu_6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (auth.getCurrentUser() != null) {
                     Intent intent = new Intent(getActivity(), activity_akun.class);
                     getActivity().startActivity(intent);
+                } else {
+                    Intent intent = new Intent(getActivity(), activity_login.class);
+                    getActivity().startActivity(intent);
+                }
             }
         });
     }
