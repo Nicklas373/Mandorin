@@ -36,12 +36,12 @@ public class activity_akun extends AppCompatActivity {
 
         if (auth.getCurrentUser() == null) {
             startActivity(new Intent(activity_akun.this, activity_login.class));
-
-        } else if (auth.getCurrentUser().isEmailVerified()) {
-
         } else {
-            auth.getCurrentUser().sendEmailVerification();
-            Toast.makeText(getApplicationContext(), "Harap verifikasi e-mail anda", Toast.LENGTH_SHORT).show();
+            if (auth.getCurrentUser().isEmailVerified()) {
+            } else {
+                auth.getCurrentUser().sendEmailVerification();
+                Toast.makeText(getApplicationContext(), "Harap verifikasi e-mail anda", Toast.LENGTH_LONG).show();
+            }
         }
 
         setContentView(R.layout.activity_akun);
