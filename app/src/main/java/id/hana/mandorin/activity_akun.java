@@ -67,12 +67,12 @@ public class activity_akun extends AppCompatActivity {
             public void onClick(View v) {
                 if(internet_available()){
                     if (auth.getCurrentUser() != null) {
-                        Intent intent = new Intent(activity_akun.this, activity_akun_baru.class);
-                        startActivity(intent);
+                            Intent intent = new Intent(activity_akun.this, activity_akun_baru.class);
+                            startActivity(intent);
                     } else {
                         check_account_dialog();
                     }
-                }else{
+                } else {
                     Toast.makeText(getApplicationContext(), "Harap Periksa Koneksi Internet Anda", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -83,12 +83,12 @@ public class activity_akun extends AppCompatActivity {
             public void onClick(View view) {
                 if(internet_available()){
                     if (auth.getCurrentUser() != null) {
-                        Intent intent = new Intent(activity_akun.this, activity_reset_pass.class);
-                        startActivity(intent);
+                            Intent intent = new Intent(activity_akun.this, activity_reset_pass.class);
+                            startActivity(intent);
                     } else {
                         check_account_dialog();
                     }
-                }else{
+                } else {
                     Toast.makeText(getApplicationContext(), "Harap Periksa Koneksi Internet Anda", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -145,42 +145,6 @@ public class activity_akun extends AppCompatActivity {
                     }
                 })
                 .setNegativeButton("Batal",new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        dialog.cancel();
-                    }
-                });
-
-        // membuat alert dialog dari builder
-        AlertDialog alertDialog = alertDialogBuilder.create();
-
-        // menampilkan alert dialog
-        alertDialog.show();
-    }
-
-    private void ver_acc_dialog(){
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
-                this);
-
-        // set title dialog
-        alertDialogBuilder.setTitle("Verifikasi E-Mail");
-
-        // set pesan dari dialog
-        alertDialogBuilder
-                .setMessage("Verifikasi e-mail di perlukan untuk mengakses menu ini, verifikasi ?")
-                .setIcon(R.mipmap.ic_launcher)
-                .setCancelable(false)
-                .setPositiveButton("Ya",new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog,int id) {
-                        if(internet_available()){
-                            auth.getCurrentUser().sendEmailVerification();
-                            Toast.makeText(getApplicationContext(), "E-mail verifikasi telah dikirim ke  " + auth.getCurrentUser().getEmail(), Toast.LENGTH_LONG).show();
-                        }else{
-                            Toast.makeText(getApplicationContext(), "Harap Periksa Koneksi Internet Anda", Toast.LENGTH_SHORT).show();
-                            finish();
-                        }
-                    }
-                })
-                .setNegativeButton("Tidak",new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         dialog.cancel();
                     }

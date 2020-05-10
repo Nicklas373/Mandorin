@@ -169,7 +169,6 @@ public class activity_register_2 extends AppCompatActivity {
                 String alamat = "-";
                 String foto_user = "-";
 
-
                 // Creating Map String Params.
                 Map<String, String> params = new HashMap<String, String>();
 
