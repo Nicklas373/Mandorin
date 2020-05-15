@@ -144,16 +144,12 @@ public class activity_akun_baru extends AppCompatActivity {
             public void onClick(View view) {
                 if (TextUtils.isEmpty(user_umur.getText().toString())) {
                     user_umur.setError("Harap Masukkan Umur");
-                    return;
                 } else if (TextUtils.isEmpty(user_nik.getText().toString())) {
                     user_nik.setError("Harap Masukkan NIK");
-                    return;
                 } else if (TextUtils.isEmpty(user_phone.getText().toString())) {
                     user_phone.setError("Harap Masukkan Nomor Telepon");
-                    return;
                 } else if (TextUtils.isEmpty(user_address.getText().toString())) {
                     user_address.setError("Harap Masukkan Alamat");
-                    return;
                 } else {
                     user_pic.setFocusableInTouchMode(false);
                     user_umur.setFocusableInTouchMode(false);
@@ -331,7 +327,7 @@ public class activity_akun_baru extends AppCompatActivity {
                             }).start();
                         }
                         dialog.dismiss();
-                        createdata_2();
+                        update_data_user();
 
                         final Handler handler = new Handler();
                         handler.postDelayed(new Runnable() {
@@ -505,13 +501,9 @@ public class activity_akun_baru extends AppCompatActivity {
                     File imgFile = new  File(user_new_dummy.getText().toString());
 
                     if(imgFile.exists()) {
-
                         Bitmap myBitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
-
                         ImageView myImage = (ImageView) findViewById(R.id.img_head_akun_test);
-
                         myImage.setImageBitmap(myBitmap);
-
                     }
                 } else {
                     user_new_dummy.setText("");
@@ -520,9 +512,9 @@ public class activity_akun_baru extends AppCompatActivity {
         }
     }
 
-    private void createdata_2() {
+    private void update_data_user() {
         String usermail_2 = user_mail.getText().toString();
-        String adress = "http://mandorin.site/mandorin/php/user/test_update.php?email=" + usermail_2;
+        String adress = "http://mandorin.site/mandorin/php/user/new/update_data_user.php?email=" + usermail_2;
         StringRequest stringRequest = new StringRequest(Request.Method.POST, adress,
                 new Response.Listener<String>() {
                     @Override
@@ -537,7 +529,7 @@ public class activity_akun_baru extends AppCompatActivity {
                     public void onErrorResponse(VolleyError volleyError) {
 
                         // Showing error message if something goes wrong.
-                        Toast.makeText(activity_akun_baru.this, volleyError.toString(), Toast.LENGTH_LONG).show();
+                        // Toast.makeText(activity_akun_baru.this, volleyError.toString(), Toast.LENGTH_LONG).show();
                     }
                 })
 

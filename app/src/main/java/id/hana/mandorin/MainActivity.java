@@ -2,7 +2,6 @@ package id.hana.mandorin;
 
 import android.Manifest;
 import android.content.DialogInterface;
-import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.os.Handler;
@@ -13,23 +12,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.widget.Toast;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-
-import com.google.firebase.iid.FirebaseInstanceId;
 import com.kishan.askpermission.AskPermission;
 import com.kishan.askpermission.ErrorCallback;
 import com.kishan.askpermission.PermissionCallback;
 import com.kishan.askpermission.PermissionInterface;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class MainActivity extends AppCompatActivity implements PermissionCallback, ErrorCallback {
 
@@ -40,15 +26,6 @@ public class MainActivity extends AppCompatActivity implements PermissionCallbac
     private static final int REQUEST_PERMISSIONS = 20;
 
     boolean doubleBackToExitPressedOnce = false;
-
-    /*
-     * Declare Firebase Account
-     */
-    private FirebaseAuth.AuthStateListener authListener;
-    private FirebaseAuth auth;
-    FirebaseUser firebaseUser;
-    SharedPreferences pref;
-    SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,7 +42,6 @@ public class MainActivity extends AppCompatActivity implements PermissionCallbac
 
         reqPermission();
         initViews();
-        FirebaseToken();
     }
 
     @Override
@@ -157,67 +133,5 @@ public class MainActivity extends AppCompatActivity implements PermissionCallbac
         mainFragmentPagerAdapter.addFragment(new fragment_home(), getString(R.string.menu_title_1));
         mainFragmentPagerAdapter.addFragment(new fragment_about(), getString(R.string.menu_title_2));
         viewPager.setAdapter(mainFragmentPagerAdapter);
-    }
-
-    private void FirebaseToken() {
-        auth = FirebaseAuth.getInstance();
-
-        if (auth.getCurrentUser() != null) {
-            pref = getApplicationContext().getSharedPreferences("data_akun", 0);
-
-            if(pref.getString("email", null)!=null)
-            {
-                send_uid();
-            } else {
-
-            }
-        } else {
-            Toast.makeText(getApplicationContext(), "Harap login di menu akun", Toast.LENGTH_LONG).show();
-        }
-    }
-
-    private void send_uid() {
-        String HttpUrl = "http://mandorin.site/mandorin/php/user/new/insert_uid.php";
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, HttpUrl,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String ServerResponse) {
-
-                        // Showing response message coming from server.
-                        // Toast.makeText(MainActivity.this, ServerResponse, Toast.LENGTH_LONG).show();
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError volleyError) {
-
-                        // Showing error message if something goes wrong.
-                        Toast.makeText(MainActivity.this, volleyError.toString(), Toast.LENGTH_LONG).show();
-                    }
-                })
-
-        {
-            @Override
-            protected Map<String, String> getParams() {
-                String uid = FirebaseInstanceId.getInstance().getToken();
-                String email = pref.getString("email",null);
-
-                // Creating Map String Params.
-                Map<String, String> params = new HashMap<String, String>();
-
-                // Adding All values to Params.
-                params.put("uid", uid);
-                params.put("email", email);
-
-                return params;
-            }
-
-        };
-
-        // Creating RequestQueue.
-        RequestQueue requestQueue = Volley.newRequestQueue(MainActivity.this);
-
-        // Adding the StringRequest object into requestQueue.
-        requestQueue.add(stringRequest);
     }
 }

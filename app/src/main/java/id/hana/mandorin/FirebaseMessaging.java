@@ -38,7 +38,8 @@ public class FirebaseMessaging extends FirebaseMessagingService {
                 .setDefaults(Notification.DEFAULT_ALL)
                 .setWhen(System.currentTimeMillis())
                 .setContentTitle(title)
-                .setSmallIcon(R.mipmap.ic_launcher)
+                .setSmallIcon(R.drawable.mandorin_icon)
+                .setBadgeIconType(R.drawable.mandorin_icon)
                 .setStyle(new NotificationCompat.BigTextStyle().bigText(content));
         notificationManager.notify(1,notiBuilder.build());
     }
