@@ -7,15 +7,11 @@ import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.net.ConnectivityManager;
 import android.os.AsyncTask;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -137,7 +133,7 @@ public class activity_login_2 extends AppCompatActivity {
                                             editor.putString("email", cur_email.getText().toString());
                                             editor.apply();
                                             new activity_login_2.GetUIDData(context).execute();
-                                            CheckUID();
+                                            update_uid();
                                             Intent intent = new Intent(activity_login_2.this, activity_akun.class);
                                             startActivity(intent);
                                             finish();
@@ -217,20 +213,9 @@ public class activity_login_2 extends AppCompatActivity {
         }
     }
 
-    private void CheckUID() {
-        String last_uid = old_uid.getText().toString();
-        String cur_uid = FirebaseInstanceId.getInstance().getToken();
-
-        // Begin Check
-        if (last_uid.equals(cur_uid)) {
-            //Toast.makeText(activity_login_2.this, "Same ID", Toast.LENGTH_LONG).show();
-        } else {
-            old_uid.setText(cur_uid);
-            update_uid();
-        }
-    }
-
     private void update_uid() {
+        String cur_uid = FirebaseInstanceId.getInstance().getToken();
+        old_uid.setText(cur_uid);
         String usermail_2 = cur_email.getText().toString();
         String HttpUrl = "http://mandorin.site/mandorin/php/user/new/update_data_uid.php?email=" + usermail_2;
         StringRequest stringRequest = new StringRequest(Request.Method.POST, HttpUrl,
