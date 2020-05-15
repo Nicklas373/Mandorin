@@ -47,9 +47,6 @@ public class activity_akun extends AppCompatActivity {
     HttpResponse response;
     Context context;
 
-    private static final String CUR_ID = "current uid: ";
-    private static final String CUR_EM = "current email: ";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
