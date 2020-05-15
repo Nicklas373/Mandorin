@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.net.ConnectivityManager;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -24,24 +23,19 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.iid.FirebaseInstanceId;
 
 import org.apache.http.HttpResponse;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.util.EntityUtils;
-import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
 public class activity_akun extends AppCompatActivity {
 
-    private TextView userdump, old_email, old_uid;
+    private TextView userdump;
     private CardView lihat_akun, ganti_pass, log_out, back_akun;
     SharedPreferences pref;
     SharedPreferences.Editor editor;
@@ -52,6 +46,9 @@ public class activity_akun extends AppCompatActivity {
     String str = "";
     HttpResponse response;
     Context context;
+
+    private static final String CUR_ID = "current uid: ";
+    private static final String CUR_EM = "current email: ";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,8 +74,6 @@ public class activity_akun extends AppCompatActivity {
         log_out = (CardView) findViewById(R.id.mandor_akun_4);
         back_akun = (CardView) findViewById(R.id.back_activity_akun);
         userdump = (TextView) findViewById(R.id.user_dump);
-        old_email = (TextView) findViewById(R.id.dummy_acc_usermail);
-        old_uid = (TextView) findViewById(R.id.dummy_acc_uid);
 
         userdump.setVisibility(View.GONE);
 
@@ -157,7 +152,6 @@ public class activity_akun extends AppCompatActivity {
                     public void onClick(DialogInterface dialog,int id) {
                         dialog = ProgressDialog.show(activity_akun.this, "Log Out", "Memproses...", true);
                         if(internet_available()){
-                            new activity_akun.GetUIDData(context).execute();
                             update_uid();
                             auth.signOut();
                             editor=pref.edit();
@@ -227,69 +221,6 @@ public class activity_akun extends AppCompatActivity {
         return koneksi.getActiveNetworkInfo() != null;
     }
 
-    private class GetUIDData extends AsyncTask<Void, Void, Void> {
-        public Context context;
-        String usermail_2 = userdump.getText().toString();
-
-        public GetUIDData(Context context) {
-            this.context = context;
-        }
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-        }
-
-        @Override
-        protected Void doInBackground(Void... arg0) {
-            String adress = "http://mandorin.site/mandorin/php/user/new/read_data_uid.php?email=" + usermail_2;
-            HttpClient myClient = new DefaultHttpClient();
-            HttpPost myConnection = new HttpPost(adress);
-
-            try {
-                response = myClient.execute(myConnection);
-                str = EntityUtils.toString(response.getEntity(), "UTF-8");
-
-            } catch (ClientProtocolException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-            try {
-                JSONArray jArray = new JSONArray(str);
-                json = jArray.getJSONObject(0);
-
-            } catch (JSONException e) {
-                e.printStackTrace();
-            } catch (Exception e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-            return null;
-        }
-
-        protected void onPostExecute(Void result) {
-            try {
-                String useruid = json.getString("uid");
-                if (useruid.equalsIgnoreCase("")) {
-                    old_uid.setText("-");
-                } else {
-                    old_uid.setText(useruid);
-                }
-                String usermail = json.getString("email");
-                if (usermail.equalsIgnoreCase("")) {
-                    old_email.setText("-");
-                } else {
-                    old_email.setText(usermail);
-                }
-            } catch (JSONException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-        }
-    }
-
     private void update_uid() {
         String usermail_2 = userdump.getText().toString();
         String HttpUrl = "http://mandorin.site/mandorin/php/user/new/update_data_uid.php?email=" + usermail_2;
@@ -298,7 +229,7 @@ public class activity_akun extends AppCompatActivity {
                     @Override
                     public void onResponse(String ServerResponse) {
                         // Showing response message coming from server.
-                        // Toast.makeText(activity_login_2.this, ServerResponse, Toast.LENGTH_LONG).show();
+                        // Toast.makeText(activity_akun.this, ServerResponse, Toast.LENGTH_LONG).show();
                     }
                 },
                 new Response.ErrorListener() {
@@ -310,8 +241,9 @@ public class activity_akun extends AppCompatActivity {
                 }) {
             @Override
             protected Map<String, String> getParams() {
+                String timeStamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
                 String email = userdump.getText().toString();
-                String cur_uid = "log_out";
+                String cur_uid =  FirebaseInstanceId.getInstance().getToken() + timeStamp;
 
                 // Creating Map String Params.
                 Map<String, String> params = new HashMap<String, String>();
