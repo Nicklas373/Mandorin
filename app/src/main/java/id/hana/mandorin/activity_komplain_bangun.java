@@ -9,7 +9,6 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -26,12 +25,9 @@ import com.google.firebase.auth.FirebaseUser;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
-
-import de.hdodenhof.circleimageview.CircleImageView;
 
 public class activity_komplain_bangun extends AppCompatActivity {
 
@@ -155,8 +151,8 @@ public class activity_komplain_bangun extends AppCompatActivity {
                     public void onClick(DialogInterface dialog,int id) {
                         try
                         {
-                            createdata();
-                            update_data();
+                            insert_data_komplain();
+                            update_data_kontrak();
                             dialog = ProgressDialog.show(activity_komplain_bangun.this, "Menu Komplain", "Mengirim Data Komplain...", true);
                             Intent intent = new Intent(activity_komplain_bangun.this, activity_komplain_konfirmasi.class);
                             startActivity(intent);
@@ -180,7 +176,7 @@ public class activity_komplain_bangun extends AppCompatActivity {
         alertDialog.show();
     }
 
-    private void createdata() {
+    private void insert_data_komplain() {
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, HttpUrl,
                 new Response.Listener<String>() {
@@ -237,7 +233,7 @@ public class activity_komplain_bangun extends AppCompatActivity {
         requestQueue.add(stringRequest);
     }
 
-    private void update_data() {
+    private void update_data_kontrak() {
         final String id_1 = getIntent().getExtras().getString("id");
         String adress = "http://mandorin.site/mandorin/php/user/new/update_data_kontrak.php?id=" + id_1;
         StringRequest stringRequest = new StringRequest(Request.Method.POST, adress,

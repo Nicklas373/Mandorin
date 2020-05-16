@@ -9,7 +9,6 @@ import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -18,7 +17,6 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -279,12 +277,21 @@ public class activity_akun_baru extends AppCompatActivity {
                     user_address.setText(useraddress_2);
                 }
                 user_dummy.setText(json.getString("foto_user"));
+                /*
+                 * This is actually need old API version from android, which is not used anymore for now
+                 * User will get default profile photo when they already complete registration
+                 * So function to change photo when user doesn't have any photo on dB, isn't needed
+                 * anymore.
+                 */
                 String uri = "@drawable/profil";  // where myresource (without the extension) is the file
                 if (user_dummy.getText().toString().equalsIgnoreCase("")) {
                     //int imageResource = getResources().getIdentifier(uri, null, getPackageName());
                     //Drawable res = getResources().getDrawable(imageResource);
                     //userpic.setImageDrawable(res);
                 } else {
+                    /*
+                     * This when user already have photo, then app will download the photo using picasso service
+                     */
                     String user_photo = "http://mandorin.site/mandorin/uploads/" + user_dummy.getText().toString();
                     Picasso.get().load(user_photo).fit().centerCrop().into(user_pic);
                 }

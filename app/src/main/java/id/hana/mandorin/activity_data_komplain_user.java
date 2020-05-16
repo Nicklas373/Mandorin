@@ -8,7 +8,6 @@ import android.support.v7.widget.CardView;
 import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 
 public class activity_data_komplain_user extends AppCompatActivity {
 

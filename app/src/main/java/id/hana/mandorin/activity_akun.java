@@ -238,6 +238,8 @@ public class activity_akun extends AppCompatActivity {
                 }) {
             @Override
             protected Map<String, String> getParams() {
+                // Generate current timestamp to firebase id when user log out
+                // This may help to prevent data redundant then make invalid when push to DB as primary key
                 String timeStamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
                 String email = userdump.getText().toString();
                 String cur_uid =  FirebaseInstanceId.getInstance().getToken() + timeStamp;

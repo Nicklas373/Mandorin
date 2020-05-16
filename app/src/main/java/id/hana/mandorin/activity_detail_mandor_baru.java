@@ -82,6 +82,9 @@ public class activity_detail_mandor_baru extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                /*
+                 * Passing image to last activity again
+                 */
                 Drawable drawable = image.getDrawable();
                 Bitmap bitmap = ((BitmapDrawable) drawable).getBitmap();
                 ByteArrayOutputStream baos = new ByteArrayOutputStream();

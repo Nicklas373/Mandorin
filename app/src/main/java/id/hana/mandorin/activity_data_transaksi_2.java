@@ -18,7 +18,6 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -476,11 +475,11 @@ public class activity_data_transaksi_2 extends AppCompatActivity {
                         try {
                             if (status_dua_1.getText().toString().equalsIgnoreCase("Menunggu")) {
                                 if (presentase_1.getText().toString().equalsIgnoreCase("80")) {
-                                    createdata();
+                                    update_data_pembayaran();
                                 }
                             } else  if (status_tiga_1.getText().toString().equalsIgnoreCase("Menunggu")) {
                                 if (presentase_1.getText().toString().equalsIgnoreCase("95")) {
-                                    createdata_2();
+                                    update_data_pembayaran_2();
                                 }
                             }
                             Intent intent = new Intent(activity_data_transaksi_2.this, activity_data_pembayaran_konfirmasi.class);
@@ -504,7 +503,7 @@ public class activity_data_transaksi_2 extends AppCompatActivity {
         alertDialog.show();
     }
 
-    private void createdata() {
+    private void update_data_pembayaran() {
         String id_2 = id_1.getText().toString();
         String adress = "http://mandorin.site/mandorin/php/user/new/update_data_pembayaran.php?id=" + id_2;
         StringRequest stringRequest = new StringRequest(Request.Method.POST, adress,
@@ -618,7 +617,7 @@ public class activity_data_transaksi_2 extends AppCompatActivity {
         requestQueue.add(stringRequest);
     }
 
-    private void createdata_2() {
+    private void update_data_pembayaran_2() {
         String id_2 = id_1.getText().toString();
         String adress = "http://mandorin.site/mandorin/php/user/new/update_data_pembayaran.php?id=" + id_2;
         StringRequest stringRequest = new StringRequest(Request.Method.POST, adress,

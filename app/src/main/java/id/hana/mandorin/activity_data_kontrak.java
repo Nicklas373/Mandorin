@@ -107,7 +107,6 @@ public class activity_data_kontrak extends AppCompatActivity {
         connection_pemesan_renovasi = findViewById(R.id.con_image_data_kontrak);
         refresh_pemesan_renovasi = findViewById(R.id.refresh_data_kontrak);
         back_pemesan_renovasi = findViewById(R.id.back_activity_data_kontrak);
-        //refresh_cv_pemesan_renovasi = findViewById(R.id.refresh_activity_data_kontrak);
 
         /*
          * Internet Connection Module
@@ -122,13 +121,6 @@ public class activity_data_kontrak extends AppCompatActivity {
                 cek_internet();
             }
         });
-
-        /*refresh_cv_pemesan_renovasi.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                cek_internet();
-            }
-        });*/
 
         back_pemesan_renovasi.setOnClickListener(new View.OnClickListener() {
             @Override

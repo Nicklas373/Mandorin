@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -120,7 +119,7 @@ public class activity_register_4 extends AppCompatActivity {
                     public void onClick(DialogInterface dialog,int id) {
                         try
                         {
-                            update_reg();
+                            update_data_user();
                             dialog = ProgressDialog.show(activity_register_4.this, "Menu Daftar Akun", "Memproses Data Akun...", true);
                             Toast.makeText(activity_register_4.this, "Akun Berhasil di proses !", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(activity_register_4.this, MainActivity.class);
@@ -145,7 +144,7 @@ public class activity_register_4 extends AppCompatActivity {
         alertDialog.show();
     }
 
-    private void update_reg() {
+    private void update_data_user() {
         final String email_1 = firebaseUser.getEmail();
         String adress = "http://mandorin.site/mandorin/php/user/new/update_data_user.php?id=" + email_1;
         StringRequest stringRequest = new StringRequest(Request.Method.POST, adress,

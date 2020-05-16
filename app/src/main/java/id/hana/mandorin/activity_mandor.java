@@ -86,7 +86,6 @@ public class activity_mandor extends AppCompatActivity {
         connection = findViewById(R.id.con_image);
         refresh = findViewById(R.id.refresh);
         back = findViewById(R.id.back_activity_mandor);
-        //refresh_cv = findViewById(R.id.refresh_activity_mandor);
 
         /*
          * Internet Connection Module
@@ -101,14 +100,6 @@ public class activity_mandor extends AppCompatActivity {
                 cek_internet();
             }
         });
-
-        /*
-        refresh_cv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                cek_internet();
-            }
-        });*/
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override

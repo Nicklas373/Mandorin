@@ -143,7 +143,7 @@ public class activity_layanan_jasa extends AppCompatActivity {
 
         /*
          * Set automated current date for survey date on this input
-         * User should now can input that date by datepicker not
+         * User now should can input that date by datepicker not
          * Manually written on EditText
          */
         SimpleDateFormat CurDate = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());

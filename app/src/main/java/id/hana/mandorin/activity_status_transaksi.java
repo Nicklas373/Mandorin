@@ -120,7 +120,6 @@ public class activity_status_transaksi extends AppCompatActivity {
         connection_transaksi = findViewById(R.id.con_image_status_transaksi);
         refresh_transaksi = findViewById(R.id.refresh_pembayaran);
         back_transaksi = findViewById(R.id.back_activity_status_transaksi);
-        //refresh_cv_transaksi = findViewById(R.id.refresh_activity_data_transaksi);
 
         /*
          * Internet Connection Module
@@ -135,15 +134,6 @@ public class activity_status_transaksi extends AppCompatActivity {
                 cek_internet();
             }
         });
-
-        /*
-        refresh_cv_transaksi.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                cek_internet();
-            }
-        });
-        */
 
         back_transaksi.setOnClickListener(new View.OnClickListener() {
             @Override
