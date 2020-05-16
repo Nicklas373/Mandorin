@@ -25,6 +25,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Locale;
@@ -209,6 +210,8 @@ public class activity_komplain_bangun extends AppCompatActivity {
                 String komplain_kontrak = komplain_1.getText().toString();
                 String email = firebaseUser.getEmail();
                 String status_komplain = "pending";
+                SimpleDateFormat CurDate = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+                String tanggal = CurDate.format(Calendar.getInstance().getTime());
 
                 // Creating Map String Params.
                 Map<String, String> params = new HashMap<String, String>();
@@ -220,6 +223,7 @@ public class activity_komplain_bangun extends AppCompatActivity {
                 params.put("alamat", alamat_kontrak);
                 params.put("komplain", komplain_kontrak);
                 params.put("status_komplain", status_komplain);
+                params.put("tgl_komplain", tanggal);
 
                 return params;
             }
@@ -275,6 +279,8 @@ public class activity_komplain_bangun extends AppCompatActivity {
                 int komplain_1 = Integer.parseInt(role_komplain_1);
                 int komplain = komplain_1 + 1;
                 String total_komplain = Integer.toString(komplain);
+                SimpleDateFormat CurDate = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+                String tanggal = CurDate.format(Calendar.getInstance().getTime());
 
 
                 // Creating Map String Params.
