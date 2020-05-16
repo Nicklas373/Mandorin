@@ -13,7 +13,6 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.view.View;
-import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -30,7 +29,6 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.squareup.picasso.Picasso;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
@@ -259,7 +257,7 @@ public class activity_layanan_jasa extends AppCompatActivity {
                 .setPositiveButton("Proses",new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog,int id) {
                         dialog = ProgressDialog.show(activity_layanan_jasa.this, "Kirim Data", "Mengirim Data...", true);
-                        createdata();
+                        insert_data_pemesan();
                         SharedPreferences.Editor editor;
                         editor = pref.edit();
                         editor.clear();
@@ -281,7 +279,7 @@ public class activity_layanan_jasa extends AppCompatActivity {
         alertDialog.show();
     }
 
-    private void createdata() {
+    private void insert_data_pemesan() {
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, HttpUrl,
                 new Response.Listener<String>() {
@@ -297,7 +295,7 @@ public class activity_layanan_jasa extends AppCompatActivity {
                     public void onErrorResponse(VolleyError volleyError) {
 
                         // Showing error message if something goes wrong.
-                        Toast.makeText(activity_layanan_jasa.this, volleyError.toString(), Toast.LENGTH_LONG).show();
+                        // Toast.makeText(activity_layanan_jasa.this, volleyError.toString(), Toast.LENGTH_LONG).show();
                     }
                 })
 
@@ -318,6 +316,8 @@ public class activity_layanan_jasa extends AppCompatActivity {
                 String status= "pending";
                 String nik_mandor_1 = nik_mandor.getText().toString().trim();
                 String nama_mandor_1 = nama_mandor.getText().toString().trim();
+                SimpleDateFormat CurDate = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+                String tanggal = CurDate.format(Calendar.getInstance().getTime());
 
                 // Creating Map String Params.
                 Map<String, String> params = new HashMap<String, String>();
@@ -336,6 +336,7 @@ public class activity_layanan_jasa extends AppCompatActivity {
                 params.put("status", status);
                 params.put("nik_mandor", nik_mandor_1);
                 params.put("nama_mandor", nama_mandor_1);
+                params.put("tgl_pemesan", tanggal);
 
                 return params;
             }
