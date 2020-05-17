@@ -316,7 +316,7 @@ public class activity_layanan_jasa extends AppCompatActivity {
                 String status= "pending";
                 String nik_mandor_1 = nik_mandor.getText().toString().trim();
                 String nama_mandor_1 = nama_mandor.getText().toString().trim();
-                SimpleDateFormat CurDate = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+                SimpleDateFormat CurDate = new SimpleDateFormat("yyyy/MM/dd", Locale.getDefault());
                 String tanggal = CurDate.format(Calendar.getInstance().getTime());
 
                 // Creating Map String Params.
