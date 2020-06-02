@@ -195,8 +195,26 @@ public class activity_layanan_jasa extends AppCompatActivity {
                 new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year,
-                                          int monthOfYear, int dayOfMonth) {
-                        tgl_survey.setText(year + "/" + (monthOfYear + 1) + "/" + dayOfMonth);
+                                          int month, int day) {
+                        /* I want to make sure if the output of the date is following
+                         * format from website requirement, so it can pull correct data
+                         * to the date specific range as per admin need.
+                         * So set correct format for month and day before push to database
+                         */
+                        if ((month + 1) < 10) {
+                            String month_eq = "0" + (month + 1);
+                            if (day < 10) {
+                                String day_eq = "0" + day;
+                                String date = year + "-" + month_eq + "-" + day_eq;
+                                tgl_survey.setText(date);
+                            } else {
+                                String date = year + "-" + month_eq + "-" + day;
+                                tgl_survey.setText(date);
+                            }
+                        } else {
+                            String date = year + "-" + (month + 1) + "-" + day;
+                            tgl_survey.setText(date);
+                        }
                     }
                 }, mYear, mMonth, mDay);
         datePickerDialog.show();
@@ -316,7 +334,7 @@ public class activity_layanan_jasa extends AppCompatActivity {
                 String status= "pending";
                 String nik_mandor_1 = nik_mandor.getText().toString().trim();
                 String nama_mandor_1 = nama_mandor.getText().toString().trim();
-                SimpleDateFormat CurDate = new SimpleDateFormat("yyyy/MM/dd", Locale.getDefault());
+                SimpleDateFormat CurDate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
                 String tanggal = CurDate.format(Calendar.getInstance().getTime());
 
                 // Creating Map String Params.
