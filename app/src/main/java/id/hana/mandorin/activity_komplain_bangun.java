@@ -206,7 +206,7 @@ public class activity_komplain_bangun extends AppCompatActivity {
                 String komplain_kontrak = komplain_1.getText().toString();
                 String email = firebaseUser.getEmail();
                 String status_komplain = "pending";
-                SimpleDateFormat CurDate = new SimpleDateFormat("yyyy/MM/dd", Locale.getDefault());
+                SimpleDateFormat CurDate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
                 String tanggal = CurDate.format(Calendar.getInstance().getTime());
 
                 // Creating Map String Params.
