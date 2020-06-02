@@ -146,7 +146,7 @@ public class activity_layanan_jasa extends AppCompatActivity {
          * User now should can input that date by datepicker not
          * Manually written on EditText
          */
-        SimpleDateFormat CurDate = new SimpleDateFormat("yyyy/MM/dd", Locale.getDefault());
+        SimpleDateFormat CurDate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
         String date = CurDate.format(Calendar.getInstance().getTime());
         tgl_survey.setText(date);
 
