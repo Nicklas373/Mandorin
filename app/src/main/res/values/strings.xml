@@ -364,6 +364,8 @@
     <string name="app_mandor_recycler_riwayat_kontrak_2">Nama Pemesan</string>
     <string name="app_mandor_recycler_riwayat_kontrak_3">Alamat Pekerjaan</string>
     <string name="app_mandor_recycler_riwayat_kontrak_4">Status Pekerjaan</string>
+    <string name="app_mandor_recycler_riwayat_kontrak_5">Estimasi Waktu</string>
+    <string name="app_mandor_recycler_riwayat_kontrak_6">Nama Mandor</string>
     <string name="app_mandor_riwayat_kontrak_1">Nama Pemesan</string>
     <string name="app_mandor_riwayat_kontrak_2">Nomor Kontrak</string>
     <string name="app_mandor_riwayat_kontrak_3">Alamat</string>

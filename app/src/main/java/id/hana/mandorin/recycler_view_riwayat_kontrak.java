@@ -41,6 +41,8 @@ public class recycler_view_riwayat_kontrak extends RecyclerView.Adapter<recycler
         Viewholder.Nik.setText(getRenovasiDataAdapter1.getNomor_kontrak());
         Viewholder.Alamat.setText(getRenovasiDataAdapter1.getAlamat());
         Viewholder.Nama.setText(getRenovasiDataAdapter1.getNama_pemesan());
+        Viewholder.Estimasi.setText((getRenovasiDataAdapter1.getWaktu_mulai()) + " sd " + (getRenovasiDataAdapter1.getWaktu_akhir()));
+        Viewholder.Nama_Mandor.setText(getRenovasiDataAdapter1.getNama_mandor());
     }
 
     @Override
@@ -50,7 +52,7 @@ public class recycler_view_riwayat_kontrak extends RecyclerView.Adapter<recycler
 
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        public TextView Nik, Alamat, Nama;
+        public TextView Nik, Alamat, Nama, Estimasi, Nama_Mandor;
         public CardView cv_head;
 
         public ViewHolder(View itemView) {
@@ -62,6 +64,8 @@ public class recycler_view_riwayat_kontrak extends RecyclerView.Adapter<recycler
             Nik = itemView.findViewById(R.id.text_id_riwayat_kontrak_1);
             Alamat = itemView.findViewById(R.id.alamat_riwayat_kontrak_1);
             Nama = itemView.findViewById(R.id.nama_riwayat_kontrak_1);
+            Estimasi = itemView.findViewById(R.id.estimasi_riwayat_kontrak_1);
+            Nama_Mandor = itemView.findViewById(R.id.mandor_riwayat_kontrak_1);
         }
 
 

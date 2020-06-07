@@ -54,6 +54,9 @@ public class activity_riwayat_kontrak extends AppCompatActivity {
     String JSON_NAMA_PEMESAN = "nama_pemesan";
     String JSON_EMAIL_PEMESAN = "email";
     String JSON_ALAMAT_PEMESAN = "alamat";
+    String JSON_WAKTU_MULAI = "waktu_mulai";
+    String JSON_WAKTU_AKHIR = "waktu_akhir";
+    String JSON_NAMA_MANDOR = "nama_mandor";
     JsonArrayRequest jsonArrayRequest ;
     RequestQueue requestQueue ;
 
@@ -182,6 +185,9 @@ public class activity_riwayat_kontrak extends AppCompatActivity {
                 GetDataAdapter3.setNama_pemesan(json.getString(JSON_NAMA_PEMESAN));
                 GetDataAdapter3.setEmail(json.getString(JSON_EMAIL_PEMESAN));
                 GetDataAdapter3.setAlamat(json.getString(JSON_ALAMAT_PEMESAN));
+                GetDataAdapter3.setWaktu_mulai(json.getString(JSON_WAKTU_MULAI));
+                GetDataAdapter3.setWaktu_akhir(json.getString(JSON_WAKTU_AKHIR));
+                GetDataAdapter3.setNama_mandor(json.getString(JSON_NAMA_MANDOR));
             } catch (JSONException e) {
 
                 e.printStackTrace();
