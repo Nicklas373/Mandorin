@@ -93,6 +93,7 @@
         <activity android:name=".activity_data_pemesan"/>
         <activity android:name=".FirebaseInstance"/>
         <activity android:name=".FirebaseMessaging"/>
+        <activity android:name=".activity_webview_invoice"/>
         <activity android:name=".activity_bantuan">
             <intent-filter>
                 <action android:name="android.intent.action.SENDTO" />
