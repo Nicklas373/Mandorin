@@ -214,7 +214,7 @@
             <android.support.v7.widget.CardView
                 android:id="@+id/cv_pembayaran_2"
                 android:layout_width="380dp"
-                android:layout_height="650dp"
+                android:layout_height="760dp"
                 app:cardBackgroundColor="#fff"
                 app:cardCornerRadius="8dp"
                 app:cardMaxElevation="2dp"
@@ -299,11 +299,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:textSize="20sp"
-                        android:text="@string/app_mandor_data_pembayaran_renovasi_5"
                         android:fontFamily="@font/test"
+                        android:text="@string/app_mandor_data_pembayaran_renovasi_5"
                         android:textAlignment="center"
-                        android:textColor="#ffffff" />
+                        android:textColor="#ffffff"
+                        android:textSize="20sp" />
 
                 </android.support.v7.widget.CardView>
 
@@ -364,7 +364,7 @@
                     android:layout_width="135dp"
                     android:layout_height="35dp"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="250dp"
+                    android:layout_marginTop="225dp"
                     android:clickable="true"
                     android:focusable="true"
                     android:foreground="?android:attr/selectableItemBackground"
@@ -377,7 +377,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="@string/app_mandor_data_pembayaran_renovasi_8"
+                        android:text="@string/app_mandor_transaksi_4"
                         android:fontFamily="@font/test"
                         android:textAlignment="center"
                         android:textColor="#ffffff" />
@@ -386,11 +386,11 @@
 
                 <android.support.v7.widget.CardView
                     android:id="@+id/cv_title_transaksi_1"
-                    android:layout_width="135dp"
-                    android:layout_height="50dp"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
                     android:layout_gravity="start"
                     android:layout_marginStart="10dp"
-                    android:layout_marginTop="320dp"
+                    android:layout_marginTop="280dp"
                     android:clickable="true"
                     android:focusable="true"
                     android:foreground="?android:attr/selectableItemBackground"
@@ -414,9 +414,10 @@
                     android:id="@+id/user_input_tgl_1_transaksi"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:layout_marginStart="180dp"
-                    android:layout_marginTop="325dp"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="80dp"
+                    android:layout_marginTop="330dp"
                     android:fontFamily="@font/test"
                     android:textColor="#000"
                     android:textSize="15sp"
@@ -424,12 +425,38 @@
                     android:clickable="false"/>
 
                 <android.support.v7.widget.CardView
+                    android:id="@+id/cv_invoice_1"
+                    android:layout_width="55dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="330dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardBackgroundColor="@color/colorPrimary"
+                    app:cardMaxElevation="2dp"
+                    app:cardUseCompatPadding="true">
+
+                    <TextView
+                        android:id="@+id/textView77"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Invoice"
+                        android:fontFamily="@font/test"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff" />
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
                     android:id="@+id/cv_title_transaksi_2"
-                    android:layout_width="135dp"
-                    android:layout_height="50dp"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
                     android:layout_gravity="start"
                     android:layout_marginStart="10dp"
-                    android:layout_marginTop="400dp"
+                    android:layout_marginTop="390dp"
                     android:clickable="true"
                     android:focusable="true"
                     android:foreground="?android:attr/selectableItemBackground"
@@ -442,8 +469,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="@string/app_mandor_data_pembayaran_renovasi_11"
                         android:fontFamily="@font/test"
+                        android:text="@string/app_mandor_data_pembayaran_renovasi_11"
                         android:textAlignment="center"
                         android:textColor="#ffffff" />
 
@@ -453,9 +480,10 @@
                     android:id="@+id/user_input_tgl_2_transaksi"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:layout_marginStart="180dp"
-                    android:layout_marginTop="405dp"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="80dp"
+                    android:layout_marginTop="440dp"
                     android:textSize="15sp"
                     android:fontFamily="@font/test"
                     android:textColor="#000"
@@ -463,12 +491,38 @@
                     android:clickable="false"/>
 
                 <android.support.v7.widget.CardView
+                    android:id="@+id/cv_invoice_2"
+                    android:layout_width="55dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="440dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardBackgroundColor="@color/colorPrimary"
+                    app:cardMaxElevation="2dp"
+                    app:cardUseCompatPadding="true">
+
+                    <TextView
+                        android:id="@+id/textView78"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Invoice"
+                        android:fontFamily="@font/test"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff" />
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
                     android:id="@+id/cv_title_transaksi_3"
-                    android:layout_width="135dp"
-                    android:layout_height="50dp"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
                     android:layout_gravity="start"
                     android:layout_marginStart="10dp"
-                    android:layout_marginTop="480dp"
+                    android:layout_marginTop="500dp"
                     android:clickable="true"
                     android:focusable="true"
                     android:foreground="?android:attr/selectableItemBackground"
@@ -492,9 +546,10 @@
                     android:id="@+id/user_input_tgl_3_transaksi"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:layout_marginStart="180dp"
-                    android:layout_marginTop="485dp"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="80dp"
+                    android:layout_marginTop="550dp"
                     android:textSize="15sp"
                     android:fontFamily="@font/test"
                     android:textColor="#000"
@@ -502,12 +557,38 @@
                     android:clickable="false"/>
 
                 <android.support.v7.widget.CardView
+                    android:id="@+id/cv_invoice_3"
+                    android:layout_width="55dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="550dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardBackgroundColor="@color/colorPrimary"
+                    app:cardMaxElevation="2dp"
+                    app:cardUseCompatPadding="true">
+
+                    <TextView
+                        android:id="@+id/textView79"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Invoice"
+                        android:fontFamily="@font/test"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff" />
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
                     android:id="@+id/cv_title_transaksi_4"
-                    android:layout_width="135dp"
+                    android:layout_width="100dp"
                     android:layout_height="50dp"
                     android:layout_gravity="start"
                     android:layout_marginStart="10dp"
-                    android:layout_marginTop="560dp"
+                    android:layout_marginTop="610dp"
                     android:clickable="true"
                     android:focusable="true"
                     android:foreground="?android:attr/selectableItemBackground"
@@ -527,20 +608,46 @@
 
                 </android.support.v7.widget.CardView>
 
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cv_invoice_4"
+                    android:layout_width="55dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="670dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardBackgroundColor="@color/colorPrimary"
+                    app:cardMaxElevation="2dp"
+                    app:cardUseCompatPadding="true">
+
+                    <TextView
+                        android:id="@+id/textView80"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Invoice"
+                        android:fontFamily="@font/test"
+                        android:textAlignment="center"
+                        android:textColor="#ffffff" />
+
+                </android.support.v7.widget.CardView>
+
                 <EditText
                     android:id="@+id/user_input_tgl_4_transaksi"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:layout_marginStart="180dp"
-                    android:layout_marginTop="565dp"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="80dp"
+                    android:layout_marginTop="670dp"
                     android:fontFamily="@font/test"
                     android:textSize="15sp"
                     android:textColor="#000"
                     android:focusable="false"
                     android:clickable="false"/>
             </android.support.v7.widget.CardView>
-
 
             <android.support.v7.widget.CardView
                 android:id="@+id/cv_pembayaran_3"

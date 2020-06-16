@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.icu.text.DecimalFormat;
 import android.icu.text.NumberFormat;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
@@ -24,7 +25,7 @@ public class activity_data_transaksi extends AppCompatActivity {
     private TextView Status_satu, Status_dua, Status_tiga, Status_empat, Presentase;
     private Button Pembayaran, Pembayaran_2;
     private ImageView img_status_pembayaran;
-    private CardView back;
+    private CardView back, invoice_1, invoice_2, invoice_3, invoice_4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +56,10 @@ public class activity_data_transaksi extends AppCompatActivity {
         Presentase = findViewById(R.id.user_input_presentase);
         Pembayaran = findViewById(R.id.proses_transaksi);
         Pembayaran_2 = findViewById(R.id.proses_transaksi_2);
+        invoice_1 = findViewById(R.id.cv_invoice_1);
+        invoice_2 = findViewById(R.id.cv_invoice_2);
+        invoice_3 = findViewById(R.id.cv_invoice_3);
+        invoice_4 = findViewById(R.id.cv_invoice_4);
 
         /*
          * Passing data from last activity
@@ -301,6 +306,158 @@ public class activity_data_transaksi extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Pembayaran ke 4 anda sudah lunas", Toast.LENGTH_SHORT).show();
             }
         }
+
+        invoice_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(activity_data_transaksi.this, activity_webview_invoice.class);
+                intent.putExtra("invoice", "satu");
+                intent.putExtra("id", id);
+                intent.putExtra("nomor_kontrak", nomor_kontrak);
+                intent.putExtra("nama_pemesan", nama_pemesan);
+                intent.putExtra("email", email);
+                intent.putExtra("alamat", alamat);
+                intent.putExtra("no_telp", no_telp);
+                intent.putExtra("biaya_desain", biaya_desain);
+                intent.putExtra("biaya_konstruksi", biaya_konstruksi);
+                intent.putExtra("no_rekening", no_rekening);
+                intent.putExtra("status_desain", status_desain);
+                intent.putExtra("status_satu", status_satu);
+                intent.putExtra("status_dua", status_dua);
+                intent.putExtra("status_tiga", status_tiga);
+                intent.putExtra("status_empat", status_empat);
+                intent.putExtra("total_satu", total_satu);
+                intent.putExtra("total_dua", total_dua);
+                intent.putExtra("total_tiga", total_tiga);
+                intent.putExtra("total_empat", total_empat);
+                intent.putExtra("tgl_input_satu", tgl_satu);
+                intent.putExtra("tgl_input_dua", tgl_dua);
+                intent.putExtra("tgl_input_tiga", tgl_tiga);
+                intent.putExtra("tgl_input_empat", tgl_empat);
+                intent.putExtra("tgl_input_desain", tgl_desain);
+                intent.putExtra("bukti_satu", bukti_satu);
+                intent.putExtra("bukti_dua", bukti_dua);
+                intent.putExtra("bukti_tiga", bukti_tiga);
+                intent.putExtra("bukti_empat", bukti_empat);
+                intent.putExtra("bukti_desain", bukti_desain);
+                intent.putExtra("presentase", presentase);
+                startActivity(intent);
+            }
+        });
+
+        invoice_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(activity_data_transaksi.this, activity_webview_invoice.class);
+                intent.putExtra("invoice", "dua");
+                intent.putExtra("id", id);
+                intent.putExtra("nomor_kontrak", nomor_kontrak);
+                intent.putExtra("nama_pemesan", nama_pemesan);
+                intent.putExtra("email", email);
+                intent.putExtra("alamat", alamat);
+                intent.putExtra("no_telp", no_telp);
+                intent.putExtra("biaya_desain", biaya_desain);
+                intent.putExtra("biaya_konstruksi", biaya_konstruksi);
+                intent.putExtra("no_rekening", no_rekening);
+                intent.putExtra("status_desain", status_desain);
+                intent.putExtra("status_satu", status_satu);
+                intent.putExtra("status_dua", status_dua);
+                intent.putExtra("status_tiga", status_tiga);
+                intent.putExtra("status_empat", status_empat);
+                intent.putExtra("total_satu", total_satu);
+                intent.putExtra("total_dua", total_dua);
+                intent.putExtra("total_tiga", total_tiga);
+                intent.putExtra("total_empat", total_empat);
+                intent.putExtra("tgl_input_satu", tgl_satu);
+                intent.putExtra("tgl_input_dua", tgl_dua);
+                intent.putExtra("tgl_input_tiga", tgl_tiga);
+                intent.putExtra("tgl_input_empat", tgl_empat);
+                intent.putExtra("tgl_input_desain", tgl_desain);
+                intent.putExtra("bukti_satu", bukti_satu);
+                intent.putExtra("bukti_dua", bukti_dua);
+                intent.putExtra("bukti_tiga", bukti_tiga);
+                intent.putExtra("bukti_empat", bukti_empat);
+                intent.putExtra("bukti_desain", bukti_desain);
+                intent.putExtra("presentase", presentase);
+                startActivity(intent);
+            }
+        });
+
+        invoice_3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(activity_data_transaksi.this, activity_webview_invoice.class);
+                intent.putExtra("invoice", "tiga");
+                intent.putExtra("id", id);
+                intent.putExtra("nomor_kontrak", nomor_kontrak);
+                intent.putExtra("nama_pemesan", nama_pemesan);
+                intent.putExtra("email", email);
+                intent.putExtra("alamat", alamat);
+                intent.putExtra("no_telp", no_telp);
+                intent.putExtra("biaya_desain", biaya_desain);
+                intent.putExtra("biaya_konstruksi", biaya_konstruksi);
+                intent.putExtra("no_rekening", no_rekening);
+                intent.putExtra("status_desain", status_desain);
+                intent.putExtra("status_satu", status_satu);
+                intent.putExtra("status_dua", status_dua);
+                intent.putExtra("status_tiga", status_tiga);
+                intent.putExtra("status_empat", status_empat);
+                intent.putExtra("total_satu", total_satu);
+                intent.putExtra("total_dua", total_dua);
+                intent.putExtra("total_tiga", total_tiga);
+                intent.putExtra("total_empat", total_empat);
+                intent.putExtra("tgl_input_satu", tgl_satu);
+                intent.putExtra("tgl_input_dua", tgl_dua);
+                intent.putExtra("tgl_input_tiga", tgl_tiga);
+                intent.putExtra("tgl_input_empat", tgl_empat);
+                intent.putExtra("tgl_input_desain", tgl_desain);
+                intent.putExtra("bukti_satu", bukti_satu);
+                intent.putExtra("bukti_dua", bukti_dua);
+                intent.putExtra("bukti_tiga", bukti_tiga);
+                intent.putExtra("bukti_empat", bukti_empat);
+                intent.putExtra("bukti_desain", bukti_desain);
+                intent.putExtra("presentase", presentase);
+                startActivity(intent);
+            }
+        });
+
+        invoice_4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(activity_data_transaksi.this, activity_webview_invoice.class);
+                intent.putExtra("invoice", "empat");
+                intent.putExtra("id", id);
+                intent.putExtra("nomor_kontrak", nomor_kontrak);
+                intent.putExtra("nama_pemesan", nama_pemesan);
+                intent.putExtra("email", email);
+                intent.putExtra("alamat", alamat);
+                intent.putExtra("no_telp", no_telp);
+                intent.putExtra("biaya_desain", biaya_desain);
+                intent.putExtra("biaya_konstruksi", biaya_konstruksi);
+                intent.putExtra("no_rekening", no_rekening);
+                intent.putExtra("status_desain", status_desain);
+                intent.putExtra("status_satu", status_satu);
+                intent.putExtra("status_dua", status_dua);
+                intent.putExtra("status_tiga", status_tiga);
+                intent.putExtra("status_empat", status_empat);
+                intent.putExtra("total_satu", total_satu);
+                intent.putExtra("total_dua", total_dua);
+                intent.putExtra("total_tiga", total_tiga);
+                intent.putExtra("total_empat", total_empat);
+                intent.putExtra("tgl_input_satu", tgl_satu);
+                intent.putExtra("tgl_input_dua", tgl_dua);
+                intent.putExtra("tgl_input_tiga", tgl_tiga);
+                intent.putExtra("tgl_input_empat", tgl_empat);
+                intent.putExtra("tgl_input_desain", tgl_desain);
+                intent.putExtra("bukti_satu", bukti_satu);
+                intent.putExtra("bukti_dua", bukti_dua);
+                intent.putExtra("bukti_tiga", bukti_tiga);
+                intent.putExtra("bukti_empat", bukti_empat);
+                intent.putExtra("bukti_desain", bukti_desain);
+                intent.putExtra("presentase", presentase);
+                startActivity(intent);
+            }
+        });
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
