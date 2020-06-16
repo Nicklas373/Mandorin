@@ -26,7 +26,6 @@ public class activity_webview_invoice extends AppCompatActivity {
     private ImageView connection_webview_invoice;
     private Button refresh_webview_invoice;
     private CardView back;
-    private ScrollView scv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +41,6 @@ public class activity_webview_invoice extends AppCompatActivity {
         connection_webview_invoice = findViewById(R.id.con_image_webview_invoice);
         refresh_webview_invoice = findViewById(R.id.refresh_webview_invoice);
         back = findViewById(R.id.back_activity_webview_invoice);
-        scv = findViewById(R.id.scrollview_web);
         final WebView web = (WebView) findViewById(R.id.web_view);
 
         /*
@@ -87,10 +85,13 @@ public class activity_webview_invoice extends AppCompatActivity {
             String url = "http://mandorin.site/administrator/invoice/" + invoice + "/" + nomor_kontrak;
             WebSettings webSettings = web.getSettings();
             webSettings.setJavaScriptEnabled(true);
+            webSettings.setUseWideViewPort(true);
+            webSettings.setLoadWithOverviewMode(true);
+            web.getSettings().setBuiltInZoomControls(true);
+            web.getSettings().setDisplayZoomControls(false);
             web.loadUrl(url);
             web.setWebViewClient(new WebViewClient());
         } else {
-            scv.setVisibility(View.GONE);
             web.setVisibility(View.GONE);
             connection_webview_invoice.setVisibility(View.VISIBLE);
             con_text_webview_invoice.setVisibility(View.VISIBLE);
@@ -111,10 +112,8 @@ public class activity_webview_invoice extends AppCompatActivity {
                     con_text_webview_invoice.setVisibility(View.GONE);
                     refresh_webview_invoice.setVisibility(View.GONE);
 
-                    scv.setVisibility(View.VISIBLE);
                     web.setVisibility(View.VISIBLE);
                 } else {
-                    scv.setVisibility(View.GONE);
                     web.setVisibility(View.GONE);
                     connection_webview_invoice.setVisibility(View.VISIBLE);
                     con_text_webview_invoice.setVisibility(View.VISIBLE);
@@ -173,6 +172,11 @@ public class activity_webview_invoice extends AppCompatActivity {
         String url = "http://mandorin.site/administrator/invoice/" + invoice + "/" + nomor_kontrak;
         WebSettings webSettings = web.getSettings();
         webSettings.setJavaScriptEnabled(true);
+        webSettings.setUseWideViewPort(true);
+        webSettings.setLoadWithOverviewMode(true);
+        webSettings.setBuiltInZoomControls(true);
+        web.getSettings().setBuiltInZoomControls(true);
+        web.getSettings().setDisplayZoomControls(false);
         web.loadUrl(url);
         web.setWebViewClient(new WebViewClient());
     }
