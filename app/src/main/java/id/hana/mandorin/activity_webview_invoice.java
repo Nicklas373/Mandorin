@@ -23,8 +23,7 @@ public class activity_webview_invoice extends AppCompatActivity {
      * Textview, Imageview, CardView & Button
      */
     private TextView con_text_webview_invoice;
-    private ImageView connection_webview_invoice;
-    private Button refresh_webview_invoice;
+    private ImageView connection_webview_invoice, refresh_webview_invoice;
     private CardView back;
 
     @Override

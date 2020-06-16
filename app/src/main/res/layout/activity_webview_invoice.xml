@@ -34,7 +34,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="start"
-            android:text="Invoice Anda"
+            android:text="@string/app_mandor_invoice_title"
             android:textAlignment="center"
             android:fontFamily="@font/test"
             android:textColor="#ffffff"
@@ -53,7 +53,7 @@
         android:layout_height="150dp"
         android:layout_marginTop="150dp"
         android:layout_gravity="center_horizontal"
-        android:src="@drawable/connection"
+        android:src="@drawable/connection_2"
         android:contentDescription="@string/connection"
         android:id="@+id/con_image_webview_invoice"
         android:visibility="gone"/>
@@ -71,19 +71,13 @@
         android:textAlignment="center"
         android:visibility="gone"/>
 
-    <Button
+    <ImageView
         android:id="@+id/refresh_webview_invoice"
-        android:layout_width="120dp"
-        android:layout_height="60dp"
-        android:layout_gravity="center_horizontal"
+        android:layout_width="140dp"
+        android:layout_height="80dp"
         android:layout_marginTop="60dp"
-        android:background="@color/colorPrimary"
-        android:text="@string/refresh"
-        android:textSize="20sp"
-        android:textAllCaps="false"
-        android:textAlignment="center"
-        android:textColor="#fff"
-        style="@style/Widget.AppCompat.Button"
-        android:visibility="gone"/>
+        android:src="@drawable/refresh_2"
+        android:visibility="gone"
+        android:contentDescription="@string/connection_text" />
 
 </LinearLayout>

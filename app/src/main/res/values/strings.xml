@@ -231,6 +231,7 @@
     <string name="app_mandor_transaksi_2">Riwayat Pembayaran</string>
     <string name="app_mandor_transaksi_4">Tahap Pembayaran</string>
     <string name="app_mandor_invoice_title">Invoice Anda</string>
+    <string name="app_mandor_invoice_1">Invoice</string>
     <string name="app_mandor_data_pemesan_title">Data Pemesan</string>
     <string name="app_mandor_data_pemesan_1">Data</string>
     <string name="app_mandor_data_pemesan_1_1">Renovasi</string>

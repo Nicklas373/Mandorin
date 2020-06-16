@@ -77,7 +77,7 @@
         android:layout_height="200dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:src="@drawable/connection"
+        android:src="@drawable/connection_2"
         android:contentDescription="@string/connection"
         android:id="@+id/con_image"
         android:visibility="gone"/>
@@ -97,22 +97,16 @@
         android:textAlignment="center"
         android:visibility="gone"/>
 
-    <Button
+    <ImageView
         android:id="@+id/refresh"
-        android:layout_width="120dp"
+        android:layout_width="100dp"
         android:layout_height="60dp"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/refresh_2"
         android:layout_below="@+id/con_text"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:background="@color/colorPrimary"
-        android:text="@string/refresh"
-        android:textSize="20sp"
-        android:textAllCaps="false"
-        android:fontFamily="@font/test"
-        android:textAlignment="center"
-        android:textColor="#fff"
-        style="@style/Widget.AppCompat.Button"
-        android:visibility="gone"/>
+        android:visibility="gone"
+        android:contentDescription="@string/connection_text" />
 
 </RelativeLayout>

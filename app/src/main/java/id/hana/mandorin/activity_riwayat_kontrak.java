@@ -65,8 +65,7 @@ public class activity_riwayat_kontrak extends AppCompatActivity {
      * Textview, Imageview, CardView & Button
      */
     private TextView con_text_pemesan_pembayaran_renovasi;
-    private ImageView connection_pemesan_pembayaran_renovasi;
-    private Button refresh_pemesan_pembayaran_renovasi;
+    private ImageView connection_pemesan_pembayaran_renovasi, refresh_pemesan_pembayaran_renovasi;
     private CardView back_pemesan_pembayaran_renovasi, refresh_cv_pemesan_pembayaran_renovasi;
 
     @Override

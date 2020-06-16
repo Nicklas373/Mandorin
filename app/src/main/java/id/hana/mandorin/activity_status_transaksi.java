@@ -86,8 +86,7 @@ public class activity_status_transaksi extends AppCompatActivity {
      * Textview, Imageview, CardView & Button
      */
     private TextView con_text_transaksi;
-    private ImageView connection_transaksi;
-    private Button refresh_transaksi;
+    private ImageView connection_transaksi, refresh_transaksi;
     private CardView back_transaksi, refresh_cv_transaksi;
 
     @Override
@@ -118,7 +117,7 @@ public class activity_status_transaksi extends AppCompatActivity {
          */
         con_text_transaksi = findViewById(R.id.con_text_status_transaksi);
         connection_transaksi = findViewById(R.id.con_image_status_transaksi);
-        refresh_transaksi = findViewById(R.id.refresh_pembayaran);
+        refresh_transaksi = findViewById(R.id.refresh_status_transaksi);
         back_transaksi = findViewById(R.id.back_activity_status_transaksi);
 
         /*

@@ -95,22 +95,17 @@
         android:textAlignment="center"
         android:visibility="gone"/>
 
-    <Button
+    <ImageView
         android:id="@+id/refresh_riwayat_pembayaran"
-        android:layout_width="120dp"
+        android:layout_width="100dp"
         android:layout_height="60dp"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/refresh_2"
         android:layout_below="@+id/con_text_riwayat_pembayaran"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:background="@color/colorPrimary"
-        android:text="@string/refresh"
-        android:textSize="20sp"
-        android:textAllCaps="false"
-        android:textAlignment="center"
-        android:fontFamily="@font/test"
-        android:textColor="#fff"
-        style="@style/Widget.AppCompat.Button"
-        android:visibility="gone"/>
+        android:visibility="gone"
+        android:contentDescription="@string/connection_text" />
+
 
 </RelativeLayout>

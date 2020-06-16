@@ -71,8 +71,7 @@ public class activity_data_pemesan extends AppCompatActivity {
      * Textview, Imageview, CardView & Button
      */
     private TextView con_text_pemesan_renovasi;
-    private ImageView connection_pemesan_renovasi;
-    private Button refresh_pemesan_renovasi;
+    private ImageView connection_pemesan_renovasi, refresh_pemesan_renovasi;
     private CardView back_pemesan_renovasi, refresh_cv_pemesan_renovasi;
 
     @Override

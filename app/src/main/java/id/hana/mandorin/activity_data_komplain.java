@@ -64,8 +64,7 @@ public class activity_data_komplain extends AppCompatActivity {
      * Textview, Imageview, CardView & Button
      */
     private TextView con_text_pemesan_renovasi;
-    private ImageView connection_pemesan_renovasi;
-    private Button refresh_pemesan_renovasi;
+    private ImageView connection_pemesan_renovasi, refresh_pemesan_renovasi;
     private CardView back_pemesan_renovasi;
 
     @Override
@@ -96,7 +95,7 @@ public class activity_data_komplain extends AppCompatActivity {
          */
         con_text_pemesan_renovasi = findViewById(R.id.con_text_komplain);
         connection_pemesan_renovasi = findViewById(R.id.con_image_komplain);
-        refresh_pemesan_renovasi = findViewById(R.id.refresh_komplain);
+        refresh_pemesan_renovasi = findViewById(R.id.refresh_data_komplain);
         back_pemesan_renovasi = findViewById(R.id.back_activity_data_komplain);
 
         /*

@@ -443,7 +443,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="Invoice"
+                        android:text="@string/app_mandor_invoice_1"
                         android:fontFamily="@font/test"
                         android:textAlignment="center"
                         android:textColor="#ffffff" />
@@ -509,7 +509,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="Invoice"
+                        android:text="@string/app_mandor_invoice_1"
                         android:fontFamily="@font/test"
                         android:textAlignment="center"
                         android:textColor="#ffffff" />
@@ -575,7 +575,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="Invoice"
+                        android:text="@string/app_mandor_invoice_1"
                         android:fontFamily="@font/test"
                         android:textAlignment="center"
                         android:textColor="#ffffff" />
@@ -627,8 +627,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="Invoice"
                         android:fontFamily="@font/test"
+                        android:text="@string/app_mandor_invoice_1"
                         android:textAlignment="center"
                         android:textColor="#ffffff" />
 

@@ -64,8 +64,7 @@ public class activity_riwayat_pembayaran extends AppCompatActivity {
      * Textview, Imageview, CardView & Button
      */
     private TextView con_text_pemesan_pembayaran_renovasi;
-    private ImageView connection_pemesan_pembayaran_renovasi;
-    private Button refresh_pemesan_pembayaran_renovasi;
+    private ImageView connection_pemesan_pembayaran_renovasi, refresh_pemesan_pembayaran_renovasi;
     private CardView back_pemesan_pembayaran_renovasi, refresh_cv_pemesan_pembayaran_renovasi;
 
     @Override
@@ -105,6 +104,13 @@ public class activity_riwayat_pembayaran extends AppCompatActivity {
          * Null pointer access
          */
         cek_internet();
+
+        refresh_pemesan_pembayaran_renovasi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cek_internet();
+            }
+        });
 
         back_pemesan_pembayaran_renovasi.setOnClickListener(new View.OnClickListener() {
             @Override

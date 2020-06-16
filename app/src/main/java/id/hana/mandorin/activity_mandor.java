@@ -58,8 +58,7 @@ public class activity_mandor extends AppCompatActivity {
      * Textview, Imageview, CardView & Button
      */
      private TextView con_text;
-     private ImageView connection;
-     private Button refresh;
+     private ImageView connection, refresh;
      private CardView back, refresh_cv;
 
     @Override

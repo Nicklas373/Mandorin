@@ -71,11 +71,11 @@
         android:background="#b0bec5"/>
 
     <ImageView
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:src="@drawable/connection"
+        android:src="@drawable/connection_2"
         android:contentDescription="@string/connection"
         android:id="@+id/con_image_status_transaksi"
         android:visibility="gone"/>
@@ -95,22 +95,17 @@
         android:textAlignment="center"
         android:visibility="gone"/>
 
-    <Button
-        android:id="@+id/refresh_pembayaran"
-        android:layout_width="120dp"
+    <ImageView
+        android:id="@+id/refresh_status_transaksi"
+        android:layout_width="100dp"
         android:layout_height="60dp"
-        android:layout_below="@+id/con_text_status_transaksi"
+        android:layout_marginTop="50dp"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:fontFamily="@font/test"
-        android:background="@color/colorPrimary"
-        android:text="@string/refresh"
-        android:textSize="20sp"
-        android:textAllCaps="false"
-        android:textAlignment="center"
-        android:textColor="#fff"
-        style="@style/Widget.AppCompat.Button"
-        android:visibility="gone"/>
+        android:src="@drawable/refresh_2"
+        android:layout_below="@+id/con_text_status_transaksi"
+        android:visibility="gone"
+        android:contentDescription="@string/connection_text" />
+
 
 </RelativeLayout>
