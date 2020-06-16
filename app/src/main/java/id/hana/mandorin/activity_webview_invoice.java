@@ -100,17 +100,11 @@ public class activity_webview_invoice extends AppCompatActivity {
         refresh_webview_invoice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String url = "http://mandorin.site/administrator/invoice/" + invoice + "/" + nomor_kontrak;
-                WebSettings webSettings = web.getSettings();
-                webSettings.setJavaScriptEnabled(true);
-                web.loadUrl(url);
-                web.setWebViewClient(new WebViewClient());
-
                 if(internet_available()){
                     connection_webview_invoice.setVisibility(View.GONE);
                     con_text_webview_invoice.setVisibility(View.GONE);
                     refresh_webview_invoice.setVisibility(View.GONE);
-
+                    reload();
                     web.setVisibility(View.VISIBLE);
                 } else {
                     web.setVisibility(View.GONE);
@@ -173,7 +167,6 @@ public class activity_webview_invoice extends AppCompatActivity {
         webSettings.setJavaScriptEnabled(true);
         webSettings.setUseWideViewPort(true);
         webSettings.setLoadWithOverviewMode(true);
-        webSettings.setBuiltInZoomControls(true);
         web.getSettings().setBuiltInZoomControls(true);
         web.getSettings().setDisplayZoomControls(false);
         web.loadUrl(url);
