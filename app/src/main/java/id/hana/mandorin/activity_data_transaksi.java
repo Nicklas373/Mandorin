@@ -154,6 +154,10 @@ public class activity_data_transaksi extends AppCompatActivity {
         Status_dua.setText(status_dua);
         Status_tiga.setText(status_tiga);
         Status_empat.setText(status_empat);
+        invoice_1.setVisibility(View.VISIBLE);
+        invoice_2.setVisibility(View.GONE);
+        invoice_3.setVisibility(View.GONE);
+        invoice_4.setVisibility(View.GONE);
         Presentase.setText(presentase);
         Total_biaya.setText("-");
         Pembayaran.setVisibility(View.GONE);
@@ -168,6 +172,7 @@ public class activity_data_transaksi extends AppCompatActivity {
         if (Status_dua.getText().toString().equalsIgnoreCase("Menunggu")) {
             if (Presentase.getText().toString().equalsIgnoreCase("80")) {
                 Pembayaran.setVisibility(View.VISIBLE);
+                invoice_2.setVisibility(View.GONE);
                 img_status_pembayaran.setImageDrawable(getResources().getDrawable(R.drawable.lunas_1, getApplicationContext().getTheme()));
                 int result = Integer.parseInt(total_dua);
                 NumberFormat formatter = new DecimalFormat("#,###");
@@ -215,6 +220,7 @@ public class activity_data_transaksi extends AppCompatActivity {
         } else if (Status_dua.getText().toString().equalsIgnoreCase("Memproses")) {
             if (Presentase.getText().toString().equalsIgnoreCase("80")) {
                 Pembayaran.setVisibility(View.GONE);
+                invoice_2.setVisibility(View.VISIBLE);
                 img_status_pembayaran.setImageDrawable(getResources().getDrawable(R.drawable.lunas_2, getApplicationContext().getTheme()));
                 Total_biaya.setText("Rp. -");
                 Toast.makeText(getApplicationContext(), "Pembayaran ke 2 anda sedang di proses", Toast.LENGTH_LONG).show();
@@ -222,6 +228,7 @@ public class activity_data_transaksi extends AppCompatActivity {
         } else if (Status_dua.getText().toString().equalsIgnoreCase("Lunas")) {
             if (Presentase.getText().toString().equalsIgnoreCase("80")) {
                 Pembayaran.setVisibility(View.GONE);
+                invoice_2.setVisibility(View.VISIBLE);
                 img_status_pembayaran.setImageDrawable(getResources().getDrawable(R.drawable.lunas_3, getApplicationContext().getTheme()));
                 Total_biaya.setText("-");
                 Toast.makeText(getApplicationContext(), "Pembayaran ke 2 anda sudah lunas", Toast.LENGTH_LONG).show();
@@ -230,6 +237,7 @@ public class activity_data_transaksi extends AppCompatActivity {
         if (Status_tiga.getText().toString().equalsIgnoreCase("Menunggu")) {
             if (Presentase.getText().toString().equalsIgnoreCase("95")) {
                 Pembayaran_2.setVisibility(View.VISIBLE);
+                invoice_3.setVisibility(View.GONE);
                 img_status_pembayaran.setImageDrawable(getResources().getDrawable(R.drawable.lunas_4, getApplicationContext().getTheme()));
                 int result = Integer.parseInt(total_tiga);
                 NumberFormat formatter = new DecimalFormat("#,###");
@@ -277,6 +285,7 @@ public class activity_data_transaksi extends AppCompatActivity {
         } else if (Status_tiga.getText().toString().equalsIgnoreCase("Memproses")) {
             if (Presentase.getText().toString().equalsIgnoreCase("95")) {
                 Pembayaran_2.setVisibility(View.GONE);
+                invoice_3.setVisibility(View.VISIBLE);
                 img_status_pembayaran.setImageDrawable(getResources().getDrawable(R.drawable.lunas_5, getApplicationContext().getTheme()));
                 Total_biaya.setText("Rp. -");
                 Toast.makeText(getApplicationContext(), "Pembayaran ke 3 anda sedang diproses", Toast.LENGTH_SHORT).show();
@@ -284,6 +293,7 @@ public class activity_data_transaksi extends AppCompatActivity {
         } else if (Status_tiga.getText().toString().equalsIgnoreCase("Lunas")) {
             if (Presentase.getText().toString().equalsIgnoreCase("95")) {
                 Pembayaran_2.setVisibility(View.GONE);
+                invoice_3.setVisibility(View.VISIBLE);
                 img_status_pembayaran.setImageDrawable(getResources().getDrawable(R.drawable.lunas_6, getApplicationContext().getTheme()));
                 Total_biaya.setText("Rp. -");
                 Toast.makeText(getApplicationContext(), "Pembayaran ke 3 anda sudah lunas", Toast.LENGTH_SHORT).show();
@@ -292,6 +302,7 @@ public class activity_data_transaksi extends AppCompatActivity {
         if (Status_empat.getText().toString().equalsIgnoreCase("Menunggu")) {
             if (Presentase.getText().toString().equalsIgnoreCase("100")) {
                 Pembayaran_2.setVisibility(View.GONE);
+                invoice_4.setVisibility(View.GONE);
                 img_status_pembayaran.setImageDrawable(getResources().getDrawable(R.drawable.lunas_6, getApplicationContext().getTheme()));
                 int result = Integer.parseInt(total_empat);
                 NumberFormat formatter = new DecimalFormat("#,###");
@@ -302,6 +313,7 @@ public class activity_data_transaksi extends AppCompatActivity {
         } else if (Status_empat.getText().toString().equalsIgnoreCase("Lunas")) {
             if (Presentase.getText().toString().equalsIgnoreCase("100")) {
                 Pembayaran_2.setVisibility(View.GONE);
+                invoice_4.setVisibility(View.VISIBLE);
                 img_status_pembayaran.setImageDrawable(getResources().getDrawable(R.drawable.lunas_7, getApplicationContext().getTheme()));
                 Toast.makeText(getApplicationContext(), "Pembayaran ke 4 anda sudah lunas", Toast.LENGTH_SHORT).show();
             }
