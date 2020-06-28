@@ -18,7 +18,7 @@ $nik =  $_POST['nik'];
 $telp =  $_POST['telp']; 
 $alamat =  $_POST['alamat']; 
 $foto_user =  $_POST['foto_user']; 
-$email =  $_POST['email']; 
+$email =  $_POST['email'];
 $id =  $_POST['id']; 
  
 $Sql_Query = "insert into tb_user_data (nama_lengkap, umur, nik, telp, alamat, foto_user, email, id) values ('$nama_lengkap', '$umur', '$nik', '$telp', '$alamat', '$foto_user', '$email', '$id')";

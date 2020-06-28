@@ -1,4 +1,4 @@
- <?php
+<?php
 
 //This script is designed by Android-Examples.com
 //Define your host here.
@@ -17,19 +17,20 @@ $umur =  $_POST['umur'];
 $nik =  $_POST['nik']; 
 $telp =  $_POST['telp']; 
 $alamat =  $_POST['alamat'];
-$foto_user =  $_POST['foto_user']; 
+$foto_user = $_POST['foto_user']; 
 $email = $_POST['email'];
+$id = $_POST['id'];
 
 $Sql_Query = "update tb_user_data set nama_lengkap = '$nama_lengkap', umur = '$umur', nik = '$nik', telp = '$telp', alamat = '$alamat', foto_user = '$foto_user', email = '$email' where email = '$email'";
  
 if(mysqli_query($con,$Sql_Query)){
  
-echo 'Data Berhasil di kirim';
+echo 'Data User Berhasil di Update!';
  
 }
 else{
  
-echo 'Coba Lagi';
+echo 'User gagal cuk!';
 
 }
 mysqli_close($con);

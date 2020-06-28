@@ -13,13 +13,12 @@ $dbname = "u5331750_mandorin";
 $con = mysqli_connect($hostname,$username,$password,$dbname);
 
 $nama_lengkap = $_GET['nama_lengkap'];
-$email = $_GET['email'];
 $umur = $_GET['umur'];
 $nik = $_GET['nik'];
 $telp = $_GET['telp'];
 $alamat = $_GET['alamat'];
 $foto_user = $_GET['foto_user'];
-$last_modified = $_GET['last_modified'];
+$email = $_GET['email'];
 
 $sql = "SELECT * FROM tb_user_data where email='$email'";
 $result = $con->query($sql);

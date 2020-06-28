@@ -26,9 +26,11 @@ $data_desain = $_POST['data_desain'];
 $data_rekap = $_POST['data_rekap']; 
 $surat_kontrak = $_POST['surat_kontrak']; 
 $role_kontrak = $_POST['role_kontrak']; 
-$role_komplain = $_POST['role_komplain']; 
+$role_komplain = $_POST['role_komplain'];
+$rekap_admin = $_POST['rekap_admin'];
+$nama_mandor = $_POST['nama_mandor'];
  
-$Sql_Query = "update tb_kontrak set id = '$id', nomor_kontrak = '$nomor_kontrak', nama_pemesan = '$nama_pemesan', no_telp = '$no_telp', alamat_pekerjaan = '$alamat_pekerjaan', presentase = '$presentase', waktu_mulai = '$waktu_mulai', waktu_akhir = '$waktu_akhir', data_desain = '$data_desain', data_rekap = '$data_rekap', surat_kontrak = '$surat_kontrak', role_kontrak = '$role_kontrak', role_komplain = '$role_komplain' where id = '$id'";
+$Sql_Query = "update tb_kontrak set id = '$id', nomor_kontrak = '$nomor_kontrak', nama_pemesan = '$nama_pemesan', no_telp = '$no_telp', alamat_pekerjaan = '$alamat_pekerjaan', presentase = '$presentase', waktu_mulai = '$waktu_mulai', waktu_akhir = '$waktu_akhir', data_desain = '$data_desain', data_rekap = '$data_rekap', surat_kontrak = '$surat_kontrak', role_kontrak = '$role_kontrak', role_komplain = '$role_komplain', rekap_admin = '$rekap_admin', nama_mandor = '$nama_mandor' where id = '$id'";
  
 if(mysqli_query($con,$Sql_Query)){
  

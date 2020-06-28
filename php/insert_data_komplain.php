@@ -19,8 +19,9 @@ $email =  $_POST['email'];
 $alamat =  $_POST['alamat']; 
 $komplain =  $_POST['komplain']; 
 $status_komplain =  $_POST['status_komplain']; 
+$tgl_komplain = $_POST['tgl_komplain'];
  
-$Sql_Query = "insert into tb_komplain (id, nama_pemesan, nomor_kontrak, email, alamat, komplain, status_komplain) values ('$id', '$nama_pemesan', '$nomor_kontrak', '$email', '$alamat', '$komplain', '$status_komplain')";
+$Sql_Query = "insert into tb_komplain (id, nama_pemesan, nomor_kontrak, email, alamat, komplain, status_komplain, tgl_komplain) values ('$id', '$nama_pemesan', '$nomor_kontrak', '$email', '$alamat', '$komplain', '$status_komplain', '$tgl_komplain')";
  
 if(mysqli_query($con,$Sql_Query)){
  
