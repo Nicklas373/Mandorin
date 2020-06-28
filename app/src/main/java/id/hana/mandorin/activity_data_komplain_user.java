@@ -2,6 +2,8 @@ package id.hana.mandorin;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
@@ -51,6 +53,18 @@ public class activity_data_komplain_user extends AppCompatActivity {
         alamat_kontrak.setText(alamat_kontrak_1);
         data_komplain.setText(komplain_kontrak_1);
         status_komplain.setText(status_kontrak_komplain_1);
+        String status = status_komplain.getText().toString();
+        if (status.equalsIgnoreCase("Konfirmasi")){
+            status_komplain.setTextColor(Color.parseColor("#003077"));
+            status_komplain.setTypeface(status_komplain.getTypeface(), Typeface.BOLD);
+        } else if (status.equalsIgnoreCase("Pending"))
+        {
+            status_komplain.setTextColor(Color.parseColor("#ba000d"));
+            status_komplain.setTypeface(status_komplain.getTypeface(), Typeface.BOLD);
+        } else if (status.equalsIgnoreCase("pending")){
+            status_komplain.setTextColor(Color.parseColor("#ba000d"));
+            status_komplain.setTypeface(status_komplain.getTypeface(), Typeface.BOLD);
+        }
 
         /*
          * Set Scrolling On TextView

@@ -1,6 +1,8 @@
 package id.hana.mandorin;
 
 import android.content.Context;
+import android.graphics.Typeface;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -43,6 +45,18 @@ public class recycler_view_data_pemesan extends RecyclerView.Adapter<recycler_vi
         Viewholder.Nama.setText(getRenovasiDataAdapter1.getNama());
         Viewholder.Alamat.setText(getRenovasiDataAdapter1.getAlamat());
         Viewholder.Status.setText(getRenovasiDataAdapter1.getStatus());
+        String status = Viewholder.Status.getText().toString();
+        if (status.equalsIgnoreCase("Konfirmasi")){
+            Viewholder.Status.setTextColor((ContextCompat.getColor(context, R.color.colorPrimaryDark)));
+            Viewholder.Status.setTypeface(Viewholder.Status.getTypeface(), Typeface.BOLD);
+        } else if (status.equalsIgnoreCase("Pending"))
+        {
+            Viewholder.Status.setTextColor((ContextCompat.getColor(context, R.color.color_unconfirmed)));
+            Viewholder.Status.setTypeface(Viewholder.Status.getTypeface(), Typeface.BOLD);
+        } else if (status.equalsIgnoreCase("pending")){
+            Viewholder.Status.setTextColor((ContextCompat.getColor(context, R.color.color_unconfirmed)));
+            Viewholder.Status.setTypeface(Viewholder.Status.getTypeface(), Typeface.BOLD);
+        }
         Viewholder.Tgl_survey.setText(getRenovasiDataAdapter1.getTgl_survey());
     }
 

@@ -6,6 +6,7 @@
     <color name="colorTab">#ffffff</color>
     <color name="color_white_semitransparent">#99FFFFFF</color>
     <color name="color_splash">#b0bec5</color>
+    <color name="color_unconfirmed">#ba000d</color>
 
     <!-- Screens background color-->
     <color name="bg_screen1">#003077</color>

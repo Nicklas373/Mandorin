@@ -585,7 +585,7 @@
                 <android.support.v7.widget.CardView
                     android:id="@+id/cv_title_transaksi_4"
                     android:layout_width="100dp"
-                    android:layout_height="50dp"
+                    android:layout_height="40dp"
                     android:layout_gravity="start"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="610dp"

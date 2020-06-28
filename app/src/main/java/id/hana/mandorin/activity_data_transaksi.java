@@ -219,7 +219,7 @@ public class activity_data_transaksi extends AppCompatActivity {
         } else if (Status_dua.getText().toString().equalsIgnoreCase("Memproses")) {
             if (Presentase.getText().toString().equalsIgnoreCase("80")) {
                 Pembayaran.setVisibility(View.GONE);
-                invoice_2.setVisibility(View.VISIBLE);
+                invoice_2.setVisibility(View.GONE);
                 img_status_pembayaran.setImageDrawable(getResources().getDrawable(R.drawable.lunas_2, getApplicationContext().getTheme()));
                 Total_biaya.setText("Rp. -");
                 Toast.makeText(getApplicationContext(), "Pembayaran ke 2 anda sedang di proses", Toast.LENGTH_LONG).show();
@@ -297,7 +297,7 @@ public class activity_data_transaksi extends AppCompatActivity {
                 }
 
                 Pembayaran_2.setVisibility(View.GONE);
-                invoice_3.setVisibility(View.VISIBLE);
+                invoice_3.setVisibility(View.GONE);
                 img_status_pembayaran.setImageDrawable(getResources().getDrawable(R.drawable.lunas_5, getApplicationContext().getTheme()));
                 Total_biaya.setText("Rp. -");
                 Toast.makeText(getApplicationContext(), "Pembayaran ke 3 anda sedang diproses", Toast.LENGTH_SHORT).show();

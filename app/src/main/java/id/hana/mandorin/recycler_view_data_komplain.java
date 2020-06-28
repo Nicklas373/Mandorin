@@ -2,6 +2,8 @@ package id.hana.mandorin;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -41,6 +43,18 @@ public class recycler_view_data_komplain extends RecyclerView.Adapter<recycler_v
 
         Viewholder.nomor_kontrak.setText(getDataKomplainAdapter1.getNomor_kontrak());
         Viewholder.status_kontrak.setText(getDataKomplainAdapter1.getStatus_komplain());
+        String status = Viewholder.status_kontrak.getText().toString();
+        if (status.equalsIgnoreCase("Konfirmasi")){
+            Viewholder.status_kontrak.setTextColor((ContextCompat.getColor(context, R.color.colorPrimaryDark)));
+            Viewholder.status_kontrak.setTypeface(Viewholder.status_kontrak.getTypeface(), Typeface.BOLD);
+        } else if (status.equalsIgnoreCase("Pending"))
+        {
+            Viewholder.status_kontrak.setTextColor((ContextCompat.getColor(context, R.color.color_unconfirmed)));
+            Viewholder.status_kontrak.setTypeface(Viewholder.status_kontrak.getTypeface(), Typeface.BOLD);
+        } else if (status.equalsIgnoreCase("pending")){
+            Viewholder.status_kontrak.setTextColor((ContextCompat.getColor(context, R.color.color_unconfirmed)));
+            Viewholder.status_kontrak.setTypeface(Viewholder.status_kontrak.getTypeface(), Typeface.BOLD);
+        }
         Viewholder.alamat_komplain.setText(getDataKomplainAdapter1.getAlamat());
     }
 
