@@ -72,7 +72,7 @@ public class activity_data_pemesan extends AppCompatActivity {
      */
     private TextView con_text_pemesan_renovasi;
     private ImageView connection_pemesan_renovasi, refresh_pemesan_renovasi;
-    private CardView back_pemesan_renovasi, refresh_cv_pemesan_renovasi;
+    private CardView back_pemesan_renovasi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -158,19 +158,16 @@ public class activity_data_pemesan extends AppCompatActivity {
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
-
                         JSON_PARSE_DATA_AFTER_WEBCALL(response);
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-
                     }
                 });
 
         requestQueue = Volley.newRequestQueue(this);
-
         requestQueue.add(jsonArrayRequest);
     }
 
@@ -200,14 +197,11 @@ public class activity_data_pemesan extends AppCompatActivity {
                 GetDataAdapter3.setNama_mandor(json.getString(JSON_NAMA_MANDOR_PEMESAN));
 
             } catch (JSONException e) {
-
                 e.printStackTrace();
             }
             GetDataAdapter4.add(GetDataAdapter3);
         }
-
         recyclerViewadapter2 = new recycler_view_data_pemesan(GetDataAdapter4, this);
-
         recyclerView2.setAdapter(recyclerViewadapter2);
     }
 }
