@@ -93,6 +93,8 @@ public class activity_komplain_bangun extends AppCompatActivity {
         final String surat_kontrak_1 = getIntent().getExtras().getString("surat_kontrak");
         final String role_kontrak_1 = getIntent().getExtras().getString("role_kontrak");
         final String role_komplain_1 = getIntent().getExtras().getString("role_komplain");
+        final String rekap_admin_1 = getIntent().getExtras().getString("rekap_admin");
+        final String nama_mandor_1 = getIntent().getExtras().getString("nama_mandor");
 
         /*
          * TextView Initializations
@@ -119,6 +121,10 @@ public class activity_komplain_bangun extends AppCompatActivity {
                 intent.putExtra("data_desain", data_desain_1);
                 intent.putExtra("data_rekap", rekap_data_1);
                 intent.putExtra("surat_kontrak", surat_kontrak_1);
+                intent.putExtra("role_kontrak", role_kontrak_1);
+                intent.putExtra("role_komplain", role_komplain_1);
+                intent.putExtra("rekap_admin", rekap_admin_1);
+                intent.putExtra("nama_mandor", nama_mandor_1);
                 startActivity(intent);
             }
         });
@@ -275,9 +281,8 @@ public class activity_komplain_bangun extends AppCompatActivity {
                 int komplain_1 = Integer.parseInt(role_komplain_1);
                 int komplain = komplain_1 + 1;
                 String total_komplain = Integer.toString(komplain);
-                SimpleDateFormat CurDate = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
-                String tanggal = CurDate.format(Calendar.getInstance().getTime());
-
+                String rekap_admin_1 = getIntent().getExtras().getString("rekap_admin");
+                String nama_mandor_1 = getIntent().getExtras().getString("nama_mandor");
 
                 // Creating Map String Params.
                 Map<String, String> params = new HashMap<String, String>();
@@ -298,6 +303,8 @@ public class activity_komplain_bangun extends AppCompatActivity {
                 params.put("surat_kontrak", surat_kontrak_1);
                 params.put("role_kontrak", role_kontrak_1);
                 params.put("role_komplain", total_komplain);
+                params.put("rekap_admin", rekap_admin_1);
+                params.put("nama_mandor", nama_mandor_1);
 
                 return params;
             }

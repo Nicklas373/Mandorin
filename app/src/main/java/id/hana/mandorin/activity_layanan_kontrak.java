@@ -109,6 +109,8 @@ public class activity_layanan_kontrak extends AppCompatActivity {
         final String link_rekap_data_1 = ("http://www.mandorin.site/mandorin/data_kontrak/" + rekap_data_1);
         final String surat_kontrak_1 = getIntent().getExtras().getString("surat_kontrak");
         final String link_surat_kontrak_1 = ("http://www.mandorin.site/mandorin/data_kontrak/" + surat_kontrak_1);
+        final String rekap_admin_1 = getIntent().getExtras().getString("rekap_admin");
+        final String nama_mandor_1 = getIntent().getExtras().getString("nama_mandor");
 
         /*
          * TextView Initializations
@@ -242,6 +244,8 @@ public class activity_layanan_kontrak extends AppCompatActivity {
                 intent.putExtra("surat_kontrak", surat_kontrak_1);
                 intent.putExtra("role_kontrak", role_kontrak_1);
                 intent.putExtra("role_komplain", role_komplain_1);
+                intent.putExtra("rekap_admin", rekap_admin_1);
+                intent.putExtra("nama_mandor", nama_mandor_1);
                 startActivity(intent);
             }
         });

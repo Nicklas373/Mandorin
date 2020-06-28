@@ -87,6 +87,8 @@ public class recycler_view_data_kontrak extends RecyclerView.Adapter<recycler_vi
             intent.putExtra("surat_kontrak", getDataKontrakAdapter.get(getAdapterPosition()).getSurat_kontrak());
             intent.putExtra("role_kontrak", getDataKontrakAdapter.get(getAdapterPosition()).getRole_kontrak());
             intent.putExtra("role_komplain", getDataKontrakAdapter.get(getAdapterPosition()).getRole_komplain());
+            intent.putExtra("rekap_admin", getDataKontrakAdapter.get(getAdapterPosition()).getRekap_admin());
+            intent.putExtra("nama_mandor", getDataKontrakAdapter.get(getAdapterPosition()).getNama_mandor());
             context.startActivity(intent);
         }
     }

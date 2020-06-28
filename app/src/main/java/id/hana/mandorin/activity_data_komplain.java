@@ -151,19 +151,16 @@ public class activity_data_komplain extends AppCompatActivity {
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
-
                         JSON_PARSE_DATA_AFTER_WEBCALL(response);
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-
                     }
                 });
 
         requestQueue = Volley.newRequestQueue(this);
-
         requestQueue.add(jsonArrayRequest);
     }
 
@@ -191,9 +188,7 @@ public class activity_data_komplain extends AppCompatActivity {
             }
             GetDataAdapter4.add(GetDataAdapter3);
         }
-
         recyclerViewadapter2 = new recycler_view_data_komplain(GetDataAdapter4, this);
-
         recyclerView2.setAdapter(recyclerViewadapter2);
     }
 }

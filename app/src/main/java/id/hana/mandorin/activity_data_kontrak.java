@@ -10,7 +10,6 @@ import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -65,6 +64,8 @@ public class activity_data_kontrak extends AppCompatActivity {
     String JSON_SURAT_KONTRAK = "surat_kontrak";
     String JSON_ROLE_KONTRAK = "role_kontrak";
     String JSON_ROLE_KOMPLAIN = "role_komplain";
+    String JSON_REKAP_ADMIN = "rekap_admin";
+    String JSON_NAMA_MANDOR = "nama_mandor";
     JsonArrayRequest jsonArrayRequest ;
     RequestQueue requestQueue ;
 
@@ -74,7 +75,7 @@ public class activity_data_kontrak extends AppCompatActivity {
      */
     private TextView con_text_pemesan_renovasi;
     private ImageView connection_pemesan_renovasi, refresh_pemesan_renovasi;
-    private CardView back_pemesan_renovasi, refresh_cv_pemesan_renovasi;
+    private CardView back_pemesan_renovasi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -160,7 +161,6 @@ public class activity_data_kontrak extends AppCompatActivity {
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
-
                         JSON_PARSE_DATA_AFTER_WEBCALL(response);
                     }
                 },
@@ -172,7 +172,6 @@ public class activity_data_kontrak extends AppCompatActivity {
                 });
 
         requestQueue = Volley.newRequestQueue(this);
-
         requestQueue.add(jsonArrayRequest);
     }
 
@@ -202,6 +201,8 @@ public class activity_data_kontrak extends AppCompatActivity {
                 GetDataAdapter3.setSurat_kontrak(json.getString(JSON_SURAT_KONTRAK));
                 GetDataAdapter3.setRole_kontrak(json.getString(JSON_ROLE_KONTRAK));
                 GetDataAdapter3.setRole_komplain(json.getString(JSON_ROLE_KOMPLAIN));
+                GetDataAdapter3.setRekap_admin(json.getString(JSON_REKAP_ADMIN));
+                GetDataAdapter3.setNama_mandor(json.getString(JSON_NAMA_MANDOR));
 
             } catch (JSONException e) {
 
@@ -211,7 +212,6 @@ public class activity_data_kontrak extends AppCompatActivity {
         }
 
         recyclerViewadapter2 = new recycler_view_data_kontrak(GetDataAdapter4, this);
-
         recyclerView2.setAdapter(recyclerViewadapter2);
     }
 }
