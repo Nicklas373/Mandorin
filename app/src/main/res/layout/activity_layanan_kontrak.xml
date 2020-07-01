@@ -292,7 +292,6 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/test"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginStart="20sp"
                     android:layout_marginTop="350dp"
                     android:textColor="#000" />
 
