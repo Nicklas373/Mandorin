@@ -10,7 +10,6 @@ import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -63,9 +62,9 @@ public class activity_riwayat_pembayaran extends AppCompatActivity {
      * Layout Component Initializations
      * Textview, Imageview, CardView & Button
      */
-    private TextView con_text_pemesan_pembayaran_renovasi;
+    private TextView con_text_pemesan_pembayaran_renovasi, con_text_no_data;
     private ImageView connection_pemesan_pembayaran_renovasi, refresh_pemesan_pembayaran_renovasi;
-    private CardView back_pemesan_pembayaran_renovasi, refresh_cv_pemesan_pembayaran_renovasi;
+    private CardView back_pemesan_pembayaran_renovasi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -158,7 +157,9 @@ public class activity_riwayat_pembayaran extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-
+                        // FIXME: This should change with better implementation after this
+                        // This is only for initial work
+                        con_text_no_data.setVisibility(View.VISIBLE);
                     }
                 });
 

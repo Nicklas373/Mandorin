@@ -35,7 +35,6 @@ public class activity_bantuan extends AppCompatActivity {
         email = findViewById(R.id.email);
         back = findViewById(R.id.back_activity_bantuan);;
 
-
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

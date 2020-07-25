@@ -107,12 +107,6 @@ public class activity_akun_baru extends AppCompatActivity {
 
         new activity_akun_baru.GetTextViewData(context).execute();
 
-        if (auth.getCurrentUser().isEmailVerified()) {
-            Toast.makeText(getApplicationContext(), "Email telah di verifikasi", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(getApplicationContext(), "Email belum di verifikasi", Toast.LENGTH_SHORT).show();
-        }
-
         user_pic_edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -164,16 +158,20 @@ public class activity_akun_baru extends AppCompatActivity {
         edit_akun.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                batal.setVisibility(View.VISIBLE);
-                simpan.setVisibility(View.VISIBLE);
+                if (auth.getCurrentUser().isEmailVerified()) {
+                    batal.setVisibility(View.VISIBLE);
+                    simpan.setVisibility(View.VISIBLE);
 
-                user_pic.setFocusableInTouchMode(true);
-                user_umur.setFocusableInTouchMode(true);
-                user_nik.setFocusableInTouchMode(true);
-                user_phone.setFocusableInTouchMode(true);
-                user_address.setFocusableInTouchMode(true);
-                user_pic_edit.setFocusableInTouchMode(true);
-                user_pic_edit.setVisibility(View.VISIBLE);
+                    user_pic.setFocusableInTouchMode(true);
+                    user_umur.setFocusableInTouchMode(true);
+                    user_nik.setFocusableInTouchMode(true);
+                    user_phone.setFocusableInTouchMode(true);
+                    user_address.setFocusableInTouchMode(true);
+                    user_pic_edit.setFocusableInTouchMode(true);
+                    user_pic_edit.setVisibility(View.VISIBLE);
+                } else {
+                    Toast.makeText(getApplicationContext(), "Harap verifikasi email anda", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 

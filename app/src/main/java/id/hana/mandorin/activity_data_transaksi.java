@@ -237,8 +237,9 @@ public class activity_data_transaksi extends AppCompatActivity {
             if (Presentase.getText().toString().equalsIgnoreCase("95")) {
                 Pembayaran_2.setVisibility(View.VISIBLE);
 
-                //I want to make sure if invoice from second payment is visible when
-                //it already payed or on processing
+                /* I want to make sure if invoice from second payment is visible when
+                 * user already paid or processed
+                 */
                 if ((Status_dua.getText().toString().equalsIgnoreCase("Lunas")) || (Status_dua.getText().toString().equalsIgnoreCase("Memproses"))) {
                     invoice_2.setVisibility(View.VISIBLE);
                 }
@@ -290,8 +291,9 @@ public class activity_data_transaksi extends AppCompatActivity {
             }
         } else if (Status_tiga.getText().toString().equalsIgnoreCase("Memproses")) {
             if (Presentase.getText().toString().equalsIgnoreCase("95")) {
-                //I want to make sure if invoice from second payment is visible when
-                //it already payed or on processing
+                /* I want to make sure if invoice from second payment is visible when
+                 * user already paid or processed
+                 */
                 if ((Status_dua.getText().toString().equalsIgnoreCase("Lunas")) || (Status_dua.getText().toString().equalsIgnoreCase("Memproses"))) {
                     invoice_2.setVisibility(View.VISIBLE);
                 }
@@ -305,8 +307,9 @@ public class activity_data_transaksi extends AppCompatActivity {
         } else if (Status_tiga.getText().toString().equalsIgnoreCase("Lunas")) {
             if (Presentase.getText().toString().equalsIgnoreCase("95")) {
 
-                //I want to make sure if invoice from second payment is visible when
-                //it already payed or on processing
+                /* I want to make sure if invoice from second payment is visible when
+                 * user already paid or processed
+                 */
                 if ((Status_dua.getText().toString().equalsIgnoreCase("Lunas")) || (Status_dua.getText().toString().equalsIgnoreCase("Memproses"))) {
                     invoice_2.setVisibility(View.VISIBLE);
                 }
@@ -321,14 +324,16 @@ public class activity_data_transaksi extends AppCompatActivity {
         if (Status_empat.getText().toString().equalsIgnoreCase("Menunggu")) {
             if (Presentase.getText().toString().equalsIgnoreCase("100")) {
                 Pembayaran_2.setVisibility(View.GONE);
-                //I want to make sure if invoice from second payment is visible when
-                //it already payed or on processing
+                /* I want to make sure if invoice from second payment is visible when
+                 * user already paid or processed
+                 */
                 if ((Status_dua.getText().toString().equalsIgnoreCase("Lunas")) || (Status_dua.getText().toString().equalsIgnoreCase("Memproses"))) {
                     invoice_2.setVisibility(View.VISIBLE);
                 }
 
-                //I want to make sure if invoice from third payment is visible when
-                //it already payed or on processing
+                /* I want to make sure if invoice from third payment is visible when
+                 * user already paid or processed
+                 */
                 if ((Status_tiga.getText().toString().equalsIgnoreCase("Lunas")) || (Status_tiga.getText().toString().equalsIgnoreCase("Memproses"))) {
                     invoice_3.setVisibility(View.VISIBLE);
                 }
@@ -344,14 +349,16 @@ public class activity_data_transaksi extends AppCompatActivity {
         } else if (Status_empat.getText().toString().equalsIgnoreCase("Lunas")) {
             if (Presentase.getText().toString().equalsIgnoreCase("100")) {
                 Pembayaran_2.setVisibility(View.GONE);
-                //I want to make sure if invoice from second payment is visible when
-                //it already payed or on processing
+                /* I want to make sure if invoice from second payment is visible when
+                 * user already paid or processed
+                 */
                 if ((Status_dua.getText().toString().equalsIgnoreCase("Lunas")) || (Status_dua.getText().toString().equalsIgnoreCase("Memproses"))) {
                     invoice_2.setVisibility(View.VISIBLE);
                 }
 
-                //I want to make sure if invoice from third payment is visible when
-                //it already payed or on processing
+                /* I want to make sure if invoice from third payment is visible when
+                 * user already paid or processed
+                 */
                 if ((Status_tiga.getText().toString().equalsIgnoreCase("Lunas")) || (Status_tiga.getText().toString().equalsIgnoreCase("Memproses"))) {
                     invoice_3.setVisibility(View.VISIBLE);
                 }

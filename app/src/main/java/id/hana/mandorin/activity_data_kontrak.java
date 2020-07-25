@@ -73,7 +73,7 @@ public class activity_data_kontrak extends AppCompatActivity {
      * Layout Component Initializations
      * Textview, Imageview, CardView & Button
      */
-    private TextView con_text_pemesan_renovasi;
+    private TextView con_text_pemesan_renovasi, con_text_no_data;
     private ImageView connection_pemesan_renovasi, refresh_pemesan_renovasi;
     private CardView back_pemesan_renovasi;
 
@@ -167,7 +167,9 @@ public class activity_data_kontrak extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-
+                        // FIXME: This should change with better implementation after this
+                        // This is only for initial work
+                        con_text_no_data.setVisibility(View.VISIBLE);
                     }
                 });
 

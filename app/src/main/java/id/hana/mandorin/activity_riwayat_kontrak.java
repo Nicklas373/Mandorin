@@ -10,10 +10,8 @@ import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -161,6 +159,8 @@ public class activity_riwayat_kontrak extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError volleyError) {
+                        // FIXME: This should change with better implementation after this
+                        // This is only for initial work
                         con_text_no_data.setVisibility(View.VISIBLE);
                     }
                 });
@@ -177,21 +177,20 @@ public class activity_riwayat_kontrak extends AppCompatActivity {
             GetRiwayatKontrakAdapter GetDataAdapter3 = new GetRiwayatKontrakAdapter();
 
             JSONObject json = null;
-                try {
-                    json = array.getJSONObject(i);
+            try {
+                json = array.getJSONObject(i);
 
-                    GetDataAdapter3.setId(json.getString(JSON_ID));
-                    GetDataAdapter3.setNomor_kontrak(json.getString(JSON_NOMOR_KONTRAK));
-                    GetDataAdapter3.setNama_pemesan(json.getString(JSON_NAMA_PEMESAN));
-                    GetDataAdapter3.setEmail(json.getString(JSON_EMAIL_PEMESAN));
-                    GetDataAdapter3.setAlamat(json.getString(JSON_ALAMAT_PEMESAN));
-                    GetDataAdapter3.setWaktu_mulai(json.getString(JSON_WAKTU_MULAI));
-                    GetDataAdapter3.setWaktu_akhir(json.getString(JSON_WAKTU_AKHIR));
-                    GetDataAdapter3.setNama_mandor(json.getString(JSON_NAMA_MANDOR));
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-
+                GetDataAdapter3.setId(json.getString(JSON_ID));
+                GetDataAdapter3.setNomor_kontrak(json.getString(JSON_NOMOR_KONTRAK));
+                GetDataAdapter3.setNama_pemesan(json.getString(JSON_NAMA_PEMESAN));
+                GetDataAdapter3.setEmail(json.getString(JSON_EMAIL_PEMESAN));
+                GetDataAdapter3.setAlamat(json.getString(JSON_ALAMAT_PEMESAN));
+                GetDataAdapter3.setWaktu_mulai(json.getString(JSON_WAKTU_MULAI));
+                GetDataAdapter3.setWaktu_akhir(json.getString(JSON_WAKTU_AKHIR));
+                GetDataAdapter3.setNama_mandor(json.getString(JSON_NAMA_MANDOR));
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
             GetDataAdapter4.add(GetDataAdapter3);
         }
 

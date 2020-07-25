@@ -57,8 +57,7 @@ public class activity_data_komplain_user extends AppCompatActivity {
         if (status.equalsIgnoreCase("Konfirmasi")){
             status_komplain.setTextColor(Color.parseColor("#003077"));
             status_komplain.setTypeface(status_komplain.getTypeface(), Typeface.BOLD);
-        } else if (status.equalsIgnoreCase("Pending"))
-        {
+        } else if (status.equalsIgnoreCase("Pending")) {
             status_komplain.setTextColor(Color.parseColor("#ba000d"));
             status_komplain.setTypeface(status_komplain.getTypeface(), Typeface.BOLD);
         } else if (status.equalsIgnoreCase("pending")){

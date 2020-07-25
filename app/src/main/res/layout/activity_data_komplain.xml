@@ -88,4 +88,19 @@
         android:visibility="gone"
         android:contentDescription="@string/connection_text" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/refresh_data_komplain"
+        android:id="@+id/con_text_no_data"
+        android:text="@string/placeholder"
+        android:fontFamily="@font/test"
+        android:textColor="#000"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        android:textAlignment="center"
+        android:visibility="gone"/>
+
 </RelativeLayout>
