@@ -1,5 +1,6 @@
 <resources>
     <!-- FIXME This string need fix later. -->
+    <string name="placeholder">Placeholder</string>
     <string name="tab_2">Tab 2</string>
     <string name="empty">....</string>
     <string name="back">back</string>

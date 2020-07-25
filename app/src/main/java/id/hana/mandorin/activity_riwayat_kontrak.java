@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -64,9 +65,9 @@ public class activity_riwayat_kontrak extends AppCompatActivity {
      * Layout Component Initializations
      * Textview, Imageview, CardView & Button
      */
-    private TextView con_text_pemesan_pembayaran_renovasi;
+    private TextView con_text_pemesan_pembayaran_renovasi, con_text_no_data;
     private ImageView connection_pemesan_pembayaran_renovasi, refresh_pemesan_pembayaran_renovasi;
-    private CardView back_pemesan_pembayaran_renovasi, refresh_cv_pemesan_pembayaran_renovasi;
+    private CardView back_pemesan_pembayaran_renovasi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,6 +96,7 @@ public class activity_riwayat_kontrak extends AppCompatActivity {
          * Textview, Imageview & Button
          */
         con_text_pemesan_pembayaran_renovasi = findViewById(R.id.con_text_riwayat_kontrak);
+        con_text_no_data = findViewById(R.id.con_text_no_data);
         connection_pemesan_pembayaran_renovasi = findViewById(R.id.con_image_riwayat_kontrak);
         refresh_pemesan_pembayaran_renovasi = findViewById(R.id.refresh_riwayat_kontrak);
         back_pemesan_pembayaran_renovasi = findViewById(R.id.back_activity_riwayat_kontrak);
@@ -158,8 +160,8 @@ public class activity_riwayat_kontrak extends AppCompatActivity {
                 },
                 new Response.ErrorListener() {
                     @Override
-                    public void onErrorResponse(VolleyError error) {
-
+                    public void onErrorResponse(VolleyError volleyError) {
+                        con_text_no_data.setVisibility(View.VISIBLE);
                     }
                 });
 
@@ -175,22 +177,21 @@ public class activity_riwayat_kontrak extends AppCompatActivity {
             GetRiwayatKontrakAdapter GetDataAdapter3 = new GetRiwayatKontrakAdapter();
 
             JSONObject json = null;
-            try {
+                try {
+                    json = array.getJSONObject(i);
 
-                json = array.getJSONObject(i);
+                    GetDataAdapter3.setId(json.getString(JSON_ID));
+                    GetDataAdapter3.setNomor_kontrak(json.getString(JSON_NOMOR_KONTRAK));
+                    GetDataAdapter3.setNama_pemesan(json.getString(JSON_NAMA_PEMESAN));
+                    GetDataAdapter3.setEmail(json.getString(JSON_EMAIL_PEMESAN));
+                    GetDataAdapter3.setAlamat(json.getString(JSON_ALAMAT_PEMESAN));
+                    GetDataAdapter3.setWaktu_mulai(json.getString(JSON_WAKTU_MULAI));
+                    GetDataAdapter3.setWaktu_akhir(json.getString(JSON_WAKTU_AKHIR));
+                    GetDataAdapter3.setNama_mandor(json.getString(JSON_NAMA_MANDOR));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
 
-                GetDataAdapter3.setId(json.getString(JSON_ID));
-                GetDataAdapter3.setNomor_kontrak(json.getString(JSON_NOMOR_KONTRAK));
-                GetDataAdapter3.setNama_pemesan(json.getString(JSON_NAMA_PEMESAN));
-                GetDataAdapter3.setEmail(json.getString(JSON_EMAIL_PEMESAN));
-                GetDataAdapter3.setAlamat(json.getString(JSON_ALAMAT_PEMESAN));
-                GetDataAdapter3.setWaktu_mulai(json.getString(JSON_WAKTU_MULAI));
-                GetDataAdapter3.setWaktu_akhir(json.getString(JSON_WAKTU_AKHIR));
-                GetDataAdapter3.setNama_mandor(json.getString(JSON_NAMA_MANDOR));
-            } catch (JSONException e) {
-
-                e.printStackTrace();
-            }
             GetDataAdapter4.add(GetDataAdapter3);
         }
 
