@@ -73,8 +73,8 @@ public class activity_data_kontrak extends AppCompatActivity {
      * Layout Component Initializations
      * Textview, Imageview, CardView & Button
      */
-    private TextView con_text_pemesan_renovasi, con_text_no_data;
-    private ImageView connection_pemesan_renovasi, refresh_pemesan_renovasi;
+    private TextView con_text_pemesan_renovasi, empty_data_kontrak_text;
+    private ImageView connection_pemesan_renovasi, refresh_pemesan_renovasi, empty_data_kontrak;
     private CardView back_pemesan_renovasi;
 
     @Override
@@ -107,6 +107,8 @@ public class activity_data_kontrak extends AppCompatActivity {
         connection_pemesan_renovasi = findViewById(R.id.con_image_data_kontrak);
         refresh_pemesan_renovasi = findViewById(R.id.refresh_data_kontrak);
         back_pemesan_renovasi = findViewById(R.id.back_activity_data_kontrak);
+        empty_data_kontrak = findViewById(R.id.empty_data_kontrak);
+        empty_data_kontrak_text = findViewById(R.id.empty_data_kontrak_text);
 
         /*
          * Internet Connection Module
@@ -169,7 +171,8 @@ public class activity_data_kontrak extends AppCompatActivity {
                     public void onErrorResponse(VolleyError error) {
                         // FIXME: This should change with better implementation after this
                         // This is only for initial work
-                        con_text_no_data.setVisibility(View.VISIBLE);
+                        empty_data_kontrak.setVisibility(View.VISIBLE);
+                        empty_data_kontrak_text.setVisibility(View.VISIBLE);
                     }
                 });
 

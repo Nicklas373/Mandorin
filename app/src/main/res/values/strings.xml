@@ -218,6 +218,7 @@
     <string name="app_menu_1_mandor_2">Dokumentasi Pekerjaan</string>
     <string name="app_menu_1_mandor_3">Layanan Jasa</string>
     <string name="app_menu_1_mandor_4">Tanggapan</string>
+
     <string name="app_mandor_menu_kontrak_title">Menu Kontrak</string>
     <string name="app_mandor_menu_1">Data Kontrak</string>
     <string name="app_mandor_menu_1_3">Data Komplain</string>
@@ -281,6 +282,8 @@
     <string name="app_mandor_status_pemesan_renovasi_9">Rekap Data</string>
     <string name="app_mandor_status_pemesan_renovasi_11">Data Kontrak</string>
     <string name="app_mandor_status_pemesan_renovasi_12">Data Layanan</string>
+    <string name="app_mandor_status_pemesan_renovasi_13">Data pesanan anda kosong</string>
+    <string name="app_mandor_status_pemesan_renovasi_14">Data kontrak anda kosong</string>
     <string name="app_mandor_komplain_title">Menu Komplain</string>
     <string name="app_mandor_komplain_1">Nomor Kontrak</string>
     <string name="app_mandor_komplain_2">Alamat</string>
@@ -290,6 +293,7 @@
     <string name="app_mandor_komplain_6">Masukkan Data Komplain</string>
     <string name="app_mandor_komplain_7">Jenis Layanan</string>
     <string name="app_mandor_komplain_8">Data Pemesan</string>
+    <string name="app_mandor_komplain_9">Data komplain anda kosong</string>
     <string name="app_mandor_konfirmasi_komplain">Konfirmasi</string>
     <string name="app_mandor_konfirmasi_komplain_1">Terkirim !</string>
     <string name="app_mandor_konfirmasi_komplain_2">Terima kasih telah menggunakan jasa kami</string>
@@ -341,6 +345,7 @@
     <string name="app_mandor_data_pembayaran_renovasi_2_2">Masukkan Bukti Pembayaran</string>
     <string name="app_mandor_data_pembayaran_renovasi_2_3">Kirim</string>
     <string name="app_mandor_data_pembayaran_renovasi_2_4">Data Pembayaran</string>
+    <string name="app_mandor_data_pembayaran_renovasi_2_5">Data pembayaran anda kosong</string>
     <string name="app_mandor_konfirmasi_pembayaran">Konfirmasi</string>
     <string name="app_mandor_konfirmasi_pembayaran_1">Terkirim !</string>
     <string name="app_mandor_konfirmasi_pembayaran_2">Terima kasih telah menggunakan jasa kami</string>
@@ -363,6 +368,7 @@
     <string name="app_mandor_riwayat_pembayaran_3">Alamat Pekerjaan</string>
     <string name="app_mandor_riwayat_pembayaran_5">Status Pekerjaan</string>
     <string name="app_mandor_riwayat_pembayaran_4">Data Pembayaran</string>
+    <string name="app_mandor_riwayat_pembayaran_6">Riwayat pembayaran anda kosong</string>
     <string name="app_mandor_riwayat_kontrak_title">Riwayat Kontrak</string>
     <string name="app_mandor_recycler_riwayat_kontrak_1">Nomor Kontrak</string>
     <string name="app_mandor_recycler_riwayat_kontrak_2">Nama Pemesan</string>
@@ -380,6 +386,7 @@
     <string name="app_mandor_riwayat_kontrak_8">Desain Rumah</string>
     <string name="app_mandor_riwayat_kontrak_9">Status Layanan</string>
     <string name="app_mandor_riwayat_kontrak_10">Data Layanan</string>
+    <string name="app_mandor_riwayat_kontrak_11">Riwayat kontrak anda kosong</string>
     <string name="app_mandor_bantuan_title">Menu Bantuan</string>
     <string name="app_mandor_bantuan_1">Kontak Kami</string>
     <string name="app_mandor_bantuan_1_1">Email</string>

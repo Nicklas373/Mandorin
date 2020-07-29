@@ -63,8 +63,8 @@ public class activity_riwayat_kontrak extends AppCompatActivity {
      * Layout Component Initializations
      * Textview, Imageview, CardView & Button
      */
-    private TextView con_text_pemesan_pembayaran_renovasi, con_text_no_data;
-    private ImageView connection_pemesan_pembayaran_renovasi, refresh_pemesan_pembayaran_renovasi;
+    private TextView con_text_pemesan_pembayaran_renovasi, empty_riwayat_kontrak_text;
+    private ImageView connection_pemesan_pembayaran_renovasi, refresh_pemesan_pembayaran_renovasi, empty_riwayat_kontrak;
     private CardView back_pemesan_pembayaran_renovasi;
 
     @Override
@@ -94,7 +94,8 @@ public class activity_riwayat_kontrak extends AppCompatActivity {
          * Textview, Imageview & Button
          */
         con_text_pemesan_pembayaran_renovasi = findViewById(R.id.con_text_riwayat_kontrak);
-        con_text_no_data = findViewById(R.id.con_text_no_data);
+        empty_riwayat_kontrak_text = findViewById(R.id.empty_riwayat_kontrak_text);
+        empty_riwayat_kontrak = findViewById(R.id.empty_riwayat_kontrak);
         connection_pemesan_pembayaran_renovasi = findViewById(R.id.con_image_riwayat_kontrak);
         refresh_pemesan_pembayaran_renovasi = findViewById(R.id.refresh_riwayat_kontrak);
         back_pemesan_pembayaran_renovasi = findViewById(R.id.back_activity_riwayat_kontrak);
@@ -161,7 +162,8 @@ public class activity_riwayat_kontrak extends AppCompatActivity {
                     public void onErrorResponse(VolleyError volleyError) {
                         // FIXME: This should change with better implementation after this
                         // This is only for initial work
-                        con_text_no_data.setVisibility(View.VISIBLE);
+                        empty_riwayat_kontrak.setVisibility(View.VISIBLE);
+                        empty_riwayat_kontrak_text.setVisibility(View.VISIBLE);
                     }
                 });
 

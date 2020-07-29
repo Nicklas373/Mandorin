@@ -67,6 +67,7 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
         android:layout_below="@+id/con_image_komplain"
         android:id="@+id/con_text_komplain"
         android:text="@string/connection_text"
@@ -79,8 +80,8 @@
     <ImageView
         android:id="@+id/refresh_data_komplain"
         android:layout_width="100dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
         android:src="@drawable/refresh_2"
         android:layout_below="@+id/con_text_komplain"
         android:layout_centerVertical="true"
@@ -88,14 +89,27 @@
         android:visibility="gone"
         android:contentDescription="@string/connection_text" />
 
+    <ImageView
+        android:id="@+id/empty_data_komplain"
+        android:layout_width="350dp"
+        android:layout_height="400dp"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/data_komplain_ico"
+        android:layout_below="@+id/con_text_komplain"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone"
+        android:contentDescription="@string/placeholder" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/refresh_data_komplain"
-        android:id="@+id/con_text_no_data"
-        android:text="@string/placeholder"
+        android:layout_marginTop="0dp"
+        android:layout_below="@+id/empty_data_komplain"
+        android:id="@+id/empty_data_komplain_text"
+        android:text="@string/app_mandor_komplain_9"
         android:fontFamily="@font/test"
         android:textColor="#000"
         android:textSize="20sp"

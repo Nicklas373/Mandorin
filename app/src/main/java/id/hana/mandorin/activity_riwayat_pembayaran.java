@@ -62,8 +62,8 @@ public class activity_riwayat_pembayaran extends AppCompatActivity {
      * Layout Component Initializations
      * Textview, Imageview, CardView & Button
      */
-    private TextView con_text_pemesan_pembayaran_renovasi, con_text_no_data;
-    private ImageView connection_pemesan_pembayaran_renovasi, refresh_pemesan_pembayaran_renovasi;
+    private TextView con_text_pemesan_pembayaran_renovasi, empty_data_riwayat_pembayaran_text;
+    private ImageView connection_pemesan_pembayaran_renovasi, refresh_pemesan_pembayaran_renovasi, empty_data_riwayat_pembayaran;
     private CardView back_pemesan_pembayaran_renovasi;
 
     @Override
@@ -96,6 +96,8 @@ public class activity_riwayat_pembayaran extends AppCompatActivity {
         connection_pemesan_pembayaran_renovasi = findViewById(R.id.con_image_riwayat_pembayaran);
         refresh_pemesan_pembayaran_renovasi = findViewById(R.id.refresh_riwayat_pembayaran);
         back_pemesan_pembayaran_renovasi = findViewById(R.id.back_activity_riwayat_pembayaran);
+        empty_data_riwayat_pembayaran_text = findViewById(R.id.empty_data_riwayat_pembayaran_text);
+        empty_data_riwayat_pembayaran = findViewById(R.id.empty_data_riwayat_pembayaran);
 
         /*
          * Internet Connection Module
@@ -159,7 +161,8 @@ public class activity_riwayat_pembayaran extends AppCompatActivity {
                     public void onErrorResponse(VolleyError error) {
                         // FIXME: This should change with better implementation after this
                         // This is only for initial work
-                        con_text_no_data.setVisibility(View.VISIBLE);
+                        empty_data_riwayat_pembayaran.setVisibility(View.VISIBLE);
+                        empty_data_riwayat_pembayaran_text.setVisibility(View.VISIBLE);
                     }
                 });
 

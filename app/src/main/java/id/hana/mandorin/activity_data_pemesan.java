@@ -70,8 +70,8 @@ public class activity_data_pemesan extends AppCompatActivity {
      * Layout Component Initializations
      * Textview, Imageview, CardView & Button
      */
-    private TextView con_text_pemesan_renovasi, con_text_no_data;
-    private ImageView connection_pemesan_renovasi, refresh_pemesan_renovasi;
+    private TextView con_text_pemesan_renovasi, empty_data_pemesan_text;
+    private ImageView connection_pemesan_renovasi, refresh_pemesan_renovasi, empty_data_pemesan;
     private CardView back_pemesan_renovasi;
 
     @Override
@@ -104,6 +104,8 @@ public class activity_data_pemesan extends AppCompatActivity {
         connection_pemesan_renovasi = findViewById(R.id.con_image_data_pemesan);
         refresh_pemesan_renovasi = findViewById(R.id.refresh_data_pemesan);
         back_pemesan_renovasi = findViewById(R.id.back_activity_data_pemesan);
+        empty_data_pemesan = findViewById(R.id.empty_data_pemesan);
+        empty_data_pemesan_text = findViewById(R.id.empty_data_pemesan_text);
 
         /*
          * Internet Connection Module
@@ -129,12 +131,12 @@ public class activity_data_pemesan extends AppCompatActivity {
     }
 
     private void cek_internet() {
-        if(internet_available()){
+        if (internet_available()) {
             connection_pemesan_renovasi.setVisibility(View.GONE);
             con_text_pemesan_renovasi.setVisibility(View.GONE);
             refresh_pemesan_renovasi.setVisibility(View.GONE);
             JSON_DATA_WEB_CALL();
-        }else{
+        } else {
             connection_pemesan_renovasi.setVisibility(View.VISIBLE);
             con_text_pemesan_renovasi.setVisibility(View.VISIBLE);
             refresh_pemesan_renovasi.setVisibility(View.VISIBLE);
@@ -166,7 +168,8 @@ public class activity_data_pemesan extends AppCompatActivity {
                     public void onErrorResponse(VolleyError error) {
                         // FIXME: This should change with better implementation after this
                         // This is only for initial work
-                        con_text_no_data.setVisibility(View.VISIBLE);
+                        empty_data_pemesan_text.setVisibility(View.VISIBLE);
+                        empty_data_pemesan.setVisibility(View.VISIBLE);
                     }
                 });
 
