@@ -30,18 +30,45 @@
 
         </android.support.v7.widget.CardView>
 
-        <TextView
-            android:layout_width="match_parent"
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv_title_data_riwayat_pembayaran"
+            android:layout_width="340dp"
             android:layout_height="wrap_content"
-            android:gravity="start"
-            android:text="@string/app_mandor_riwayat_pembayaran_title"
-            android:textAlignment="center"
-            android:textColor="#ffffff"
-            android:layout_marginEnd="35dp"
-            android:layout_marginStart="10dp"
-            android:fontFamily="@font/test"
-            android:id="@+id/toolbar_text"
-            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"/>
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            card_view:cardBackgroundColor="@color/colorPrimary">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:text="@string/app_mandor_riwayat_pembayaran_title"
+                android:fontFamily="@font/test"
+                android:textAlignment="center"
+                android:textColor="#ffffff"
+                android:id="@+id/toolbar_text"
+                style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"/>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/refresh_activity_data_riwayat_pembayaran"
+            android:layout_width="24dp"
+            android:layout_height="48dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            card_view:cardBackgroundColor="@color/colorPrimary">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/refresh"
+                android:layout_gravity="start"
+                android:contentDescription="@string/refresh" />
+
+        </android.support.v7.widget.CardView>
     </android.support.v7.widget.Toolbar>
 
     <android.support.v7.widget.RecyclerView
@@ -76,18 +103,6 @@
         android:textAllCaps="false"
         android:textAlignment="center"
         android:visibility="gone"/>
-
-    <ImageView
-        android:id="@+id/refresh_riwayat_pembayaran"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="30dp"
-        android:src="@drawable/refresh_2"
-        android:layout_below="@+id/con_text_riwayat_pembayaran"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:visibility="gone"
-        android:contentDescription="@string/connection_text" />
 
     <ImageView
         android:id="@+id/empty_data_riwayat_pembayaran"

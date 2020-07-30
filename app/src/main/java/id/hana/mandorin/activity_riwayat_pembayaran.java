@@ -12,6 +12,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -63,8 +64,8 @@ public class activity_riwayat_pembayaran extends AppCompatActivity {
      * Textview, Imageview, CardView & Button
      */
     private TextView con_text_pemesan_pembayaran_renovasi, empty_data_riwayat_pembayaran_text;
-    private ImageView connection_pemesan_pembayaran_renovasi, refresh_pemesan_pembayaran_renovasi, empty_data_riwayat_pembayaran;
-    private CardView back_pemesan_pembayaran_renovasi;
+    private ImageView connection_pemesan_pembayaran_renovasi, empty_data_riwayat_pembayaran;
+    private CardView back_pemesan_pembayaran_renovasi, refresh_pemesan_pembayaran_renovasi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,7 +95,7 @@ public class activity_riwayat_pembayaran extends AppCompatActivity {
          */
         con_text_pemesan_pembayaran_renovasi = findViewById(R.id.con_text_riwayat_pembayaran);
         connection_pemesan_pembayaran_renovasi = findViewById(R.id.con_image_riwayat_pembayaran);
-        refresh_pemesan_pembayaran_renovasi = findViewById(R.id.refresh_riwayat_pembayaran);
+        refresh_pemesan_pembayaran_renovasi = findViewById(R.id.refresh_activity_data_riwayat_pembayaran);
         back_pemesan_pembayaran_renovasi = findViewById(R.id.back_activity_riwayat_pembayaran);
         empty_data_riwayat_pembayaran_text = findViewById(R.id.empty_data_riwayat_pembayaran_text);
         empty_data_riwayat_pembayaran = findViewById(R.id.empty_data_riwayat_pembayaran);
@@ -113,6 +114,13 @@ public class activity_riwayat_pembayaran extends AppCompatActivity {
             }
         });
 
+        connection_pemesan_pembayaran_renovasi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cek_internet();
+            }
+        });
+
         back_pemesan_pembayaran_renovasi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -123,15 +131,17 @@ public class activity_riwayat_pembayaran extends AppCompatActivity {
     }
 
     private void cek_internet() {
-        if(internet_available()){
+        if (internet_available()) {
+            Toast.makeText(activity_riwayat_pembayaran.this, "Anda sudah terhubung ke internet", Toast.LENGTH_LONG).show();
             connection_pemesan_pembayaran_renovasi.setVisibility(View.GONE);
             con_text_pemesan_pembayaran_renovasi.setVisibility(View.GONE);
-            refresh_pemesan_pembayaran_renovasi.setVisibility(View.GONE);
+            //refresh_pemesan_pembayaran_renovasi.setVisibility(View.GONE);
             JSON_DATA_WEB_CALL();
-        }else{
+        } else {
+            Toast.makeText(activity_riwayat_pembayaran.this, "Harap periksa koneksi internet anda", Toast.LENGTH_LONG).show();
             connection_pemesan_pembayaran_renovasi.setVisibility(View.VISIBLE);
             con_text_pemesan_pembayaran_renovasi.setVisibility(View.VISIBLE);
-            refresh_pemesan_pembayaran_renovasi.setVisibility(View.VISIBLE);
+            //refresh_pemesan_pembayaran_renovasi.setVisibility(View.VISIBLE);
         }
     }
 

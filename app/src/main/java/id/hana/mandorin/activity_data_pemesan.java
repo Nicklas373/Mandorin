@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -71,8 +72,8 @@ public class activity_data_pemesan extends AppCompatActivity {
      * Textview, Imageview, CardView & Button
      */
     private TextView con_text_pemesan_renovasi, empty_data_pemesan_text;
-    private ImageView connection_pemesan_renovasi, refresh_pemesan_renovasi, empty_data_pemesan;
-    private CardView back_pemesan_renovasi;
+    private ImageView connection_pemesan_renovasi, empty_data_pemesan;
+    private CardView back_pemesan_renovasi, refresh_pemesan_renovasi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,7 +103,7 @@ public class activity_data_pemesan extends AppCompatActivity {
          */
         con_text_pemesan_renovasi = findViewById(R.id.con_text_data_pemesan);
         connection_pemesan_renovasi = findViewById(R.id.con_image_data_pemesan);
-        refresh_pemesan_renovasi = findViewById(R.id.refresh_data_pemesan);
+        refresh_pemesan_renovasi = findViewById(R.id.refresh_activity_data_pemesan);
         back_pemesan_renovasi = findViewById(R.id.back_activity_data_pemesan);
         empty_data_pemesan = findViewById(R.id.empty_data_pemesan);
         empty_data_pemesan_text = findViewById(R.id.empty_data_pemesan_text);
@@ -121,6 +122,13 @@ public class activity_data_pemesan extends AppCompatActivity {
             }
         });
 
+        connection_pemesan_renovasi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cek_internet();
+            }
+        });
+
         back_pemesan_renovasi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -132,14 +140,16 @@ public class activity_data_pemesan extends AppCompatActivity {
 
     private void cek_internet() {
         if (internet_available()) {
+            Toast.makeText(activity_data_pemesan.this, "Anda sudah terhubung ke internet", Toast.LENGTH_LONG).show();
             connection_pemesan_renovasi.setVisibility(View.GONE);
             con_text_pemesan_renovasi.setVisibility(View.GONE);
-            refresh_pemesan_renovasi.setVisibility(View.GONE);
+            //refresh_pemesan_renovasi.setVisibility(View.GONE);
             JSON_DATA_WEB_CALL();
         } else {
+            Toast.makeText(activity_data_pemesan.this, "Harap periksa koneksi internet anda", Toast.LENGTH_LONG).show();
             connection_pemesan_renovasi.setVisibility(View.VISIBLE);
             con_text_pemesan_renovasi.setVisibility(View.VISIBLE);
-            refresh_pemesan_renovasi.setVisibility(View.VISIBLE);
+            //refresh_pemesan_renovasi.setVisibility(View.VISIBLE);
         }
     }
 
