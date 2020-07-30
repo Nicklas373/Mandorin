@@ -1,6 +1,10 @@
 package id.hana.mandorin;
 
 import android.app.DatePickerDialog;
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -8,6 +12,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -46,6 +51,7 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
+import java.util.regex.Pattern;
 
 public class activity_layanan_jasa extends AppCompatActivity {
 
@@ -220,6 +226,26 @@ public class activity_layanan_jasa extends AppCompatActivity {
         datePickerDialog.show();
     }
 
+    public boolean NIK_Check() {
+        String strNum = nik_lj.getText().toString();
+        try {
+            double d = Double.parseDouble(strNum);
+        } catch (NumberFormatException nfe) {
+            return false;
+        }
+        return true;
+    }
+
+    public boolean HP_Check() {
+        String strNum = no_hp_lj.getText().toString();
+        try {
+            double d = Double.parseDouble(strNum);
+        } catch (NumberFormatException nfe) {
+            return false;
+        }
+        return true;
+    }
+
     private void send_data(){
             if (nama_lj.getText().toString().length() == 0) {
                 nama_lj.setError("Harap Masukkan Nama");
@@ -240,23 +266,33 @@ public class activity_layanan_jasa extends AppCompatActivity {
                 data_lj.setError("Harap Masukkan Data Pekerjaan");
                 Toast.makeText(getApplicationContext(), "Harap tidak ada data yang kosong", Toast.LENGTH_SHORT).show();
             } else {
-                int id = rg.getCheckedRadioButtonId();
-                int id_2 = rg_2.getCheckedRadioButtonId();
-                if(id == R.id.rb_1) {
-                    String new_dummy = ((RadioButton) findViewById(id)).getText().toString();
-                    dummy_1.setText(new_dummy);
-                }  else if (id == R.id.rb_2) {
-                    String new_dummy_2 = ((RadioButton) findViewById(id)).getText().toString();
-                    dummy_1.setText(new_dummy_2);
+                if (NIK_Check()) {
+                    if (HP_Check()) {
+                        int id = rg.getCheckedRadioButtonId();
+                        int id_2 = rg_2.getCheckedRadioButtonId();
+                        if (id == R.id.rb_1) {
+                            String new_dummy = ((RadioButton) findViewById(id)).getText().toString();
+                            dummy_1.setText(new_dummy);
+                        } else if (id == R.id.rb_2) {
+                            String new_dummy_2 = ((RadioButton) findViewById(id)).getText().toString();
+                            dummy_1.setText(new_dummy_2);
+                        }
+                        if (id_2 == R.id.rb_3) {
+                            String next_dummy = ((RadioButton) findViewById(id_2)).getText().toString();
+                            dummy_2.setText(next_dummy);
+                        } else if (id_2 == R.id.rb_4) {
+                            String next_dummy_2 = ((RadioButton) findViewById(id_2)).getText().toString();
+                            dummy_2.setText(next_dummy_2);
+                        }
+                        send_dialog();
+                    } else {
+                        no_hp_lj.setText("");
+                        no_hp_lj.setError("No HP menggunakan angka");
+                    }
+                } else {
+                    nik_lj.setText("");
+                    nik_lj.setError("NIK menggunakan angka");
                 }
-                if(id_2 == R.id.rb_3) {
-                    String next_dummy = ((RadioButton) findViewById(id_2)).getText().toString();
-                    dummy_2.setText(next_dummy);
-                }  else if (id_2 == R.id.rb_4) {
-                    String next_dummy_2 = ((RadioButton) findViewById(id_2)).getText().toString();
-                    dummy_2.setText(next_dummy_2);
-                }
-                send_dialog();
             }
     }
 
@@ -280,8 +316,6 @@ public class activity_layanan_jasa extends AppCompatActivity {
                         editor = pref.edit();
                         editor.clear();
                         editor.apply();
-                        Intent intent = new Intent(activity_layanan_jasa.this, activity_konfirmasi_bangun_renovasi.class);
-                        startActivity(intent);
                     }
                 })
                 .setNegativeButton("Batal",new DialogInterface.OnClickListener() {
@@ -306,6 +340,15 @@ public class activity_layanan_jasa extends AppCompatActivity {
 
                         // Showing response message coming from server.
                         // Toast.makeText(activity_layanan_jasa.this, ServerResponse, Toast.LENGTH_LONG).show();
+                       if (ServerResponse.length() > 10) {
+                            Success_Notif();
+                            Intent intent = new Intent(activity_layanan_jasa.this, activity_konfirmasi_bangun_renovasi.class);
+                            startActivity(intent);
+                        } else {
+                           Fail_Notif();
+                           Intent intent = new Intent(activity_layanan_jasa.this, MainActivity.class);
+                           startActivity(intent);
+                       }
                     }
                 },
                 new Response.ErrorListener() {
@@ -313,7 +356,11 @@ public class activity_layanan_jasa extends AppCompatActivity {
                     public void onErrorResponse(VolleyError volleyError) {
 
                         // Showing error message if something goes wrong.
-                        // Toast.makeText(activity_layanan_jasa.this, volleyError.toString(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(activity_layanan_jasa.this, volleyError.toString(), Toast.LENGTH_LONG).show();
+
+                        Fail_Notif();
+                        Intent intent = new Intent(activity_layanan_jasa.this, MainActivity.class);
+                        startActivity(intent);
                     }
                 })
 
@@ -442,5 +489,71 @@ public class activity_layanan_jasa extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
+    }
+
+    private void Success_Notif(){
+        Intent intent;
+        PendingIntent pendingIntent;
+        NotificationManager notifManager = (NotificationManager) getSystemService(this.NOTIFICATION_SERVICE);
+
+        String id = "ID_MANDORIN";
+        String title = "Mandorin";
+        android.support.v4.app.NotificationCompat.Builder builder;
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            int importance = NotificationManager.IMPORTANCE_HIGH;
+            NotificationChannel mChannel = notifManager.getNotificationChannel(id);
+            if (mChannel == null) {
+                mChannel = new NotificationChannel(id, title, importance);
+                mChannel.enableVibration(true);
+                notifManager.createNotificationChannel(mChannel);
+            }
+        }
+        builder = new android.support.v4.app.NotificationCompat.Builder(this,id);
+        intent = new Intent(getApplicationContext(), activity_data_pemesan.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        pendingIntent = PendingIntent.getActivity(getApplicationContext(), 0, intent, 0);
+        builder.setContentTitle("Mandorin")
+                .setSmallIcon(R.mipmap.ic_launcher)
+                .setContentText("Klik di sini, untuk melihat data pesanan anda")
+                .setDefaults(Notification.COLOR_DEFAULT)
+                .setAutoCancel(true)
+                .setContentIntent(pendingIntent)
+                .setPriority(Notification.PRIORITY_HIGH);
+        Notification notification = builder.build();
+        notifManager.notify(0, notification);
+    }
+
+    private void Fail_Notif(){
+        Intent intent;
+        PendingIntent pendingIntent;
+        NotificationManager notifManager = (NotificationManager) getSystemService(this.NOTIFICATION_SERVICE);
+
+        String id = "ID_MANDORIN";
+        String title = "Mandorin";
+        android.support.v4.app.NotificationCompat.Builder builder;
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            int importance = NotificationManager.IMPORTANCE_HIGH;
+            NotificationChannel mChannel = notifManager.getNotificationChannel(id);
+            if (mChannel == null) {
+                mChannel = new NotificationChannel(id, title, importance);
+                mChannel.enableVibration(true);
+                notifManager.createNotificationChannel(mChannel);
+            }
+        }
+        builder = new android.support.v4.app.NotificationCompat.Builder(this,id);
+        intent = new Intent(getApplicationContext(), MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        pendingIntent = PendingIntent.getActivity(getApplicationContext(), 0, intent, 0);
+        builder.setContentTitle("Mandorin")
+                .setSmallIcon(R.mipmap.ic_launcher)
+                .setContentText("Pemesanan gagal, harap coba lagi !")
+                .setDefaults(Notification.COLOR_DEFAULT)
+                .setAutoCancel(true)
+                .setContentIntent(pendingIntent)
+                .setPriority(Notification.PRIORITY_HIGH);
+        Notification notification = builder.build();
+        notifManager.notify(0, notification);
     }
 }
