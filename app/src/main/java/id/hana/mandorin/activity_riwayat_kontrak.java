@@ -133,16 +133,13 @@ public class activity_riwayat_kontrak extends AppCompatActivity {
 
     private void cek_internet() {
         if (internet_available()) {
-            Toast.makeText(activity_riwayat_kontrak.this, "Anda sudah terhubung ke internet", Toast.LENGTH_LONG).show();
             connection_pemesan_pembayaran_renovasi.setVisibility(View.GONE);
             con_text_pemesan_pembayaran_renovasi.setVisibility(View.GONE);
-            //refresh_pemesan_pembayaran_renovasi.setVisibility(View.GONE);
             JSON_DATA_WEB_CALL();
         } else {
             Toast.makeText(activity_riwayat_kontrak.this, "Harap periksa koneksi internet anda", Toast.LENGTH_LONG).show();
             connection_pemesan_pembayaran_renovasi.setVisibility(View.VISIBLE);
             con_text_pemesan_pembayaran_renovasi.setVisibility(View.VISIBLE);
-            //refresh_pemesan_pembayaran_renovasi.setVisibility(View.VISIBLE);
         }
     }
 
@@ -172,8 +169,6 @@ public class activity_riwayat_kontrak extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError volleyError) {
-                        // FIXME: This should change with better implementation after this
-                        // This is only for initial work
                         empty_riwayat_kontrak.setVisibility(View.VISIBLE);
                         empty_riwayat_kontrak_text.setVisibility(View.VISIBLE);
                     }

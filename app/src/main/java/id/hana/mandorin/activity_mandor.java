@@ -118,16 +118,13 @@ public class activity_mandor extends AppCompatActivity {
 
     private void cek_internet() {
         if (internet_available()) {
-            Toast.makeText(activity_mandor.this, "Anda sudah terhubung ke internet", Toast.LENGTH_LONG).show();
             connection.setVisibility(View.GONE);
             con_text.setVisibility(View.GONE);
-            //refresh_cv.setVisibility(View.GONE);
             JSON_DATA_WEB_CALL();
         } else {
             Toast.makeText(activity_mandor.this, "Harap periksa koneksi internet anda", Toast.LENGTH_LONG).show();
             connection.setVisibility(View.VISIBLE);
             con_text.setVisibility(View.VISIBLE);
-            //refresh.setVisibility(View.VISIBLE);
         }
     }
 

@@ -133,16 +133,13 @@ public class activity_data_komplain extends AppCompatActivity {
 
     private void cek_internet() {
         if (internet_available()) {
-            Toast.makeText(activity_data_komplain.this, "Anda sudah terhubung ke internet", Toast.LENGTH_LONG).show();
             connection_pemesan_renovasi.setVisibility(View.GONE);
             con_text_pemesan_renovasi.setVisibility(View.GONE);
-            //refresh_pemesan_renovasi.setVisibility(View.GONE);
             JSON_DATA_WEB_CALL();
         } else {
             Toast.makeText(activity_data_komplain.this, "Harap periksa koneksi internet anda", Toast.LENGTH_LONG).show();
             connection_pemesan_renovasi.setVisibility(View.VISIBLE);
             con_text_pemesan_renovasi.setVisibility(View.VISIBLE);
-            //refresh_pemesan_renovasi.setVisibility(View.VISIBLE);
         }
     }
 
@@ -171,8 +168,6 @@ public class activity_data_komplain extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        // FIXME: This should change with better implementation after this
-                        // This is only for initial work
                         empty_data_komplain.setVisibility(View.VISIBLE);
                         empty_data_komplain_text.setVisibility(View.VISIBLE);
                     }

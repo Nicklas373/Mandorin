@@ -12,6 +12,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -85,8 +86,8 @@ public class activity_status_transaksi extends AppCompatActivity {
      * Textview, Imageview, CardView & Button
      */
     private TextView con_text_transaksi, empty_data_transaksi_text;
-    private ImageView connection_transaksi, refresh_transaksi, empty_data_transaksi;
-    private CardView back_transaksi;
+    private ImageView connection_transaksi, empty_data_transaksi;
+    private CardView back_transaksi, refresh_transaksi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -116,7 +117,7 @@ public class activity_status_transaksi extends AppCompatActivity {
          */
         con_text_transaksi = findViewById(R.id.con_text_status_transaksi);
         connection_transaksi = findViewById(R.id.con_image_status_transaksi);
-        refresh_transaksi = findViewById(R.id.refresh_status_transaksi);
+        refresh_transaksi = findViewById(R.id.refresh_activity_data_transaksi);
         back_transaksi = findViewById(R.id.back_activity_status_transaksi);
         empty_data_transaksi = findViewById(R.id.empty_data_transaksi);
         empty_data_transaksi_text = findViewById(R.id.empty_data_transaksi_text);
@@ -129,6 +130,13 @@ public class activity_status_transaksi extends AppCompatActivity {
         cek_internet();
 
         refresh_transaksi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cek_internet();
+            }
+        });
+
+        connection_transaksi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 cek_internet();
@@ -148,12 +156,11 @@ public class activity_status_transaksi extends AppCompatActivity {
         if (internet_available()) {
             connection_transaksi.setVisibility(View.GONE);
             con_text_transaksi.setVisibility(View.GONE);
-            refresh_transaksi.setVisibility(View.GONE);
             JSON_DATA_WEB_CALL();
         } else {
+            Toast.makeText(activity_status_transaksi.this, "Anda sudah terhubung ke internet", Toast.LENGTH_LONG).show();
             connection_transaksi.setVisibility(View.VISIBLE);
             con_text_transaksi.setVisibility(View.VISIBLE);
-            refresh_transaksi.setVisibility(View.VISIBLE);
         }
     }
 
@@ -176,13 +183,13 @@ public class activity_status_transaksi extends AppCompatActivity {
                     public void onResponse(JSONArray response) {
 
                         JSON_PARSE_DATA_AFTER_WEBCALL(response);
+                        empty_data_transaksi.setVisibility(View.INVISIBLE);
+                        empty_data_transaksi_text.setVisibility(View.INVISIBLE);
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        // FIXME: This should change with better implementation after this
-                        // This is only for initial work
                         empty_data_transaksi.setVisibility(View.VISIBLE);
                         empty_data_transaksi_text.setVisibility(View.VISIBLE);
                     }
