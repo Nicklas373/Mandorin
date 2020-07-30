@@ -10,9 +10,9 @@ import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -58,7 +58,7 @@ public class activity_mandor extends AppCompatActivity {
      * Textview, Imageview, CardView & Button
      */
      private TextView con_text;
-     private ImageView connection, refresh;
+     private ImageView connection;
      private CardView back, refresh_cv;
 
     @Override
@@ -83,7 +83,7 @@ public class activity_mandor extends AppCompatActivity {
          */
         con_text = findViewById(R.id.con_text);
         connection = findViewById(R.id.con_image);
-        refresh = findViewById(R.id.refresh);
+        refresh_cv = findViewById(R.id.refresh_activity_data_mandor);
         back = findViewById(R.id.back_activity_mandor);
 
         /*
@@ -93,7 +93,14 @@ public class activity_mandor extends AppCompatActivity {
          */
         cek_internet();
 
-        refresh.setOnClickListener(new View.OnClickListener() {
+        refresh_cv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cek_internet();
+            }
+        });
+
+        connection.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 cek_internet();
@@ -110,15 +117,17 @@ public class activity_mandor extends AppCompatActivity {
     }
 
     private void cek_internet() {
-        if(internet_available()){
+        if (internet_available()) {
+            Toast.makeText(activity_mandor.this, "Anda sudah terhubung ke internet", Toast.LENGTH_LONG).show();
             connection.setVisibility(View.GONE);
             con_text.setVisibility(View.GONE);
-            refresh.setVisibility(View.GONE);
+            //refresh_cv.setVisibility(View.GONE);
             JSON_DATA_WEB_CALL();
-        }else{
+        } else {
+            Toast.makeText(activity_mandor.this, "Harap periksa koneksi internet anda", Toast.LENGTH_LONG).show();
             connection.setVisibility(View.VISIBLE);
             con_text.setVisibility(View.VISIBLE);
-            refresh.setVisibility(View.VISIBLE);
+            //refresh.setVisibility(View.VISIBLE);
         }
     }
 

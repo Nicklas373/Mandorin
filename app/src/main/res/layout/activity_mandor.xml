@@ -30,24 +30,32 @@
 
         </android.support.v7.widget.CardView>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="start"
-            android:text="@string/app_menu_1_data_mandor"
-            android:textAlignment="center"
-            android:fontFamily="@font/test"
-            android:textColor="#ffffff"
-            android:layout_marginEnd="35dp"
-            android:layout_marginStart="10dp"
-            android:id="@+id/toolbar_text"
-            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"/>
-
-        <!--
         <android.support.v7.widget.CardView
-            android:id="@+id/refresh_activity_mandor"
-            android:layout_width="24dp"
+            android:id="@+id/cv_title_data_mandor"
+            android:layout_width="340dp"
             android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            card_view:cardBackgroundColor="@color/colorPrimary">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:text="@string/app_menu_1_data_mandor"
+                android:fontFamily="@font/test"
+                android:textAlignment="center"
+                android:textColor="#ffffff"
+                android:id="@+id/toolbar_text"
+                style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"/>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/refresh_activity_data_mandor"
+            android:layout_width="24dp"
+            android:layout_height="48dp"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"
@@ -57,11 +65,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/refresh"
-                android:gravity="start"
+                android:layout_gravity="start"
                 android:contentDescription="@string/refresh" />
 
         </android.support.v7.widget.CardView>
-        -->
 
     </android.support.v7.widget.Toolbar>
 
@@ -108,5 +115,4 @@
         android:layout_centerHorizontal="true"
         android:visibility="gone"
         android:contentDescription="@string/connection_text" />
-
 </RelativeLayout>
