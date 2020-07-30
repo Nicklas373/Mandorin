@@ -21,6 +21,6 @@ public class activity_komplain_konfirmasi extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
                 finish();
             }
-        }, 3000L); //3000 L = 3 detik
+        }, 5000L); //5000 L = 5 detik
     }
 }

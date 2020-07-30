@@ -127,7 +127,7 @@ public class activity_layanan_kontrak extends AppCompatActivity {
             img_presentase.setImageDrawable(getResources().getDrawable(R.drawable.status_layanan_3, getApplicationContext().getTheme()));
         } else if (presentase.getText().toString().equalsIgnoreCase("95")) {
             img_presentase.setImageDrawable(getResources().getDrawable(R.drawable.status_layanan_4, getApplicationContext().getTheme()));
-        }else if (presentase.getText().toString().equalsIgnoreCase("100")) {
+        } else if (presentase.getText().toString().equalsIgnoreCase("100")) {
             img_presentase.setImageDrawable(getResources().getDrawable(R.drawable.status_layanan_5, getApplicationContext().getTheme()));
         }
         estimasi.setText(waktu_awal_1 + " sd " + waktu_akhir_1);
