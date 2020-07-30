@@ -230,7 +230,7 @@ public class activity_login_2 extends AppCompatActivity {
                     @Override
                     public void onErrorResponse(VolleyError volleyError) {
                         // Showing error message if something goes wrong.
-                        // Toast.makeText(activity_login_2.this, volleyError.toString(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(activity_login_2.this, volleyError.toString(), Toast.LENGTH_LONG).show();
                     }
                 }) {
             @Override

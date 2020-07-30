@@ -548,7 +548,7 @@ public class activity_akun_baru extends AppCompatActivity {
                     public void onErrorResponse(VolleyError volleyError) {
 
                         // Showing error message if something goes wrong.
-                        // Toast.makeText(activity_akun_baru.this, volleyError.toString(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(activity_akun_baru.this, volleyError.toString(), Toast.LENGTH_LONG).show();
 
                         Fail_Notif();
                         Intent intent = new Intent(activity_akun_baru.this, MainActivity.class);
