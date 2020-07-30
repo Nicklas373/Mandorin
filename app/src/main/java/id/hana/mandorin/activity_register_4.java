@@ -1,9 +1,16 @@
 package id.hana.mandorin;
 
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.net.ConnectivityManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -154,6 +161,11 @@ public class activity_register_4 extends AppCompatActivity {
 
                         // Showing response message coming from server.
                         //Toast.makeText(activity_data_transaksi_2.this, ServerResponse, Toast.LENGTH_LONG).show();
+                        if (ServerResponse.length() > 10) {
+                            Success_Notif();
+                        } else {
+                            Fail_Notif();
+                        }
                     }
                 },
                 new Response.ErrorListener() {
@@ -197,5 +209,76 @@ public class activity_register_4 extends AppCompatActivity {
 
         // Adding the StringRequest object into requestQueue.
         requestQueue.add(stringRequest);
+    }
+
+    private void Success_Notif(){
+        Intent intent;
+        PendingIntent pendingIntent;
+        NotificationManager notifManager = (NotificationManager) getSystemService(this.NOTIFICATION_SERVICE);
+
+        String id = "ID_MANDORIN";
+        String title = "Mandorin";
+        android.support.v4.app.NotificationCompat.Builder builder;
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            int importance = NotificationManager.IMPORTANCE_HIGH;
+            NotificationChannel mChannel = notifManager.getNotificationChannel(id);
+            if (mChannel == null) {
+                mChannel = new NotificationChannel(id, title, importance);
+                mChannel.enableVibration(true);
+                notifManager.createNotificationChannel(mChannel);
+            }
+        }
+        builder = new android.support.v4.app.NotificationCompat.Builder(this,id);
+        intent = new Intent(getApplicationContext(), activity_akun_baru.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        pendingIntent = PendingIntent.getActivity(getApplicationContext(), 0, intent, 0);
+        builder.setContentTitle("Mandorin")
+                .setSmallIcon(R.mipmap.ic_launcher)
+                .setContentText("Klik di sini, untuk melihat data akun anda")
+                .setDefaults(Notification.COLOR_DEFAULT)
+                .setAutoCancel(true)
+                .setContentIntent(pendingIntent)
+                .setPriority(Notification.PRIORITY_HIGH);
+        Notification notification = builder.build();
+        notifManager.notify(0, notification);
+    }
+
+    private void Fail_Notif(){
+        Intent intent;
+        PendingIntent pendingIntent;
+        NotificationManager notifManager = (NotificationManager) getSystemService(this.NOTIFICATION_SERVICE);
+
+        String id = "ID_MANDORIN";
+        String title = "Mandorin";
+        android.support.v4.app.NotificationCompat.Builder builder;
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            int importance = NotificationManager.IMPORTANCE_HIGH;
+            NotificationChannel mChannel = notifManager.getNotificationChannel(id);
+            if (mChannel == null) {
+                mChannel = new NotificationChannel(id, title, importance);
+                mChannel.enableVibration(true);
+                notifManager.createNotificationChannel(mChannel);
+            }
+        }
+        builder = new android.support.v4.app.NotificationCompat.Builder(this,id);
+        intent = new Intent(getApplicationContext(), MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        pendingIntent = PendingIntent.getActivity(getApplicationContext(), 0, intent, 0);
+        builder.setContentTitle("Mandorin")
+                .setSmallIcon(R.mipmap.ic_launcher)
+                .setContentText("Data akun gagal di perbaharui, harap coba lagi !")
+                .setDefaults(Notification.COLOR_DEFAULT)
+                .setAutoCancel(true)
+                .setContentIntent(pendingIntent)
+                .setPriority(Notification.PRIORITY_HIGH);
+        Notification notification = builder.build();
+        notifManager.notify(0, notification);
+    }
+
+    private boolean internet_available(){
+        ConnectivityManager koneksi = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        return koneksi.getActiveNetworkInfo() != null;
     }
 }

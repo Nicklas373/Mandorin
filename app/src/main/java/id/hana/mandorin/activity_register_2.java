@@ -1,9 +1,11 @@
 package id.hana.mandorin;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -81,40 +83,44 @@ public class activity_register_2 extends AppCompatActivity {
                 }
 
                 if (password.length() < 6) {
-                    Toast.makeText(getApplicationContext(), "Password terlalu pendek, minimal 6 karakter", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Password terlalu singkat, minimal 6 karakter", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 if (inputPassword.getText().toString().equals(inputPasswordver.getText().toString())) {
-                    //create user
-                    dialog = ProgressDialog.show(activity_register_2.this, "Register Akun", "Memproses...", true);
-                    auth.createUserWithEmailAndPassword(email, password)
-                            .addOnCompleteListener(activity_register_2.this, new OnCompleteListener() {
-                                @Override
-                                public void onComplete(@NonNull Task task) {
+                    if (internet_available()) {
+                        //create user
+                        dialog = ProgressDialog.show(activity_register_2.this, "Register Akun", "Memproses...", true);
+                        auth.createUserWithEmailAndPassword(email, password)
+                                .addOnCompleteListener(activity_register_2.this, new OnCompleteListener() {
+                                    @Override
+                                    public void onComplete(@NonNull Task task) {
 
-                                    if (!task.isSuccessful()) {
-                                        Toast.makeText(activity_register_2.this, "Akun gagal di buat", Toast.LENGTH_LONG).show();
-                                        finish();
-                                    } else {
-                                        try {
-                                            auth.getCurrentUser().sendEmailVerification();
-                                            insert_data_user();
-                                            insert_uid();
-                                            SharedPreferences.Editor editor = pref.edit();
-                                            editor.putString("email", dbg.getText().toString());
-                                            editor.apply();
-                                            startActivity(new Intent(activity_register_2.this, activity_register_3.class));
+                                        if (!task.isSuccessful()) {
+                                            Toast.makeText(activity_register_2.this, "Akun gagal di buat", Toast.LENGTH_LONG).show();
                                             finish();
-                                            Toast.makeText(getApplicationContext(), "Akun berhasil di buat", Toast.LENGTH_SHORT).show();
-                                        } catch (IllegalArgumentException e) {
-                                            Toast.makeText(activity_register_2.this, "Akun gagal di buat", Toast.LENGTH_SHORT).show();
-                                            e.printStackTrace();
-                                            finish();
+                                        } else {
+                                            try {
+                                                auth.getCurrentUser().sendEmailVerification();
+                                                insert_data_user();
+                                                insert_uid();
+                                                SharedPreferences.Editor editor = pref.edit();
+                                                editor.putString("email", dbg.getText().toString());
+                                                editor.apply();
+                                                startActivity(new Intent(activity_register_2.this, activity_register_3.class));
+                                                finish();
+                                                Toast.makeText(getApplicationContext(), "Akun berhasil di buat", Toast.LENGTH_SHORT).show();
+                                            } catch (IllegalArgumentException e) {
+                                                Toast.makeText(activity_register_2.this, "Akun gagal di buat", Toast.LENGTH_SHORT).show();
+                                                e.printStackTrace();
+                                                finish();
+                                            }
                                         }
                                     }
-                                }
-                            });
+                                });
+                    } else {
+                        Toast.makeText(activity_register_2.this, "Harap periksa koneksi internet anda", Toast.LENGTH_LONG).show();
+                    }
                 } else {
                     inputPasswordver.setError("Cek password anda kembali");
                 }
@@ -223,5 +229,10 @@ public class activity_register_2 extends AppCompatActivity {
 
         // Adding the StringRequest object into requestQueue.
         requestQueue.add(stringRequest);
+    }
+
+    private boolean internet_available(){
+        ConnectivityManager koneksi = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        return koneksi.getActiveNetworkInfo() != null;
     }
 }

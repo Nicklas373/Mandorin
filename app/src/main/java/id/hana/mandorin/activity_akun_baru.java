@@ -1,6 +1,10 @@
 package id.hana.mandorin;
 
 import android.app.Activity;
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -9,8 +13,10 @@ import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.ConnectivityManager;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AlertDialog;
@@ -143,14 +149,18 @@ public class activity_akun_baru extends AppCompatActivity {
                 } else if (TextUtils.isEmpty(user_address.getText().toString())) {
                     user_address.setError("Harap Masukkan Alamat");
                 } else {
-                    user_pic.setFocusableInTouchMode(false);
-                    user_umur.setFocusableInTouchMode(false);
-                    user_nik.setFocusableInTouchMode(false);
-                    user_phone.setFocusableInTouchMode(false);
-                    user_address.setFocusableInTouchMode(false);
-                    user_pic_edit.setFocusableInTouchMode(false);
-                    user_pic_edit.setVisibility(View.GONE);
-                    update_dialog();
+                    if (internet_available()) {
+                        user_pic.setFocusableInTouchMode(false);
+                        user_umur.setFocusableInTouchMode(false);
+                        user_nik.setFocusableInTouchMode(false);
+                        user_phone.setFocusableInTouchMode(false);
+                        user_address.setFocusableInTouchMode(false);
+                        user_pic_edit.setFocusableInTouchMode(false);
+                        user_pic_edit.setVisibility(View.GONE);
+                        update_dialog();
+                    } else {
+                        Toast.makeText(activity_akun_baru.this, "Harap periksa koneksi internet anda", Toast.LENGTH_LONG).show();
+                    }
                 }
             }
         });
@@ -341,8 +351,7 @@ public class activity_akun_baru extends AppCompatActivity {
                                 Intent intent = new Intent(activity_akun_baru.this, activity_akun.class);
                                 startActivity(intent);
                             }
-                        }, 3000L); //3000 L = 3 detik
-                        Toast.makeText(getApplicationContext(), "Data berhasil di perbaharui", Toast.LENGTH_SHORT).show();
+                        }, 5000L); //5000 L = 5 detik
                     }
                 })
                 .setNegativeButton("Tidak",new DialogInterface.OnClickListener() {
@@ -527,6 +536,11 @@ public class activity_akun_baru extends AppCompatActivity {
 
                         // Showing response message coming from server.
                         //Toast.makeText(activity_edit_akun.this, ServerResponse, Toast.LENGTH_LONG).show();
+                        if (ServerResponse.length() > 15) {
+                            Success_Notif();
+                        } else {
+                            Fail_Notif();
+                        }
                     }
                 },
                 new Response.ErrorListener() {
@@ -535,6 +549,10 @@ public class activity_akun_baru extends AppCompatActivity {
 
                         // Showing error message if something goes wrong.
                         // Toast.makeText(activity_akun_baru.this, volleyError.toString(), Toast.LENGTH_LONG).show();
+
+                        Fail_Notif();
+                        Intent intent = new Intent(activity_akun_baru.this, MainActivity.class);
+                        startActivity(intent);
                     }
                 })
 
@@ -574,5 +592,68 @@ public class activity_akun_baru extends AppCompatActivity {
 
         // Adding the StringRequest object into requestQueue.
         requestQueue.add(stringRequest);
+    }
+
+    private void Success_Notif(){
+        Intent intent;
+        PendingIntent pendingIntent;
+        NotificationManager notifManager = (NotificationManager) getSystemService(this.NOTIFICATION_SERVICE);
+
+        String id = "ID_MANDORIN";
+        String title = "Mandorin";
+        android.support.v4.app.NotificationCompat.Builder builder;
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            int importance = NotificationManager.IMPORTANCE_HIGH;
+            NotificationChannel mChannel = notifManager.getNotificationChannel(id);
+            if (mChannel == null) {
+                mChannel = new NotificationChannel(id, title, importance);
+                mChannel.enableVibration(true);
+                notifManager.createNotificationChannel(mChannel);
+            }
+        }
+        builder = new android.support.v4.app.NotificationCompat.Builder(this,id);
+        builder.setContentTitle("Mandorin")
+                .setSmallIcon(R.mipmap.ic_launcher)
+                .setContentText("Data akun berhasil di perbaharui!")
+                .setDefaults(Notification.COLOR_DEFAULT)
+                .setAutoCancel(true)
+                .setPriority(Notification.PRIORITY_HIGH);
+        Notification notification = builder.build();
+        notifManager.notify(0, notification);
+    }
+
+    private void Fail_Notif(){
+        Intent intent;
+        PendingIntent pendingIntent;
+        NotificationManager notifManager = (NotificationManager) getSystemService(this.NOTIFICATION_SERVICE);
+
+        String id = "ID_MANDORIN";
+        String title = "Mandorin";
+        android.support.v4.app.NotificationCompat.Builder builder;
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            int importance = NotificationManager.IMPORTANCE_HIGH;
+            NotificationChannel mChannel = notifManager.getNotificationChannel(id);
+            if (mChannel == null) {
+                mChannel = new NotificationChannel(id, title, importance);
+                mChannel.enableVibration(true);
+                notifManager.createNotificationChannel(mChannel);
+            }
+        }
+        builder = new android.support.v4.app.NotificationCompat.Builder(this,id);
+        builder.setContentTitle("Mandorin")
+                .setSmallIcon(R.mipmap.ic_launcher)
+                .setContentText("Pembaharuan data akun, harap coba lagi !")
+                .setDefaults(Notification.COLOR_DEFAULT)
+                .setAutoCancel(true)
+                .setPriority(Notification.PRIORITY_HIGH);
+        Notification notification = builder.build();
+        notifManager.notify(0, notification);
+    }
+
+    private boolean internet_available(){
+        ConnectivityManager koneksi = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        return koneksi.getActiveNetworkInfo() != null;
     }
 }

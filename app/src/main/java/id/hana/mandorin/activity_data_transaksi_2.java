@@ -2,14 +2,21 @@ package id.hana.mandorin;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.ConnectivityManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
@@ -193,19 +200,23 @@ public class activity_data_transaksi_2 extends AppCompatActivity {
         kirim.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (selectedFilePath != null) {
-                    kirim_dialog();
+                if (internet_available()) {
+                    if (selectedFilePath != null) {
+                        kirim_dialog();
 
-                    dialog = ProgressDialog.show(activity_data_transaksi_2.this, "Menu Pembayaran", "Memproses...", true);
-                    new Thread(new Runnable() {
-                        @Override
-                        public void run() {
-                            //creating new thread to handle Http Operations
-                            uploadFile(selectedFilePath);
-                        }
-                    }).start();
+                        dialog = ProgressDialog.show(activity_data_transaksi_2.this, "Menu Pembayaran", "Memproses...", true);
+                        new Thread(new Runnable() {
+                            @Override
+                            public void run() {
+                                //creating new thread to handle Http Operations
+                                uploadFile(selectedFilePath);
+                            }
+                        }).start();
+                    } else {
+                        Toast.makeText(activity_data_transaksi_2.this, "Anda Belum Menggungah Berkas", Toast.LENGTH_LONG).show();
+                    }
                 } else {
-                    Toast.makeText(activity_data_transaksi_2.this, "Anda Belum Menggungah Berkas", Toast.LENGTH_LONG).show();
+                    Toast.makeText(activity_data_transaksi_2.this, "Harap periksa koneksi internet anda", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -482,8 +493,6 @@ public class activity_data_transaksi_2 extends AppCompatActivity {
                                     update_data_pembayaran_2();
                                 }
                             }
-                            Intent intent = new Intent(activity_data_transaksi_2.this, activity_data_pembayaran_konfirmasi.class);
-                            startActivity(intent);
                         } catch (IllegalArgumentException e) {
                             Toast.makeText(activity_data_transaksi_2.this, "Proses Gagal!", Toast.LENGTH_SHORT).show();
                             e.printStackTrace();
@@ -513,6 +522,15 @@ public class activity_data_transaksi_2 extends AppCompatActivity {
 
                         // Showing response message coming from server.
                         //Toast.makeText(activity_data_transaksi_2.this, ServerResponse, Toast.LENGTH_LONG).show();
+                        if (ServerResponse.length() > 10) {
+                            Success_Notif();
+                            Intent intent = new Intent(activity_data_transaksi_2.this, activity_data_pembayaran_konfirmasi.class);
+                            startActivity(intent);
+                        } else {
+                            Fail_Notif();
+                            Intent intent = new Intent(activity_data_transaksi_2.this, MainActivity.class);
+                            startActivity(intent);
+                        }
                     }
                 },
                 new Response.ErrorListener() {
@@ -521,6 +539,9 @@ public class activity_data_transaksi_2 extends AppCompatActivity {
 
                         // Showing error message if something goes wrong.
                         Toast.makeText(activity_data_transaksi_2.this, volleyError.toString(), Toast.LENGTH_LONG).show();
+                        Fail_Notif();
+                        Intent intent = new Intent(activity_data_transaksi_2.this, MainActivity.class);
+                        startActivity(intent);
                     }
                 })
 
@@ -627,6 +648,15 @@ public class activity_data_transaksi_2 extends AppCompatActivity {
 
                         // Showing response message coming from server.
                         //Toast.makeText(activity_data_transaksi_2.this, ServerResponse, Toast.LENGTH_LONG).show();
+                        if (ServerResponse.length() > 10) {
+                            Success_Notif();
+                            Intent intent = new Intent(activity_data_transaksi_2.this, activity_data_pembayaran_konfirmasi.class);
+                            startActivity(intent);
+                        } else {
+                            Fail_Notif();
+                            Intent intent = new Intent(activity_data_transaksi_2.this, MainActivity.class);
+                            startActivity(intent);
+                        }
                     }
                 },
                 new Response.ErrorListener() {
@@ -635,6 +665,9 @@ public class activity_data_transaksi_2 extends AppCompatActivity {
 
                         // Showing error message if something goes wrong.
                         Toast.makeText(activity_data_transaksi_2.this, volleyError.toString(), Toast.LENGTH_LONG).show();
+                        Fail_Notif();
+                        Intent intent = new Intent(activity_data_transaksi_2.this, MainActivity.class);
+                        startActivity(intent);
                     }
                 })
 
@@ -729,5 +762,76 @@ public class activity_data_transaksi_2 extends AppCompatActivity {
 
         // Adding the StringRequest object into requestQueue.
         requestQueue.add(stringRequest);
+    }
+
+    private void Success_Notif(){
+        Intent intent;
+        PendingIntent pendingIntent;
+        NotificationManager notifManager = (NotificationManager) getSystemService(this.NOTIFICATION_SERVICE);
+
+        String id = "ID_MANDORIN";
+        String title = "Mandorin";
+        android.support.v4.app.NotificationCompat.Builder builder;
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            int importance = NotificationManager.IMPORTANCE_HIGH;
+            NotificationChannel mChannel = notifManager.getNotificationChannel(id);
+            if (mChannel == null) {
+                mChannel = new NotificationChannel(id, title, importance);
+                mChannel.enableVibration(true);
+                notifManager.createNotificationChannel(mChannel);
+            }
+        }
+        builder = new android.support.v4.app.NotificationCompat.Builder(this,id);
+        intent = new Intent(getApplicationContext(), activity_transaksi.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        pendingIntent = PendingIntent.getActivity(getApplicationContext(), 0, intent, 0);
+        builder.setContentTitle("Mandorin")
+                .setSmallIcon(R.mipmap.ic_launcher)
+                .setContentText("Pembayaran anda sudah di terima, Harap tunggu konfirmasi pembayaran")
+                .setDefaults(Notification.COLOR_DEFAULT)
+                .setAutoCancel(true)
+                .setContentIntent(pendingIntent)
+                .setPriority(Notification.PRIORITY_HIGH);
+        Notification notification = builder.build();
+        notifManager.notify(0, notification);
+    }
+
+    private void Fail_Notif(){
+        Intent intent;
+        PendingIntent pendingIntent;
+        NotificationManager notifManager = (NotificationManager) getSystemService(this.NOTIFICATION_SERVICE);
+
+        String id = "ID_MANDORIN";
+        String title = "Mandorin";
+        android.support.v4.app.NotificationCompat.Builder builder;
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            int importance = NotificationManager.IMPORTANCE_HIGH;
+            NotificationChannel mChannel = notifManager.getNotificationChannel(id);
+            if (mChannel == null) {
+                mChannel = new NotificationChannel(id, title, importance);
+                mChannel.enableVibration(true);
+                notifManager.createNotificationChannel(mChannel);
+            }
+        }
+        builder = new android.support.v4.app.NotificationCompat.Builder(this,id);
+        intent = new Intent(getApplicationContext(), MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        pendingIntent = PendingIntent.getActivity(getApplicationContext(), 0, intent, 0);
+        builder.setContentTitle("Mandorin")
+                .setSmallIcon(R.mipmap.ic_launcher)
+                .setContentText("Proses upload bukti pembayaran gagal, harap coba lagi !")
+                .setDefaults(Notification.COLOR_DEFAULT)
+                .setAutoCancel(true)
+                .setContentIntent(pendingIntent)
+                .setPriority(Notification.PRIORITY_HIGH);
+        Notification notification = builder.build();
+        notifManager.notify(0, notification);
+    }
+
+    private boolean internet_available(){
+        ConnectivityManager koneksi = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        return koneksi.getActiveNetworkInfo() != null;
     }
 }
