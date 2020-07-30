@@ -11,6 +11,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
+import android.net.ConnectivityManager;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -159,7 +160,11 @@ public class activity_layanan_jasa extends AppCompatActivity {
         kirim.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                send_data();
+                if (internet_available()) {
+                    send_data();
+                } else {
+                    Toast.makeText(activity_layanan_jasa.this, "Harap periksa koneksi internet anda", Toast.LENGTH_LONG).show();
+                }
             }
         });
 
@@ -555,5 +560,10 @@ public class activity_layanan_jasa extends AppCompatActivity {
                 .setPriority(Notification.PRIORITY_HIGH);
         Notification notification = builder.build();
         notifManager.notify(0, notification);
+    }
+
+    private boolean internet_available(){
+        ConnectivityManager koneksi = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        return koneksi.getActiveNetworkInfo() != null;
     }
 }
