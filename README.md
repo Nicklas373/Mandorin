@@ -6,7 +6,7 @@
 Mandorin merupakan sebuah aplikasi berbasis mobile  &amp; website yang diharapkan dapat membantu masyarakat dalam memenuhi kebutuhan pelayanan jasa konstruksi.
 
 # Status Aplikasi
-[![Build Status](https://travis-ci.org/Nicklas373/Mandorin.svg?branch=master)](https://travis-ci.org/Nicklas373/Mandorin) ![Tahap](https://img.shields.io/badge/Tahap%20Pengembangan-Stabil-green) ![Version](https://img.shields.io/badge/Versi-1.2--20200607-blue) ![Package](https://img.shields.io/badge/Package-Android%20App-blue.svg)
+[![Build Status](https://travis-ci.org/Nicklas373/Mandorin.svg?branch=master)](https://travis-ci.org/Nicklas373/Mandorin) ![Tahap](https://img.shields.io/badge/Tahap%20Pengembangan-Stabil-green) ![Version](https://img.shields.io/badge/Versi-1.4.0--20200730-blue) ![Package](https://img.shields.io/badge/Package-Android%20App-blue.svg)
 
 # Fitur Aplikasi
 - Profil Mandor <br> (Pengguna dapat melihat informasi mengenai mandor yang anda pilih) <br>
@@ -19,7 +19,7 @@ Mandorin merupakan sebuah aplikasi berbasis mobile  &amp; website yang diharapka
 # Kunjungi dan Download Aplikasi Kami
 - [Website](http://www.mandorin.site)
 - [Download - Server Mandorin](http://mandorin.site/mandorin/app/mandorin.apk)
-- [Download - Rilis GitHub](https://github.com/Nicklas373/Mandorin/releases/tag/v1.0-20191212)
+- [Download - Rilis GitHub](https://github.com/Nicklas373/Mandorin/releases)
 
 # Informasi Pengembangan Aplikasi:
 - Pembuatan pertama (10 Oktober 2019 | 23:20 GMT+7)
@@ -43,5 +43,6 @@ Mandorin merupakan sebuah aplikasi berbasis mobile  &amp; website yang diharapka
 - Pembuatan kesembilan belas (11 April 2020 | 10:57 GMT+7)
 - Pembuatan keduapuluh (11 Mei 2020 | 01:25 GMT+7)
 - Pembuatan keduapuluh satu (07 Juni 2020 | 22:41 GMT+7)
+- Pembuatan keduapuluh dua (30 Juli 2020 | 15:10 GMT+7)
 
 # HANA-CI Build Project || 2016-2020
