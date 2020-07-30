@@ -162,8 +162,9 @@ public class activity_riwayat_pembayaran extends AppCompatActivity {
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
-
                         JSON_PARSE_DATA_AFTER_WEBCALL(response);
+                        empty_data_riwayat_pembayaran.setVisibility(View.INVISIBLE);
+                        empty_data_riwayat_pembayaran_text.setVisibility(View.INVISIBLE);
                     }
                 },
                 new Response.ErrorListener() {

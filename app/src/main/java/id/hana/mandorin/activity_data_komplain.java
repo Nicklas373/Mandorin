@@ -164,6 +164,8 @@ public class activity_data_komplain extends AppCompatActivity {
                     @Override
                     public void onResponse(JSONArray response) {
                         JSON_PARSE_DATA_AFTER_WEBCALL(response);
+                        empty_data_komplain.setVisibility(View.INVISIBLE);
+                        empty_data_komplain_text.setVisibility(View.INVISIBLE);
                     }
                 },
                 new Response.ErrorListener() {

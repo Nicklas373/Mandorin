@@ -165,6 +165,8 @@ public class activity_riwayat_kontrak extends AppCompatActivity {
                     public void onResponse(JSONArray response) {
 
                         JSON_PARSE_DATA_AFTER_WEBCALL(response);
+                        empty_riwayat_kontrak.setVisibility(View.INVISIBLE);
+                        empty_riwayat_kontrak_text.setVisibility(View.INVISIBLE);
                     }
                 },
                 new Response.ErrorListener() {

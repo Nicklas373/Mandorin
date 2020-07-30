@@ -171,6 +171,8 @@ public class activity_data_pemesan extends AppCompatActivity {
                     @Override
                     public void onResponse(JSONArray response) {
                         JSON_PARSE_DATA_AFTER_WEBCALL(response);
+                        empty_data_pemesan_text.setVisibility(View.INVISIBLE);
+                        empty_data_pemesan.setVisibility(View.INVISIBLE);
                     }
                 },
                 new Response.ErrorListener() {
