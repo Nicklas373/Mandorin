@@ -63,8 +63,8 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class activity_akun_baru extends AppCompatActivity {
 
     private CircleImageView user_pic, user_pic_edit;
-    private TextView user_name, user_mail, user_dummy, user_new_dummy;
-    private EditText user_nik, user_umur, user_phone, user_address;
+    private TextView user_mail, user_dummy, user_new_dummy;
+    private EditText user_name, user_nik, user_umur, user_phone, user_address;
     private ImageView back, edit_akun, simpan, batal;
     SharedPreferences pref;
     SharedPreferences.Editor editor;
@@ -98,8 +98,8 @@ public class activity_akun_baru extends AppCompatActivity {
         user_pic_edit = (CircleImageView) findViewById(R.id.user_pic_edit);
         user_dummy = (TextView) findViewById(R.id.dummy_userpic_akun_baru);
         user_new_dummy = (TextView) findViewById(R.id.dummy_new_userpic_akun_baru);
-        user_name = (TextView) findViewById(R.id.user_name);
         user_mail = (TextView) findViewById(R.id.user_email);
+        user_name = (EditText) findViewById(R.id.user_name);
         user_nik = (EditText) findViewById(R.id.user_nik);
         user_umur = (EditText) findViewById(R.id.user_umur);
         user_phone = (EditText) findViewById(R.id.user_telp);
@@ -126,6 +126,7 @@ public class activity_akun_baru extends AppCompatActivity {
                 batal.setVisibility(View.GONE);
                 simpan.setVisibility(View.GONE);
 
+                user_name.setFocusableInTouchMode(false);
                 user_umur.setFocusableInTouchMode(false);
                 user_nik.setFocusableInTouchMode(false);
                 user_phone.setFocusableInTouchMode(false);
@@ -140,7 +141,9 @@ public class activity_akun_baru extends AppCompatActivity {
         simpan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (TextUtils.isEmpty(user_umur.getText().toString())) {
+                if (TextUtils.isEmpty(user_name.getText().toString())) {
+                    user_name.setError("Harap Masukkan Nama");
+                } else if (TextUtils.isEmpty(user_umur.getText().toString())) {
                     user_umur.setError("Harap Masukkan Umur");
                 } else if (TextUtils.isEmpty(user_nik.getText().toString())) {
                     user_nik.setError("Harap Masukkan NIK");
@@ -151,6 +154,7 @@ public class activity_akun_baru extends AppCompatActivity {
                 } else {
                     if (internet_available()) {
                         user_pic.setFocusableInTouchMode(false);
+                        user_name.setFocusableInTouchMode(false);
                         user_umur.setFocusableInTouchMode(false);
                         user_nik.setFocusableInTouchMode(false);
                         user_phone.setFocusableInTouchMode(false);
@@ -173,6 +177,7 @@ public class activity_akun_baru extends AppCompatActivity {
                     simpan.setVisibility(View.VISIBLE);
 
                     user_pic.setFocusableInTouchMode(true);
+                    user_name.setFocusableInTouchMode(true);
                     user_umur.setFocusableInTouchMode(true);
                     user_nik.setFocusableInTouchMode(true);
                     user_phone.setFocusableInTouchMode(true);
@@ -193,6 +198,7 @@ public class activity_akun_baru extends AppCompatActivity {
                 user_pic_edit.setVisibility(View.GONE);
 
                 user_pic_edit.setFocusableInTouchMode(false);
+                user_name.setFocusableInTouchMode(false);
                 user_umur.setFocusableInTouchMode(false);
                 user_nik.setFocusableInTouchMode(false);
                 user_phone.setFocusableInTouchMode(false);
@@ -341,17 +347,17 @@ public class activity_akun_baru extends AppCompatActivity {
                                 }
                             }).start();
                         }
-                        dialog.dismiss();
                         update_data_user();
 
                         final Handler handler = new Handler();
                         handler.postDelayed(new Runnable() {
                             @Override
                             public void run() {
+                                finish();
                                 Intent intent = new Intent(activity_akun_baru.this, activity_akun.class);
                                 startActivity(intent);
                             }
-                        }, 5000L); //5000 L = 5 detik
+                        }, 3000L); //3000 L = 3 detik
                     }
                 })
                 .setNegativeButton("Tidak",new DialogInterface.OnClickListener() {
@@ -537,7 +543,13 @@ public class activity_akun_baru extends AppCompatActivity {
                         // Showing response message coming from server.
                         //Toast.makeText(activity_edit_akun.this, ServerResponse, Toast.LENGTH_LONG).show();
                         if (ServerResponse.length() > 15) {
-                            Success_Notif();
+                            final Handler handler = new Handler();
+                            handler.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    Success_Notif();
+                                }
+                            }, 3000L); //3000 L = 3 detik
                         } else {
                             Fail_Notif();
                         }
@@ -613,11 +625,15 @@ public class activity_akun_baru extends AppCompatActivity {
             }
         }
         builder = new android.support.v4.app.NotificationCompat.Builder(this,id);
+        intent = new Intent(getApplicationContext(), activity_akun_baru.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        pendingIntent = PendingIntent.getActivity(getApplicationContext(), 0, intent, 0);
         builder.setContentTitle("Mandorin")
                 .setSmallIcon(R.mipmap.ic_launcher)
-                .setContentText("Data akun berhasil di perbaharui!")
+                .setContentText("Data akun anda berhasil di perbaharui!")
                 .setDefaults(Notification.COLOR_DEFAULT)
                 .setAutoCancel(true)
+                .setContentIntent(pendingIntent)
                 .setPriority(Notification.PRIORITY_HIGH);
         Notification notification = builder.build();
         notifManager.notify(0, notification);
