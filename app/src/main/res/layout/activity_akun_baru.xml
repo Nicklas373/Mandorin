@@ -37,15 +37,19 @@
             android:contentDescription="@string/app_mandor_menu_edit_akun_1"
             android:src="@drawable/camera"/>
 
-        <TextView
+        <EditText
             android:id="@+id/user_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"
             android:fontFamily="@font/test"
-            android:layout_marginTop="165dp"
-            android:textSize="18sp"
-            android:textColor="#fff" />
+            android:layout_marginTop="155dp"
+            android:textSize="20sp"
+            android:textColor="#fff"
+            android:inputType="textPersonName"
+            android:hint="@string/empty"
+            android:focusable="false"
+            android:importantForAutofill="no"/>
 
             <ImageView
                 android:layout_width="24dp"
