@@ -19,6 +19,7 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
@@ -551,7 +552,13 @@ public class activity_akun_baru extends AppCompatActivity {
                                 }
                             }, 3000L); //3000 L = 3 detik
                         } else {
-                            Fail_Notif();
+                            final Handler handler = new Handler();
+                            handler.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    Fail_Notif();
+                                }
+                            }, 3000L); //3000 L = 3 detik
                         }
                     }
                 },
@@ -562,9 +569,15 @@ public class activity_akun_baru extends AppCompatActivity {
                         // Showing error message if something goes wrong.
                         Toast.makeText(activity_akun_baru.this, volleyError.toString(), Toast.LENGTH_LONG).show();
 
-                        Fail_Notif();
-                        Intent intent = new Intent(activity_akun_baru.this, MainActivity.class);
-                        startActivity(intent);
+                        final Handler handler = new Handler();
+                        handler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                Fail_Notif();
+                                Intent intent = new Intent(activity_akun_baru.this, MainActivity.class);
+                                startActivity(intent);
+                            }
+                        }, 3000L); //3000 L = 3 detik
                     }
                 })
 
@@ -608,11 +621,12 @@ public class activity_akun_baru extends AppCompatActivity {
 
     private void Success_Notif(){
         Intent intent;
-        PendingIntent pendingIntent;
         NotificationManager notifManager = (NotificationManager) getSystemService(this.NOTIFICATION_SERVICE);
 
         String id = "ID_MANDORIN";
         String title = "Mandorin";
+        String message = "Data Akun anda berhasil di perbaharui!";
+        String reply = "Lihat Disini";
         android.support.v4.app.NotificationCompat.Builder builder;
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -626,14 +640,19 @@ public class activity_akun_baru extends AppCompatActivity {
         }
         builder = new android.support.v4.app.NotificationCompat.Builder(this,id);
         intent = new Intent(getApplicationContext(), activity_akun_baru.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        pendingIntent = PendingIntent.getActivity(getApplicationContext(), 0, intent, 0);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        PendingIntent notifyPendingIntent = PendingIntent.getActivity(
+                this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT
+        );
         builder.setContentTitle("Mandorin")
                 .setSmallIcon(R.mipmap.ic_launcher)
-                .setContentText("Data akun anda berhasil di perbaharui!")
+                .setContentTitle("Data Akun")
+                .setContentText(message)
                 .setDefaults(Notification.COLOR_DEFAULT)
                 .setAutoCancel(true)
-                .setContentIntent(pendingIntent)
+                .setStyle(new NotificationCompat.BigTextStyle())
+                .addAction(R.drawable.mandorin_icon, reply,
+                        notifyPendingIntent)
                 .setPriority(Notification.PRIORITY_HIGH);
         Notification notification = builder.build();
         notifManager.notify(0, notification);
@@ -641,11 +660,11 @@ public class activity_akun_baru extends AppCompatActivity {
 
     private void Fail_Notif(){
         Intent intent;
-        PendingIntent pendingIntent;
         NotificationManager notifManager = (NotificationManager) getSystemService(this.NOTIFICATION_SERVICE);
 
         String id = "ID_MANDORIN";
         String title = "Mandorin";
+        String message = "Pembaharuan data akun gagal, harap coba lagi !";
         android.support.v4.app.NotificationCompat.Builder builder;
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -658,11 +677,19 @@ public class activity_akun_baru extends AppCompatActivity {
             }
         }
         builder = new android.support.v4.app.NotificationCompat.Builder(this,id);
+        intent = new Intent(getApplicationContext(), activity_akun.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        PendingIntent notifyPendingIntent = PendingIntent.getActivity(
+                this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT
+        );
         builder.setContentTitle("Mandorin")
                 .setSmallIcon(R.mipmap.ic_launcher)
-                .setContentText("Pembaharuan data akun, harap coba lagi !")
+                .setContentTitle("Data Akun")
+                .setContentText(message)
                 .setDefaults(Notification.COLOR_DEFAULT)
+                .setStyle(new NotificationCompat.BigTextStyle())
                 .setAutoCancel(true)
+                .setContentIntent(notifyPendingIntent)
                 .setPriority(Notification.PRIORITY_HIGH);
         Notification notification = builder.build();
         notifManager.notify(0, notification);

@@ -148,7 +148,7 @@ public class activity_akun extends AppCompatActivity {
                 .setPositiveButton("Log Out",new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog,int id) {
                         dialog = ProgressDialog.show(activity_akun.this, "Log Out", "Memproses...", true);
-                        if(internet_available()){
+                        if (internet_available()) {
                             update_uid();
                             auth.signOut();
                             editor=pref.edit();
@@ -158,7 +158,7 @@ public class activity_akun extends AppCompatActivity {
                             startActivity(intent);
                             Toast.makeText(getApplicationContext(), "Anda sudah log out", Toast.LENGTH_SHORT).show();
                             finish();
-                        }else{
+                        } else {
                             Toast.makeText(getApplicationContext(), "Harap Periksa Koneksi Internet Anda", Toast.LENGTH_SHORT).show();
                             finish();
                         }
@@ -191,10 +191,10 @@ public class activity_akun extends AppCompatActivity {
                 .setCancelable(false)
                 .setPositiveButton("Login",new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog,int id) {
-                        if(internet_available()){
+                        if (internet_available()) {
                             Intent intent = new Intent(activity_akun.this, activity_login.class);
                             startActivity(intent);
-                        }else{
+                        } else {
                             Toast.makeText(getApplicationContext(), "Harap Periksa Koneksi Internet Anda", Toast.LENGTH_SHORT).show();
                             finish();
                         }
