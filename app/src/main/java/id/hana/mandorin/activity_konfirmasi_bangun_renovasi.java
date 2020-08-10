@@ -21,6 +21,6 @@ public class activity_konfirmasi_bangun_renovasi extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
                 finish();
             }
-        }, 5000L); //5000 L = 5 detik
+        }, 3000L); //3000 L = 3 detik
     }
 }
