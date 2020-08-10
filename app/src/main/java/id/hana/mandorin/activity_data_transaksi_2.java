@@ -18,8 +18,10 @@ import android.net.ConnectivityManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -200,11 +202,11 @@ public class activity_data_transaksi_2 extends AppCompatActivity {
         kirim.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 if (internet_available()) {
                     if (selectedFilePath != null) {
                         kirim_dialog();
 
-                        dialog = ProgressDialog.show(activity_data_transaksi_2.this, "Menu Pembayaran", "Memproses...", true);
                         new Thread(new Runnable() {
                             @Override
                             public void run() {
@@ -298,7 +300,6 @@ public class activity_data_transaksi_2 extends AppCompatActivity {
         String regex = fileName.replaceAll("\\s","");
 
         if (!selectedFile.isFile()) {
-            dialog.dismiss();
 
             runOnUiThread(new Runnable() {
                 @Override
@@ -388,7 +389,6 @@ public class activity_data_transaksi_2 extends AppCompatActivity {
                 e.printStackTrace();
                 Toast.makeText(activity_data_transaksi_2.this, "Tidak Dapat Membaca File", Toast.LENGTH_SHORT).show();
             }
-            dialog.dismiss();
             return serverResponseCode;
         }
     }
@@ -485,10 +485,14 @@ public class activity_data_transaksi_2 extends AppCompatActivity {
                     public void onClick(DialogInterface dialog,int id) {
                         try {
                             if (status_dua_1.getText().toString().equalsIgnoreCase("Menunggu")) {
+                                dialog = ProgressDialog.show(activity_data_transaksi_2.this, "Menu Pembayaran", "Memproses...", true);
+
                                 if (presentase_1.getText().toString().equalsIgnoreCase("80")) {
                                     update_data_pembayaran();
                                 }
                             } else  if (status_tiga_1.getText().toString().equalsIgnoreCase("Menunggu")) {
+                                dialog = ProgressDialog.show(activity_data_transaksi_2.this, "Menu Pembayaran", "Memproses...", true);
+
                                 if (presentase_1.getText().toString().equalsIgnoreCase("95")) {
                                     update_data_pembayaran_2();
                                 }
@@ -520,16 +524,30 @@ public class activity_data_transaksi_2 extends AppCompatActivity {
                     @Override
                     public void onResponse(String ServerResponse) {
 
-                        // Showing response message coming from server.
-                        //Toast.makeText(activity_data_transaksi_2.this, ServerResponse, Toast.LENGTH_LONG).show();
                         if (ServerResponse.length() > 10) {
-                            Success_Notif();
-                            Intent intent = new Intent(activity_data_transaksi_2.this, activity_data_pembayaran_konfirmasi.class);
-                            startActivity(intent);
+
+                            final Handler handler = new Handler();
+                            handler.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    Success_Notif();
+                                    Intent intent = new Intent(activity_data_transaksi_2.this, activity_data_pembayaran_konfirmasi.class);
+                                    startActivity(intent);
+                                }
+                            }, 3000L); //3000 L = 3 detik
+
                         } else {
-                            Fail_Notif();
-                            Intent intent = new Intent(activity_data_transaksi_2.this, MainActivity.class);
-                            startActivity(intent);
+
+                            final Handler handler = new Handler();
+                            handler.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    Fail_Notif();
+                                    Intent intent = new Intent(activity_data_transaksi_2.this, MainActivity.class);
+                                    startActivity(intent);
+                                }
+                            }, 3000L); //3000 L = 3 detik
+
                         }
                     }
                 },
@@ -539,9 +557,16 @@ public class activity_data_transaksi_2 extends AppCompatActivity {
 
                         // Showing error message if something goes wrong.
                         Toast.makeText(activity_data_transaksi_2.this, volleyError.toString(), Toast.LENGTH_LONG).show();
-                        Fail_Notif();
-                        Intent intent = new Intent(activity_data_transaksi_2.this, MainActivity.class);
-                        startActivity(intent);
+
+                        final Handler handler = new Handler();
+                        handler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                Fail_Notif();
+                                Intent intent = new Intent(activity_data_transaksi_2.this, MainActivity.class);
+                                startActivity(intent);
+                            }
+                        }, 3000L); //3000 L = 3 detik
                     }
                 })
 
@@ -646,16 +671,31 @@ public class activity_data_transaksi_2 extends AppCompatActivity {
                     @Override
                     public void onResponse(String ServerResponse) {
 
-                        // Showing response message coming from server.
-                        //Toast.makeText(activity_data_transaksi_2.this, ServerResponse, Toast.LENGTH_LONG).show();
                         if (ServerResponse.length() > 10) {
-                            Success_Notif();
-                            Intent intent = new Intent(activity_data_transaksi_2.this, activity_data_pembayaran_konfirmasi.class);
-                            startActivity(intent);
+
+                            final Handler handler = new Handler();
+                            handler.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    Success_Notif_2();
+                                    Intent intent = new Intent(activity_data_transaksi_2.this, activity_data_pembayaran_konfirmasi.class);
+                                    startActivity(intent);
+                                }
+                            }, 3000L); //3000 L = 3 detik
+
+
                         } else {
-                            Fail_Notif();
-                            Intent intent = new Intent(activity_data_transaksi_2.this, MainActivity.class);
-                            startActivity(intent);
+
+                            final Handler handler = new Handler();
+                            handler.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    Fail_Notif();
+                                    Intent intent = new Intent(activity_data_transaksi_2.this, MainActivity.class);
+                                    startActivity(intent);
+                                }
+                            }, 3000L); //3000 L = 3 detik
+
                         }
                     }
                 },
@@ -665,9 +705,17 @@ public class activity_data_transaksi_2 extends AppCompatActivity {
 
                         // Showing error message if something goes wrong.
                         Toast.makeText(activity_data_transaksi_2.this, volleyError.toString(), Toast.LENGTH_LONG).show();
-                        Fail_Notif();
-                        Intent intent = new Intent(activity_data_transaksi_2.this, MainActivity.class);
-                        startActivity(intent);
+
+                        final Handler handler = new Handler();
+                        handler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                Fail_Notif();
+                                Intent intent = new Intent(activity_data_transaksi_2.this, MainActivity.class);
+                                startActivity(intent);
+                            }
+                        }, 3000L); //3000 L = 3 detik
+
                     }
                 })
 
@@ -766,11 +814,12 @@ public class activity_data_transaksi_2 extends AppCompatActivity {
 
     private void Success_Notif(){
         Intent intent;
-        PendingIntent pendingIntent;
         NotificationManager notifManager = (NotificationManager) getSystemService(this.NOTIFICATION_SERVICE);
 
         String id = "ID_MANDORIN";
         String title = "Mandorin";
+        String message = "Pembayaran ke 2 anda sudah berhasil !, Harap tunggu konfirmasi pembayaran selanjutnya";
+        String reply = "Lihat disini";
         android.support.v4.app.NotificationCompat.Builder builder;
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -779,19 +828,65 @@ public class activity_data_transaksi_2 extends AppCompatActivity {
             if (mChannel == null) {
                 mChannel = new NotificationChannel(id, title, importance);
                 mChannel.enableVibration(true);
+                mChannel.enableLights(true);
                 notifManager.createNotificationChannel(mChannel);
             }
         }
         builder = new android.support.v4.app.NotificationCompat.Builder(this,id);
         intent = new Intent(getApplicationContext(), activity_transaksi.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        pendingIntent = PendingIntent.getActivity(getApplicationContext(), 0, intent, 0);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        PendingIntent notifyPendingIntent = PendingIntent.getActivity(
+                this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT
+        );
         builder.setContentTitle("Mandorin")
                 .setSmallIcon(R.mipmap.ic_launcher)
-                .setContentText("Pembayaran anda sudah di terima, Harap tunggu konfirmasi pembayaran")
+                .setContentTitle("Status Pembayaran")
+                .setContentText(message)
                 .setDefaults(Notification.COLOR_DEFAULT)
                 .setAutoCancel(true)
-                .setContentIntent(pendingIntent)
+                .setStyle(new NotificationCompat.BigTextStyle())
+                .setPriority(Notification.PRIORITY_HIGH)
+                .addAction(R.drawable.mandorin_icon, reply,
+                        notifyPendingIntent);
+        Notification notification = builder.build();
+        notifManager.notify(0, notification);
+    }
+
+    private void Success_Notif_2(){
+        Intent intent;
+        NotificationManager notifManager = (NotificationManager) getSystemService(this.NOTIFICATION_SERVICE);
+
+        String id = "ID_MANDORIN";
+        String title = "Mandorin";
+        String message = "Pembayaran ke 3 anda sudah berhasil !, Harap tunggu konfirmasi pembayaran selanjutnya";
+        String reply = "Lihat disini";
+        android.support.v4.app.NotificationCompat.Builder builder;
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            int importance = NotificationManager.IMPORTANCE_HIGH;
+            NotificationChannel mChannel = notifManager.getNotificationChannel(id);
+            if (mChannel == null) {
+                mChannel = new NotificationChannel(id, title, importance);
+                mChannel.enableVibration(true);
+                mChannel.enableLights(true);
+                notifManager.createNotificationChannel(mChannel);
+            }
+        }
+        builder = new android.support.v4.app.NotificationCompat.Builder(this,id);
+        intent = new Intent(getApplicationContext(), activity_transaksi.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        PendingIntent notifyPendingIntent = PendingIntent.getActivity(
+                this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT
+        );
+        builder.setContentTitle("Mandorin")
+                .setSmallIcon(R.mipmap.ic_launcher)
+                .setContentTitle("Status Pembayaran")
+                .setContentText(message)
+                .setDefaults(Notification.COLOR_DEFAULT)
+                .setAutoCancel(true)
+                .setStyle(new NotificationCompat.BigTextStyle())
+                .addAction(R.drawable.mandorin_icon, reply,
+                        notifyPendingIntent)
                 .setPriority(Notification.PRIORITY_HIGH);
         Notification notification = builder.build();
         notifManager.notify(0, notification);
@@ -804,6 +899,7 @@ public class activity_data_transaksi_2 extends AppCompatActivity {
 
         String id = "ID_MANDORIN";
         String title = "Mandorin";
+        String message = "Upload bukti pembayaran gagal, harap coba lagi !";
         android.support.v4.app.NotificationCompat.Builder builder;
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -821,10 +917,12 @@ public class activity_data_transaksi_2 extends AppCompatActivity {
         pendingIntent = PendingIntent.getActivity(getApplicationContext(), 0, intent, 0);
         builder.setContentTitle("Mandorin")
                 .setSmallIcon(R.mipmap.ic_launcher)
-                .setContentText("Proses upload bukti pembayaran gagal, harap coba lagi !")
+                .setContentTitle("Status Pembayaran")
+                .setContentText(message)
                 .setDefaults(Notification.COLOR_DEFAULT)
                 .setAutoCancel(true)
                 .setContentIntent(pendingIntent)
+                .setStyle(new NotificationCompat.BigTextStyle())
                 .setPriority(Notification.PRIORITY_HIGH);
         Notification notification = builder.build();
         notifManager.notify(0, notification);
