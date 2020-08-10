@@ -10,7 +10,6 @@ import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -196,7 +195,6 @@ public class activity_data_komplain extends AppCompatActivity {
                 GetDataAdapter3.setStatus_komplain(json.getString(JSON_STATUS_KOMPLAIN_KONTRAK));
 
             } catch (JSONException e) {
-
                 e.printStackTrace();
             }
             GetDataAdapter4.add(GetDataAdapter3);

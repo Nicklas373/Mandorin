@@ -54,7 +54,7 @@ public class activity_data_komplain_user extends AppCompatActivity {
         data_komplain.setText(komplain_kontrak_1);
         status_komplain.setText(status_kontrak_komplain_1);
         String status = status_komplain.getText().toString();
-        if (status.equalsIgnoreCase("Konfirmasi")){
+        if (status.equalsIgnoreCase("Konfirmasi")) {
             status_komplain.setTextColor(Color.parseColor("#003077"));
             status_komplain.setTypeface(status_komplain.getTypeface(), Typeface.BOLD);
         } else if (status.equalsIgnoreCase("Pending")) {

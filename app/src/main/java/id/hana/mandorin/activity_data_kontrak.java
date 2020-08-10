@@ -217,7 +217,6 @@ public class activity_data_kontrak extends AppCompatActivity {
                 GetDataAdapter3.setNama_mandor(json.getString(JSON_NAMA_MANDOR));
 
             } catch (JSONException e) {
-
                 e.printStackTrace();
             }
             GetDataAdapter4.add(GetDataAdapter3);

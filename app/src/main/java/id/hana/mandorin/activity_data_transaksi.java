@@ -291,6 +291,7 @@ public class activity_data_transaksi extends AppCompatActivity {
             }
         } else if (Status_tiga.getText().toString().equalsIgnoreCase("Memproses")) {
             if (Presentase.getText().toString().equalsIgnoreCase("95")) {
+
                 /* I want to make sure if invoice from second payment is visible when
                  * user already paid or processed
                  */
@@ -323,7 +324,7 @@ public class activity_data_transaksi extends AppCompatActivity {
         }
         if (Status_empat.getText().toString().equalsIgnoreCase("Menunggu")) {
             if (Presentase.getText().toString().equalsIgnoreCase("100")) {
-                Pembayaran_2.setVisibility(View.GONE);
+
                 /* I want to make sure if invoice from second payment is visible when
                  * user already paid or processed
                  */
@@ -338,6 +339,7 @@ public class activity_data_transaksi extends AppCompatActivity {
                     invoice_3.setVisibility(View.VISIBLE);
                 }
 
+                Pembayaran_2.setVisibility(View.GONE);
                 invoice_4.setVisibility(View.GONE);
                 img_status_pembayaran.setImageDrawable(getResources().getDrawable(R.drawable.lunas_6, getApplicationContext().getTheme()));
                 int result = Integer.parseInt(total_empat);
@@ -348,7 +350,7 @@ public class activity_data_transaksi extends AppCompatActivity {
             }
         } else if (Status_empat.getText().toString().equalsIgnoreCase("Lunas")) {
             if (Presentase.getText().toString().equalsIgnoreCase("100")) {
-                Pembayaran_2.setVisibility(View.GONE);
+
                 /* I want to make sure if invoice from second payment is visible when
                  * user already paid or processed
                  */
@@ -363,6 +365,7 @@ public class activity_data_transaksi extends AppCompatActivity {
                     invoice_3.setVisibility(View.VISIBLE);
                 }
 
+                Pembayaran_2.setVisibility(View.GONE);
                 invoice_4.setVisibility(View.VISIBLE);
                 img_status_pembayaran.setImageDrawable(getResources().getDrawable(R.drawable.lunas_7, getApplicationContext().getTheme()));
                 Toast.makeText(getApplicationContext(), "Pembayaran ke 4 anda sudah lunas", Toast.LENGTH_SHORT).show();

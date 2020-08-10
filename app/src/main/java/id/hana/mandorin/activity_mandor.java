@@ -140,7 +140,6 @@ public class activity_mandor extends AppCompatActivity {
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
-
                         JSON_PARSE_DATA_AFTER_WEBCALL(response);
                     }
                 },
