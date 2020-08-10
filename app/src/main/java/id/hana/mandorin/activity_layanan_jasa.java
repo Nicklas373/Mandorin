@@ -15,6 +15,8 @@ import android.net.ConnectivityManager;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
@@ -52,7 +54,6 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
-import java.util.regex.Pattern;
 
 public class activity_layanan_jasa extends AppCompatActivity {
 
@@ -344,15 +345,26 @@ public class activity_layanan_jasa extends AppCompatActivity {
                     public void onResponse(String ServerResponse) {
 
                         // Showing response message coming from server.
-                        // Toast.makeText(activity_layanan_jasa.this, ServerResponse, Toast.LENGTH_LONG).show();
                        if (ServerResponse.length() > 10) {
-                            Success_Notif();
-                            Intent intent = new Intent(activity_layanan_jasa.this, activity_konfirmasi_bangun_renovasi.class);
-                            startActivity(intent);
+                           final Handler handler = new Handler();
+                           handler.postDelayed(new Runnable() {
+                               @Override
+                               public void run() {
+                                   Success_Notif();
+                                   Intent intent = new Intent(activity_layanan_jasa.this, activity_konfirmasi_bangun_renovasi.class);
+                                   startActivity(intent);
+                               }
+                           }, 3000L); //3000 L = 3 detik
                         } else {
-                           Fail_Notif();
-                           Intent intent = new Intent(activity_layanan_jasa.this, MainActivity.class);
-                           startActivity(intent);
+                           final Handler handler = new Handler();
+                           handler.postDelayed(new Runnable() {
+                               @Override
+                               public void run() {
+                                   Fail_Notif();
+                                   Intent intent = new Intent(activity_layanan_jasa.this, MainActivity.class);
+                                   startActivity(intent);
+                               }
+                           }, 3000L); //3000 L = 3 detik
                        }
                     }
                 },
@@ -363,9 +375,15 @@ public class activity_layanan_jasa extends AppCompatActivity {
                         // Showing error message if something goes wrong.
                         Toast.makeText(activity_layanan_jasa.this, volleyError.toString(), Toast.LENGTH_LONG).show();
 
-                        Fail_Notif();
-                        Intent intent = new Intent(activity_layanan_jasa.this, MainActivity.class);
-                        startActivity(intent);
+                        final Handler handler = new Handler();
+                        handler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                Fail_Notif();
+                                Intent intent = new Intent(activity_layanan_jasa.this, MainActivity.class);
+                                startActivity(intent);
+                            }
+                        }, 3000L); //3000 L = 3 detik
                     }
                 })
 
@@ -498,11 +516,12 @@ public class activity_layanan_jasa extends AppCompatActivity {
 
     private void Success_Notif(){
         Intent intent;
-        PendingIntent pendingIntent;
         NotificationManager notifManager = (NotificationManager) getSystemService(this.NOTIFICATION_SERVICE);
 
         String id = "ID_MANDORIN";
         String title = "Mandorin";
+        String message = "Data pesanan layanan jasa anda sudah kami terima, harap menunggu untuk konfirmasi pemesanan dan survey dari pihak kami.";
+        String reply = "Lihat disini data pesanan anda";
         android.support.v4.app.NotificationCompat.Builder builder;
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -511,20 +530,24 @@ public class activity_layanan_jasa extends AppCompatActivity {
             if (mChannel == null) {
                 mChannel = new NotificationChannel(id, title, importance);
                 mChannel.enableVibration(true);
+                mChannel.enableLights(true);
                 notifManager.createNotificationChannel(mChannel);
             }
         }
         builder = new android.support.v4.app.NotificationCompat.Builder(this,id);
         intent = new Intent(getApplicationContext(), activity_data_pemesan.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        pendingIntent = PendingIntent.getActivity(getApplicationContext(), 0, intent, 0);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        PendingIntent notifyPendingIntent = PendingIntent.getActivity(
+                this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT
+        );
         builder.setContentTitle("Mandorin")
                 .setSmallIcon(R.mipmap.ic_launcher)
-                .setContentText("Klik di sini, untuk melihat data pesanan anda")
+                .setContentText(message)
                 .setDefaults(Notification.COLOR_DEFAULT)
                 .setAutoCancel(true)
-                .setContentIntent(pendingIntent)
-                .setPriority(Notification.PRIORITY_HIGH);
+                .setStyle(new NotificationCompat.BigTextStyle())
+                .setPriority(Notification.PRIORITY_HIGH).addAction(R.drawable.mandorin_icon, reply,
+                notifyPendingIntent);
         Notification notification = builder.build();
         notifManager.notify(0, notification);
     }
@@ -536,6 +559,7 @@ public class activity_layanan_jasa extends AppCompatActivity {
 
         String id = "ID_MANDORIN";
         String title = "Mandorin";
+        String message = "Pemesanan layanan jasa gagal, harap coba lagi!";
         android.support.v4.app.NotificationCompat.Builder builder;
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -549,14 +573,17 @@ public class activity_layanan_jasa extends AppCompatActivity {
         }
         builder = new android.support.v4.app.NotificationCompat.Builder(this,id);
         intent = new Intent(getApplicationContext(), MainActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        pendingIntent = PendingIntent.getActivity(getApplicationContext(), 0, intent, 0);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        PendingIntent notifyPendingIntent = PendingIntent.getActivity(
+                this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT
+        );
         builder.setContentTitle("Mandorin")
                 .setSmallIcon(R.mipmap.ic_launcher)
-                .setContentText("Pemesanan gagal, harap coba lagi !")
+                .setContentText(message)
                 .setDefaults(Notification.COLOR_DEFAULT)
                 .setAutoCancel(true)
-                .setContentIntent(pendingIntent)
+                .setContentIntent(notifyPendingIntent)
+                .setStyle(new NotificationCompat.BigTextStyle())
                 .setPriority(Notification.PRIORITY_HIGH);
         Notification notification = builder.build();
         notifManager.notify(0, notification);

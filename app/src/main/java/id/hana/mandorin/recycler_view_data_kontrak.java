@@ -2,6 +2,7 @@ package id.hana.mandorin;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -41,6 +42,7 @@ public class recycler_view_data_kontrak extends RecyclerView.Adapter<recycler_vi
 
         Viewholder.nama_pemesan.setText(getStatusRenovasiAdapter1.getNama_pemesan());
         Viewholder.nomor_kontrak.setText(getStatusRenovasiAdapter1.getNomor_kontrak());
+        Viewholder.nomor_kontrak.setTypeface(Viewholder.nomor_kontrak.getTypeface(), Typeface.BOLD);
         Viewholder.presentase.setText(getStatusRenovasiAdapter1.getPresentase() + "%");
         Viewholder.alamat_pekerjaan.setText(getStatusRenovasiAdapter1.getAlamat_pekerjaan());
     }
