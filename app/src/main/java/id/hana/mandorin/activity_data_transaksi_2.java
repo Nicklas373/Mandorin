@@ -819,7 +819,7 @@ public class activity_data_transaksi_2 extends AppCompatActivity {
         String id = "ID_MANDORIN";
         String title = "Mandorin";
         String message = "Pembayaran ke 2 anda sudah berhasil !, Harap tunggu konfirmasi pembayaran selanjutnya";
-        String reply = "Lihat disini";
+        String reply = "Lihat disini untuk status pembayaran anda";
         android.support.v4.app.NotificationCompat.Builder builder;
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -833,7 +833,7 @@ public class activity_data_transaksi_2 extends AppCompatActivity {
             }
         }
         builder = new android.support.v4.app.NotificationCompat.Builder(this,id);
-        intent = new Intent(getApplicationContext(), activity_transaksi.class);
+        intent = new Intent(getApplicationContext(), activity_status_transaksi.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         PendingIntent notifyPendingIntent = PendingIntent.getActivity(
                 this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT
@@ -859,7 +859,7 @@ public class activity_data_transaksi_2 extends AppCompatActivity {
         String id = "ID_MANDORIN";
         String title = "Mandorin";
         String message = "Pembayaran ke 3 anda sudah berhasil !, Harap tunggu konfirmasi pembayaran selanjutnya";
-        String reply = "Lihat disini";
+        String reply = "Lihat disini untuk status pembayaran anda";
         android.support.v4.app.NotificationCompat.Builder builder;
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -873,7 +873,7 @@ public class activity_data_transaksi_2 extends AppCompatActivity {
             }
         }
         builder = new android.support.v4.app.NotificationCompat.Builder(this,id);
-        intent = new Intent(getApplicationContext(), activity_transaksi.class);
+        intent = new Intent(getApplicationContext(), activity_status_transaksi.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         PendingIntent notifyPendingIntent = PendingIntent.getActivity(
                 this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT
