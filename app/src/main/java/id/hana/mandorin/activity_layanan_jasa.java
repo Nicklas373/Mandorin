@@ -316,7 +316,7 @@ public class activity_layanan_jasa extends AppCompatActivity {
                 .setCancelable(false)
                 .setPositiveButton("Proses",new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog,int id) {
-                        dialog = ProgressDialog.show(activity_layanan_jasa.this, "Kirim Data", "Mengirim Data...", true);
+                        dialog = ProgressDialog.show(activity_layanan_jasa.this, "Menu Layanan Jasa", "Memproses layanan jasa...", true);
                         insert_data_pemesan();
                         SharedPreferences.Editor editor;
                         editor = pref.edit();
