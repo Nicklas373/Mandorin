@@ -37,11 +37,7 @@ public class activity_login extends AppCompatActivity {
         buat_akun.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(internet_available()){
                     startActivity(new Intent(activity_login.this, activity_register.class));
-                }else{
-                    Toast.makeText(getApplicationContext(), "Harap Periksa Koneksi Internet Anda", Toast.LENGTH_SHORT).show();
-                }
             }
         });
 
