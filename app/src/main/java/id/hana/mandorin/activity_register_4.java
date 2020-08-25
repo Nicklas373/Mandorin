@@ -12,6 +12,7 @@ import android.content.pm.ActivityInfo;
 import android.net.ConnectivityManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -124,18 +125,15 @@ public class activity_register_4 extends AppCompatActivity {
                 .setCancelable(false)
                 .setPositiveButton("Kirim",new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog,int id) {
-                        try
-                        {
+                        try {
                             update_data_user();
                             dialog = ProgressDialog.show(activity_register_4.this, "Menu Daftar Akun", "Memproses Data Akun...", true);
-                            Toast.makeText(activity_register_4.this, "Akun Berhasil di proses !", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(activity_register_4.this, MainActivity.class);
-                            startActivity(intent);
-                        } catch (IllegalArgumentException e)
-                        {
-                            Toast.makeText(activity_register_4.this, "Proses Gagal!", Toast.LENGTH_SHORT).show();
+                        } catch (IllegalArgumentException e) {
                             e.printStackTrace();
                         }
+
+                        Intent intent = new Intent(activity_register_4.this, MainActivity.class);
+                        startActivity(intent);
                     }
                 })
                 .setNegativeButton("Batal",new DialogInterface.OnClickListener() {
@@ -218,6 +216,8 @@ public class activity_register_4 extends AppCompatActivity {
 
         String id = "ID_MANDORIN";
         String title = "Mandorin";
+        String message = "Data akun anda telah di sukses di perbaharui!";
+        String reply = "Lihat disini untuk melihat data akun anda";
         android.support.v4.app.NotificationCompat.Builder builder;
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -231,15 +231,20 @@ public class activity_register_4 extends AppCompatActivity {
         }
         builder = new android.support.v4.app.NotificationCompat.Builder(this,id);
         intent = new Intent(getApplicationContext(), activity_akun_baru.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        pendingIntent = PendingIntent.getActivity(getApplicationContext(), 0, intent, 0);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        PendingIntent notifyPendingIntent = PendingIntent.getActivity(
+                this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT
+        );
         builder.setContentTitle("Mandorin")
                 .setSmallIcon(R.mipmap.ic_launcher)
-                .setContentText("Klik di sini, untuk melihat data akun anda")
+                .setContentTitle("Menu Registrasi")
+                .setContentText(message)
                 .setDefaults(Notification.COLOR_DEFAULT)
                 .setAutoCancel(true)
-                .setContentIntent(pendingIntent)
-                .setPriority(Notification.PRIORITY_HIGH);
+                .setStyle(new NotificationCompat.BigTextStyle())
+                .setPriority(Notification.PRIORITY_HIGH)
+                .addAction(R.drawable.mandorin_icon, reply,
+                        notifyPendingIntent);
         Notification notification = builder.build();
         notifManager.notify(0, notification);
     }
@@ -251,6 +256,7 @@ public class activity_register_4 extends AppCompatActivity {
 
         String id = "ID_MANDORIN";
         String title = "Mandorin";
+        String message = "Pembaharuan data akun anda gagal, harap coba lagi!";
         android.support.v4.app.NotificationCompat.Builder builder;
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -263,15 +269,13 @@ public class activity_register_4 extends AppCompatActivity {
             }
         }
         builder = new android.support.v4.app.NotificationCompat.Builder(this,id);
-        intent = new Intent(getApplicationContext(), MainActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        pendingIntent = PendingIntent.getActivity(getApplicationContext(), 0, intent, 0);
         builder.setContentTitle("Mandorin")
                 .setSmallIcon(R.mipmap.ic_launcher)
-                .setContentText("Data akun gagal di perbaharui, harap coba lagi !")
+                .setContentTitle("Menu Registrasi")
+                .setContentText(message)
                 .setDefaults(Notification.COLOR_DEFAULT)
                 .setAutoCancel(true)
-                .setContentIntent(pendingIntent)
+                .setStyle(new NotificationCompat.BigTextStyle())
                 .setPriority(Notification.PRIORITY_HIGH);
         Notification notification = builder.build();
         notifManager.notify(0, notification);

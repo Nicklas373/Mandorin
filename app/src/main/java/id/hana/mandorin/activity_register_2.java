@@ -1,13 +1,21 @@
 package id.hana.mandorin;
 
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.net.ConnectivityManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v4.app.NotificationCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.View;
@@ -107,11 +115,10 @@ public class activity_register_2 extends AppCompatActivity {
                                                 SharedPreferences.Editor editor = pref.edit();
                                                 editor.putString("email", dbg.getText().toString());
                                                 editor.apply();
-                                                startActivity(new Intent(activity_register_2.this, activity_register_3.class));
-                                                finish();
-                                                Toast.makeText(getApplicationContext(), "Akun berhasil di buat", Toast.LENGTH_SHORT).show();
+                                                update_account();
+                                                Success_Notif();
                                             } catch (IllegalArgumentException e) {
-                                                Toast.makeText(activity_register_2.this, "Akun gagal di buat", Toast.LENGTH_SHORT).show();
+                                                Fail_Notif();
                                                 e.printStackTrace();
                                                 finish();
                                             }
@@ -166,7 +173,7 @@ public class activity_register_2 extends AppCompatActivity {
                 String nik = "-";
                 String telp = "-";
                 String alamat = "-";
-                String foto_user = "-";
+                String foto_user = "akun.png";
 
                 // Creating Map String Params.
                 Map<String, String> params = new HashMap<String, String>();
@@ -234,5 +241,99 @@ public class activity_register_2 extends AppCompatActivity {
     private boolean internet_available(){
         ConnectivityManager koneksi = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         return koneksi.getActiveNetworkInfo() != null;
+    }
+
+    private void update_account() {
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                this);
+
+        // set title dialog
+        alertDialogBuilder.setTitle("Isi data akun");
+
+        // set pesan dari dialog
+        alertDialogBuilder
+                .setMessage("Apakah anda ingin mengisi data akun anda?")
+                .setIcon(R.mipmap.ic_launcher)
+                .setCancelable(false)
+                .setPositiveButton("Ya",new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog,int id) {
+                        startActivity(new Intent(activity_register_2.this, activity_register_3.class));
+                        finish();
+                    }
+                })
+                .setNegativeButton("Tidak",new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        startActivity(new Intent(activity_register_2.this, MainActivity.class));
+                        finish();
+                    }
+                });
+
+        // membuat alert dialog dari builder
+        AlertDialog alertDialog = alertDialogBuilder.create();
+
+        // menampilkan alert dialog
+        alertDialog.show();
+    }
+
+    private void Success_Notif(){
+        Intent intent;
+        NotificationManager notifManager = (NotificationManager) getSystemService(this.NOTIFICATION_SERVICE);
+
+        String id = "ID_MANDORIN";
+        String title = "Mandorin";
+        String message = "Selamat, registrasi akun anda telah berhasil ! Harap cek email anda untuk melakukan verifikasi email pada akun mandorin";
+        android.support.v4.app.NotificationCompat.Builder builder;
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            int importance = NotificationManager.IMPORTANCE_HIGH;
+            NotificationChannel mChannel = notifManager.getNotificationChannel(id);
+            if (mChannel == null) {
+                mChannel = new NotificationChannel(id, title, importance);
+                mChannel.enableVibration(true);
+                mChannel.enableLights(true);
+                notifManager.createNotificationChannel(mChannel);
+            }
+        }
+        builder = new android.support.v4.app.NotificationCompat.Builder(this,id);
+        builder.setContentTitle("Mandorin")
+                .setSmallIcon(R.mipmap.ic_launcher)
+                .setContentText(message)
+                .setDefaults(Notification.COLOR_DEFAULT)
+                .setAutoCancel(true)
+                .setStyle(new NotificationCompat.BigTextStyle())
+                .setPriority(Notification.PRIORITY_HIGH);
+        Notification notification = builder.build();
+        notifManager.notify(0, notification);
+    }
+
+    private void Fail_Notif(){
+        Intent intent;
+        PendingIntent pendingIntent;
+        NotificationManager notifManager = (NotificationManager) getSystemService(this.NOTIFICATION_SERVICE);
+
+        String id = "ID_MANDORIN";
+        String title = "Mandorin";
+        String message = "Registrasi akun gagal, harap coba lagi!";
+        android.support.v4.app.NotificationCompat.Builder builder;
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            int importance = NotificationManager.IMPORTANCE_HIGH;
+            NotificationChannel mChannel = notifManager.getNotificationChannel(id);
+            if (mChannel == null) {
+                mChannel = new NotificationChannel(id, title, importance);
+                mChannel.enableVibration(true);
+                notifManager.createNotificationChannel(mChannel);
+            }
+        }
+        builder = new android.support.v4.app.NotificationCompat.Builder(this,id);
+        builder.setContentTitle("Mandorin")
+                .setSmallIcon(R.mipmap.ic_launcher)
+                .setContentText(message)
+                .setDefaults(Notification.COLOR_DEFAULT)
+                .setAutoCancel(true)
+                .setStyle(new NotificationCompat.BigTextStyle())
+                .setPriority(Notification.PRIORITY_HIGH);
+        Notification notification = builder.build();
+        notifManager.notify(0, notification);
     }
 }
