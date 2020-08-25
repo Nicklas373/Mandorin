@@ -200,7 +200,7 @@ public class activity_status_transaksi extends AppCompatActivity {
                          * END OF FIXME
                          */
 
-                        if (recyclerViewadapter2.getItemCount() == 0) {
+                        if (recyclerViewlayoutManager2.getItemCount() == 0) {
                             connection_transaksi.setVisibility(View.GONE);
                             con_text_transaksi.setVisibility(View.GONE);
                             JSON_PARSE_DATA_AFTER_WEBCALL(response);

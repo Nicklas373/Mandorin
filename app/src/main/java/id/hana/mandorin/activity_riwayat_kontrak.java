@@ -179,7 +179,7 @@ public class activity_riwayat_kontrak extends AppCompatActivity {
                          * END OF FIXME
                          */
 
-                        if (recyclerViewadapter2.getItemCount() == 0) {
+                        if (recyclerViewlayoutManager2.getItemCount() == 0) {
                             connection_pemesan_pembayaran_renovasi.setVisibility(View.GONE);
                             con_text_pemesan_pembayaran_renovasi.setVisibility(View.GONE);
                             JSON_PARSE_DATA_AFTER_WEBCALL(response);
