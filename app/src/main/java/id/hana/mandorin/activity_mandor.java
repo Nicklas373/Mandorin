@@ -118,28 +118,14 @@ public class activity_mandor extends AppCompatActivity {
 
     private void cek_internet() {
         if (internet_available()) {
-            /* FIXME:
-             * I want to make sure if data on the list isn't empty, if list
-             * is empty then then app should check status from the imageview
-             * which is tell the situation from the internet connection is available
-             * or not.
-             *
-             * NOTES:
-             * If list data already called before then that mean internet connection from the user still working
-             * so don't need to recall to fetch data from the server again.
-             * THIS NEED PROPER FIX WHICH SHOULD RE-LOAD DATA IF CALL TO LOAD DATA, OR IT'LL DUPLICATE THE LIST.
-             *
-             * END OF FIXME
-             */
-
-            if (recyclerViewadapter.getItemCount() == 0) {
-                JSON_DATA_WEB_CALL();
-            } else {
-                /* Don't do anything */
-            }
+            JSON_DATA_WEB_CALL();
+            recyclerView.setVisibility(View.VISIBLE);
+            connection.setVisibility(View.GONE);
+            con_text.setVisibility(View.GONE);
         } else {
             /* Silence this debugging */
-            // Toast.makeText(activity_mandor.this, "Harap periksa koneksi internet anda", Toast.LENGTH_LONG).show();
+            // Toast.makeText(activity_data_komplain.this, "Harap periksa koneksi internet anda", Toast.LENGTH_LONG).show();
+            recyclerView.setVisibility(View.GONE);
             connection.setVisibility(View.VISIBLE);
             con_text.setVisibility(View.VISIBLE);
         }
@@ -157,13 +143,30 @@ public class activity_mandor extends AppCompatActivity {
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
-                        JSON_PARSE_DATA_AFTER_WEBCALL(response);
+                        /* FIXME:
+                         * I want to make sure if data on the list isn't empty, if list
+                         * is empty then then app should check status from the imageview
+                         * which is tell the situation from the internet connection is available
+                         * or not.
+                         *
+                         * NOTES:
+                         * If list data already called before then that mean internet connection from the user still working
+                         * so don't need to recall to fetch data from the server again.
+                         * THIS NEED PROPER FIX WHICH SHOULD RE-LOAD DATA IF CALL TO LOAD DATA, OR IT'LL DUPLICATE THE LIST.
+                         *
+                         * END OF FIXME
+                         */
+                        if (recyclerViewlayoutManager.getItemCount() == 0) {
+                            JSON_PARSE_DATA_AFTER_WEBCALL(response);
+                        } else {
+
+                        }
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-
+                        recyclerView.setVisibility(View.GONE);
                     }
                 });
 

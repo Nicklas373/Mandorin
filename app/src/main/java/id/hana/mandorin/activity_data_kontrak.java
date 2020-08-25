@@ -191,6 +191,7 @@ public class activity_data_kontrak extends AppCompatActivity {
                         if (recyclerViewlayoutManager2.getItemCount() == 0) {
                             JSON_PARSE_DATA_AFTER_WEBCALL(response);
                         } else {
+
                         }
 
                         empty_data_kontrak.setVisibility(View.GONE);
