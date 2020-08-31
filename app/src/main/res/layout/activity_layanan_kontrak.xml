@@ -88,7 +88,7 @@
                         android:id="@+id/textView32"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/app_mandor_status_pemesan_renovasi_1"
+                        android:text="@string/app_mandor_layanan_jasa_1"
                         android:layout_gravity="center"
                         android:textAlignment="center"
                         android:fontFamily="@font/test"
